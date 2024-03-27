@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var mesh := $MeshInstance3D
 
 const SPEED = 10
 const JUMP_POWER = 20
@@ -52,6 +53,15 @@ func _physics_process(delta):
 	# clamped fall speed
 	if velocity.y < -fall_clamp:
 		velocity.y = -fall_clamp
+	
+	# mesh
+	var dir = abs(Vector2(velocity.x, velocity.y))
+	if dir == Vector2.ZERO:
+		mesh.scale = Vector3.ONE
+	else:
+		dir += Vector2.ONE
+		dir /= sqrt(dir.x * dir.y)
+		mesh.scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 1)
 	
 	move_and_slide()
 	
