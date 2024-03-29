@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-@onready var mesh := $MeshInstance3D
+@onready var animTree := $"Node3D/Root Scene/AnimationTree"
+@onready var mesh := $Node3D
 
 const SPEED = 10
 const JUMP_POWER = 20
@@ -8,8 +9,6 @@ const acc = 300
 const friction = 200
 
 const gravity = 40
-# const max_jumps = 2
-# var current_jumps = 1
 
 const end_jump_early_multiplier = 3
 const jump_buffer = 100 # in millis
@@ -39,9 +38,15 @@ func _physics_process(delta):
 	
 	var input_x = Input.get_axis("ui_left", "ui_right")
 	if input_x != 0:
+		if input_x > 0:
+			rotation.y = 45
+		else:
+			rotation.y = -45
 		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+		
+		rotation.y = 0
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -56,12 +61,28 @@ func _physics_process(delta):
 	
 	# mesh
 	var dir = abs(Vector2(velocity.x, velocity.y))
+	
+	# animation
+	if is_on_floor():
+		if abs(velocity.x) < 0.1:
+			animTree.set("parameters/running/transition_request", "is_idle")
+			pass
+		else:
+			animTree.set("parameters/running/transition_request", "is_running")
+			# anim.play("Running_A")
+			pass
+	else:
+		# anim.play("Jump_Idle")
+		animTree.set("parameters/running/transition_request", "is_floating")
+		pass
+			
+	
 	if dir == Vector2.ZERO:
 		mesh.scale = Vector3.ONE
 	else:
 		dir += Vector2.ONE
 		dir /= sqrt(dir.x * dir.y)
-		mesh.scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 1)
+		mesh.scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
 	
 	move_and_slide()
 	
