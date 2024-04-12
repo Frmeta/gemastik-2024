@@ -7,6 +7,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_bbaya"]
+size = Vector3(10, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_sygdw"]
 size = Vector3(10, 1, 1)
 
@@ -15,6 +18,15 @@ size = Vector3(3, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
 size = Vector3(3, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2d5r"]
+
+[sub_resource type="Sky" id="Sky_avu8g"]
+sky_material = SubResource("ProceduralSkyMaterial_i2d5r")
+
+[sub_resource type="Environment" id="Environment_au0fg"]
+background_mode = 2
+sky = SubResource("Sky_avu8g")
 
 [node name="level" type="Node3D"]
 script = ExtResource("1_hsclu")
