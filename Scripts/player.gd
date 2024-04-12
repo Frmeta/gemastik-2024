@@ -97,6 +97,7 @@ func _physics_process(delta):
 		global_position = Vector3.ZERO + Vector3.UP * 3
 
 func _process(delta):
-	var grass = get_parent().get_node("MultiMeshInstance3D")
-	if grass != null :
-		grass.material_override.set_shader_parameter("player_pos", global_transform.origin)
+	if get_parent().has_node("MultiMeshInstance3D"):
+		var grass = get_parent().get_node("MultiMeshInstance3D")
+		if grass != null :
+			grass.material_override.set_shader_parameter("player_pos", global_transform.origin)
