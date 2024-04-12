@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var animTree := $"Node3D/Root Scene/AnimationTree"
+@onready var animTree := $Doni/AnimationTree
 @onready var mesh := $Node3D
 
 const SPEED = 10
@@ -39,9 +39,9 @@ func _physics_process(delta):
 	var input_x = Input.get_axis("ui_left", "ui_right")
 	if input_x != 0:
 		if input_x > 0:
-			rotation.y = 45
+			rotation.y = deg_to_rad(40)
 		else:
-			rotation.y = -45
+			rotation.y = deg_to_rad(-40)
 		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
@@ -64,16 +64,22 @@ func _physics_process(delta):
 	
 	# animation
 	if is_on_floor():
+		animTree.set("parameters/conditions/is_floating", false)
+		animTree.set("parameters/conditions/is_not_floating", true)
+		
 		if abs(velocity.x) < 0.1:
-			animTree.set("parameters/running/transition_request", "is_idle")
+			animTree.set("parameters/conditions/is_running", false)
+			animTree.set("parameters/conditions/is_not_running", true)
 			pass
 		else:
-			animTree.set("parameters/running/transition_request", "is_running")
+			animTree.set("parameters/conditions/is_running", true)
+			animTree.set("parameters/conditions/is_not_running", false)
 			# anim.play("Running_A")
 			pass
 	else:
 		# anim.play("Jump_Idle")
-		animTree.set("parameters/running/transition_request", "is_floating")
+		animTree.set("parameters/conditions/is_floating", true)
+		animTree.set("parameters/conditions/is_not_floating", false)
 		pass
 			
 	
