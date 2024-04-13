@@ -4,7 +4,7 @@ uniform sampler2D texture_albedo;
 uniform vec4 albedo;
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	VERTEX.x += cos(TIME)*(VERTEX.y+0.5)*0.2;
 }
 
 void fragment() {

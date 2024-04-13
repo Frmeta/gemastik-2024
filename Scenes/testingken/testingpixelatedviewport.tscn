@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://h75mlfcal5ja"]
 
-[ext_resource type="PackedScene" uid="uid://djwm4tpw6acyc" path="res://Scenes/level.tscn" id="1_me41h"]
 [ext_resource type="Shader" uid="uid://btg1kh6ko8rbk" path="res://Scenes/testingken/visualpixelation.tres" id="2_48vmu"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="3_1u332"]
+[ext_resource type="PackedScene" uid="uid://b168rxgdma5lv" path="res://Scenes/testingken/testinglevelken.tscn" id="3_pbvfg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2djq"]
 shader = ExtResource("2_48vmu")
@@ -10,7 +10,7 @@ shader_parameter/pixelation = 700.0
 
 [node name="space" type="Node3D"]
 
-[node name="level" parent="." instance=ExtResource("1_me41h")]
+[node name="level" parent="." instance=ExtResource("3_pbvfg")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_i2djq")
