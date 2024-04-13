@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var animTree := $Doni/AnimationTree
-@onready var mesh := $Node3D
+@onready var mesh := $Doni/Player/Skeleton3D/Player_Finale_001
 
 const SPEED = 10
 const JUMP_POWER = 20
