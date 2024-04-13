@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://btg1kh6ko8rbk" path="res://Scenes/testingken/visualpixelation.tres" id="2_48vmu"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="3_1u332"]
-[ext_resource type="PackedScene" uid="uid://b168rxgdma5lv" path="res://Scenes/testingken/testinglevelken.tscn" id="3_pbvfg"]
+[ext_resource type="PackedScene" uid="uid://c4mms4g7aibmj" path="res://Scenes/testingken/testinglevelken.tscn" id="3_pbvfg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2djq"]
 shader = ExtResource("2_48vmu")
