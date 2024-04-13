@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=6 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
+[ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
 [ext_resource type="PackedScene" uid="uid://be1nlibc0n8ox" path="res://3D Assets/Doni/Doni.tscn" id="4_dnt3i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
@@ -21,26 +22,28 @@ mesh = SubResource("SphereMesh_h45vj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.507873, 0)
 
 [node name="Skeleton3D" parent="Doni/Player" index="0"]
-bones/0/position = Vector3(-0.0408469, 0.498984, 0.0151185)
-bones/0/rotation = Quaternion(-0.0129712, 0.0162787, 0.00771519, 0.999754)
-bones/1/rotation = Quaternion(-0.0090177, -0.00440558, 0.00757651, 0.999921)
-bones/2/rotation = Quaternion(0.0048722, -0.0284499, 0.0104895, 0.999528)
-bones/3/rotation = Quaternion(0.00437301, -0.0282611, 0.0107838, 0.999533)
-bones/4/rotation = Quaternion(0.000965417, 0.0149296, -0.023505, 0.999612)
-bones/5/rotation = Quaternion(0.060491, -0.0159893, 0.0190995, 0.997858)
-bones/7/rotation = Quaternion(0.54229, 0.428192, -0.613064, 0.383047)
-bones/8/rotation = Quaternion(0.436051, 0.190857, 0.121982, 0.87095)
-bones/9/rotation = Quaternion(-0.00409513, 0.00181124, 0.262222, 0.964997)
-bones/11/rotation = Quaternion(0.544298, -0.453499, 0.555816, 0.434911)
-bones/12/rotation = Quaternion(0.467535, -0.161389, -0.15717, 0.854788)
-bones/13/rotation = Quaternion(0.0144271, 0.000596948, -0.230697, 0.972918)
-bones/15/rotation = Quaternion(0.0398344, 0.0671146, 0.995747, -0.0489522)
-bones/16/rotation = Quaternion(-0.414484, 0.260519, 0.0182397, 0.87178)
-bones/17/rotation = Quaternion(0.601624, -0.378342, 0.129131, 0.691542)
-bones/18/rotation = Quaternion(0.364719, -0.238121, 0.0956146, 0.895062)
-bones/20/rotation = Quaternion(-0.0943977, 0.0320021, 0.993273, -0.0589432)
-bones/21/rotation = Quaternion(-0.36064, 0.0783828, -0.21049, 0.905256)
-bones/22/rotation = Quaternion(0.601945, 0.181437, 0.0480803, 0.776164)
+bones/0/position = Vector3(0.0243497, 0.495034, 0.0060886)
+bones/0/rotation = Quaternion(-0.0176704, -0.0348627, -0.0250916, 0.998921)
+bones/1/rotation = Quaternion(-0.00296665, 0.00226455, -0.00319533, 0.999988)
+bones/2/rotation = Quaternion(0.0163718, -0.0187244, -0.004284, 0.999681)
+bones/3/rotation = Quaternion(0.0165028, -0.0187573, -0.0037282, 0.999681)
+bones/4/rotation = Quaternion(0.0195759, 0.00180653, 0.00694331, 0.999783)
+bones/5/rotation = Quaternion(0.0538864, -0.0163462, 0.0460718, 0.99735)
+bones/7/rotation = Quaternion(0.563679, 0.429921, -0.557076, 0.43255)
+bones/8/rotation = Quaternion(0.457706, 0.168954, 0.131415, 0.862954)
+bones/9/rotation = Quaternion(-0.00394407, 0.00181606, 0.252553, 0.967573)
+bones/11/rotation = Quaternion(0.621589, -0.397928, 0.521379, 0.428305)
+bones/12/rotation = Quaternion(0.43285, -0.157297, -0.157571, 0.873539)
+bones/13/rotation = Quaternion(0.0164359, 0.000591925, -0.262821, 0.964704)
+bones/15/rotation = Quaternion(0.0373904, 0.0833373, 0.994211, 0.0565869)
+bones/16/rotation = Quaternion(-0.519871, 0.213968, -0.0221628, 0.826717)
+bones/17/rotation = Quaternion(0.648167, -0.396242, 0.257072, 0.597316)
+bones/18/rotation = Quaternion(0.36318, -0.23763, 0.0957291, 0.895806)
+bones/20/rotation = Quaternion(-0.127563, 0.0668174, 0.988406, 0.0481236)
+bones/21/rotation = Quaternion(-0.274448, 0.0246604, -0.207599, 0.938602)
+bones/22/rotation = Quaternion(0.48211, 0.126949, 0.144825, 0.854681)
 bones/23/rotation = Quaternion(0.387938, 0.195239, -0.0844298, 0.896804)
+
+[node name="walkdust" parent="." instance=ExtResource("3_k2m8h")]
 
 [editable path="Doni"]

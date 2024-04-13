@@ -21,7 +21,7 @@ script = ExtResource("1_hsclu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.785)
-fov = 51.4
+fov = 68.2
 size = 13.612
 script = ExtResource("1_grkan")
 

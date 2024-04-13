@@ -70,19 +70,18 @@ func _physics_process(delta):
 		if abs(velocity.x) < 0.1:
 			animTree.set("parameters/conditions/is_running", false)
 			animTree.set("parameters/conditions/is_not_running", true)
+			$walkdust.stop_emit()
 			pass
 		else:
 			animTree.set("parameters/conditions/is_running", true)
 			animTree.set("parameters/conditions/is_not_running", false)
 			# anim.play("Running_A")
 			$walkdust.emit(dir)
-			pass
 	else:
 		# anim.play("Jump_Idle")
 		animTree.set("parameters/conditions/is_floating", true)
 		animTree.set("parameters/conditions/is_not_floating", false)
-		pass
-			
+		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		mesh.scale = Vector3.ONE
