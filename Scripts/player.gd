@@ -75,6 +75,7 @@ func _physics_process(delta):
 			animTree.set("parameters/conditions/is_running", true)
 			animTree.set("parameters/conditions/is_not_running", false)
 			# anim.play("Running_A")
+			$walkdust.emit(dir)
 			pass
 	else:
 		# anim.play("Jump_Idle")

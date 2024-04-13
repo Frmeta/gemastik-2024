@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bugaye07cuosh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_30k2g"]
+emission_shape_scale = Vector3(30, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 0)
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+attractor_interaction_enabled = false
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_07pyo"]
+max_value = 0.2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.323529, 0.134066), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okvot"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.752941, 0.929412, 0.862745, 0.745098)
+billboard_mode = 1
+point_size = 0.1
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_jeoud"]
+material = SubResource("StandardMaterial3D_okvot")
+size = 0.4
+sections = 2
+section_length = 1.0
+section_segments = 1
+curve = SubResource("Curve_07pyo")
+
+[node name="rain_box" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.606, 0)
+amount = 50
+lifetime = 2.0
+speed_scale = 1.5
+randomness = 1.0
+collision_base_size = 1.0
+visibility_aabb = AABB(-10, -24.9693, -5, 20, 29.9386, 10)
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_30k2g")
+draw_pass_1 = SubResource("RibbonTrailMesh_jeoud")
