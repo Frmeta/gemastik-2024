@@ -25,9 +25,6 @@ fov = 51.4
 size = 13.612
 script = ExtResource("1_grkan")
 
-[node name="Player" parent="." instance=ExtResource("1_cqubq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2829, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.634125, 0.77204, -0.0720635, 0.631475, 0, 5.02743, 0)
 
@@ -309,3 +306,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_cqubq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75527, 0)
