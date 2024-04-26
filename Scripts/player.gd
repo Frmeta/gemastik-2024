@@ -88,7 +88,8 @@ func _physics_process(delta):
 	else:
 		dir += Vector2.ONE
 		dir /= sqrt(dir.x * dir.y)
-		mesh.scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
+		var target_scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
+		mesh.scale = lerp(mesh.scale, target_scale, 0.2)
 	
 	move_and_slide()
 	
