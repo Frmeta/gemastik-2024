@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var animTree := $Doni/AnimationTree
-@onready var mesh := $Doni/Player/Skeleton3D/Player_Finale_001
+@onready var scaler := $Doni
 
 const SPEED = 10
 const JUMP_POWER = 20
@@ -18,46 +18,86 @@ const fall_clamp = 20
 var _last_jump_pressed = 0
 var _last_on_ground = 0
 
-func _physics_process(delta):
+var chain_velocity := Vector3(0,0,0)
+const CHAIN_PULL = 6
 
-	# Handle jump.
-	if Input.is_action_pressed("ui_accept"):
-		_last_jump_pressed = Time.get_ticks_msec()
-		
+
+func _input(event: InputEvent) -> void:
+	# Grapling shoot/release
+	if event is InputEventMouseButton:
+		if event.pressed:
+			#var dir = event.position - get_viewport().size * 0.5
+			if owner.get_mouse_location_on_map() == null:
+				print("need bigger area of wall")
+			var dir = owner.get_mouse_location_on_map() - global_position
+			$Grapling.shoot(dir)
+		else:
+			# We released the mouse -> release()
+			$Grapling.release()
+
+
+func _physics_process(delta):
 	
+	# Handle jump.
+	if Input.is_action_pressed("jump"):
+		_last_jump_pressed = Time.get_ticks_msec()
 	if _last_jump_pressed + jump_buffer > Time.get_ticks_msec() and _last_on_ground + coyote_treshold > Time.get_ticks_msec(): #and current_jumps < max_jumps:
 		_last_jump_pressed = 0
 		_last_on_ground = 0
 		velocity.y = JUMP_POWER
-		#current_jumps += 1
 	
 	
 	if is_on_floor():
 		_last_on_ground = Time.get_ticks_msec()
-		#current_jumps = 1
 	
-	var input_x = Input.get_axis("ui_left", "ui_right")
+	# Move right or left
+	var input_x = Input.get_axis("move_left", "move_right")
 	if input_x != 0:
 		if input_x > 0:
-			rotation.y = deg_to_rad(40)
+			$Doni/Player.rotation.y = deg_to_rad(40)
 		else:
-			rotation.y = deg_to_rad(-40)
+			$Doni/Player.rotation.y = deg_to_rad(-40)
 		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-		
-		rotation.y = 0
+		$Doni.rotation.y = 0
 		
 	# Add the gravity.
 	if not is_on_floor():
-		if !Input.is_action_pressed("ui_accept") && velocity.y > 0:
+		if !Input.is_action_pressed("jump") && velocity.y > 0:
 			velocity.y -= gravity * delta * end_jump_early_multiplier
 		else:
 			velocity.y -= gravity * delta
 			
+	
+		
+	# Grapling Hook physics
+	if $Grapling.hooked and true:
+		chain_velocity = to_local($Grapling.tip).normalized() * CHAIN_PULL
+		 #print(chain_velocity)
+		if chain_velocity.y > 0:
+			# Pulling up is stronger
+			chain_velocity.y *= 0.5
+		else:
+			# Pulling down isn't as strong
+			chain_velocity.y *= 0.5
+			
+		if input_x != 0 && sign(chain_velocity.x) != sign(input_x):
+			# if we are trying to walk in a different
+			# direction than the chain is pulling
+			# reduce its pull
+			chain_velocity.x *= 0.7
+			pass
+	else:
+		# Not hooked -> no chain velocity
+		chain_velocity = Vector3(0,0,0)
+	velocity += chain_velocity
+	
+	
 	# clamped fall speed
 	if velocity.y < -fall_clamp:
 		velocity.y = -fall_clamp
+		
 	
 	# mesh
 	var dir = abs(Vector2(velocity.x, velocity.y))
@@ -84,18 +124,21 @@ func _physics_process(delta):
 		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
-		mesh.scale = Vector3.ONE
+		scaler.scale = Vector3.ONE
 	else:
 		dir += Vector2.ONE
 		dir /= sqrt(dir.x * dir.y)
 		var target_scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
-		mesh.scale = lerp(mesh.scale, target_scale, 0.2)
-	
+		scaler.scale = lerp(scaler.scale, target_scale, 0.2)
+		
+		
+	velocity.z = 0;
 	move_and_slide()
 	
 	# respawn
-	if global_position.y < -10:
+	if global_position.y < -20:
 		global_position = Vector3.ZERO + Vector3.UP * 3
+		velocity = Vector3.ZERO
 
 func _process(delta):
 	if get_parent().has_node("MultiMeshInstance3D"):
