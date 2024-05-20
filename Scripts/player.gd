@@ -13,46 +13,54 @@ const gravity = 40
 const end_jump_early_multiplier = 3
 const jump_buffer = 100 # in millis
 const coyote_treshold = 200 # in millis
-const fall_clamp = 20
+const fall_clamp = 20 # max fall speed
+
+const max_jumps = 2 # double jump
+var curr_jumps = 0 # sudah loncat berapa kali
 
 var _last_jump_pressed = 0
 var _last_on_ground = 0
 
 var chain_velocity := Vector3(0,0,0)
-const CHAIN_PULL = 6
+const CHAIN_PULL = 3
 
 
 func _input(event: InputEvent) -> void:
+	
 	# Grapling shoot/release
 	if event is InputEventMouseButton:
 		if event.pressed:
-			#var dir = event.position - get_viewport().size * 0.5
 			if owner.get_mouse_location_on_map() == null:
 				print("need bigger area of wall")
 			var dir = owner.get_mouse_location_on_map() - global_position
 			$Grapling.shoot(dir)
 		else:
-			# We released the mouse -> release()
 			$Grapling.release()
 
 
 func _physics_process(delta):
 	
-	# Handle jump.
-	if Input.is_action_pressed("jump"):
+	# Handle jump
+	if Input.is_action_just_pressed("jump"):
 		_last_jump_pressed = Time.get_ticks_msec()
-	if _last_jump_pressed + jump_buffer > Time.get_ticks_msec() and _last_on_ground + coyote_treshold > Time.get_ticks_msec(): #and current_jumps < max_jumps:
+	if is_on_floor():
+		_last_on_ground = Time.get_ticks_msec()
+		curr_jumps = 1
+	if _last_jump_pressed + jump_buffer > Time.get_ticks_msec() and (_last_on_ground + coyote_treshold > Time.get_ticks_msec() or curr_jumps < max_jumps):
+		if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
+			# jump on the air
+			curr_jumps += 1
 		_last_jump_pressed = 0
 		_last_on_ground = 0
 		velocity.y = JUMP_POWER
 	
-	
-	if is_on_floor():
-		_last_on_ground = Time.get_ticks_msec()
-	
 	# Move right or left
 	var input_x = Input.get_axis("move_left", "move_right")
-	if input_x != 0:
+	if $Grapling.hooked:
+		# velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction/10 * delta)
+		pass
+		#elif
+	elif input_x != 0:
 		if input_x > 0:
 			$Doni/Player.rotation.y = deg_to_rad(40)
 		else:
@@ -60,46 +68,58 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-		$Doni.rotation.y = 0
+		$Doni/Player.rotation.y = 0
+
 		
 	# Add the gravity.
 	if not is_on_floor():
-		if !Input.is_action_pressed("jump") && velocity.y > 0:
+		if !Input.is_action_pressed("jump") && velocity.y > 0 && !$Grapling.hooked:
 			velocity.y -= gravity * delta * end_jump_early_multiplier
 		else:
 			velocity.y -= gravity * delta
-			
 	
-		
 	# Grapling Hook physics
-	if $Grapling.hooked and true:
-		chain_velocity = to_local($Grapling.tip).normalized() * CHAIN_PULL
-		 #print(chain_velocity)
-		if chain_velocity.y > 0:
-			# Pulling up is stronger
-			chain_velocity.y *= 0.5
-		else:
-			# Pulling down isn't as strong
-			chain_velocity.y *= 0.5
-			
-		if input_x != 0 && sign(chain_velocity.x) != sign(input_x):
-			# if we are trying to walk in a different
-			# direction than the chain is pulling
-			# reduce its pull
-			chain_velocity.x *= 0.7
-			pass
-	else:
-		# Not hooked -> no chain velocity
-		chain_velocity = Vector3(0,0,0)
-	velocity += chain_velocity
+	if $Grapling.hooked:
+		var grapling_tip_local_pos = to_local($Grapling.tip)
+		var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
+		velocity += grapling_tip_local_pos.normalized() * -vel;
+		
+		#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
+			#position = $Grapling.tip
+		
+		velocity += (grapling_tip_local_pos).normalized() * CHAIN_PULL
+	
+	#if $Grapling.hooked:
+		## chain_velocity = to_local($Grapling.tip).normalized() * CHAIN_PULL * 5
+		#chain_velocity = chain_velocity.move_toward(grapling_tip_local_pos.normalized() * CHAIN_PULL * 10, acc * delta)
+		#
+		## print(chain_velocity)
+		#if chain_velocity.y > 0:
+			## Pulling up is stronger
+			#chain_velocity.y *= 1
+		#else:
+			## Pulling down isn't as strong
+			#chain_velocity.y *= 0.5
+			## print("pulling down")
+			#
+		#if sign(chain_velocity.x) != sign(velocity.x):
+			## if we are trying to walk in a different
+			## direction than the chain is pulling
+			## reduce its pull
+			##chain_velocity.x *= 0.3
+			#pass
+	#else:
+		## Not hooked -> no chain velocity
+		#chain_velocity = Vector3(0,0,0)
 	
 	
 	# clamped fall speed
 	if velocity.y < -fall_clamp:
 		velocity.y = -fall_clamp
-		
 	
-	# mesh
+	# no z movement
+	velocity.z = 0;
+	
 	var dir = abs(Vector2(velocity.x, velocity.y))
 	
 	# animation
@@ -130,9 +150,7 @@ func _physics_process(delta):
 		dir /= sqrt(dir.x * dir.y)
 		var target_scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
 		scaler.scale = lerp(scaler.scale, target_scale, 0.2)
-		
-		
-	velocity.z = 0;
+	
 	move_and_slide()
 	
 	# respawn

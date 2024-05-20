@@ -13,11 +13,13 @@ const MAX_DISTANCE = 40
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
 
+var current_rope_length
+
 # shoot() shoots the chain in a given direction
 func shoot(dir: Vector3) -> void:
 	dir.z = 0
 	direction = dir.normalized()
-	print(direction)
+	# print(direction)
 	flying = true
 	tip = self.global_position
 
@@ -51,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 		if $Tip.move_and_collide(direction * SPEED * _delta):
 			hooked = true	# Got something!
 			flying = false	# Not flying anymore
+			current_rope_length = to_local(tip).length()
 		elif to_local(tip).length() > MAX_DISTANCE:
 			hooked = false
 			flying = false
