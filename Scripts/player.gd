@@ -36,6 +36,7 @@ func _input(event: InputEvent) -> void:
 			$Grapling.shoot(dir)
 		else:
 			$Grapling.release()
+			curr_jumps = 1 # availability to jump once more
 
 
 func _physics_process(delta):
@@ -46,6 +47,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		_last_on_ground = Time.get_ticks_msec()
 		curr_jumps = 1
+		
 	if _last_jump_pressed + jump_buffer > Time.get_ticks_msec() and (_last_on_ground + coyote_treshold > Time.get_ticks_msec() or curr_jumps < max_jumps):
 		if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
 			# jump on the air
