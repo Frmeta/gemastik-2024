@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://clctdkv26bkpq"]
 
 [ext_resource type="Script" path="res://Scenes/testingken/playerken.gd" id="1_0e4lm"]
-[ext_resource type="PackedScene" uid="uid://be1nlibc0n8ox" path="res://3D Assets/Doni/Doni.tscn" id="3_kuvbe"]
+[ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="3_jc0oy"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="4_152mf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
@@ -20,5 +20,5 @@ mesh = SubResource("SphereMesh_h45vj")
 
 [node name="walkdust" parent="." instance=ExtResource("4_152mf")]
 
-[node name="Doni" parent="." instance=ExtResource("3_kuvbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.399002, 0)
+[node name="Doni" parent="." instance=ExtResource("3_jc0oy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385894, 0)

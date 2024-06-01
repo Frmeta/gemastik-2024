@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@onready var animTree := $Doni/AnimationTree
-@onready var scaler := $Doni
+@onready var animTree := $DoniFinal/AnimationTree
+@onready var model3d := $DoniFinal
 
 const SPEED = 10
 const JUMP_POWER = 20
@@ -48,7 +48,10 @@ func _physics_process(delta):
 		_last_on_ground = Time.get_ticks_msec()
 		curr_jumps = 1
 		
-	if _last_jump_pressed + jump_buffer > Time.get_ticks_msec() and (_last_on_ground + coyote_treshold > Time.get_ticks_msec() or curr_jumps < max_jumps):
+	var is_jump_pressed = _last_jump_pressed + jump_buffer > Time.get_ticks_msec()
+	var from_ground = _last_on_ground + coyote_treshold > Time.get_ticks_msec()
+	var from_air = curr_jumps < max_jumps
+	if is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
 		if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
 			# jump on the air
 			curr_jumps += 1
@@ -59,18 +62,16 @@ func _physics_process(delta):
 	# Move right or left
 	var input_x = Input.get_axis("move_left", "move_right")
 	if $Grapling.hooked:
-		# velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction/10 * delta)
-		pass
-		#elif
+		velocity += Vector3(input_x * SPEED * delta , 0, 0)
 	elif input_x != 0:
 		if input_x > 0:
-			$Doni/Player.rotation.y = deg_to_rad(40)
+			model3d.get_node("Player").rotation.y = deg_to_rad(40)
 		else:
-			$Doni/Player.rotation.y = deg_to_rad(-40)
+			model3d.get_node("Player").rotation.y = deg_to_rad(-40)
 		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-		$Doni/Player.rotation.y = 0
+		model3d.get_node("Player").rotation.y = 0
 
 		
 	# Add the gravity.
@@ -146,12 +147,12 @@ func _physics_process(delta):
 		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
-		scaler.scale = Vector3.ONE
+		model3d.scale = Vector3.ONE
 	else:
 		dir += Vector2.ONE
 		dir /= sqrt(dir.x * dir.y)
 		var target_scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
-		scaler.scale = lerp(scaler.scale, target_scale, 0.2)
+		model3d.scale = lerp(model3d.scale, target_scale, 0.2)
 	
 	move_and_slide()
 	

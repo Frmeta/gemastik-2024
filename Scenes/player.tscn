@@ -1,19 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=7 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
-[ext_resource type="Texture2D" uid="uid://c3uqo422nn4w0" path="res://3D Assets/DoniBackpack/sam/PlayerBag_Player_Finale.png" id="3_ndmvf"]
 [ext_resource type="PackedScene" uid="uid://wyhqmu7tb5ud" path="res://Scenes/grapling.tscn" id="4_auomf"]
-[ext_resource type="PackedScene" uid="uid://be1nlibc0n8ox" path="res://3D Assets/Doni/Doni.tscn" id="4_dnt3i"]
+[ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="6_lv0nj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_h45vj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ukcb"]
-shading_mode = 0
-diffuse_mode = 3
-albedo_texture = ExtResource("3_ndmvf")
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_qjshs")
@@ -25,38 +19,10 @@ shape = SubResource("SphereShape3D_0obg1")
 visible = false
 mesh = SubResource("SphereMesh_h45vj")
 
-[node name="Doni" parent="." instance=ExtResource("4_dnt3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.507873, 0)
-
-[node name="Skeleton3D" parent="Doni/Player" index="0"]
-bones/0/position = Vector3(0.000106368, 0.499103, 0.0103463)
-bones/0/rotation = Quaternion(-0.00718443, -0.00928461, -0.0124486, 0.999854)
-bones/1/rotation = Quaternion(-0.0102257, -0.000604458, -0.000216163, 0.999948)
-bones/2/rotation = Quaternion(0.0046193, -0.0195075, -0.000799536, 0.999799)
-bones/3/rotation = Quaternion(0.0046294, -0.0194998, -0.000588345, 0.999799)
-bones/4/rotation = Quaternion(0.00652544, 0.0113552, -0.00825181, 0.99988)
-bones/5/rotation = Quaternion(0.0614612, -0.00898142, 0.0277711, 0.997683)
-bones/7/rotation = Quaternion(0.53343, 0.445626, -0.591324, 0.408908)
-bones/8/rotation = Quaternion(0.452968, 0.165219, 0.0899652, 0.871452)
-bones/9/rotation = Quaternion(-0.004095, 0.0018112, 0.26221, 0.965)
-bones/11/rotation = Quaternion(0.567409, -0.438061, 0.546743, 0.432692)
-bones/12/rotation = Quaternion(0.466858, -0.161824, -0.134784, 0.858889)
-bones/13/rotation = Quaternion(0.0155678, 0.000594204, -0.248937, 0.968395)
-bones/15/rotation = Quaternion(0.0359797, 0.0802243, 0.995995, 0.0162642)
-bones/16/rotation = Quaternion(-0.460073, 0.239013, 0.00357423, 0.855098)
-bones/17/rotation = Quaternion(0.619899, -0.391191, 0.202139, 0.649488)
-bones/18/rotation = Quaternion(0.363263, -0.237656, 0.0957228, 0.895766)
-bones/20/rotation = Quaternion(-0.116214, 0.0503131, 0.991934, 0.00538675)
-bones/21/rotation = Quaternion(-0.284383, 0.0473829, -0.215561, 0.93296)
-bones/22/rotation = Quaternion(0.516606, 0.150385, 0.111138, 0.835554)
-bones/23/rotation = Quaternion(0.387938, 0.195239, -0.0844298, 0.896804)
-
-[node name="Player_Finale_002" parent="Doni/Player/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_8ukcb")
-
 [node name="walkdust" parent="." instance=ExtResource("3_k2m8h")]
 
 [node name="Grapling" parent="." instance=ExtResource("4_auomf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48366, 0)
 
-[editable path="Doni"]
+[node name="DoniFinal" parent="." instance=ExtResource("6_lv0nj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104053, -0.532806, 0)

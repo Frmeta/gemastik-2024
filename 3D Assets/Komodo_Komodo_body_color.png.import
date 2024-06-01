@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3uqo422nn4w0"
-path.s3tc="res://.godot/imported/PlayerBag_Player_Finale.png-1cde80efcf1263fe6df93dd0ee38d4af.s3tc.ctex"
+uid="uid://jlh7bikjq1qh"
+path.s3tc="res://.godot/imported/Komodo_Komodo_body_color.png-081e3079fbbcdf089562b108510fa033.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/DoniBackpack/sam/PlayerBag_Player_Finale.png"
-dest_files=["res://.godot/imported/PlayerBag_Player_Finale.png-1cde80efcf1263fe6df93dd0ee38d4af.s3tc.ctex"]
+source_file="res://3D Assets/Komodo_Komodo_body_color.png"
+dest_files=["res://.godot/imported/Komodo_Komodo_body_color.png-081e3079fbbcdf089562b108510fa033.s3tc.ctex"]
 
 [params]
 
