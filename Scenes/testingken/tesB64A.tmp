@@ -72,7 +72,7 @@ script = ExtResource("1_6hf5b")
 [node name="rain_box" parent="Camera3D" instance=ExtResource("2_8tyq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2203, -10.7029)
 collision_base_size = 10.2
-visibility_aabb = AABB(-10, -29, -2098.05, 20, 29.939, 1.79121)
+visibility_aabb = AABB(-10, -29, -0.895606, 20, 29.939, 1.79121)
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.299464)
@@ -398,9 +398,8 @@ transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.6
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_au0fg")
 
-[node name="Player" parent="." node_paths=PackedStringArray("origin") instance=ExtResource("7_hp2ky")]
-transform = Transform3D(0.999976, 0, -0.00691145, 0, 1, 0, 0.00691145, 0, 0.999976, 1.37797, 2.81492, 0)
-origin = NodePath("../mas_origin")
+[node name="Player" parent="." instance=ExtResource("7_hp2ky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9041, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -431,7 +430,7 @@ script = ExtResource("8_lbdv3")
 event = "dialogue_done"
 
 [node name="mas_origin" type="Node3D" parent="."]
-transform = Transform3D(0.999976, 0, -0.00691145, 0, 1, 0, 0.00691145, 0, 0.999976, 1.37797, 1.4442, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.908439, 0)
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer/VBoxContainer/Button2" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_button_up"]

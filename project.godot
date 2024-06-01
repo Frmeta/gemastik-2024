@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventDistributor="*res://Scenes/EventDistributor.gd"
+
 [display]
 
 window/stretch/mode="viewport"

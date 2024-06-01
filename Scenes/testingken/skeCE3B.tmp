@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bws1nq6eecdhi"]
+
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="1_cp5sp"]
+[ext_resource type="Script" path="res://Scenes/testingken/skeleton_mas.gd" id="1_ycg8v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qqqaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q66yf"]
+albedo_texture = ExtResource("1_cp5sp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bg1c4"]
+material = SubResource("StandardMaterial3D_q66yf")
+
+[node name="skeleton_mas" type="CharacterBody3D"]
+motion_mode = 1
+script = ExtResource("1_ycg8v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qqqaj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_bg1c4")
