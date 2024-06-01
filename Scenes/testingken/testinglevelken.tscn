@@ -24,10 +24,10 @@ buffer = PackedFloat32Array(0.0667736, 0.314767, -1.77014, -4.67169, 0.367337, 1
 [sub_resource type="PlaneMesh" id="PlaneMesh_bvtwu"]
 size = Vector2(10, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
+[sub_resource type="BoxMesh" id="BoxMesh_bbaya"]
 size = Vector3(10, 1, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_bbaya"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sygdw"]
@@ -53,6 +53,16 @@ volumetric_fog_ambient_inject = 0.5
 
 [node name="level" type="Node3D"]
 
+[node name="particlecollisions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072937, -0.400452, 0)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="particlecollisions"]
+size = Vector3(9.59705, 1.1991, 2)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="particlecollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.38338, 3.84813, -0.14956)
+size = Vector3(9.59705, 1.1991, 2)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.785)
 size = 13.612
@@ -60,7 +70,8 @@ script = ExtResource("1_6hf5b")
 
 [node name="rain_box" parent="Camera3D" instance=ExtResource("2_8tyq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2203, -10.7029)
-visibility_aabb = AABB(-10, -29, -5, 20, 29.939, 10)
+collision_base_size = 10.2
+visibility_aabb = AABB(-10, -29, -0.895606, 20, 29.939, 1.79121)
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.299464)
@@ -114,17 +125,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79037, 0.742874, 0.301479)
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_7duej")
-
 [node name="ground" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0209527, 0)
 mesh = SubResource("BoxMesh_bbaya")
 skeleton = NodePath("../../top_ground")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0152645, -0.0201475, 2.62979)
-size = Vector3(8.82337, 0.109056, 6.49396)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_7duej")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48644, 3.92917, 9.53674e-07)
@@ -135,10 +142,6 @@ shape = SubResource("BoxShape3D_7duej")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
 mesh = SubResource("BoxMesh_sygdw")
-
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D2/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297133, -0.0846863, 0)
-size = Vector3(9.3627, 0.120789, 2)
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3256, 7.80252, 0)
@@ -173,10 +176,6 @@ shape = SubResource("BoxShape3D_7duej")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D16"]
 mesh = SubResource("BoxMesh_sygdw")
-
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D16/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0877533, -0.441683, 0)
-size = Vector3(9.55417, 1.11664, 2)
 
 [node name="waterfall" parent="StaticBody3D16" instance=ExtResource("6_u1qq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187724, 0.491074, 0.706684)
