@@ -282,7 +282,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(204.617, -352.465)
 modes/cull = 2
 nodes/vertex/0/position = Vector2(2000, -140)
 nodes/vertex/2/node = SubResource("VisualShaderNodeTransformVecMult_hceok")

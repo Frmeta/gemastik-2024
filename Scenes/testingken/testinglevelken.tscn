@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="2_8tyq0"]
 [ext_resource type="Shader" uid="uid://r430xuiofape" path="res://assets/testingken/grass.tres" id="3_2dgim"]
 [ext_resource type="ArrayMesh" uid="uid://dk02e3whj53qh" path="res://assets/testingken/grass_straw.obj" id="4_xj4pb"]
-[ext_resource type="PackedScene" uid="uid://clctdkv26bkpq" path="res://Scenes/testingken/playerken.tscn" id="5_a0qwk"]
-[ext_resource type="PackedScene" path="res://Scenes/testingken/grass_pixel.tscn" id="5_kguej"]
+[ext_resource type="PackedScene" uid="uid://blohfomcmf24p" path="res://Scenes/testingken/grass_pixel.tscn" id="5_kguej"]
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="6_u1qq0"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_vcyey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ebyq"]
 render_priority = 0
@@ -397,5 +397,5 @@ transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.6
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_au0fg")
 
-[node name="Player" parent="." instance=ExtResource("5_a0qwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83769, 0)
+[node name="Player" parent="." instance=ExtResource("7_vcyey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46837, 0)
