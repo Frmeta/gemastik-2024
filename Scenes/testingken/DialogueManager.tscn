@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2mccmwo4b8e3"]
+
+[ext_resource type="Script" path="res://Scenes/testingken/DialogueManager.gd" id="1_o6sxf"]
+[ext_resource type="PackedScene" uid="uid://dqwyjgjf28l07" path="res://Scenes/textbox.tscn" id="2_k8ytu"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_o6sxf")
+
+[node name="textbox" parent="." instance=ExtResource("2_k8ytu")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.5
+offset_top = -148.0
+offset_right = 181.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0

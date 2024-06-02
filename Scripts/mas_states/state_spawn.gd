@@ -17,13 +17,10 @@ func do_something(delta):
 			mas.move_and_slide()
 			mas.velocity=lerp(mas.velocity,Vector3.ZERO,0.4)
 			mas.scale = lerp(mas.scale,Vector3.ONE,0.1)
-		mas.velocity.x = mas.SPEED
 		spin_done=true
 	print(spin_done)
 	if spin_done:
-		mas.velocity.y=0
-		mas.velocity.z=0
-		mas.velocity.x=lerp(mas.velocity.x, 0.0, 0.02)
+		mas.velocity=lerp(mas.velocity, Vector3.ZERO, 0.15)
 		mas.move_and_slide()
 		print(mas.velocity)
 	if spin_done and not runable and mas.velocity.length()<1.8:

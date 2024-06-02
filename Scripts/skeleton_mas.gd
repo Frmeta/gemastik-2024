@@ -11,7 +11,7 @@ const ANGULAR_SPEED = 0.6
 var last_move = Vector3.ZERO
 
 func _ready():
-	scale=Vector3.ZERO
+	scale=Vector3(0.0001,0.0001,0.0001)
 	$States/despawn.origin = origin
 	print(origin)
 

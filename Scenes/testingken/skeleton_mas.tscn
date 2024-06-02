@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://bws1nq6eecdhi"]
 
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="1_cp5sp"]
-[ext_resource type="Script" path="res://Scenes/testingken/skeleton_mas.gd" id="1_ycg8v"]
-[ext_resource type="Script" path="res://Scenes/mas_states/state_idle.gd" id="3_buvxv"]
-[ext_resource type="Script" path="res://Scenes/mas_states/state_spawn.gd" id="4_hakrd"]
-[ext_resource type="Script" path="res://Scenes/mas_states/state_despawn.gd" id="5_gy3ce"]
-[ext_resource type="Script" path="res://Scenes/mas_states/state_hide.gd" id="5_t1qlh"]
+[ext_resource type="Script" path="res://Scripts/skeleton_mas.gd" id="1_qvy21"]
+[ext_resource type="Script" path="res://Scripts/mas_states/state_hide.gd" id="3_k6b3b"]
+[ext_resource type="Script" path="res://Scripts/mas_states/state_spawn.gd" id="4_3a044"]
+[ext_resource type="Script" path="res://Scripts/mas_states/state_idle.gd" id="5_efagx"]
+[ext_resource type="Script" path="res://Scripts/mas_states/state_despawn.gd" id="6_qcwol"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqqaj"]
 
@@ -17,7 +17,7 @@ material = SubResource("StandardMaterial3D_q66yf")
 
 [node name="skeleton_mas" type="CharacterBody3D" node_paths=PackedStringArray("current_state")]
 motion_mode = 1
-script = ExtResource("1_ycg8v")
+script = ExtResource("1_qvy21")
 current_state = NodePath("States/hide")
 iteration = 20
 SPEED = 3.0
@@ -31,22 +31,22 @@ mesh = SubResource("QuadMesh_bg1c4")
 [node name="States" type="Node" parent="."]
 
 [node name="hide" type="Node" parent="States" node_paths=PackedStringArray("mas", "next_state")]
-script = ExtResource("5_t1qlh")
+script = ExtResource("3_k6b3b")
 mas = NodePath("../..")
 next_state = NodePath("../spawn")
 
 [node name="spawn" type="Node" parent="States" node_paths=PackedStringArray("mas", "next_state")]
-script = ExtResource("4_hakrd")
+script = ExtResource("4_3a044")
 mas = NodePath("../..")
 next_state = NodePath("../idle")
 
 [node name="idle" type="Node" parent="States" node_paths=PackedStringArray("mas", "next_state")]
-script = ExtResource("3_buvxv")
+script = ExtResource("5_efagx")
 mas = NodePath("../..")
 next_state = NodePath("../despawn")
 
 [node name="despawn" type="Node" parent="States" node_paths=PackedStringArray("mas", "next_state")]
-script = ExtResource("5_gy3ce")
+script = ExtResource("6_qcwol")
 mas = NodePath("../..")
 next_state = NodePath("../hide")
 

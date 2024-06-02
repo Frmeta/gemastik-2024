@@ -6,7 +6,7 @@ var time=0
 var after_change = true
 
 func _ready():
-	EventDistributor.connect("dialogue_done", dialogue_done)
+	EventDistributor.connect("despawn_mas", dialogue_done)
 
 func do_something(delta):
 	time+=delta

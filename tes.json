@@ -1,58 +1,72 @@
 [
  {
-  "Sam": "Doni",
-  "Column2": "(stress, mental health, di kota terus)"
+  "nama": "Doni",
+  "dialogue": "(stress, mental health, di kota terus)",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "(tiba-tiba muncul) [!*#*@&*()#$&)($"
+  "nama": "Sam",
+  "dialogue": "(tiba-tiba muncul) [!*#*@&*()#$&)($",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": "Apa ini?"
+  "nama": "Doni",
+  "dialogue": "Apa ini?",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "[LANGUAGE DETECTED] [INSTALLING PACKAGES] (jeda) Halo, kamu pasti Doni. Maaf tiba-tiba muncul di rumah anda"
+  "nama": "Sam",
+  "dialogue": "[LANGUAGE DETECTED] [INSTALLING PACKAGES] (jeda) Halo, kamu pasti Doni. Maaf tiba-tiba muncul di rumah anda",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": "Kamu siapa, keluar dari rumah saya!"
+  "nama": "Doni",
+  "dialogue": "Kamu siapa, keluar dari rumah saya!",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "Oh maaf saya belum perkenalan. Perkenalkan saya Supportive Artificial Machine A.K.A SAM, robot asisten dari tahun 2099 yang dapat melayani Anda. Sepertinya karena suatu ketidaksengajaan saya terbawa ke waktu dan tempat ini. Apakah ada yang ingin saya bantu?"
+  "nama": "Sam",
+  "dialogue": "Oh maaf saya belum perkenalan. Perkenalkan saya Supportive Artificial Machine A.K.A SAM, robot asisten dari tahun 2099 yang dapat melayani Anda. Sepertinya karena suatu ketidaksengajaan saya terbawa ke waktu dan tempat ini. Apakah ada yang ingin saya bantu?",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": "Hah? Aku tidak butuh layanan. I'm fine."
+  "nama": "Doni",
+  "dialogue": "Hah? Aku tidak butuh layanan. I'm fine.",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "Iya kah? Menurut hasil analisis, kamu sedang mengalami depresi yang tinggi. Apakah karena masalah kesibukan?"
+  "nama": "Sam",
+  "dialogue": "Iya kah? Menurut hasil analisis, kamu sedang mengalami depresi yang tinggi. Apakah karena masalah kesibukan?",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": "Apa? Hasil analisismu pasti salah"
+  "nama": "Doni",
+  "dialogue": "Apa? Hasil analisismu pasti salah",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "[LOCATION DETECTED: INDONESIA] [NEGARA KEPULAUAN DI ASIA TENGGARA YANG DILINTASI GARIS KHATULISTIWA] Berdasarkan hasil analisisku kamu adalah rakyat Indonesia. Seharusnya kamu bangga karena biodiversitas Indonesia sangat tinggi. Lebih dari 477 spesies dan 255 diantaranya endemik."
+  "nama": "Sam",
+  "dialogue": "[LOCATION DETECTED: INDONESIA] [NEGARA KEPULAUAN DI ASIA TENGGARA YANG DILINTASI GARIS KHATULISTIWA] Berdasarkan hasil analisisku kamu adalah rakyat Indonesia. Seharusnya kamu bangga karena biodiversitas Indonesia sangat tinggi. Lebih dari 477 spesies dan 255 diantaranya endemik.",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": "Ya kenyataannya tidak semua orang Indonesia merasakan manfaatnya, apalagi yang ada di daerah perkotaan. "
+  "nama": "Doni",
+  "dialogue": "Ya kenyataannya tidak semua orang Indonesia merasakan manfaatnya, apalagi yang ada di daerah perkotaan. ",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "Kamu orang Indonesia tapi belum melihat keindahan Indonesia?"
+  "nama": "Sam",
+  "dialogue": "Kamu orang Indonesia tapi belum melihat keindahan Indonesia?",
+  "emosi":""
  },
  {
-  "Sam": "Doni",
-  "Column2": ".."
+  "nama": "Doni",
+  "dialogue": "..",
+  "emosi":""
  },
  {
-  "Sam": "Sam",
-  "Column2": "Sini ikuti aku. Aku akan membawamu keliling Indonesia"
+  "nama": "Sam",
+  "dialogue": "Sini ikuti aku. Aku akan membawamu keliling Indonesia",
+  "emosi":""
  }
 ]
