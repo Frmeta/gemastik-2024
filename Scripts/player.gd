@@ -36,7 +36,8 @@ func _input(event: InputEvent) -> void:
 			$Grapling.shoot(dir)
 		else:
 			if $Grapling.hooked:
-				curr_jumps = 1 # availability to jump once more
+				# curr_jumps = 1 # availability to jump once more
+				pass
 			$Grapling.release()
 
 
