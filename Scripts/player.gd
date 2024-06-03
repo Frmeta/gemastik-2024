@@ -35,8 +35,9 @@ func _input(event: InputEvent) -> void:
 			var dir = owner.get_mouse_location_on_map() - global_position
 			$Grapling.shoot(dir)
 		else:
+			if $Grapling.hooked:
+				curr_jumps = 1 # availability to jump once more
 			$Grapling.release()
-			curr_jumps = 1 # availability to jump once more
 
 
 func _physics_process(delta):
@@ -120,8 +121,6 @@ func _physics_process(delta):
 	if velocity.y < -fall_clamp:
 		velocity.y = -fall_clamp
 	
-	# no z movement
-	velocity.z = 0;
 	
 	var dir = abs(Vector2(velocity.x, velocity.y))
 	
@@ -154,10 +153,17 @@ func _physics_process(delta):
 		var target_scale = lerp(Vector3.ONE, Vector3(dir.x, dir.y, 1), 0.1)
 		model3d.scale = lerp(model3d.scale, target_scale, 0.2)
 	
+	axis_lock_angular_z = true
+	
+	# no z movement
+	velocity.z = 0;
+	
 	move_and_slide()
 	
+	self.transform.origin.z = 0
+	
 	# respawn
-	if global_position.y < -20:
+	if global_position.y < -30:
 		global_position = Vector3.ZERO + Vector3.UP * 3
 		velocity = Vector3.ZERO
 
