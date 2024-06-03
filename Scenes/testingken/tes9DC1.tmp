@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4mms4g7aibmj"]
+[gd_scene load_steps=20 format=3 uid="uid://c4mms4g7aibmj"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_6hf5b"]
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="2_8tyq0"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="6_u1qq0"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_hp2ky"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="8_lbdv3"]
-[ext_resource type="Script" path="res://Scenes/testingken/dialogue_button.gd" id="9_prrm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ebyq"]
 render_priority = 0
@@ -73,7 +72,7 @@ script = ExtResource("1_6hf5b")
 [node name="rain_box" parent="Camera3D" instance=ExtResource("2_8tyq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2203, -10.7029)
 collision_base_size = 10.2
-visibility_aabb = AABB(-10, -29, -2098.05, 20, 29.939, 1.79121)
+visibility_aabb = AABB(-10, -29, -0.895606, 20, 29.939, 1.79121)
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.299464)
@@ -399,6 +398,10 @@ transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.6
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_au0fg")
 
+[node name="Player" parent="." node_paths=PackedStringArray("origin") instance=ExtResource("7_hp2ky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9041, 0)
+origin = NodePath("../mas_origin")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
@@ -423,22 +426,12 @@ event = "spawn_mas"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Despawn"
+text = "END IDLE"
 script = ExtResource("8_lbdv3")
-event = "despawn_mas"
-
-[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-text = "Dialogue"
-script = ExtResource("9_prrm1")
+event = "dialogue_done"
 
 [node name="mas_origin" type="Node3D" parent="."]
-transform = Transform3D(0.999976, 0, -0.00691145, 0, 1, 0, 0.00691145, 0, 0.999976, 1.37797, 1.4442, 0)
-
-[node name="Player" parent="." node_paths=PackedStringArray("origin") instance=ExtResource("7_hp2ky")]
-origin = NodePath("../mas_origin")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.533373, 0)
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer/VBoxContainer/Button2" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer/VBoxContainer/Button3" method="_on_button_up"]

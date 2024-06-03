@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://blohfomcmf24p"]
+[gd_scene load_steps=6 format=3 uid="uid://8msymdjpscdc"]
 
 [ext_resource type="Shader" path="res://Scenes/testingken/pixel_grass_code.gdshader" id="1_mwhcw"]
 [ext_resource type="Texture2D" uid="uid://dxesjghj8xavo" path="res://assets/testingken/Illustration.png" id="2_2gm7w"]

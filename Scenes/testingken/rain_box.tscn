@@ -10,9 +10,7 @@ spread = 0.0
 initial_velocity_min = 30.0
 initial_velocity_max = 40.0
 attractor_interaction_enabled = false
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.0
+collision_mode = 2
 
 [sub_resource type="Curve" id="Curve_07pyo"]
 max_value = 0.2

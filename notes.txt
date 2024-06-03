@@ -1,0 +1,13 @@
+Guideline branch feat/ken
+1. Scene skeleton_mas dimasukkin ke player. Di player kasih node3D di kakinya
+trus kasih node tersebut ke "origin" di skeleton_mas
+
+Pastikan EventDistributor ada di Autoload
+Buat spawn/despawn mas lakukan "EventDistributor.emit_signal("spawn_mas"/"despawn_mas")"
+
+2. Dialogue
+Assign DialogueManager ke scene terkait
+Buat keluarin dialogue lakukan "EventDistributor.emit_signal("start_dialogue", DialogueEnum.constants)
+Pastikan DialogueEnum ada di Autoload, dan assign string file terkait ke DialogueEnum biar Maintainable.
+
+3. testingken/rain_box.tscn berfungsi buat scene jadi hujan
