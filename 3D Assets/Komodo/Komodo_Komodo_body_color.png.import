@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jlh7bikjq1qh"
-path.s3tc="res://.godot/imported/Komodo_Komodo_body_color.png-081e3079fbbcdf089562b108510fa033.s3tc.ctex"
+path.s3tc="res://.godot/imported/Komodo_Komodo_body_color.png-764a43a7db504c3555b2ad16fda48c16.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Komodo_Komodo_body_color.png"
-dest_files=["res://.godot/imported/Komodo_Komodo_body_color.png-081e3079fbbcdf089562b108510fa033.s3tc.ctex"]
+source_file="res://3D Assets/Komodo/Komodo_Komodo_body_color.png"
+dest_files=["res://.godot/imported/Komodo_Komodo_body_color.png-764a43a7db504c3555b2ad16fda48c16.s3tc.ctex"]
 
 [params]
 

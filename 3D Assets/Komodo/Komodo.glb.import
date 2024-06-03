@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://15h1mjbwvqns"
-path="res://.godot/imported/Komodo.glb-0b799157a51ea8badb843712a90e8253.scn"
+path="res://.godot/imported/Komodo.glb-7b733f615e0bb99ef65a0a8108c708ce.scn"
 
 [deps]
 
-source_file="res://3D Assets/Komodo.glb"
-dest_files=["res://.godot/imported/Komodo.glb-0b799157a51ea8badb843712a90e8253.scn"]
+source_file="res://3D Assets/Komodo/Komodo.glb"
+dest_files=["res://.godot/imported/Komodo.glb-7b733f615e0bb99ef65a0a8108c708ce.scn"]
 
 [params]
 
