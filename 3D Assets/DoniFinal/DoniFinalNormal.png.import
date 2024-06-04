@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du2ogtjkqenjn"
-path.s3tc="res://.godot/imported/Doni_Player_Finale_color.png-181f3e072a1d9c502800dc15caeab804.s3tc.ctex"
+uid="uid://dmfam8y6mwgki"
+path.s3tc="res://.godot/imported/DoniFinalNormal.png-79f5821eac442e03faca58944ca1e775.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Doni/Doni_Player_Finale_color.png"
-dest_files=["res://.godot/imported/Doni_Player_Finale_color.png-181f3e072a1d9c502800dc15caeab804.s3tc.ctex"]
+source_file="res://3D Assets/DoniFinal/DoniFinalNormal.png"
+dest_files=["res://.godot/imported/DoniFinalNormal.png-79f5821eac442e03faca58944ca1e775.s3tc.ctex"]
 
 [params]
 
