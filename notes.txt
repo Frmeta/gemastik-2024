@@ -29,6 +29,8 @@ wall 2,3 enabled
 d    e   e
 Kalo ada hewan di B dan scan selesai 2 enabled, 3 disabled
 
+5. Controls -> gambar-gambar control buat player
+
 yang diubah 4 Juni 2024
 Player jadi ada origin: Node3D, Mas
 Player jadi ada function _ready
@@ -38,4 +40,5 @@ Level jadi ada tombol-tombol di canvas layernya
 level.load_dialogue removed. Bisa pake yg di DialogueManager aja
 
 4 Juni 2024 Siang
-Ada checkpoin, ada invis wall yg semuanya enabled
+Level ada checkpoin, ada invis wall yg semuanya enabled
+Level ada canvas layer controls

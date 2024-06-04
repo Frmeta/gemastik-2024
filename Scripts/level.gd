@@ -6,4 +6,3 @@ func get_mouse_location_on_map():
 		return null
 	
 	return $"Mouse Position Locator/RayCaster".get_mouse_location_on_map()
-

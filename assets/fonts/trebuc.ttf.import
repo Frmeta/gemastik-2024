@@ -2,26 +2,26 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dfdkhwnockhml"
-path="res://.godot/imported/PixeloidSansBold-PKnYd.ttf-68a1b468455337d3b94a47ced1712b21.fontdata"
+uid="uid://sk3fa0f35er"
+path="res://.godot/imported/trebuc.ttf-ca9f6ef6d65a6d806187f14bff4e6000.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/PixeloidSansBold-PKnYd.ttf"
-dest_files=["res://.godot/imported/PixeloidSansBold-PKnYd.ttf-68a1b468455337d3b94a47ced1712b21.fontdata"]
+source_file="res://assets/fonts/trebuc.ttf"
+dest_files=["res://.godot/imported/trebuc.ttf-ca9f6ef6d65a6d806187f14bff4e6000.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=0
-subpixel_positioning=3
+hinting=1
+subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

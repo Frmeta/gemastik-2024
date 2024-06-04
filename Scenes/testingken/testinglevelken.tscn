@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4mms4g7aibmj"]
+[gd_scene load_steps=20 format=3 uid="uid://c4mms4g7aibmj"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_6hf5b"]
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="2_8tyq0"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://8msymdjpscdc" path="res://Scenes/testingken/grass_pixel.tscn" id="5_kguej"]
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="6_u1qq0"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="8_lbdv3"]
-[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="9_gq4a5"]
 [ext_resource type="Script" path="res://Scenes/testingken/dialogue_button.gd" id="9_prrm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ebyq"]
@@ -434,7 +433,7 @@ focus_mode = 0
 text = "Dialogue"
 script = ExtResource("9_prrm1")
 
-[node name="Player" parent="." instance=ExtResource("9_gq4a5")]
+[node name="Player" type="Node3D" parent="."]
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer/VBoxContainer/Button2" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_button_up"]

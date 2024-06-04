@@ -2,26 +2,26 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dfdkhwnockhml"
-path="res://.godot/imported/PixeloidSansBold-PKnYd.ttf-68a1b468455337d3b94a47ced1712b21.fontdata"
+uid="uid://ce7vydpxlj3e7"
+path="res://.godot/imported/Trebuchet-MS-Italic.ttf-69b36323fbc3645c99b0cf7f8e64e45c.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/PixeloidSansBold-PKnYd.ttf"
-dest_files=["res://.godot/imported/PixeloidSansBold-PKnYd.ttf-68a1b468455337d3b94a47ced1712b21.fontdata"]
+source_file="res://assets/fonts/Trebuchet-MS-Italic.ttf"
+dest_files=["res://.godot/imported/Trebuchet-MS-Italic.ttf-69b36323fbc3645c99b0cf7f8e64e45c.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=0
-subpixel_positioning=3
+hinting=1
+subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://trs0ogdxh7bx"]
+
+[ext_resource type="Texture2D" uid="uid://dq7dtw2s7wy62" path="res://assets/almanac.png" id="1_2utfo"]
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_2utfo")
