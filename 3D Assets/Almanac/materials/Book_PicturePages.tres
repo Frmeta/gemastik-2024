@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ba66542gg2tj6"]
 
-[ext_resource type="Texture2D" uid="uid://dr7m0hhekkqla" path="res://3D Assets/Almanac/Almanac_Book_ColorMap_Pages.png" id="1_rccgi"]
+[ext_resource type="Texture2D" uid="uid://di2atavi3ems7" path="res://3D Assets/Almanac/Texture/Book_PicturePages_Texture.tres" id="1_85e2c"]
 
 [resource]
 resource_name = "Book_PicturePages"
 cull_mode = 2
-albedo_texture = ExtResource("1_rccgi")
+albedo_texture = ExtResource("1_85e2c")
 roughness = 0.5
