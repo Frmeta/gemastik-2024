@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bws1nq6eecdhi"]
+[gd_scene load_steps=12 format=3 uid="uid://bws1nq6eecdhi"]
 
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="1_cp5sp"]
 [ext_resource type="Script" path="res://Scripts/skeleton_mas.gd" id="1_qvy21"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/mas_states/state_idle.gd" id="5_efagx"]
 [ext_resource type="Script" path="res://Scripts/mas_states/state_despawn.gd" id="6_qcwol"]
 [ext_resource type="PackedScene" uid="uid://cop3vrbddqrce" path="res://3D Assets/Mas.glb" id="7_8a32i"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas2/Mas (2).glb" id="8_ctgfb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqqaj"]
 radius = 0.6
@@ -56,6 +57,9 @@ mas = NodePath("../..")
 next_state = NodePath("../hide")
 
 [node name="Mas" parent="." instance=ExtResource("7_8a32i")]
+visible = false
+
+[node name="Mas (2)" parent="." instance=ExtResource("8_ctgfb")]
 
 [connection signal="change_state" from="States/hide" to="." method="change_state"]
 [connection signal="change_state" from="States/spawn" to="." method="change_state"]
