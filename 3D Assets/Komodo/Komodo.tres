@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://c7rp06820imev"]
+[gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://c1ids26jk8t4t"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_sdtxv"]
 input_name = "node_position_world"
