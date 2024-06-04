@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var animTree := $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
+@onready var scan := $Scan
 
 const SPEED = 10
 const JUMP_POWER = 20
@@ -24,6 +25,7 @@ var _last_on_ground = 0
 var chain_velocity := Vector3(0,0,0)
 const CHAIN_PULL = 3
 
+var is_scanning = false
 @onready var leg_target=$leg_target
 
 func _ready():
@@ -33,15 +35,26 @@ func _input(event: InputEvent) -> void:
 	
 	# Grapling shoot/release
 	if event is InputEventMouseButton:
-		if event.pressed:
-			if owner.get_mouse_location_on_map() == null:
-				print("need bigger area of wall")
-			var dir = owner.get_mouse_location_on_map() - global_position
-			$Grapling.shoot(dir)
-		else:
-			if $Grapling.hooked:
-				curr_jumps = 1 # availability to jump once more
-			$Grapling.release()
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				is_scanning = false
+				if owner.get_mouse_location_on_map() == null:
+					print("need bigger area of wall")
+				var dir = owner.get_mouse_location_on_map() - global_position
+				$Grapling.shoot(dir)
+			else:
+				if $Grapling.hooked:
+					# curr_jumps = 1 # availability to jump once more
+					pass
+				$Grapling.release()
+				
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed:
+				$Grapling.release()
+				is_scanning = true
+			else:
+				is_scanning = false
+				
 
 
 func _physics_process(delta):

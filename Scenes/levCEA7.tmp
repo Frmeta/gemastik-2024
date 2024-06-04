@@ -61,7 +61,6 @@ script = ExtResource("1_grkan")
 
 [node name="Almanac2" parent="Camera3D" instance=ExtResource("7_r32fx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.585, 0, -4.54)
-visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.634125, 0.77204, -0.0720635, 0.631475, 0, 5.02743, 0)
@@ -403,6 +402,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -59.4924, 7.91789, 0)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -412,7 +412,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

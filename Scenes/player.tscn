@@ -1,15 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=12 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
 [ext_resource type="PackedScene" uid="uid://wyhqmu7tb5ud" path="res://Scenes/grapling.tscn" id="4_auomf"]
+[ext_resource type="Script" path="res://Scripts/Scan.gd" id="5_h1j7u"]
+[ext_resource type="Script" path="res://Scripts/ScanLine.gd" id="6_folr1"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="6_lv0nj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_h45vj"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_k51ve"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia3l7"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 0.501961)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fyauf"]
+material = SubResource("StandardMaterial3D_ia3l7")
+radius = 1.5
+height = 3.0
+
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 3
 script = ExtResource("1_qjshs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -27,6 +42,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48366, 0)
 [node name="leg_target" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.467858, 0)
 
-[editable path="Doni"]
 [node name="DoniFinal" parent="." instance=ExtResource("6_lv0nj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104053, -0.532806, 0)
+
+[node name="Scan" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.211602, 0)
+script = ExtResource("5_h1j7u")
+
+[node name="ScanLine" type="MeshInstance3D" parent="Scan"]
+transform = Transform3D(-8.74228e-09, -1, 0, 0.2, -4.37114e-08, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("CylinderMesh_k51ve")
+script = ExtResource("6_folr1")
+
+[node name="RayCast3D" type="RayCast3D" parent="Scan"]
+target_position = Vector3(2.655, -1, 0)
+collision_mask = 4
+debug_shape_thickness = 5
+
+[node name="Tip" type="Node3D" parent="Scan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3798, 0, 0)
+top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scan/Tip"]
+mesh = SubResource("SphereMesh_fyauf")
