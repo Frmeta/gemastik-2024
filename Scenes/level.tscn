@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=18 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="1_cqubq"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_grkan"]
@@ -9,8 +9,8 @@
 [ext_resource type="MeshLibrary" uid="uid://bnkxvdq65a2td" path="res://Tilemap/tilemap_nature.tres" id="5_0woi1"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="5_j4yln"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="5_ovadu"]
-[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_ejalj"]
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Komodo/Komodo.tscn" id="6_lke0t"]
+[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_ejalj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
@@ -45,7 +45,7 @@ shape = SubResource("SphereShape3D_7lyb8")
 disabled = true
 
 [node name="BackgroundWall" type="StaticBody3D" parent="Mouse Position Locator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00801668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491048, 0, -0.00801668)
 collision_layer = 4
 collision_mask = 0
 
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374725, 0, 0)
 shape = SubResource("BoxShape3D_75lc6")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34165, 11.27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0246, 18.6767, 11.27)
 size = 13.612
 script = ExtResource("1_grkan")
 
@@ -375,23 +375,25 @@ shape = SubResource("BoxShape3D_8n4r1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D15"]
 mesh = SubResource("BoxMesh_lv5aa")
 
-[node name="checkpoint" parent="Obstacle" node_paths=PackedStringArray("wallleft") instance=ExtResource("4_xvtua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0032, 4.47386, 0)
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" node_paths=PackedStringArray("wallleft") instance=ExtResource("4_xvtua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0717, 4.47386, 0)
 wallleft = NodePath("../invisiblewall3")
 
-[node name="checkpoint2" parent="Obstacle" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("4_xvtua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2499, 6.62607, 0)
+[node name="checkpoint2" parent="Checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("4_xvtua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8186, 6.62607, 0)
 wallleft = NodePath("../invisiblewall2")
 wallright = NodePath("../invisiblewall")
 
-[node name="invisiblewall" parent="Obstacle" instance=ExtResource("5_ovadu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.5169, 0, 0)
+[node name="invisiblewall" parent="Checkpoints" instance=ExtResource("5_ovadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4484, 0, 0)
 
-[node name="invisiblewall2" parent="Obstacle" instance=ExtResource("5_ovadu")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.14809, 0, 0)
+[node name="invisiblewall2" parent="Checkpoints" instance=ExtResource("5_ovadu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -39.9204, 0, 0)
 
-[node name="invisiblewall3" parent="Obstacle" instance=ExtResource("5_ovadu")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.4239, 7.91789, 0)
+[node name="invisiblewall3" parent="Checkpoints" instance=ExtResource("5_ovadu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -59.4924, 7.91789, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -411,7 +413,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="ButtonSpawn" type="Button" parent="CanvasLayer"]
 offset_right = 8.0
 offset_bottom = 8.0
 focus_mode = 0
@@ -419,7 +421,7 @@ text = "spawn"
 script = ExtResource("4_c1it1")
 event = "spawn_mas"
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
+[node name="ButtonDespawn" type="Button" parent="CanvasLayer"]
 offset_top = 40.0
 offset_right = 59.0
 offset_bottom = 71.0
@@ -429,7 +431,7 @@ script = ExtResource("4_c1it1")
 event = "despawn_mas"
 
 [node name="Player" parent="." instance=ExtResource("1_cqubq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75527, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.722, 16.3432, -3.8147e-06)
 collision_mask = 2
 
 [node name="skeleton_mas" parent="." instance=ExtResource("5_j4yln")]
@@ -447,7 +449,7 @@ metadata/_editor_floor_ = Vector3(0, 1, -1)
 [node name="Komodo" parent="." instance=ExtResource("6_lke0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22932, 0.41006, 0)
 
-[node name="Controls" parent="." instance=ExtResource("10_ejalj")]
+[node name="Controls Hint" parent="." instance=ExtResource("10_ejalj")]
 
-[connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]

@@ -165,7 +165,6 @@ void light() {
 
 }
 "
-graph_offset = Vector2(-427.621, -49.7944)
 varyings/WorldPos = "0,4"
 nodes/vertex/0/position = Vector2(660, 140)
 nodes/vertex/2/node = SubResource("VisualShaderNodeVaryingSetter_3k51e")

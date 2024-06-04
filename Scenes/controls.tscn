@@ -2,19 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://dq7dtw2s7wy62" path="res://assets/almanac.png" id="1_2utfo"]
 
-[node name="Controls" type="CanvasLayer"]
+[node name="Controls Hint" type="CanvasLayer"]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -111.005
+offset_right = 528.0
+offset_bottom = 72.9953
 grow_vertical = 0
+scale = Vector2(0.585, 0.585)
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(47.935, 59.955)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
