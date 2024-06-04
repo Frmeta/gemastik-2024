@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cop3vrbddqrce" path="res://3D Assets/Mas.glb" id="7_8a32i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqqaj"]
-radius = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q66yf"]
 albedo_texture = ExtResource("1_cp5sp")
@@ -18,8 +17,6 @@ albedo_texture = ExtResource("1_cp5sp")
 material = SubResource("StandardMaterial3D_q66yf")
 
 [node name="skeleton_mas" type="CharacterBody3D" node_paths=PackedStringArray("current_state")]
-collision_layer = 4
-collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_qvy21")
 current_state = NodePath("States/hide")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://hp4lfr3tcdw1"]
+
+[ext_resource type="Shader" path="res://assets/ray.gdshader" id="1_5f8ok"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_chc8q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwjxn"]
+shader = ExtResource("1_5f8ok")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.5
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Vector4(1, 0.9, 0.65, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[node name="ray" type="Sprite2D"]
+material = SubResource("ShaderMaterial_rwjxn")
+position = Vector2(0, 230)
+scale = Vector2(4.59375, 4.59375)
+texture = ExtResource("2_chc8q")

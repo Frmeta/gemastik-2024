@@ -24,6 +24,10 @@ var _last_on_ground = 0
 var chain_velocity := Vector3(0,0,0)
 const CHAIN_PULL = 3
 
+@onready var leg_target=$leg_target
+
+func _ready():
+	GM.doni=self
 
 func _input(event: InputEvent) -> void:
 	
@@ -157,7 +161,7 @@ func _physics_process(delta):
 	
 	# respawn
 	if global_position.y < -20:
-		global_position = Vector3.ZERO + Vector3.UP * 3
+		global_position = GM.last_checkpoint_position
 		velocity = Vector3.ZERO
 
 func _process(delta):
@@ -165,3 +169,6 @@ func _process(delta):
 		var grass = get_parent().get_node("MultiMeshInstance3D")
 		if grass != null :
 			grass.material_override.set_shader_parameter("player_pos", global_transform.origin)
+
+func get_leg_target():
+	return leg_target

@@ -11,3 +11,11 @@ Buat keluarin dialogue lakukan "EventDistributor.emit_signal("start_dialogue", D
 Pastikan DialogueEnum ada di Autoload, dan assign string file terkait ke DialogueEnum biar Maintainable.
 
 3. testingken/rain_box.tscn berfungsi buat scene jadi hujan
+
+yang diubah 4 Juni 2024
+Player jadi ada origin: Node3D, Mas
+Player jadi ada function _ready
+Player jadi ada function get_leg_target return Node3D
+Level jadi ada tombol-tombol di canvas layernya
+
+level.load_dialogue removed. Bisa pake yg di DialogueManager aja

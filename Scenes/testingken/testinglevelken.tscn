@@ -6,8 +6,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dk02e3whj53qh" path="res://assets/testingken/grass_straw.obj" id="4_xj4pb"]
 [ext_resource type="PackedScene" uid="uid://8msymdjpscdc" path="res://Scenes/testingken/grass_pixel.tscn" id="5_kguej"]
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="6_u1qq0"]
-[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_hp2ky"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="8_lbdv3"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="9_gq4a5"]
 [ext_resource type="Script" path="res://Scenes/testingken/dialogue_button.gd" id="9_prrm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ebyq"]
@@ -88,6 +88,7 @@ skeleton = NodePath("../MultiMeshInstance3D")
 
 [node name="top_ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47213, -0.000199437)
+visible = false
 mesh = SubResource("PlaneMesh_bvtwu")
 skeleton = NodePath("../StaticBody3D")
 
@@ -433,11 +434,7 @@ focus_mode = 0
 text = "Dialogue"
 script = ExtResource("9_prrm1")
 
-[node name="mas_origin" type="Node3D" parent="."]
-transform = Transform3D(0.999976, 0, -0.00691145, 0, 1, 0, 0.00691145, 0, 0.999976, 1.37797, 1.4442, 0)
-
-[node name="Player" parent="." node_paths=PackedStringArray("origin") instance=ExtResource("7_hp2ky")]
-origin = NodePath("../mas_origin")
+[node name="Player" parent="." instance=ExtResource("9_gq4a5")]
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer/VBoxContainer/Button2" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_button_up"]

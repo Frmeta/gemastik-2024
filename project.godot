@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventDistributor="*res://Scripts/EventDistributor.gd"
 DialogueEnum="*res://Scripts/DialogueEnum.gd"
+GM="*res://Scripts/GameManager.gd"
 
 [display]
 

@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=14 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="1_cqubq"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_grkan"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_hsclu"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_1cqxb"]
+[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="4_c1it1"]
+[ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="4_xvtua"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="5_j4yln"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
@@ -367,6 +370,12 @@ shape = SubResource("BoxShape3D_8n4r1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D15"]
 mesh = SubResource("BoxMesh_lv5aa")
 
+[node name="checkpoint" parent="Obstacle" instance=ExtResource("4_xvtua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0032, 4.47386, 0)
+
+[node name="checkpoint2" parent="Obstacle" instance=ExtResource("4_xvtua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2499, 6.62607, 0)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
@@ -385,6 +394,29 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("4_c1it1")
+event = "spawn_mas"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_top = 40.0
+offset_right = 59.0
+offset_bottom = 71.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("4_c1it1")
+event = "despawn_mas"
+
 [node name="Player" parent="." instance=ExtResource("1_cqubq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75527, 0)
 collision_mask = 3
+
+[node name="skeleton_mas" parent="." instance=ExtResource("5_j4yln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
+
+[connection signal="button_up" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_button_up"]
