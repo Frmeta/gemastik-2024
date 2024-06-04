@@ -24,3 +24,4 @@ skeleton = NodePath("../CollisionShape3D")
 shape = SubResource("SphereShape3D_w1qnx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="some_checkpoint_captured" from="." to="." method="_on_some_checkpoint_captured"]

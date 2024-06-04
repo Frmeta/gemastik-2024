@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0kfe4ssagx3e"]
+
+[ext_resource type="Script" path="res://Scripts/invisiblewall.gd" id="1_7vk4t"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_08xs7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io3jd"]
+albedo_texture = ExtResource("2_08xs7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_skcm8"]
+material = SubResource("StandardMaterial3D_io3jd")
+size = Vector2(1, 36)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_roodp"]
+size = Vector3(0.475098, 35.7822, 4.75696)
+
+[node name="invisiblewall" type="StaticBody3D"]
+collision_mask = 2
+script = ExtResource("1_7vk4t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.998, 0)
+mesh = SubResource("QuadMesh_skcm8")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.998, 0)
+shape = SubResource("BoxShape3D_roodp")

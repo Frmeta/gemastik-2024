@@ -12,6 +12,23 @@ Pastikan DialogueEnum ada di Autoload, dan assign string file terkait ke Dialogu
 
 3. testingken/rain_box.tscn berfungsi buat scene jadi hujan
 
+4. Checkpoin dan invis wall
+Checkpoin bisa punya invis wall max 2.
+Misal ada checkpoin A punya wall 1 dan checkpoin B punya 2,3.
+|    |   |
+|p   |   | , p untuk player
+1    2   3
+e    d   d
+Saat player masuk ke A, wall 1 -> daerah yg gk ada hewan pastikan cuman punya 
+1 wall
+Saat player masuk ke B, wall 1 disabled -> ini berguna buat deteksi scan didaerah mana
+wall 2,3 enabled
+|    |   |
+|    | p | , p untuk player
+1    2   3
+d    e   e
+Kalo ada hewan di B dan scan selesai 2 enabled, 3 disabled
+
 yang diubah 4 Juni 2024
 Player jadi ada origin: Node3D, Mas
 Player jadi ada function _ready
@@ -19,3 +36,6 @@ Player jadi ada function get_leg_target return Node3D
 Level jadi ada tombol-tombol di canvas layernya
 
 level.load_dialogue removed. Bisa pake yg di DialogueManager aja
+
+4 Juni 2024 Siang
+Ada checkpoin, ada invis wall yg semuanya enabled
