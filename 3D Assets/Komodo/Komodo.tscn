@@ -9,9 +9,9 @@
 render_priority = 0
 shader = ExtResource("2_amnvg")
 shader_parameter/Base_Color = Color(1, 1, 1, 1)
-shader_parameter/Dissolve_Height = 0.209
-shader_parameter/Min_Height = -0.275
-shader_parameter/Height = 0.74
+shader_parameter/Dissolve_Height = 0.965
+shader_parameter/Min_Height = -0.375
+shader_parameter/Height = 0.84
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mjn0"]
 resource_name = "Komodo_Texture"
