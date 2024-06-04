@@ -39,6 +39,10 @@ mesh = SubResource("SphereMesh_h45vj")
 [node name="Grapling" parent="." instance=ExtResource("4_auomf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48366, 0)
 
+[node name="leg_target" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.467858, 0)
+
+[editable path="Doni"]
 [node name="DoniFinal" parent="." instance=ExtResource("6_lv0nj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104053, -0.532806, 0)
 

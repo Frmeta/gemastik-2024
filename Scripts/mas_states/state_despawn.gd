@@ -5,10 +5,10 @@ var runable = true
 var origin:Node3D
 
 func do_something(delta):
-	if (mas.position-origin.position).length()>0.01:
-		mas.position = lerp(mas.position,origin.position,0.1)
+	if (mas.global_position-origin.global_position).length()>0.01:
+		mas.global_position = lerp(mas.global_position,origin.global_position,0.1)
 	else:
-		mas.position=origin.position
+		mas.global_position=origin.global_position
 		emit_signal("change_state",next_state)
 		runable=true
 	mas.scale = lerp(mas.scale,Vector3(0.0001,0.0001,0.0001),0.05)

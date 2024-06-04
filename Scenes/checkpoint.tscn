@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://xio4di0uvbuo"]
+
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_w4vvc"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_tuyqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knp6s"]
+albedo_texture = ExtResource("2_tuyqr")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_q383r"]
+material = SubResource("StandardMaterial3D_knp6s")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w1qnx"]
+radius = 1.0
+
+[node name="checkpoint" type="Area3D"]
+script = ExtResource("1_w4vvc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_q383r")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_w1qnx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="some_checkpoint_captured" from="." to="." method="_on_some_checkpoint_captured"]

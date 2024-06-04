@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dqwyjgjf28l07" path="res://Scenes/textbox.tscn" id="2_k8ytu"]
 
 [node name="DialogueManager" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_o6sxf")
 
 [node name="textbox" parent="." instance=ExtResource("2_k8ytu")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
