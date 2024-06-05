@@ -68,27 +68,33 @@ func _physics_process(delta):
 	# Check vines
 	if climb.get_node("RayCast3D").is_colliding():
 		is_on_vines = true
-		print("vines")
 	else:
 		is_on_vines = false
+		is_climbing = false
 	
-	# If player press UP/DOWN button
-	if is_on_vines:
+	# Climb init
+	if is_on_vines and Input.is_action_pressed("jump"):
+		is_climbing = true
+	
+	# is climbing
+	if is_climbing:
 		# Climb up/down
 		var skor = 0
 		if Input.is_action_pressed("jump"):
 			is_climbing = true
 			skor += 1
+			curr_jumps = 1 # availability to jump once more
 			
 		if Input.is_action_pressed("down"):
 			skor -= 1
 		
 		velocity.y = skor * climbing_speed
+		animTree.set("parameters/ClimbingSpeed/scale", skor * 3)
 				
-	else:
+	if not is_climbing:
 		is_climbing = false
 		
-		# Handle jump
+		# Handle jump 
 		if Input.is_action_just_pressed("jump"):
 			_last_jump_pressed = Time.get_ticks_msec()
 			
@@ -106,6 +112,13 @@ func _physics_process(delta):
 			_last_jump_pressed = 0
 			_last_on_ground = 0
 			velocity.y = JUMP_POWER
+			
+		# Add the gravity.
+		if not is_on_floor() and not is_climbing:
+			if !Input.is_action_pressed("jump") && velocity.y > 0 && !$Grapling.hooked:
+				velocity.y -= gravity * delta * end_jump_early_multiplier
+			else:
+				velocity.y -= gravity * delta
 	
 	# Move right or left
 	var input_x = Input.get_axis("move_left", "move_right")
@@ -122,12 +135,7 @@ func _physics_process(delta):
 		model3d.get_node("Player").rotation.y = 0
 
 		
-	# Add the gravity.
-	if not is_on_floor() and not is_climbing:
-		if !Input.is_action_pressed("jump") && velocity.y > 0 && !$Grapling.hooked:
-			velocity.y -= gravity * delta * end_jump_early_multiplier
-		else:
-			velocity.y -= gravity * delta
+	
 	
 	# Grapling Hook physics
 	if $Grapling.hooked:
@@ -174,6 +182,7 @@ func _physics_process(delta):
 	# animation
 	if is_climbing:
 		animTree.set("parameters/Game/transition_request", "is_climbing")
+		model3d.get_node("Player").rotation.y = deg_to_rad(180)
 	else:
 		animTree.set("parameters/Game/transition_request", "is_not_climbing")
 		
