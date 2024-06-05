@@ -55,9 +55,7 @@ mesh = SubResource("CylinderMesh_k51ve")
 script = ExtResource("6_folr1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Scan"]
-target_position = Vector3(2.655, -1, 0)
-collision_mask = 4
-debug_shape_thickness = 5
+collision_mask = 8
 
 [node name="Tip" type="Node3D" parent="Scan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3798, 0, 0)
@@ -65,3 +63,11 @@ top_level = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scan/Tip"]
 mesh = SubResource("SphereMesh_fyauf")
+
+[node name="Climb" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="Climb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.62936)
+target_position = Vector3(0, 0, -8.175)
+collision_mask = 16
+debug_shape_thickness = 5
