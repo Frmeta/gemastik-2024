@@ -73,17 +73,24 @@ func _physics_process(delta):
 		is_climbing = false
 	
 	# Climb init
-	if is_on_vines and Input.is_action_pressed("jump"):
+	if is_on_vines and (Input.is_action_pressed("jump") or not is_on_floor()):
 		is_climbing = true
+		
+	# Handle jump input
+	if Input.is_action_just_pressed("jump"):
+		_last_jump_pressed = Time.get_ticks_msec()
 	
 	# is climbing
 	if is_climbing:
+		_last_on_ground = Time.get_ticks_msec() # considered to be on ground so it can jump
+		curr_jumps = 1 # availability to jump once more
+			
 		# Climb up/down
 		var skor = 0
 		if Input.is_action_pressed("jump"):
 			is_climbing = true
 			skor += 1
-			curr_jumps = 1 # availability to jump once more
+			
 			
 		if Input.is_action_pressed("down"):
 			skor -= 1
@@ -94,9 +101,6 @@ func _physics_process(delta):
 	if not is_climbing:
 		is_climbing = false
 		
-		# Handle jump 
-		if Input.is_action_just_pressed("jump"):
-			_last_jump_pressed = Time.get_ticks_msec()
 			
 		if is_on_floor():
 			_last_on_ground = Time.get_ticks_msec()
