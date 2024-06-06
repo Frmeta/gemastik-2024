@@ -8,10 +8,25 @@ size = Vector3(3, 0.2, 3)
 
 [sub_resource type="Curve3D" id="Curve3D_48tky"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.038909, 0, 0.00972743, 0, 0, 0, 0, 0, 0, 16.0376, 0, 0.185047),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8.127, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Animation" id="Animation_xemhp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_t02ik"]
 resource_name = "move"
@@ -30,21 +45,6 @@ tracks/0/keys = {
 "values": [0.0, 1.0, 1.0, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_xemhp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Path3D/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n210n"]
 _data = {
 "RESET": SubResource("Animation_xemhp"),
@@ -54,7 +54,7 @@ _data = {
 [node name="movingplatform" type="Node3D"]
 
 [node name="Node3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.0109037, 0, 0.999841, 0, 1, 0, -0.999841, 0, 0.0109037, 16.0282, 0, 0.146038)
+transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972644, 0, -0.038905)
 collision_layer = 2
 collision_mask = 0
 
@@ -62,6 +62,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_cd4oc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47035e-08, 0, 0)
 mesh = SubResource("BoxMesh_5f60b")
 skeleton = NodePath("../../Path3D/PathFollow3D")
 
@@ -69,8 +70,7 @@ skeleton = NodePath("../../Path3D/PathFollow3D")
 curve = SubResource("Curve3D_48tky")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0109036, 0, -0.999841, 0, 1, 0, 0.999841, 0, -0.0109036, 16.0375, 0, 0.185047)
-progress = 16.0774
+transform = Transform3D(-4.37069e-08, 0, -0.999899, 0, 1, 0, 0.999898, 0, -4.3707e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)

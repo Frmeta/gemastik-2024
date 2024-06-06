@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://1ur3v7fipq4"]
+
+[ext_resource type="Texture2D" uid="uid://dxb1nedd2wf4f" path="res://3D Assets/Vines/vines.jpg" id="1_2pirq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4wevl"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deku0"]
+albedo_texture = ExtResource("1_2pirq")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_70i2l"]
+points = PackedVector3Array(1, 1, 0, 1, -1, 0, -1, 1, 0, -1, -1, 0)
+
+[node name="Vines" type="Node3D"]
+
+[node name="Vines" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("QuadMesh_4wevl")
+surface_material_override/0 = SubResource("StandardMaterial3D_deku0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Vines"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vines/StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_70i2l")
