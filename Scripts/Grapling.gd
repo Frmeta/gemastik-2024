@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 	# We rotate the links (= chain) and the tip to fit on the line between self.position (= origin = player.position) and the tip
 	$Tip.rotation.z = self_pos.angle_to_point(tip_local_pos) - deg_to_rad(90)
 	links.rotation.z = self_pos.angle_to_point(tip_local_pos) - deg_to_rad(90)
-	links.position = (tip_local)/2
+	links.position = (tip_local)/2 + Vector3.UP * 0.22
 	links.scale.y = tip_local.length()/2
 
 # Every physics frame we update the tip position

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ba5o4xfere5iu" path="res://3D Assets/Grapling/Hook.tscn" id="2_fr5sm"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qjoic"]
-top_radius = 0.1
-bottom_radius = 0.1
+top_radius = 0.05
+bottom_radius = 0.05
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_27ga5"]
 radius = 0.2

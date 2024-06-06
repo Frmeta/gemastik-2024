@@ -147,6 +147,8 @@ func _physics_process(delta):
 		var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
 		velocity += grapling_tip_local_pos.normalized() * -vel;
 		
+		
+		
 		#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
 			#position = $Grapling.tip
 		
