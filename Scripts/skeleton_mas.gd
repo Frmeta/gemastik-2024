@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var current_state: mas_state
 @export var iteration = 45
 @export var origin:Node3D
-@onready var sprite_mas = $Mas
+@onready var sprite_mas = $"Mas (2)"
 
 @export var SPEED:float = 5.0
 const ANGULAR_SPEED = 0.6

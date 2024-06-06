@@ -23,6 +23,8 @@ GM="*res://Scripts/GameManager.gd"
 
 [display]
 
+window/size/viewport_width=1520
+window/size/viewport_height=930
 window/stretch/mode="viewport"
 
 [input]

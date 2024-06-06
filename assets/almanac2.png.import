@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq7dtw2s7wy62"
-path="res://.godot/imported/almanac.png-53adf168dc378d2f2e1d50e553dac152.ctex"
+uid="uid://dkyxxvydk64x5"
+path="res://.godot/imported/almanac2.png-d5a263a053ef88d6454094c62cc261d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/almanac.png"
-dest_files=["res://.godot/imported/almanac.png-53adf168dc378d2f2e1d50e553dac152.ctex"]
+source_file="res://assets/almanac2.png"
+dest_files=["res://.godot/imported/almanac2.png-d5a263a053ef88d6454094c62cc261d2.ctex"]
 
 [params]
 
@@ -29,6 +29,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
-process/hdr_clamp_exposure=true
+process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

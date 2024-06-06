@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://trs0ogdxh7bx"]
+[gd_scene load_steps=9 format=3 uid="uid://trs0ogdxh7bx"]
 
-[ext_resource type="Texture2D" uid="uid://dq7dtw2s7wy62" path="res://assets/almanac.png" id="1_2utfo"]
+[ext_resource type="Texture2D" uid="uid://dkyxxvydk64x5" path="res://assets/almanac2.png" id="1_g26vo"]
+[ext_resource type="Texture2D" uid="uid://cboimpo4akmtv" path="res://assets/grapling2.png" id="2_bwc6t"]
 [ext_resource type="Texture2D" uid="uid://b0u68jsooyx2m" path="res://assets/settings.png" id="2_tootk"]
+[ext_resource type="Texture2D" uid="uid://bt836ovhikbuw" path="res://assets/scanner2.png" id="3_1omli"]
 [ext_resource type="Texture2D" uid="uid://b1l6xwbdxa122" path="res://3D Assets/Almanac/peta indo temp.jpg" id="3_r01mu"]
 [ext_resource type="FontFile" uid="uid://ce7vydpxlj3e7" path="res://assets/fonts/Trebuchet-MS-Italic.ttf" id="4_2sftu"]
 
@@ -22,16 +24,29 @@ offset_right = 528.0
 offset_bottom = 72.9953
 grow_vertical = 0
 scale = Vector2(0.585, 0.585)
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 60
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(47.935, 59.955)
 layout_mode = 2
+theme_override_constants/separation = 100
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="almanac" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_2utfo")
+size_flags_vertical = 8
+texture = ExtResource("1_g26vo")
+stretch_mode = 2
+
+[node name="grappling" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_bwc6t")
+
+[node name="scanner" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("3_1omli")
+stretch_mode = 2
 
 [node name="Settings" type="TextureRect" parent="."]
 offset_left = 19.0
@@ -67,15 +82,16 @@ scale = Vector2(1.425, 1)
 theme_override_styles/panel = SubResource("StyleBoxFlat_htvh5")
 
 [node name="PetaIndo" type="TextureRect" parent="Almanac"]
-offset_left = 233.0
-offset_top = 74.0
-offset_right = 481.0
-offset_bottom = 277.0
+visible = false
+layout_mode = 0
+offset_left = 617.0
+offset_top = 299.0
+offset_right = 865.0
+offset_bottom = 502.0
 scale = Vector2(2.88, 2.46)
 texture = ExtResource("3_r01mu")
 
 [node name="Koleksi Hewan" type="Control" parent="Almanac"]
-visible = false
 anchors_preset = 0
 offset_left = 307.0
 offset_top = 58.0
@@ -84,54 +100,54 @@ offset_bottom = 98.0
 
 [node name="Label" type="Label" parent="Almanac/Koleksi Hewan"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 74.0
-offset_right = 136.0
-offset_bottom = 97.0
+offset_left = 425.0
+offset_top = 302.0
+offset_right = 517.0
+offset_bottom = 325.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_2sftu")
 text = "KALIMANTAN"
 
 [node name="Label2" type="Label" parent="Almanac/Koleksi Hewan"]
 layout_mode = 0
-offset_left = -58.0
-offset_top = 33.0
-offset_right = 34.0
-offset_bottom = 56.0
+offset_left = 323.0
+offset_top = 261.0
+offset_right = 415.0
+offset_bottom = 284.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_2sftu")
 text = "BACK"
 
 [node name="Panel" type="Panel" parent="Almanac/Koleksi Hewan"]
 layout_mode = 0
-offset_left = 0.999985
-offset_top = 114.0
-offset_right = 81.0
-offset_bottom = 214.0
+offset_left = 382.0
+offset_top = 342.0
+offset_right = 462.0
+offset_bottom = 442.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
 [node name="Panel2" type="Panel" parent="Almanac/Koleksi Hewan"]
 layout_mode = 0
-offset_left = 111.156
-offset_top = 178.423
-offset_right = 191.156
-offset_bottom = 278.423
+offset_left = 492.156
+offset_top = 406.423
+offset_right = 572.156
+offset_bottom = 506.423
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
 [node name="Panel3" type="Panel" parent="Almanac/Koleksi Hewan"]
 layout_mode = 0
-offset_left = 18.1875
-offset_top = 296.692
-offset_right = 98.1875
-offset_bottom = 396.692
+offset_left = 399.188
+offset_top = 524.692
+offset_right = 479.188
+offset_bottom = 624.692
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
 [node name="Hewan 1 info" type="Control" parent="Almanac/Koleksi Hewan"]
 anchors_preset = 0
-offset_left = -3.99999
-offset_top = -80.0
-offset_right = 36.0
-offset_bottom = -40.0
+offset_left = 377.0
+offset_top = 148.0
+offset_right = 417.0
+offset_bottom = 188.0
 scale = Vector2(1.25, 1.25)
 
 [node name="Panel8" type="Panel" parent="Almanac/Koleksi Hewan/Hewan 1 info"]
@@ -172,6 +188,7 @@ scale = Vector2(1.52155, 0.752533)
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
 [node name="Panel5" type="Panel" parent="Almanac/Koleksi Hewan/Hewan 1 info"]
+layout_mode = 0
 offset_left = 236.8
 offset_top = 240.0
 offset_right = 316.8
@@ -180,6 +197,7 @@ scale = Vector2(1.58478, 0.316815)
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
 [node name="Panel6" type="Panel" parent="Almanac/Koleksi Hewan/Hewan 1 info"]
+layout_mode = 0
 offset_left = 237.581
 offset_top = 280.2
 offset_right = 317.581
