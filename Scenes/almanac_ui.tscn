@@ -1,19 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://da8h8buq1wyre"]
+[gd_scene load_steps=19 format=3 uid="uid://da8h8buq1wyre"]
 
 [ext_resource type="Texture2D" uid="uid://b1l6xwbdxa122" path="res://3D Assets/Almanac/peta indo temp.jpg" id="1_b6pfo"]
 [ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_qvhgm"]
-[ext_resource type="Resource" uid="uid://ced3ccmk8mqe1" path="res://Hewans/Pulau/kalimantan.tres" id="2_8k8ne"]
+[ext_resource type="Resource" uid="uid://ced3ccmk8mqe1" path="res://Resource/Pulau/kalimantan.tres" id="2_8k8ne"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_8o5us"]
 [ext_resource type="FontFile" uid="uid://ce7vydpxlj3e7" path="res://assets/fonts/Trebuchet-MS-Italic.ttf" id="3_68roq"]
-[ext_resource type="Texture2D" uid="uid://duy6b30kdxw6h" path="res://Hewans/Gambar/back.png" id="5_1e82x"]
-[ext_resource type="Texture2D" uid="uid://w8tx6iedrwfg" path="res://Hewans/Gambar/Papua.png" id="6_a3o4p"]
+[ext_resource type="Texture2D" uid="uid://bhqay1moayxy0" path="res://assets/Hewan/orangutan_asli.jpg" id="3_sv87l"]
+[ext_resource type="Resource" uid="uid://v44xmp7objkr" path="res://Resource/Pulau/bali.tres" id="3_w6fi3"]
+[ext_resource type="Resource" uid="uid://b4qtndc8q2cyk" path="res://Resource/Pulau/nusa_tenggara.tres" id="4_rjxjs"]
+[ext_resource type="Texture2D" uid="uid://duy6b30kdxw6h" path="res://assets/back.png" id="5_1e82x"]
+[ext_resource type="Resource" uid="uid://dqerfc8nkmk1f" path="res://Resource/Pulau/papua.tres" id="5_w1jmo"]
+[ext_resource type="Texture2D" uid="uid://w8tx6iedrwfg" path="res://assets/pulau/Papua.png" id="6_a3o4p"]
+[ext_resource type="Resource" uid="uid://set25lgglty" path="res://Resource/Pulau/jawa.tres" id="6_nq2yq"]
+[ext_resource type="Resource" uid="uid://btg2jkgaj4luj" path="res://Resource/Pulau/sulawesi.tres" id="7_0qt1u"]
 [ext_resource type="FontFile" uid="uid://hyhybg5ya00v" path="res://assets/fonts/IslandMoments-Regular.ttf" id="7_wj6jv"]
+[ext_resource type="Resource" uid="uid://dotyuieb0aurl" path="res://Resource/Pulau/sumatera.tres" id="8_5txxr"]
+[ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htvh5"]
 bg_color = Color(0.921569, 0.831373, 0.733333, 0.980392)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56c4h"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Almanac UI" type="Control"]
 layout_mode = 3
@@ -23,7 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qvhgm")
-pulau_list = Array[Resource("res://Scripts/pulau.gd")]([ExtResource("2_8k8ne")])
+pulau_list = Array[Resource("res://Scripts/pulau.gd")]([ExtResource("2_8k8ne"), ExtResource("3_w6fi3"), ExtResource("4_rjxjs"), ExtResource("5_w1jmo"), ExtResource("6_nq2yq"), ExtResource("7_0qt1u"), ExtResource("8_5txxr")])
 
 [node name="PanelAlmanac" type="Panel" parent="."]
 layout_mode = 1
@@ -40,68 +52,121 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_htvh5")
 
-[node name="Hewan 1 info" type="Control" parent="PanelAlmanac"]
-anchors_preset = 0
-offset_left = 231.0
-offset_top = 11.0
-offset_right = 271.0
-offset_bottom = 51.0
+[node name="Hewan Info" type="Control" parent="PanelAlmanac"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 
-[node name="Panel8" type="Panel" parent="PanelAlmanac/Hewan 1 info"]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 104.8
-offset_right = 320.0
-offset_bottom = 204.8
+[node name="Foto Asli" type="Panel" parent="PanelAlmanac/Hewan Info"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -278.0
+offset_right = 40.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(3.21451, 1.19216)
 theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
 
-[node name="Label3" type="Label" parent="PanelAlmanac/Hewan 1 info"]
+[node name="TextureRect" type="TextureRect" parent="PanelAlmanac/Hewan Info/Foto Asli"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sv87l")
+expand_mode = 5
+
+[node name="Nama hewan" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 324.8
-offset_top = 203.2
-offset_right = 416.8
-offset_bottom = 226.2
+offset_left = 484.8
+offset_top = 157.6
+offset_right = 576.8
+offset_bottom = 180.6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
 text = "ORANGUTAN"
 
-[node name="Panel4" type="Panel" parent="PanelAlmanac/Hewan 1 info"]
+[node name="Nama latin" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 244.0
-offset_top = 332.0
-offset_right = 324.0
-offset_bottom = 432.0
-scale = Vector2(3.21451, 1.19216)
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+offset_left = 484.8
+offset_top = 173.6
+offset_right = 576.8
+offset_bottom = 196.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
+text = "lorem ipsum"
 
-[node name="Panel7" type="Panel" parent="PanelAlmanac/Hewan 1 info"]
+[node name="habitat" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 372.0
-offset_top = 238.4
-offset_right = 452.0
-offset_bottom = 338.4
-scale = Vector2(1.52155, 0.752533)
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+offset_left = 404.0
+offset_top = 208.0
+offset_right = 496.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
+text = "habitat"
 
-[node name="Panel5" type="Panel" parent="PanelAlmanac/Hewan 1 info"]
+[node name="habitat2" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 236.8
-offset_top = 240.0
-offset_right = 316.8
-offset_bottom = 340.0
-scale = Vector2(1.58478, 0.316815)
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+offset_left = 482.0
+offset_top = 206.0
+offset_right = 695.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
+text = "hutan"
+autowrap_mode = 3
 
-[node name="Panel6" type="Panel" parent="PanelAlmanac/Hewan 1 info"]
+[node name="status" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 237.581
-offset_top = 280.2
-offset_right = 317.581
-offset_bottom = 380.2
-scale = Vector2(1.58478, 0.412815)
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+offset_left = 406.4
+offset_top = 242.4
+offset_right = 498.4
+offset_bottom = 265.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
+text = "status :"
+
+[node name="status2" type="Label" parent="PanelAlmanac/Hewan Info"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 241.0
+offset_right = 663.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 13
+text = "hamper punah"
+autowrap_mode = 3
+
+[node name="deskripsi" type="Label" parent="PanelAlmanac/Hewan Info"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 293.0
+offset_right = 651.0
+offset_bottom = 481.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_68roq")
+theme_override_font_sizes/font_size = 12
+text = "oprang utan adalah orang yang tinggal tapi di hutan, except it's not orang"
+autowrap_mode = 3
 
 [node name="TabContainer" type="TabContainer" parent="PanelAlmanac"]
 self_modulate = Color(1, 1, 1, 0)
@@ -111,6 +176,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 1
 tabs_visible = false
 
 [node name="Halaman Peta Indo" type="Control" parent="PanelAlmanac/TabContainer"]
@@ -245,13 +311,10 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 4.00001
-offset_top = 5.0
-offset_right = 573.0
-offset_bottom = 794.0
+offset_right = 442.0
 grow_vertical = 2
-scale = Vector2(0.795, 0.76)
 texture = ExtResource("6_a3o4p")
+expand_mode = 1
 
 [node name="BackButton" type="TextureButton" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
 layout_mode = 0
@@ -279,29 +342,42 @@ theme_override_fonts/font = ExtResource("7_wj6jv")
 theme_override_font_sizes/font_size = 46
 text = "kembali ke peta"
 
-[node name="Panel" type="Panel" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
+[node name="TextureButton0" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau" instance=ExtResource("10_c5gyd")]
+modulate = Color(0.647059, 0.647059, 0.647059, 1)
+self_modulate = Color(0.615686, 0.615686, 0.615686, 1)
 layout_mode = 0
-offset_left = 168.0
-offset_top = 216.0
-offset_right = 248.0
-offset_bottom = 316.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 5.0
+offset_top = 113.0
+offset_right = 125.0
+offset_bottom = 233.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="Panel2" type="Panel" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
-layout_mode = 0
-offset_left = 278.156
-offset_top = 280.423
-offset_right = 358.156
-offset_bottom = 380.423
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+[node name="TextureButton1" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau" instance=ExtResource("10_c5gyd")]
+layout_mode = 1
+offset_left = -293.0
+offset_top = -112.0
+offset_right = -173.0
+offset_bottom = 8.0
 
-[node name="Panel3" type="Panel" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
-layout_mode = 0
-offset_left = 185.188
-offset_top = 398.692
-offset_right = 265.188
-offset_bottom = 498.692
-theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+[node name="TextureButton2" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau" instance=ExtResource("10_c5gyd")]
+layout_mode = 1
+offset_left = -380.0
+offset_top = 17.0
+offset_right = -260.0
+offset_bottom = 137.0
+
+[node name="TextureButton3" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau" instance=ExtResource("10_c5gyd")]
+layout_mode = 1
+offset_left = -145.0
+offset_top = -131.0
+offset_right = -25.0
+offset_bottom = -11.0
 
 [connection signal="pressed" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" to="." method="_ke_halaman_2" binds= [0]]
 [connection signal="pressed" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton2" to="." method="_ke_halaman_2" binds= [1]]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=5 format=3 uid="uid://dm3ylo2y8e0ou"]
+
+[ext_resource type="Texture2D" uid="uid://bhqay1moayxy0" path="res://assets/Hewan/orangutan_asli.jpg" id="1_12g0y"]
+[ext_resource type="Texture2D" uid="uid://dyvrh2ii0ff58" path="res://assets/Hewan/orangutan.png" id="2_lesfv"]
+[ext_resource type="Texture2D" uid="uid://d2hgnkck0yo3f" path="res://assets/Hewan/orangutan_siluet.png" id="3_rf2hu"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="4_ntdy5"]
+
+[resource]
+script = ExtResource("4_ntdy5")
+foto_siluet = ExtResource("3_rf2hu")
+foto_kartun = ExtResource("2_lesfv")
+foto_asli = ExtResource("1_12g0y")
+nama = "Orang Utan"
+latin = "Pongo pygmaeus"
+status = "sangat terancam punah"
+habitat = "hutan rawa gambut, hutan dataran rendah, lereng pegunungan"
+entry = "Terdapat perbedaan pada orang utan yang ada di Sumatera dan yg di Kalimantan. Perbedaan ini paling jelas terlihat pada yg jantan dimana orang utan Sumatera memiliki kantung pipi yang jauh lebih lebar dari yang di Kalimantan. Hewan ini juga banyak diobservasi menggunakan alat untuk menyelesaikan masalahnya."

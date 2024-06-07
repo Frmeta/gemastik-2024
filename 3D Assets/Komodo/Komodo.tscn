@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_g3pqj"]
 [ext_resource type="Texture2D" uid="uid://jlh7bikjq1qh" path="res://3D Assets/Komodo/Komodo_Komodo_body_color.png" id="1_pa4vn"]
-[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Komodo/Komodo.tres" id="2_amnvg"]
 [ext_resource type="AnimationLibrary" uid="uid://dlg033o6fgy6" path="res://3D Assets/Komodo/anim/komodo_lib.res" id="2_ig78a"]
+[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="3_q3xep"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahvx2"]
 render_priority = 0
-shader = ExtResource("2_amnvg")
+shader = ExtResource("3_q3xep")
 shader_parameter/Base_Color = Color(1, 1, 1, 1)
 shader_parameter/Dissolve_Height = 0.965
 shader_parameter/Min_Height = -0.375
