@@ -113,6 +113,7 @@ script = ExtResource("3_hlgta")
 
 [node name="Almanac2" parent="Camera3D" instance=ExtResource("4_p3yr7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.634125, 0.77204, -0.0720635, 0.631475, 0, 5.02743, 0)

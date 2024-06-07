@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_g3pqj"]
 [ext_resource type="Texture2D" uid="uid://jlh7bikjq1qh" path="res://3D Assets/Komodo/Komodo_Komodo_body_color.png" id="1_pa4vn"]
-[ext_resource type="Shader" uid="uid://c7rp06820imev" path="res://3D Assets/Komodo/Komodo.tres" id="2_amnvg"]
+[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Komodo/Komodo.tres" id="2_amnvg"]
 [ext_resource type="AnimationLibrary" uid="uid://dlg033o6fgy6" path="res://3D Assets/Komodo/anim/komodo_lib.res" id="2_ig78a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahvx2"]
