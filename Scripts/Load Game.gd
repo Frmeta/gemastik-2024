@@ -46,7 +46,7 @@ func load_data(i):
 	print("playing as " + str(GM.data_file_number) + ", with explored level: " + str(GM.explored_level))
 	
 	# TODO: PLAY
-	get_tree().change_scene_to_file("res://Scenes/Game/level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
 	
 	
 func delete_data(i):
