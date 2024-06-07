@@ -34,13 +34,16 @@ var is_on_vines = false
 var is_climbing = false
 var climbing_speed = 5.0
 
+var can_move = true
+
+
 func _ready():
 	GM.doni=self
 
 func _input(event: InputEvent) -> void:
 	
 	# Grapling shoot/release
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and can_move:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				is_scanning = false
@@ -72,13 +75,14 @@ func _physics_process(delta):
 		is_on_vines = false
 		is_climbing = false
 	
-	# Climb init
-	if is_on_vines and (Input.is_action_pressed("jump") or not is_on_floor()):
-		is_climbing = true
-		
-	# Handle jump input
-	if Input.is_action_just_pressed("jump"):
-		_last_jump_pressed = Time.get_ticks_msec()
+	if can_move:
+		# Climb init
+		if is_on_vines and (Input.is_action_pressed("jump") or not is_on_floor()):
+			is_climbing = true
+			
+		# Handle jump input
+		if Input.is_action_just_pressed("jump"):
+			_last_jump_pressed = Time.get_ticks_msec()
 	
 	# is climbing
 	if is_climbing:
@@ -87,12 +91,12 @@ func _physics_process(delta):
 			
 		# Climb up/down
 		var skor = 0
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and can_move:
 			is_climbing = true
 			skor += 1
 			
 			
-		if Input.is_action_pressed("down"):
+		if Input.is_action_pressed("down") and can_move:
 			skor -= 1
 		
 		velocity.y = skor * climbing_speed
@@ -125,18 +129,19 @@ func _physics_process(delta):
 				velocity.y -= gravity * delta
 	
 	# Move right or left
-	var input_x = Input.get_axis("move_left", "move_right")
-	if $Grapling.hooked:
-		velocity += Vector3(input_x * SPEED * delta , 0, 0)
-	elif input_x != 0:
-		if input_x > 0:
-			model3d.get_node("Player").rotation.y = deg_to_rad(40)
+	if can_move:
+		var input_x = Input.get_axis("move_left", "move_right")
+		if $Grapling.hooked:
+			velocity += Vector3(input_x * SPEED * delta , 0, 0)
+		elif input_x != 0:
+			if input_x > 0:
+				model3d.get_node("Player").rotation.y = deg_to_rad(40)
+			else:
+				model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+			velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 		else:
-			model3d.get_node("Player").rotation.y = deg_to_rad(-40)
-		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
-	else:
-		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-		model3d.get_node("Player").rotation.y = 0
+			velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+			model3d.get_node("Player").rotation.y = 0
 
 		
 	
@@ -146,8 +151,6 @@ func _physics_process(delta):
 		var grapling_tip_local_pos = to_local($Grapling.tip)
 		var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
 		velocity += grapling_tip_local_pos.normalized() * -vel;
-		
-		
 		
 		#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
 			#position = $Grapling.tip

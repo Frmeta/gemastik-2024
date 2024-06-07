@@ -20,7 +20,8 @@ func get_mouse_location_on_map():
 
 # open/close almanac
 func _input(event):
-	if !is_animating_almanac and event.is_action_pressed("almanac"):
+	if !is_animating_almanac and event.is_action_pressed("almanac") and is_instance_valid(GM.doni):
+		GM.doni.can_move = false
 		is_almanac_open = !is_almanac_open
 		if is_almanac_open:
 			# opening almanac
@@ -58,4 +59,5 @@ func _done_animating_almanac(useless):
 			)
 	else:
 		almanac_3d.visible = false
+		GM.doni.can_move = true
 		

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=4 format=3 uid="uid://c0wapcou1i45a"]
 
 [ext_resource type="FontFile" uid="uid://cd6yx7xpxsq44" path="res://assets/fonts/trebucbd.ttf" id="1_kjaf4"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
+[ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -9,15 +11,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nl1jw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 123.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+tabs_visible = false
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title Screen" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Title Screen"]
 custom_minimum_size = Vector2(0, 361.74)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_kjaf4")
@@ -27,11 +38,11 @@ WITH MAS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Title Screen"]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
 custom_minimum_size = Vector2(183.49, 88.165)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -39,11 +50,11 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Button" type="Button" parent="TabContainer/Title Screen/HBoxContainer/MarginContainer"]
 layout_mode = 2
 text = "CREDITS"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="Play" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
 custom_minimum_size = Vector2(183.49, 88.165)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -51,11 +62,11 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="PlayButton" type="Button" parent="TabContainer/Title Screen/HBoxContainer/Play"]
 layout_mode = 2
 text = "PLAY"
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
 custom_minimum_size = Vector2(183.49, 88.165)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -63,6 +74,50 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer3"]
+[node name="Button" type="Button" parent="TabContainer/Title Screen/HBoxContainer/MarginContainer3"]
 layout_mode = 2
 text = "SETTINGS"
+
+[node name="Load Game" type="MarginContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("3_rj21a")
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Load Game"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button1" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "level: 2, collection: 6"
+
+[node name="Button2" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "level: 2, collection: 6"
+
+[node name="Button3" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "..."
+
+[node name="Button4" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "..."
+
+[node name="Button5" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "..."
+
+[node name="Button6" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "..."
+
+[connection signal="pressed" from="TabContainer/Title Screen/HBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]

@@ -21,9 +21,11 @@ func _process(delta):
 			
 			collider.scan_progress += delta;
 		else:
-			$Tip.visible = false
+			$Tip.visible = true
 			if is_instance_valid(collider):
 				collider.scan_progress = 0
+			
+			$Tip.global_position = owner.owner.get_mouse_location_on_map()
 	else:
 		$Tip.visible = false
 		if is_instance_valid(collider):

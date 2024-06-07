@@ -106,6 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374725, 0, 0)
 shape = SubResource("BoxShape3D_75lc6")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0246, 18.6767, 11.27)
 size = 13.612
 script = ExtResource("3_hlgta")
