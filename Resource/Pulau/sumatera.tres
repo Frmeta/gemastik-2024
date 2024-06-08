@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="pulau" load_steps=3 format=3 uid="uid://dotyuieb0aurl"]
 
-[ext_resource type="Texture2D" uid="uid://hlkmy73hyj6a" path="res://assets/pulau/Sulawesi.png" id="1_8y41j"]
+[ext_resource type="Texture2D" uid="uid://gym0xug43ecu" path="res://assets/pulau/Sumatera.png" id="1_f0lh8"]
 [ext_resource type="Script" path="res://Scripts/pulau.gd" id="2_lokcl"]
 
 [resource]
 script = ExtResource("2_lokcl")
-nama = "Kalimantan"
-gambar = ExtResource("1_8y41j")
+nama = "Sumatera"
+gambar = ExtResource("1_f0lh8")
 hewanss = Array[Resource("res://Scripts/hewans.gd")]([])
