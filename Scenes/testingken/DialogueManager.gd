@@ -6,9 +6,10 @@ func _ready():
 	EventDistributor.connect("start_dialogue",load_dialog)
 
 func load_dialog(file_path): #File path ini dapet dari DialogueEnum
+	print(file_path)
 	textbox.visible=true
 	if FileAccess.file_exists(file_path):
-		
+		print(file_path+" exist")
 		var dataFile = FileAccess.open(file_path, FileAccess.READ)
 		var parsedFile = JSON.parse_string(dataFile.get_as_text())
 		
@@ -18,7 +19,8 @@ func load_dialog(file_path): #File path ini dapet dari DialogueEnum
 				textbox.display_line(line["nama"], line["dialogue"], line["emosi"])
 				await textbox.go_to_next_line
 				print("go to next line")
-			visible=false
+			textbox.visible=false
+			EventDistributor.emit_signal("end_dialogue")
 		else:
 			print("error")
 			print(parsedFile)

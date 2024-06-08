@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwoexpj5w62e"]
+
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_82drb"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_t48s8"]
+
+[node name="tutorial" type="CanvasLayer"]
+script = ExtResource("1_82drb")
+
+[node name="pointer" type="Sprite2D" parent="."]
+texture = ExtResource("2_t48s8")

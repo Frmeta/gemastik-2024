@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsweu3a57bm30"]
+
+[ext_resource type="Script" path="res://Scenes/testingken/canvas_with_node.gd" id="1_ahh1c"]
+[ext_resource type="Script" path="res://Scenes/testingken/Panel.gd" id="1_fuh6t"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="4_hwjk1"]
+[ext_resource type="PackedScene" uid="uid://jwoexpj5w62e" path="res://Scenes/testingken/tutorial.tscn" id="4_m4c3u"]
+
+[node name="CanvasWithNode" type="CanvasLayer"]
+script = ExtResource("1_ahh1c")
+
+[node name="tutorial" parent="." instance=ExtResource("4_m4c3u")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 448.0
+offset_top = 66.0
+offset_right = 488.0
+offset_bottom = 106.0
+script = ExtResource("1_fuh6t")
+file_path = "panel1_tutorial.json"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "panel1"
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 92.0
+offset_top = 182.0
+offset_right = 132.0
+offset_bottom = 222.0
+script = ExtResource("1_fuh6t")
+file_path = "panel2_tutorial.json"
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "panel2"
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 281.0
+offset_top = 256.0
+offset_right = 321.0
+offset_bottom = 296.0
+script = ExtResource("1_fuh6t")
+file_path = "panel3_tutorial.json"
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "panel3"
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 258.0
+offset_top = 124.0
+offset_right = 298.0
+offset_bottom = 164.0
+script = ExtResource("1_fuh6t")
+file_path = "panel4_tutorial.json"
+
+[node name="Label" type="Label" parent="Panel4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "panel4"
+
+[node name="DialogueManager" parent="." instance=ExtResource("4_hwjk1")]
