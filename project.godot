@@ -63,3 +63,4 @@ down={
 3d_physics/layer_3="BackgroundWall"
 3d_physics/layer_4="Animal"
 3d_physics/layer_5="Vines"
+3d_physics/layer_6="platform"

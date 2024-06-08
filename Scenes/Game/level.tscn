@@ -491,7 +491,7 @@ event = "despawn_mas"
 
 [node name="Player" parent="." instance=ExtResource("8_fve8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.722, 16.3432, -3.8147e-06)
-collision_mask = 2
+collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("9_dfmhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -523,8 +523,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05303, 2.4528, 0)
 
 [node name="Node3D" type="CharacterBody3D" parent="movingplatform"]
 transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972652, 0, -0.038905)
-collision_layer = 2
-collision_mask = 0
+collision_layer = 32
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="movingplatform/Node3D"]
 shape = SubResource("BoxShape3D_cd4oc")
