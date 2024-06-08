@@ -95,29 +95,119 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "level: 2, collection: 6"
 
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
+
 [node name="Button2" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "level: 2, collection: 6"
+
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
 
 [node name="Button3" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "..."
 
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
+
 [node name="Button4" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "..."
+
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
 
 [node name="Button5" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "..."
 
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
+
 [node name="Button6" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "..."
+
+[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button6"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -183.365
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "delete"
 
 [connection signal="pressed" from="TabContainer/Title Screen/HBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]

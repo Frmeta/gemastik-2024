@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_j071d"]
 [ext_resource type="ArrayMesh" uid="uid://dk02e3whj53qh" path="res://assets/testingken/grass_straw.obj" id="3_aqade"]
 [ext_resource type="Shader" uid="uid://r430xuiofape" path="res://assets/testingken/grass.tres" id="4_gymtc"]
-[ext_resource type="PackedScene" path="res://Scenes/testingken/grass_pixel.tscn" id="5_66hwv"]
+[ext_resource type="PackedScene" uid="uid://8msymdjpscdc" path="res://Scenes/testingken/grass_pixel.tscn" id="5_66hwv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mfjkh"]
 

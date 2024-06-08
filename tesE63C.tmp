@@ -1,0 +1,72 @@
+[
+ {
+  "nama": "Doni",
+  "dialogue": "(stress, mental health, di kota terus)",
+  "emosi":"0"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "(tiba-tiba muncul) [!*#*@&*()#$&)($",
+  "emosi":"2"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "Apa ini?",
+  "emosi":"4"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "[LANGUAGE DETECTED] [INSTALLING PACKAGES] (jeda) Halo, kamu pasti Doni. Maaf tiba-tiba muncul di rumah anda",
+  "emosi":"3"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "Kamu siapa, keluar dari rumah saya!",
+  "emosi":"1"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "Oh maaf saya belum perkenalan. Perkenalkan saya Supportive Artificial Machine A.K.A SAM, robot asisten dari tahun 2099 yang dapat melayani Anda. Sepertinya karena suatu ketidaksengajaan saya terbawa ke waktu dan tempat ini. Apakah ada yang ingin saya bantu?",
+  "emosi":"4"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "Hah? Aku tidak butuh layanan. I'm fine.",
+  "emosi":"2"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "Iya kah? Menurut hasil analisis, kamu sedang mengalami depresi yang tinggi. Apakah karena masalah kesibukan?",
+  "emosi":"5"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "Apa? Hasil analisismu pasti salah",
+  "emosi":"1"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "[LOCATION DETECTED: INDONESIA] [NEGARA KEPULAUAN DI ASIA TENGGARA YANG DILINTASI GARIS KHATULISTIWA] Berdasarkan hasil analisisku kamu adalah rakyat Indonesia. Seharusnya kamu bangga karena biodiversitas Indonesia sangat tinggi. Lebih dari 477 spesies dan 255 diantaranya endemik.",
+  "emosi":"2"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "Ya kenyataannya tidak semua orang Indonesia merasakan manfaatnya, apalagi yang ada di daerah perkotaan. ",
+  "emosi":"1"
+ },
+ {
+  "nama": "mas",
+  "dialogue": "Kamu orang Indonesia tapi belum melihat keindahan Indonesia?",
+  "emosi":"3"
+ },
+ {
+  "nama": "Doni",
+  "dialogue": "..",
+  "emosi":"0"
+ },
+ {
+  "nama": "Sam",
+  "dialogue": "Sini ikuti aku. Aku akan membawamu keliling Indonesia",
+  "emosi":"2"
+ }
+]

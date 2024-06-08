@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://mtyncvkm77w7"]
+[gd_scene load_steps=9 format=3 uid="uid://mtyncvkm77w7"]
 
-[ext_resource type="Script" path="res://Scripts/Almanac.gd" id="1_oouox"]
 [ext_resource type="ArrayMesh" uid="uid://dtubbrq5ecwwa" path="res://3D Assets/Almanac/AlmanacMesh.tres" id="2_nxrjb"]
 
 [sub_resource type="Skin" id="Skin_3fmfm"]
@@ -2406,7 +2405,6 @@ _data = {
 }
 
 [node name="Almanac2" type="Node3D"]
-script = ExtResource("1_oouox")
 
 [node name="Almanac_Skeleton" type="Node3D" parent="."]
 
