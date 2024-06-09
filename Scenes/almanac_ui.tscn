@@ -1,6 +1,5 @@
 [gd_scene load_steps=21 format=3 uid="uid://da8h8buq1wyre"]
 
-[ext_resource type="Texture2D" uid="uid://b1l6xwbdxa122" path="res://3D Assets/Almanac/peta indo temp.jpg" id="1_b6pfo"]
 [ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_qvhgm"]
 [ext_resource type="Resource" uid="uid://ced3ccmk8mqe1" path="res://Resource/Pulau/kalimantan.tres" id="2_8k8ne"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_8o5us"]
@@ -16,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://hyhybg5ya00v" path="res://assets/fonts/IslandMoments-Regular.ttf" id="7_wj6jv"]
 [ext_resource type="Resource" uid="uid://dotyuieb0aurl" path="res://Resource/Pulau/sumatera.tres" id="8_5txxr"]
 [ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
+[ext_resource type="Texture2D" uid="uid://bxk6dx6dsiy02" path="res://assets/pulau/peta_indo.png" id="11_ahk21"]
 [ext_resource type="Script" path="res://Scenes/button_for_tutorial.gd" id="13_w2a43"]
 [ext_resource type="PackedScene" uid="uid://jwoexpj5w62e" path="res://Scenes/testingken/tutorial.tscn" id="17_5o755"]
 
@@ -178,11 +178,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 tabs_visible = false
 
 [node name="Halaman Peta Indo" type="Control" parent="PanelAlmanac/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Peta Indonesia" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
@@ -192,7 +190,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_b6pfo")
+texture = ExtResource("11_ahk21")
+expand_mode = 1
 
 [node name="TextureButton1" type="TextureButton" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
 layout_mode = 1
@@ -201,10 +200,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = 20.0
-offset_right = 46.0
-offset_bottom = 148.0
+offset_left = -96.0
+offset_top = -46.0
+offset_right = 32.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -218,10 +217,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 59.0
-offset_top = 185.0
-offset_right = 187.0
-offset_bottom = 313.0
+offset_left = 45.0
+offset_top = 119.0
+offset_right = 173.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -234,10 +233,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 167.0
-offset_top = 189.0
-offset_right = 295.0
-offset_bottom = 317.0
+offset_left = 153.0
+offset_top = 123.0
+offset_right = 281.0
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -250,10 +249,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 279.0
-offset_top = 57.0
-offset_right = 407.0
-offset_bottom = 185.0
+offset_left = 265.0
+offset_top = -9.0
+offset_right = 393.0
+offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -266,10 +265,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = 161.0
-offset_right = 13.0
-offset_bottom = 289.0
+offset_left = -129.0
+offset_top = 95.0
+offset_right = -1.0
+offset_bottom = 223.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -282,10 +281,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 93.0
-offset_top = 44.0
-offset_right = 221.0
-offset_bottom = 172.0
+offset_left = 79.0
+offset_top = -22.0
+offset_right = 207.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -298,16 +297,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = 81.0
-offset_right = -172.0
-offset_bottom = 209.0
+offset_left = -314.0
+offset_top = 15.0
+offset_right = -186.0
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_8o5us")
 
 [node name="Halaman Detail Pulau" type="Control" parent="PanelAlmanac/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Peta Pulau" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]

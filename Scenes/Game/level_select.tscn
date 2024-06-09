@@ -50,24 +50,25 @@ transform = Transform3D(0.987281, -0.150506, 0.0512234, 0, 0.322193, 0.946674, -
 transform = Transform3D(0.887679, 0.116279, -0.44554, 0.276606, 0.638897, 0.717843, 0.368124, -0.760453, 0.534972, 0, 7.20701, 0)
 
 [node name="Pin0" parent="." instance=ExtResource("4_bqhbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35364, 0, 0.189298)
 
 [node name="Pin1" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45816, 0, 3.38441)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26776, 0, 3.38441)
 
 [node name="Pin2" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41469, 0, 3.29601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40775, 0, 2.96654)
 
 [node name="Pin3" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92338, 0, 0.490527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69106, 0, 0.541204)
 
 [node name="Pin4" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11887, 0, 2.52449)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81175, 0, 2.66051)
 
 [node name="Pin5" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48509, 0, -0.371009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61643, 2.38419e-07, 0.748731)
 
 [node name="Pin6" parent="." instance=ExtResource("4_bqhbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.54056, 0, 0.33318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.67594, 2.38419e-07, 0.578881)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
