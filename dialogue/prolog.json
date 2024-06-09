@@ -1,0 +1,82 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"[!*#*@&*()#$&)($",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Apa yang terjadi?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[MANUSIA TERDETEKSI] [MENDETEKSI BAHASA]",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Halo, kamu pasti Doni. Maaf tiba-tiba muncul di rumah anda",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kamu siapa? Keluar dari rumah saya!",
+		"emosi":"1"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Oh maaf saya belum perkenalan. Perkenalkan saya Supportive Artificial Machine A.K.A MAS, robot asisten dari tahun 2099 yang dapat melayani Anda. Sepertinya karena suatu ketidaksengajaan saya terbawa ke waktu dan tempat ini. Apakah ada yang ingin saya bantu?",
+		"emosi":"3"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Hah? Aku baik-baik saja. Aku tidak butuh layanan.",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Iya kah? Menurut hasil analisis, kamu sedang mengalami depresi yang tinggi. Apakah karena MASalah kesibukan?",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Apa? Hasil analisismu pasti salah",
+		"emosi":"1"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[LOCATION DETECTED: INDONESIA] [NEGARA KEPULAUAN DI ASIA TENGGARA YANG DILINTASI GARIS KHATULISTIWA]",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Berdasarkan hasil analisisku kita berada di Indonesia. Seharusnya kamu bangga karena biodiversitas Indonesia sangat tinggi. Lebih dari 477 spesies dan 255 diantaranya endemik.",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ya kenyataannya tidak semua orang Indonesia merasakan manfaatnya, apalagi yang ada di daerah perkotaan.",
+		"emosi":"0"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kamu orang Indonesia tapi belum melihat keindahan Indonesia?",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Tidak ada waktu! Aku selalu sibuk dengan pekerjaan dan rutinitas sehari-hari. Liburan menjadi prioritas yang rendah.",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Sini ikuti aku. Aku akan membawamu keliling Indonesia",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Apa??!!",
+		"emosi":"1"
+	},
+]

@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"MAS, kenapa hewan ini diperangkap??",
+		"emosi":"1"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[SCANNING] menurut analisisku mereka tertangkap oleh perangkap yang dipasang karena hewan-hewan ini diincar karena kelangkaannya",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"WAH, Jahat sekali! Harus dilepaskan hewan ini",
+		"emosi":"1"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Lakukan dengan waspada...",
+		"emosi":"2"
+	},
+]

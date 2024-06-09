@@ -1,0 +1,18 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"MAS, kenapa hutan disini ditebang semua",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[SCANNING] alasannya karena manusia memerlukan lahan untuk terus memenuhi kebutuhannya, maka banyak dilakukan pembukaan lahan dengan cara menebang hutan yang ada",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"2",
+		"emosi":"Ooo.. begitu.. kasihan sekali pemandangan ini"
+	},
+	
+]

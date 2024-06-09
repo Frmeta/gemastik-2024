@@ -12,5 +12,13 @@ func emit(dir):
 	dust.process_material.set("direction", direction)
 	dust.set_emitting(true)
 
+func emit_while_jump():
+	print("in emit dust")
+	var direction = Vector3(0,1,0)
+	dust.process_material.set("direction", direction)
+	dust.set_emitting(true)
+	await get_tree().create_timer(0.14).timeout
+	dust.set_emitting(false)
+
 func stop_emit():
 	dust.set_emitting(false)

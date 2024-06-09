@@ -4,8 +4,9 @@ extends CanvasLayer
 
 func _ready():
 	EventDistributor.connect("start_dialogue",load_dialog)
+	EventDistributor.connect("start_dialogue_with_pulau",load_dialog)
 
-func load_dialog(file_path): #File path ini dapet dari DialogueEnum
+func load_dialog(file_path, nama_pulau:String="", fun_fact:String=""): #File path ini dapet dari DialogueEnum
 	textbox.visible=true
 	if FileAccess.file_exists(file_path):
 		var dataFile = FileAccess.open(file_path, FileAccess.READ)
@@ -13,6 +14,10 @@ func load_dialog(file_path): #File path ini dapet dari DialogueEnum
 		
 		if parsedFile is Array:
 			for line in parsedFile:
+				if nama_pulau!="" and "{pulau}" in line["dialogue"]:
+					line["dialogue"] = line["dialogue"].replace("{pulau}", nama_pulau)
+					line["dialogue"] = line["dialogue"].replace("{fun fact}", fun_fact)
+		
 				line["dialogue"] = fix_length(line["dialogue"])
 				textbox.display_line(line["nama"], line["dialogue"], line["emosi"])
 				await textbox.go_to_next_line
