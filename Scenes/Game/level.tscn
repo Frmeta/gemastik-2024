@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=28 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -32,8 +32,6 @@ size = Vector3(3, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
 size = Vector3(3, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_fniyc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cd4oc"]
 size = Vector3(3, 0.2, 3)
@@ -496,11 +494,6 @@ focus_mode = 0
 text = "despawn"
 script = ExtResource("7_tdkyn")
 event = "despawn_mas"
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2456, 4.86464, -3.8147e-06)
-mesh = SubResource("BoxMesh_fniyc")
-skeleton = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("8_fve8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60404, 5.94997, -3.8147e-06)
