@@ -117,6 +117,7 @@ func _physics_process(delta):
 			if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
 				# jump on the air
 				curr_jumps += 1
+			$walkdust.emit_while_jump()
 			_last_jump_pressed = 0
 			_last_on_ground = 0
 			velocity.y = JUMP_POWER
@@ -213,7 +214,6 @@ func _physics_process(delta):
 	else:
 		animTree.set("parameters/Platformer/conditions/is_floating", true)
 		animTree.set("parameters/Platformer/conditions/is_not_floating", false)
-		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		model3d.scale = Vector3.ONE
