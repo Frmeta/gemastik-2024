@@ -133,7 +133,11 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_ny14b"]
+<<<<<<< HEAD
+image = SubResource("Image_lbt5u")
+=======
 image = SubResource("Image_pu7je")
+>>>>>>> 7daf973c442338f15aa4735594157e1f8a501890
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u874"]
 size = Vector3(1.8493, 1.7865, 1.74854)

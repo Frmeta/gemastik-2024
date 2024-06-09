@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwj54hn7mexrm"]
 
-[ext_resource type="MeshLibrary" uid="uid://cakc1vfr7foiy" path="res://Tilemap/tilemap_nature.tres" id="1_63l2i"]
+[ext_resource type="MeshLibrary" uid="uid://b0qkho5o4yuv0" path="res://Tilemap/tilemap_nature5.tres" id="1_frrim"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cd4oc"]
 size = Vector3(3, 0.2, 3)
@@ -64,16 +64,17 @@ transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 0.266642, 0)
 shape = SubResource("BoxShape3D_cd4oc")
 
 [node name="GridMap" type="GridMap" parent="Node3D"]
-transform = Transform3D(1, 0, -1.27898e-13, 0, 1, 0, 0, 0, 1, 0, -1.9129, 0)
-mesh_library = ExtResource("1_63l2i")
-collision_layer = 2
+transform = Transform3D(1.63384, 0, -3.12639e-13, 0, 1, 0, 9.9476e-14, 0, 1.4368, -1.49687, -1.68575, 1.05047)
+mesh_library = ExtResource("1_frrim")
+collision_layer = 32
 data = {
-"cells": PackedInt32Array(65535, 0, 1, 65535, 65535, 1, 0, 65535, 1, 0, 0, 1)
+"cells": PackedInt32Array(0, 65535, 0)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0)

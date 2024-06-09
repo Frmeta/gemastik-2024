@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=23 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
