@@ -214,6 +214,7 @@ func _physics_process(delta):
 	else:
 		animTree.set("parameters/Platformer/conditions/is_floating", true)
 		animTree.set("parameters/Platformer/conditions/is_not_floating", false)
+		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		model3d.scale = Vector3.ONE

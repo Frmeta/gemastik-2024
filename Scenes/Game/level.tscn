@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=22 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -9,9 +9,8 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="7_tdkyn"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="8_fve8l"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="9_dfmhh"]
-[ext_resource type="MeshLibrary" uid="uid://b0qkho5o4yuv0" path="res://Tilemap/tilemap_nature5.tres" id="10_e8wde"]
+[ext_resource type="MeshLibrary" uid="uid://cp1av34a83sb4" path="res://Tilemap/tilemap_nature11.tres" id="10_3f4on"]
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Komodo/Komodo.tscn" id="11_46b62"]
-[ext_resource type="MeshLibrary" uid="uid://c7ioqwoo1geb4" path="res://Tilemap/tilemap_nature3.tres" id="11_l0o57"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="12_em3j0"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="13_x0dxi"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="14_2ntko"]
@@ -453,7 +452,7 @@ collision_mask = 34
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
 
 [node name="GridMapGround" type="GridMap" parent="."]
-mesh_library = ExtResource("10_e8wde")
+mesh_library = ExtResource("10_3f4on")
 cell_size = Vector3(1.2, 1.2, 1.2)
 collision_layer = 2
 collision_mask = 0
@@ -462,8 +461,8 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, -1)
 
-[node name="GridMapVines2" type="GridMap" parent="."]
-mesh_library = ExtResource("11_l0o57")
+[node name="GridMapVines" type="GridMap" parent="."]
+mesh_library = ExtResource("10_3f4on")
 cell_size = Vector3(1.2, 1.2, 1.2)
 collision_layer = 16
 data = {
