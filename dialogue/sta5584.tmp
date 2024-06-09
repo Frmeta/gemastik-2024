@@ -1,0 +1,12 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"Selamat datang di {pulau}! {fun fact}",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Semoga sukses eksplorasinya nya, dan jangan lupa bersenang-senang",
+		"emosi":"5"
+	},
+]

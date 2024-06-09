@@ -1,0 +1,219 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjcxo1nbsaqp7"]
+
+[ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_o34xh"]
+[ext_resource type="Texture2D" uid="uid://b1l6xwbdxa122" path="res://3D Assets/Almanac/peta indo temp.jpg" id="2_2cu7g"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="3_kku4f"]
+[ext_resource type="FontFile" uid="uid://ce7vydpxlj3e7" path="res://assets/fonts/Trebuchet-MS-Italic.ttf" id="4_38eq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htvh5"]
+bg_color = Color(0.921569, 0.831373, 0.733333, 0.980392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56c4h"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Almanac UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o34xh")
+
+[node name="PanelAlmanac" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -310.0
+offset_right = 440.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_htvh5")
+
+[node name="Halaman 1" type="Control" parent="PanelAlmanac"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peta Indonesia" type="TextureRect" parent="PanelAlmanac/Halaman 1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2cu7g")
+
+[node name="TextureButton" type="TextureButton" parent="PanelAlmanac/Halaman 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -47.0
+offset_right = -21.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_kku4f")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelAlmanac/Halaman 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 124.0
+offset_top = 121.0
+offset_right = 252.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_kku4f")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelAlmanac/Halaman 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 233.0
+offset_top = -117.0
+offset_right = 361.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_kku4f")
+
+[node name="Halaman 2" type="Control" parent="PanelAlmanac"]
+anchors_preset = 0
+offset_left = -205.0
+offset_top = -179.0
+offset_right = -165.0
+offset_bottom = -139.0
+
+[node name="TextureButton" type="TextureButton" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 187.0
+offset_right = 340.0
+offset_bottom = 315.0
+texture_normal = ExtResource("3_kku4f")
+
+[node name="Label" type="Label" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 258.0
+offset_right = 473.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_38eq2")
+text = "KALIMANTAN"
+
+[node name="Panel" type="Panel" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 340.0
+offset_right = 418.0
+offset_bottom = 440.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Panel2" type="Panel" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_left = 448.156
+offset_top = 404.423
+offset_right = 528.156
+offset_bottom = 504.423
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Panel3" type="Panel" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_left = 355.188
+offset_top = 522.692
+offset_right = 435.188
+offset_bottom = 622.692
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Hewan 1 info" type="Control" parent="PanelAlmanac/Halaman 2"]
+anchors_preset = 0
+offset_left = 401.0
+offset_top = 135.0
+offset_right = 441.0
+offset_bottom = 175.0
+scale = Vector2(1.25, 1.25)
+
+[node name="Panel8" type="Panel" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 104.8
+offset_right = 320.0
+offset_bottom = 204.8
+scale = Vector2(3.21451, 1.19216)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Label3" type="Label" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 324.8
+offset_top = 203.2
+offset_right = 416.8
+offset_bottom = 226.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_38eq2")
+text = "ORANGUTAN"
+
+[node name="Panel4" type="Panel" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 332.0
+offset_right = 324.0
+offset_bottom = 432.0
+scale = Vector2(3.21451, 1.19216)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Panel7" type="Panel" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 238.4
+offset_right = 452.0
+offset_bottom = 338.4
+scale = Vector2(1.52155, 0.752533)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Panel5" type="Panel" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 236.8
+offset_top = 240.0
+offset_right = 316.8
+offset_bottom = 340.0
+scale = Vector2(1.58478, 0.316815)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Panel6" type="Panel" parent="PanelAlmanac/Halaman 2/Hewan 1 info"]
+layout_mode = 0
+offset_left = 237.581
+offset_top = 280.2
+offset_right = 317.581
+offset_bottom = 380.2
+scale = Vector2(1.58478, 0.412815)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56c4h")
+
+[node name="Button" type="Button" parent="PanelAlmanac/Halaman 2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="PanelAlmanac/Halaman 1/TextureButton" to="." method="_ke_halaman_2" binds= [0]]
+[connection signal="pressed" from="PanelAlmanac/Halaman 2/TextureButton" to="." method="_ke_halaman_1"]

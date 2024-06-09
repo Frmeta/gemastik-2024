@@ -100,21 +100,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pg3r2")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_70i2l"]
-points = PackedVector3Array(1, 1, 0, 1, -1, 0, -1, 1, 0, -1, -1, 0)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_24gi4"]
+points = PackedVector3Array(-49.6912, 1.4188, 1.07316, -49.6912, 1.4188, -1.05717, -60.056, 1.29523, 1.07316, -59.7192, 0.922762, 1.19492, -25.4944, 1.24376, 1.19492, -0.0628738, 1.37955, 1.09128, -25.4944, 1.24376, -1.1787, -59.7192, 0.922762, -1.1787, -60.056, 1.29523, -1.05717, -0.0628738, 1.37955, -1.0753, -60.9415, 0.674744, 1.19492, 7.59529, 0.815472, 1.19515, 49.9646, 1.01784, 1.19492, 37.5669, 1.25161, 1.0081, 49.9646, 1.01784, -1.1787, -60.9415, 0.674744, -1.1787, 37.5669, 1.25161, -0.991878, -60.8791, 0.22988, 1.19492, 7.4082, 0.709635, 1.19515, 66.4658, -0.897108, 1.19492, 55.3403, 0.788431, 1.19492, 55.3403, 0.788431, -1.1787, -60.8791, 0.22988, -1.1787, -44.7147, -0.969507, 1.19492, 9.20425, -1.18031, 1.19492, 53.5692, -1.1713, 1.19492, 62.4372, -1.13524, 1.19492, -36.8195, -1.1742, 1.19492, 66.4658, -0.897108, -1.1787, -44.7147, -0.969507, -1.1787, -38.4535, -1.43385, 0.699514, -27.9141, -1.52457, 1.0081, -3.67992, -1.55161, 1.0081, -1.67184, -1.55161, 1.0081, 36.9183, -1.48939, 1.0081, 62.4372, -1.13524, -1.1787, -38.4535, -1.43385, -0.683296, -36.8195, -1.1742, -1.1787, -27.9141, -1.52457, -0.991878, -33.9509, -1.48386, 0.699514, -3.67992, -1.55161, -0.991878, -1.67184, -1.55161, -0.991878, 36.9183, -1.48939, -0.991878, 53.5692, -1.1713, -1.1787, -33.9509, -1.48386, -0.683296, 9.20425, -1.18031, -1.1787)
 
 [node name="Vines" type="Node3D"]
 
 [node name="Vines" type="MeshInstance3D" parent="."]
+skeleton = NodePath("")
+
+[node name="Vines" type="MeshInstance3D" parent="Vines"]
 transform = Transform3D(0.006, 0, 0, 0, 0.33, 0, 0, 0, 0.006, 0, 0.0184591, 0)
 mesh = SubResource("ArrayMesh_3xafc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Vines"]
-transform = Transform3D(166.667, 0, 0, 0, 3.0303, 0, 0, 0, 166.667, 0, -0.0559366, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Vines/Vines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0559366, 0)
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Vines/StaticBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_70i2l")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vines/Vines/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0559366, 0)
+shape = SubResource("ConvexPolygonShape3D_24gi4")

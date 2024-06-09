@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=29 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -9,11 +9,12 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="7_tdkyn"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="8_fve8l"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="9_dfmhh"]
-[ext_resource type="MeshLibrary" uid="uid://bq3ec3viswbva" path="res://Tilemap/tilemap_nature.tres" id="10_e8wde"]
-[ext_resource type="MeshLibrary" uid="uid://b0qkho5o4yuv0" path="res://Tilemap/tilemap_nature5.tres" id="10_ecmix"]
+[ext_resource type="MeshLibrary" uid="uid://b0qkho5o4yuv0" path="res://Tilemap/tilemap_nature5.tres" id="10_e8wde"]
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Komodo/Komodo.tscn" id="11_46b62"]
+[ext_resource type="MeshLibrary" uid="uid://c7ioqwoo1geb4" path="res://Tilemap/tilemap_nature3.tres" id="11_l0o57"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="12_em3j0"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="13_x0dxi"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="14_2ntko"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
@@ -503,13 +504,13 @@ skeleton = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("8_fve8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60404, 5.94997, -3.8147e-06)
-collision_mask = 2
+collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("9_dfmhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
 
 [node name="GridMapGround" type="GridMap" parent="."]
-mesh_library = ExtResource("10_ecmix")
+mesh_library = ExtResource("10_e8wde")
 cell_size = Vector3(1.2, 1.2, 1.2)
 collision_layer = 2
 collision_mask = 0
@@ -518,11 +519,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, -1)
 
-[node name="GridMapVines" type="GridMap" parent="."]
-mesh_library = ExtResource("10_e8wde")
+[node name="GridMapVines2" type="GridMap" parent="."]
+mesh_library = ExtResource("11_l0o57")
+cell_size = Vector3(1.2, 1.2, 1.2)
 collision_layer = 16
 data = {
-"cells": PackedInt32Array(589797, 65535, 2, 524261, 65535, 2, 458725, 65535, 2, 589792, 65535, 2, 655328, 65535, 2, 720864, 65535, 2, 786400, 65535, 2, 851936, 65535, 2, 917472, 65535, 2, 983008, 65535, 2, 1048544, 65535, 2, 1114080, 65535, 2, 327646, 65535, 2, 262110, 65535, 2, 196574, 65535, 2, 131038, 65535, 2, 65502, 65535, 2, -34, 65535, 2, -65570, 65535, 2, 196578, 65535, 2, 131042, 65535, 2, 65506, 65535, 2, -30, 65535, 2, -65566, 65535, 2)
+"cells": PackedInt32Array(458739, 65535, 2, 393203, 65535, 2, 327667, 65535, 2, 262131, 65535, 2, 196592, 65535, 2, 131056, 65535, 2, 65520, 65535, 2, -16, 65535, 2, -65552, 65535, 2, -131088, 65535, 2, 131050, 65535, 2, 65514, 65535, 2, -22, 65535, 2, 655335, 65535, 2, 589799, 65535, 2, 524263, 65535, 2, 458727, 65535, 2, 393191, 65535, 2, 327655, 65535, 2, 262119, 65535, 2, 196583, 65535, 2, 131047, 65535, 2, 65511, 65535, 2)
 }
 metadata/_editor_floor_ = Vector3(0, 0, -1)
 
@@ -536,8 +538,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05303, 2.4528, 0)
 
 [node name="Node3D" type="CharacterBody3D" parent="movingplatform"]
 transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972652, 0, -0.038905)
-collision_layer = 2
-collision_mask = 0
+collision_layer = 32
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="movingplatform/Node3D"]
 shape = SubResource("BoxShape3D_cd4oc")
@@ -567,6 +569,9 @@ speed_scale = 1.2
 
 [node name="Orang Utan" parent="." instance=ExtResource("13_x0dxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70478, 6.45148, 0.0812354)
+
+[node name="DialogueManager" parent="." instance=ExtResource("14_2ntko")]
+layer = 10
 
 [connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]

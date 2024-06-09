@@ -29,6 +29,9 @@ func _input(event):
 			almanac_3d.get_node("AnimationPlayer").play("Book_ShowOpen")
 			is_animating_almanac = true
 			
+			if not almanac_ui.has_done_tutorial:
+				almanac_ui.tutorial.start_tutorial()
+				almanac_ui.has_done_tutorial=true
 			
 			
 		else:

@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dk02e3whj53qh" path="res://assets/testingken/grass_straw.obj" id="4_xj4pb"]
 [ext_resource type="PackedScene" uid="uid://8msymdjpscdc" path="res://Scenes/testingken/grass_pixel.tscn" id="5_kguej"]
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="6_u1qq0"]
-[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="8_lbdv3"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="7_f2ex1"]
 [ext_resource type="Script" path="res://Scenes/testingken/dialogue_button.gd" id="9_prrm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ebyq"]
@@ -399,42 +399,15 @@ transform = Transform3D(-0.285831, 0.848042, 0.446234, -0.567675, -0.525006, 0.6
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_au0fg")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -21.5
-offset_bottom = 21.5
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Spawn mas"
-script = ExtResource("8_lbdv3")
-event = "spawn_mas"
-
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "Despawn"
-script = ExtResource("8_lbdv3")
-event = "despawn_mas"
-
-[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
 focus_mode = 0
-text = "Dialogue"
+text = "dialogue"
 script = ExtResource("9_prrm1")
 
 [node name="Player" type="Node3D" parent="."]
 
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer/VBoxContainer/Button2" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer/VBoxContainer/Button3" method="_on_button_up"]
+[node name="DialogueManager" parent="." instance=ExtResource("7_f2ex1")]
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

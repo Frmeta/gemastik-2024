@@ -1,0 +1,68 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Hah?? Apa yang baru saja terjadi?? Kamu membawaku kemana?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Selamat datang di Kalimantan! Paru-paru terbesar dunia kedua setelah hutan Amazon!!",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kenapa kamu membawaku ke sini",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Aku sudah melihat keseharianmu. Kamu butuh sekali-sekali healing. Jadi aku memutuskan untuk membawamu ke Kalimantan, tempat wisata paling indah di Indonesia. Di sini ada banyak hewan dan tanaman yang tentunya akan melepaskan beban pikiranmu.",
+		"emosi":"1"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Aku tidak boleh berada di sini. Aku punya pr, tugas! Aku pasti dicari keluargaku",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Tenang saja itu mudah, aku robot dari tahun masa depan mampu mengembalikanmu tepat setelah kamu menginggalkan rumah.",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kenapa di sini tidak ada orang?",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kamu sedang berada di tengah hutan. Jarak ke pemukiman penduduk terdekat adalah 50 kilometer.",
+		"emosi":"1"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Jadi kamu mau apakan aku sekarang",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Ini buku Almanac Indonesia. Seperti yang dapat dilihat, ada banyak bagian kosong yang perlu diisi. Tujuanmu adalah melengkapi informasi yang hilang tsb baru kemudian aku akan membawakanmu pulang.",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Bagaimana cara aku isi bagian tersebut? Di sini tidak ada internet untuk googling!",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Di hutan ini akan ada hewan yang menyambutmu! Ayo hampiri mereka! Aku akan memberikanmu alat scan. ",
+		"emosi":"6"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Baiklah, tapi setelah itu aku pulang ya!",
+		"emosi":"1"
+	},
+	
+]

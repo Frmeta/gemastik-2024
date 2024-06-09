@@ -1,0 +1,33 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"Doni... terima kasih sudah menyelamatkanku. Aku hampir saja mati",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Tidak apa-apa. Itu gunanya teman. Kenapa yah bisa ada hewan yang sejahat itu.",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[SCANNING ]Karena terkena banyak radiasi, pencemaran, polusi, dia menyerang manusia karena manusia menyakitinya. Ia tidak mempunyai pilihan lain. Jadi sebenarnya ini salah kita.",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Hmm.. berarti kita sebagai manusia harus peduli dengan lingkungan ya..",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Oke kembali ke topik awal, aku tadi hendak memulangkanmu. Apakah kamu siap pulang bertemu dengan keluargamu lagi?",
+		"emosi":"3"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ya. Aku siap",
+		"emosi":"5"
+	},
+	
+]

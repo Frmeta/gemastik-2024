@@ -8,16 +8,25 @@ var still_typing=false
 
 signal go_to_next_line()
 
-func display_line(nama, dialogue, emosi):
+func display_line(nama: String, dialogue:String, emosi, nama_pulau:String = "", fun_fact:String = ""):
 	still_typing=true
 	name_label.text = nama
 	dialogue_label.visible_ratio=0.0
 	dialogue_label.text=dialogue
-	
+		
 	var type_speed = 1.2 / dialogue.length()
 	
-	# TODO: Handle EMOSI
+	# Atur sprite emosi
+	if (nama.to_lower()=="doni"):
+		nama = nama.to_lower().capitalize()
+		emote.texture = _emosi_doni[int(emosi)]
+	elif (nama.to_lower()=="mas"):
+		nama = nama.to_upper()
+		emote.texture = _emosi_mas[int(emosi)]
+	elif (nama.to_lower()=="leviathan"):
+		emote.texture = _emosi_leviathan[int(emosi)]
 	
+	# Munculin karakter satu per satu
 	for char in dialogue:
 		dialogue_label.visible_ratio+=type_speed
 		await get_tree().create_timer(0.01).timeout
@@ -31,3 +40,23 @@ func _process(delta):
 		still_typing = false
 		await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
 		emit_signal("go_to_next_line")
+
+var _emosi_mas = {
+	2: load("res://assets/emosi/mas/mas2.png"),
+	3: load("res://assets/emosi/mas/mas3.png"),
+	4: load("res://assets/emosi/mas/mas4.png"),
+	5: load("res://assets/emosi/mas/mas5.png")
+}
+
+var _emosi_doni = {
+	0: load("res://assets/emosi/doni/doni0.png"),
+	1: load("res://assets/emosi/doni/doni1.png"),
+	2: load("res://assets/emosi/doni/doni2.png"),
+	3: load("res://assets/emosi/doni/doni3.png"),
+	4: load("res://assets/emosi/doni/doni4.png"),
+	5: load("res://assets/emosi/doni/doni5.png")
+}
+
+var _emosi_leviathan = {
+	0: load("res://icon.svg")
+}

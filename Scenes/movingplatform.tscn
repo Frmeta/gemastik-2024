@@ -54,9 +54,8 @@ _data = {
 [node name="movingplatform" type="Node3D"]
 
 [node name="Node3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972644, 0, -0.038905)
-collision_layer = 2
-collision_mask = 0
+transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972645, 0, -0.038905)
+collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
 shape = SubResource("BoxShape3D_cd4oc")
