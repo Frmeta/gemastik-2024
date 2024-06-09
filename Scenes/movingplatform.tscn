@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwj54hn7mexrm"]
+[gd_scene load_steps=9 format=3 uid="uid://cwj54hn7mexrm"]
+
+[ext_resource type="MeshLibrary" uid="uid://cakc1vfr7foiy" path="res://Tilemap/tilemap_nature.tres" id="1_63l2i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cd4oc"]
 size = Vector3(3, 0.2, 3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1mdm"]
+albedo_color = Color(0.698039, 0.784314, 0.396078, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_5f60b"]
+material = SubResource("StandardMaterial3D_r1mdm")
 size = Vector3(3, 0.2, 3)
 
 [sub_resource type="Curve3D" id="Curve3D_48tky"]
@@ -60,8 +66,18 @@ collision_layer = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
 shape = SubResource("BoxShape3D_cd4oc")
 
+[node name="GridMap" type="GridMap" parent="Node3D"]
+transform = Transform3D(1, 0, -1.27898e-13, 0, 1, 0, 0, 0, 1, 0, -1.9129, 0)
+mesh_library = ExtResource("1_63l2i")
+collision_layer = 2
+data = {
+"cells": PackedInt32Array(65535, 0, 1, 65535, 65535, 1, 0, 65535, 1, 0, 0, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47035e-08, 0, 0)
+transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_5f60b")
 skeleton = NodePath("../../Path3D/PathFollow3D")
 

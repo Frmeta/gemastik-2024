@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=22 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="12_em3j0"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="13_x0dxi"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="14_2ntko"]
+[ext_resource type="PackedScene" uid="uid://cwj54hn7mexrm" path="res://Scenes/movingplatform.tscn" id="15_h6dp4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
@@ -31,57 +32,6 @@ size = Vector3(3, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
 size = Vector3(3, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cd4oc"]
-size = Vector3(3, 0.2, 3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5f60b"]
-size = Vector3(3, 0.2, 3)
-
-[sub_resource type="Curve3D" id="Curve3D_toi71"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="Animation" id="Animation_xemhp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Path3D/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_t02ik"]
-resource_name = "move"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Path3D/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 2, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n210n"]
-_data = {
-"RESET": SubResource("Animation_xemhp"),
-"move": SubResource("Animation_t02ik")
-}
 
 [node name="level" type="Node3D"]
 script = ExtResource("1_apv7o")
@@ -521,45 +471,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22932, 0.41006, 0)
 
 [node name="Controls Hint" parent="." instance=ExtResource("12_em3j0")]
 
-[node name="movingplatform" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05303, 2.4528, 0)
-
-[node name="Node3D" type="CharacterBody3D" parent="movingplatform"]
-transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00972652, 0, -0.038905)
-collision_layer = 32
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="movingplatform/Node3D"]
-shape = SubResource("BoxShape3D_cd4oc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="movingplatform/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47035e-08, 0, 0)
-mesh = SubResource("BoxMesh_5f60b")
-skeleton = NodePath("../../Path3D/PathFollow3D")
-
-[node name="Path3D" type="Path3D" parent="movingplatform"]
-curve = SubResource("Curve3D_toi71")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="movingplatform/Path3D"]
-transform = Transform3D(-4.37069e-08, 0, -0.999899, 0, 1, 0, 0.999898, 0, -4.3707e-08, 0, 0, 0)
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="movingplatform/Path3D/PathFollow3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
-remote_path = NodePath("../../../Node3D")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="movingplatform"]
-root_node = NodePath("../Node3D")
-libraries = {
-"": SubResource("AnimationLibrary_n210n")
-}
-autoplay = "move"
-speed_scale = 1.2
-
 [node name="Orang Utan" parent="." instance=ExtResource("13_x0dxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70478, 6.45148, 0.0812354)
 
 [node name="DialogueManager" parent="." instance=ExtResource("14_2ntko")]
 layer = 10
+
+[node name="movingplatform" parent="." instance=ExtResource("15_h6dp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48906, 3.35671, 0)
 
 [connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]
