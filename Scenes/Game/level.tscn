@@ -469,6 +469,9 @@ metadata/_editor_floor_ = Vector3(0, 0, -1)
 [node name="Komodo" parent="." instance=ExtResource("11_46b62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22932, 0.41006, 0)
 
+[node name="movingplatform" parent="." instance=ExtResource("15_h6dp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48906, 3.35671, 0)
+
 [node name="Controls Hint" parent="." instance=ExtResource("12_em3j0")]
 
 [node name="Orang Utan" parent="." instance=ExtResource("13_x0dxi")]
@@ -476,9 +479,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70478, 6.45148, 0.0812354)
 
 [node name="DialogueManager" parent="." instance=ExtResource("14_2ntko")]
 layer = 10
-
-[node name="movingplatform" parent="." instance=ExtResource("15_h6dp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48906, 3.35671, 0)
 
 [connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]
