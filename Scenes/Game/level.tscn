@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=27 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Komodo/Komodo.tscn" id="11_46b62"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="12_em3j0"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="13_x0dxi"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="14_2ntko"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
@@ -556,6 +557,9 @@ speed_scale = 1.2
 
 [node name="Orang Utan" parent="." instance=ExtResource("13_x0dxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70478, 6.45148, 0.0812354)
+
+[node name="DialogueManager" parent="." instance=ExtResource("14_2ntko")]
+layer = 10
 
 [connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]

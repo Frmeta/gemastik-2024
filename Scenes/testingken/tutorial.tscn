@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_t48s8"]
 
 [node name="tutorial" type="CanvasLayer"]
+layer = 10
+visible = false
 script = ExtResource("1_82drb")
 
 [node name="pointer" type="Sprite2D" parent="."]

@@ -21,7 +21,6 @@ func display_line(nama: String, dialogue, emosi):
 		emote.texture = emosi_doni[int(emosi)]
 	print(nama)
 	if (nama.to_lower()=="mas"):
-		print("ini mas ngomong")
 		emote.texture = emosi_mas[int(emosi)]
 	
 	for char in dialogue:

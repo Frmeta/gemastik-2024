@@ -1,13 +1,24 @@
 extends Control
 
 @onready var tab = $PanelAlmanac/TabContainer
+@onready var tutorial = $tutorial
 
 @export var pulau_list : Array[pulau] = []
 
+@export var has_done_tutorial = false
+
 func _ready():
+	if tutorial.can_tutorial:
+		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
+			if n is TextureButton:
+				n.disabled=true
+		tutorial.add_subs(self, DialogueEnum.TUTORIAL_AWAL, get_viewport_rect().size/2)
+		tutorial.add_subs(self, DialogueEnum.TUTORIAL_PETA, get_viewport_rect().size/2)
+		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1", DialogueEnum.TUTORIAL_TEKANX,null,"click")
+		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/Peta Pulau", DialogueEnum.TUTORIAL_LIHAT_GAMBAR_KIRI)
+		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0", DialogueEnum.TUTORIAL_TEKAN_GAMBAR_KIRI, null, "click")
+		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/BackButton", DialogueEnum.TUTORIAL_DONE)
 	_ke_halaman_1()
-	
-	
 
 func _ke_halaman_2(area_number):
 	# area_number dari kalimantan adalah 0
@@ -26,13 +37,13 @@ func _ke_halaman_2(area_number):
 			var hewan = hewanss[i]
 			var texture_rect = btn.get_node("Panel1/MarginContainer/Panel2/TextureRect")
 			
-			
 			# when pressed
 			
 			# disconnect existing signals
 			var signals = btn.get_signal_connection_list("pressed");
 			if signals:
 				for cur_conn in signals:
+					print(cur_conn.callable)
 					btn.disconnect("pressed", cur_conn.callable)
 			
 			# connect new signal
@@ -50,8 +61,7 @@ func _ke_halaman_2(area_number):
 		else:
 			# hide button
 			get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i)).hide()
-		
-		
+
 func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool):
 	if has_been_scanned:
 		$"PanelAlmanac/Hewan Info/Foto Asli/TextureRect".texture = hewan.foto_asli

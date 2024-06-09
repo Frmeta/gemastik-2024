@@ -7,6 +7,8 @@ signal despawn_mas()
 signal start_dialogue(file_path)
 signal end_dialogue()
 
+signal button_clicked_on_tutorial()
+
 signal new_checkpoint(instance)
 signal animal_captured()
 

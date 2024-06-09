@@ -6,5 +6,6 @@ func _ready():
 	$tutorial.add_subs($Panel, "res://Scenes/testingken/panel1_tutorial.json")
 	$tutorial.add_subs($Panel2, "res://Scenes/testingken/panel2_tutorial.json")
 	$tutorial.add_subs($Panel3, "res://Scenes/testingken/panel3_tutorial.json")
+	$tutorial.add_subs(self, "res://Scenes/testingken/panel4_tutorial.json", get_viewport().size/2)
 	$tutorial.add_subs($Panel4, "res://Scenes/testingken/panel4_tutorial.json")
 	$tutorial.start_tutorial()

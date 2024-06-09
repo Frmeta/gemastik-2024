@@ -6,10 +6,8 @@ func _ready():
 	EventDistributor.connect("start_dialogue",load_dialog)
 
 func load_dialog(file_path): #File path ini dapet dari DialogueEnum
-	print(file_path)
 	textbox.visible=true
 	if FileAccess.file_exists(file_path):
-		print(file_path+" exist")
 		var dataFile = FileAccess.open(file_path, FileAccess.READ)
 		var parsedFile = JSON.parse_string(dataFile.get_as_text())
 		
