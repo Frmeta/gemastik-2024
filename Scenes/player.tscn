@@ -35,6 +35,7 @@ visible = false
 mesh = SubResource("SphereMesh_h45vj")
 
 [node name="walkdust" parent="." instance=ExtResource("3_k2m8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265448, 0)
 
 [node name="Grapling" parent="." instance=ExtResource("4_auomf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48366, 0)
