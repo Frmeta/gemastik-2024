@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var selected_level = null
+var selected_level = GM.explored_level
 
 func _process(delta):
 	var mouse_pos =  _get_mouse_position()

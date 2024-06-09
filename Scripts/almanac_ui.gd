@@ -41,9 +41,15 @@ func _ke_halaman_2(area_number):
 			if area_number < GM.explored_level or GM.scanned_animal.has(hewan.nama):
 				texture_rect.texture = hewan.foto_kartun
 				btn.connect("pressed", _lihat_info_hewan.bind(hewan, true))
+				if i==0:
+					_lihat_info_hewan(hewan, true)
 			else:
 				texture_rect.texture = hewan.foto_siluet
 				btn.connect("pressed", _lihat_info_hewan.bind(hewan, false))
+				if i==0:
+					_lihat_info_hewan(hewan, false)
+			
+			
 				
 			signals = btn.get_signal_connection_list("pressed");
 				

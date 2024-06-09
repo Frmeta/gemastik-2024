@@ -6,8 +6,8 @@ var smooth_speed = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	offset = transform.origin - player.transform.origin
+	#offset = transform.origin - player.transform.origin
+	offset = Vector3(0, 2.33, 11.3)
 
 var decay = 6
 # Called every frame. 'delta' is the elapsed time since the previous frame.

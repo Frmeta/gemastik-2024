@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=7 format=3 uid="uid://c0wapcou1i45a"]
 
-[ext_resource type="FontFile" uid="uid://cd6yx7xpxsq44" path="res://assets/fonts/trebucbd.ttf" id="1_kjaf4"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
+[ext_resource type="Texture2D" uid="uid://chxggmbgrrrqq" path="res://assets/Doni’s Adventure.png" id="2_d3a57"]
+[ext_resource type="Texture2D" uid="uid://dk4sgsvecpe27" path="res://assets/TV - 12.png" id="2_r6jo8"]
 [ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
+[ext_resource type="Texture2D" uid="uid://cogw304hhfci7" path="res://assets/with MAS.png" id="3_x3nih"]
+[ext_resource type="FontFile" uid="uid://ci4ykjlin7oe5" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -21,28 +24,66 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 tabs_visible = false
 
-[node name="Title Screen" type="VBoxContainer" parent="TabContainer"]
-visible = false
+[node name="Title Screen" type="Control" parent="TabContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Title Screen"]
-custom_minimum_size = Vector2(0, 361.74)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_kjaf4")
-theme_override_font_sizes/font_size = 51
-text = "DONI'S ADVENTURE
-WITH MAS"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="BG" type="TextureRect" parent="TabContainer/Title Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -59.0
+offset_right = 97.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_r6jo8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Title Screen"]
+[node name="Doni\'s Adventure" type="TextureRect" parent="TabContainer/Title Screen"]
 layout_mode = 2
+offset_left = 785.0
+offset_top = 332.0
+offset_right = 1384.0
+offset_bottom = 568.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_d3a57")
+
+[node name="with MAS" type="TextureRect" parent="TabContainer/Title Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 379.0
+offset_top = 31.0
+offset_right = 711.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_x3nih")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Title Screen"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 56.0
+offset_right = 639.0
+offset_bottom = -75.0
+grow_vertical = 2
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
+[node name="Play" type="MarginContainer" parent="TabContainer/Title Screen/VBoxContainer"]
 custom_minimum_size = Vector2(183.49, 88.165)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -50,11 +91,18 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Button" type="Button" parent="TabContainer/Title Screen/HBoxContainer/MarginContainer"]
+[node name="PlayButton" type="Button" parent="TabContainer/Title Screen/VBoxContainer/Play"]
 layout_mode = 2
-text = "CREDITS"
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 81
+text = "Start Game"
+flat = true
+alignment = 0
 
-[node name="Play" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="TabContainer/Title Screen/VBoxContainer"]
 custom_minimum_size = Vector2(183.49, 88.165)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -62,23 +110,19 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="PlayButton" type="Button" parent="TabContainer/Title Screen/HBoxContainer/Play"]
+[node name="Credits" type="Button" parent="TabContainer/Title Screen/VBoxContainer/MarginContainer3"]
 layout_mode = 2
-text = "PLAY"
-
-[node name="MarginContainer3" type="MarginContainer" parent="TabContainer/Title Screen/HBoxContainer"]
-custom_minimum_size = Vector2(183.49, 88.165)
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="Button" type="Button" parent="TabContainer/Title Screen/HBoxContainer/MarginContainer3"]
-layout_mode = 2
-text = "SETTINGS"
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 81
+text = "Credits"
+flat = true
+alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -210,4 +254,4 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "delete"
 
-[connection signal="pressed" from="TabContainer/Title Screen/HBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
