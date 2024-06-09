@@ -109,7 +109,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_laytn")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u874"]
-size = Vector3(1.8493, 1.58847, 1.68726)
+size = Vector3(1.8493, 1.80733, 1.68726)
 
 [node name="TilemapNature" type="Node3D"]
 
@@ -128,6 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0159587, 0.0403589, -0.007
 shape = SubResource("BoxShape3D_ogqs6")
 
 [node name="Dirt Block" type="Node3D" parent="."]
+visible = false
 
 [node name="Dirt Block" type="MeshInstance3D" parent="Dirt Block"]
 mesh = SubResource("ArrayMesh_lgs6o")
@@ -138,7 +139,8 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dirt Block/Dirt Block/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875854, 0.0554351, 0.0110928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875854, 0.0581398, 0.0110928)
 shape = SubResource("BoxShape3D_2u874")
 
 [node name="Vines" parent="." instance=ExtResource("1_iv5ux")]
+visible = false

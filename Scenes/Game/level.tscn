@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=25 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="2_jmm8u"]
@@ -33,6 +33,17 @@ size = Vector3(3, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
 size = Vector3(3, 1, 1)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vri21"]
+
+[sub_resource type="Sky" id="Sky_6jrk8"]
+sky_material = SubResource("ProceduralSkyMaterial_vri21")
+
+[sub_resource type="Environment" id="Environment_f53pu"]
+background_mode = 2
+sky = SubResource("Sky_6jrk8")
+volumetric_fog_density = 0.02
+volumetric_fog_ambient_inject = 0.5
+
 [node name="level" type="Node3D"]
 script = ExtResource("1_apv7o")
 
@@ -63,7 +74,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0246, 18.6767, 11.27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
 current = true
 size = 13.612
 script = ExtResource("3_hlgta")
@@ -406,44 +417,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -39.9204, 0, 0)
 [node name="invisiblewall3" parent="Checkpoints" instance=ExtResource("6_xk2if")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -59.4924, 7.91789, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -201.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="ButtonSpawn" type="Button" parent="CanvasLayer"]
-offset_left = 21.0
-offset_top = 113.0
-offset_right = 80.0
-offset_bottom = 144.0
-focus_mode = 0
-text = "spawn"
-script = ExtResource("7_tdkyn")
-event = "spawn_mas"
-
-[node name="ButtonDespawn" type="Button" parent="CanvasLayer"]
-offset_left = 21.0
-offset_top = 153.0
-offset_right = 99.0
-offset_bottom = 184.0
-focus_mode = 0
-text = "despawn"
-script = ExtResource("7_tdkyn")
-event = "despawn_mas"
-
 [node name="Player" parent="." instance=ExtResource("8_fve8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60404, 5.94997, -3.8147e-06)
 collision_mask = 34
@@ -476,13 +449,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22932, -0.293279, 0)
 [node name="movingplatform" parent="." instance=ExtResource("15_h6dp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48906, 3.35671, 0)
 
-[node name="Controls Hint" parent="." instance=ExtResource("12_em3j0")]
-
 [node name="Orang Utan" parent="." instance=ExtResource("13_x0dxi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70478, 6.45148, 0.0812354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90706, 4.48307, 0.0812354)
+
+[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 144.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("7_tdkyn")
+event = "spawn_mas"
+
+[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 184.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("7_tdkyn")
+event = "despawn_mas"
+
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("12_em3j0")]
 
 [node name="DialogueManager" parent="." instance=ExtResource("14_2ntko")]
 layer = 10
 
-[connection signal="button_up" from="CanvasLayer/ButtonSpawn" to="CanvasLayer/ButtonSpawn" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayer/ButtonDespawn" to="CanvasLayer/ButtonDespawn" method="_on_button_up"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f53pu")
+
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var almanac_3d = $Camera3D/Almanac2
-@onready var almanac_ui = $"Controls Hint/Almanac"
+@onready var almanac_ui = $"CanvasLayerLevel/Almanac"
 
 var is_almanac_open = false
 var is_animating_almanac = false
