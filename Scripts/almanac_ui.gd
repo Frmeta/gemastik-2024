@@ -29,6 +29,7 @@ func _ready():
 	_ke_halaman_1()
 
 func _ke_halaman_2(area_number):
+	print(str(area_number) + " wer")
 	# area_number dari kalimantan adalah 0
 	tab.current_tab = 1
 	

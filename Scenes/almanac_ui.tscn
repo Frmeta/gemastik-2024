@@ -194,11 +194,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 tabs_visible = false
 
 [node name="Halaman Peta Indo" type="Control" parent="PanelAlmanac/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Peta Indonesia" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
@@ -260,6 +258,7 @@ offset_right = -154.0
 offset_bottom = 130.0
 
 [node name="Halaman Detail Pulau" type="Control" parent="PanelAlmanac/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Peta Pulau" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
@@ -338,6 +337,6 @@ offset_bottom = -11.0
 [node name="tutorial" parent="." instance=ExtResource("17_5o755")]
 process_mode = 3
 
-[connection signal="button_up" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" to="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" method="_on_pressed"]
+[connection signal="button_down" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" to="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" method="_on_pressed"]
 [connection signal="pressed" from="PanelAlmanac/TabContainer/Halaman Detail Pulau/BackButton" to="." method="_ke_halaman_1"]
 [connection signal="button_up" from="PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0" to="PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0" method="_on_pressed"]

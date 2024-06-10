@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0kfe4ssagx3e"]
+[gd_scene load_steps=7 format=3 uid="uid://b0kfe4ssagx3e"]
 
 [ext_resource type="Script" path="res://Scripts/invisiblewall.gd" id="1_7vk4t"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_08xs7"]
@@ -13,9 +13,11 @@ size = Vector2(1, 36)
 [sub_resource type="BoxShape3D" id="BoxShape3D_roodp"]
 size = Vector3(0.475098, 35.7822, 4.75696)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_seacm"]
+size = Vector3(6.64221, 35.4568, 5)
+
 [node name="invisiblewall" type="StaticBody3D"]
-collision_layer = 3
-collision_mask = 2
+collision_layer = 32
 script = ExtResource("1_7vk4t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -26,3 +28,12 @@ skeleton = NodePath("../CollisionShape3D")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.998, 0)
 shape = SubResource("BoxShape3D_roodp")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628235, 18.0651, 0)
+shape = SubResource("BoxShape3D_seacm")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

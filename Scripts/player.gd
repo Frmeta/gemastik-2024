@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 @onready var animTree := $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
 @onready var scan := $Scan

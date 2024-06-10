@@ -68,7 +68,7 @@ transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 0.266642, 0)
 shape = SubResource("BoxShape3D_cd4oc")
 
 [node name="GridMap" type="GridMap" parent="Node3D"]
-transform = Transform3D(1.63384, 0, -3.12639e-13, 0, 1, 0, 9.9476e-14, 0, 1.4368, -1.49687, -1.68575, 1.05047)
+transform = Transform3D(1.54158, 0, -4.9738e-13, 0, 1, 0, -4.26326e-14, 0, 1.47225, -1.57775, -1.68575, 1.45484)
 mesh_library = ExtResource("1_uyo4h")
 collision_layer = 32
 data = {

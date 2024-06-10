@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnfy6e77rgmpv"]
+
+[ext_resource type="Shader" path="res://hyperspace.gdshader" id="1_uo1qi"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_ipgul"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h81ma"]
+shader = ExtResource("1_uo1qi")
+shader_parameter/enabled = true
+
+[node name="hyperspace" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h81ma")
+scale = Vector2(7.63912, 3.08196)
+texture = ExtResource("2_ipgul")

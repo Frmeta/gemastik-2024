@@ -4,6 +4,8 @@ extends Node
 const FILES = {
 	DIALOGUE_TEST ="res://tes.json",
 	
+	OUT_OF_BOUND="res://dialogue/out-of-bound/out-of-bound.json",
+	
 	TUTORIAL_AWAL = "res://dialogue/tutorial/awal.json",
 	TUTORIAL_PETA = "res://dialogue/tutorial/peta.json",
 	TUTORIAL_TEKANX = "res://dialogue/tutorial/tekanx.json",
@@ -32,6 +34,8 @@ const TUTORIAL_TEKANX = FILES.TUTORIAL_TEKANX
 const TUTORIAL_LIHAT_GAMBAR_KIRI = FILES.TUTORIAL_LIHAT_GAMBAR_KIRI
 const TUTORIAL_TEKAN_GAMBAR_KIRI = FILES.TUTORIAL_TEKAN_GAMBAR_KIRI
 const TUTORIAL_DONE = FILES.TUTORIAL_DONE
+
+const OUT_OF_BOUND = FILES.OUT_OF_BOUND
 
 const PROLOGUE = FILES.PROLOGUE
 const KALIMANTAN = FILES.KALIMANTAN
