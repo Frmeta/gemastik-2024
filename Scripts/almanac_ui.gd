@@ -11,7 +11,7 @@ extends Control
 
 func _ready():
 	# tutorial stuff
-	if tutorial.can_tutorial:
+	if tutorial.can_tutorial and false:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
 			if n is TextureButton:
 				n.disabled=true
