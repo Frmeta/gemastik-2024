@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var pointer = $pointer
+@onready var pointer = $pointer_wrapper
 
 var node_pos = []
 var nodes = []
@@ -16,6 +16,7 @@ var ui_accept
 var almanac_input
 
 func start_tutorial():
+	await get_tree().create_timer(0.6).timeout
 	visible=true
 	ongoing=true
 	almanac_input = InputMap.action_get_events("almanac")

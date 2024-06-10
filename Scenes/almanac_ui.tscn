@@ -338,6 +338,6 @@ offset_bottom = -11.0
 [node name="tutorial" parent="." instance=ExtResource("17_5o755")]
 process_mode = 3
 
-[connection signal="button_up" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" to="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" method="_on_pressed"]
+[connection signal="button_down" from="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" to="PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1" method="_on_pressed"]
 [connection signal="pressed" from="PanelAlmanac/TabContainer/Halaman Detail Pulau/BackButton" to="." method="_ke_halaman_1"]
 [connection signal="button_up" from="PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0" to="PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0" method="_on_pressed"]
