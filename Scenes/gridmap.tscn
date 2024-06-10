@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://duyvocby7woox"]
 
-[ext_resource type="MeshLibrary" uid="uid://dnaym4bx1s5qb" path="res://Tilemap/tilemap_nature.tres" id="1_qxuvd"]
+[ext_resource type="MeshLibrary" uid="uid://cjura06nnosr6" path="res://Tilemap/tilemap_nature13.tres" id="1_8noht"]
 
 [node name="GridMapGround" type="GridMap"]
-mesh_library = ExtResource("1_qxuvd")
+mesh_library = ExtResource("1_8noht")
 cell_size = Vector3(1.3, 1.3, 1.3)
 collision_layer = 2
 collision_mask = 0

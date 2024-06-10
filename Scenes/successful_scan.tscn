@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dacpdrql7uaii"]
 
-[ext_resource type="Texture2D" uid="uid://dmn3ic1yoq5xh" path="res://Resource/foto/Kalimantan/orang_utan_kartun.png" id="1_3tykh"]
+[ext_resource type="Texture2D" uid="uid://dmn3ic1yoq5xh" path="res://Resource/Hewan/Kalimantan/orang_utan_kartun.png" id="1_3tykh"]
 [ext_resource type="Script" path="res://Scripts/successful_scan.gd" id="1_ujnyv"]
 [ext_resource type="FontFile" uid="uid://ci4ykjlin7oe5" path="res://assets/fonts/Itim-Regular.ttf" id="3_y6ux8"]
 [ext_resource type="Texture2D" uid="uid://cpx3h3vlykqcw" path="res://assets/shout.png" id="4_moc3s"]

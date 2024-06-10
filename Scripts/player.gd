@@ -123,7 +123,7 @@ func _physics_process(delta):
 		var is_jump_pressed = _last_jump_pressed + jump_buffer > Time.get_ticks_msec()
 		var from_ground = _last_on_ground + coyote_treshold > Time.get_ticks_msec()
 		var from_air = curr_jumps < max_jumps
-		if is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
+		if can_move and is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
 			if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
 				# jump on the air
 				curr_jumps += 1
@@ -140,19 +140,21 @@ func _physics_process(delta):
 				velocity.y -= gravity * delta
 	
 	# Move right or left
-	if can_move:
-		var input_x = Input.get_axis("move_left", "move_right")
-		if $Grapling.hooked:
-			velocity += Vector3(input_x * SPEED * delta , 0, 0)
-		elif input_x != 0:
-			if input_x > 0:
-				model3d.get_node("Player").rotation.y = deg_to_rad(40)
-			else:
-				model3d.get_node("Player").rotation.y = deg_to_rad(-40)
-			velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+	var input_x = Input.get_axis("move_left", "move_right")
+	if !can_move:
+		input_x = 0
+	
+	if $Grapling.hooked:
+		velocity += Vector3(input_x * SPEED * delta , 0, 0)
+	elif input_x != 0:
+		if input_x > 0:
+			model3d.get_node("Player").rotation.y = deg_to_rad(40)
 		else:
-			velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-			model3d.get_node("Player").rotation.y = 0
+			model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+	else:
+		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+		model3d.get_node("Player").rotation.y = 0
 
 		
 	
@@ -249,7 +251,7 @@ func _physics_process(delta):
 		is_climbing = false
 	
 	# respawn
-	if global_position.y < -30:
+	if global_position.y < -15:
 		global_position = GM.last_checkpoint_position
 		velocity = Vector3.ZERO
 

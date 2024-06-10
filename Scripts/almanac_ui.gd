@@ -9,9 +9,11 @@ extends Control
 
 @export var has_done_tutorial = false
 
+var area_number = 0
+
 func _ready():
 	# tutorial stuff
-	if tutorial.can_tutorial and false:
+	if tutorial.can_tutorial:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
 			if n is TextureButton:
 				n.disabled=true
@@ -28,11 +30,14 @@ func _ready():
 	
 	_ke_halaman_1()
 
-func _ke_halaman_2(area_number):
-	print(str(area_number) + " wer")
+func _ke_halaman_2(area_number_yoo):
 	# area_number dari kalimantan adalah 0
 	tab.current_tab = 1
+	area_number = area_number_yoo
+	refresh()
 	
+
+func refresh():
 	$"PanelAlmanac/TabContainer/Halaman Detail Pulau/Peta Pulau".texture = pulau_list[area_number].gambar
 	
 	var hewanss = pulau_list[area_number].hewanss
@@ -76,6 +81,7 @@ func _ke_halaman_2(area_number):
 		else:
 			# hide button
 			get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i)).hide()
+	
 
 func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool):
 	if has_been_scanned:

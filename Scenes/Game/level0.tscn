@@ -1,17 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=23 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_msnse"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_takr1"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_185gp"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_d6yhc"]
-[ext_resource type="MeshLibrary" uid="uid://dnaym4bx1s5qb" path="res://Tilemap/tilemap_nature.tres" id="7_7pyfm"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_skwrg"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap.tscn" id="7_tvddd"]
+[ext_resource type="MeshLibrary" uid="uid://cjura06nnosr6" path="res://Tilemap/tilemap_nature13.tres" id="8_f13b3"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_hvg63"]
-[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="12_hehfi"]
+[ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/Kalimantan/Bunglon/Bunglon.tscn" id="10_pyahg"]
+[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/Kalimantan/Orang Utan/OrangUtan.tscn" id="12_hehfi"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="13_fcgcr"]
+[ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan.tscn" id="13_h7pf3"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="14_4scld"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="15_lom7v"]
+[ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/Kalimantan/Kijang/Kijang.tscn" id="15_wu1cj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
@@ -382,8 +385,8 @@ data = {
 }
 
 [node name="GridMapVines" type="GridMap" parent="."]
-mesh_library = ExtResource("7_7pyfm")
-cell_size = Vector3(1.2, 1.2, 1.2)
+mesh_library = ExtResource("8_f13b3")
+cell_size = Vector3(1.3, 1.3, 1.3)
 collision_layer = 16
 data = {
 "cells": PackedInt32Array(458739, 65535, 2, 393203, 65535, 2, 327667, 65535, 2, 262131, 65535, 2, 196592, 65535, 2, 131056, 65535, 2, 65520, 65535, 2, -16, 65535, 2, -65552, 65535, 2, -131088, 65535, 2, 131050, 65535, 2, 65514, 65535, 2, -22, 65535, 2, 655335, 65535, 2, 589799, 65535, 2, 524263, 65535, 2, 458727, 65535, 2, 393191, 65535, 2, 327655, 65535, 2, 262119, 65535, 2, 196583, 65535, 2, 131047, 65535, 2, 65511, 65535, 2)
@@ -392,6 +395,9 @@ metadata/_editor_floor_ = Vector3(0, 0, -1)
 
 [node name="Orang Utan" parent="." instance=ExtResource("12_hehfi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1098, -0.164859, 0.0812335)
+
+[node name="Bunglon" parent="." instance=ExtResource("10_pyahg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47327, 0, 0)
 
 [node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
 
@@ -438,6 +444,12 @@ layer = 10
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f53pu")
+
+[node name="Bekantan" parent="." instance=ExtResource("13_h7pf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3719, 0.752558, -0.301669)
+
+[node name="Kijang" parent="." instance=ExtResource("15_wu1cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02746, 1.58662, -0.301669)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

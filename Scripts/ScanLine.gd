@@ -5,7 +5,8 @@ extends MeshInstance3D
 func _process(delta):
 	if $"../Tip".visible:
 		visible = true
-		var diff = $"../Tip".global_position - get_parent().global_position
+		# var diff = $"../Tip".global_position - get_parent().global_position
+		var diff = $"../RayCast3D".target_position
 		position =  diff/2
 		scale.y = diff.length()/2
 		
