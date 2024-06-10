@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwj54hn7mexrm"]
 
-[ext_resource type="MeshLibrary" uid="uid://b0qkho5o4yuv0" path="res://Tilemap/tilemap_nature5.tres" id="1_frrim"]
+[ext_resource type="MeshLibrary" uid="uid://cp1av34a83sb4" path="res://Tilemap/tilemap_nature11.tres" id="1_uyo4h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cd4oc"]
 size = Vector3(3, 0.2, 3)
@@ -69,7 +69,7 @@ shape = SubResource("BoxShape3D_cd4oc")
 
 [node name="GridMap" type="GridMap" parent="Node3D"]
 transform = Transform3D(1.63384, 0, -3.12639e-13, 0, 1, 0, 9.9476e-14, 0, 1.4368, -1.49687, -1.68575, 1.05047)
-mesh_library = ExtResource("1_frrim")
+mesh_library = ExtResource("1_uyo4h")
 collision_layer = 32
 data = {
 "cells": PackedInt32Array(0, 65535, 0)

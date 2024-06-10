@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://trs0ogdxh7bx"]
+[gd_scene load_steps=7 format=3 uid="uid://trs0ogdxh7bx"]
 
 [ext_resource type="Texture2D" uid="uid://dkyxxvydk64x5" path="res://assets/almanac2.png" id="1_g26vo"]
 [ext_resource type="Texture2D" uid="uid://cboimpo4akmtv" path="res://assets/grapling2.png" id="2_bwc6t"]
 [ext_resource type="Texture2D" uid="uid://b0u68jsooyx2m" path="res://assets/settings.png" id="2_tootk"]
 [ext_resource type="Texture2D" uid="uid://bt836ovhikbuw" path="res://assets/scanner2.png" id="3_1omli"]
 [ext_resource type="PackedScene" uid="uid://da8h8buq1wyre" path="res://Scenes/almanac_ui.tscn" id="5_p1ni8"]
+[ext_resource type="PackedScene" uid="uid://dacpdrql7uaii" path="res://Scenes/successful_scan.tscn" id="6_kjvoj"]
 
-[node name="Controls Hint" type="CanvasLayer"]
+[node name="CanvasLayerLevel" type="CanvasLayer"]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Controls Hint" type="MarginContainer" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -20,22 +21,22 @@ scale = Vector2(0.585, 0.585)
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_bottom = 60
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls Hint"]
 custom_minimum_size = Vector2(47.935, 59.955)
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="almanac" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="almanac" type="TextureRect" parent="Controls Hint/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("1_g26vo")
 stretch_mode = 2
 
-[node name="grappling" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="grappling" type="TextureRect" parent="Controls Hint/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_bwc6t")
 
-[node name="scanner" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="scanner" type="TextureRect" parent="Controls Hint/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("3_1omli")
@@ -50,3 +51,5 @@ scale = Vector2(0.035, 0.035)
 texture = ExtResource("2_tootk")
 
 [node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
+
+[node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]

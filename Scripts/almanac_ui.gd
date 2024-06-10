@@ -1,14 +1,17 @@
 extends Control
 
+
 @onready var tab = $PanelAlmanac/TabContainer
 @onready var tutorial = $tutorial
 
+@export var foto_tanda_tanya: Texture2D
 @export var pulau_list : Array[pulau] = []
 
 @export var has_done_tutorial = false
 
 func _ready():
-	if tutorial.can_tutorial:
+	# tutorial stuff
+	if tutorial.can_tutorial and false:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
 			if n is TextureButton:
 				n.disabled=true
@@ -18,6 +21,11 @@ func _ready():
 		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/Peta Pulau", DialogueEnum.TUTORIAL_LIHAT_GAMBAR_KIRI)
 		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton0", DialogueEnum.TUTORIAL_TEKAN_GAMBAR_KIRI, null, "click")
 		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Detail Pulau/BackButton", DialogueEnum.TUTORIAL_DONE)
+	
+	# setup singal for X button
+	for i in range(1, 8):
+		get_node("PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton" + str(i)).connect("pressed", _ke_halaman_2.bind(i-1))
+	
 	_ke_halaman_1()
 
 func _ke_halaman_2(area_number):
@@ -55,7 +63,7 @@ func _ke_halaman_2(area_number):
 				if i==0:
 					_lihat_info_hewan(hewan, true)
 			else:
-				texture_rect.texture = hewan.foto_siluet
+				texture_rect.texture = foto_tanda_tanya
 				btn.connect("pressed", _lihat_info_hewan.bind(hewan, false))
 				if i==0:
 					_lihat_info_hewan(hewan, false)

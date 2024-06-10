@@ -1,0 +1,443 @@
+[gd_scene load_steps=20 format=3 uid="uid://crrc6aakmruy8"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_msnse"]
+[ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_takr1"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="3_185gp"]
+[ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_d6yhc"]
+[ext_resource type="MeshLibrary" uid="uid://dnaym4bx1s5qb" path="res://Tilemap/tilemap_nature.tres" id="7_7pyfm"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_skwrg"]
+[ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap.tscn" id="7_tvddd"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_hvg63"]
+[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Orang Utan/OrangUtan.tscn" id="12_hehfi"]
+[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="13_fcgcr"]
+[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="14_4scld"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="15_lom7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sygdw"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n4r1"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vri21"]
+
+[sub_resource type="Sky" id="Sky_6jrk8"]
+sky_material = SubResource("ProceduralSkyMaterial_vri21")
+
+[sub_resource type="Environment" id="Environment_f53pu"]
+background_mode = 2
+sky = SubResource("Sky_6jrk8")
+volumetric_fog_density = 0.02
+volumetric_fog_ambient_inject = 0.5
+
+[node name="Level 0 (Kalimantan)" type="Node3D"]
+script = ExtResource("1_msnse")
+
+[node name="Mouse Position Locator" parent="." instance=ExtResource("2_takr1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.964557, -0.103103, 0.242896, 0, 0.920505, 0.390731, -0.263873, -0.376883, 0.88788, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
+current = true
+size = 13.612
+script = ExtResource("3_185gp")
+
+[node name="Almanac2" parent="Camera3D" instance=ExtResource("4_d6yhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
+visible = false
+
+[node name="Obstacle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0685, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle"]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48644, 3.92917, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D2"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D2"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3256, 7.80252, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D3"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D3"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3395, 11.2686, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D4"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D4"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21328, 18.2379, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D16"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D16"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D17" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9971, 15.42, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D17"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D17"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D18" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.553, 8.54, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D18"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D18"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2847, 12.6093, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D10"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D10"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D19" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9027, 10.8221, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D19"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D19"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D20" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9027, 10.8221, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D20"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D20"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81474, 3.28319, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D5"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D5"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4366, 6.11671, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D6"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D6"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29228, 7.51898, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D7"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D7"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27914, 10.1662, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D8"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D8"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D21" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.6342, 7.87393, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D21"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D21"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D22" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2054, 4.9306, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D22"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D22"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D23" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.499, 1.51953, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D23"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D23"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D24" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13952, 16.441, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D24"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D24"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D25" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3233, 5.18389, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D25"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D25"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D26" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5634, 4.756, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D26"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D26"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7024, 13.4677, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D9"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D9"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1975, 15.6665, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D11"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D11"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7638, 18.2412, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D12"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D12"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2929, 2.67953, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D13"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D13"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4992, 9.33124, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D14"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D14"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6329, 4.69848, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D15"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D15"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="Player" parent="." instance=ExtResource("7_skwrg")]
+collision_mask = 34
+
+[node name="skeleton_mas" parent="." instance=ExtResource("8_hvg63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
+
+[node name="GridMapGround" parent="." instance=ExtResource("7_tvddd")]
+data = {
+"cells": PackedInt32Array(-65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131071, 0, 0, -196611, 0, 1, -131075, 0, 1, -196610, 0, 1, -196609, 0, 1, -262144, 0, 1, -262143, 0, 1, -262142, 0, 1, -262141, 0, 1, -262140, 0, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196605, 0, 1, -196604, 0, 1, -196603, 0, 1, -196602, 0, 1, -262137, 0, 1, -196600, 0, 1, -196599, 0, 1, -196601, 0, 1, -196598, 0, 1, -196597, 0, 1, -196596, 0, 1, -131060, 0, 0, -131059, 0, 0, -131061, 0, 0, -65539, 65535, 0, -65538, 65535, 0, -65537, 65535, 0, -131072, 65535, 0, -131071, 65535, 0, -131070, 65535, 0, -131068, 65535, 0, -131067, 65535, 0, -131066, 65535, 0, -131065, 65535, 0, -131069, 65535, 0, -131064, 65535, 0, -131063, 65535, 0, -131062, 65535, 0, -262138, 0, 1, -262139, 0, 1, -262136, 0, 1, -262134, 0, 1, -262133, 0, 1, -262135, 0, 1, -262132, 0, 1, -262131, 0, 1, -196595, 0, 1, -196594, 0, 1, -262130, 0, 1, -262129, 0, 1, -196593, 0, 1, -196592, 0, 1, -262128, 0, 1, -262127, 0, 1, -196591, 0, 1, -196590, 0, 1, -196589, 0, 1, -262126, 0, 1, -262125, 0, 1, -196588, 0, 1, -262124, 0, 1, -327660, 0, 1, -196586, 0, 1, -262122, 0, 1, -262123, 0, 1, -196587, 0, 1, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131045, 0, 0, -131044, 0, 0, -131046, 0, 0, -65507, 0, 1, -131043, 0, 1, -131042, 0, 1, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 1, 65570, 0, 1, 131106, 0, 0, 131107, 0, 0, 131108, 0, 0, 131109, 0, 0, 131110, 0, 1, 196646, 0, 1, 262182, 0, 0, 262183, 0, 0, 262184, 0, 0, 262185, 0, 0, -65506, 0, 1, -65505, 0, 1, -65504, 0, 1, -65503, 0, 1, -65502, 0, 1, 65571, 0, 1, 65572, 0, 1, 36, 0, 1, 37, 0, 1, 65573, 0, 1, 65574, 0, 1, 196647, 0, 1, 196648, 0, 1, 196649, 0, 1441793, 131113, 0, 1, 65577, 0, 1, 65576, 0, 1, 65575, 0, 1, 39, 0, 1, 38, 0, 1, -65498, 0, 1, -65499, 0, 1, 131111, 0, 1, 131112, 0, 1, -65500, 0, 1, -65501, 0, 1, 35, 0, 1, 65584, 0, 1441793, 41, 0, 1, 40, 0, 1, -65496, 0, 1, -65497, 0, 1, 65578, 0, 1, 42, 0, 1, -65494, 0, 1441793, -65495, 0, 1, -131030, 0, 1, -131029, 0, 1, -131028, 0, 1, -131027, 0, 1441793, -131026, 0, 1441793, -131025, 0, 1, -131024, 0, 1, -131023, 0, 1441793, -131022, 0, 1441793, -131021, 0, 1441793, -131020, 0, 1441793, -131019, 0, 1, -131018, 0, 1, 48, 0, 1441793, -65488, 0, 1441793, -65482, 0, 1441793, 54, 0, 1441793, 65590, 0, 1441793, -131017, 0, 1441793, -131016, 0, 1441793, -131015, 0, 1441793, -131014, 0, 1441793, -131013, 0, 1441793, -131012, 0, 1441793, -65476, 0, 1441793, 60, 0, 1441793, 65596, 0, 1441793, 131132, 0, 1441793, 196668, 0, 1441793, 262204, 0, 1441793, 327740, 0, 1441793, 393276, 0, 1441793, 458812, 0, 1441793, 524349, 0, 1441793, 524350, 0, 1441793, 524351, 0, 1441793, 524352, 0, 1441793, 524353, 0, 1441793, 524354, 0, 1441793, 524355, 0, 1441793, 524356, 0, 1441793, 524358, 0, 1441793, 524357, 0, 1441793, 524359, 0, 1441793, 524360, 0, 1441793, 458824, 0, 1441793, 458825, 0, 1441793, 458826, 0, 1441793, 393290, 0, 1441793, 393291, 0, 1441793, 393292, 0, 1441793, 327756, 0, 1441793, 327757, 0, 1441793, 196650, 0, 1441793, 131114, 0, 1441793, 65579, 0, 1441793, 43, 0, 1441793, 44, 0, 1441793, -65492, 0, 1441793, -65491, 0, 1441793, -65493, 0, 1441793, -65490, 0, 1441793, -65487, 0, 1441793, 49, 0, 1441793, 65585, 0, 1441793, 131120, 0, 1441793, 196656, 0, 1441793, 196657, 0, 1441793, 262193, 0, 1441793, 262192, 0, 1441793, 196658, 0, 1441793, 131122, 0, 1441793, 131123, 0, 1441793, 131121, 0, 1441793, 131124, 0, 1441793, 65589, 0, 1441793, 53, 0, 1441793, -65483, 0, 1441793, -65484, 0, 1441793, -65485, 0, 1441793, 51, 0, 1441793, 50, 0, 1441793, 65586, 0, 1441793, 65587, 0, 1441793, 65588, 0, 1441793, 52, 0, 1441793, -65486, 0, 1441793, -65481, 0, 1441793, -65480, 0, 1441793, -65479, 0, 1441793, 57, 0, 1441793, 58, 0, 1441793, 65594, 0, 1441793, 65595, 0, 1441793, 131131, 0, 1441793, 59, 0, 1441793, -65477, 0, 1441793, -65478, 0, 1441793, 56, 0, 1441793, 458814, 0, 1441793, 393278, 0, 1441793, 393279, 0, 1441793, 458813, 0, 1441793, 327741, 0, 1441793, 196669, 0, 1441793, 262206, 0, 1441793, 327742, 0, 1441793, 458815, 0, 1441793, 458816, 0, 1441793, 262205, 0, 1441793, 327743, 0, 1441793, 55, 0, 1441793, 327728, 0, 1441793, 327729, 0, 1441793, 196655, 0, 1441793, 131119, 0, 1441793, 65583, 0, 1441793, 47, 0, 1441793, -65489, 0, 1441793, 46, 0, 1441793, 45, 0, 1441793, 262221, 0, 1441793, 196685, 0, 1441793, 131149, 0, 1441793, 65613, 0, 1441793, -65459, 0, 1441793, -130995, 0, 1441793, -196531, 0, 1441793, -262067, 0, 1441793, 77, 0, 1441793, -262059, 0, 1441793, -196523, 0, 1441793, -130987, 0, 1441793, -65451, 0, 1441793, 85, 0, 1441793, 65621, 0, 1441793, 131157, 0, 1441793, 196693, 0, 1441793, 262229, 0, 1441793, 262230, 0, 1441793, 327766, 0, 1441793, 327767, 0, 1441793, 393303, 0, 1441793, 393304, 0, 1441793, 393305, 0, 1441793, 458841, 0, 1441793, 458842, 0, 1441793, 524378, 0, 1441793, 524379, 0, 1441793, 524380, 0, 1441793, 524381, 0, 1441793, 524382, 0, 1441793, 524383, 0, 1441793, 524384, 0, 1441793, 458851, 0, 1441793, 393317, 0, 1441793, 393319, 0, 1441793, 393320, 0, 1441793, 327785, 0, 1441793, 327786, 0, 1441793, 393323, 0, 1441793, 393324, 0, 1441793, 458860, 0, 1441793, 458861, 0, 1441793, 458862, 0, 1441793, 458863, 0, 1441793, 458864, 0, 1441793, 458865, 0, 1441793, 458866, 0, 1441793, 458867, 0, 1441793, 458868, 0, 1441793, 524405, 0, 1441793, 524406, 0, 1441793, 524407, 0, 1441793, 589944, 0, 1441793, 589946, 0, 1441793, 589947, 0, 1441793, 524412, 0, 1441793, 524413, 0, 1441793, 524414, 0, 1441793, 589950, 0, 1441793, 655486, 0, 1441793, 655487, 0, 1441793, 655488, 0, 1441793, 589953, 0, 1441793, 589954, 0, 1441793, 524418, 0, 1441793, 524419, 0, 1441793, 524420, 0, 1441793, 524421, 0, 1441793, 524422, 0, 1441793, 524423, 0, 1441793, 524424, 0, 1441793, 524425, 0, 1441793, 524427, 0, 1441793, 524428, 0, 1441793, 458893, 0, 1441793, 458895, 0, 1441793, 458896, 0, 1441793, 458897, 0, 1441793, 458898, 0, 1441793, 458899, 0, 1441793, 589945, 0, 1441793, 393318, 0, 1441793, 458853, 0, 1441793, 458852, 0, 1441793, 524387, 0, 1441793, 524386, 0, 1441793, 524385, 0, 1441793, 524426, 0, 1441793, 458892, 0, 1441793, 393357, 0, 1441793, 393358, 0, 1441793, 393359, 0, 1441793, 393360, 0, 1441793, 393361, 0, 1441793, 458894, 0, 1441793, 393363, 0, 1441793, 393364, 0, 1441793, 393362, 0, 1441793, 327827, 0, 1441793, 327828, 0, 1441793, 262293, 0, 1441793, 262294, 0, 1441793, 262295, 0, 1441793, 262296, 0, 1441793, 196760, 0, 1441793, 196761, 0, 1441793, 196762, 0, 1441793, 196763, 0, 1441793, 196764, 0, 1441793, 262300, 0, 1441793, 262301, 0, 1441793, 327837, 0, 1441793, 393373, 0, 1441793, 458910, 0, 1441793, 524446, 0, 1441793, 589983, 0, 1441793, 655519, 0, 1441793, 721055, 0, 1441793, 786591, 0, 1441793, 852127, 0, 1441793, 917664, 0, 1441793, 917665, 0, 1441793, 917666, 0, 1441793, 917667, 0, 1441793, 917668, 0, 1441793, 852132, 0, 1441793, 786596, 0, 1441793, 786597, 0, 1441793, 721061, 0, 1441793, 655525, 0, 1441793, 589989, 0, 1441793, 524453, 0, 1441793, 524454, 0, 1441793, 524455, 0, 1441793, 524456, 0, 1441793, 589992, 0, 1441793, 589993, 0, 1441793, 655529, 0, 1441793, 655530, 0, 1441793, 655531, 0, 1441793, 655532, 0, 1441793, 655533, 0, 1441793, 655534, 0, 1441793, 589998, 0, 1441793, 589999, 0, 1441793, 590000, 0, 1441793, 524464, 0, 1441793, 524465, 0, 1441793, 524466, 0, 1441793, 524467, 0, 1441793, 458931, 0, 1441793, 458930, 0, 1441793, 393394, 0, 1441793, 393393, 0, 1441793, 393395, 0, 1441793, 393396, 0, 1441793, 327860, 0, 1441793, 262324, 0, 1441793, 196788, 0, 1441793, 196789, 0, 1441793, 196790, 0, 1441793, 196791, 0, 1441793, 196792, 0, 1441793, 196793, 0, 1441793, 196794, 0, 1441793, 196795, 0, 1441793, 196796, 0, 1441793, 196797, 0, 1441793, 196798, 0, 1441793, 262334, 0, 1441793, 262335, 0, 1441793, 327871, 0, 1441793, 393407, 0, 1441793, 458943, 0, 1441793, 458944, 0, 1441793, 458945, 0, 1441793, 458947, 0, 1441793, 458948, 0, 1441793, 458949, 0, 1441793, 393413, 0, 1441793, 393414, 0, 1441793, 393415, 0, 1441793, 393416, 0, 1441793, 393417, 0, 1441793, 393418, 0, 1441793, 393419, 0, 1441793, 393420, 0, 1441793, 327884, 0, 1441793, 327885, 0, 1441793, 262349, 0, 1441793, 262350, 0, 1441793, 262351, 0, 1441793, 262352, 0, 1441793, 262353, 0, 1441793, 262354, 0, 1441793, 262355, 0, 1441793, 262356, 0, 1441793, 262357, 0, 1441793, 262358, 0, 1441793, 262359, 0, 1441793, 327895, 0, 1441793, 458946, 0, 1441793, 327896, 0, 1441793, 327897, 0, 1441793, 262361, 0, 1441793, 196825, 0, 1441793, 196826, 0, 1441793, 131290, 0, 1441793, 65754, 0, 1441793, 65755, 0, 1441793, 219, 0, 1441793, -65317, 0, 1441793, -130853, 0, 1441793, -130854, 0, 1441793, -130816, 0, 1441793, -65280, 0, 1441793, 256, 0, 1441793, 65792, 0, 1441793, 65793, 0, 1441793, 131329, 0, 1441793, 196865, 0, 1441793, 262401, 0, 1441793, 262402, 0, 1441793, 327939, 0, 1441793, 327940, 0, 1441793, 327941, 0, 1441793, 327942, 0, 1441793, 327943, 0, 1441793, 327944, 0, 1441793, 327945, 0, 1441793, 327946, 0, 1441793, 327947, 0, 1441793, 327948, 0, 1441793, 327949, 0, 1441793, 327950, 0, 1441793, 327951, 0, 1441793, 327952, 0, 1441793, 327953, 0, 1441793, 327954, 0, 1441793, 393490, 0, 1441793, 393491, 0, 1441793, 393492, 0, 1441793, 393493, 0, 1441793, 393494, 0, 1441793, 393495, 0, 1441793, 393496, 0, 1441793, 393497, 0, 1441793, 459034, 0, 1441793, 459035, 0, 1441793, 459036, 0, 1441793, 459037, 0, 1441793, 459038, 0, 1441793, 459039, 0, 1441793, 459040, 0, 1441793, 459041, 0, 1441793, 459042, 0, 1441793, 459043, 0, 1441793, 459044, 0, 1441793, 459045, 0, 1441793, 459046, 0, 1441793, 459047, 0, 1441793, 459048, 0, 1441793, 459049, 0, 1441793, 393277, 0, 1441793, 393514, 0, 1441793, 393515, 0, 1441793, 393516, 0, 1441793, 393517, 0, 1441793, 327982, 0, 1441793, 327983, 0, 1441793, 327984, 0, 1441793, 327985, 0, 1441793, 327986, 0, 1441793, 327987, 0, 1441793, 327988, 0, 1441793, 327989, 0, 1441793, 327990, 0, 1441793, 327991, 0, 1441793, 327992, 0, 1441793, 327993, 0, 1441793, 262457, 0, 1441793, 262458, 0, 1441793, 262459, 0, 1441793, 262460, 0, 1441793, 262461, 0, 1441793, 196925, 0, 1441793, 131389, 0, 1441793, 65853, 0, 1441793, 65854, 0, 1441793, 317, 0, 1441793, 318, 0, 1441793, 131390, 0, 1441793, 131391, 0, 1441793, 131392, 0, 1441793, 131393, 0, 1441793, 131394, 0, 1441793, 196931, 0, 1441793, 196932, 0, 1441793, 262468, 0, 1441793, 262469, 0, 1441793, 328005, 0, 1441793, 328006, 0, 1441793, 393542, 0, 1441793, 393543, 0, 1441793, 393544, 0, 1441793, 459081, 0, 1441793, 459082, 0, 1441793, 459083, 0, 1441793, 459084, 0, 1441793, 524620, 0, 1441793, 524621, 0, 1441793, 524622, 0, 1441793, 524624, 0, 1441793, 524625, 0, 1441793, 524626, 0, 1441793, 524627, 0, 1441793, 524628, 0, 1441793, 524629, 0, 1441793, 524630, 0, 1441793, 459094, 0, 1441793, 459095, 0, 1441793, 459096, 0, 1441793, 459097, 0, 1441793, 393561, 0, 1441793, 328025, 0, 1441793, 524632, 0, 1441793, 590167, 0, 1441793, 590166, 0, 1441793, 590165, 0, 1441793, 590164, 0, 1441793, 590163, 0, 1441793, 590162, 0, 1441793, 590161, 0, 1441793, 590160, 0, 1441793, 590159, 0, 1441793, 524623, 0, 1441793, 524631, 0, 1441793, 393560, 0, 1441793, 328024, 0, 1441793, 328026, 0, 1441793, 262490, 0, 1441793, 262491, 0, 1441793, 196955, 0, 1441793, 262492, 0, 1441793, 262493, 0, 1441793, 262494, 0, 1441793, 262495, 0, 1441793, 262496, 0, 1441793, 262497, 0, 1441793)
+}
+
+[node name="GridMapVines" type="GridMap" parent="."]
+mesh_library = ExtResource("7_7pyfm")
+cell_size = Vector3(1.2, 1.2, 1.2)
+collision_layer = 16
+data = {
+"cells": PackedInt32Array(458739, 65535, 2, 393203, 65535, 2, 327667, 65535, 2, 262131, 65535, 2, 196592, 65535, 2, 131056, 65535, 2, 65520, 65535, 2, -16, 65535, 2, -65552, 65535, 2, -131088, 65535, 2, 131050, 65535, 2, 65514, 65535, 2, -22, 65535, 2, 655335, 65535, 2, 589799, 65535, 2, 524263, 65535, 2, 458727, 65535, 2, 393191, 65535, 2, 327655, 65535, 2, 262119, 65535, 2, 196583, 65535, 2, 131047, 65535, 2, 65511, 65535, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 0, -1)
+
+[node name="Orang Utan" parent="." instance=ExtResource("12_hehfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1098, -0.164859, 0.0812335)
+
+[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 144.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("13_fcgcr")
+event = "spawn_mas"
+
+[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 184.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("13_fcgcr")
+event = "despawn_mas"
+
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("14_4scld")]
+
+[node name="DialogueManager" parent="." instance=ExtResource("15_lom7v")]
+layer = 10
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f53pu")
+
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

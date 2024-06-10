@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgkd63i5h8obl"]
+
+[ext_resource type="Script" path="res://Scripts/RayCaster.gd" id="1_4ava0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75lc6"]
+size = Vector3(14.757, 1, 0.01)
+
+[node name="Mouse Position Locator" type="Node3D"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="RayCaster" type="CharacterBody3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_4ava0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RayCaster"]
+shape = SubResource("SphereShape3D_7lyb8")
+disabled = true
+
+[node name="BackgroundWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491048, 0, -0.00801668)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackgroundWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374725, 0, 0)
+shape = SubResource("BoxShape3D_75lc6")

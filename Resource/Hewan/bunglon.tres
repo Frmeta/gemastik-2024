@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=2 format=3 uid="uid://dtf1m2ols3pgr"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_cf4pk"]
+
+[resource]
+script = ExtResource("1_cf4pk")
+nama = "Bunglon"
+latin = "Bronchocela jubata"
+status = "Risiko Rendah (Stabil)"
+habitat = "semak-semak dan pepohonan di pinggiran hutan, kebun, atau pekarangan. "
+entry = "Seperti bunglon pada umumnya, jenis bunglon ini juga bisa merubah warna kulitnya. Tidak hanya saat terancam, perubahan warna tersebut juga dilakukan untuk berkomunikasi dan juga menarik pasangan."

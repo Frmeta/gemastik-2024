@@ -10,7 +10,7 @@ albedo_texture = ExtResource("1_gt7l0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_xwn0t"]
 material = SubResource("StandardMaterial3D_6b1b1")
-size = Vector2(25, 12)
+size = Vector2(25, 14)
 orientation = 1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ixxex"]

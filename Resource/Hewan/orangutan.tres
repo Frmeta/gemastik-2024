@@ -1,15 +1,13 @@
-[gd_resource type="Resource" script_class="hewans" load_steps=5 format=3 uid="uid://dm3ylo2y8e0ou"]
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://dm3ylo2y8e0ou"]
 
-[ext_resource type="Texture2D" uid="uid://bhqay1moayxy0" path="res://assets/Hewan/orangutan_asli.jpg" id="1_12g0y"]
-[ext_resource type="Texture2D" uid="uid://dyvrh2ii0ff58" path="res://assets/Hewan/orangutan.png" id="2_lesfv"]
-[ext_resource type="Texture2D" uid="uid://d2hgnkck0yo3f" path="res://assets/Hewan/orangutan_siluet.png" id="3_rf2hu"]
+[ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/foto/Kalimantan/orang_utan_kalimantan.png" id="1_cm5ej"]
+[ext_resource type="Texture2D" uid="uid://dmn3ic1yoq5xh" path="res://Resource/foto/Kalimantan/orang_utan_kartun.png" id="2_racim"]
 [ext_resource type="Script" path="res://Scripts/hewans.gd" id="4_ntdy5"]
 
 [resource]
 script = ExtResource("4_ntdy5")
-foto_siluet = ExtResource("3_rf2hu")
-foto_kartun = ExtResource("2_lesfv")
-foto_asli = ExtResource("1_12g0y")
+foto_kartun = ExtResource("2_racim")
+foto_asli = ExtResource("1_cm5ej")
 nama = "Orang Utan"
 latin = "Pongo pygmaeus"
 status = "sangat terancam punah"

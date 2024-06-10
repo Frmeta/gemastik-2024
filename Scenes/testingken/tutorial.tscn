@@ -9,4 +9,5 @@ visible = false
 script = ExtResource("1_82drb")
 
 [node name="pointer" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
 texture = ExtResource("2_t48s8")

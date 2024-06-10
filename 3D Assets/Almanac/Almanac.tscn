@@ -2635,6 +2635,7 @@ bones/31/rotation = Quaternion(1.76219e-24, -3.55271e-15, 1.58213e-23, 1)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="Almanac" type="MeshInstance3D" parent="Almanac_Skeleton/Skeleton3D"]
+cast_shadow = 0
 mesh = ExtResource("2_nxrjb")
 skin = SubResource("Skin_3fmfm")
 
