@@ -1139,4 +1139,5 @@ autoplay = "komodo_lib/Ko_Idle1"
 speed_scale = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027194, -0.040985, 0)
 shape = SubResource("SphereShape3D_wnwsm")
