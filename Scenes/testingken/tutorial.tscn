@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_82drb"]
 [ext_resource type="Texture2D" uid="uid://dvps4yybbaifj" path="res://assets/pointer_tutorial.png" id="2_c4x2v"]
 
-<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_yjiba"]
 length = 0.001
 tracks/0/type = "value"
@@ -19,8 +18,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-=======
->>>>>>> 73dc6671388b284b1a94c1179d1b313d3882d05e
 [sub_resource type="Animation" id="Animation_x0ya0"]
 resource_name = "pointer"
 loop_mode = 1
@@ -37,24 +34,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(3, 3), Vector2(-1, -1), Vector2(0, 0)]
 }
 
-<<<<<<< HEAD
-=======
-[sub_resource type="Animation" id="Animation_yjiba"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
->>>>>>> 73dc6671388b284b1a94c1179d1b313d3882d05e
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kb0c7"]
 _data = {
 "RESET": SubResource("Animation_yjiba"),
