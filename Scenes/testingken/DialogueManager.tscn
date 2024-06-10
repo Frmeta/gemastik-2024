@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqwyjgjf28l07" path="res://Scenes/textbox.tscn" id="2_k8ytu"]
 
 [node name="DialogueManager" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_o6sxf")
 
 [node name="textbox" parent="." instance=ExtResource("2_k8ytu")]
