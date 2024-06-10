@@ -11,6 +11,10 @@ func _process(delta):
 	a.next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
 	
 	if scan_progress >= 1:
+		scan_progress = 0
 		if !GM.scanned_animal.has(name):
 			GM.scanned_animal.append(name)
 			print(name + " has been scanned")
+		else:
+			print("maaf hewan sudah discan")
+		owner.new_animal(name)

@@ -40,6 +40,14 @@ var can_move = true
 func _ready():
 	GM.doni=self
 
+func allow_move():
+	can_move = true
+
+func stop_move():
+	can_move = false
+	$Grapling.release()
+	is_scanning = false
+
 func _input(event: InputEvent) -> void:
 	
 	# Grapling shoot/release

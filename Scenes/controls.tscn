@@ -1,18 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://trs0ogdxh7bx"]
+[gd_scene load_steps=7 format=3 uid="uid://trs0ogdxh7bx"]
 
 [ext_resource type="Texture2D" uid="uid://dkyxxvydk64x5" path="res://assets/almanac2.png" id="1_g26vo"]
 [ext_resource type="Texture2D" uid="uid://cboimpo4akmtv" path="res://assets/grapling2.png" id="2_bwc6t"]
 [ext_resource type="Texture2D" uid="uid://b0u68jsooyx2m" path="res://assets/settings.png" id="2_tootk"]
 [ext_resource type="Texture2D" uid="uid://bt836ovhikbuw" path="res://assets/scanner2.png" id="3_1omli"]
 [ext_resource type="PackedScene" uid="uid://da8h8buq1wyre" path="res://Scenes/almanac_ui.tscn" id="5_p1ni8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kkg4"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wddmw"]
-bg_color = Color(0.803922, 0.803922, 0.803922, 1)
-border_color = Color(1, 1, 1, 1)
+[ext_resource type="PackedScene" uid="uid://dacpdrql7uaii" path="res://Scenes/successful_scan.tscn" id="6_kjvoj"]
 
 [node name="CanvasLayerLevel" type="CanvasLayer"]
 
@@ -59,54 +52,4 @@ texture = ExtResource("2_tootk")
 
 [node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
 
-[node name="TextureButton0" type="TextureButton" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -54.0
-offset_right = 76.0
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel1" type="Panel" parent="TextureButton0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8kkg4")
-
-[node name="MarginContainer" type="MarginContainer" parent="TextureButton0/Panel1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Panel2" type="Panel" parent="TextureButton0/Panel1/MarginContainer"]
-clip_children = 2
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wddmw")
-
-[node name="TextureRect" type="TextureRect" parent="TextureButton0/Panel1/MarginContainer/Panel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-expand_mode = 1
+[node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]
