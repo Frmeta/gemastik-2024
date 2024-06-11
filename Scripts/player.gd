@@ -205,28 +205,29 @@ func _physics_process(delta):
 	if is_climbing:
 		animTree.set("parameters/Game/transition_request", "is_climbing")
 		model3d.get_node("Player").rotation.y = deg_to_rad(180)
+		$walkdust.stop_emit()
 	else:
 		animTree.set("parameters/Game/transition_request", "is_not_climbing")
 		
-	if is_on_floor():
-		# grounded
-		animTree.set("parameters/Platformer/conditions/is_floating", false)
-		animTree.set("parameters/Platformer/conditions/is_not_floating", true)
-		
-		if abs(velocity.x) < 0.1:
-			animTree.set("parameters/Platformer/conditions/is_running", false)
-			animTree.set("parameters/Platformer/conditions/is_not_running", true)
-			$walkdust.stop_emit()
-			pass
+		if is_on_floor():
+			# grounded
+			animTree.set("parameters/Platformer/conditions/is_floating", false)
+			animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+			
+			if abs(velocity.x) < 0.1:
+				animTree.set("parameters/Platformer/conditions/is_running", false)
+				animTree.set("parameters/Platformer/conditions/is_not_running", true)
+				$walkdust.stop_emit()
+				pass
+			else:
+				animTree.set("parameters/Platformer/conditions/is_running", true)
+				animTree.set("parameters/Platformer/conditions/is_not_running", false)
+				# anim.play("Running_A")
+				$walkdust.emit(dir)
 		else:
-			animTree.set("parameters/Platformer/conditions/is_running", true)
-			animTree.set("parameters/Platformer/conditions/is_not_running", false)
-			# anim.play("Running_A")
-			$walkdust.emit(dir)
-	else:
-		animTree.set("parameters/Platformer/conditions/is_floating", true)
-		animTree.set("parameters/Platformer/conditions/is_not_floating", false)
-		$walkdust.stop_emit()
+			animTree.set("parameters/Platformer/conditions/is_floating", true)
+			animTree.set("parameters/Platformer/conditions/is_not_floating", false)
+			# $walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		model3d.scale = Vector3.ONE

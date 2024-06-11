@@ -12,6 +12,8 @@ extends Control
 var area_number = 0
 
 func _ready():
+	visible = true
+	
 	# tutorial stuff
 	if tutorial.can_tutorial:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
