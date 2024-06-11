@@ -132,7 +132,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_k5ng2"]
-image = SubResource("Image_dwpdg")
+image = SubResource("Image_c6u1k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u874"]
 size = Vector3(1.8493, 1.7865, 1.74854)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskp3gtx74q57"]
+
+[ext_resource type="Texture2D" uid="uid://cbeukg3k3eifm" path="res://assets/x.png" id="1_eoono"]
+[ext_resource type="Texture2D" uid="uid://b61g1kb17ccja" path="res://assets/x_hover.png" id="2_wjl0x"]
+
+[node name="TextureButton1" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -37.0
+offset_right = 84.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_eoono")
+texture_hover = ExtResource("2_wjl0x")
+stretch_mode = 0

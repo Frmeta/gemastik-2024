@@ -13,7 +13,6 @@ func emit(dir):
 	dust.set_emitting(true)
 
 func emit_while_jump():
-	print("in emit dust")
 	var direction = Vector3(0,1,0)
 	dust.process_material.set("direction", direction)
 	dust.set_emitting(true)

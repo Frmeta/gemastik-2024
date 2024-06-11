@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://b7hko3s5ck8k"]
+
+[ext_resource type="Texture2D" uid="uid://doqdpmc7dxgp4" path="res://Resource/foto/Kalimantan/bekantan.png" id="1_wcwh3"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="4_rvxgx"]
+
+[resource]
+script = ExtResource("4_rvxgx")
+foto_asli = ExtResource("1_wcwh3")
+nama = "Bekantan"
+latin = "Nasalis larvatus"
+status = "terancam punah"
+habitat = "hutan bakau, rawa dan hutan panti"
+entry = " Fungsi hidung bekantan yang besar adalah alat untuk menarik pasangan betina saat musim kawin."

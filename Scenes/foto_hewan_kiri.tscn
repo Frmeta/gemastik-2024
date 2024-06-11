@@ -1,6 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://g4wbfrf4kt6t"]
+[gd_scene load_steps=7 format=3 uid="uid://g4wbfrf4kt6t"]
 
-[ext_resource type="Texture2D" uid="uid://d2hgnkck0yo3f" path="res://assets/Hewan/orangutan_siluet.png" id="1_3ckt6"]
+[sub_resource type="Gradient" id="Gradient_eu58f"]
+offsets = PackedFloat32Array(0.411765)
+colors = PackedColorArray(0, 0, 0, 0.290196)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_178wo"]
+gradient = SubResource("Gradient_eu58f")
+width = 120
+height = 120
+
+[sub_resource type="Gradient" id="Gradient_tvn2a"]
+offsets = PackedFloat32Array(0.277311)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kuyd3"]
+gradient = SubResource("Gradient_tvn2a")
+width = 120
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kkg4"]
 bg_color = Color(1, 1, 1, 1)
@@ -16,14 +31,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -425.0
+offset_left = -493.0
 offset_top = -188.0
-offset_right = -305.0
+offset_right = -373.0
 offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_178wo")
+texture_hover = SubResource("GradientTexture1D_kuyd3")
 
 [node name="Panel1" type="Panel" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,5 +77,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_3ckt6")
 expand_mode = 1

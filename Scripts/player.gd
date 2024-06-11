@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 @onready var animTree := $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
 @onready var scan := $Scan
@@ -39,6 +41,14 @@ var can_move = true
 
 func _ready():
 	GM.doni=self
+
+func allow_move():
+	can_move = true
+
+func stop_move():
+	can_move = false
+	$Grapling.release()
+	is_scanning = false
 
 func _input(event: InputEvent) -> void:
 	
@@ -214,6 +224,7 @@ func _physics_process(delta):
 	else:
 		animTree.set("parameters/Platformer/conditions/is_floating", true)
 		animTree.set("parameters/Platformer/conditions/is_not_floating", false)
+		$walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		model3d.scale = Vector3.ONE
