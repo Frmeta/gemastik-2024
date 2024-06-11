@@ -21,7 +21,7 @@ mesh = SubResource("CylinderMesh_qjoic")
 
 [node name="Tip" type="CharacterBody3D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 66
 
 [node name="Hook2" parent="Tip" instance=ExtResource("2_fr5sm")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
