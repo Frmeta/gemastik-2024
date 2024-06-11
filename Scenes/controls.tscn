@@ -52,6 +52,9 @@ size_flags_vertical = 8
 texture = ExtResource("3_66oie")
 stretch_mode = 2
 
+[node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
+visible = false
+
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -60,9 +63,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="Pause Button" type="TextureButton" parent="Pause"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 22.0
 offset_right = 287.0
@@ -88,6 +92,7 @@ offset_bottom = 1326.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.845, 0.845)
+mouse_filter = 2
 texture = ExtResource("8_7r0xb")
 
 [node name="LevelSelect Button" type="TextureButton" parent="Pause/Pause Button/Pause Panel"]
@@ -140,9 +145,6 @@ grow_vertical = 2
 mouse_filter = 1
 texture_normal = ExtResource("13_uq0yj")
 texture_hover = ExtResource("14_bn5tf")
-
-[node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
-visible = false
 
 [node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]
 

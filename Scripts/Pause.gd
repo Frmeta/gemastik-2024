@@ -12,7 +12,11 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("esc"):
-		_on_pressed()
+		if get_tree().paused:
+			_on_continue_button_pressed()
+		else:
+			_on_pressed()
+			
 
 func _on_pressed():
 	get_tree().paused = true
