@@ -5,6 +5,10 @@ extends CharacterBody3D
 var scan_progress = 0.0 # range dari 0 sampai 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	collision_layer = 8
+	collision_mask = 2
+	
 func _process(delta):
 	# scanning
 	var a = mesh.get_surface_override_material_count()
