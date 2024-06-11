@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=24 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_45g58"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_hlgta"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_p3yr7"]
-[ext_resource type="PackedScene" uid="uid://bnfy6e77rgmpv" path="res://Scenes/hyperspace.tscn" id="5_lpqc3"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="5_yuocv"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="6_xk2if"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="7_tdkyn"]
@@ -60,11 +59,6 @@ script = ExtResource("3_hlgta")
 [node name="Almanac2" parent="Camera3D" instance=ExtResource("4_p3yr7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
 visible = false
-
-[node name="hyperspace" parent="Camera3D" instance=ExtResource("5_lpqc3")]
-visible = false
-position = Vector2(725, 444)
-scale = Vector2(1.74832, 2.51763)
 
 [node name="Obstacle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0685, 0, 0)

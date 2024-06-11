@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/mas_states/state_spawn.gd" id="4_3a044"]
 [ext_resource type="Script" path="res://Scripts/mas_states/state_idle.gd" id="5_efagx"]
 [ext_resource type="Script" path="res://Scripts/mas_states/state_despawn.gd" id="6_qcwol"]
-[ext_resource type="PackedScene" uid="uid://cop3vrbddqrce" path="res://3D Assets/Mas/Mas.glb" id="7_8a32i"]
-[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas2/Mas (2).glb" id="8_ctgfb"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="7_8a32i"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="8_ctgfb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqqaj"]
 radius = 0.6

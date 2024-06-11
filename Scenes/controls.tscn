@@ -63,6 +63,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Pause Button" type="TextureButton" parent="Pause"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 22.0
 offset_right = 287.0

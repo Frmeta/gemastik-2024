@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=21 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_msnse"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_takr1"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_185gp"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_d6yhc"]
+[ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="5_a128b"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_skwrg"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="7_tvddd"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_hvg63"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/Kalimantan/Orang Utan/OrangUtan.tscn" id="12_hehfi"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="13_fcgcr"]
 [ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan.tscn" id="13_h7pf3"]
+[ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="13_lyrm6"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="14_4scld"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="15_lom7v"]
 [ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/Kalimantan/Kijang/Kijang.tscn" id="15_wu1cj"]
@@ -27,25 +29,19 @@ size = Vector3(3, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
 size = Vector3(3, 1, 1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vri21"]
-
-[sub_resource type="Sky" id="Sky_6jrk8"]
-sky_material = SubResource("ProceduralSkyMaterial_vri21")
-
-[sub_resource type="Environment" id="Environment_f53pu"]
-background_mode = 2
-sky = SubResource("Sky_6jrk8")
-volumetric_fog_density = 0.02
-volumetric_fog_ambient_inject = 0.5
-
 [node name="Level 0 (Kalimantan)" type="Node3D"]
 script = ExtResource("1_msnse")
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_takr1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.964557, -0.103103, 0.242896, 0, 0.920505, 0.390731, -0.263873, -0.376883, 0.88788, 0, 0, 0)
+transform = Transform3D(-0.948954, 0.314777, -0.0200502, 0.00774765, 0.0868108, 0.996195, 0.31532, 0.945187, -0.0848182, 0, 11.6486, 0)
+light_color = Color(0.545098, 1, 1, 1)
+light_angular_distance = 0.91
 shadow_enabled = true
+shadow_blur = 1.2
+
+[node name="WorldEnvironment" parent="DirectionalLight3D" instance=ExtResource("13_lyrm6")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
@@ -53,6 +49,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
 current = true
 size = 13.612
 script = ExtResource("3_185gp")
+
+[node name="pixelator" parent="Camera3D" instance=ExtResource("5_a128b")]
 
 [node name="Almanac2" parent="Camera3D" instance=ExtResource("4_d6yhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
@@ -396,6 +394,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1098, -0.164859, 0.0812335
 [node name="Bunglon" parent="." instance=ExtResource("10_pyahg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47327, 0, 0)
 
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("14_4scld")]
+
+[node name="DialogueManager" parent="." instance=ExtResource("15_lom7v")]
+layer = 11
+
 [node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
@@ -433,14 +436,6 @@ focus_mode = 0
 text = "despawn"
 script = ExtResource("13_fcgcr")
 event = "despawn_mas"
-
-[node name="CanvasLayerLevel" parent="." instance=ExtResource("14_4scld")]
-
-[node name="DialogueManager" parent="." instance=ExtResource("15_lom7v")]
-layer = 10
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_f53pu")
 
 [node name="Bekantan" parent="." instance=ExtResource("13_h7pf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3719, 0.752558, -0.301669)
