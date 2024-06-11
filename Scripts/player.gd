@@ -131,6 +131,8 @@ func _physics_process(delta):
 			_last_jump_pressed = 0
 			_last_on_ground = 0
 			velocity.y = JUMP_POWER
+			if !$jumping.playing:
+				$jumping.play()
 			
 		# Add the gravity.
 		if not is_on_floor() and not is_climbing:
@@ -155,9 +157,6 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 		model3d.get_node("Player").rotation.y = 0
-
-		
-	
 	
 	# Grapling Hook physics
 	if $Grapling.hooked:
@@ -222,7 +221,8 @@ func _physics_process(delta):
 			else:
 				animTree.set("parameters/Platformer/conditions/is_running", true)
 				animTree.set("parameters/Platformer/conditions/is_not_running", false)
-				# anim.play("Running_A")
+				if !$walking.playing:
+					$walking.play()
 				$walkdust.emit(dir)
 		else:
 			animTree.set("parameters/Platformer/conditions/is_floating", true)

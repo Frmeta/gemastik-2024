@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=14 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/Scan.gd" id="5_h1j7u"]
 [ext_resource type="Script" path="res://Scripts/ScanLine.gd" id="6_folr1"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="6_lv0nj"]
+[ext_resource type="AudioStream" uid="uid://dq686ujarv288" path="res://audio/footsteps-pixabay.wav" id="7_0icta"]
+[ext_resource type="AudioStream" uid="uid://3tnjxtgiv6to" path="res://audio/jump-pixabay.wav" id="7_3gqr0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
@@ -73,3 +75,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.62936)
 target_position = Vector3(0, 0, -8.175)
 collision_mask = 16
 debug_shape_thickness = 5
+
+[node name="jumping" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_3gqr0")
+volume_db = -10.0
+
+[node name="walking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_0icta")
+attenuation_model = 2
