@@ -8,10 +8,10 @@ albedo_texture = ExtResource("1_rgr0x")
 
 [sub_resource type="QuadMesh" id="QuadMesh_uu1k7"]
 material = SubResource("StandardMaterial3D_j7ty4")
-size = Vector2(1.2, 1.2)
+size = Vector2(1.3, 1.3)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_16j4v"]
-points = PackedVector3Array(0.6, 0.6, 0, 0.6, -0.6, 0, -0.6, 0.6, 0, -0.6, -0.6, 0)
+points = PackedVector3Array(0.65, 0.65, 0, 0.65, -0.65, 0, -0.65, 0.65, 0, -0.65, -0.65, 0)
 
 [node name="Vines" type="Node3D"]
 
