@@ -381,7 +381,6 @@ script = ExtResource("1_msnse")
 transform = Transform3D(-0.948954, 0.314777, -0.0200502, 0.00774765, 0.0868108, 0.996195, 0.31532, 0.945187, -0.0848182, 0, 11.6486, 0)
 light_color = Color(0.545098, 1, 1, 1)
 shadow_enabled = true
-shadow_blur = 1.2
 
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
