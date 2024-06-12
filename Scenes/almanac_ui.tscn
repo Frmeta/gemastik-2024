@@ -1,18 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://da8h8buq1wyre"]
+[gd_scene load_steps=19 format=3 uid="uid://da8h8buq1wyre"]
 
 [ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_qvhgm"]
-[ext_resource type="Resource" uid="uid://ced3ccmk8mqe1" path="res://Resource/Pulau/kalimantan.tres" id="2_8k8ne"]
 [ext_resource type="Texture2D" uid="uid://c7ubmuol41ihi" path="res://assets/foto tandatanya.png" id="2_shbio"]
 [ext_resource type="FontFile" uid="uid://ce7vydpxlj3e7" path="res://assets/fonts/Trebuchet-MS-Italic.ttf" id="3_68roq"]
-[ext_resource type="Resource" uid="uid://v44xmp7objkr" path="res://Resource/Pulau/bali.tres" id="3_w6fi3"]
-[ext_resource type="Resource" uid="uid://b4qtndc8q2cyk" path="res://Resource/Pulau/nusa_tenggara.tres" id="4_rjxjs"]
 [ext_resource type="Texture2D" uid="uid://duy6b30kdxw6h" path="res://assets/back.png" id="5_1e82x"]
-[ext_resource type="Resource" uid="uid://dqerfc8nkmk1f" path="res://Resource/Pulau/papua.tres" id="5_w1jmo"]
 [ext_resource type="Texture2D" uid="uid://w8tx6iedrwfg" path="res://assets/pulau/Papua.png" id="6_a3o4p"]
-[ext_resource type="Resource" uid="uid://set25lgglty" path="res://Resource/Pulau/jawa.tres" id="6_nq2yq"]
-[ext_resource type="Resource" uid="uid://btg2jkgaj4luj" path="res://Resource/Pulau/sulawesi.tres" id="7_0qt1u"]
 [ext_resource type="FontFile" uid="uid://hyhybg5ya00v" path="res://assets/fonts/IslandMoments-Regular.ttf" id="7_wj6jv"]
-[ext_resource type="Resource" uid="uid://dotyuieb0aurl" path="res://Resource/Pulau/sumatera.tres" id="8_5txxr"]
 [ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
 [ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
 [ext_resource type="Texture2D" uid="uid://b3hhr5nevmsoj" path="res://assets/pulau/peta_indo_no_x.png" id="12_2x8a0"]
@@ -53,7 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qvhgm")
 foto_tanda_tanya = ExtResource("2_shbio")
-pulau_list = Array[Resource("res://Scripts/pulau.gd")]([ExtResource("2_8k8ne"), ExtResource("3_w6fi3"), ExtResource("4_rjxjs"), ExtResource("5_w1jmo"), ExtResource("6_nq2yq"), ExtResource("7_0qt1u"), ExtResource("8_5txxr")])
 
 [node name="PanelAlmanac" type="Panel" parent="."]
 layout_mode = 1

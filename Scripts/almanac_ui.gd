@@ -5,13 +5,14 @@ extends Control
 @onready var tutorial = $tutorial
 
 @export var foto_tanda_tanya: Texture2D
-@export var pulau_list : Array[pulau] = []
 
 @export var has_done_tutorial = false
 
 var area_number = 0
+var pulau_list
 
 func _ready():
+	pulau_list = GM.pulau_list_resource.list
 	visible = true
 	
 	# tutorial stuff

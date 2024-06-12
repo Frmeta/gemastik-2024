@@ -76,13 +76,13 @@ func _done_animating_almanac(useless):
 # new_animal
 func new_animal(nama_hewan: String):
 	GM.doni.stop_move()
-	var island : pulau = almanac_ui.pulau_list[GM.current_level]
+	var island : pulau = GM.pulau_list_resource.list[GM.current_level]
 	
 	for hewan in island.hewanss:
 		if hewan.nama == nama_hewan:
 			var texture = hewan.foto_kartun
 			successful_scan.appear(texture)
-			# doni akan allow_move setelah animasi selesai menggunakan signal
+			# doni akan allow_move setelah animasi selesai, menggunakan signal
 			return
 			
 	print("oh no hewan tidak ada di pulau itu seharusnya")

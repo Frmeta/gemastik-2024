@@ -9,6 +9,10 @@ const END_Y = 20
 const GRASS_INDEX = 0
 const DIRT_INDEX = 1
 
+const SPAWN_TREE = true
+
+@export var noise:Noise
+
 var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -16,15 +20,16 @@ func _ready():
 	var highest = input_terrain()
 	fill_front(highest)
 	
-	# fill z=-1
 	var extend_step = 7
 	var smooth_step = 50
 	
+	# fill extend
 	var t = -1
 	for i in range(extend_step):
 		fill(highest, t, highest)
 		t -= 1
 	
+	# fill smooth
 	var highest2
 	for i in range(smooth_step):
 		highest2 = smooth(highest)
@@ -32,6 +37,12 @@ func _ready():
 		
 		highest = highest2
 		t -= 1
+	
+	# fill smooth with noise only
+	#for i in range(smooth_step):
+		#highest2 = smooth_with_noise_only(highest, t, 1, 3)
+		#fill (highest2, t, highest)
+		#t -= 1
 	
 	
 	
@@ -104,7 +115,8 @@ func fill(highest, z:int, front_highest):
 			# place top ground
 			set_cell_item(Vector3i(x, highest[i], z), GRASS_INDEX, 0)
 			
-			if randi() % 50 == 0:
+			# place tree
+			if randi() % 50 == 0 and SPAWN_TREE:
 				var bum = dummy_tree.instantiate()
 				add_child(bum)
 				bum.position = Vector3i(x, highest[i], z) * 1.3
@@ -137,20 +149,27 @@ func fill(highest, z:int, front_highest):
 
 func smooth(highest):
 	var highest2 := []
+	var sudah_ketemu_tanah = false
 	var i = 0
 	while i < highest.size():
 		if highest[i] >= START_Y:
 			# ada ground
+			sudah_ketemu_tanah = true
+			
 			var pembilang = 0.0
 			var penyebut = 0
 			
-			for j in range(i-2, i+3):
+			var JANGKAUAN = randi() % 3 + 1
+			for j in range(i - JANGKAUAN, i+JANGKAUAN +1):
 				if j>=0 and j<highest.size():
 					if highest[j] >= START_Y:
 						pembilang += highest[j]
 						penyebut += 1
-			highest2.append(roundi(pembilang/penyebut))
+			var bonus = 0
+			if randf() < 0.2:
+				bonus += 0.3
 			
+			highest2.append(roundi(pembilang/penyebut + bonus))
 			i += 1
 				
 		else:
@@ -159,7 +178,45 @@ func smooth(highest):
 			while j < END_X and highest[j] < START_Y:
 				j+=1
 				
-			if j < END_X:
+			if j < END_X and sudah_ketemu_tanah:
+				# ada ground di kanan
+				var start_y = highest[i-1]
+				var diff_y = float(highest[j]-highest[i-1])
+				var pembagi = j-i
+				var start_x = i
+				while i < j:
+					var y = roundi(start_y + diff_y * (i - start_x)/pembagi)
+					highest2.append(y)
+					i+=1
+				
+			else:
+				# tidak ada ground di kanan
+				for k in range(i, j):
+					highest2.append(START_Y-1)
+					i += 1
+					
+	return highest2
+
+func smooth_with_noise_only(highest, z:float, noise_multiplier:float, scale_multiplier:float):
+	var highest2 := []
+	var sudah_ketemu_tanah = false
+	var i = 0
+	while i < highest.size():
+		if highest[i] >= START_Y:
+			# ada ground
+			sudah_ketemu_tanah = true
+			
+			highest2.append(highest[i]+(noise.get_noise_2d(i*noise_multiplier, z*noise_multiplier)+0.5)*scale_multiplier)
+			#print(noise.get_noise_2d(i*noise_multiplier, z*noise_multiplier))
+			i += 1
+				
+		else:
+			# tidak ada ground
+			var j = i+1
+			while j < END_X and highest[j] < START_Y:
+				j+=1
+				
+			if j < END_X and sudah_ketemu_tanah:
 				# ada ground di kanan
 				var start_y = highest[i-1]
 				var diff_y = float(highest[j]-highest[i-1])

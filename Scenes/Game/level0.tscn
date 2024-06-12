@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=60 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_msnse"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_takr1"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="14_4scld"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="15_lom7v"]
 [ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/Kalimantan/Kijang/Kijang.tscn" id="15_wu1cj"]
+[ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="19_ptcce"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daqc0"]
 resource_name = "Trunk.004"
@@ -397,7 +398,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("7_skwrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.614, 12.8448, -1.52588e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4322, 3.31156, -1.52588e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("8_hvg63")]
@@ -410,6 +411,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="trees" type="Node3D" parent="GridMapGround"]
+visible = false
 
 [node name="Cube_013" type="MeshInstance3D" parent="GridMapGround/trees"]
 transform = Transform3D(0.193167, 0, 0, 0, 0.193167, 0, 0, 0, 0.193167, 14.1106, -0.33167, -8.6497)
@@ -425,6 +427,7 @@ skeleton = NodePath("")
 
 [node name="grapling_for_tree" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9775, 1.0737, 0)
+visible = false
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_1mvcn")]
 transform = Transform3D(17.4632, 0, 0, 0, 1.63933, 0, 0, 0, 1.63933, -1.94096, 4.51216, 0)
@@ -470,6 +473,7 @@ transform = Transform3D(18.8232, 0, 0, 0, 2.62641, 0, 0, 0, 1.63933, 432.4, 20.5
 
 [node name="decor" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0195, -1.6011, -4.8191)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GridMapGround/decor"]
 mesh = SubResource("PlaneMesh_3and4")
@@ -691,6 +695,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02746, 1.58662, -0.301669)
 [node name="Lower Bound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 mesh = SubResource("BoxMesh_i8odg")
+
+[node name="WinArea" parent="." instance=ExtResource("19_ptcce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 441.853, 16.999, -0.871899)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

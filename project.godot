@@ -21,8 +21,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueEnum="*res://Scripts/DialogueEnum.gd"
-GM="*res://Scripts/GameManager.gd"
+GM_old="*res://Scripts/GameManager.gd"
 EventDistributor="*res://Scripts/EventDistributor.gd"
+GM="*res://Scenes/GameManager.tscn"
 
 [debug]
 

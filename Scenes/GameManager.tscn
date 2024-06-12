@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct34738y81lpy"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_el516"]
+[ext_resource type="Resource" uid="uid://cl8c4syjo18hu" path="res://Resource/pulau_list.tres" id="2_qros2"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_el516")
+pulau_list_resource = ExtResource("2_qros2")
