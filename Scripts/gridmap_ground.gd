@@ -9,10 +9,12 @@ const END_Y = 20
 const GRASS_INDEX = 0
 const DIRT_INDEX = 1
 
+var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	var highest = input_terrain()
+	fill_front(highest)
 	
 	# fill z=-1
 	var extend_step = 7
@@ -79,6 +81,17 @@ func input_terrain():
 	
 	return highest
 
+func fill_front(highest):
+	var i = 0
+	for x in range(START_X, END_X):
+		# place top ground
+		set_cell_item(Vector3i(x, highest[i], 0), GRASS_INDEX, 0)
+		
+		# fill jika naik drastis
+		for y in range(START_Y, highest[i]):
+			set_cell_item(Vector3i(x, y, 0), DIRT_INDEX, 0)
+		i += 1
+
 func fill(highest, z:int, front_highest):
 	var previous_y = START_Y-1
 	var i = 0
@@ -90,6 +103,12 @@ func fill(highest, z:int, front_highest):
 			
 			# place top ground
 			set_cell_item(Vector3i(x, highest[i], z), GRASS_INDEX, 0)
+			
+			if randi() % 50 == 0:
+				var bum = dummy_tree.instantiate()
+				add_child(bum)
+				bum.position = Vector3i(x, highest[i], z) * 1.3
+				bum.scale = Vector3.ONE * 0.3
 			
 			# fill jika naik drastis
 			if highest[i] > previous_y:
@@ -118,18 +137,43 @@ func fill(highest, z:int, front_highest):
 
 func smooth(highest):
 	var highest2 := []
-	for i in range(highest.size()):
-		var pembilang = 0.0
-		var penyebut = 0
-		
-		for j in range(i-2, i+3):
-			if j>=0 and j<highest.size():
-				if highest[j] >= START_Y:
-					pembilang += highest[j]
-					penyebut += 1
-		
-		if penyebut == 0:
-			highest2.append(START_Y-1)
+	var i = 0
+	while i < highest.size():
+		if highest[i] >= START_Y:
+			# ada ground
+			var pembilang = 0.0
+			var penyebut = 0
+			
+			for j in range(i-2, i+3):
+				if j>=0 and j<highest.size():
+					if highest[j] >= START_Y:
+						pembilang += highest[j]
+						penyebut += 1
+			highest2.append(roundi(pembilang/penyebut))
+			
+			i += 1
+				
 		else:
-			highest2.append(pembilang/penyebut)
+			# tidak ada ground
+			var j = i+1
+			while j < END_X and highest[j] < START_Y:
+				j+=1
+				
+			if j < END_X:
+				# ada ground di kanan
+				var start_y = highest[i-1]
+				var diff_y = highest[j]-highest[i-1]
+				var pembagi = j-i
+				var start_x = i
+				while i < j:
+					var y = roundi(start_y + diff_y/pembagi * (i - start_x))
+					highest2.append(y)
+					i+=1
+				
+			else:
+				# tidak ada ground di kanan
+				for k in range(i, j):
+					highest2.append(START_Y-1)
+					i += 1
+					
 	return highest2
