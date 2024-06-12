@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdcuwsbnqq0l4"
-path.s3tc="res://.godot/imported/Object (2)_New Pallete.png-fdb01cb7060b3494584df731c42c5d4c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Object (2)_New Pallete.png-a971162c3813891b6df7a06c7cac9181.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Nature/Object (2)_New Pallete.png"
-dest_files=["res://.godot/imported/Object (2)_New Pallete.png-fdb01cb7060b3494584df731c42c5d4c.s3tc.ctex"]
+source_file="res://3D Assets/Nature/Ground/Object (2)_New Pallete.png"
+dest_files=["res://.godot/imported/Object (2)_New Pallete.png-a971162c3813891b6df7a06c7cac9181.s3tc.ctex"]
 
 [params]
 

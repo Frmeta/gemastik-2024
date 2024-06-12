@@ -117,7 +117,6 @@ size = Vector3(1.8493, 1.80733, 1.68726)
 [node name="TilemapNature" type="Node3D"]
 
 [node name="Grass Block" type="Node3D" parent="."]
-visible = false
 
 [node name="Grass Block" type="MeshInstance3D" parent="Grass Block"]
 mesh = SubResource("ArrayMesh_ld1x3")
@@ -147,3 +146,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875854, 0.0581398, 0.0110
 shape = SubResource("BoxShape3D_2u874")
 
 [node name="Vines" parent="." instance=ExtResource("1_iv5ux")]
+visible = false

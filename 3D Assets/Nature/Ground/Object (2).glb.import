@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0kaq5psaq3pe"
-path="res://.godot/imported/Cube_Dirt_Single.gltf-2ce4d74f9680ef43c6b3537667d9c0b3.scn"
+uid="uid://div50cg32rdal"
+path="res://.godot/imported/Object (2).glb-7984d1ebae3db80ad795952d2618dd03.scn"
 
 [deps]
 
-source_file="res://3D Assets/Nature/Cube_Dirt_Single.gltf"
-dest_files=["res://.godot/imported/Cube_Dirt_Single.gltf-2ce4d74f9680ef43c6b3537667d9c0b3.scn"]
+source_file="res://3D Assets/Nature/Ground/Object (2).glb"
+dest_files=["res://.godot/imported/Object (2).glb-7984d1ebae3db80ad795952d2618dd03.scn"]
 
 [params]
 
