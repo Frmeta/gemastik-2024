@@ -108,7 +108,7 @@ func fill(highest, z:int, front_highest):
 				var bum = dummy_tree.instantiate()
 				add_child(bum)
 				bum.position = Vector3i(x, highest[i], z) * 1.3
-				bum.scale = Vector3.ONE * 0.3
+				bum.scale = Vector3.ONE * randf_range(0.2,0.3)
 			
 			# fill jika naik drastis
 			if highest[i] > previous_y:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=59 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_msnse"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_takr1"]
@@ -471,7 +471,6 @@ transform = Transform3D(18.8232, 0, 0, 0, 2.62641, 0, 0, 0, 1.63933, 432.4, 20.5
 
 [node name="decor" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0195, -1.6011, -4.8191)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GridMapGround/decor"]
 mesh = SubResource("PlaneMesh_3and4")
@@ -486,8 +485,8 @@ visible = false
 multimesh = SubResource("MultiMesh_yk0nv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.0672, 3.4497, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.4703, 8.61462, 0)
+mesh = SubResource("PlaneMesh_5no5h")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -496,8 +495,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05036, 0, 0)
 multimesh = SubResource("MultiMesh_1igig")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8155, 8.37137, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.3086, 11.1219, 0)
+mesh = SubResource("PlaneMesh_o5bb3")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -506,8 +505,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05036, 0, 0)
 multimesh = SubResource("MultiMesh_nwgtg")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.876, 9.65451, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.416, 11.1219, 0)
+mesh = SubResource("PlaneMesh_crbl6")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -516,8 +515,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05036, 0, 0)
 multimesh = SubResource("MultiMesh_267s3")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.82, 12.2551, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.403, 11.3622, 0)
+mesh = SubResource("PlaneMesh_crbl6")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -526,8 +525,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05036, 0, 0)
 multimesh = SubResource("MultiMesh_267s3")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.482, 11.7105, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.403, 11.3622, 0)
+mesh = SubResource("PlaneMesh_in2ey")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -536,8 +535,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05036, 0, 0)
 multimesh = SubResource("MultiMesh_267s3")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235.008, 11.7105, 0)
-mesh = SubResource("PlaneMesh_3and4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158, 12.9097, 0)
+mesh = SubResource("PlaneMesh_in2ey")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
@@ -546,8 +545,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147598, 0, 0)
 multimesh = SubResource("MultiMesh_xuf41")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="GridMapGround/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.428, 9.34119, 0)
-mesh = SubResource("PlaneMesh_hgfjo")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.155, 20.4834, 0)
+mesh = SubResource("PlaneMesh_uri81")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53u0")
 
