@@ -15,8 +15,6 @@ sky = SubResource("Sky_2q4no")
 ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
 tonemap_mode = 2
 tonemap_exposure = 0.7
-ssao_enabled = true
-ssil_enabled = true
 sdfgi_energy = 0.1
 
 [node name="WorldEnvironment" type="WorldEnvironment"]

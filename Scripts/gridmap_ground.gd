@@ -162,11 +162,11 @@ func smooth(highest):
 			if j < END_X:
 				# ada ground di kanan
 				var start_y = highest[i-1]
-				var diff_y = highest[j]-highest[i-1]
+				var diff_y = float(highest[j]-highest[i-1])
 				var pembagi = j-i
 				var start_x = i
 				while i < j:
-					var y = roundi(start_y + diff_y/pembagi * (i - start_x))
+					var y = roundi(start_y + diff_y * (i - start_x)/pembagi)
 					highest2.append(y)
 					i+=1
 				
