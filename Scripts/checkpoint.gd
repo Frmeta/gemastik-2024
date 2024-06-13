@@ -11,6 +11,8 @@ signal some_checkpoint_captured(instance_checkpoint)
 @export var wallleft: InvisibleWall
 @export var wallright: InvisibleWall
 
+@onready var animation_tree := $Checkpoint3D/AnimationTree
+
 var captured = false
 
 func _ready():
@@ -35,6 +37,8 @@ func _on_body_entered(body):
 	if not captured:
 		print_debug("checkpoint hit")
 		captured=true # Gak bisa dihit lagi
+		animation_tree.set("parameters/conditions/captured", true)
+		
 		GM.last_checkpoint_position=self.global_position # save position
 		
 		# enable wall yang diassign ke checkpoin
