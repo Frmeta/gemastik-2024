@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://der5op54h8p2n"]
 
-[ext_resource type="Texture2D" uid="uid://vbl13mhg3rlc" path="res://3D Assets/Animal/Kalimantan/Bunglon/Bunglon_Bunglon_body.png" id="1_jxknh"]
+[ext_resource type="Texture2D" uid="uid://vbl13mhg3rlc" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon_Bunglon_body.png" id="1_jxknh"]
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_ka3en"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="3_1faey"]
 [ext_resource type="Script" path="res://Scripts/animal_behaviour/ground_animal.gd" id="3_2uyhq"]

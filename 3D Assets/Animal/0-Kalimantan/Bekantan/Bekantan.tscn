@@ -1,8 +1,8 @@
 [gd_scene load_steps=31 format=3 uid="uid://dnd5jxtkjn50s"]
 
-[ext_resource type="Texture2D" uid="uid://d27b41gw0a15q" path="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan_Bekantan_color.png" id="1_8hvn3"]
+[ext_resource type="Texture2D" uid="uid://d27b41gw0a15q" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan_Bekantan_color.png" id="1_8hvn3"]
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_gt47e"]
-[ext_resource type="Texture2D" uid="uid://c04pgc8nojsc6" path="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan_Bekantan_roughness.png" id="2_wa0dg"]
+[ext_resource type="Texture2D" uid="uid://c04pgc8nojsc6" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan_Bekantan_roughness.png" id="2_wa0dg"]
 [ext_resource type="Script" path="res://Scripts/animal_behaviour/ground_animal.gd" id="4_3va61"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="4_w643r"]
 

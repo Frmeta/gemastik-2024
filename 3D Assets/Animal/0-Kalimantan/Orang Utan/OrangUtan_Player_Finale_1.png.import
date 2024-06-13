@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b01mgv85ny1dv"
-path.s3tc="res://.godot/imported/OrangUtan_Player_Finale_1.png-b4a9d0d9e1f3d6e0cea1fa66d1498d67.s3tc.ctex"
+path.s3tc="res://.godot/imported/OrangUtan_Player_Finale_1.png-d69eb8ecf64c4eb3191fdf351dfbfdc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Animal/Kalimantan/Orang Utan/OrangUtan_Player_Finale_1.png"
-dest_files=["res://.godot/imported/OrangUtan_Player_Finale_1.png-b4a9d0d9e1f3d6e0cea1fa66d1498d67.s3tc.ctex"]
+source_file="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan_Player_Finale_1.png"
+dest_files=["res://.godot/imported/OrangUtan_Player_Finale_1.png-d69eb8ecf64c4eb3191fdf351dfbfdc8.s3tc.ctex"]
 
 [params]
 

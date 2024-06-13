@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d27b41gw0a15q"
-path.s3tc="res://.godot/imported/Bekantan_Bekantan_color.png-68b779cf686f4933810b6b593cfc4e68.s3tc.ctex"
+uid="uid://jlh7bikjq1qh"
+path.s3tc="res://.godot/imported/Komodo_Komodo_body_color.png-03a6b651bc190865e3ed2f4b1cbb9b50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan_Bekantan_color.png"
-dest_files=["res://.godot/imported/Bekantan_Bekantan_color.png-68b779cf686f4933810b6b593cfc4e68.s3tc.ctex"]
+source_file="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo_Komodo_body_color.png"
+dest_files=["res://.godot/imported/Komodo_Komodo_body_color.png-03a6b651bc190865e3ed2f4b1cbb9b50.s3tc.ctex"]
 
 [params]
 

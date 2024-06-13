@@ -10,13 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_6gip3"]
 [ext_resource type="MeshLibrary" uid="uid://b8umrxbbu728f" path="res://Tilemap/tilemap_nature14.tres" id="9_c3ghd"]
 [ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="10_31ljm"]
-[ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Animal/Komodo/Komodo.tscn" id="11_j00h2"]
+[ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo.tscn" id="11_j00h2"]
 [ext_resource type="PackedScene" uid="uid://cwj54hn7mexrm" path="res://Scenes/movingplatform.tscn" id="12_q3skr"]
-[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/Kalimantan/Orang Utan/OrangUtan.tscn" id="13_hfae5"]
+[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="13_hfae5"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="14_5sr81"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_m255p"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="16_qpc4o"]
-[ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/Kalimantan/Bunglon/Bunglon.tscn" id="17_e1v8h"]
+[ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="17_e1v8h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)

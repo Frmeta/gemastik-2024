@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c04pgc8nojsc6"
-path.s3tc="res://.godot/imported/Bekantan_Bekantan_roughness.png-d9a2f3bf4dfe63aec5ad45bde90753df.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bekantan_Bekantan_roughness.png-5dc96c943ee471f3b205cc121f138c52.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Animal/Kalimantan/Bekantan/Bekantan_Bekantan_roughness.png"
-dest_files=["res://.godot/imported/Bekantan_Bekantan_roughness.png-d9a2f3bf4dfe63aec5ad45bde90753df.s3tc.ctex"]
+source_file="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan_Bekantan_roughness.png"
+dest_files=["res://.godot/imported/Bekantan_Bekantan_roughness.png-5dc96c943ee471f3b205cc121f138c52.s3tc.ctex"]
 
 [params]
 

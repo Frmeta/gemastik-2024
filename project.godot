@@ -34,6 +34,10 @@ window/size/viewport_width=1520
 window/size/viewport_height=930
 window/stretch/mode="viewport"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_left={

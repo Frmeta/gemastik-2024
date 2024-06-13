@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlh7bikjq1qh"
-path.s3tc="res://.godot/imported/Komodo_Komodo_body_color.png-24daaab7b9ee3a69a8186b6518308df5.s3tc.ctex"
+uid="uid://vbl13mhg3rlc"
+path.s3tc="res://.godot/imported/Bunglon_Bunglon_body.png-0ab3e15d8d1f20eeada1c60d197b6603.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/Animal/Komodo/Komodo_Komodo_body_color.png"
-dest_files=["res://.godot/imported/Komodo_Komodo_body_color.png-24daaab7b9ee3a69a8186b6518308df5.s3tc.ctex"]
+source_file="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon_Bunglon_body.png"
+dest_files=["res://.godot/imported/Bunglon_Bunglon_body.png-0ab3e15d8d1f20eeada1c60d197b6603.s3tc.ctex"]
 
 [params]
 
