@@ -26,14 +26,14 @@ func _ready():
 	# fill extend
 	var t = -1
 	for i in range(extend_step):
-		fill(highest, t, highest)
+		fill(highest, t, highest, false)
 		t -= 1
 	
 	# fill smooth
 	var highest2
 	for i in range(smooth_step):
 		highest2 = smooth(highest)
-		fill (highest2, t, highest)
+		fill (highest2, t, highest, true)
 		
 		highest = highest2
 		t -= 1
@@ -103,7 +103,7 @@ func fill_front(highest):
 			set_cell_item(Vector3i(x, y, 0), DIRT_INDEX, 0)
 		i += 1
 
-func fill(highest, z:int, front_highest):
+func fill(highest, z:int, front_highest, place_tree:bool):
 	var previous_y = START_Y-1
 	var i = 0
 	
@@ -116,11 +116,14 @@ func fill(highest, z:int, front_highest):
 			set_cell_item(Vector3i(x, highest[i], z), GRASS_INDEX, 0)
 			
 			# place tree
-			if randi() % 50 == 0 and SPAWN_TREE:
-				var bum = dummy_tree.instantiate()
-				add_child(bum)
-				bum.position = Vector3i(x, highest[i], z) * 1.3
-				bum.scale = Vector3.ONE * randf_range(0.2,0.3)
+			if place_tree and randi() % 50 == 0 and SPAWN_TREE and i > START_X and i < END_X-2:
+				# mencegah pohon yang terbang
+				if abs(highest[i]-highest[i-1]) <= 1 and abs(highest[i]-highest[i+1]) <= 1:
+					var bum = dummy_tree.instantiate()
+					add_child(bum)
+					bum.position = Vector3i(x, highest[i] + 0.5, z) * 1.3
+					bum.scale = Vector3.ONE * randf_range(1,2)
+					bum.rotation.y = randf() * 2 * PI
 			
 			# fill jika naik drastis
 			if highest[i] > previous_y:
