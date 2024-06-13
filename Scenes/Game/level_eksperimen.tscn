@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=30 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
@@ -17,6 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_m255p"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="16_qpc4o"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="17_e1v8h"]
+[ext_resource type="PackedScene" uid="uid://p0rt1lboopyr" path="res://3D Assets/Animal/5-Sulawesi/Burung Maleo/Maleo.tscn" id="18_g33nv"]
+[ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_siplm"]
+[ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang/Elang.tscn" id="19_bvwp0"]
+[ext_resource type="PackedScene" uid="uid://dlweijua58o1u" path="res://3D Assets/Animal/3-Papua/Cendrawasih/Cendrawasih.tscn" id="21_lkohu"]
+[ext_resource type="PackedScene" uid="uid://b10tgxrru3ml7" path="res://3D Assets/Animal/5-Sulawesi/Rangkong Gading/RangkongGading.tscn" id="22_4bcou"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
@@ -474,6 +479,21 @@ environment = SubResource("Environment_f53pu")
 
 [node name="Bunglon" parent="." instance=ExtResource("17_e1v8h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15575, 6.6611, -0.301668)
+
+[node name="Burung Maleo" parent="." instance=ExtResource("18_g33nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23924, 6.60838, -0.301668)
+
+[node name="Jalak Bali" parent="." instance=ExtResource("18_siplm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6062, 6.00408, -0.301668)
+
+[node name="Elang" parent="." instance=ExtResource("19_bvwp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90553, 12.4894, -0.301669)
+
+[node name="Burung Cendrawasih" parent="." instance=ExtResource("21_lkohu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15722, 11.7212, -0.301668)
+
+[node name="Rangkong Gading" parent="." instance=ExtResource("22_4bcou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8289, 10.9713, -0.301668)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

@@ -4,16 +4,21 @@ extends CharacterBody3D
 
 var scan_progress = 0.0 # range dari 0 sampai 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var next_pass
 
 func _ready():
 	collision_layer = 8
 	collision_mask = 2
 	
+	# init next_pass to all surface
+	next_pass = mesh.get_active_material(0).next_pass
+	assert(next_pass != null)
+	for i in range(1, mesh.get_surface_override_material_count()):
+		mesh.get_active_material(i).next_pass = next_pass
+	
 func _process(delta):
 	# scanning
-	var a = mesh.get_surface_override_material_count()
-	for i in range(0, a):
-		mesh.get_active_material(i).next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
+	next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
 	
 	if scan_progress >= 1:
 		scan_progress = 0
