@@ -73,10 +73,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.67594, 2.38419e-07, 0.5788
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 18.0
+offset_top = 76.0
+offset_right = 481.0
+offset_bottom = 181.0
 theme_override_font_sizes/font_size = 76
 text = "KALIMANNN"
 
+[node name="Main Menu Button" type="Button" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 28.0
+offset_right = 207.0
+offset_bottom = 59.0
+text = "kembali ke main menu"
+
 [connection signal="body_entered" from="Mouse" to="." method="_on_mouse_body_entered"]
 [connection signal="body_exited" from="Mouse" to="." method="_on_mouse_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

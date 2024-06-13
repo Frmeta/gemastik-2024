@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://h75mlfcal5ja"]
 
-[ext_resource type="PackedScene" uid="uid://djwm4tpw6acyc" path="res://Scenes/Game/level.tscn" id="1_f4mc4"]
+[ext_resource type="PackedScene" uid="uid://djwm4tpw6acyc" path="res://Scenes/Game/level_eksperimen.tscn" id="1_f4mc4"]
 [ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="3_hcbfp"]
 [ext_resource type="PackedScene" uid="uid://c4mms4g7aibmj" path="res://Scenes/testingken/testinglevelken.tscn" id="3_pbvfg"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="4_gyevq"]
