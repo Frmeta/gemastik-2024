@@ -6,6 +6,6 @@
 render_priority = 0
 shader = ExtResource("1_7d3ip")
 shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
-shader_parameter/Dissolve_Height = 0.0
-shader_parameter/Min_Height = -5.54
-shader_parameter/Height = 10.205
+shader_parameter/Dissolve_Height = 1.0
+shader_parameter/Min_Height = -1.25
+shader_parameter/Height = 2.465

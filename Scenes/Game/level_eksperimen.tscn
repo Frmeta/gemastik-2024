@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=31 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang/Elang.tscn" id="19_bvwp0"]
 [ext_resource type="PackedScene" uid="uid://dlweijua58o1u" path="res://3D Assets/Animal/3-Papua/Cendrawasih/Cendrawasih.tscn" id="21_lkohu"]
 [ext_resource type="PackedScene" uid="uid://b10tgxrru3ml7" path="res://3D Assets/Animal/5-Sulawesi/Rangkong Gading/RangkongGading.tscn" id="22_4bcou"]
+[ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="23_rmxx1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
@@ -494,6 +495,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15722, 11.7212, -0.301668)
 
 [node name="Rangkong Gading" parent="." instance=ExtResource("22_4bcou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8289, 10.9713, -0.301668)
+
+[node name="Rusa" parent="." instance=ExtResource("23_rmxx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77476, 0.0318997, -0.301668)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]
