@@ -1,14 +1,22 @@
-[gd_scene load_steps=30 format=3 uid="uid://c45i8q7gc43fi"]
+[gd_scene load_steps=31 format=3 uid="uid://c45i8q7gc43fi"]
 
 [ext_resource type="Texture2D" uid="uid://blgwvegi7tln3" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan_Player_Finale.png" id="1_nhhpr"]
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_o8nit"]
 [ext_resource type="Texture2D" uid="uid://b01mgv85ny1dv" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan_Player_Finale_1.png" id="2_tm2fr"]
-[ext_resource type="Material" uid="uid://bdybsuliq6yh4" path="res://3D Assets/Shader/ScanningNextPass.tres" id="4_80pgb"]
+[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="4_elybc"]
 [ext_resource type="Script" path="res://Scripts/animal_behaviour/ground_animal.gd" id="5_5gio0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23nfq"]
+render_priority = 0
+shader = ExtResource("4_elybc")
+shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
+shader_parameter/Dissolve_Height = 1.0
+shader_parameter/Min_Height = -0.21
+shader_parameter/Height = 2.415
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vst45"]
 resource_name = "OrangUtan_Texture"
-next_pass = ExtResource("4_80pgb")
+next_pass = SubResource("ShaderMaterial_23nfq")
 cull_mode = 2
 albedo_texture = ExtResource("1_nhhpr")
 metallic_texture = ExtResource("2_tm2fr")

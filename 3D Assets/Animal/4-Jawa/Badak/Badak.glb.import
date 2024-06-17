@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dmjyfrvttfry2"
-path="res://.godot/imported/Kijang.glb-7bc310bca51bc8ef36e294a1ed8cc1dc.scn"
+uid="uid://r2xq4vitr65f"
+path="res://.godot/imported/Badak.glb-9efcd25ef7a06397c81f9561963f8187.scn"
 
 [deps]
 
-source_file="res://3D Assets/Animal/0-Kalimantan/Kijang/Kijang.glb"
-dest_files=["res://.godot/imported/Kijang.glb-7bc310bca51bc8ef36e294a1ed8cc1dc.scn"]
+source_file="res://3D Assets/Animal/4-Jawa/Badak/Badak.glb"
+dest_files=["res://.godot/imported/Badak.glb-9efcd25ef7a06397c81f9561963f8187.scn"]
 
 [params]
 

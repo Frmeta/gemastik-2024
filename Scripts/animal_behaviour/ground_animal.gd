@@ -15,6 +15,13 @@ func _ready():
 	assert($"../AnimationPlayer".has_animation(walk_anim_name))
 	assert($"../AnimationPlayer".has_animation(idle_anim_name))
 	
+	if randi() % 2 == 0:
+		state = State.DIAM
+		await wait_for_seconds(randf() * 6 + 5)
+		
+		state = State.KIRI
+		await wait_for_seconds(randf() * 6 + 4)
+		
 	loop_behaviour()
 	
 	
