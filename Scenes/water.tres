@@ -138,14 +138,14 @@ operator = 2
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_xtxcv"]
 parameter_name = "scale"
 default_value_enabled = true
-default_value = 1.0
+default_value = 2.0
 
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
 uniform sampler2D tex_vtx_3;
-uniform float scale = 1;
+uniform float scale = 2;
 uniform sampler2D depth_tex_frg_16 : hint_depth_texture;
 uniform vec4 ColorParameter : source_color = vec4(0.000002, 0.673702, 0.614231, 1.000000);
 uniform sampler2D tex_frg_3;

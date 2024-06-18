@@ -376,7 +376,7 @@ shape = SubResource("BoxShape3D_8n4r1")
 mesh = SubResource("BoxMesh_lv5aa")
 
 [node name="water" parent="Obstacle" instance=ExtResource("5_500gr")]
-transform = Transform3D(0.985445, 0, 0, 0, 2.2341, 0, 0, 0, 0.458309, 25.6664, 0, 0)
+transform = Transform3D(0.985445, 0, 0, 0, 2.2341, 0, 0, 0, 0.985445, 25.6664, 0, 0)
 
 [node name="Checkpoints" type="Node3D" parent="."]
 
