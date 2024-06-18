@@ -10,7 +10,7 @@
 render_priority = 0
 shader = ExtResource("4_elybc")
 shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
-shader_parameter/Dissolve_Height = 1.0
+shader_parameter/Dissolve_Height = 0.0
 shader_parameter/Min_Height = -0.21
 shader_parameter/Height = 2.415
 
