@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="pulau" load_steps=6 format=3 uid="uid://v44xmp7objkr"]
+
+[ext_resource type="Texture2D" uid="uid://dho2ti7l1k6a2" path="res://assets/pulau/Bali.png" id="1_ex6ts"]
+[ext_resource type="Resource" uid="uid://c4ap53uq8q0mf" path="res://Resource/Hewan/1-Bali/jalak bali.tres" id="2_4idoq"]
+[ext_resource type="Script" path="res://Scripts/pulau.gd" id="3_0su5p"]
+[ext_resource type="Resource" uid="uid://brcw20rdnoe3q" path="res://Resource/Hewan/1-Bali/anjing kintamani.tres" id="3_tpkq8"]
+[ext_resource type="Resource" uid="uid://pve8mr1ft401" path="res://Resource/Hewan/1-Bali/rusa.tres" id="4_h68w3"]
+
+[resource]
+script = ExtResource("3_0su5p")
+nama = "Bali"
+gambar = ExtResource("1_ex6ts")
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([ExtResource("2_4idoq"), ExtResource("3_tpkq8"), ExtResource("4_h68w3")])

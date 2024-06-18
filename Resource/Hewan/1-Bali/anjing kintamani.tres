@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://brcw20rdnoe3q"]
+
+[ext_resource type="Texture2D" uid="uid://7hf5tu51qqir" path="res://Resource/Hewan/1-Bali/anjing_kintamani.png" id="1_ppl13"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="3_4g2ge"]
+
+[resource]
+script = ExtResource("3_4g2ge")
+foto_kartun = ExtResource("1_ppl13")
+foto_asli = ExtResource("1_ppl13")
+nama = "Anjing Kintamani"
+latin = "Canis lupus"
+status = "risiko rendah"
+habitat = "Pulau Bali"
+entry = "Anjing kintamani merupakan ras anjing endemik Bali yang sudah diakui oleh dunia dan bersifat teritorial serta suka menggaruk-garuk tanah untuk melindungi dirinya."

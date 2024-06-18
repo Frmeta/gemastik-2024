@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gemastik2024"
-run/main_scene="res://Scenes/Game/level0.tscn"
+run/main_scene="res://Scenes/Game/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.917647, 0.890196, 0.956863, 1)
 boot_splash/image="res://assets/frekensam.png"
@@ -21,8 +21,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueEnum="*res://Scripts/DialogueEnum.gd"
-GM="*res://Scripts/GameManager.gd"
 EventDistributor="*res://Scripts/EventDistributor.gd"
+GM="*res://Scenes/GameManager.tscn"
 
 [debug]
 
@@ -33,6 +33,10 @@ shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.878431)
 window/size/viewport_width=1520
 window/size/viewport_height=930
 window/stretch/mode="viewport"
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://bxuwtk51s12fe"]
+
+[ext_resource type="Texture2D" uid="uid://b1weuq1d0xknc" path="res://Resource/Hewan/4-Jawa/badak_jawa.png" id="1_0jgfj"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="2_2sncq"]
+
+[resource]
+script = ExtResource("2_2sncq")
+foto_kartun = ExtResource("1_0jgfj")
+foto_asli = ExtResource("1_0jgfj")
+nama = "Badak Jawa"
+latin = "Rhinoceros sondaicus"
+status = "terancam kritis"
+habitat = "Taman Nasional Ujung Kulon "
+entry = "Seperti badak pada umumnya, badak ini juga banyak diburu untuk culanya. Pada saat ini, populasinya sudah menurun secara drastis dan hanya tersisa di Ujung Kulon"

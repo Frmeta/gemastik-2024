@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var selected_level = GM.explored_level
+var selected_level = null
 
 func _process(delta):
 	var mouse_pos =  _get_mouse_position()
@@ -8,6 +8,7 @@ func _process(delta):
 		$Mouse.position = mouse_pos
 	
 func _get_mouse_position():
+	# get mouse position with raycast
 	var mouse_pos = get_viewport().get_mouse_position()
 	var ray_length = 2000
 	var from = $"Camera3D".project_ray_origin(mouse_pos)
@@ -30,11 +31,14 @@ func _get_mouse_position():
 func _input(event):
 	# play level
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if GM.explored_level >= selected_level:
+		if selected_level == null:
+			# user didn't click level
+			pass
+		elif GM.explored_level >= selected_level:
 			# level is unlocked
 			GM.current_level = selected_level
 			GM.scanned_animal = []
-			get_tree().change_scene_to_file("res://Scenes/Game/level.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Game/level_" + str(selected_level) + ".tscn")
 		else:
 			# level is locked
 			pass
@@ -45,6 +49,7 @@ func _on_mouse_body_entered(body):
 		var pin_no = int(body.name.substr(3))
 		selected_level = pin_no
 		
+		# show label
 		var debug = str(pin_no) + " "
 		if GM.explored_level > pin_no:
 			debug += "(cleared)"
@@ -61,3 +66,7 @@ func _on_mouse_body_exited(body):
 		selected_level = null
 		
 		$CanvasLayer/Label.text = ""
+
+
+func _on_main_menu_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")

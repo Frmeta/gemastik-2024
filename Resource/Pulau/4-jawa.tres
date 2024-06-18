@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="pulau" load_steps=6 format=3 uid="uid://set25lgglty"]
+
+[ext_resource type="Texture2D" uid="uid://gdxnwxtwigoh" path="res://assets/pulau/Jawa.png" id="1_ubdu4"]
+[ext_resource type="Script" path="res://Scripts/pulau.gd" id="2_b6ykv"]
+[ext_resource type="Resource" uid="uid://bxuwtk51s12fe" path="res://Resource/Hewan/4-Jawa/badak jawa.tres" id="2_gsoun"]
+[ext_resource type="Resource" uid="uid://bvj0rw481ueqb" path="res://Resource/Hewan/4-Jawa/burung merak.tres" id="3_bal2t"]
+[ext_resource type="Resource" uid="uid://dqffunxmbm57t" path="res://Resource/Hewan/4-Jawa/elang jawa.tres" id="4_asxir"]
+
+[resource]
+script = ExtResource("2_b6ykv")
+nama = "Jawa"
+gambar = ExtResource("1_ubdu4")
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([ExtResource("2_gsoun"), ExtResource("3_bal2t"), ExtResource("4_asxir")])

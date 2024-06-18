@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://cyp4ynboum541"]
+
+[ext_resource type="Texture2D" uid="uid://b3727pdbnic8k" path="res://Resource/Hewan/6-Sumatera/bunga raflesia.png" id="1_hpmst"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="3_tjp6r"]
+
+[resource]
+script = ExtResource("3_tjp6r")
+foto_kartun = ExtResource("1_hpmst")
+foto_asli = ExtResource("1_hpmst")
+nama = "Bunga Rafflesia"
+latin = "Rafflesia arnoldii"
+status = "terancam punah"
+habitat = "Hutan di Provinsi Bengkulu"
+entry = "Tanaman ini merupakan parasit dimana artinya Ia hidup dengan mendapatkan nutrisi dari tanaman inangnya untuk bertahan hidup."

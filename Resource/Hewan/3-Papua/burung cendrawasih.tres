@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://dxx0yl3j84lqi"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_j33xy"]
+[ext_resource type="Texture2D" uid="uid://bstxio43tusg1" path="res://Resource/Hewan/3-Papua/burung_cendrawasih.png" id="1_oh1m2"]
+
+[resource]
+script = ExtResource("1_j33xy")
+foto_kartun = ExtResource("1_oh1m2")
+foto_asli = ExtResource("1_oh1m2")
+nama = "Burung Cendrawasih"
+latin = "Paradisaea apoda"
+status = "Risiko rendah (stabil)"
+habitat = "hutan dataran rendah dan bukit di barat daya pulau Irian dan pulau Aru"
+entry = "Burung Cendrawasih memiliki istilah bird of paradise untuk keindahannya. Walaupun demikian, jangan coba-coba untuk menangkapnya karena hewan ini dilindungi oleh undang-undang."

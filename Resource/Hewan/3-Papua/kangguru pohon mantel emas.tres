@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://c72ku50b0mmru"]
+
+[ext_resource type="Texture2D" uid="uid://db8us6obasa7c" path="res://Resource/Hewan/3-Papua/kanguru_pohon_mantel_emas.png" id="1_4cfge"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_xager"]
+
+[resource]
+script = ExtResource("1_xager")
+foto_kartun = ExtResource("1_4cfge")
+foto_asli = ExtResource("1_4cfge")
+nama = "Kanguru Pohon Mantel Emas"
+latin = "Dendrolagus pulcherrimus"
+status = "Kritis"
+habitat = "Pegunungan Foja, Papua, dan Pegunungan Torricelli, Papua Nugini"
+entry = "Hewan yang satu ini pernah dijadikan maskot Pekan Olahraga Nasional 2021 yang diselenggarakan di Papua. Berbeda kangguru dari Australia yang dikenal sebagai pelompat handal, kangguru jenis ini hanya bisa melompat sejauh 22 cm, sesuai dengan ukuran badannya yang kecil."

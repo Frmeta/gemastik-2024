@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://ckqwg5k8veecp"]
+
+[ext_resource type="Texture2D" uid="uid://duukhgplw1y0v" path="res://Resource/Hewan/2-NT/komodo.png" id="1_6rvi5"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_nb05b"]
+
+[resource]
+script = ExtResource("1_nb05b")
+foto_kartun = ExtResource("1_6rvi5")
+foto_asli = ExtResource("1_6rvi5")
+nama = "Komodo"
+latin = "Varanus komodoensis"
+status = "genting"
+habitat = "rumput terbuka, hutan belukar, terkadang juga di pesisir pantai di Pulau Komodo"
+entry = "Walaupun badannya yang besar, bukan berarti kadal ini lambat, Komodo bisa berlari dengan kecepatan 20km/jam pada jarak yang pendek. Hewan ini juga memiliki air liur yang memiliki banyak sekali bakteri sehingga mangsa yang digigitnya akan mati akibat infeksi dalam rentang 1 hingga 7 hari."

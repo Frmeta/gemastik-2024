@@ -8,3 +8,4 @@ func _ready():
 
 func _on_play_button_pressed():
 	tab.current_tab = 1
+

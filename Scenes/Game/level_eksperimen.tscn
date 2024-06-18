@@ -1,0 +1,558 @@
+[gd_scene load_steps=45 format=3 uid="uid://djwm4tpw6acyc"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
+[ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="3_ly6d4"]
+[ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_nvbn7"]
+[ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="5_7acp3"]
+[ext_resource type="PackedScene" uid="uid://3bii3f0bjn6u" path="res://Scenes/water.tscn" id="5_1817f"]
+[ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="6_l2mum"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_qjisd"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_6gip3"]
+[ext_resource type="MeshLibrary" uid="uid://b8umrxbbu728f" path="res://Tilemap/tilemap_nature14.tres" id="9_c3ghd"]
+[ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="10_31ljm"]
+[ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo.tscn" id="11_j00h2"]
+[ext_resource type="PackedScene" uid="uid://cwj54hn7mexrm" path="res://Scenes/movingplatform.tscn" id="12_q3skr"]
+[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="13_hfae5"]
+[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="14_5sr81"]
+[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_m255p"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="16_qpc4o"]
+[ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="17_e1v8h"]
+[ext_resource type="PackedScene" uid="uid://p0rt1lboopyr" path="res://3D Assets/Animal/5-Sulawesi/Burung Maleo/Burung Maleo.tscn" id="18_g33nv"]
+[ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_siplm"]
+[ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang Jawa/Elang Jawa.tscn" id="19_bvwp0"]
+[ext_resource type="PackedScene" uid="uid://dlweijua58o1u" path="res://3D Assets/Animal/3-Papua/Burung Cendrawasih/Cendrawasih.tscn" id="21_lkohu"]
+[ext_resource type="PackedScene" uid="uid://b10tgxrru3ml7" path="res://3D Assets/Animal/5-Sulawesi/Rangkong Gading/RangkongGading.tscn" id="22_4bcou"]
+[ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="23_rmxx1"]
+[ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="24_nnyo1"]
+[ext_resource type="PackedScene" uid="uid://2o007uf64l1b" path="res://3D Assets/Animal/2-Nusa Tenggara/Landak/Landak.tscn" id="25_oi7nr"]
+[ext_resource type="PackedScene" uid="uid://bt5e5naxiues3" path="res://3D Assets/Animal/2-Nusa Tenggara/Trenggiling/Trenggiling.tscn" id="26_gv407"]
+[ext_resource type="PackedScene" uid="uid://bcxy3h7ehkskm" path="res://3D Assets/Animal/3-Papua/Dingiso/Dingiso.tscn" id="27_al1fa"]
+[ext_resource type="PackedScene" uid="uid://dwr5pau25icau" path="res://3D Assets/Animal/3-Papua/Kangguru Pohon Mantel Emas/KanguruPohonMantelEmas.tscn" id="28_epipa"]
+[ext_resource type="PackedScene" uid="uid://d1xcahstqcf7l" path="res://3D Assets/Animal/3-Papua/Kasuari/Kasuari.tscn" id="29_8xofv"]
+[ext_resource type="PackedScene" uid="uid://dy60x7sqkbkua" path="res://3D Assets/Animal/4-Jawa/Badak Jawa/Badak Jawa.tscn" id="30_cby60"]
+[ext_resource type="PackedScene" uid="uid://dvtlckltq6aix" path="res://3D Assets/Animal/5-Sulawesi/Anoa/Anoa.tscn" id="31_ec1gm"]
+[ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="31_o6qo1"]
+[ext_resource type="PackedScene" uid="uid://cw2edqwyx5hne" path="res://3D Assets/Animal/5-Sulawesi/Babirusa/Babirusa.tscn" id="33_wmbyn"]
+[ext_resource type="PackedScene" uid="uid://dcef2mv6yga7r" path="res://3D Assets/Animal/6-Sumatera/Tarsius/Tarsius.tscn" id="34_7d42v"]
+[ext_resource type="PackedScene" uid="uid://sq238bgldex5" path="res://3D Assets/Animal/6-Sumatera/Bunga Raflesia/Bunga Raflesia.tscn" id="35_nats8"]
+[ext_resource type="PackedScene" uid="uid://dh2wp603p03k7" path="res://3D Assets/Animal/6-Sumatera/Harimau Sumatera/Harimau sumatera.tscn" id="36_3jrt7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sygdw"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n4r1"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lv5aa"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vri21"]
+
+[sub_resource type="Sky" id="Sky_6jrk8"]
+sky_material = SubResource("ProceduralSkyMaterial_vri21")
+
+[sub_resource type="Environment" id="Environment_f53pu"]
+background_mode = 2
+sky = SubResource("Sky_6jrk8")
+volumetric_fog_density = 0.02
+volumetric_fog_ambient_inject = 0.5
+
+[node name="Level Eksperimen" type="Node3D"]
+script = ExtResource("1_2p54o")
+
+[node name="Mouse Position Locator" parent="." instance=ExtResource("2_snmsy")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.964557, -0.103103, 0.242896, 0, 0.920505, 0.390731, -0.263873, -0.376883, 0.88788, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
+current = true
+size = 13.612
+script = ExtResource("3_ly6d4")
+
+[node name="Almanac2" parent="Camera3D" instance=ExtResource("4_nvbn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
+visible = false
+
+[node name="Obstacle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0685, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle"]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48644, 3.92917, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D2"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D2"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3256, 7.80252, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D3"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D3"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3395, 11.2686, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D4"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D4"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21328, 18.2379, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D16"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D16"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D17" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9971, 15.42, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D17"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D17"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D18" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.553, 8.54, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D18"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D18"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2847, 12.6093, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D10"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D10"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D19" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9027, 10.8221, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D19"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D19"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D20" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9027, 10.8221, -1.90735e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D20"]
+shape = SubResource("BoxShape3D_7duej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D20"]
+mesh = SubResource("BoxMesh_sygdw")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81474, 3.28319, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D5"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D5"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4366, 6.11671, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D6"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D6"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29228, 7.51898, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D7"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D7"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27914, 10.1662, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D8"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D8"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D21" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.6342, 7.87393, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D21"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D21"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D22" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2054, 4.9306, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D22"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D22"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D23" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.499, 1.51953, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D23"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D23"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D24" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13952, 16.441, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D24"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D24"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D25" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3233, 5.18389, 9.53674e-07)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D25"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D25"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D26" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5634, 4.756, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D26"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D26"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7024, 13.4677, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D9"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D9"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1975, 15.6665, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D11"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D11"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7638, 18.2412, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D12"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D12"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2929, 2.67953, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D13"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D13"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4992, 9.33124, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D14"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D14"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6329, 4.69848, 2.86102e-06)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D15"]
+shape = SubResource("BoxShape3D_8n4r1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D15"]
+mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="water" parent="Obstacle" instance=ExtResource("5_1817f")]
+transform = Transform3D(1, 0, 0, 0, 3.4738, 0, 0, 0, 1, 26.3688, -0.945987, 0)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" node_paths=PackedStringArray("wallleft") instance=ExtResource("5_7acp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0717, 4.47386, 0)
+wallleft = NodePath("../invisiblewall3")
+
+[node name="checkpoint2" parent="Checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("5_7acp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8186, 6.62607, 0)
+wallleft = NodePath("../invisiblewall2")
+wallright = NodePath("../invisiblewall")
+
+[node name="invisiblewall" parent="Checkpoints" instance=ExtResource("6_l2mum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4484, 0, 0)
+
+[node name="invisiblewall2" parent="Checkpoints" instance=ExtResource("6_l2mum")]
+transform = Transform3D(0.289348, 0, 0, 0, 0.271987, 0, 0, 0, 0.289348, -39.9204, 0, 0)
+
+[node name="invisiblewall3" parent="Checkpoints" instance=ExtResource("6_l2mum")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -59.4924, 7.91789, 0)
+
+[node name="Player" parent="." instance=ExtResource("7_qjisd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1885, 0.912748, -3.8147e-06)
+collision_mask = 34
+
+[node name="skeleton_mas" parent="." instance=ExtResource("8_6gip3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
+
+[node name="GridMapGround" type="GridMap" parent="."]
+mesh_library = ExtResource("9_c3ghd")
+cell_size = Vector3(1.3, 1.3, 1.3)
+collision_layer = 2
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(-65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131071, 0, 0, -5, 0, 1, -6, 0, 1, -7, 0, 1, -9, 0, 1, -65545, 0, 1, -65544, 0, 1, -8, 0, 1, -65543, 0, 1, -65542, 0, 1, -131078, 0, 1, -131077, 0, 1, -196613, 0, 1, -196614, 0, 1, -262149, 0, 1, -262148, 0, 1, -196612, 0, 1, -196611, 0, 1, -65541, 0, 1, -131076, 0, 1, -131075, 0, 1, -196610, 0, 1, -196609, 0, 1, -262144, 0, 1, -262143, 0, 1, -262142, 0, 1, -262141, 0, 1, -262140, 0, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196605, 0, 1, -196604, 0, 1, -196603, 0, 1, -196602, 0, 1, -262137, 0, 1, -196600, 0, 1, -196599, 0, 1, -196601, 0, 1, -196598, 0, 1, -196597, 0, 1, -196596, 0, 1, -131060, 0, 1, -131059, 0, 1, -131058, 0, 1, -131061, 0, 1, -65523, 0, 1, -65522, 0, 1, 14, 0, 1, -65539, 65535, 0, -65538, 65535, 0, -65537, 65535, 0, -131072, 65535, 0, -131071, 65535, 0, -131070, 65535, 0, -131068, 65535, 0, -131067, 65535, 0, -131066, 65535, 0, -131065, 65535, 0, -131069, 65535, 0, -131064, 65535, 0, -131063, 65535, 0, -131062, 65535, 0, -5, 65535, 1, -6, 65535, 1, -7, 65535, 1, -8, 65535, 1, -9, 65535, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 0, -1)
+
+[node name="GridMapVines" parent="." instance=ExtResource("10_31ljm")]
+data = {
+"cells": PackedInt32Array(655333, 65535, 2, 589797, 65535, 2, 524261, 65535, 2, 131052, 65535, 2, 65516, 65535, 2, -20, 65535, 2, -65556, 65535, 2, -131092, 65535, 2, -196628, 65535, 2, 262130, 65535, 2, 196594, 65535, 2, 131058, 65535, 2, 65522, 65535, 2, 393205, 65535, 2, 327669, 65535, 2, 262133, 65535, 2, -65571, 65535, 2, -131107, 65535, 2, -196643, 65535, 2, 131045, 65535, 2, 65509, 65535, 2, -27, 65535, 2, -65563, 65535, 2, -131099, 65535, 2, -196635, 65535, 2, 655338, 65535, 2, 589802, 65535, 2, 524266, 65535, 2, 458730, 65535, 2, 393194, 65535, 2)
+}
+
+[node name="Komodo" parent="." instance=ExtResource("11_j00h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22932, -0.293279, 0)
+
+[node name="movingplatform" parent="." instance=ExtResource("12_q3skr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48906, 3.35671, 0)
+
+[node name="Orang Utan" parent="." instance=ExtResource("13_hfae5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30307, 8.10832, 0.0812354)
+
+[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 144.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("14_5sr81")
+event = "spawn_mas"
+
+[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 184.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("14_5sr81")
+event = "despawn_mas"
+
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("15_m255p")]
+
+[node name="DialogueManager" parent="." instance=ExtResource("16_qpc4o")]
+layer = 10
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f53pu")
+
+[node name="Bunglon" parent="." instance=ExtResource("17_e1v8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15575, 6.6611, -0.301668)
+
+[node name="Burung Maleo" parent="." instance=ExtResource("18_g33nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23924, 6.60838, -0.301668)
+
+[node name="Jalak Bali" parent="." instance=ExtResource("18_siplm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6062, 6.00408, -0.301668)
+
+[node name="Elang" parent="." instance=ExtResource("19_bvwp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90553, 12.4894, -0.301669)
+
+[node name="Burung Cendrawasih" parent="." instance=ExtResource("21_lkohu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15722, 11.7212, -0.301668)
+
+[node name="Rangkong Gading" parent="." instance=ExtResource("22_4bcou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8289, 10.9713, -0.301668)
+
+[node name="Rusa" parent="." instance=ExtResource("23_rmxx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77476, 2.32662, -0.301668)
+
+[node name="Anjing Kintamani" parent="." instance=ExtResource("24_nnyo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45795, 0, 0)
+
+[node name="Landak" parent="." instance=ExtResource("25_oi7nr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76452, -0.952971, 0)
+
+[node name="Trenggiling" parent="." instance=ExtResource("26_gv407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68161, 0, 0)
+
+[node name="Dingiso" parent="." instance=ExtResource("27_al1fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8281, 0.628012, 0.335432)
+
+[node name="KanguruPohonMantelEmas" parent="." instance=ExtResource("28_epipa")]
+
+[node name="Kasuari" parent="." instance=ExtResource("29_8xofv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.59085, 1.16412, 0)
+
+[node name="Badak" parent="." instance=ExtResource("30_cby60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36622, 0.634252, 0.217286)
+
+[node name="Anoa" parent="." instance=ExtResource("31_ec1gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.786, -0.611603, 0)
+
+[node name="Burung Merak" parent="." instance=ExtResource("31_o6qo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62162, -1.56518, 0)
+
+[node name="Babirusa" parent="." instance=ExtResource("33_wmbyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8491, -0.904571, 0)
+
+[node name="Tarsius" parent="." instance=ExtResource("34_7d42v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.915, 0, 0)
+
+[node name="Bunga Rafflesia" parent="." instance=ExtResource("35_nats8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9924, 0, 0)
+
+[node name="Harimau" parent="." instance=ExtResource("36_3jrt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4657, 2.21933, 0)
+
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

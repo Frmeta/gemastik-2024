@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bdybsuliq6yh4"]
+
+[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="1_7d3ip"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7d3ip")
+shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
+shader_parameter/Dissolve_Height = 0.0
+shader_parameter/Min_Height = -1.06
+shader_parameter/Height = 1.955

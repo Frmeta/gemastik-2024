@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://pve8mr1ft401"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_0vdi2"]
+[ext_resource type="Texture2D" uid="uid://bterx837a27xv" path="res://Resource/Hewan/1-Bali/rusa.png" id="1_yii63"]
+
+[resource]
+script = ExtResource("1_0vdi2")
+foto_kartun = ExtResource("1_yii63")
+foto_asli = ExtResource("1_yii63")
+nama = "Rusa"
+latin = "Cervidae"
+status = "terancam punah"
+habitat = "Pulau Menjangan"
+entry = "Terdapat pulau yang dinamakan “Menjangan” karena banyak ditemukan rusa atau biasa dalam bahasa setempat disebut “menjangan” pada pulau tersebut."

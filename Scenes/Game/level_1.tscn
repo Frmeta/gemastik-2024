@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://co0hnhiv8iwww"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
+[ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
+[ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_tdmpm"]
+[ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_p2it0"]
+[ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_tr8ay"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_ixra3"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_ro8hd"]
+[ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="8_6oec8"]
+[ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="9_re5ch"]
+[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_741tb"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_wdrf8"]
+[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_o1xl6"]
+[ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_vo8i8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
+size = Vector3(150, 1, 1)
+
+[node name="Level Kosong" type="Node3D"]
+script = ExtResource("1_8jw7r")
+
+[node name="Mouse Position Locator" parent="." instance=ExtResource("2_o6xct")]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("3_tdmpm")]
+
+[node name="DirectionalLight3D" parent="." instance=ExtResource("4_p2it0")]
+
+[node name="Camera3D" parent="." instance=ExtResource("5_tr8ay")]
+
+[node name="Player" parent="." instance=ExtResource("6_ixra3")]
+collision_mask = 34
+
+[node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
+
+[node name="GridMapGround" parent="." instance=ExtResource("8_6oec8")]
+data = {
+"cells": PackedInt32Array(-196613, 0, 1, -262148, 0, 1, -327683, 0, 1, -327682, 0, 1, -327681, 0, 1, -393216, 0, 1, -393215, 0, 1, -393214, 0, 1, -393213, 0, 1, -393212, 0, 1, -327675, 0, 1, -262138, 0, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapVines" parent="." instance=ExtResource("9_re5ch")]
+
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("10_741tb")]
+
+[node name="DialogueManager" parent="." instance=ExtResource("11_wdrf8")]
+layer = 11
+
+[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 144.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("12_o1xl6")
+event = "spawn_mas"
+
+[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 184.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("12_o1xl6")
+event = "despawn_mas"
+
+[node name="Lower Bound" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
+mesh = SubResource("BoxMesh_i8odg")
+
+[node name="WinArea" parent="." instance=ExtResource("13_vo8i8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
+
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://td85yxefioc8"]
+
+[ext_resource type="Texture2D" uid="uid://cw03kseawr1ll" path="res://Resource/Hewan/6-Sumatera/tarsius.png" id="1_cblyp"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_w2oi2"]
+
+[resource]
+script = ExtResource("1_w2oi2")
+foto_kartun = ExtResource("1_cblyp")
+foto_asli = ExtResource("1_cblyp")
+nama = "Tarsius"
+latin = "Tarsius pumilus"
+status = "terancam punah"
+habitat = "rumpun bambu, akar pohon beringin maupun lubang lubang kayu yang digunakan untuk bersembunyi dan beristirahat"
+entry = "Tarsius merupakan primata terkecil di muka Bumi dan merupakan hewan nokturnal yang artinya bangun saat malam dan tidur saat siang."

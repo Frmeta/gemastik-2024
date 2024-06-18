@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://c44cmfy5foeu5"]
+
+[ext_resource type="Texture2D" uid="uid://lhca6alya8xg" path="res://Resource/Hewan/2-NT/landak.png" id="1_evu63"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_jy4v1"]
+
+[resource]
+script = ExtResource("1_jy4v1")
+foto_kartun = ExtResource("1_evu63")
+foto_asli = ExtResource("1_evu63")
+nama = "Landak"
+latin = "Hystrix javanica"
+status = "Risiko Rendah (Stabil)"
+habitat = "Pulau Jawa, Bali, Nusa tenggara"
+entry = "Tidak seperti tikus, pengerat ini bersifat lambat. Namun, pada seluruh badannya terdapat duri-duri untuk melindungi dirinya. Landak juga bisa dibedakan menjadi dua kelompok berdasarkan apakah duri-durinya berkelompok atau berdiri sendiri."

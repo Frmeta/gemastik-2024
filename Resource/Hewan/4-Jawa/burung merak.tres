@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://bvj0rw481ueqb"]
+
+[ext_resource type="Texture2D" uid="uid://wb345xn4nr28" path="res://Resource/Hewan/4-Jawa/burung_merak.png" id="1_jftaa"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_rd1re"]
+
+[resource]
+script = ExtResource("1_rd1re")
+foto_kartun = ExtResource("1_jftaa")
+foto_asli = ExtResource("1_jftaa")
+nama = "Burung merak"
+latin = "Pavo muticus"
+status = "Terancam"
+habitat = "padang rumput di Pulau Jawa, dan Republik Rakyat Tiongkok"
+entry = "Burung merak jantan memiliki ekor yang lebih indah dibandingkan dengan burung merak betina yang berguna untuk menarik pasangan betina saat musim kawin."

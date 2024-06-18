@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://c4ap53uq8q0mf"]
+
+[ext_resource type="Texture2D" uid="uid://c4ifs7a4crp0g" path="res://Resource/Hewan/1-Bali/jalak_bali.png" id="1_csabw"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="3_y8xej"]
+
+[resource]
+script = ExtResource("3_y8xej")
+foto_kartun = ExtResource("1_csabw")
+foto_asli = ExtResource("1_csabw")
+nama = "Jalak Bali"
+latin = "Leucopsar rothschildi"
+status = "Terancam kritis"
+habitat = "hutan mangrove, hutan rawa, hutan musim dataran rendah dan daerah savana, Pulau Bali"
+entry = "Jalak bali merupakan hewan yang menyukai kebersihan. Burung ini akan secara frekuen bermain air kemudian mengeringkan tubuhnya dengan cara menggigit bulunya dan juga berjemur di ranting-ranting pepohonan."

@@ -33,7 +33,7 @@ func _on_continue_button_pressed():
 
 func _on_level_select_button_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://3D Assets/Scenes/Game/level_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
 
 
 func _on_restart_button_pressed():

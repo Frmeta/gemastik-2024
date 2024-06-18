@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://d0qcjn5i7sep6"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_drcmv"]
+[ext_resource type="Texture2D" uid="uid://dbqps7n06yb5e" path="res://Resource/Hewan/6-Sumatera/harimau_sumatera.png" id="1_e6q6o"]
+
+[resource]
+script = ExtResource("1_drcmv")
+foto_kartun = ExtResource("1_e6q6o")
+foto_asli = ExtResource("1_e6q6o")
+nama = "Harimau Sumatera"
+latin = "Panthera tigris sumatrae"
+status = "kritis"
+habitat = "hutan dataran rendah, lahan gambut, dan hutan hujan pegunungan"
+entry = "Perbedaan utama harimau Sumatera dan jenis harimau lain adalah ukuran tubuhnya yang lebih kecil dari jenis-jenis lain dan juga warna kulitnya merupakan yang paling gelap dibanding semua jenis lainnya."
