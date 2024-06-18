@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=25 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_apv7o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_45g58"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_hlgta"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="4_p3yr7"]
+[ext_resource type="PackedScene" uid="uid://3bii3f0bjn6u" path="res://Scenes/water.tscn" id="5_500gr"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="5_yuocv"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="6_xk2if"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="7_tdkyn"]
@@ -373,6 +374,9 @@ shape = SubResource("BoxShape3D_8n4r1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle/StaticBody3D15"]
 mesh = SubResource("BoxMesh_lv5aa")
+
+[node name="water" parent="Obstacle" instance=ExtResource("5_500gr")]
+transform = Transform3D(0.985445, 0, 0, 0, 2.2341, 0, 0, 0, 0.985445, 25.6664, 0, 0)
 
 [node name="Checkpoints" type="Node3D" parent="."]
 

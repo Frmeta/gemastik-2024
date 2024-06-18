@@ -35,6 +35,7 @@ var is_scanning = false
 var is_on_vines = false
 var is_climbing = false
 var climbing_speed = 5.0
+var is_in_water = false
 
 var can_move = true
 
