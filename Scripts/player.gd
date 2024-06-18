@@ -123,7 +123,7 @@ func _physics_process(delta):
 		var is_jump_pressed = _last_jump_pressed + jump_buffer > Time.get_ticks_msec()
 		var from_ground = _last_on_ground + coyote_treshold > Time.get_ticks_msec()
 		var from_air = curr_jumps < max_jumps
-		if is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
+		if can_move and is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
 			if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
 				# jump on the air
 				curr_jumps += 1
@@ -131,6 +131,8 @@ func _physics_process(delta):
 			_last_jump_pressed = 0
 			_last_on_ground = 0
 			velocity.y = JUMP_POWER
+			if !$jumping.playing:
+				$jumping.play()
 			
 		# Add the gravity.
 		if not is_on_floor() and not is_climbing:
@@ -140,22 +142,21 @@ func _physics_process(delta):
 				velocity.y -= gravity * delta
 	
 	# Move right or left
-	if can_move:
-		var input_x = Input.get_axis("move_left", "move_right")
-		if $Grapling.hooked:
-			velocity += Vector3(input_x * SPEED * delta , 0, 0)
-		elif input_x != 0:
-			if input_x > 0:
-				model3d.get_node("Player").rotation.y = deg_to_rad(40)
-			else:
-				model3d.get_node("Player").rotation.y = deg_to_rad(-40)
-			velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
-		else:
-			velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
-			model3d.get_node("Player").rotation.y = 0
-
-		
+	var input_x = Input.get_axis("move_left", "move_right")
+	if !can_move:
+		input_x = 0
 	
+	if $Grapling.hooked:
+		velocity += Vector3(input_x * SPEED * delta , 0, 0)
+	elif input_x != 0:
+		if input_x > 0:
+			model3d.get_node("Player").rotation.y = deg_to_rad(40)
+		else:
+			model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+		velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+	else:
+		velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+		model3d.get_node("Player").rotation.y = 0
 	
 	# Grapling Hook physics
 	if $Grapling.hooked:
@@ -203,28 +204,30 @@ func _physics_process(delta):
 	if is_climbing:
 		animTree.set("parameters/Game/transition_request", "is_climbing")
 		model3d.get_node("Player").rotation.y = deg_to_rad(180)
+		$walkdust.stop_emit()
 	else:
 		animTree.set("parameters/Game/transition_request", "is_not_climbing")
 		
-	if is_on_floor():
-		# grounded
-		animTree.set("parameters/Platformer/conditions/is_floating", false)
-		animTree.set("parameters/Platformer/conditions/is_not_floating", true)
-		
-		if abs(velocity.x) < 0.1:
-			animTree.set("parameters/Platformer/conditions/is_running", false)
-			animTree.set("parameters/Platformer/conditions/is_not_running", true)
-			$walkdust.stop_emit()
-			pass
+		if is_on_floor():
+			# grounded
+			animTree.set("parameters/Platformer/conditions/is_floating", false)
+			animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+			
+			if abs(velocity.x) < 0.1:
+				animTree.set("parameters/Platformer/conditions/is_running", false)
+				animTree.set("parameters/Platformer/conditions/is_not_running", true)
+				$walkdust.stop_emit()
+				pass
+			else:
+				animTree.set("parameters/Platformer/conditions/is_running", true)
+				animTree.set("parameters/Platformer/conditions/is_not_running", false)
+				if !$walking.playing:
+					$walking.play()
+				$walkdust.emit(dir)
 		else:
-			animTree.set("parameters/Platformer/conditions/is_running", true)
-			animTree.set("parameters/Platformer/conditions/is_not_running", false)
-			# anim.play("Running_A")
-			$walkdust.emit(dir)
-	else:
-		animTree.set("parameters/Platformer/conditions/is_floating", true)
-		animTree.set("parameters/Platformer/conditions/is_not_floating", false)
-		$walkdust.stop_emit()
+			animTree.set("parameters/Platformer/conditions/is_floating", true)
+			animTree.set("parameters/Platformer/conditions/is_not_floating", false)
+			# $walkdust.stop_emit()
 	
 	if dir == Vector2.ZERO:
 		model3d.scale = Vector3.ONE
@@ -249,7 +252,7 @@ func _physics_process(delta):
 		is_climbing = false
 	
 	# respawn
-	if global_position.y < -30:
+	if global_position.y < -15:
 		global_position = GM.last_checkpoint_position
 		velocity = Vector3.ZERO
 

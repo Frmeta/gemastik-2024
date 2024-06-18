@@ -58,6 +58,7 @@ func _done_animating_almanac(useless):
 	is_animating_almanac = false
 	if is_almanac_open:
 		almanac_ui.visible = true
+		almanac_ui.refresh()
 		
 		# fade in
 		var tween = get_tree().create_tween()

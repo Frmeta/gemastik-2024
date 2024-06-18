@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbd5rbh1ba1wu"]
+
+[ext_resource type="Shader" uid="uid://btg1kh6ko8rbk" path="res://Scenes/testingken/visualpixelation.tres" id="1_4q5r7"]
+[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_sgowu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2djq"]
+shader = ExtResource("1_4q5r7")
+shader_parameter/pixelation = 700.0
+
+[node name="pixelator" type="Sprite2D"]
+material = SubResource("ShaderMaterial_i2djq")
+position = Vector2(713.5, 483)
+scale = Vector2(20.8359, 13.9531)
+texture = ExtResource("2_sgowu")

@@ -5,7 +5,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04kxt"]
 resource_name = "Material"
 cull_mode = 2
-diffuse_mode = 3
 albedo_color = Color(0.752941, 0.466667, 0.341176, 1)
 roughness = 0.5
 
@@ -77,7 +76,6 @@ size = Vector3(1.82611, 1.88729, 1.92882)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta2fi"]
 resource_name = "Material"
 cull_mode = 2
-diffuse_mode = 3
 albedo_color = Color(0.752941, 0.466667, 0.341176, 1)
 roughness = 0.5
 

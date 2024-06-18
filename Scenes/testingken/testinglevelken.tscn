@@ -81,13 +81,11 @@ material_override = SubResource("ShaderMaterial_8ebyq")
 multimesh = SubResource("MultiMesh_ldrap")
 
 [node name="grass" type="MeshInstance3D" parent="."]
-visible = false
 mesh = ExtResource("4_xj4pb")
 skeleton = NodePath("../MultiMeshInstance3D")
 
 [node name="top_ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47213, -0.000199437)
-visible = false
 mesh = SubResource("PlaneMesh_bvtwu")
 skeleton = NodePath("../StaticBody3D")
 

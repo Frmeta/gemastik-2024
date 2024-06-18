@@ -11,7 +11,8 @@ func _process(delta):
 			
 		var dir = owner.owner.get_mouse_location_on_map() - global_position
 		dir.z = 0
-		dir = dir.normalized() * reach
+		if dir.length() > reach:
+			dir = dir.normalized() * reach
 		$RayCast3D.target_position = dir
 		
 		if $RayCast3D.is_colliding():

@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://h75mlfcal5ja"]
+[gd_scene load_steps=6 format=3 uid="uid://h75mlfcal5ja"]
 
 [ext_resource type="PackedScene" uid="uid://djwm4tpw6acyc" path="res://Scenes/Game/level.tscn" id="1_f4mc4"]
-[ext_resource type="Shader" uid="uid://btg1kh6ko8rbk" path="res://Scenes/testingken/visualpixelation.tres" id="2_48vmu"]
-[ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="3_1u332"]
+[ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="3_hcbfp"]
 [ext_resource type="PackedScene" uid="uid://c4mms4g7aibmj" path="res://Scenes/testingken/testinglevelken.tscn" id="3_pbvfg"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="4_gyevq"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="6_a1vo1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2djq"]
-shader = ExtResource("2_48vmu")
-shader_parameter/pixelation = 700.0
 
 [node name="space" type="Node3D"]
 
@@ -18,11 +13,7 @@ visible = false
 
 [node name="level" parent="." instance=ExtResource("3_pbvfg")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_i2djq")
-position = Vector2(713.5, 483)
-scale = Vector2(20.8359, 13.9531)
-texture = ExtResource("3_1u332")
+[node name="Sprite2D" parent="." instance=ExtResource("3_hcbfp")]
 
 [node name="DialogueManager" parent="." instance=ExtResource("4_gyevq")]
 

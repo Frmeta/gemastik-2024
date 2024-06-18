@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gemastik2024"
-run/main_scene="res://Scenes/Game/level.tscn"
+run/main_scene="res://Scenes/Game/level0.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.917647, 0.890196, 0.956863, 1)
 boot_splash/image="res://assets/frekensam.png"
@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 DialogueEnum="*res://Scripts/DialogueEnum.gd"
 GM="*res://Scripts/GameManager.gd"
 EventDistributor="*res://Scripts/EventDistributor.gd"
+
+[debug]
+
+shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.878431)
 
 [display]
 
@@ -50,12 +54,17 @@ jump={
 }
 almanac={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
 down={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+]
+}
+esc={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 
@@ -67,3 +76,4 @@ down={
 3d_physics/layer_4="Animal"
 3d_physics/layer_5="Vines"
 3d_physics/layer_6="movingPlatform"
+3d_physics/layer_7="grapling_tree"

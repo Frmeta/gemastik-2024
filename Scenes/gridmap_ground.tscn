@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://duyvocby7woox"]
+
+[ext_resource type="MeshLibrary" uid="uid://b8umrxbbu728f" path="res://Tilemap/tilemap_nature14.tres" id="1_358am"]
+[ext_resource type="Script" path="res://Scripts/gridmap_ground.gd" id="2_84vle"]
+
+[node name="GridMapGround" type="GridMap"]
+mesh_library = ExtResource("1_358am")
+cell_size = Vector3(1.3, 1.3, 1.3)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_84vle")
+metadata/_editor_floor_ = Vector3(0, 0, -1)

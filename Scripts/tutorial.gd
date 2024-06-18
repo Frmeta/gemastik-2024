@@ -32,6 +32,9 @@ func _process(delta):
 			var node = nodes[i]
 			if node_pos[i]==null:
 				node_pos[i] = node.global_position-((node.get_begin()-node.get_end())/2)
+			pointer.visible=false
+			if node_trigger[i]=="click":
+				pointer.visible=true
 			var dist = Vector2(node_pos[i])-pointer.global_position
 			while abs(dist)>Vector2.ONE*2:
 				pointer.global_position = lerp(pointer.global_position, Vector2(node_pos[i]), 0.2)
@@ -43,6 +46,7 @@ func _process(delta):
 			if node_trigger[i]=="space":
 				await EventDistributor.end_dialogue
 			else:
+				pointer.visible=true
 				_disable_space()
 				await EventDistributor.button_clicked_on_tutorial
 				_renable_space()

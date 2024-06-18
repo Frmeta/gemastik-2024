@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://dtf1m2ols3pgr"]
+
+[ext_resource type="Texture2D" uid="uid://gyc5pk6qum0k" path="res://Resource/Hewan/Kalimantan/bunglon_surai.png" id="1_eg5p8"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="2_1pbuo"]
+[ext_resource type="Texture2D" uid="uid://bgkgo8m62kxsl" path="res://Resource/Hewan/Kalimantan/bunglon_kartun.png" id="2_v38bo"]
+
+[resource]
+script = ExtResource("2_1pbuo")
+foto_kartun = ExtResource("2_v38bo")
+foto_asli = ExtResource("1_eg5p8")
+nama = "Bunglon"
+latin = "Bronchocela jubata"
+status = "Risiko Rendah (Stabil)"
+habitat = "semak-semak dan pepohonan di pinggiran hutan, kebun, atau pekarangan. "
+entry = "Seperti bunglon pada umumnya, jenis bunglon ini juga bisa merubah warna kulitnya. Tidak hanya saat terancam, perubahan warna tersebut juga dilakukan untuk berkomunikasi dan juga menarik pasangan."
