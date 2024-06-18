@@ -15,6 +15,8 @@ func _ready():
 	# init next_pass to all surface
 	next_pass = mesh.get_active_material(0).next_pass
 	assert(next_pass != null)
+	
+	assert(mesh != null)
 	for i in range(1, mesh.get_surface_override_material_count()):
 		mesh.get_active_material(i).next_pass = next_pass
 	

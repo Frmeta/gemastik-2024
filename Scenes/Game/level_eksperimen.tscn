@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=40 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
@@ -27,6 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://2o007uf64l1b" path="res://3D Assets/Animal/2-Nusa Tenggara/Landak/Landak.tscn" id="25_oi7nr"]
 [ext_resource type="PackedScene" uid="uid://bt5e5naxiues3" path="res://3D Assets/Animal/2-Nusa Tenggara/Trenggiling/Trenggiling.tscn" id="26_gv407"]
 [ext_resource type="PackedScene" uid="uid://bcxy3h7ehkskm" path="res://3D Assets/Animal/3-Papua/Dingiso/Dingiso.tscn" id="27_al1fa"]
+[ext_resource type="PackedScene" uid="uid://dwr5pau25icau" path="res://3D Assets/Animal/3-Papua/Kangguru Pohon Mantel Emas/KanguruPohonMantelEmas.tscn" id="28_epipa"]
+[ext_resource type="PackedScene" uid="uid://d1xcahstqcf7l" path="res://3D Assets/Animal/3-Papua/Kasuari/Kasuari.tscn" id="29_8xofv"]
+[ext_resource type="PackedScene" uid="uid://dy60x7sqkbkua" path="res://3D Assets/Animal/4-Jawa/Badak/Badak.tscn" id="30_cby60"]
+[ext_resource type="PackedScene" uid="uid://dvtlckltq6aix" path="res://3D Assets/Animal/5-Sulawesi/Anoa/Anoa.tscn" id="31_ec1gm"]
+[ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="31_o6qo1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
@@ -514,6 +519,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68161, 0, 0)
 
 [node name="Dingiso" parent="." instance=ExtResource("27_al1fa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8281, 0.628012, 0.335432)
+
+[node name="KanguruPohonMantelEmas" parent="." instance=ExtResource("28_epipa")]
+
+[node name="Kasuari" parent="." instance=ExtResource("29_8xofv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.59085, 1.16412, 0)
+
+[node name="Badak" parent="." instance=ExtResource("30_cby60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36622, 0.634252, 0.217286)
+
+[node name="Anoa" parent="." instance=ExtResource("31_ec1gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.786, -0.611603, 0)
+
+[node name="Burung Merak" parent="." instance=ExtResource("31_o6qo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62162, -1.56518, 0)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

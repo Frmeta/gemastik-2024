@@ -950,7 +950,7 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wnwsm"]
-radius = 0.915
+radius = 0.385
 
 [node name="Komodo" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 8
@@ -959,7 +959,7 @@ script = ExtResource("1_g3pqj")
 mesh = NodePath("Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
 
 [node name="Kodomo_Skeleton" type="Node3D" parent="."]
-transform = Transform3D(1.25067e-07, 0.699423, 0, -0.699423, 1.25067e-07, 0, 0, 0, 0.699423, 0, 0, 0)
+transform = Transform3D(1.25067e-07, 0.699423, 0, -0.699423, 1.25067e-07, 0, 0, 0, 0.699423, 0, -0.0917075, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Kodomo_Skeleton"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
