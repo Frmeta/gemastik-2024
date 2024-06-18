@@ -48,3 +48,14 @@ func delete_button_pressed(idx):
 	data[idx] = {}
 	GM.data = data
 	refresh()
+
+
+func _on_cheatbutton_pressed():
+	print("cheat, creating game data in file idx 0")
+	
+	# if new game
+	var data = GM.data
+	data[0] = {"level":7}
+	GM.data = data
+	
+	load_button_pressed(0)

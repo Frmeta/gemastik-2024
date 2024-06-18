@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://dqffunxmbm57t"]
+
+[ext_resource type="Texture2D" uid="uid://dexraw4j1ny7t" path="res://Resource/Hewan/4-Jawa/elang_jawa.png" id="1_1ltns"]
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_kgasc"]
+
+[resource]
+script = ExtResource("1_kgasc")
+foto_kartun = ExtResource("1_1ltns")
+foto_asli = ExtResource("1_1ltns")
+nama = "Elang Jawa"
+latin = "Nisaetus bartelsi"
+status = "Genting"
+habitat = "hutan dataran tinggi"
+entry = "Elang ini memiliki keunikan yaitu memiliki jambul yang tinggi. Burung Elang biasa dilihat sebagai pemersatu bangsa dan Elang Jawa pun digunakan sebagai lambang dasar negara Indonesia "

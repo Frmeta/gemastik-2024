@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="pulau" load_steps=3 format=3 uid="uid://b4qtndc8q2cyk"]
+[gd_resource type="Resource" script_class="pulau" load_steps=6 format=3 uid="uid://b4qtndc8q2cyk"]
 
 [ext_resource type="Texture2D" uid="uid://wghrso1sdn6y" path="res://assets/pulau/Nusa Tenggara.png" id="1_sygkh"]
+[ext_resource type="Resource" uid="uid://ckqwg5k8veecp" path="res://Resource/Hewan/2-NT/komodo.tres" id="2_6ouc5"]
 [ext_resource type="Script" path="res://Scripts/pulau.gd" id="2_l8kue"]
+[ext_resource type="Resource" uid="uid://c44cmfy5foeu5" path="res://Resource/Hewan/2-NT/landak.tres" id="3_hr8dt"]
+[ext_resource type="Resource" uid="uid://cio3yvoapg74n" path="res://Resource/Hewan/2-NT/tringgiling.tres" id="4_b3tus"]
 
 [resource]
 script = ExtResource("2_l8kue")
 nama = "Nusa Tenggara"
 gambar = ExtResource("1_sygkh")
-hewanss = Array[Resource("res://Scripts/hewans.gd")]([])
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([ExtResource("2_6ouc5"), ExtResource("3_hr8dt"), ExtResource("4_b3tus")])

@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="pulau" load_steps=3 format=3 uid="uid://dotyuieb0aurl"]
+[gd_resource type="Resource" script_class="pulau" load_steps=6 format=3 uid="uid://dotyuieb0aurl"]
 
 [ext_resource type="Texture2D" uid="uid://gym0xug43ecu" path="res://assets/pulau/Sumatera.png" id="1_f0lh8"]
 [ext_resource type="Script" path="res://Scripts/pulau.gd" id="2_lokcl"]
+[ext_resource type="Resource" uid="uid://td85yxefioc8" path="res://Resource/Hewan/6-Sumatera/tarsius.tres" id="2_x4fg1"]
+[ext_resource type="Resource" uid="uid://cyp4ynboum541" path="res://Resource/Hewan/6-Sumatera/bunga rafflesia.tres" id="3_mcln1"]
+[ext_resource type="Resource" uid="uid://d0qcjn5i7sep6" path="res://Resource/Hewan/6-Sumatera/harimau sumatera.tres" id="4_a8sfs"]
 
 [resource]
 script = ExtResource("2_lokcl")
 nama = "Sumatera"
 gambar = ExtResource("1_f0lh8")
-hewanss = Array[Resource("res://Scripts/hewans.gd")]([])
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([ExtResource("2_x4fg1"), ExtResource("3_mcln1"), ExtResource("4_a8sfs")])

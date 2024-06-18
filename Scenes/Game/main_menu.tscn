@@ -254,4 +254,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "delete"
 
+[node name="cheatbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 49.0
+offset_right = 298.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 21
+text = "all island finished cheat"
+
 [connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="cheatbutton" to="TabContainer/Load Game" method="_on_cheatbutton_pressed"]

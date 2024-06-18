@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://ce8rtmsn5cr1a"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_wam2y"]
+[ext_resource type="Texture2D" uid="uid://cfj4al02gj8gc" path="res://Resource/Hewan/3-Papua/dingiso.png" id="1_x1qhq"]
+
+[resource]
+script = ExtResource("1_wam2y")
+foto_kartun = ExtResource("1_x1qhq")
+foto_asli = ExtResource("1_x1qhq")
+nama = "Dingiso"
+latin = "Dendrolagus mbaiso"
+status = "Terancam"
+habitat = "hutan alpine di Barisan Sudirman, Provinsi Papua"
+entry = "Tidak seperti kanguru pohon lainnya, dingiso banyak menghabiskan waktunya di darat."

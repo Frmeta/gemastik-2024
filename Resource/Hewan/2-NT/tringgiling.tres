@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://cio3yvoapg74n"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_e326v"]
+[ext_resource type="Texture2D" uid="uid://cvtrrwx8xwsq8" path="res://Resource/Hewan/2-NT/trenggiling.png" id="1_hysan"]
+
+[resource]
+script = ExtResource("1_e326v")
+foto_kartun = ExtResource("1_hysan")
+foto_asli = ExtResource("1_hysan")
+nama = "Trenggiling"
+latin = "Pholidota sp."
+status = "Terancam Kritis"
+habitat = "hutan-hutan di Pulau Jawa, Kalimantan, Sumatera, dan Nusa Tenggara"
+entry = "Hewan ini tidak memiliki gigi dan hanya memanfaatkan lidahnya yang dapat dijulurkan untuk memangsa hewan lain yang biasanya adalah serangga. Saat berada di kondisi mendesak, hewan ini akan menggulung tubuhnya menjadi bola untuk perlindungan."

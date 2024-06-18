@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://bu0ddbers1vmt"]
+
+[ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_hcyqu"]
+[ext_resource type="Texture2D" uid="uid://h17m7b2lq7wq" path="res://Resource/Hewan/5-Sulawesi/rangkong_gading.png" id="1_s6qyr"]
+
+[resource]
+script = ExtResource("1_hcyqu")
+foto_kartun = ExtResource("1_s6qyr")
+foto_asli = ExtResource("1_s6qyr")
+nama = "Rangkong Gading"
+latin = "Rhyticeros cassidix"
+status = "Rentan"
+habitat = "hutan-hutan di Sulawesi"
+entry = "Burung ini memiliki badan yang besar dan kepakan sayap yang keras dan jelas sehingga keberadaannya mudah untuk diketahui."

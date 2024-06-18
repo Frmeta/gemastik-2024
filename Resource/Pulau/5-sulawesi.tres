@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="pulau" load_steps=3 format=3 uid="uid://btg2jkgaj4luj"]
+[gd_resource type="Resource" script_class="pulau" load_steps=7 format=3 uid="uid://btg2jkgaj4luj"]
 
 [ext_resource type="Texture2D" uid="uid://hlkmy73hyj6a" path="res://assets/pulau/Sulawesi.png" id="1_lhpfs"]
 [ext_resource type="Script" path="res://Scripts/pulau.gd" id="2_cdp7w"]
+[ext_resource type="Resource" uid="uid://bkaieo0367o0i" path="res://Resource/Hewan/5-Sulawesi/anoa.tres" id="2_mnrvn"]
+[ext_resource type="Resource" uid="uid://c4rrec8magp2" path="res://Resource/Hewan/5-Sulawesi/babirusa.tres" id="3_j7qvq"]
+[ext_resource type="Resource" uid="uid://c83hpla3rn64" path="res://Resource/Hewan/5-Sulawesi/burung maleo.tres" id="4_uppju"]
+[ext_resource type="Resource" uid="uid://bu0ddbers1vmt" path="res://Resource/Hewan/5-Sulawesi/rangkong gading.tres" id="5_qmxdr"]
 
 [resource]
 script = ExtResource("2_cdp7w")
 nama = "Sulawesi"
 gambar = ExtResource("1_lhpfs")
-hewanss = Array[Resource("res://Scripts/hewans.gd")]([])
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([ExtResource("2_mnrvn"), ExtResource("3_j7qvq"), ExtResource("4_uppju"), ExtResource("5_qmxdr")])

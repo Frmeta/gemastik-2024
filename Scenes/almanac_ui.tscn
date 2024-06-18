@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://w8tx6iedrwfg" path="res://assets/pulau/Papua.png" id="6_a3o4p"]
 [ext_resource type="FontFile" uid="uid://hyhybg5ya00v" path="res://assets/fonts/IslandMoments-Regular.ttf" id="7_wj6jv"]
 [ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
-[ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
+[ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/0-Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
 [ext_resource type="Texture2D" uid="uid://b3hhr5nevmsoj" path="res://assets/pulau/peta_indo_no_x.png" id="12_2x8a0"]
 [ext_resource type="PackedScene" uid="uid://bskp3gtx74q57" path="res://Scenes/x_di_almanac_ui.tscn" id="13_85a34"]
 [ext_resource type="Script" path="res://Scenes/button_for_tutorial.gd" id="13_w2a43"]
