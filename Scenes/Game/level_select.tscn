@@ -1,9 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5kbxv60fh7g3"]
+[gd_scene load_steps=14 format=3 uid="uid://c5kbxv60fh7g3"]
 
 [ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_62m0y"]
 [ext_resource type="Texture2D" uid="uid://bxk6dx6dsiy02" path="res://assets/pulau/peta_indo.png" id="1_gt7l0"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="3_061id"]
 [ext_resource type="PackedScene" uid="uid://drl6v3lwu7bxc" path="res://Scenes/pin.tscn" id="4_bqhbp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v6v5b"]
+size = Vector2(50, 50)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6xt6i"]
+frequency = 0.0111
+offset = Vector3(10, -40, 0)
+fractal_type = 3
+fractal_ping_pong_strength = 20.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p7jns"]
+seamless = true
+seamless_blend_skirt = 0.418
+as_normal_map = true
+noise = SubResource("FastNoiseLite_6xt6i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2fys"]
+disable_ambient_light = true
+albedo_color = Color(0.380392, 0.313726, 0.14902, 1)
+roughness_texture = SubResource("NoiseTexture2D_p7jns")
+heightmap_scale = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6b1b1"]
 albedo_texture = ExtResource("1_gt7l0")
@@ -24,6 +45,11 @@ points = PackedVector3Array(-12.5, 0, -6, -12.5, 0, 6, 12.5, 0, -6, 12.5, 0, 6)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_62m0y")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.131248, 0)
+mesh = SubResource("PlaneMesh_v6v5b")
+surface_material_override/0 = SubResource("StandardMaterial3D_k2fys")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_xwn0t")
@@ -48,6 +74,8 @@ transform = Transform3D(0.987281, -0.150506, 0.0512234, 0, 0.322193, 0.946674, -
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.887679, 0.116279, -0.44554, 0.276606, 0.638897, 0.717843, 0.368124, -0.760453, 0.534972, 0, 7.20701, 0)
+light_energy = 2.0
+shadow_enabled = true
 
 [node name="Pin0" parent="." instance=ExtResource("4_bqhbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35364, 0, 0.189298)
