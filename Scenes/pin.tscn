@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drl6v3lwu7bxc"]
+[gd_scene load_steps=4 format=3 uid="uid://drl6v3lwu7bxc"]
+
+[ext_resource type="PackedScene" uid="uid://chgdrtqcrcngx" path="res://3D Assets/pin/Pin.glb" id="1_u34j2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8vm3k"]
 
@@ -8,7 +10,11 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.508, 0, -0.619)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_8vm3k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_78b7l")
+
+[node name="Pin2" parent="." instance=ExtResource("1_u34j2")]
+transform = Transform3D(0.115529, 0.293146, 0.949062, -0.347352, 0.907059, -0.237889, -0.930591, -0.302175, 0.206617, 0.308596, 1, -0.280161)
