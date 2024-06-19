@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var nama_pulau_label = $CanvasLayer/VBoxContainer/MarginContainer2/namapulau
+
 var selected_level = null
 
 func _process(delta):
@@ -59,13 +61,13 @@ func _on_mouse_body_entered(body):
 			debug += "(locked)"
 			
 		
-		$CanvasLayer/Label.text = debug
+		nama_pulau_label.text = debug
 
 func _on_mouse_body_exited(body):
 	if body.name.begins_with("Pin"):
 		selected_level = null
 		
-		$CanvasLayer/Label.text = ""
+		nama_pulau_label.text = ""
 
 
 func _on_main_menu_button_pressed():

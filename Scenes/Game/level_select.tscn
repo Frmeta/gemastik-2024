@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5kbxv60fh7g3"]
+[gd_scene load_steps=16 format=3 uid="uid://c5kbxv60fh7g3"]
 
 [ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_62m0y"]
 [ext_resource type="Texture2D" uid="uid://bxk6dx6dsiy02" path="res://assets/pulau/peta_indo.png" id="1_gt7l0"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="3_061id"]
 [ext_resource type="PackedScene" uid="uid://drl6v3lwu7bxc" path="res://Scenes/pin.tscn" id="4_bqhbp"]
+[ext_resource type="Texture2D" uid="uid://b3qiw8iuqi3vi" path="res://assets/ui/back_menu/arrow.png" id="5_er0l6"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="6_w5rr8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v6v5b"]
 size = Vector2(50, 50)
@@ -47,7 +49,7 @@ collision_mask = 4
 script = ExtResource("1_62m0y")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.131248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("PlaneMesh_v6v5b")
 surface_material_override/0 = SubResource("StandardMaterial3D_k2fys")
 
@@ -73,9 +75,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67408, 0, -1.24537)
 transform = Transform3D(0.987281, -0.150506, 0.0512234, 0, 0.322193, 0.946674, -0.158984, -0.934633, 0.318095, 1.27778, 7.49345, 3.26763)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.887679, 0.116279, -0.44554, 0.276606, 0.638897, 0.717843, 0.368124, -0.760453, 0.534972, 0, 7.20701, 0)
+transform = Transform3D(0.894962, 0.100834, -0.434599, 0.196281, 0.785796, 0.586514, 0.400646, -0.610211, 0.683466, 0, 7.20701, 0)
 light_energy = 2.0
 shadow_enabled = true
+shadow_blur = 4.382
 
 [node name="Pin0" parent="." instance=ExtResource("4_bqhbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35364, 0, 0.189298)
@@ -100,21 +103,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.67594, 2.38419e-07, 0.5788
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 18.0
-offset_top = 76.0
-offset_right = 481.0
-offset_bottom = 181.0
-theme_override_font_sizes/font_size = 76
-text = "KALIMANNN"
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 463.0
+offset_bottom = 217.0
 
-[node name="Main Menu Button" type="Button" parent="CanvasLayer"]
-offset_left = 22.0
-offset_top = 28.0
-offset_right = 207.0
-offset_bottom = 59.0
-text = "kembali ke main menu"
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+
+[node name="Main Menu Button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_er0l6")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_w5rr8")
+theme_override_font_sizes/font_size = 48
+text = "Kembali ke Menu"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 40
+
+[node name="namapulau" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_w5rr8")
+theme_override_font_sizes/font_size = 32
+text = "KALIMANNN"
 
 [connection signal="body_entered" from="Mouse" to="." method="_on_mouse_body_entered"]
 [connection signal="body_exited" from="Mouse" to="." method="_on_mouse_body_exited"]
-[connection signal="pressed" from="CanvasLayer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
