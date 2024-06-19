@@ -25,6 +25,7 @@ var data:
 
 var tree_meshes = []
 
+
 func _ready():
 	
 	# load tree meshes
@@ -46,6 +47,7 @@ func _ready():
 func win():
 	explored_level = max(explored_level, current_level+1)
 	data[data_file_number]["level"] = explored_level
+	scanned_animal = []
 	
 func read_data():
 	if not FileAccess.file_exists(FILE_NAME):
@@ -71,4 +73,7 @@ func restart_all():
 	var node_data = [{}, {}, {}, {}, {}, {}]
 	var json_string = JSON.stringify(node_data)
 	save_game.store_line(json_string)
-	
+
+func scan_hewan(hewan_name):
+	scanned_animal.append(hewan_name)
+	EventDistributor.emit_signal("animal_captured")

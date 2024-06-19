@@ -11,6 +11,8 @@ signal some_checkpoint_captured(instance_checkpoint)
 @export var wallleft: InvisibleWall
 @export var wallright: InvisibleWall
 
+@export var syarat_hewan: Array[String]
+
 @onready var animation_tree := $Checkpoint3D/AnimationTree
 
 var captured = false
@@ -55,5 +57,10 @@ func _on_body_entered(body):
 # checkpoin yang lagi aktif dan juga berhewan
 func scan_done():
 	if wallleft!=null and wallright!=null and not wallright.is_not_disabled() and not wallleft.is_not_disabled():
-		print("masuk scan done")
+		print("wow")
+		# cek apakah semua syarat hewan sudah discan
+		for hewan in syarat_hewan:
+			if !GM.scanned_animal.has(hewan.to_lower()):
+				break
+		
 		wallright.disable_wall()

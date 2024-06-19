@@ -53,8 +53,9 @@ func stop_move():
 
 func _input(event: InputEvent) -> void:
 	
-	# Grapling shoot/release
 	if event is InputEventMouseButton and can_move:
+		
+		# Grapling shoot/release
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				is_scanning = false
@@ -67,12 +68,13 @@ func _input(event: InputEvent) -> void:
 					# curr_jumps = 1 # availability to jump once more
 					pass
 				$Grapling.release()
-				
+		
+		# Scanning
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.pressed:
 				$Grapling.release()
 				is_scanning = true
-			else:
+			elif event.is_released():
 				is_scanning = false
 				
 

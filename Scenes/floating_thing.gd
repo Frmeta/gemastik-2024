@@ -3,6 +3,7 @@ extends RigidBody3D
 @export var float_force=4.0
 @export var water_drag = 0.05
 @export var water_angular_drag = 0.05
+@export var water :Area3D
 
 @onready var gravity = 10
 var water_height = 1.5
@@ -12,8 +13,7 @@ var time = 0.1
 var menopang = false
 
 func _ready():
-	var water = get_parent()
-	var parent_global_position = get_parent().global_position
+	var parent_global_position = water.global_position
 	var water_level = parent_global_position.y + 0.5*water.scale.y+1
 	water_height=water_level
 

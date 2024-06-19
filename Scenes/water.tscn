@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://3bii3f0bjn6u"]
+[gd_scene load_steps=12 format=3 uid="uid://3bii3f0bjn6u"]
 
 [ext_resource type="Shader" uid="uid://dhxotis0xiig4" path="res://Scenes/water.tres" id="1_c7d7k"]
 [ext_resource type="Script" path="res://Scenes/water.gd" id="1_m0b0f"]
-[ext_resource type="PackedScene" uid="uid://h3o3mt5ojxsd" path="res://Scenes/floating_thing.tscn" id="2_ii5te"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6glc7"]
 size = Vector3(10, 0.746216, 10)
@@ -16,6 +15,7 @@ subdivide_depth = 20
 render_priority = 0
 shader = ExtResource("1_c7d7k")
 shader_parameter/scale = 1.0
+shader_parameter/scale2 = 1.0
 shader_parameter/ColorParameter = Color(4.81307e-07, 0.717543, 0.796215, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_35nvf"]
@@ -41,12 +41,6 @@ size = Vector3(1, 0.562012, 1)
 [node name="water" type="Area3D"]
 collision_layer = 0
 script = ExtResource("1_m0b0f")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.721494, -0.252198, 0.644858, 0, 0.93131, 0.364227, -0.69242, -0.262788, 0.671935, 2.64284, 2.69083, 4.36149)
-
-[node name="floating_thing" parent="." instance=ExtResource("2_ii5te")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55679, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.126892, 0)
