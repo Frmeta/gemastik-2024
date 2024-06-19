@@ -59,3 +59,4 @@ states/P_Running/node = SubResource("AnimationNodeAnimation_qsgaw")
 states/P_Running/position = Vector2(542, 176)
 states/Start/position = Vector2(116, 108)
 transitions = ["Start", "P_Idle", SubResource("AnimationNodeStateMachineTransition_kd7xp"), "P_Idle", "P_Running", SubResource("AnimationNodeStateMachineTransition_3bpx7"), "P_Running", "P_Idle", SubResource("AnimationNodeStateMachineTransition_807fa"), "P_Idle", "P_Jump_Float", SubResource("AnimationNodeStateMachineTransition_iw5wv"), "P_Running", "P_Jump_Float", SubResource("AnimationNodeStateMachineTransition_juo6a"), "P_Jump_Float", "P_Jump_Landing", SubResource("AnimationNodeStateMachineTransition_40uck"), "P_Jump_Landing", "P_Running", SubResource("AnimationNodeStateMachineTransition_nmp7e"), "P_Jump_Landing", "P_Idle", SubResource("AnimationNodeStateMachineTransition_5nxku")]
+graph_offset = Vector2(0, -325.176)
