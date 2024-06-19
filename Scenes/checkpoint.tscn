@@ -10,8 +10,8 @@ billboard_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_q383r"]
 material = SubResource("StandardMaterial3D_knp6s")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_w1qnx"]
-radius = 1.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_1j0tw"]
+size = Vector3(1, 49.7041, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6sht"]
 resource_name = "Trunk"
@@ -606,7 +606,8 @@ mesh = SubResource("QuadMesh_q383r")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_w1qnx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 24.6682, 0)
+shape = SubResource("BoxShape3D_1j0tw")
 
 [node name="Checkpoint3D" type="Node3D" parent="."]
 

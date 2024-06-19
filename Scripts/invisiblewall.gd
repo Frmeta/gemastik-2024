@@ -2,16 +2,20 @@ extends StaticBody3D
 
 class_name InvisibleWall
 
+func _ready():
+	disable_wall()
+	pass
+
 func enable_wall():
+	print("enable", self.name)
 	$CollisionShape3D.set_deferred("disabled",false)
 	$Area3D/CollisionShape3D.set_deferred("disabled",false)
 	#$CollisionShape3D.disabled=false
 
 func disable_wall():
+	print("disable", self.name)
 	$CollisionShape3D.set_deferred("disabled",true)
-	#$CollisionShape3D.disabled=true
 	$Area3D/CollisionShape3D.set_deferred("disabled",true)
-	print_debug($CollisionShape3D.disabled)
 
 func is_not_disabled():	
 	return not $CollisionShape3D.disabled

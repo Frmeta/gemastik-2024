@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnrlqcvf0uw5r"]
+[gd_scene load_steps=3 format=3 uid="uid://dnrlqcvf0uw5r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ugr6k"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bfdmw"]
 
 [node name="grapling_for_tree" type="StaticBody3D"]
 collision_layer = 64
@@ -8,3 +10,6 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ugr6k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_bfdmw")
