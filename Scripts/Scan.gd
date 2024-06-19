@@ -30,5 +30,6 @@ func _process(delta):
 	else:
 		$Tip.visible = false
 		if is_instance_valid(collider):
-			collider.scan_progress = 0
+			#collider.scan_progress = 0
+			pass
 	
