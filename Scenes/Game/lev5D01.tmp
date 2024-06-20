@@ -34,11 +34,11 @@ script = ExtResource("1_nmtqw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_12i8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.244, 3.80568, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70446, -4.1047, 0)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_bt64x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.181, 3.9638, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.767357, -3.94658, 0)
 
 [node name="GridMapGround" parent="." instance=ExtResource("8_uprfl")]
 data = {

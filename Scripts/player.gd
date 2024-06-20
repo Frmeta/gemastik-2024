@@ -136,7 +136,8 @@ func _physics_process(delta):
 			velocity.y = JUMP_POWER
 			if !$jumping.playing:
 				$jumping.play()
-			
+		
+		#print(is_in_water)
 		# Add the gravity.
 		if not is_on_floor() and not is_climbing:
 			if !Input.is_action_pressed("jump") && velocity.y > 0 && !$Grapling.hooked:

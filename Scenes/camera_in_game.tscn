@@ -12,7 +12,6 @@ size = 13.612
 script = ExtResource("1_nligd")
 
 [node name="pixelator" parent="." instance=ExtResource("2_sgkog")]
-visible = false
 
 [node name="Almanac2" parent="." instance=ExtResource("3_ssv53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
