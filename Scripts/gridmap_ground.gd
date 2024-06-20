@@ -71,17 +71,18 @@ func input_terrain():
 	assert(highest.size() > 0)
 	
 	# fill the 'highest' array
+	var idx_guess = INVALID_CELL_ITEM
 	for x in range(START_X+1, END_X):
 		# guess y
 		var y_guess = highest[highest.size() - 1]
-		var idx_guess = INVALID_CELL_ITEM
+		
 		
 		if y_guess < START_Y:
 			
 			# previous tidak ada ground, jadi cari O(n)
 			var cari = search_y(x, 0)
 			y_guess = cari[0]
-			idx_guess = cari[1]
+			idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		
 		elif get_cell_item(Vector3i(x, y_guess, 0)) != INVALID_CELL_ITEM \
 			and get_cell_item(Vector3i(x, y_guess+1, 0)) == INVALID_CELL_ITEM:
@@ -102,7 +103,9 @@ func input_terrain():
 			while y_guess >= START_Y and get_cell_item(Vector3i(x, y_guess, 0)) == INVALID_CELL_ITEM:
 				y_guess -= 1
 				# y=START_Y-1 artinya kosong
-			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
+			
+			idx_guess = idx_guess if get_cell_item(Vector3i(x, y_guess, 0))==INVALID_CELL_ITEM \
+						else get_cell_item(Vector3i(x, y_guess, 0))
 				
 		highest.append(y_guess)
 		# supaya tidak ada grass lagi karena sudah diwakilkan dirt
