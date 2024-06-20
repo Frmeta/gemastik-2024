@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://g4wbfrf4kt6t"]
+[gd_scene load_steps=8 format=3 uid="uid://g4wbfrf4kt6t"]
+
+[ext_resource type="Script" path="res://Scripts/foto_hewan_kiri.gd" id="1_jxtak"]
 
 [sub_resource type="Gradient" id="Gradient_eu58f"]
 offsets = PackedFloat32Array(0.411765)
-colors = PackedColorArray(0, 0, 0, 0.290196)
+colors = PackedColorArray(0, 0, 0, 0.141176)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_178wo"]
 gradient = SubResource("Gradient_eu58f")
@@ -37,6 +39,7 @@ offset_right = -373.0
 offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(60, 61)
 texture_normal = SubResource("GradientTexture2D_178wo")
 texture_hover = SubResource("GradientTexture1D_kuyd3")
 
@@ -48,8 +51,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(60, 60)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8kkg4")
+script = ExtResource("1_jxtak")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel1"]
 layout_mode = 1

@@ -10,6 +10,7 @@ extends Control
 
 var area_number = 0
 var pulau_list
+var hewan_buttons := []
 
 func _ready():
 	pulau_list = GM.pulau_list_resource.list
@@ -31,6 +32,10 @@ func _ready():
 	for i in range(1, 8):
 		get_node("PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton" + str(i)).connect("pressed", _ke_halaman_2.bind(i-1))
 	
+	# Setup hewans_buttons
+	for i in range(0, 4):
+		hewan_buttons.append(get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i)))
+	
 	_ke_halaman_1()
 
 func _ke_halaman_2(area_number_yoo):
@@ -47,7 +52,7 @@ func refresh():
 	for i in range(0, 4):
 		if i < hewanss.size():
 			# show button
-			var btn = get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i))
+			var btn = hewan_buttons[i]
 			btn.show()
 			
 			# atur texture
@@ -67,15 +72,17 @@ func refresh():
 			
 			# nama hewan di resource harus sama dengan nama prefabnya
 			if area_number < GM.explored_level or GM.scanned_animal.has(hewan.nama):
+				# jika hewan sudah pernah di-scan
 				texture_rect.texture = hewan.foto_kartun
-				btn.connect("pressed", _lihat_info_hewan.bind(hewan, true))
+				btn.connect("pressed", _lihat_info_hewan.bind(hewan, true, i))
 				if i==0:
-					_lihat_info_hewan(hewan, true)
+					_lihat_info_hewan(hewan, true, 0)
 			else:
+				# jika hewan belum pernah di-scan
 				texture_rect.texture = foto_tanda_tanya
-				btn.connect("pressed", _lihat_info_hewan.bind(hewan, false))
+				btn.connect("pressed", _lihat_info_hewan.bind(hewan, false, i))
 				if i==0:
-					_lihat_info_hewan(hewan, false)
+					_lihat_info_hewan(hewan, false, 0)
 			
 			
 				
@@ -83,10 +90,15 @@ func refresh():
 				
 		else:
 			# hide button
-			get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i)).hide()
+			hewan_buttons[i].hide()
+			# get_node("PanelAlmanac/TabContainer/Halaman Detail Pulau/TextureButton" + str(i)).hide()
 	
 
-func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool):
+func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool, btn_idx: int):
+	for i in range(hewan_buttons.size()):
+		hewan_buttons[i].get_child(0).set_selection(i==btn_idx)
+			
+			
 	if has_been_scanned:
 		$"PanelAlmanac/Hewan Info/Foto Asli/TextureRect".texture = hewan.foto_asli
 		$"PanelAlmanac/Hewan Info/Nama hewan".text = hewan.nama
