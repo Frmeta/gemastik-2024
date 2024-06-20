@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfvowfw26dx1l"]
+[gd_scene load_steps=14 format=3 uid="uid://bfvowfw26dx1l"]
 
 [ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="1_bf7rv"]
 [ext_resource type="Script" path="res://Scripts/prolog.gd" id="1_i5hlg"]
@@ -24,16 +24,46 @@ emission_energy_multiplier = 0.26
 material = SubResource("StandardMaterial3D_8ah83")
 size = Vector2(10.115, 8.765)
 
-[node name="Prolog" type="Node3D" node_paths=PackedStringArray("doniMarkers")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv262"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.803922, 0, 0.803922, 0.745098)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_caxy5"]
+material = SubResource("StandardMaterial3D_tv262")
+top_radius = 0.8
+bottom_radius = 0.8
+height = 5.835
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vm68d"]
+emission_shape_offset = Vector3(0, -4.76, 0)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djj3d"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.729412, 0.25098, 0.854902, 0.321569)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1cuin"]
+material = SubResource("StandardMaterial3D_djj3d")
+radius = 0.2
+height = 0.4
+
+[node name="Prolog" type="Node3D" node_paths=PackedStringArray("doniMarkers", "masMarkers")]
 script = ExtResource("1_i5hlg")
-doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos2")]
-doniAnims = Array[String](["sit", "idle", "lose", "idle"])
+doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos2")]
+doniAnims = Array[String](["sit", "idle", "lose", "idle", "idle"])
+masMarkers = [NodePath("Markers/Nowhere"), NodePath("Markers/Nowhere"), NodePath("Markers/Nowhere"), NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos")]
 
 [node name="DonisRoom" parent="." instance=ExtResource("1_bf7rv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0372486, -1.60144, -1.91971)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.775, 1.143, 5.946)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.775, 0.598, 5.946)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jdatb")
@@ -72,7 +102,27 @@ gizmo_extents = 0.1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.360211, -1.6, -0.403077)
 gizmo_extents = 0.1
 
+[node name="Nowhere" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2691, -1.6, -0.403077)
+gizmo_extents = 0.1
+
+[node name="Mas Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.55932, -0.582437, -0.403077)
+gizmo_extents = 0.1
+
 [node name="Mas" parent="." instance=ExtResource("4_4d0i4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64914, 0, 0)
 
 [node name="DoniFinal" parent="." instance=ExtResource("2_1srln")]
+
+[node name="Beam" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87254, 0.954421, 0)
+visible = false
+mesh = SubResource("CylinderMesh_caxy5")
+skeleton = NodePath("")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Beam"]
+amount = 20
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_vm68d")
+draw_pass_1 = SubResource("SphereMesh_1cuin")
