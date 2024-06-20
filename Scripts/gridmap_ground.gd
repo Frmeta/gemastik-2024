@@ -8,6 +8,8 @@ const END_Y = 20
 
 const GRASS_INDEX = 0
 const DIRT_INDEX = 1
+const SAND_INDEX = 3
+const STONE_INDEX = 4
 
 const SPAWN_TREE = true
 
@@ -17,8 +19,10 @@ var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.t
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var highest = input_terrain()
-	fill_front(highest)
+	var it = input_terrain()
+	var highest = it[0]
+	var idx = it[1]
+	fill_front(highest, idx)
 	
 	var extend_step = 7
 	var smooth_step = 50
@@ -26,14 +30,14 @@ func _ready():
 	# fill extend
 	var t = -1
 	for i in range(extend_step):
-		fill(highest, t, highest, false)
+		fill(highest, idx, t, highest, false)
 		t -= 1
 	
 	# fill smooth
 	var highest2
 	for i in range(smooth_step):
 		highest2 = smooth(highest)
-		fill (highest2, t, highest, true)
+		fill (highest2, idx, t, highest, true)
 		
 		highest = highest2
 		t -= 1
@@ -49,14 +53,19 @@ func _ready():
 func search_y(x, z):
 	for y in range(END_Y, START_Y, -1):
 		if get_cell_item(Vector3i(x, y, 0)) != INVALID_CELL_ITEM:
-			return y
-	return START_Y-1
+			return [y, get_cell_item(Vector3i(x, y, 0))]
+	return [START_Y-1, INVALID_CELL_ITEM]
 	
 
 func input_terrain():
+	# return [highest, idX]
+	
 	# get highest ground on START_X
 	var highest := []
-	highest.append(search_y(START_X, 0))
+	var idx := []
+	var search = search_y(START_X, 0)
+	highest.append(search[0])
+	idx.append(search[1])
 	
 	# error if no ground on START_X
 	assert(highest.size() > 0)
@@ -65,55 +74,70 @@ func input_terrain():
 	for x in range(START_X+1, END_X):
 		# guess y
 		var y_guess = highest[highest.size() - 1]
+		var idx_guess = INVALID_CELL_ITEM
+		
 		if y_guess < START_Y:
+			
 			# previous tidak ada ground, jadi cari O(n)
-			y_guess = search_y(x, 0)
+			var cari = search_y(x, 0)
+			y_guess = cari[0]
+			idx_guess = cari[1]
 		
 		elif get_cell_item(Vector3i(x, y_guess, 0)) != INVALID_CELL_ITEM \
 			and get_cell_item(Vector3i(x, y_guess+1, 0)) == INVALID_CELL_ITEM:
 			
 			# tebakan y benar
-			pass
+			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
 			
 		elif get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
 			
 			# naik
 			while get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
 				y_guess += 1
-				
+			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
+			
 		else:
 			
 			# turun
 			while y_guess >= START_Y and get_cell_item(Vector3i(x, y_guess, 0)) == INVALID_CELL_ITEM:
 				y_guess -= 1
 				# y=START_Y-1 artinya kosong
+			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
 				
 		highest.append(y_guess)
+		# supaya tidak ada grass lagi karena sudah diwakilkan dirt
+		idx.append(DIRT_INDEX if idx_guess==GRASS_INDEX else idx_guess)
 	
-	return highest
+	return [highest, idx]
 
-func fill_front(highest):
+func fill_front(highest, idx):
 	var i = 0
 	for x in range(START_X, END_X):
+		var top_index = GRASS_INDEX if idx[i]==DIRT_INDEX else idx[i]
+		var fill_index = idx[i]
+		
 		# place top ground
-		set_cell_item(Vector3i(x, highest[i], 0), GRASS_INDEX, 0)
+		set_cell_item(Vector3i(x, highest[i], 0), top_index, 0)
 		
 		# fill jika naik drastis
 		for y in range(START_Y, highest[i]):
-			set_cell_item(Vector3i(x, y, 0), DIRT_INDEX, 0)
+			set_cell_item(Vector3i(x, y, 0), fill_index, 0)
 		i += 1
 
-func fill(highest, z:int, front_highest, place_tree:bool):
+func fill(highest, idx, z:int, front_highest, place_tree:bool):
+	# idx adalah array of integer, idx jenis block
 	var previous_y = START_Y-1
 	var i = 0
 	
 	for x in range(START_X, END_X):
+		var top_index = GRASS_INDEX if idx[i]==DIRT_INDEX else idx[i]
+		var fill_index = idx[i]
+		
 		if highest[i] >= START_Y:
 			# ada ground
 			
-			
 			# place top ground
-			set_cell_item(Vector3i(x, highest[i], z), GRASS_INDEX, 0)
+			set_cell_item(Vector3i(x, highest[i], z), top_index, 0)
 			
 			# place tree
 			if place_tree and randi() % 50 == 0 and SPAWN_TREE and i > START_X and i < END_X-2:
@@ -128,23 +152,23 @@ func fill(highest, z:int, front_highest, place_tree:bool):
 			# fill jika naik drastis
 			if highest[i] > previous_y:
 				for y in range(min(front_highest[i], previous_y), highest[i]):
-					set_cell_item(Vector3i(x, y, z), DIRT_INDEX, 0)
+					set_cell_item(Vector3i(x, y, z), fill_index, 0)
 					
 			else:
 				# fill kirinya jika turun drastis
 				for y in range(highest[i], previous_y):
-					set_cell_item(Vector3i(x-1, y, z), DIRT_INDEX, 0)
+					set_cell_item(Vector3i(x-1, y, z), fill_index, 0)
 				
-				# fill jika depan kosong
-				for y in range(front_highest[i]-1, highest[i]):
-					set_cell_item(Vector3i(x, y, z), DIRT_INDEX, 0)
+			# fill jika depan kosong
+			for y in range(front_highest[i]-1, highest[i]):
+				set_cell_item(Vector3i(x, y, z), fill_index, 0)
 			
 		else:
 			# tidak ada ground
 			
-			# fill jurang
+			# fill jurang di kiri
 			for y in range(START_Y, previous_y):
-				set_cell_item(Vector3i(x-1, y, z), DIRT_INDEX, 0)
+				set_cell_item(Vector3i(x-1, y, z), fill_index, 0)
 			
 		previous_y = highest[i]
 		
