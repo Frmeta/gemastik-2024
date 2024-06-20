@@ -9,9 +9,9 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var scale = self.scale
-	print(waterfall.mesh.size)
+	#print(waterfall.mesh.size)
 	waterfall.mesh.size=Vector2(width,height)
-	print("new"+str(waterfall.mesh.size))
-	print(scale)
-	print(splash.process_material.scale_max)
-	splash.process_material.scale_max =splash.process_material.scale_max*(scale.normalized().length())
+	#print("new"+str(waterfall.mesh.size))
+	#print(scale)
+	#print(splash.process_material.scale_max)
+	#splash.process_material.scale_max =splash.process_material.scale_max*(scale.normalized().length())

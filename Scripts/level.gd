@@ -54,7 +54,7 @@ func _input(event):
 				)
 			
 # when almanac animation finished
-func _done_animating_almanac(useless):
+func _done_animating_almanac(_useless):
 	is_animating_almanac = false
 	if is_almanac_open:
 		almanac_ui.visible = true
