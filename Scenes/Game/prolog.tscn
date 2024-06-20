@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfvowfw26dx1l"]
+
+[ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="1_bf7rv"]
+[ext_resource type="Script" path="res://Scripts/prolog.gd" id="1_i5hlg"]
+[ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="2_1srln"]
+[ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_cmtld"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="4_4d0i4"]
+
+[sub_resource type="Environment" id="Environment_jdatb"]
+background_mode = 1
+background_color = Color(0.0745098, 0.235294, 0.329412, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 0.443137, 0.984314, 1)
+ambient_light_energy = 0.67
+ssr_enabled = true
+ssao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ah83"]
+albedo_color = Color(0.0784314, 0.180392, 0.301961, 1)
+emission = Color(0.360784, 0.0941176, 0.341176, 1)
+emission_energy_multiplier = 0.26
+
+[sub_resource type="QuadMesh" id="QuadMesh_0cenu"]
+material = SubResource("StandardMaterial3D_8ah83")
+size = Vector2(10.115, 8.765)
+
+[node name="Prolog" type="Node3D" node_paths=PackedStringArray("doniMarkers")]
+script = ExtResource("1_i5hlg")
+doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos2")]
+doniAnims = Array[String](["sit", "idle", "lose", "idle"])
+
+[node name="DonisRoom" parent="." instance=ExtResource("1_bf7rv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0372486, -1.60144, -1.91971)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.775, 1.143, 5.946)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jdatb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.83, 3.656, 0)
+light_energy = 4.715
+light_size = 0.505
+shadow_enabled = true
+spot_range = 25.824
+spot_attenuation = 0.511064
+spot_angle = 89.13
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_cmtld")
+cell_size = Vector3(1.855, 1.86, 2)
+data = {
+"cells": PackedInt32Array(-65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, -131068, 0, 0, -131069, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -131070, 0, 0, -65539, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 196612, 0, 0, 196611, 0, 0, 196610, 0, 0, 196609, 0, 0, 196608, 0, 0, 262143, 0, 0, 262142, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 0, 0, 262140, 0, 0, 262141, 0, 0, 196606, 65535, 0, 196606, 65534, 0, 196606, 65533, 0, 196606, 65532, 0, 196607, 65532, 0, 131072, 65532, 0, 131073, 65532, 0, 131074, 65532, 0, 131075, 65532, 0, 131075, 65533, 0, 131075, 65535, 0, 131075, 65534, 0, 131074, 65535, 0, 131074, 65534, 0, 131074, 65533, 0, 131073, 65534, 0, 131073, 65535, 0, 131072, 65535, 0, 196607, 65535, 0, 196607, 65534, 0, 196607, 65533, 0, 131072, 65534, 0, 131073, 65533, 0, 131072, 65533, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="BG" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61887, -9.77023)
+mesh = SubResource("QuadMesh_0cenu")
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Sit Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44084, -0.897301, -1.86485)
+
+[node name="Stand Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.48765, -1.6, -1.75811)
+gizmo_extents = 0.1
+
+[node name="Stand Pos2" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.360211, -1.6, -0.403077)
+gizmo_extents = 0.1
+
+[node name="Mas" parent="." instance=ExtResource("4_4d0i4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64914, 0, 0)
+
+[node name="DoniFinal" parent="." instance=ExtResource("2_1srln")]
