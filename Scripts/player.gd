@@ -134,9 +134,11 @@ func _physics_process(delta):
 	match playerState:
 		PlayerState.CLIMBING:
 			# CLIMBING ANIMATION
+			model3d.get_node("Player").position.y = -0.5 # sam moment
 			animTree.set("parameters/Game/transition_request", "is_climbing")
 			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
 			model3d.get_node("Player").rotation.y = deg_to_rad(180)
+			
 			animTree.set("parameters/ClimbDir/blend_position", Vector2(velocity.x, velocity.y) / climbing_speed)
 			if velocity==Vector3.ZERO:
 				animTree.set("parameters/ClimbingSpeed/scale", 0)
@@ -146,6 +148,7 @@ func _physics_process(delta):
 			
 		PlayerState.SWIMMING:
 			# SWIMMING ANIMATION
+			model3d.get_node("Player").position.y = 0
 			animTree.set("parameters/Game/transition_request", "is_swimming")
 			
 			var curr_blend_pos = animTree.get("parameters/SwimState/blend_position")
@@ -170,6 +173,7 @@ func _physics_process(delta):
 			
 		PlayerState.ON_LAND:
 			# ON LAND ANIMATION
+			model3d.get_node("Player").position.y = 0
 			animTree.set("parameters/Game/transition_request", "is_on_land")
 			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
 			if velocity.x == 0:

@@ -58,18 +58,7 @@ func foo():
 	
 func _process(delta):
 	if prolog_end:
-		get_tree().change_scene_to_file("res://Scenes/Game/level_kalimantan.tscn")
-	#if Input.is_key_pressed(KEY_1):
-		#goto(0)
-	#if Input.is_key_pressed(KEY_2):
-		#goto(1)
-	#if Input.is_key_pressed(KEY_3):
-		#goto(2)
-	#if Input.is_key_pressed(KEY_4):
-		#goto(3)
-	#if Input.is_key_pressed(KEY_5):
-		#goto(4)
-	pass
+		get_tree().change_scene_to_file("res://Scenes/Game/level_0.tscn")
 
 func goto(idx):
 	$Beam.visible = idx==3

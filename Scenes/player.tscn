@@ -63,7 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48366, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.467858, 0)
 
 [node name="DoniFinal" parent="." instance=ExtResource("6_lv0nj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104053, -0.532806, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, -0.533, 0)
 
 [node name="Scan" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.211602, 0)
