@@ -430,7 +430,6 @@ skeleton = NodePath("")
 
 [node name="grapling_for_tree" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9775, 1.0737, 0)
-visible = false
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_rnh3q")]
 transform = Transform3D(17.4632, 0, 0, 0, 1.63933, 0, 0, 0, 1.63933, -1.94096, 4.51216, 0)
@@ -709,7 +708,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28581, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55841, 0, 0)
 
 [node name="Jalak Bali" parent="." instance=ExtResource("22_n0m7m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4967, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.1796, 8.83826, 0)
+
+[node name="Jalak Bali2" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("22_n0m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1796, 8.83826, 0)
+mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+
+[node name="Jalak Bali3" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("22_n0m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1796, 8.83826, 0)
+mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+
+[node name="Jalak Bali4" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("22_n0m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7682, 8.83826, 0)
+mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+
+[node name="Jalak Bali5" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("22_n0m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.5517, 8.83826, 0)
+mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

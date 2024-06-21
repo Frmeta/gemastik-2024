@@ -9,9 +9,15 @@ var next_pass
 var above_0 = false
 var prev_scan_progress = 0
 
-func _ready():
+var is_affected_by_gravity = true
+# disable oleh flying_animal.gd apabila hewan melayang
+
+func _init():
+	
 	collision_layer = 8
 	collision_mask = 2
+	
+func _ready():
 	
 	# init next_pass to all surface
 	next_pass = mesh.get_active_material(0).next_pass
@@ -53,5 +59,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	# gravity
-	velocity.y -= gravity * delta
+	if is_affected_by_gravity:
+		velocity.y -= gravity * delta
+	
 	move_and_slide()
