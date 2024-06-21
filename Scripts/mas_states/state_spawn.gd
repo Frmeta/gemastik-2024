@@ -10,9 +10,9 @@ func do_something(delta):
 		var speed = mas.SPEED
 		var last_move = Vector2.ZERO
 		for t in range (mas.iteration):
-			await get_tree().create_timer(0.02).timeout
-			mas.velocity.z = speed*sin(mas.ANGULAR_SPEED*t) + mas.ANGULAR_SPEED*(speed*t+50)*cos(mas.ANGULAR_SPEED*t)
-			mas.velocity.x = speed*cos(mas.ANGULAR_SPEED*t) - mas.ANGULAR_SPEED*(speed*t+50)*sin(mas.ANGULAR_SPEED*t)
+			await get_tree().create_timer(0.002).timeout
+			mas.velocity.z = speed*sin(mas.ANGULAR_SPEED*t) + mas.ANGULAR_SPEED*(speed*t+mas.constant)*cos(mas.ANGULAR_SPEED*t)
+			mas.velocity.x = speed*cos(mas.ANGULAR_SPEED*t) - mas.ANGULAR_SPEED*(speed*t+mas.constant)*sin(mas.ANGULAR_SPEED*t)
 			mas.velocity.y = mas.SPEED*2
 			mas.move_and_slide()
 			mas.velocity=lerp(mas.velocity,Vector3.ZERO,0.4)

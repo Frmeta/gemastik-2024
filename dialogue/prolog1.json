@@ -1,0 +1,27 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Kenapa sih tugas sekolah selalu banyak banget? Kayaknya nggak ada habisnya.",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Hidupku cuma rumah dan sekolah... Kapan ya bisa liburan?",
+		"emosi":"0"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Dulu sering banget jalan-jalan, sekarang... Cuma bisa liat foto.",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Aku bahkan tidak ingat kapan terakhir kali pergi ke luar kota, atau bahkan ke taman.",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Mereka semua seru banget jalan-jalan ke tempat keren. Aku kapan?",
+		"emosi":"2"
+	},
+]

@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfvowfw26dx1l"]
+[gd_scene load_steps=15 format=3 uid="uid://bfvowfw26dx1l"]
 
 [ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="1_bf7rv"]
 [ext_resource type="Script" path="res://Scripts/prolog.gd" id="1_i5hlg"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="2_1srln"]
 [ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_cmtld"]
 [ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="4_4d0i4"]
-[ext_resource type="Script" path="res://Scenes/Game/mas_pos_target.gd" id="4_eurtn"]
-[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="5_vhj7j"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="6_dlyd7"]
 
 [sub_resource type="Environment" id="Environment_jdatb"]
@@ -58,7 +56,7 @@ height = 0.4
 
 [node name="Prolog" type="Node3D" node_paths=PackedStringArray("doniMarkers", "masMarkers")]
 script = ExtResource("1_i5hlg")
-doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Sad Pos"), NodePath("Markers/Sad Pos"), NodePath("Markers/Stand Pos2")]
+doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Sad Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Stand Pos2")]
 doniAnims = Array[String](["sit", "idle", "lose", "idle", "idle"])
 masMarkers = [NodePath("Markers/Nowhere"), NodePath("Markers/Nowhere"), NodePath("Markers/Nowhere"), NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos")]
 
@@ -114,19 +112,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.269
 gizmo_extents = 0.1
 
 [node name="Mas Pos" type="Marker3D" parent="Markers"]
-transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 3.64541, -1.20227, -0.403077)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.55932, -0.582437, -0.403077)
 gizmo_extents = 0.1
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Markers/Mas Pos"]
-transform = Transform3D(0.34202, 0, 0.939692, 0, 1, 0, -0.939692, 0, 0.34202, 0, 0, 0)
-script = ExtResource("4_eurtn")
 
 [node name="Mas" parent="." instance=ExtResource("4_4d0i4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64914, 0, 0)
-visible = false
-
-[node name="skeleton_mas" parent="." instance=ExtResource("5_vhj7j")]
-transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 3.55932, -0.582437, -0.403077)
 
 [node name="DoniFinal" parent="." instance=ExtResource("2_1srln")]
 

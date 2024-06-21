@@ -114,12 +114,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.269
 gizmo_extents = 0.1
 
 [node name="Mas Pos" type="Marker3D" parent="Markers"]
-transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 3.64541, -1.20227, -0.403077)
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 3.55932, -0.582437, -0.403077)
 gizmo_extents = 0.1
+script = ExtResource("4_eurtn")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Markers/Mas Pos"]
-transform = Transform3D(0.34202, 0, 0.939692, 0, 1, 0, -0.939692, 0, 0.34202, 0, 0, 0)
-script = ExtResource("4_eurtn")
+transform = Transform3D(0.34202, 0, 0.939692, 0, 1, 0, -0.939692, 0, 0.34202, -0.838589, 0.582437, 3.48253)
 
 [node name="Mas" parent="." instance=ExtResource("4_4d0i4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64914, 0, 0)

@@ -10,5 +10,6 @@ func do_something(delta):
 	pass
 
 func change_to_spawn():
+	mas.scale=Vector3(0.0001,0.0001,0.0001)
 	mas.global_position=mas.origin.global_position
 	emit_signal("change_state",next_state)

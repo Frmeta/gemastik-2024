@@ -13,7 +13,9 @@ const FILES = {
 	TUTORIAL_TEKAN_GAMBAR_KIRI = "res://dialogue/tutorial/tekan_gambar_kiri.json",
 	TUTORIAL_DONE = "res://dialogue/tutorial/tutorial_done.json",
 	
-	PROLOGUE = "res://dialogue/prolog.json",
+	
+	PROLOGUE1 = "res://dialogue/prolog1.json",
+	PROLOGUE2 = "res://dialogue/prolog.json",
 	KALIMANTAN = "res://dialogue/kalimantan.json",
 	START_PULAU = "res://dialogue/start_pulau.json",
 	BALI_PERANGKAP = "res://dialogue/bali_perangkap.json",
@@ -37,7 +39,8 @@ const TUTORIAL_DONE = FILES.TUTORIAL_DONE
 
 const OUT_OF_BOUND = FILES.OUT_OF_BOUND
 
-const PROLOGUE = FILES.PROLOGUE
+const PROLOGUE1 = FILES.PROLOGUE1
+const PROLOGUE2 = FILES.PROLOGUE2
 const KALIMANTAN = FILES.KALIMANTAN
 const START_PULAU = FILES.START_PULAU
 const BALI_PERANGKAP = FILES.BALI_PERANGKAP
