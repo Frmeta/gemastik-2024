@@ -57,6 +57,7 @@ var can_move = true
 
 func _ready():
 	GM.doni=self
+	animTree.set("parameters/MainState/transition_request", "game")
 
 func allow_move():
 	can_move = true

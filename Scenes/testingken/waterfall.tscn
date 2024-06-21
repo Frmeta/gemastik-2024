@@ -66,6 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.5262, 0)
 material_override = SubResource("ShaderMaterial_u104e")
 amount = 16
 lifetime = 0.4
+visibility_aabb = AABB(-2.68477, -4, -2.07245, 5.36954, 8, 4.14489)
 process_material = SubResource("ParticleProcessMaterial_aqcmi")
 draw_pass_1 = SubResource("SphereMesh_s0q4c")
 

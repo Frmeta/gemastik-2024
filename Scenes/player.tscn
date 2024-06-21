@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=18 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
@@ -8,22 +8,39 @@
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="6_lv0nj"]
 [ext_resource type="AudioStream" uid="uid://dq686ujarv288" path="res://audio/footsteps-pixabay.wav" id="7_0icta"]
 [ext_resource type="AudioStream" uid="uid://3tnjxtgiv6to" path="res://audio/jump-pixabay.wav" id="7_3gqr0"]
+[ext_resource type="Script" path="res://Scripts/Tip.gd" id="7_vrhxe"]
+[ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="8_ojoma"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_h45vj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrhv0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 0.501961)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_k51ve"]
+material = SubResource("StandardMaterial3D_qrhv0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wh16a"]
+render_priority = 0
+shader = ExtResource("8_ojoma")
+shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
+shader_parameter/Dissolve_Height = 1.0
+shader_parameter/Min_Height = -1.065
+shader_parameter/Height = 2.23
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia3l7"]
+next_pass = SubResource("ShaderMaterial_wh16a")
 transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 0, 1, 0.501961)
 
 [sub_resource type="SphereMesh" id="SphereMesh_fyauf"]
 material = SubResource("StandardMaterial3D_ia3l7")
-radius = 1.5
-height = 3.0
+radius = 2.25
+height = 4.5
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 35
@@ -59,10 +76,12 @@ script = ExtResource("6_folr1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Scan"]
 collision_mask = 8
+hit_from_inside = true
 
 [node name="Tip" type="Node3D" parent="Scan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3798, 0, 0)
 top_level = true
+script = ExtResource("7_vrhxe")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scan/Tip"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

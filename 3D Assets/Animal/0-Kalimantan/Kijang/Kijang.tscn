@@ -949,7 +949,7 @@ script = ExtResource("1_n5o53")
 mesh = NodePath("Kijang_Skeleton/Skeleton3D/Kijang")
 
 [node name="Kijang_Skeleton" type="Node3D" parent="."]
-transform = Transform3D(0.388723, 0, 0, 0, 6.95091e-08, -0.388723, 0, 0.388723, 6.95091e-08, 0, 1.11596, -0.303603)
+transform = Transform3D(0.388723, 0, 0, 0, 6.95091e-08, -0.388723, 0, 0.388723, 6.95091e-08, 0, 0.365179, -0.303603)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Kijang_Skeleton"]
 bones/0/name = "Bone"
@@ -1110,7 +1110,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784881, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0341003, 0)
 shape = SubResource("SphereShape3D_rter2")
 
 [node name="Node3D" type="Node3D" parent="."]
