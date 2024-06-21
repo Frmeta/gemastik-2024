@@ -1,0 +1,206 @@
+[gd_scene load_steps=20 format=3 uid="uid://cxjxm47t2fj4i"]
+
+[ext_resource type="Script" path="res://Scenes/Game/epilogue.gd" id="1_5aytu"]
+[ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="2_14574"]
+[ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_piaq6"]
+[ext_resource type="Script" path="res://Scenes/Game/mas_pos_target.gd" id="4_ko0em"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="5_7y4qt"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_80pqy"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_kj1w4"]
+[ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="7_xh024"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="8_qlye5"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="9_k7mp6"]
+
+[sub_resource type="Environment" id="Environment_jdatb"]
+background_mode = 1
+background_color = Color(0.0745098, 0.235294, 0.329412, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 0.443137, 0.984314, 1)
+ambient_light_energy = 0.67
+ssr_enabled = true
+ssao_enabled = true
+sdfgi_energy = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ah83"]
+albedo_color = Color(0.0784314, 0.180392, 0.301961, 1)
+emission = Color(0.360784, 0.0941176, 0.341176, 1)
+emission_energy_multiplier = 0.26
+
+[sub_resource type="QuadMesh" id="QuadMesh_0cenu"]
+material = SubResource("StandardMaterial3D_8ah83")
+size = Vector2(10.115, 8.765)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fent"]
+size = Vector3(11.4785, 1.11646, 12.6988)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv262"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.803922, 0, 0.803922, 0.745098)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_caxy5"]
+material = SubResource("StandardMaterial3D_tv262")
+top_radius = 0.8
+bottom_radius = 0.8
+height = 5.835
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vm68d"]
+emission_shape_offset = Vector3(0, -4.76, 0)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djj3d"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.729412, 0.25098, 0.854902, 0.321569)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1cuin"]
+material = SubResource("StandardMaterial3D_djj3d")
+radius = 0.2
+height = 0.4
+
+[node name="epilogue" type="Node3D" node_paths=PackedStringArray("doniMarkers", "masMarkers")]
+script = ExtResource("1_5aytu")
+doniMarkers = [NodePath("Markers/Fall Pos"), NodePath("Markers/end pos")]
+doniAnims = Array[String](["idle", "loss"])
+masMarkers = [NodePath("Markers/Nowhere"), NodePath("Markers/Nowhere")]
+
+[node name="DonisRoom" parent="." instance=ExtResource("2_14574")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0372486, -1.60144, -1.91971)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.775, 0.598, 5.946)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jdatb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.83, 3.656, 0)
+light_energy = 2.832
+light_size = 0.505
+shadow_enabled = true
+spot_range = 25.824
+spot_attenuation = 0.511064
+spot_angle = 89.13
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_piaq6")
+cell_size = Vector3(1.855, 1.86, 2)
+data = {
+"cells": PackedInt32Array(-65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, -131068, 0, 0, -131069, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -131070, 0, 0, -65539, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 196612, 0, 0, 196611, 0, 0, 196610, 0, 0, 196609, 0, 0, 196608, 0, 0, 262143, 0, 0, 262142, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 0, 0, 262140, 0, 0, 262141, 0, 0, 196606, 65535, 0, 196606, 65534, 0, 196606, 65533, 0, 196606, 65532, 0, 196607, 65532, 0, 131072, 65532, 0, 131073, 65532, 0, 131074, 65532, 0, 131075, 65532, 0, 131075, 65533, 0, 131075, 65535, 0, 131075, 65534, 0, 131074, 65535, 0, 131074, 65534, 0, 131074, 65533, 0, 131073, 65534, 0, 131073, 65535, 0, 131072, 65535, 0, 196607, 65535, 0, 196607, 65534, 0, 196607, 65533, 0, 131072, 65534, 0, 131073, 65533, 0, 131072, 65533, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="BG" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61887, -9.77023)
+mesh = SubResource("QuadMesh_0cenu")
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Fall Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98424, 0.811865, -1.75811)
+gizmo_extents = 0.1
+
+[node name="end pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.37838, -1.6, -0.798)
+gizmo_extents = 0.1
+
+[node name="Nowhere" type="Marker3D" parent="Markers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2691, -1.6, -0.403077)
+gizmo_extents = 0.1
+
+[node name="Mas Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 3.64541, -1.20227, -0.403077)
+gizmo_extents = 0.1
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Markers/Mas Pos"]
+transform = Transform3D(0.34202, 0, 0.939692, 0, 1, 0, -0.939692, 0, 0.34202, 0, 0, 0)
+script = ExtResource("4_ko0em")
+
+[node name="Mas" parent="." instance=ExtResource("5_7y4qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64914, 0, 0)
+visible = false
+
+[node name="skeleton_mas" parent="." instance=ExtResource("6_80pqy")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 3.55932, -0.582437, -0.403077)
+
+[node name="Player" parent="." instance=ExtResource("7_kj1w4")]
+
+[node name="DoniFinal" parent="." instance=ExtResource("7_xh024")]
+visible = false
+
+[node name="floor_body" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93359, 0.509644, -2.06761)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.58508, 0)
+shape = SubResource("BoxShape3D_8fent")
+
+[node name="Beam" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87254, 0.954421, 0)
+visible = false
+mesh = SubResource("CylinderMesh_caxy5")
+skeleton = NodePath("")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Beam"]
+amount = 20
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_vm68d")
+draw_pass_1 = SubResource("SphereMesh_1cuin")
+
+[node name="End" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="End"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="End"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="End/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="End/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 420
+theme_override_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="End/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="End/PanelContainer/VBoxContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_k7mp6")
+theme_override_font_sizes/font_size = 120
+text = "SELESAI"
+
+[node name="MarginContainer2" type="MarginContainer" parent="End/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 450
+theme_override_constants/margin_right = 450
+
+[node name="Button" type="Button" parent="End/PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_k7mp6")
+theme_override_font_sizes/font_size = 50
+text = "Kembali ke Menu Utama"
+flat = true
+
+[node name="DialogueManager" parent="." instance=ExtResource("8_qlye5")]
+
+[connection signal="button_up" from="End/PanelContainer/VBoxContainer/MarginContainer2/Button" to="." method="_on_button_button_up"]
