@@ -20,17 +20,14 @@ func _process(delta):
 			# hitting something
 			$Tip.visible = true
 			$Tip.scale_target = 1
+			
 			collider = $RayCast3D.get_collider()
 			$Tip.global_position = collider.global_position
-			
 			collider.scan_progress += delta;
-			$Tip/MeshInstance3D.mesh.material.next_pass.set_shader_parameter("Dissolve_Height", collider.scan_progress)
 		else:
 			# doesn't hit anything
 			$Tip.visible = true
 			$Tip.scale_target = 0.5
-			if is_instance_valid(collider):
-				collider.scan_progress = 0
 			
 			$Tip.global_position = owner.owner.get_mouse_location_on_map()
 			$Tip/MeshInstance3D.mesh.material.next_pass.set_shader_parameter("Dissolve_Height", 0)
