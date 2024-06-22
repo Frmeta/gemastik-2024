@@ -79,12 +79,12 @@ func new_animal(nama_hewan: String):
 	var island : pulau = GM.pulau_list_resource.list[GM.current_level]
 	
 	for hewan in island.hewanss:
-		if hewan.nama == nama_hewan:
+		if hewan.nama.to_lower() == nama_hewan:
 			var texture = hewan.foto_kartun
 			successful_scan.appear(texture)
 			# doni akan allow_move setelah animasi selesai, menggunakan signal
 			return
 			
-	print("oh no hewan tidak ada di pulau itu seharusnya")
+	print("oh no hewan " + nama_hewan + " tidak ada di pulau itu seharusnya")
 	GM.doni.allow_move()
 	

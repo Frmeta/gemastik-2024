@@ -40,7 +40,12 @@ func _input(event):
 			# level is unlocked
 			GM.current_level = selected_level
 			GM.scanned_animal = []
-			get_tree().change_scene_to_file("res://Scenes/Game/level_" + str(selected_level) + ".tscn")
+			
+			var level_path = "res://Scenes/Game/level_" + str(selected_level) + ".tscn"
+			if FileAccess.file_exists(level_path):
+				get_tree().change_scene_to_file(level_path)
+			else:
+				print("level blom siap")
 		else:
 			# level is locked
 			pass
