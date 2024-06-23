@@ -69,8 +69,9 @@ func _process(delta):
 		scan_progress = 0
 		if !GM.scanned_animal.has(nama_hewan):
 			GM.scan_hewan(nama_hewan)
+			print(GM.scanned_animal)
 			print(nama_hewan + " has been scanned")
-			owner.new_animal(nama_hewan)
+			owner.new_animal(nama_hewan) # animasi hewan baru
 		else:
 			print("maaf hewan" + str(nama_hewan) + "sudah discan")
 

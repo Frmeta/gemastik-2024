@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ne6mdr5yo8x1"]
+[gd_scene load_steps=22 format=3 uid="uid://ne6mdr5yo8x1"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qud7n"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_kekwg"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan.tscn" id="17_8pc6h"]
 [ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/0-Kalimantan/Kijang/Kijang.tscn" id="18_8p6yu"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="19_iw72a"]
+[ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="20_4mqpp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
@@ -35,7 +36,7 @@ script = ExtResource("1_qud7n")
 [node name="Camera3D" parent="." instance=ExtResource("5_fr423")]
 
 [node name="Player" parent="." instance=ExtResource("6_4s4dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7007, 14.9848, -0.0102196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.395, 4.80756, -0.0102196)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ociqn")]
@@ -44,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27373, 5.8854, 0)
 [node name="GridMapGround" parent="." instance=ExtResource("8_77wmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0035553, 0.793519, 0)
 data = {
-"cells": PackedInt32Array(-458756, 0, 1, -458755, 0, 1, -458754, 0, 1, -458753, 0, 1, -393217, 0, 1, -458752, 0, 1, -458751, 0, 1, -393215, 0, 1, -393214, 0, 1, -327678, 0, 1, -327676, 0, 1, -327675, 0, 1, -327674, 0, 1, -327673, 0, 1, -327672, 0, 1, 327689, 0, 1, 327690, 0, 1, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 458769, 0, 1, 458770, 0, 1, 458771, 0, 1, 196636, 0, 1, 196637, 0, 1, 196638, 0, 1, 196639, 0, 1, 196640, 0, 1, 196641, 0, 1, 262152, 0, 1, 196616, 0, 1, 131080, 0, 1, 65544, 0, 1, 8, 0, 1, -65528, 0, 1, -131064, 0, 1, -196600, 0, 1, -262136, 0, 1, -458694, 0, 1, -196543, 0, 1, -196542, 0, 1, -196541, 0, 1, -196540, 0, 1, -196539, 0, 1, -196538, 0, 1, -196537, 0, 1, -196536, 0, 1, -196535, 0, 1, -196534, 0, 1, -196533, 0, 1, -196544, 0, 1, -196545, 0, 1, -196546, 0, 1, -196547, 0, 1, -196548, 0, 1, -327622, 0, 1, -393158, 0, 1, -262086, 0, 1, -196549, 0, 1, -524246, 0, 1, -393103, 0, 1, -327566, 0, 1, -262029, 0, 1, -262028, 0, 1, -196492, 0, 1, -196491, 0, 1, -130955, 0, 1, -130954, 0, 1, -65417, 0, 1, -65416, 0, 1, 65657, 0, 1, 65658, 0, 1, 131195, 0, 1, 196731, 0, 1, 196732, 0, 1, 196733, 0, 1, 262269, 0, 1, 196734, 0, 1, 131198, 0, 1, 65662, 0, 1, 65663, 0, 1, 126, 0, 1, 127, 0, 1, 120, 0, 1, -393014, 0, 1, -327478, 0, 1, -327477, 0, 1, -261940, 0, 1, -261939, 0, 1, -196402, 0, 1, -196401, 0, 1, -196399, 0, 1, -196398, 0, 1, -196397, 0, 1, -196396, 0, 1, -196395, 0, 1, -196393, 0, 1, -130856, 0, 1, -130855, 0, 1, -130854, 0, 1, -130853, 0, 1, -130852, 0, 1, -130851, 0, 1, -130850, 0, 1, -130849, 0, 1, -130848, 0, 1, -130846, 0, 1, -130845, 0, 1, -130844, 0, 1, -130843, 0, 1, -196379, 0, 1, -196378, 0, 1, -261914, 0, 1, -196383, 0, 1, -196384, 0, 1, -130847, 0, 1, -196394, 0, 1, -196400, 0, 1, -196377, 0, 1, -196375, 0, 1, -130839, 0, 1, -130838, 0, 1, -65299, 0, 1, -65297, 0, 1, -65296, 0, 1, -65295, 0, 1, -65294, 0, 1, 243, 0, 1, 244, 0, 1, 245, 0, 1, 246, 0, 1, 247, 0, 1, 248, 0, 1, 249, 0, 1, 250, 0, 1, 251, 0, 1, 252, 0, 1, 253, 0, 1, 254, 0, 1, 255, 0, 1, 256, 0, 1, 257, 0, 1, 258, 0, 1, -65278, 0, 1, -65276, 0, 1, -130811, 0, 1, -196346, 0, 1, -196376, 0, 1, -65301, 0, 1, -65300, 0, 1, 238, 0, 1, 239, 0, 1, -65298, 0, 1, -327677, 0, 1, -589670, 0, 1, -524134, 0, 1, -458598, 0, 1, -458597, 0, 1, -458596, 0, 1, -458595, 0, 1, -393059, 0, 1, -393058, 0, 1, -327522, 0, 1, -261986, 0, 1, -196450, 0, 1, -130914, 0, 1, -65378, 0, 1, -65377, 0, 1, 159, 0, 1, 160, 0, 1, 65697, 0, 1, 65698, 0, 1, 131235, 0, 1, 196771, 0, 1, 262307, 0, 1, 327843, 0, 1, 393379, 0, 1, 458915, 0, 1, 458916, 0, 1, 458917, 0, 1, 458918, 0, 1, 524454, 0, 1, 589990, 0, 1, 589991, 0, 1, 655527, 0, 1, 721063, 0, 1, 721064, 0, 1, -393104, 0, 1, -393105, 0, 1, -393106, 0, 1, -393107, 0, 1, -327571, 0, 1, -327572, 0, 1, -262036, 0, 1, -262037, 0, 1, -196501, 0, 1, -130965, 0, 1, -130966, 0, 1, -65430, 0, 1, -65431, 0, 1, -65432, 0, 1, -65433, 0, 1, -131003, 0, 1, -65467, 0, 1, 69, 0, 1, 131141, 0, 1, 196677, 0, 1, 196678, 0, 1, 65605, 0, 1, 196679, 0, 1, 262216, 0, 1, 327752, 0, 1, 393289, 0, 1, 393288, 0, 1, 393290, 0, 1, 458826, 0, 1, 524363, 0, 1, 524364, 0, 1, 524365, 0, 1, 524362, 0, 1, -589671, 0, 1, -589672, 0, 1, -589673, 0, 1, -196345, 0, 1, -261880, 0, 1, -261879, 0, 1, -327415, 0, 1, -327414, 0, 1, -327413, 0, 1, -327412, 0, 1, -327411, 0, 1, -392947, 0, 1, -392946, 0, 1, -392945, 0, 1, -392944, 0, 1, -392943, 0, 1, -392942, 0, 1, -392941, 0, 1, -392940, 0, 1, -327404, 0, 1, -327403, 0, 1, -327402, 0, 1, -327401, 0, 1, -327400, 0, 1, -327399, 0, 1, -327398, 0, 1, -327397, 0, 1, -327396, 0, 1, -327395, 0, 1, -327394, 0, 1, -327392, 0, 1, -327391, 0, 1, -327390, 0, 1, -327389, 0, 1, -327388, 0, 1, -327387, 0, 1, -327386, 0, 1, -327385, 0, 1, -327384, 0, 1, -327383, 0, 1, -392917, 0, 1, -392916, 0, 1, -392915, 0, 1, -392914, 0, 1, -65277, 0, 1, -327393, 0, 1, -392918, 0, 1, -458757, 0, 1, -458758, 0, 1, -458759, 0, 1, -458760, 0, 1, -458761, 0, 1, -458762, 0, 1, -458763, 0, 1, -458764, 0, 1, -458765, 0, 1, -458766, 0, 1, -458767, 0, 1, -458768, 0, 1, -458769, 0, 1, -458770, 0, 1, -458771, 0, 1, -458772, 0, 1, -458773, 0, 1, -458774, 0, 1, -393239, 0, 1, -393240, 0, 1, -327704, 0, 1, -327705, 0, 1, -327706, 0, 1, -327707, 0, 1, -262171, 0, 1, -196635, 0, 1, -131100, 0, 1, -65564, 0, 1, -28, 0, 1, 65508, 0, 1, 131044, 0, 1, 196580, 0, 1, 262116, 0, 1, 327652, 0, 1, 393188, 0, 1, 458724, 0, 1, 524260, 0, 1, 131106, 0, 1, 131107, 0, 1, 65571, 0, 1, 65572, 0, 1, 36, 0, 1, -65500, 0, 1, -196571, 0, 1, -262107, 0, 1, -393177, 0, 1, -458712, 0, 1, -524247, 0, 1, -327642, 0, 1, -131036, 0, 1, -524245, 0, 1, -524244, 0, 1, -458695, 0, 1, -458696, 0, 1, -458697, 0, 1, -524234, 0, 1, -524235, 0, 1, -524236, 0, 1, -524237, 0, 1, -524238, 0, 1, -524239, 0, 1, -524240, 0, 1, -524241, 0, 1, -524242, 0, 1, -524243, 0, 1, -261840, 0, 1, -196304, 0, 1, -130768, 0, 1, -65232, 0, 1, 304, 0, 1, 65840, 0, 1, 131376, 0, 1, 196912, 0, 1, 262448, 0, 1, 327984, 0, 1, 393520, 0, 1, 459056, 0, 1, 524592, 0, 1, 590128, 0, 1, 655664, 0, 1, 721200, 0, 1, 786736, 0, 1, 852272, 0, 1, 852273, 0, 1, 852274, 0, 1, 852275, 0, 1, 852276, 0, 1, 852277, 0, 1, 852278, 0, 1, 852279, 0, 1, 852280, 0, 1, 852281, 0, 1, 852282, 0, 1, 852283, 0, 1, 852284, 0, 1, -261842, 0, 1, -261841, 0, 1, -327377, 0, 1, 852285, 0, 1, 852286, 0, 1, 852287, 0, 1, 852288, 0, 1, 917824, 0, 1, 917825, 0, 1, 917826, 0, 1, 983362, 0, 1, 983363, 0, 1, 1048899, 0, 1, 1048900, 0, 1, -327378, 0, 1)
+"cells": PackedInt32Array(-458756, 0, 1, -458755, 0, 1, -458754, 0, 1, -458753, 0, 1, -393217, 0, 1, -458752, 0, 1, -458751, 0, 1, -393215, 0, 1, -393214, 0, 1, -327678, 0, 1, -327676, 0, 1, -327675, 0, 1, -327674, 0, 1, -327673, 0, 1, -327672, 0, 1, 327689, 0, 1, 327690, 0, 1, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 458769, 0, 1, 458770, 0, 1, 458771, 0, 1, 196636, 0, 1, 196637, 0, 1, 196638, 0, 1, 196639, 0, 1, 196640, 0, 1, 196641, 0, 1, 262152, 0, 1, 196616, 0, 1, 131080, 0, 1, 65544, 0, 1, 8, 0, 1, -65528, 0, 1, -131064, 0, 1, -196600, 0, 1, -262136, 0, 1, -458694, 0, 1, -196543, 0, 1, -196542, 0, 1, -196541, 0, 1, -196540, 0, 1, -196539, 0, 1, -196538, 0, 1, -196537, 0, 1, -196536, 0, 1, -196535, 0, 1, -196534, 0, 1, -196533, 0, 1, -196544, 0, 1, -196545, 0, 1, -196546, 0, 1, -196547, 0, 1, -196548, 0, 1, -327622, 0, 1, -393158, 0, 1, -262086, 0, 1, -196549, 0, 1, -524246, 0, 1, -393103, 0, 1, -327566, 0, 1, -262029, 0, 1, -262028, 0, 1, -196492, 0, 1, -196491, 0, 1, -130955, 0, 1, -130954, 0, 1, -65417, 0, 1, -65416, 0, 1, 65657, 0, 1, 65658, 0, 1, 131195, 0, 1, 196731, 0, 1, 196732, 0, 1, 196733, 0, 1, 262269, 0, 1, 196734, 0, 1, 131198, 0, 1, 65662, 0, 1, 65663, 0, 1, 126, 0, 1, 127, 0, 1, 120, 0, 1, -393014, 0, 1, -327478, 0, 1, -327477, 0, 1, -261940, 0, 1, -261939, 0, 1, -196402, 0, 1, -196401, 0, 1, -196399, 0, 1, -196398, 0, 1, -196397, 0, 1, -196396, 0, 1, -196395, 0, 1, -196393, 0, 1, -196394, 0, 1, -196400, 0, 1, -196377, 0, 1, 256, 0, 1, 257, 0, 1, 258, 0, 1, -65278, 0, 1, -65276, 0, 1, -130811, 0, 1, -196346, 0, 1, -327677, 0, 1, -589670, 0, 1, -524134, 0, 1, -458598, 0, 1, -458597, 0, 1, -458596, 0, 1, -458595, 0, 1, -393059, 0, 1, -393058, 0, 1, -327522, 0, 1, -261986, 0, 1, -196450, 0, 1, -130914, 0, 1, -65378, 0, 1, -65377, 0, 1, 159, 0, 1, 160, 0, 1, 65697, 0, 1, 65698, 0, 1, 131235, 0, 1, 196771, 0, 1, 262307, 0, 1, 327843, 0, 1, 393379, 0, 1, 458915, 0, 1, 458916, 0, 1, 458917, 0, 1, 458918, 0, 1, 524454, 0, 1, 589990, 0, 1, 589991, 0, 1, 655527, 0, 1, 721063, 0, 1, 721064, 0, 1, -393104, 0, 1, -393105, 0, 1, -393106, 0, 1, -393107, 0, 1, -327571, 0, 1, -327572, 0, 1, -262036, 0, 1, -262037, 0, 1, -196501, 0, 1, -130965, 0, 1, -130966, 0, 1, -65430, 0, 1, -65431, 0, 1, -65432, 0, 1, -65433, 0, 1, -131003, 0, 1, -65467, 0, 1, 69, 0, 1, 131141, 0, 1, 196677, 0, 1, 196678, 0, 1, 65605, 0, 1, 196679, 0, 1, 262216, 0, 1, 327752, 0, 1, 393289, 0, 1, 393288, 0, 1, 393290, 0, 1, 458826, 0, 1, 524363, 0, 1, 524364, 0, 1, 524365, 0, 1, 524362, 0, 1, -589671, 0, 1, -589672, 0, 1, -589673, 0, 1, -196345, 0, 1, -261880, 0, 1, -261879, 0, 1, -327415, 0, 1, -327414, 0, 1, -327413, 0, 1, -327412, 0, 1, -327411, 0, 1, -327404, 0, 1, -327403, 0, 1, -327402, 0, 1, -327401, 0, 1, -327400, 0, 1, -327399, 0, 1, -327398, 0, 1, -327397, 0, 1, -327396, 0, 1, -327395, 0, 1, -327394, 0, 1, -327392, 0, 1, -327391, 0, 1, -327390, 0, 1, -327389, 0, 1, -327388, 0, 1, -327387, 0, 1, -327386, 0, 1, -327385, 0, 1, -327384, 0, 1, -327383, 0, 1, -65277, 0, 1, -327393, 0, 1, -458757, 0, 1, -458758, 0, 1, -458759, 0, 1, -458760, 0, 1, -458761, 0, 1, -458762, 0, 1, -458763, 0, 1, -458764, 0, 1, -458765, 0, 1, -458766, 0, 1, -458767, 0, 1, -458768, 0, 1, -458769, 0, 1, -458770, 0, 1, -458771, 0, 1, -458772, 0, 1, -458773, 0, 1, -458774, 0, 1, -393239, 0, 1, -393240, 0, 1, -327704, 0, 1, -327705, 0, 1, -327706, 0, 1, -327707, 0, 1, -262171, 0, 1, -196635, 0, 1, -131100, 0, 1, -65564, 0, 1, -28, 0, 1, 65508, 0, 1, 131044, 0, 1, 196580, 0, 1, 262116, 0, 1, 327652, 0, 1, 393188, 0, 1, 458724, 0, 1, 524260, 0, 1, 131106, 0, 1, 131107, 0, 1, 65571, 0, 1, 65572, 0, 1, 36, 0, 1, -65500, 0, 1, -196571, 0, 1, -262107, 0, 1, -393177, 0, 1, -458712, 0, 1, -524247, 0, 1, -327642, 0, 1, -131036, 0, 1, -524245, 0, 1, -524244, 0, 1, -458695, 0, 1, -458696, 0, 1, -458697, 0, 1, -524234, 0, 1, -524235, 0, 1, -524236, 0, 1, -524237, 0, 1, -524238, 0, 1, -524239, 0, 1, -524240, 0, 1, -524241, 0, 1, -524242, 0, 1, -524243, 0, 1, -261840, 0, 1, -196304, 0, 1, -130768, 0, 1, -65232, 0, 1, 304, 0, 1, 65840, 0, 1, 131376, 0, 1, 196912, 0, 1, 262448, 0, 1, 327984, 0, 1, 393520, 0, 1, 459056, 0, 1, 524592, 0, 1, 590128, 0, 1, 655664, 0, 1, 721200, 0, 1, 786736, 0, 1, 852272, 0, 1, 852273, 0, 1, 852274, 0, 1, 852275, 0, 1, 852276, 0, 1, 852277, 0, 1, 852278, 0, 1, 852279, 0, 1, 852280, 0, 1, 852281, 0, 1, 852282, 0, 1, 852283, 0, 1, 852284, 0, 1, -261842, 0, 1, -261841, 0, 1, -327377, 0, 1, 852285, 0, 1, 852286, 0, 1, 852287, 0, 1, 852288, 0, 1, 917824, 0, 1, 917825, 0, 1, 917826, 0, 1, 983362, 0, 1, 983363, 0, 1, 1048899, 0, 1, 1048900, 0, 1, -327378, 0, 1, -261928, 0, 1, -261927, 0, 1, -261926, 0, 1, -261925, 0, 1, -261924, 0, 1, -261923, 0, 1, -261922, 0, 1, -261921, 0, 1, -261920, 0, 1, -261919, 0, 1, -261918, 0, 1, -261917, 0, 1, -261916, 0, 1, -130818, 0, 1, -65281, 0, 1, -65280, 0, 1, -65279, 0, 1, -130840, 0, 1, -261915, 0, 1, -261914, 0, 1, -196374, 0, 1, -196373, 0, 1, -196372, 0, 1, -196371, 0, 1, -196369, 0, 1, -196368, 0, 1, -196366, 0, 1, -196365, 0, 1, -196363, 0, 1, -196362, 0, 1, -196361, 0, 1, -196360, 0, 1, -196359, 0, 1, -196358, 0, 1, -196357, 0, 1, -196356, 0, 1, -196364, 0, 1, -196367, 0, 1, -196370, 0, 1, -196355, 0, 1, -196354, 0, 1, -196375, 0, 1, -196376, 0, 1, -327379, 0, 1, -327380, 0, 1, -327381, 0, 1, -327382, 0, 1, -327410, 0, 1, -327409, 0, 1, -327408, 0, 1, -327407, 0, 1, -327406, 0, 1, -327405, 0, 1, -196305, 0, 1, -130769, 0, 1, -65233, 0, 1, 303, 0, 1)
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
@@ -53,49 +54,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.206, -3.04266, 0)
 
 [node name="checkpoint" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.533, 8.14409, 0)
-wallleft = NodePath("../../wall/invisiblewall")
-wallright = NodePath("../../wall/invisiblewall2")
+wallleft = NodePath("../../wall/invisiblewall orangutan kiri")
+wallright = NodePath("../../wall/invisiblewall orangutan kanan")
 syarat_hewan = Array[String](["bekantan"])
 
-[node name="checkpoint2" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft") instance=ExtResource("8_buawd")]
+[node name="checkpoint2" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.696, 0.479511, 0)
-wallleft = NodePath("../../wall/invisiblewall2")
+wallleft = NodePath("")
 
 [node name="checkpoint3" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87317, 3.41228, 1.90735e-06)
-wallleft = NodePath("../../wall/invisiblewall3")
-wallright = NodePath("../../wall/invisiblewall4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98749, 3.41228, 1.90735e-06)
+wallleft = NodePath("../../wall/invisiblewall kijang kiri")
+wallright = NodePath("../../wall/invisiblewall kijang kanan")
 syarat_hewan = Array[String](["kijang"])
+
+[node name="checkpoint3_5" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0003, 5.8442, -7.62939e-06)
+wallleft = NodePath("")
+wallright = NodePath("")
+
+[node name="checkpoint3_75" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.6031, 19.2367, -7.62939e-06)
+wallleft = NodePath("")
+wallright = NodePath("")
 
 [node name="checkpoint4" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.509, 0.729, 0)
-wallleft = NodePath("../../wall/invisiblewall4")
-wallright = NodePath("../../wall/invisiblewall5")
+wallleft = NodePath("../../wall/invisiblewall sisa kiri")
+wallright = NodePath("../../wall/invisiblewall sisa kanan")
+syarat_hewan = Array[String](["orang utan", "bunglon"])
 
-[node name="checkpoint5" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.789, 4.50924, 0)
-wallleft = NodePath("../../wall/invisiblewall5")
-wallright = NodePath("../../wall/invisiblewall6")
+[node name="checkpoint5" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.427, 0.965909, 0)
+wallleft = NodePath("")
+wallright = NodePath("")
 
 [node name="wall" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.206, -3.04266, 0)
 
-[node name="invisiblewall" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+[node name="invisiblewall orangutan kiri" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.184, 7.52834, 0)
 
-[node name="invisiblewall2" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+[node name="invisiblewall orangutan kanan" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1872, -0.365587, 0)
 
-[node name="invisiblewall3" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01093, 3.22703, 0)
+[node name="invisiblewall kijang kiri" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90858, 3.22703, 0)
 
-[node name="invisiblewall4" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8309, 0.618469, 0)
+[node name="invisiblewall kijang kanan" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7263, 0.618469, 0)
 
-[node name="invisiblewall5" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.395, 1.75813, 0)
+[node name="invisiblewall sisa kiri" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.541, 0.0281799, 0)
 
-[node name="invisiblewall6" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
+[node name="invisiblewall sisa kanan" parent="GridMapGround/wall" instance=ExtResource("9_u5tc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.916, 4.10206, 0)
 
 [node name="grapling_for_trees" type="Node3D" parent="GridMapGround"]
@@ -186,23 +198,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.6415, 1.39699, -0.00628281
 [node name="Kijang" parent="Animals" instance=ExtResource("18_8p6yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.3, 1.249, -3.05176e-05)
 
-[node name="Kijang2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_8p6yu")]
+[node name="Kijang2" parent="Animals" instance=ExtResource("18_8p6yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.684, -1.62796, -3.05176e-05)
-mesh = NodePath("../Kijang/Kijang_Skeleton/Skeleton3D/Kijang")
 
-[node name="Kijang3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_8p6yu")]
+[node name="Kijang3" parent="Animals" instance=ExtResource("18_8p6yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.444, 1.24589, -3.05176e-05)
-mesh = NodePath("../Kijang/Kijang_Skeleton/Skeleton3D/Kijang")
 
-[node name="Kijang4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_8p6yu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.883, 7.55541, -2.95639e-05)
-mesh = NodePath("../Kijang/Kijang_Skeleton/Skeleton3D/Kijang")
+[node name="Kijang4" parent="Animals" instance=ExtResource("18_8p6yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.86, 5.8015, -2.95639e-05)
 
 [node name="Bunglon" parent="Animals" instance=ExtResource("19_iw72a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.536, 1.58698, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 313.001, -1.42959, -1.36424e-12)
 
 [node name="Bunglon2" parent="Animals" instance=ExtResource("19_iw72a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.056, 1.90435, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.521, -1.11222, -1.36424e-12)
+
+[node name="Bunglon3" parent="Animals" instance=ExtResource("19_iw72a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 318.933, -1.42959, -1.36424e-12)
+
+[node name="Bunglon4" parent="Animals" instance=ExtResource("19_iw72a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 321.453, -1.11222, -1.36424e-12)
+
+[node name="Orang Utan" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.91, -0.642847, -1.36424e-12)
+
+[node name="Orang Utan2" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 287.552, -0.642847, -1.36424e-12)
+
+[node name="Orang Utan3" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.71, 0.925388, -1.36424e-12)
+
+[node name="Orang Utan4" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 311.655, 0.927525, -1.36424e-12)
+
+[node name="Orang Utan5" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 381.448, -1.70979, -1.36424e-12)
+
+[node name="Orang Utan6" parent="Animals" instance=ExtResource("20_4mqpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.775, -1.70979, -1.36424e-12)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

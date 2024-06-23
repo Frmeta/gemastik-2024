@@ -8,6 +8,7 @@ var is_almanac_open = false
 var is_animating_almanac = false
 
 func _ready():
+	
 	almanac_ui.visible = false
 	almanac_3d.visible = false
 	almanac_3d.get_node("AnimationPlayer").connect("animation_finished", _done_animating_almanac)

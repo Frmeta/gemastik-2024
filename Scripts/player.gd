@@ -57,6 +57,7 @@ var can_move = true
 
 func _ready():
 	GM.doni=self
+	GM.last_checkpoint_position = position
 	animTree.set("parameters/MainState/transition_request", "game")
 
 func allow_move():

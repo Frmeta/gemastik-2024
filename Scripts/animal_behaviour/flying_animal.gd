@@ -102,6 +102,9 @@ func _process(delta):
 	
 
 func find_destination():
+	if !is_inside_tree():
+		return null
+		
 	var scan_length = 27
 	const scan_start = 1.5
 	
@@ -150,7 +153,10 @@ func find_destination():
 
 
 func wait_for_seconds(seconds: float):
-	await get_tree().create_timer(seconds).timeout
+	if is_instance_valid(get_tree()):
+		await get_tree().create_timer(seconds).timeout
+	else:
+		return null
 
 func wait_for_next_frame():
 	if is_instance_valid(get_tree()):
