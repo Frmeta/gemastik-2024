@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dra0eng33cvhi"]
+
+[ext_resource type="Script" path="res://Scenes/trap/button_mesh.gd" id="1_wrdh6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kdvg4"]
+radius = 2.0
+
+[node name="ButtonMesh" type="Area3D"]
+collision_layer = 32
+script = ExtResource("1_wrdh6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kdvg4")
+
+[node name="minus_timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="minus_timer" to="." method="_on_minus_timer_timeout"]

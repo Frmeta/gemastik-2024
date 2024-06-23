@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=46 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="16_qpc4o"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="17_e1v8h"]
 [ext_resource type="PackedScene" uid="uid://p0rt1lboopyr" path="res://3D Assets/Animal/5-Sulawesi/Burung Maleo/Burung Maleo.tscn" id="18_g33nv"]
+[ext_resource type="PackedScene" uid="uid://dqxx67pcn36de" path="res://Scenes/trap/beartrap.tscn" id="18_oax7x"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_siplm"]
 [ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang Jawa/Elang Jawa.tscn" id="19_bvwp0"]
 [ext_resource type="PackedScene" uid="uid://dlweijua58o1u" path="res://3D Assets/Animal/3-Papua/Burung Cendrawasih/Cendrawasih.tscn" id="21_lkohu"]
@@ -492,6 +493,9 @@ event = "despawn_mas"
 
 [node name="DialogueManager" parent="." instance=ExtResource("16_qpc4o")]
 layer = 10
+
+[node name="Beartrap" parent="DialogueManager" instance=ExtResource("18_oax7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7711, -0.168276, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f53pu")

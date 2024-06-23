@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4xbpmw1y8mor"]
+
+[ext_resource type="Script" path="res://Scenes/trap/trap.gd" id="1_h6j6l"]
+[ext_resource type="PackedScene" uid="uid://cpwa0lqenn3ux" path="res://3D Assets/trap/NetTrap_mesh.tscn" id="2_kx55q"]
+[ext_resource type="PackedScene" uid="uid://dra0eng33cvhi" path="res://Scenes/trap/button_mesh.tscn" id="3_emb3y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7itds"]
+
+[node name="NetTrap" type="StaticBody3D"]
+script = ExtResource("1_h6j6l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7itds")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.88094, 0.473227, 0, -0.473227, 0.88094, 0, 5.43414, 9.35461)
+
+[node name="trap" parent="." instance=ExtResource("2_kx55q")]
+
+[node name="ButtonMesh" parent="." instance=ExtResource("3_emb3y")]
