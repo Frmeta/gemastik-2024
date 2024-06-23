@@ -20,6 +20,10 @@ var captured = false
 func _ready():
 	EventDistributor.connect("new_checkpoint", disable_both_wall)
 	EventDistributor.connect("animal_captured", scan_done)
+	
+	# syarat nama hewan ubah jadi lower
+	for i in range(syarat_hewan.size()):
+		syarat_hewan[i] = syarat_hewan[i].to_lower()
 
 # Ketika 1 checkpoin di hit, semua checkpoin sisanya lepasin
 # wallnya biar gk hardlock
@@ -51,16 +55,16 @@ func _on_body_entered(body):
 			wallright.enable_wall()
 		
 		# FOR DEBUGGING PUPOSES
-		EventDistributor.emit_signal("animal_captured")
+		# EventDistributor.emit_signal("animal_captured")
 
 # Checkpoin yang punya dua wall aktif diasumsikan adalah
 # checkpoin yang lagi aktif dan juga berhewan
 func scan_done():
 	if wallleft!=null and wallright!=null and not wallright.is_not_disabled() and not wallleft.is_not_disabled():
-		print("wow")
+		print("ada yg discan")
 		# cek apakah semua syarat hewan sudah discan
 		for hewan in syarat_hewan:
-			if !GM.scanned_animal.has(hewan.to_lower()):
+			if !GM.scanned_animal.has(hewan):
 				break
 		
 		wallright.disable_wall()

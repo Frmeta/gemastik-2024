@@ -117,7 +117,7 @@ func find_destination():
 			theta += PI/20
 			ray.position = Vector3(cos(theta), sin(theta), 0)*scan_start
 			ray.target_position = Vector3(cos(theta), sin(theta), 0) * scan_length
-			await get_tree().process_frame
+			await wait_for_next_frame()
 			
 		if ray.is_colliding(): #and !is_near_player(ray.get_collision_point()):
 			# yey ketemu target
@@ -130,14 +130,14 @@ func find_destination():
 			# up
 			while ray.is_colliding():
 				ray.global_position.y += 0.01
-				await get_tree().process_frame
+				await wait_for_next_frame()
 			
 			# down
 			while !ray.is_colliding():
 				ray.global_position.y -= 0.01
 				if ray.global_position.y < -10:
 					return null
-				await get_tree().process_frame
+				await wait_for_next_frame()
 			
 			# print("atasnya adalah" + str(ray.global_position))
 			return ray.global_position
@@ -151,3 +151,9 @@ func find_destination():
 
 func wait_for_seconds(seconds: float):
 	await get_tree().create_timer(seconds).timeout
+
+func wait_for_next_frame():
+	if is_instance_valid(get_tree()):
+		await get_tree().process_frame
+	else:
+		await wait_for_seconds(1)

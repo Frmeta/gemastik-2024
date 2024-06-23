@@ -48,6 +48,7 @@ func win():
 	explored_level = max(explored_level, current_level+1)
 	data[data_file_number]["level"] = explored_level
 	scanned_animal = []
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Game/level_select.tscn")
 	
 func read_data():
 	if not FileAccess.file_exists(FILE_NAME):

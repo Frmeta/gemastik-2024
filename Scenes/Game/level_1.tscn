@@ -54,7 +54,7 @@ transform = Transform3D(2.79656, 0, 0, 0, 1.74457, 0, 0, 0, 2.53594, 63.3783, -7
 scale2 = 10.0
 
 [node name="water2" parent="GridMapGround/water" instance=ExtResource("9_vmtq0")]
-transform = Transform3D(4.99814, 0, 0, 0, 5.28791, 0, 0, 0, 4, 119.201, -8.57125, -18.473)
+transform = Transform3D(4.998, 0, 0, 0, 6, 0, 0, 0, 4, 119.201, -9.32121, -18.473)
 scale2 = 2.0
 
 [node name="water3" parent="GridMapGround/water" instance=ExtResource("9_vmtq0")]
