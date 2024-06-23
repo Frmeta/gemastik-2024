@@ -21,18 +21,21 @@ func _init():
 	
 func _ready():
 	
-	# init next_pass to all surface
-	next_pass = mesh.get_active_material(0).next_pass
+	# assert next_pass material
+	assert(mesh != null)
+	mesh.mesh = mesh.mesh.duplicate(true)
+	next_pass = mesh.mesh.surface_get_material(0).next_pass
 	assert(next_pass != null)
+	
+	# duplicate the mesh & next_pass
+	mesh.mesh = mesh.mesh.duplicate()
 	next_pass = next_pass.duplicate()
 	
-	#print(get_script())
-	
-	print(next_pass)
-	
-	assert(mesh != null)
-	for i in range(0, mesh.get_surface_override_material_count()):
-		mesh.get_active_material(i).next_pass = next_pass
+	# init next_pass to all surface
+	for i in range(0, mesh.mesh.get_surface_count()):
+		var mat = mesh.mesh.surface_get_material(i).duplicate()
+		mesh.mesh.surface_set_material(i, mat)
+		mat.next_pass = next_pass
 		
 	# init name
 	nama_hewan = name.to_lower()
@@ -42,13 +45,15 @@ func _ready():
 	
 func _process(delta):
 	# scanning
-	next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
+	if above_0:
+		next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
 	
 	
 	if scan_progress <= 0 and above_0:
 		above_0 = false
 		for i in range(0, mesh.get_surface_override_material_count()):
 			mesh.get_active_material(i).next_pass = null
+			mesh.mesh.surface_get_material(i).next_pass
 	elif scan_progress > 0 and !above_0:
 		above_0 = true
 		for i in range(0, mesh.get_surface_override_material_count()):

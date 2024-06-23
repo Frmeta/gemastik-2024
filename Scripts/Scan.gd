@@ -24,6 +24,7 @@ func _process(delta):
 			collider = $RayCast3D.get_collider()
 			$Tip.global_position = collider.global_position
 			collider.scan_progress += delta;
+			$Tip/MeshInstance3D.mesh.material.next_pass.set_shader_parameter("Dissolve_Height", collider.scan_progress)
 		else:
 			# doesn't hit anything
 			$Tip.visible = true
