@@ -1,5 +1,6 @@
 extends Node3D
 
+class_name Ground_Animal
 
 enum State {KIRI, KANAN, DIAM}
 

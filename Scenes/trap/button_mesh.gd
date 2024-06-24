@@ -21,11 +21,9 @@ func _on_minus_timer_timeout():
 	minus_timer.start()
 
 func _on_body_entered(body: Player):
-	print("player enter")
 	EventDistributor.emit_signal("player_enter_trap_area")
 	can_button_mash=true
 
 func _on_body_exited(body : Player):
-	print("player leave")
 	EventDistributor.emit_signal("player_leave_trap_area")
 	can_button_mash=false
