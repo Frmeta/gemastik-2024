@@ -71,7 +71,7 @@ func refresh():
 			# connect new signal
 			
 			# nama hewan di resource harus sama dengan nama prefabnya
-			if (area_number == GM.explored_level and GM.scanned_animal.has(hewan.nama.to_lower())) or \
+			if (area_number == GM.current_level and GM.scanned_animal.has(hewan.nama.to_lower())) or \
 				(area_number < GM.current_level):
 				# jika hewan sudah pernah di-scan
 				texture_rect.texture = hewan.foto_kartun

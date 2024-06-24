@@ -60,7 +60,8 @@ func _on_body_entered(body):
 # Checkpoin yang punya dua wall aktif diasumsikan adalah
 # checkpoin yang lagi aktif dan juga berhewan
 func scan_done():
-	if wallleft!=null and wallright!=null and wallright.is_not_disabled() and wallleft.is_not_disabled():
+	# if wallleft!=null and wallright!=null and wallright.is_not_disabled() and wallleft.is_not_disabled():
+	if wallright!=null and wallright.is_not_disabled():
 		print("ada yg discan")
 		if syarat_terpenuhi():
 			wallright.disable_wall()

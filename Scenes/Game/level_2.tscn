@@ -37,7 +37,7 @@ script = ExtResource("1_wudb8")
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.811, 35.8001, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.19778, -0.102669, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -67,18 +67,31 @@ transform = Transform3D(2.36639, 0, 0, 0, 2.23868, 0, 0, 0, 4.75185, 181.174, 33
 transform = Transform3D(1.45113, 0, 0, 0, 2.23868, 0, 0, 0, 4.75185, 236.176, -7.95202, -22.7137)
 
 [node name="water4" parent="GridMapGround/water" instance=ExtResource("9_cugq3")]
-transform = Transform3D(3.23223, 0, 0, 0, 2.23868, 0, 0, 0, 4.75185, 283.941, -7.95202, -22.7137)
+transform = Transform3D(3.23223, 0, 0, 0, 2.23868, 0, 0, 0, 4.75185, 283.941, -7.95202, -22.2269)
 
 [node name="checkpoints" type="Node3D" parent="GridMapGround"]
 
-[node name="checkpoint1" parent="GridMapGround/checkpoints" instance=ExtResource("11_3khf2")]
+[node name="checkpoint1" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallright") instance=ExtResource("11_3khf2")]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.5053, -2.17066, 9.53892e-07)
-syarat_hewan = Array[String](["jalak bali"])
+wallright = NodePath("../../wall/invisiblewall1")
+syarat_hewan = Array[String](["landak", "trenggiling"])
+
+[node name="checkpoint2" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("11_3khf2")]
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 347.857, 21.3301, 9.53891e-07)
+wallleft = NodePath("../../wall/invisiblewall2")
+wallright = NodePath("../../wall/invisiblewall3")
+syarat_hewan = Array[String](["komodo"])
 
 [node name="wall" type="Node3D" parent="GridMapGround"]
 
 [node name="invisiblewall1" parent="GridMapGround/wall" instance=ExtResource("12_p6t0s")]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 79.0087, -3.24385, -1.90735e-06)
+
+[node name="invisiblewall2" parent="GridMapGround/wall" instance=ExtResource("12_p6t0s")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 317.004, 19.4688, -1.90735e-06)
+
+[node name="invisiblewall3" parent="GridMapGround/wall" instance=ExtResource("12_p6t0s")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 409.923, 16.7421, -1.90735e-06)
 
 [node name="grapling_for_tree" type="Node3D" parent="GridMapGround"]
 

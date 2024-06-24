@@ -36,7 +36,7 @@ script = ExtResource("1_qud7n")
 [node name="Camera3D" parent="." instance=ExtResource("5_fr423")]
 
 [node name="Player" parent="." instance=ExtResource("6_4s4dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.395, 4.80756, -0.0102196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1053, -5.01382, -0.0102196)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ociqn")]
@@ -60,7 +60,6 @@ syarat_hewan = Array[String](["bekantan"])
 
 [node name="checkpoint2" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.696, 0.479511, 0)
-wallleft = NodePath("")
 
 [node name="checkpoint3" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98749, 3.41228, 1.90735e-06)
@@ -70,13 +69,9 @@ syarat_hewan = Array[String](["kijang"])
 
 [node name="checkpoint3_5" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0003, 5.8442, -7.62939e-06)
-wallleft = NodePath("")
-wallright = NodePath("")
 
 [node name="checkpoint3_75" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.6031, 19.2367, -7.62939e-06)
-wallleft = NodePath("")
-wallright = NodePath("")
 
 [node name="checkpoint4" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.509, 0.729, 0)
@@ -86,8 +81,6 @@ syarat_hewan = Array[String](["orang utan", "bunglon"])
 
 [node name="checkpoint5" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.427, 0.965909, 0)
-wallleft = NodePath("")
-wallright = NodePath("")
 
 [node name="wall" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.206, -3.04266, 0)
