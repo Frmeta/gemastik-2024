@@ -46,8 +46,14 @@ func _ready():
 # ketika player menang (win_area.gd)
 func win():
 	explored_level = max(explored_level, current_level+1)
-	data[data_file_number]["level"] = explored_level
+	
+	# overwrite data
+	var data_copy = data
+	data_copy[data_file_number]["level"] = explored_level
+	data = data_copy
+	
 	scanned_animal = []
+	
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Game/level_select.tscn")
 	
 func read_data():

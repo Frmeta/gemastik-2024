@@ -1,13 +1,131 @@
-[gd_scene load_steps=4 format=3 uid="uid://drl6v3lwu7bxc"]
+[gd_scene load_steps=20 format=3 uid="uid://drl6v3lwu7bxc"]
 
+[ext_resource type="Script" path="res://Scripts/pin.gd" id="1_hruy3"]
 [ext_resource type="PackedScene" uid="uid://chgdrtqcrcngx" path="res://3D Assets/pin/Pin.glb" id="1_u34j2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8vm3k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_78b7l"]
 
+[sub_resource type="Animation" id="Animation_qceol"]
+resource_name = "up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.168263, 0.0124663, -0.0437242), Vector3(0.168263, 0.504441, -0.165271)]
+}
+
+[sub_resource type="Animation" id="Animation_oecvc"]
+resource_name = "down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.168263, 0.504441, -0.165271), Vector3(0.168263, 0.0124663, -0.0437242)]
+}
+
+[sub_resource type="Animation" id="Animation_uimqc"]
+resource_name = "unselected"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.168, 0.012, -0.044)]
+}
+
+[sub_resource type="Animation" id="Animation_m7280"]
+resource_name = "selected"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.168263, 0.504441, -0.165271)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h36i2"]
+_data = {
+"down": SubResource("Animation_oecvc"),
+"selected": SubResource("Animation_m7280"),
+"unselected": SubResource("Animation_uimqc"),
+"up": SubResource("Animation_qceol")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ku0ha"]
+animation = &"down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5o1ch"]
+animation = &"selected"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n4cxb"]
+animation = &"unselected"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2gbp5"]
+animation = &"up"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o1u4x"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"selected"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tf4i2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cjglp"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"not_selected"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ud26a"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w4yej"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_16qq3"]
+states/down/node = SubResource("AnimationNodeAnimation_ku0ha")
+states/down/position = Vector2(507, 197)
+states/selected/node = SubResource("AnimationNodeAnimation_5o1ch")
+states/selected/position = Vector2(734, 140)
+states/unselected/node = SubResource("AnimationNodeAnimation_n4cxb")
+states/unselected/position = Vector2(336, 67)
+states/up/node = SubResource("AnimationNodeAnimation_2gbp5")
+states/up/position = Vector2(532, 67)
+transitions = ["unselected", "up", SubResource("AnimationNodeStateMachineTransition_o1u4x"), "up", "selected", SubResource("AnimationNodeStateMachineTransition_tf4i2"), "selected", "down", SubResource("AnimationNodeStateMachineTransition_cjglp"), "down", "unselected", SubResource("AnimationNodeStateMachineTransition_ud26a"), "Start", "unselected", SubResource("AnimationNodeStateMachineTransition_w4yej")]
+
 [node name="Pin" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.508, 0, -0.619)
+script = ExtResource("1_hruy3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
@@ -18,3 +136,18 @@ shape = SubResource("SphereShape3D_78b7l")
 
 [node name="Pin2" parent="." instance=ExtResource("1_u34j2")]
 transform = Transform3D(0.0577645, 0.146573, 0.474531, -0.173676, 0.453529, -0.118945, -0.465295, -0.151088, 0.103308, 0.168263, 0.504441, -0.165271)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h36i2")
+}
+autoplay = "unselected"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h36i2")
+}
+tree_root = SubResource("AnimationNodeStateMachine_16qq3")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/not_selected = true
+parameters/conditions/selected = false
