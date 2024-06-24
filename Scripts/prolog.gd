@@ -58,7 +58,7 @@ func foo():
 	
 func _process(delta):
 	if prolog_end:
-		get_tree().change_scene_to_file("res://Scenes/Game/level_0.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
 
 func goto(idx):
 	$Beam.visible = idx==3

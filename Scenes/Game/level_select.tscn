@@ -29,6 +29,7 @@ roughness_texture = SubResource("NoiseTexture2D_p7jns")
 heightmap_scale = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6b1b1"]
+diffuse_mode = 3
 albedo_texture = ExtResource("1_gt7l0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_xwn0t"]
@@ -80,13 +81,14 @@ mesh = SubResource("SphereMesh_3sauh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67408, 0, -1.24537)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.987281, -0.150506, 0.0512234, 0, 0.322193, 0.946674, -0.158984, -0.934633, 0.318095, 1.27778, 7.49345, 3.26763)
+transform = Transform3D(0.987281, -0.150506, 0.0512236, 0, 0.322193, 0.946674, -0.158984, -0.934633, 0.318095, 1.80452, 8.05186, 3.26236)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.894962, 0.100834, -0.434599, 0.196281, 0.785796, 0.586514, 0.400646, -0.610211, 0.683466, 0, 7.20701, 0)
+transform = Transform3D(0.894962, 0.100833, -0.434599, 0.196281, 0.785796, 0.586514, 0.400646, -0.610211, 0.683466, 0, 7.20701, 0)
 light_energy = 2.0
 shadow_enabled = true
-shadow_blur = 4.382
+shadow_opacity = 0.5
+shadow_blur = 0.0
 
 [node name="Pin0" parent="." instance=ExtResource("4_bqhbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35364, 0, 0.189298)

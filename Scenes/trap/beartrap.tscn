@@ -1,10 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqxx67pcn36de"]
+[gd_scene load_steps=9 format=3 uid="uid://dqxx67pcn36de"]
 
 [ext_resource type="Script" path="res://Scenes/trap/trap.gd" id="1_t8gjo"]
 [ext_resource type="PackedScene" uid="uid://jcemp2sqfbki" path="res://3D Assets/trap/BearTrap_mesh.tscn" id="2_qyvc1"]
+[ext_resource type="PackedScene" uid="uid://bjoh1r15cung6" path="res://Scenes/trap/trap_hint.tscn" id="3_1injl"]
 [ext_resource type="PackedScene" uid="uid://dra0eng33cvhi" path="res://Scenes/trap/button_mesh.tscn" id="3_c74pe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v5vwe"]
+
+[sub_resource type="Animation" id="Animation_odkjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trap_hint/MeshInstance3D/MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.172847, 0.5, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_jkdmh"]
+resource_name = "up_down"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trap_hint/MeshInstance3D/MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 1, 0.01), Vector3(-0.5, 0.6, 0.01), Vector3(-0.173, 0.5, 0.01), Vector3(-0.173, 0.5, 0.01), Vector3(-0.173, 0.7, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_podhp"]
+_data = {
+"RESET": SubResource("Animation_odkjl"),
+"up_down": SubResource("Animation_jkdmh")
+}
 
 [node name="Beartrap" type="StaticBody3D"]
 script = ExtResource("1_t8gjo")
@@ -12,9 +51,15 @@ script = ExtResource("1_t8gjo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_v5vwe")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.861948, 0.506997, 0, -0.506997, 0.861948, 0, 3.17798, 4.98608)
-
 [node name="trap" parent="." instance=ExtResource("2_qyvc1")]
 
+[node name="trap_hint" parent="." instance=ExtResource("3_1injl")]
+
 [node name="ButtonMesh" parent="." instance=ExtResource("3_c74pe")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_podhp")
+}
+autoplay = "up_down"
+speed_scale = 0.8

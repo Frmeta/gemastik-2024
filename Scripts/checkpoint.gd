@@ -20,6 +20,10 @@ var captured = false
 func _ready():
 	EventDistributor.connect("new_checkpoint", disable_both_wall)
 	EventDistributor.connect("animal_captured", scan_done)
+	
+	# syarat nama hewan ubah jadi lower
+	for i in range(syarat_hewan.size()):
+		syarat_hewan[i] = syarat_hewan[i].to_lower()
 
 # Ketika 1 checkpoin di hit, semua checkpoin sisanya lepasin
 # wallnya biar gk hardlock
@@ -38,7 +42,7 @@ func _on_body_entered(body):
 	if not captured:
 		print_debug("checkpoint hit")
 		captured=true # Gak bisa dihit lagi
-		animation_tree.set("parameters/conditions/captured", true)
+		animation_tree.set("parameters/conditions/captured", true) # animasi
 		
 		GM.last_checkpoint_position=self.global_position # save position
 		
@@ -47,20 +51,25 @@ func _on_body_entered(body):
 		# enable wall yang diassign ke checkpoin
 		if wallleft!=null:
 			wallleft.enable_wall()
-		if wallright!=null:
+		if wallright!=null and !syarat_terpenuhi():
 			wallright.enable_wall()
 		
 		# FOR DEBUGGING PUPOSES
-		EventDistributor.emit_signal("animal_captured")
+		# EventDistributor.emit_signal("animal_captured")
 
 # Checkpoin yang punya dua wall aktif diasumsikan adalah
 # checkpoin yang lagi aktif dan juga berhewan
 func scan_done():
-	if wallleft!=null and wallright!=null and not wallright.is_not_disabled() and not wallleft.is_not_disabled():
-		print("wow")
+	# if wallleft!=null and wallright!=null and wallright.is_not_disabled() and wallleft.is_not_disabled():
+	if wallright!=null and wallright.is_not_disabled():
+		print("ada yg discan")
+		if syarat_terpenuhi():
+			wallright.disable_wall()
+
+func syarat_terpenuhi():
 		# cek apakah semua syarat hewan sudah discan
-		for hewan in syarat_hewan:
-			if !GM.scanned_animal.has(hewan.to_lower()):
-				break
-		
-		wallright.disable_wall()
+	for hewan in syarat_hewan:
+		if !GM.scanned_animal.has(hewan):
+			print("kamu blum scan " + hewan)
+			return false
+	return true

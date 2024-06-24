@@ -9,7 +9,7 @@ render_priority = 0
 shader = ExtResource("2_mkvmt")
 shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
 shader_parameter/Dissolve_Height = 0.0
-shader_parameter/Min_Height = -0.655
+shader_parameter/Min_Height = -0.865
 shader_parameter/Height = 1.025
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pokud"]

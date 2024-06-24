@@ -1,7 +1,7 @@
 extends Area3D
 
 @onready var minus_timer = $minus_timer
-@export var target_hits:=50
+@export var target_hits:=20
 
 var trap : Trap
 var can_button_mash = false
@@ -22,8 +22,10 @@ func _on_minus_timer_timeout():
 
 func _on_body_entered(body: Player):
 	print("player enter")
+	EventDistributor.emit_signal("player_enter_trap_area")
 	can_button_mash=true
 
 func _on_body_exited(body : Player):
 	print("player leave")
+	EventDistributor.emit_signal("player_leave_trap_area")
 	can_button_mash=false

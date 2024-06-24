@@ -4,7 +4,23 @@ extends CharacterBody3D
 
 var selected_level = null
 
+var pins = []
+
+func _ready():
+	# init pins
+	for i in range(7):
+		var temp = get_node("Pin" + str(i))
+		pins.append(temp)
+		if i > GM.explored_level:
+			temp.hide()
+		elif i == GM.explored_level:
+			temp.set_color_to_yellow()
+		else:
+			temp.set_color_to_red()
+	reset_pins_animation()
+
 func _process(delta):
+	# update mouse_pos
 	var mouse_pos =  _get_mouse_position()
 	if mouse_pos != null:
 		$Mouse.position = mouse_pos
@@ -40,13 +56,19 @@ func _input(event):
 			# level is unlocked
 			GM.current_level = selected_level
 			GM.scanned_animal = []
-			get_tree().change_scene_to_file("res://Scenes/Game/level_" + str(selected_level) + ".tscn")
+			
+			var level_path = "res://Scenes/Game/level_" + str(selected_level) + ".tscn"
+			if FileAccess.file_exists(level_path):
+				get_tree().change_scene_to_file(level_path)
+			else:
+				print("level blom siap")
 		else:
 			# level is locked
 			pass
 
 func _on_mouse_body_entered(body):
 	
+	# if mouse is intering a pin
 	if body.name.begins_with("Pin"):
 		var pin_no = int(body.name.substr(3))
 		selected_level = pin_no
@@ -62,13 +84,23 @@ func _on_mouse_body_entered(body):
 			
 		
 		nama_pulau_label.text = debug
+		reset_pins_animation()
 
 func _on_mouse_body_exited(body):
+	
+	# is mouse exiting a pin
 	if body.name.begins_with("Pin"):
 		selected_level = null
 		
 		nama_pulau_label.text = ""
+		reset_pins_animation()
 
+func reset_pins_animation():
+	for i in range(pins.size()):
+		if i==selected_level:
+			pins[i].selected()
+		else:
+			pins[i].unselected()
 
 func _on_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")

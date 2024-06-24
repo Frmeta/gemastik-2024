@@ -18,7 +18,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrhv0"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(1, 0, 1, 0.501961)
+albedo_color = Color(1, 0, 1, 0.756863)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_k51ve"]
 material = SubResource("StandardMaterial3D_qrhv0")
@@ -27,7 +27,7 @@ material = SubResource("StandardMaterial3D_qrhv0")
 render_priority = 0
 shader = ExtResource("8_ojoma")
 shader_parameter/Base_Color = Color(0.447059, 0.6, 0.25098, 1)
-shader_parameter/Dissolve_Height = 1.0
+shader_parameter/Dissolve_Height = 0.438
 shader_parameter/Min_Height = -1.065
 shader_parameter/Height = 2.23
 
@@ -35,7 +35,7 @@ shader_parameter/Height = 2.23
 next_pass = SubResource("ShaderMaterial_wh16a")
 transparency = 1
 shading_mode = 0
-albedo_color = Color(1, 0, 1, 0.501961)
+albedo_color = Color(1, 0, 1, 0.756863)
 
 [sub_resource type="SphereMesh" id="SphereMesh_fyauf"]
 material = SubResource("StandardMaterial3D_ia3l7")

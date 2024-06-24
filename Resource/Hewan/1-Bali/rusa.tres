@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://pve8mr1ft401"]
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://pve8mr1ft401"]
 
 [ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_0vdi2"]
 [ext_resource type="Texture2D" uid="uid://bterx837a27xv" path="res://Resource/Hewan/1-Bali/rusa.png" id="1_yii63"]
+[ext_resource type="Texture2D" uid="uid://bjut57dttx3w3" path="res://Resource/Hewan/1-Bali/rusa_kartun.png" id="2_1cb5l"]
 
 [resource]
 script = ExtResource("1_0vdi2")
-foto_kartun = ExtResource("1_yii63")
+foto_kartun = ExtResource("2_1cb5l")
 foto_asli = ExtResource("1_yii63")
 nama = "Rusa"
 latin = "Cervidae"

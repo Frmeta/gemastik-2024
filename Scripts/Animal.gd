@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Animal
+
 @export var mesh: MeshInstance3D
 
 var scan_progress = 0.0 # range dari 0 sampai 1
@@ -9,33 +11,59 @@ var next_pass
 var above_0 = false
 var prev_scan_progress = 0
 
-func _ready():
+var is_affected_by_gravity = true
+# disable oleh flying_animal.gd apabila hewan melayang
+
+var nama_hewan
+
+var can_move = true
+
+func _init():
+	
 	collision_layer = 8
 	collision_mask = 2
 	
-	# init next_pass to all surface
-	next_pass = mesh.get_active_material(0).next_pass
+func _ready():
+	
+	# assert next_pass material
+	assert(mesh != null)
+	mesh.mesh = mesh.mesh.duplicate(true)
+	next_pass = mesh.mesh.surface_get_material(0).next_pass
 	assert(next_pass != null)
 	
-	assert(mesh != null)
-	for i in range(1, mesh.get_surface_override_material_count()):
-		mesh.get_active_material(i).next_pass = next_pass
+	# duplicate the mesh & next_pass
+	mesh.mesh = mesh.mesh.duplicate()
+	next_pass = next_pass.duplicate()
+	
+	# init next_pass to all surface
+	for i in range(0, mesh.mesh.get_surface_count()):
+		var mat = mesh.mesh.surface_get_material(i).duplicate()
+		mesh.mesh.surface_set_material(i, mat)
+		mat.next_pass = next_pass
+		
+	# init name
+	nama_hewan = name.to_lower()
+	for i in range(10):
+		nama_hewan = nama_hewan.replace(str(i), "")
+	
 	
 func _process(delta):
 	# scanning
-	next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
-	
+	if above_0:
+		next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
 	
 	
 	if scan_progress <= 0 and above_0:
 		above_0 = false
 		for i in range(0, mesh.get_surface_override_material_count()):
 			mesh.get_active_material(i).next_pass = null
+			mesh.mesh.surface_get_material(i).next_pass
 	elif scan_progress > 0 and !above_0:
 		above_0 = true
 		for i in range(0, mesh.get_surface_override_material_count()):
 			mesh.get_active_material(i).next_pass = next_pass
 	
+	# turun kalau tidak sedang discan
 	if prev_scan_progress == scan_progress:
 		scan_progress = max(0, scan_progress - delta * 2)
 	else:
@@ -43,15 +71,17 @@ func _process(delta):
 		
 	if scan_progress >= 1:
 		scan_progress = 0
-		if !GM.scanned_animal.has(name.to_lower()):
-			# GM.scanned_animal.append(name.to_lower())
-			GM.scan_hewan(name.to_lower())
-			print(name + " has been scanned")
-			owner.new_animal(name)
+		if !GM.scanned_animal.has(nama_hewan):
+			GM.scan_hewan(nama_hewan)
+			print(GM.scanned_animal)
+			print(nama_hewan + " has been scanned")
+			owner.new_animal(nama_hewan) # animasi hewan baru
 		else:
-			print("maaf hewan" + str(name) + "sudah discan")
+			print("maaf hewan" + str(nama_hewan) + "sudah discan")
 
 func _physics_process(delta):
 	# gravity
-	velocity.y -= gravity * delta
+	if is_affected_by_gravity:
+		velocity.y -= gravity * delta
+	
 	move_and_slide()

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dk4sgsvecpe27" path="res://assets/TV - 12.png" id="2_r6jo8"]
 [ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
 [ext_resource type="Texture2D" uid="uid://cogw304hhfci7" path="res://assets/with MAS.png" id="3_x3nih"]
-[ext_resource type="FontFile" uid="uid://ci4ykjlin7oe5" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -24,9 +24,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 1
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="BG" type="TextureRect" parent="TabContainer/Title Screen"]
@@ -122,7 +124,6 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -133,6 +134,13 @@ script = ExtResource("3_rj21a")
 [node name="VBox" type="VBoxContainer" parent="TabContainer/Load Game"]
 layout_mode = 2
 theme_override_constants/separation = 30
+
+[node name="cheatbutton" type="Button" parent="TabContainer/Load Game/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 21
+text = "all island finished cheat"
 
 [node name="Button1" type="Button" parent="TabContainer/Load Game/VBox"]
 layout_mode = 2
@@ -254,14 +262,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "delete"
 
-[node name="cheatbutton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 49.0
-offset_right = 298.0
-offset_bottom = 87.0
-theme_override_font_sizes/font_size = 21
-text = "all island finished cheat"
-
 [connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="cheatbutton" to="TabContainer/Load Game" method="_on_cheatbutton_pressed"]
+[connection signal="pressed" from="TabContainer/Load Game/VBox/cheatbutton" to="TabContainer/Load Game" method="_on_cheatbutton_pressed"]

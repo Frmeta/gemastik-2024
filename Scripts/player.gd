@@ -57,6 +57,7 @@ var can_move = true
 
 func _ready():
 	GM.doni=self
+	GM.last_checkpoint_position = position
 	animTree.set("parameters/MainState/transition_request", "game")
 
 func allow_move():
@@ -105,8 +106,8 @@ func _physics_process(delta):
 		is_on_vines = false
 		is_climbing = false
 	
-	if can_move:
-		movement_from_input(delta)
+	movement_from_input(delta)
+		
 		
 	# Gravity
 	if playerState == PlayerState.ON_LAND:
@@ -243,48 +244,49 @@ func movement_from_input(delta):
 	match playerState:
 		PlayerState.CLIMBING:
 			# CLIMBING MECHANIC
-		
-			_last_on_ground = Time.get_ticks_msec() # considered to be on ground so it can jump
-			curr_jumps = 1 # availability to jump once more
 			
-			# movement
-			var input_v2 = Input.get_vector("move_left", "move_right", "down", "jump")
-			var input_v3 = Vector3(input_v2.x, input_v2.y, 0)
-			velocity = velocity.move_toward(input_v3 * climbing_speed, friction*delta)
-			#velocity = input_v3 * climbing_speed
+			if can_move:
+				_last_on_ground = Time.get_ticks_msec() # considered to be on ground so it can jump
+				curr_jumps = 1 # availability to jump once more
+			
+				# movement
+				var input_v2 = Input.get_vector("move_left", "move_right", "down", "jump")
+				var input_v3 = Vector3(input_v2.x, input_v2.y, 0)
+				velocity = velocity.move_toward(input_v3 * climbing_speed, friction*delta)
 		
 		PlayerState.SWIMMING:
 			# SWIMMING MECHANIC
-			var input_v2 = Input.get_vector("move_left", "move_right", "down", "jump")
-			
-			var input_v3 = Vector3(input_v2.x, input_v2.y, 0)
-			velocity = input_v3.normalized() * SWIM_SPEED
-			curr_jumps = 1 # availability to jump once more
+			if can_move:
+				var input_v2 = Input.get_vector("move_left", "move_right", "down", "jump")
+				
+				var input_v3 = Vector3(input_v2.x, input_v2.y, 0)
+				velocity = input_v3.normalized() * SWIM_SPEED
+				curr_jumps = 1 # availability to jump once more
 			
 		PlayerState.ON_LAND:
 			# ON LAND MECHANIC
-		
-			# Jump Mechanic
-			if is_on_floor():
-				_last_on_ground = Time.get_ticks_msec()
-				curr_jumps = 1
-			var is_jump_pressed = _last_jump_pressed + jump_buffer > Time.get_ticks_msec()
-			var from_ground = _last_on_ground + coyote_treshold > Time.get_ticks_msec()
-			var from_air = curr_jumps < max_jumps
-			if can_move and is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
-				if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
-					# jump on the air
-					curr_jumps += 1
-				$walkdust.emit_while_jump()
-				_last_jump_pressed = 0
-				_last_on_ground = 0
-				velocity.y = JUMP_POWER
-				if !$jumping.playing:
-					$jumping.play()
+			
+			if can_move:
+				# Jump Mechanic
+				if is_on_floor():
+					_last_on_ground = Time.get_ticks_msec()
+					curr_jumps = 1
+				var is_jump_pressed = _last_jump_pressed + jump_buffer > Time.get_ticks_msec()
+				var from_ground = _last_on_ground + coyote_treshold > Time.get_ticks_msec()
+				var from_air = curr_jumps < max_jumps
+				if can_move and is_jump_pressed and (from_ground or from_air) and not $Grapling.hooked:
+					if !(_last_on_ground + coyote_treshold > Time.get_ticks_msec()):
+						# jump on the air
+						curr_jumps += 1
+					$walkdust.emit_while_jump()
+					_last_jump_pressed = 0
+					_last_on_ground = 0
+					velocity.y = JUMP_POWER
+					if !$jumping.playing:
+						$jumping.play()
 				
-	
 			# Move right or left
-			var input_x = Input.get_axis("move_left", "move_right")
+			var input_x = Input.get_axis("move_left", "move_right") if can_move else 0
 			
 			# Left or right movement
 			if $Grapling.hooked:
@@ -302,3 +304,10 @@ func _process(delta):
 
 func get_leg_target():
 	return leg_target
+
+# kalau player menang
+func victory_dance():
+	stop_move()
+	animTree.set("parameters/MainState/transition_request", "story")
+	animTree.set("parameters/Story/transition_request", "victory")
+	

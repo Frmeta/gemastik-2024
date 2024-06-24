@@ -8,6 +8,7 @@ var is_almanac_open = false
 var is_animating_almanac = false
 
 func _ready():
+	
 	almanac_ui.visible = false
 	almanac_3d.visible = false
 	almanac_3d.get_node("AnimationPlayer").connect("animation_finished", _done_animating_almanac)
@@ -79,12 +80,12 @@ func new_animal(nama_hewan: String):
 	var island : pulau = GM.pulau_list_resource.list[GM.current_level]
 	
 	for hewan in island.hewanss:
-		if hewan.nama == nama_hewan:
+		if hewan.nama.to_lower() == nama_hewan:
 			var texture = hewan.foto_kartun
 			successful_scan.appear(texture)
 			# doni akan allow_move setelah animasi selesai, menggunakan signal
 			return
 			
-	print("oh no hewan tidak ada di pulau itu seharusnya")
+	print("oh no hewan " + nama_hewan + " tidak ada di pulau itu seharusnya")
 	GM.doni.allow_move()
 	

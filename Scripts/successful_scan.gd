@@ -10,6 +10,5 @@ func _ready():
 
 	
 func appear(texture: Texture2D):
-	print("appear")
 	$Panel/Panel1/MarginContainer/Panel2/TextureRect.texture = texture
 	$AnimationPlayer.play("show")

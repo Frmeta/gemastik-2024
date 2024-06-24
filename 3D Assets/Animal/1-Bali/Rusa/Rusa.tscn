@@ -1446,6 +1446,7 @@ libraries = {
 shape = SubResource("SphereShape3D_pru47")
 
 [node name="Node3D" type="Node3D" parent="."]
+visible = false
 script = ExtResource("4_qn4uw")
 walk_anim_name = "K_Walk"
 idle_anim_name = "K_Idle"

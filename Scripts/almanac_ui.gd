@@ -65,13 +65,14 @@ func refresh():
 			var signals = btn.get_signal_connection_list("pressed");
 			if signals:
 				for cur_conn in signals:
-					print(cur_conn.callable)
+					# print(cur_conn.callable)
 					btn.disconnect("pressed", cur_conn.callable)
 			
 			# connect new signal
 			
 			# nama hewan di resource harus sama dengan nama prefabnya
-			if area_number < GM.explored_level or GM.scanned_animal.has(hewan.nama):
+			if (area_number == GM.current_level and GM.scanned_animal.has(hewan.nama.to_lower())) or \
+				(area_number < GM.current_level):
 				# jika hewan sudah pernah di-scan
 				texture_rect.texture = hewan.foto_kartun
 				btn.connect("pressed", _lihat_info_hewan.bind(hewan, true, i))
