@@ -6,7 +6,7 @@ extends RigidBody3D
 @export var water :Area3D
 
 @onready var gravity = 10
-var water_height = 1.5
+var water_height = 0.0
 
 var submerged := false
 var time = 0.1
@@ -20,14 +20,15 @@ func _ready():
 func _physics_process(delta):
 	time-=delta
 	submerged=false
-	var depth = water_height- (global_position.y+0.5)
+	var depth = water_height- (global_position.y+0.7)
 	if depth > 0:
 		submerged = true
 		if menopang:
 			apply_force(Vector3.UP * float_force * gravity * depth*2)
 		else:
 			apply_force(Vector3.UP * float_force * gravity * depth)
-	self.rotation=Vector3.ZERO
+	self.rotation.x=0
+	self.rotation.z=0
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if submerged:

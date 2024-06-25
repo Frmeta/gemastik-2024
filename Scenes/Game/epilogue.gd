@@ -28,15 +28,30 @@ func _ready():
 func foo():
 	counter+=1
 	if counter==1:
-		print("in coutnr1")
-		goto(1)
+		var target = doni.position.y+1
+		for i in range(10):
+			doni.position.y=lerp(doni.position.y,target,0.3)
+			await get_tree().create_timer(0.001).timeout
+		for i in range(10):
+			doni.position.y=lerp(doni.position.y,target-1,0.3)
+			await get_tree().create_timer(0.00001).timeout
+		await get_tree().create_timer(0.5).timeout
+		#goto(1)
 	elif counter==2:
+		doni.rotation = Vector3(0,deg_to_rad(-50),0)
+	elif counter==4:
 		while(doni.rotation.length()>0.1):
 			doni.rotation = lerp(doni.rotation, Vector3.ZERO, 0.1)
+			$kertas/MarginContainer.modulate.a = lerp($kertas/MarginContainer.modulate.a, 0.0, 0.1)
 			await get_tree().create_timer(0.001).timeout
 		doni.rotation = Vector3.ZERO
-	print("counter ",counter)
-	
+		$kertas/MarginContainer.modulate.a=0.0
+	elif counter ==3:
+		while($kertas/MarginContainer.modulate.a <0.9):
+			$kertas/MarginContainer.modulate.a = lerp($kertas/MarginContainer.modulate.a, 1.0, 0.1)
+			await get_tree().create_timer(0.001).timeout
+		$kertas/MarginContainer.modulate.a=1.0
+
 func _process(delta):
 	if epilogue_end:
 		$End/PanelContainer.modulate.a = lerp($End/PanelContainer.modulate.a, 1.0,0.1)
@@ -57,16 +72,6 @@ func goto(idx):
 
 	mas.global_position = masMarkers[idx].global_position
 	mas.rotation = masMarkers[idx].global_rotation
-	
-
-func mas_happy():
-	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Talk_Happy")
-
-func mas_nod():
-	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Talk_Nod")
-
-func mas_shake():
-	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Talk_Shake")
 
 func _on_button_button_up():
 	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")

@@ -6,22 +6,22 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Tunggu.. di mana MAS?",
+		"dialogue":"Eh wait mana MAS?",
 		"emosi":"5"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Eh.. Apa ini? Secarik kertas?",
+		"dialogue":"Eh.. Apa ini?",
 		"emosi":"5"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Jangan menjadi manusia yang merusak diri sendiri maupun alam ~MAS",
+		"dialogue":"Jangan menjadi manusia yang merusak diri sendiri maupun alam",
 		"emosi":"3"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Aku berjanji akan menjadi manusia yang baik.",
+		"dialogue":"aku berjanji akan menjadi manusia yang baik.",
 		"emosi":"5"
 	},
 ]

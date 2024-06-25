@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjoh1r15cung6"]
+
+[ext_resource type="Texture2D" uid="uid://bdxq502j7wkk8" path="res://assets/ui/trap/dialog.png" id="1_41bfu"]
+[ext_resource type="Texture2D" uid="uid://dfbi4v8rhmms4" path="res://assets/ui/trap/pointer.png" id="2_g6h61"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ggh3o"]
+size = Vector2(3, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbc8"]
+transparency = 1
+albedo_texture = ExtResource("1_41bfu")
+billboard_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8q66"]
+transparency = 1
+albedo_texture = ExtResource("2_g6h61")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_074eu"]
+
+[node name="trap_hint" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34321, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+lod_bias = 0.001
+mesh = SubResource("QuadMesh_ggh3o")
+surface_material_override/0 = SubResource("StandardMaterial3D_bbbc8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.858161, 0.01)
+sorting_offset = 1.0
+material_override = SubResource("StandardMaterial3D_h8q66")
+mesh = SubResource("QuadMesh_074eu")

@@ -160,26 +160,6 @@ lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_vm68d")
 draw_pass_1 = SubResource("SphereMesh_1cuin")
 
-[node name="kertas" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="kertas"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 200
-
-[node name="TextureRect" type="TextureRect" parent="kertas/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_bst0t")
-expand_mode = 2
-
 [node name="End" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="End"]
@@ -229,6 +209,26 @@ theme_override_fonts/font = ExtResource("9_k7mp6")
 theme_override_font_sizes/font_size = 50
 text = "Kembali ke Menu Utama"
 flat = true
+
+[node name="kertas" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="kertas"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 200
+
+[node name="TextureRect" type="TextureRect" parent="kertas/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_bst0t")
+expand_mode = 2
 
 [node name="DialogueManager" parent="." instance=ExtResource("8_qlye5")]
 

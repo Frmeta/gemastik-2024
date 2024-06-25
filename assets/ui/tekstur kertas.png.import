@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogw304hhfci7"
-path="res://.godot/imported/with MAS.png-ce1293567996e75056702e0f57beeb6c.ctex"
+uid="uid://bsrs5qns7rb4o"
+path="res://.godot/imported/tekstur kertas.png-b831b25deabfb6e3bdb789501ffe5f30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/with MAS.png"
-dest_files=["res://.godot/imported/with MAS.png-ce1293567996e75056702e0f57beeb6c.ctex"]
+source_file="res://assets/ui/tekstur kertas.png"
+dest_files=["res://.godot/imported/tekstur kertas.png-b831b25deabfb6e3bdb789501ffe5f30.ctex"]
 
 [params]
 

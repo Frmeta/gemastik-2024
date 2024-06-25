@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Animal
+
 @export var mesh: MeshInstance3D
 
 var scan_progress = 0.0 # range dari 0 sampai 1
@@ -13,6 +15,8 @@ var is_affected_by_gravity = true
 # disable oleh flying_animal.gd apabila hewan melayang
 
 var nama_hewan
+
+var can_move = true
 
 func _init():
 	
