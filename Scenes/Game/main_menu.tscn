@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=6 format=3 uid="uid://c0wapcou1i45a"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
 [ext_resource type="Texture2D" uid="uid://chxggmbgrrrqq" path="res://assets/Doni’s Adventure.png" id="2_d3a57"]
 [ext_resource type="Texture2D" uid="uid://dk4sgsvecpe27" path="res://assets/TV - 12.png" id="2_r6jo8"]
 [ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
-[ext_resource type="Texture2D" uid="uid://cogw304hhfci7" path="res://assets/with MAS.png" id="3_x3nih"]
 [ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
 
 [node name="Main Menu" type="Control"]
@@ -28,7 +27,6 @@ current_tab = 1
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="BG" type="TextureRect" parent="TabContainer/Title Screen"]
@@ -55,23 +53,6 @@ offset_bottom = 568.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_d3a57")
-
-[node name="with MAS" type="TextureRect" parent="TabContainer/Title Screen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 379.0
-offset_top = 31.0
-offset_right = 711.0
-offset_bottom = 137.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_x3nih")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Title Screen"]
 layout_mode = 1
@@ -124,6 +105,7 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
