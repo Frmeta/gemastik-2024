@@ -149,7 +149,7 @@ func fill(highest, idx, z:int, front_highest, place_tree:bool):
 					var bum = dummy_tree.instantiate()
 					add_child(bum)
 					bum.position = Vector3i(x, highest[i] + 0.5, z) * 1.3
-					bum.scale = Vector3.ONE * randf_range(1,2)
+					bum.scale = Vector3.ONE * randf_range(1,1.5)
 					bum.rotation.y = randf() * 2 * PI
 			
 			# fill jika naik drastis

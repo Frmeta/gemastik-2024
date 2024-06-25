@@ -22,6 +22,7 @@ script = ExtResource("1_7vk4t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.998, 0)
+visible = false
 mesh = SubResource("QuadMesh_skcm8")
 skeleton = NodePath("../CollisionShape3D")
 

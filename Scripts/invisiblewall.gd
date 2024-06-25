@@ -3,7 +3,7 @@ extends StaticBody3D
 class_name InvisibleWall
 
 func _ready():
-	disable_wall()
+	#disable_wall()
 	pass
 
 func enable_wall():
