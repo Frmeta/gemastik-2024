@@ -92,10 +92,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -278.0
-offset_right = 40.0
-offset_bottom = -174.0
+offset_left = -32.8
+offset_top = -290.8
+offset_right = 43.2
+offset_bottom = -186.8
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.21451, 1.19216)
@@ -114,27 +114,32 @@ expand_mode = 1
 
 [node name="Nama hewan" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 484.8
-offset_top = 157.6
-offset_right = 576.8
-offset_bottom = 180.6
+offset_left = 371.2
+offset_top = 143.2
+offset_right = 678.17
+offset_bottom = 177.2
+pivot_offset = Vector2(156, 18.4)
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_68roq")
-theme_override_font_sizes/font_size = 13
-text = "ORANGUTAN"
+theme_override_font_sizes/font_size = 28
+text = "Orang Utan"
+horizontal_alignment = 1
 
 [node name="Nama latin" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 484.8
-offset_top = 173.6
-offset_right = 576.8
-offset_bottom = 196.6
+offset_left = 477.6
+offset_top = 176.8
+offset_right = 569.6
+offset_bottom = 199.8
+pivot_offset = Vector2(95.2, 38.4)
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_68roq")
 theme_override_font_sizes/font_size = 13
 text = "lorem ipsum"
+horizontal_alignment = 1
 
 [node name="habitat" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
@@ -146,13 +151,13 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_68roq")
 theme_override_font_sizes/font_size = 13
-text = "habitat"
+text = "Habitat:"
 
 [node name="habitat2" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 473.6
+offset_left = 476.8
 offset_top = 208.8
-offset_right = 686.6
+offset_right = 689.8
 offset_bottom = 249.8
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -171,7 +176,7 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_68roq")
 theme_override_font_sizes/font_size = 13
-text = "status :"
+text = "Status:"
 
 [node name="status2" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
