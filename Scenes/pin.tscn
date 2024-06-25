@@ -7,25 +7,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_78b7l"]
 
-[sub_resource type="Animation" id="Animation_qceol"]
-resource_name = "up"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pin2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.168263, 0.0124663, -0.0437242), Vector3(0.168263, 0.504441, -0.165271)]
-}
-
 [sub_resource type="Animation" id="Animation_oecvc"]
 resource_name = "down"
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,10 +17,26 @@ tracks/0/path = NodePath("Pin2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0.168263, 0.504441, -0.165271), Vector3(0.168263, 0.0124663, -0.0437242)]
+}
+
+[sub_resource type="Animation" id="Animation_m7280"]
+resource_name = "selected"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.168263, 0.504441, -0.165271)]
 }
 
 [sub_resource type="Animation" id="Animation_uimqc"]
@@ -55,9 +55,9 @@ tracks/0/keys = {
 "values": [Vector3(0.168, 0.012, -0.044)]
 }
 
-[sub_resource type="Animation" id="Animation_m7280"]
-resource_name = "selected"
-length = 0.001
+[sub_resource type="Animation" id="Animation_qceol"]
+resource_name = "up"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,10 +65,10 @@ tracks/0/path = NodePath("Pin2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.168263, 0.504441, -0.165271)]
+"values": [Vector3(0.168263, 0.0124663, -0.0437242), Vector3(0.168263, 0.504441, -0.165271)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h36i2"]
@@ -135,7 +135,7 @@ mesh = SubResource("SphereMesh_8vm3k")
 shape = SubResource("SphereShape3D_78b7l")
 
 [node name="Pin2" parent="." instance=ExtResource("1_u34j2")]
-transform = Transform3D(0.0577645, 0.146573, 0.474531, -0.173676, 0.453529, -0.118945, -0.465295, -0.151088, 0.103308, 0.168263, 0.504441, -0.165271)
+transform = Transform3D(0.0577645, 0.146573, 0.474531, -0.173676, 0.453529, -0.118945, -0.465295, -0.151088, 0.103308, 0.168, 0.012, -0.044)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

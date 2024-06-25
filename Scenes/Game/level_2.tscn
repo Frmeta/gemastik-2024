@@ -39,7 +39,7 @@ script = ExtResource("1_wudb8")
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 424.324, 57.6008, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.757596, -0.776436, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
