@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/prolog.gd" id="1_i5hlg"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="2_1srln"]
 [ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_cmtld"]
-[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="4_4d0i4"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="4_4d0i4"]
 [ext_resource type="Script" path="res://Scenes/Game/mas_pos_target.gd" id="4_eurtn"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="5_vhj7j"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="6_dlyd7"]

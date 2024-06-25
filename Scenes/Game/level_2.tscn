@@ -27,7 +27,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
 
-[node name="Level Kosong" type="Node3D"]
+[node name="level_nt" type="Node3D"]
 script = ExtResource("1_wudb8")
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_y5y2o")]
@@ -39,7 +39,7 @@ script = ExtResource("1_wudb8")
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.388, 22.9718, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 424.324, 57.6008, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -143,6 +143,7 @@ mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_7f4c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 434.482, 54.8011, -0.871899)
+scene_after_win = "epilogue"
 
 [node name="Node3D" type="Node3D" parent="."]
 

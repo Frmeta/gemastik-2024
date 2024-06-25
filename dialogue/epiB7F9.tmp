@@ -6,7 +6,7 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Tunggu.. di mana MAS?",
+		"dialogue":"Eh wait mana MAS?",
 		"emosi":"5"
 	},
 	{
@@ -21,7 +21,7 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Aku berjanji akan menjadi manusia yang baik.",
+		"dialogue":"aku berjanji akan menjadi manusia yang baik.",
 		"emosi":"5"
 	},
 ]

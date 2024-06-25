@@ -41,7 +41,7 @@ script = ExtResource("1_8jw7r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.717, 19.6887, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 365.841, 19.5037, 0)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
@@ -179,6 +179,7 @@ mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_vo8i8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 387.149, 15.4697, -0.871899)
+scene_after_win = "level_select"
 
 [node name="grapling_for_tree" parent="." instance=ExtResource("17_xkox3")]
 transform = Transform3D(12.0891, -0.333231, 0, 4.27267, 0.942845, 0, 0, 0, 1, 213.825, 8.9772, 0)

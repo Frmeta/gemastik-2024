@@ -37,7 +37,7 @@ script = ExtResource("1_qud7n")
 [node name="Camera3D" parent="." instance=ExtResource("5_fr423")]
 
 [node name="Player" parent="." instance=ExtResource("6_4s4dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 230.494, 21.238, -0.0102196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 400.515, 26.0957, -0.0102196)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ociqn")]
@@ -197,6 +197,7 @@ mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_ltjtm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 411.371, 23.6123, -0.871899)
+scene_after_win = "level_select"
 
 [node name="Animals" type="Node3D" parent="."]
 

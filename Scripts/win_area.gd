@@ -1,6 +1,6 @@
 extends Area3D
 
-
+@export var scene_after_win: String
 
 func _on_body_entered(body):
 	if body.name == "Player":
@@ -13,5 +13,5 @@ func _on_body_entered(body):
 		GM.doni.victory_dance()
 		await get_tree().create_timer(2).timeout
 		
-		GM.win()
+		GM.win(scene_after_win)
 		
