@@ -2,23 +2,24 @@ extends MarginContainer
 
 const FILE_NAME = "user://donisavegame.json"
 
+const BTN_COUNT = 4
+var btns := []
 
 func _ready():
 	# connect button signal (load_data & delete_data)
-	for i in range(0, 6):
-		var btn = get_node("VBox/Button" + str(i+1))
-		var delete_btn = get_node("VBox/Button" + str(i+1) + "/delete")
-		btn.connect("pressed", load_button_pressed.bind(i))
-		delete_btn.connect("pressed", delete_button_pressed.bind(i))
+	for i in range(0, BTN_COUNT):
+		var btn = get_node("VBox/Button" + str(i))
+		btn.connect("load_btn_pressed", load_button_pressed.bind(i))
+		btn.connect("delete_btn_pressed", delete_button_pressed.bind(i))
+		btns.append(btn)
 	refresh()
 
 # refresh text di level
 func refresh():
 	print("refresh")
 	var data = GM.data
-	for i in range(0, 6):
-		var btn = get_node("VBox/Button" + str(i+1))
-		btn.text = str(data[i])
+	for i in range(0, BTN_COUNT):
+		btns[i].set_info(i, -1 if !data[i].has("level") else data[i]["level"])
 
 # dipanggil ketika user menekan data yang ingin di load
 func load_button_pressed(idx):

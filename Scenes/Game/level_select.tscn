@@ -114,24 +114,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59369, -7.15255e-07, 0.840
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 463.0
-offset_bottom = 217.0
+offset_right = 560.0
+offset_bottom = 232.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_top = 100
 
 [node name="Main Menu Button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(260.055, 49.78)
 layout_mode = 2
-size_flags_horizontal = 0
 flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.095
+offset_top = -32.89
+offset_right = 59.905
+offset_bottom = 32.11
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -153,6 +160,7 @@ theme_override_constants/margin_left = 160
 theme_override_constants/margin_top = 40
 
 [node name="namapulau" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15

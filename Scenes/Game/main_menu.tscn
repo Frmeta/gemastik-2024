@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=8 format=3 uid="uid://c0wapcou1i45a"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
-[ext_resource type="Texture2D" uid="uid://chxggmbgrrrqq" path="res://assets/Doni’s Adventure.png" id="2_d3a57"]
 [ext_resource type="Texture2D" uid="uid://dk4sgsvecpe27" path="res://assets/TV - 12.png" id="2_r6jo8"]
+[ext_resource type="Texture2D" uid="uid://d1iodilmhsofx" path="res://assets/dadwm.png" id="3_l684q"]
 [ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
-[ext_resource type="Texture2D" uid="uid://cogw304hhfci7" path="res://assets/with MAS.png" id="3_x3nih"]
 [ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
+[ext_resource type="Texture2D" uid="uid://b3qiw8iuqi3vi" path="res://assets/ui/back_menu/arrow.png" id="7_geyk0"]
+[ext_resource type="PackedScene" uid="uid://b5ooywqg7faxc" path="res://Scenes/load_button.tscn" id="8_yiq52"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -16,6 +17,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nl1jw")
 
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_r6jo8")
+
 [node name="TabContainer" type="TabContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -24,54 +36,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
-[node name="BG" type="TextureRect" parent="TabContainer/Title Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -59.0
-offset_right = 97.0
-offset_bottom = 59.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_r6jo8")
-
-[node name="Doni\'s Adventure" type="TextureRect" parent="TabContainer/Title Screen"]
-layout_mode = 2
-offset_left = 785.0
-offset_top = 332.0
-offset_right = 1384.0
-offset_bottom = 568.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_d3a57")
-
-[node name="with MAS" type="TextureRect" parent="TabContainer/Title Screen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 379.0
-offset_top = 31.0
-offset_right = 711.0
-offset_bottom = 137.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_x3nih")
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Title Screen"]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 247.0
+offset_right = 1500.0
+offset_bottom = 676.0
+texture = ExtResource("3_l684q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Title Screen"]
 layout_mode = 1
@@ -112,7 +88,7 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Credits" type="Button" parent="TabContainer/Title Screen/VBoxContainer/MarginContainer3"]
+[node name="CreditsButton" type="Button" parent="TabContainer/Title Screen/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -124,6 +100,7 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -135,132 +112,124 @@ script = ExtResource("3_rj21a")
 layout_mode = 2
 theme_override_constants/separation = 30
 
+[node name="Kebali ke menu" type="TextureButton" parent="TabContainer/Load Game/VBox"]
+custom_minimum_size = Vector2(446.05, 75.745)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Load Game/VBox/Kebali ke menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Load Game/VBox/Kebali ke menu/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_geyk0")
+
+[node name="Label" type="Label" parent="TabContainer/Load Game/VBox/Kebali ke menu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 48
+text = "Kembali ke Menu"
+
 [node name="cheatbutton" type="Button" parent="TabContainer/Load Game/VBox"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 21
 text = "all island finished cheat"
 
-[node name="Button1" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="Button0" parent="TabContainer/Load Game/VBox" instance=ExtResource("8_yiq52")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "level: 2, collection: 6"
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button1"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
-
-[node name="Button2" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="Button1" parent="TabContainer/Load Game/VBox" instance=ExtResource("8_yiq52")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "level: 2, collection: 6"
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button2"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
-
-[node name="Button3" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="Button2" parent="TabContainer/Load Game/VBox" instance=ExtResource("8_yiq52")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "..."
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button3"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
-
-[node name="Button4" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="Button3" parent="TabContainer/Load Game/VBox" instance=ExtResource("8_yiq52")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "..."
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button4"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
-
-[node name="Button5" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="Credits" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "..."
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button5"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Credits"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="Button6" type="Button" parent="TabContainer/Load Game/VBox"]
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Credits/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "..."
+theme_override_constants/separation = 30
 
-[node name="delete" type="Button" parent="TabContainer/Load Game/VBox/Button6"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -183.365
-offset_top = -25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "delete"
+[node name="Kebali ke menu" type="TextureButton" parent="TabContainer/Credits/MarginContainer/VBox"]
+custom_minimum_size = Vector2(446.05, 75.745)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_geyk0")
+
+[node name="Label" type="Label" parent="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 48
+text = "Kembali ke Menu"
+
+[node name="Title" type="Label" parent="TabContainer/Credits/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 77
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TabContainer/Credits/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 37
+text = "Fredo Melvern Tanzil
+(programmer & story writer)
+
+Kenichi Komala
+(programmer & artist)
+
+Samuel Taniel Mulyadi
+(3D artist)
+
+Daya Adianto, S.Kom., M.Kom
+(dosen pembimbing)"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
 
 [connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/MarginContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="TabContainer/Load Game/VBox/Kebali ke menu" to="." method="_on_kebali_ke_menu_pressed"]
 [connection signal="pressed" from="TabContainer/Load Game/VBox/cheatbutton" to="TabContainer/Load Game" method="_on_cheatbutton_pressed"]
+[connection signal="pressed" from="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu" to="." method="_on_kebali_ke_menu_pressed"]

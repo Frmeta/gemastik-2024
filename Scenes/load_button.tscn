@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5ooywqg7faxc"]
+
+[ext_resource type="Texture2D" uid="uid://dxuwcbl7y8by0" path="res://assets/ui/load_normal.png" id="1_f7m43"]
+[ext_resource type="Script" path="res://Scripts/load_button.gd" id="1_j1ddo"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="3_aj83p"]
+[ext_resource type="Texture2D" uid="uid://b2b3010bf3yex" path="res://assets/ui/load_pressed.png" id="3_f3uqi"]
+[ext_resource type="Texture2D" uid="uid://cbaobpa21p2x8" path="res://assets/ui/delete.png" id="4_12v34"]
+[ext_resource type="Texture2D" uid="uid://bptuytlgiec7h" path="res://assets/ui/load_hover.png" id="4_lybww"]
+
+[node name="Button1" type="MarginContainer"]
+size_flags_horizontal = 4
+script = ExtResource("1_j1ddo")
+
+[node name="Paper" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_f7m43")
+texture_pressed = ExtResource("3_f3uqi")
+texture_hover = ExtResource("4_lybww")
+
+[node name="Label" type="Label" parent="Paper"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 24.0
+offset_right = 466.0
+offset_bottom = 87.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_aj83p")
+theme_override_font_sizes/font_size = 52
+text = "load file-n"
+
+[node name="Label2" type="Label" parent="Paper"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 91.0
+offset_right = 469.0
+offset_bottom = 149.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_aj83p")
+theme_override_font_sizes/font_size = 32
+text = "progress - 10%"
+
+[node name="delete_btn" type="TextureButton" parent="Paper"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -25.0
+offset_right = 391.0
+offset_bottom = 495.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.103316, 0.103316)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_12v34")
+
+[connection signal="pressed" from="Paper" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="Paper/delete_btn" to="." method="_on_delete_btn_pressed"]
