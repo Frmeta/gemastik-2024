@@ -54,7 +54,7 @@ func win(target : String):
 	
 	scanned_animal = []
 	
-	get_tree().change_scene_to_file("res://Scenes/Game/"+target+".tscn")
+	Transition.change_scene("res://Scenes/Game/"+target+".tscn")
 	
 func read_data():
 	if not FileAccess.file_exists(FILE_NAME):

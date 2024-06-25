@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 DialogueEnum="*res://Scripts/DialogueEnum.gd"
 EventDistributor="*res://Scripts/EventDistributor.gd"
 GM="*res://Scenes/GameManager.tscn"
+Transition="*res://Scenes/transition.tscn"
 
 [debug]
 

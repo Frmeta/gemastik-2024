@@ -12,6 +12,6 @@ func _on_body_entered(body):
 		await get_tree().create_timer(0.3).timeout
 		GM.doni.victory_dance()
 		await get_tree().create_timer(2).timeout
-		
+		$"../CanvasLayerLevel".visible=false
 		GM.win(scene_after_win)
 		
