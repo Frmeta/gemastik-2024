@@ -11,17 +11,17 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Kenapa kamu membawaku ke sini",
+		"dialogue":"Kenapa kamu membawaku ke sini?",
 		"emosi":"2"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Aku sudah melihat keseharianmu. Kamu butuh sekali-sekali healing. Jadi aku memutuskan untuk membawamu ke Kalimantan, tempat wisata paling indah di Indonesia. Di sini ada banyak hewan dan tanaman yang tentunya akan melepaskan beban pikiranmu.",
+		"dialogue":"Aku sudah melihat keseharianmu. Kamu butuh  healing sekali-sekali. Jadi aku memutuskan untuk membawamu ke Kalimantan, tempat wisata paling indah di Indonesia. Di sini ada banyak hewan dan tanaman yang tentunya akan melepaskan beban pikiranmu.",
 		"emosi":"2"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Aku tidak boleh berada di sini. Aku punya pr, tugas! Aku pasti dicari keluargaku",
+		"dialogue":"Aku tidak boleh berada di sini. Aku punya PR! Aku pasti dicari keluargaku!",
 		"emosi":"2"
 	},
 	{
@@ -41,12 +41,22 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Jadi kamu mau apakan aku sekarang",
+		"dialogue":"Jadi kamu mau apakan aku sekarang?",
 		"emosi":"2"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Ini buku Almanac Indonesia. Seperti yang dapat dilihat, ada banyak bagian kosong yang perlu diisi. Tujuanmu adalah melengkapi informasi yang hilang tsb baru kemudian aku akan membawakanmu pulang.",
+		"dialogue":"Kuberikan kamu buku Almanac Indonesia. Kamu dapat membukanya dengan menekan tombol [E].",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Seperti yang dapat dilihat, ada banyak bagian kosong yang perlu diisi.",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Tujuanmu adalah melengkapi informasi yang hilang tersebut baru kemudian aku akan membawakanmu pulang.",
 		"emosi":"5"
 	},
 	{
@@ -56,7 +66,12 @@
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Di hutan ini akan ada hewan yang menyambutmu! Ayo hampiri mereka! Aku akan memberikanmu alat scan. ",
+		"dialogue":"Di hutan ini akan ada hewan yang menyambutmu! Ayo hampiri mereka!",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Ini alat scan yang dapat kamu akses dengan [tombol kiri mouse] untuk memindai hewan tersebut.",
 		"emosi":"5"
 	},
 	{

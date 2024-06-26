@@ -9,6 +9,7 @@ size = Vector2(3, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbc8"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("1_41bfu")
 billboard_mode = 1
 
@@ -29,7 +30,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ad0kc"]
 resource_name = "up_down"
-length = 0.1
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,10 +38,10 @@ tracks/0/path = NodePath("pointer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.5, 0.858, 0.01), Vector3(-0.5, 1, 0.01)]
+"values": [Vector3(-0.5, 1.063, 0.01), Vector3(-0.5, 1.445, 0.01)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axoi6"]
@@ -52,6 +52,7 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8q66"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("2_g6h61")
 billboard_mode = 1
 billboard_keep_scale = true
@@ -60,6 +61,7 @@ billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_le1hr"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("3_qgd6e")
 billboard_mode = 1
 

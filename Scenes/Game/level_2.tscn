@@ -41,7 +41,7 @@ fun_fact = "Nusa Tenggara memiliki kadal terbesar di dunia.. jadi mungkin cobala
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.472, 22.8883, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46781, -3.18904, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -171,4 +171,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5095, -0.75384, -0.0301914
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.0301914)
 
 [node name="Komodo" parent="Node3D" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.309, 20.3896, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
+
+[node name="Komodo2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 366.127, 21.8016, -1.90735e-06)
+mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
+
+[node name="Komodo3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 374.058, 19.2613, 0)
+mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")

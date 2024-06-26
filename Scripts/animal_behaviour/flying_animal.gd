@@ -133,12 +133,12 @@ func find_destination():
 			ray.target_position = Vector3(0, 0, 0)
 			
 			# up
-			while ray.is_colliding() and !is_inside_tree():
+			while ray.is_colliding() and is_inside_tree():
 				ray.global_position.y += 0.01
 				await wait_for_next_frame()
 			
 			# down
-			while !ray.is_colliding() and !is_inside_tree():
+			while !ray.is_colliding() and is_inside_tree():
 				ray.global_position.y -= 0.01
 				if ray.global_position.y < -10:
 					return null

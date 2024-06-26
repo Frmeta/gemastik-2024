@@ -1,12 +1,12 @@
 [
 	{
 		"nama":"Doni",
-		"dialogue":"MAS, kenapa ada beberapa hewan yang hostile",
+		"dialogue":"MAS, kenapa ada beberapa hewan yang menyerangku?",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"[SCANNING] menurut analisisku mereka kehilangan rumah karena ulah manusia buang MASpah atau apalah. Mereka tidak ada pilihan lain selain menyerangmu.",
+		"dialogue":"[SCANNING] menurut analisisku mereka kehilangan rumah karena ulah manusia buang sampah. Mereka tidak ada pilihan lain selain menyerangmu.",
 		"emosi":"4"
 	},
 	{
