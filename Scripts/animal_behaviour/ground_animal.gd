@@ -10,6 +10,7 @@ var MOVE_SPEED = 2
 @export var idle_anim_name = "O_Idle"
 
 var state : State
+var can_move = true
 
 func _ready():
 	
@@ -19,25 +20,26 @@ func _ready():
 	if randi() % 2 == 0:
 		state = State.DIAM
 		await wait_for_seconds(randf() * 6 + 5)
-		
-		state = State.KIRI
-		await wait_for_seconds(randf() * 6 + 4)
+		if can_move:
+			state = State.KIRI
+			await wait_for_seconds(randf() * 6 + 4)
 		
 	loop_behaviour()
-	
-	
+
 func loop_behaviour():
 	state = State.DIAM
 	await wait_for_seconds(randf() * 6 + 2)
 	
-	state = State.KANAN
-	await wait_for_seconds(randf() * 6 + 4)
+	if can_move:
+		state = State.KANAN
+		await wait_for_seconds(randf() * 6 + 4)
 	
 	state = State.DIAM
 	await wait_for_seconds(randf() * 6 + 5)
 	
-	state = State.KIRI
-	await wait_for_seconds(randf() * 6 + 4)
+	if can_move:
+		state = State.KIRI
+		await wait_for_seconds(randf() * 6 + 4)
 	
 	loop_behaviour()
 	

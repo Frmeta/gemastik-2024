@@ -1449,6 +1449,7 @@ _data = {
 radius = 0.67644
 
 [node name="Anjing Kintamani" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 32
 script = ExtResource("1_cf1lo")
 mesh = NodePath("Kintamani_Skeleton/Skeleton3D/Kintamani")
 

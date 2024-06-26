@@ -29,7 +29,7 @@ func open_trap():
 	hint.visible=false
 	
 	if hewan_trapped != null:
-		hewan_trapped.can_move=true
+		hewan_trapped.set_can_move(true)
 
 func close_trap():
 	_play_close_anim()

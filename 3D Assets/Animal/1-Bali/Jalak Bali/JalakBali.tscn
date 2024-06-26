@@ -1064,6 +1064,7 @@ _data = {
 radius = 0.382964
 
 [node name="Jalak Bali" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 8
 script = ExtResource("1_iciom")
 mesh = NodePath("JalakBali_Skeleton/Skeleton3D/JalakBali")
 

@@ -14,6 +14,8 @@ var ray : RayCast3D
 var target_pos
 var is_flying = false
 
+var can_move = true
+
 func _ready():
 	
 	# Make sure anim_name is valid

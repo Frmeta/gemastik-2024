@@ -1278,6 +1278,7 @@ _data = {
 radius = 1.51621
 
 [node name="Rusa" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 8
 script = ExtResource("1_5am5r")
 mesh = NodePath("Menjangan_Skeleton/Skeleton3D/Menjangan")
 
@@ -1446,7 +1447,6 @@ libraries = {
 shape = SubResource("SphereShape3D_pru47")
 
 [node name="Node3D" type="Node3D" parent="."]
-visible = false
 script = ExtResource("4_qn4uw")
 walk_anim_name = "K_Walk"
 idle_anim_name = "K_Idle"

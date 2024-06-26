@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8lyeh72rbeep"]
+[gd_scene load_steps=29 format=3 uid="uid://c8lyeh72rbeep"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
@@ -24,9 +24,14 @@
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_i5x08"]
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_v45f6"]
 [ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="21_j6yl5"]
+[ext_resource type="PackedScene" uid="uid://dqxx67pcn36de" path="res://Scenes/trap/beartrap.tscn" id="25_42ecr"]
+[ext_resource type="Script" path="res://Scenes/Game/trap_dialog_trigger.gd" id="25_n7ggl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1li0"]
+size = Vector3(1, 23.9547, 1)
 
 [node name="Level Bali" type="Node3D"]
 script = ExtResource("1_8jw7r")
@@ -43,7 +48,7 @@ fun_fact = "Pulau Bali memiliki pemandangan alam yang indah sehingga mayoritas p
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.803078, -5.47832, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.714, 2.53301, -7.62939e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
@@ -213,10 +218,6 @@ mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 [node name="Anjing Kintamani" parent="Node3D" instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.471, -1.39422, 0)
 
-[node name="Anjing Kintamani2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.694, -0.723789, 0)
-mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
-
 [node name="Anjing Kintamani3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.63, 0.823557, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
@@ -225,9 +226,34 @@ mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.74, 6.86791, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 
-[node name="Rusa" parent="Node3D" instance=ExtResource("21_j6yl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.695, 0, 0)
+[node name="Anjing Kintamani2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.361, -1.51186, 1.38397)
+mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
+can_move = false
+
+[node name="Beartrap2" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.049, -1.98456, 1.01185)
+hewan_trapped = NodePath("../Anjing Kintamani2")
 
 [node name="Rusa2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_j6yl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.504, 3.91001, 0)
 mesh = NodePath("../Rusa/Menjangan_Skeleton/Skeleton3D/Menjangan")
+
+[node name="Rusa" parent="Node3D" instance=ExtResource("21_j6yl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5058, -0.717766, 0)
+can_move = false
+
+[node name="Beartrap" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8127, -1.98801, 0.770227)
+hewan_trapped = NodePath("../Rusa")
+
+[node name="Area3D" type="Area3D" parent="Node3D/Beartrap"]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -3.26636, 0, 8.97424)
+collision_layer = 0
+script = ExtResource("25_n7ggl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Beartrap/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00202179, 10.0203, 0)
+shape = SubResource("BoxShape3D_q1li0")
+
+[connection signal="body_entered" from="Node3D/Beartrap/Area3D" to="Node3D/Beartrap/Area3D" method="_on_body_entered"]

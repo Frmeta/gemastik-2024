@@ -24,20 +24,38 @@ func expDecay(a, b, decay, dt):
 
 func increase_fov():
 	zooming_out = true
-	while(abs(self.fov-75)>0.1):
+	
+	if zooming_in:
+		zooming_in = false
+		
+	while(abs(self.fov-75)>0.1) and zooming_out:
 		if zooming_in:
+			zooming_out=false
 			return
 		self.fov = lerp(self.fov,75.0,0.1)
 		await get_tree().create_timer(0.01).timeout
+	
+	if not zooming_out:
+		return
+	
 	zooming_out = false
 	self.fov = 75
 
 func decrease_fov():
 	zooming_in=true
-	while(abs(self.fov-60)>0.1):
+	
+	if zooming_out:
+		zooming_out=false
+		
+	while(abs(self.fov-60)>0.1) and zooming_in:
 		if zooming_out:
+			zooming_in=false
 			return
-		self.fov = lerp(self.fov,60.0,0.05)
+		self.fov = lerp(self.fov,60.0,0.1)
 		await get_tree().create_timer(0.01).timeout
+	
+	if not zooming_in:
+		return
+	
 	zooming_in = false
 	self.fov = 60

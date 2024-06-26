@@ -3,6 +3,8 @@ extends CharacterBody3D
 class_name Animal
 
 @export var mesh: MeshInstance3D
+@export var can_move:=true
+@onready var behaviour = $Node3D
 
 var scan_progress = 0.0 # range dari 0 sampai 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,14 +18,12 @@ var is_affected_by_gravity = true
 
 var nama_hewan
 
-var can_move = true
-
 func _init():
-	
 	collision_layer = 8
 	collision_mask = 2
 	
 func _ready():
+	set_can_move(can_move)
 	
 	# assert next_pass material
 	assert(mesh != null)
@@ -51,7 +51,6 @@ func _process(delta):
 	# scanning
 	if above_0:
 		next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
-	
 	
 	if scan_progress <= 0 and above_0:
 		above_0 = false
@@ -85,3 +84,6 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	move_and_slide()
+
+func set_can_move(new_state):
+	behaviour.can_move=new_state

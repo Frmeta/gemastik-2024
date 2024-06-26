@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjoh1r15cung6"]
+[gd_scene load_steps=16 format=3 uid="uid://bjoh1r15cung6"]
 
 [ext_resource type="Texture2D" uid="uid://bdxq502j7wkk8" path="res://assets/ui/trap/dialog.png" id="1_41bfu"]
 [ext_resource type="Texture2D" uid="uid://dfbi4v8rhmms4" path="res://assets/ui/trap/pointer.png" id="2_g6h61"]
+[ext_resource type="Texture2D" uid="uid://b8h5vduq88kwg" path="res://assets/ui/trap/predialog.png" id="3_qgd6e"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ggh3o"]
 size = Vector2(3, 2)
@@ -11,6 +12,44 @@ transparency = 1
 albedo_texture = ExtResource("1_41bfu")
 billboard_mode = 1
 
+[sub_resource type="Animation" id="Animation_ad0kc"]
+resource_name = "up_down"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 0.858, 0.01), Vector3(-0.5, 1, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_h1axb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0.858161, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axoi6"]
+_data = {
+"RESET": SubResource("Animation_h1axb"),
+"up_down": SubResource("Animation_ad0kc")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8q66"]
 transparency = 1
 albedo_texture = ExtResource("2_g6h61")
@@ -19,17 +58,82 @@ billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_074eu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_le1hr"]
+transparency = 1
+albedo_texture = ExtResource("3_qgd6e")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_wpg1r"]
+size = Vector2(3, 2)
+
+[sub_resource type="Animation" id="Animation_ikvgt"]
+resource_name = "up_down"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.6, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdbfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yf2av"]
+_data = {
+"RESET": SubResource("Animation_kdbfs"),
+"up_down": SubResource("Animation_ikvgt")
+}
+
 [node name="trap_hint" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34321, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="sign" type="MeshInstance3D" parent="."]
+visible = false
 cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_ggh3o")
 surface_material_override/0 = SubResource("StandardMaterial3D_bbbc8")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="animate" type="AnimationPlayer" parent="sign"]
+libraries = {
+"": SubResource("AnimationLibrary_axoi6")
+}
+autoplay = "up_down"
+speed_scale = 0.8
+
+[node name="pointer" type="MeshInstance3D" parent="sign"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.858161, 0.01)
 sorting_offset = 1.0
 material_override = SubResource("StandardMaterial3D_h8q66")
 mesh = SubResource("QuadMesh_074eu")
+
+[node name="presign" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_le1hr")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_wpg1r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="presign"]
+libraries = {
+"": SubResource("AnimationLibrary_yf2av")
+}
+autoplay = "up_down"

@@ -15,8 +15,9 @@ var is_animating_almanac = false
 func _ready():
 	set_up()
 	
+	GM.doni.stop_move()
+	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
-	GM.doni.can_move=false
 	EventDistributor.emit_signal("spawn_mas")
 	if nama_pulau.to_lower()=="kalimantan":
 		EventDistributor.emit_signal("start_dialogue","res://dialogue/kalimantan.json")
@@ -25,6 +26,7 @@ func _ready():
 	await EventDistributor.end_dialogue
 	EventDistributor.emit_signal("despawn_mas")
 	GM.doni.can_move=true
+	GM.doni.curr_jumps=0
 
 func set_up():
 	almanac_ui.visible = false
@@ -106,4 +108,3 @@ func new_animal(nama_hewan: String):
 			
 	print("oh no hewan " + nama_hewan + " tidak ada di pulau itu seharusnya")
 	GM.doni.allow_move()
-	
