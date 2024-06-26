@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 class_name Player
 
-
 @onready var animTree : AnimationTree = $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
 @onready var scan := $Scan
@@ -27,6 +26,8 @@ var curr_jumps = 0 # sudah loncat berapa kali
 
 var _last_jump_pressed = 0
 var _last_on_ground = 0
+var being_knocked_back = false
+var is_poisoned = false
 
 var chain_velocity := Vector3(0,0,0)
 const CHAIN_PULL = 3
@@ -53,7 +54,6 @@ const climbing_speed = 5.0
 var is_in_water = false
 
 var can_move = true
-
 
 func _ready():
 	GM.doni=self
@@ -100,7 +100,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta):
-	
+	if being_knocked_back:
+		if is_on_floor():
+			can_move=true
 	# Check vines
 	if climb.get_node("RayCast3D").is_colliding():
 		is_on_vines = true
@@ -141,6 +143,7 @@ func _physics_process(delta):
 			animTree.set("parameters/Game/transition_request", "is_climbing")
 			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
 			model3d.get_node("Player").rotation.y = deg_to_rad(180)
+			
 			
 			animTree.set("parameters/ClimbDir/blend_position", Vector2(velocity.x, velocity.y) / climbing_speed)
 			if velocity==Vector3.ZERO:
@@ -294,7 +297,10 @@ func movement_from_input(delta):
 			if $Grapling.hooked:
 				velocity += Vector3(input_x * SPEED * delta , 0, 0)
 			elif input_x != 0:
-				velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+				if not is_poisoned:
+					velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+				else:
+					velocity = velocity.move_toward(Vector3(input_x * SPEED/1.5, velocity.y, velocity.z), acc * delta)
 			else:
 				velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 
@@ -312,4 +318,20 @@ func victory_dance():
 	stop_move()
 	animTree.set("parameters/MainState/transition_request", "story")
 	animTree.set("parameters/Story/transition_request", "victory")
-	
+
+func knocked_back(from : Vector3):
+	being_knocked_back=true
+	var from_right = (from.x-self.global_position.x) > 0
+	print(from_right)
+	if from_right:
+		can_move=false
+		velocity.y = JUMP_POWER
+		velocity.x = -30
+	else:
+		velocity.y = JUMP_POWER
+		velocity.x = 30
+	is_poisoned=true
+	$Timer.start()
+
+func _on_timer_timeout():
+	is_poisoned=false

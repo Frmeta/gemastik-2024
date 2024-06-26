@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dnnyrin4ywf5e"]
+[gd_scene load_steps=26 format=3 uid="uid://dnnyrin4ywf5e"]
 
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_g3pqj"]
 [ext_resource type="Texture2D" uid="uid://jlh7bikjq1qh" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo_Komodo_body_color.png" id="1_pa4vn"]
@@ -1002,6 +1002,9 @@ billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_w53k5"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cx8dt"]
+radius = 0.624804
+
 [node name="Komodo" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 8
 collision_mask = 0
@@ -1211,8 +1214,17 @@ shape = SubResource("SphereShape3D_14wqm")
 
 [node name="marah" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266214, 0.44782, 1.11678)
+visible = false
 material_override = SubResource("StandardMaterial3D_1b5xv")
 mesh = SubResource("QuadMesh_w53k5")
 
+[node name="hit_box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0901926, 1.4008)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box"]
+shape = SubResource("SphereShape3D_cx8dt")
+
 [connection signal="body_entered" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_entered"]
 [connection signal="body_exited" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_exited"]
+[connection signal="body_entered" from="hit_box" to="Node3D" method="_on_hit_box_body_entered"]

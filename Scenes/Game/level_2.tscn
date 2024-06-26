@@ -41,7 +41,7 @@ fun_fact = "Nusa Tenggara memiliki kadal terbesar di dunia.. jadi mungkin cobala
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114261, -5.26027, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339.603, 22.3155, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -171,10 +171,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5095, -0.75384, -0.0301914
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.0301914)
 
 [node name="Komodo" parent="Node3D" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 363.138, 21.6065, 0)
-
-[node name="Komodo2" parent="Node3D" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 382.642, 19.498, 0)
-
-[node name="Komodo3" parent="Node3D" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.088, 20.1305, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.309, 20.3896, 0)
