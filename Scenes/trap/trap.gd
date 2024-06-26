@@ -14,7 +14,7 @@ func _play_open_anim():
 	trap_anim_player.play("Open")
 
 func _play_close_anim():
-	trap_anim_player.play("Caught")	
+	trap_anim_player.play("Caught")
 
 func _play_ON():
 	trap_anim_player.play("ON")

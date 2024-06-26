@@ -18,14 +18,18 @@ func _ready():
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
+	
 	EventDistributor.emit_signal("spawn_mas")
+	
 	if nama_pulau.to_lower()=="kalimantan":
 		EventDistributor.emit_signal("start_dialogue","res://dialogue/kalimantan.json")
 	else:
 		EventDistributor.emit_signal("start_dialogue_with_pulau","res://dialogue/start_pulau.json",nama_pulau,fun_fact)
 	await EventDistributor.end_dialogue
+	
 	EventDistributor.emit_signal("despawn_mas")
-	GM.doni.can_move=true
+	
+	GM.doni.allow_move()
 	GM.doni.curr_jumps=0
 
 func set_up():

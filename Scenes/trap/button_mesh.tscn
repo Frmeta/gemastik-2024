@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dra0eng33cvhi"]
+[gd_scene load_steps=6 format=3 uid="uid://dra0eng33cvhi"]
 
 [ext_resource type="Script" path="res://Scenes/trap/button_mesh.gd" id="1_wrdh6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kdvg4"]
 radius = 2.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pc81f"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8np5c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouam2"]
+bg_color = Color(0.815686, 0.517647, 0.32549, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 
 [node name="ButtonMesh" type="Area3D"]
 collision_layer = 32
@@ -13,8 +30,28 @@ script = ExtResource("1_wrdh6")
 shape = SubResource("SphereShape3D_kdvg4")
 
 [node name="minus_timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.4
 autostart = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50898, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_pc81f")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 34.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_8np5c")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ouam2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

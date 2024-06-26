@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqxx67pcn36de"]
+
+[ext_resource type="Script" path="res://Scenes/trap/trap.gd" id="1_t8gjo"]
+[ext_resource type="PackedScene" uid="uid://jcemp2sqfbki" path="res://3D Assets/trap/BearTrap_mesh.tscn" id="2_qyvc1"]
+[ext_resource type="PackedScene" uid="uid://bjoh1r15cung6" path="res://Scenes/trap/trap_hint.tscn" id="3_1injl"]
+[ext_resource type="PackedScene" uid="uid://dra0eng33cvhi" path="res://Scenes/trap/button_mesh.tscn" id="3_c74pe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v5vwe"]
+
+[node name="Beartrap" type="StaticBody3D"]
+script = ExtResource("1_t8gjo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v5vwe")
+
+[node name="trap" parent="." instance=ExtResource("2_qyvc1")]
+
+[node name="trap_hint" parent="." instance=ExtResource("3_1injl")]
+
+[node name="ButtonMesh" parent="." instance=ExtResource("3_c74pe")]
+target_hits = 10
