@@ -133,12 +133,12 @@ func find_destination():
 			ray.target_position = Vector3(0, 0, 0)
 			
 			# up
-			while ray.is_colliding():
+			while ray.is_colliding() and !is_inside_tree():
 				ray.global_position.y += 0.01
 				await wait_for_next_frame()
 			
 			# down
-			while !ray.is_colliding():
+			while !ray.is_colliding() and !is_inside_tree():
 				ray.global_position.y -= 0.01
 				if ray.global_position.y < -10:
 					return null
@@ -155,11 +155,15 @@ func find_destination():
 
 
 func wait_for_seconds(seconds: float):
-	if !is_inside_tree() or is_instance_valid(get_tree()):
+	if !is_inside_tree() or !is_instance_valid(get_tree()) or get_tree()==null:
+		print("jb qfree")
 		queue_free()
+		return
 	await get_tree().create_timer(seconds).timeout
 
 func wait_for_next_frame():
-	if !is_inside_tree() or is_instance_valid(get_tree()):
+	if !is_inside_tree() or !is_instance_valid(get_tree()) or get_tree()==null:
+		print("jb qfree")
 		queue_free()
+		return
 	await get_tree().process_frame

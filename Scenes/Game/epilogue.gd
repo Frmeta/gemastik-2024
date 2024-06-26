@@ -16,7 +16,7 @@ var background_lerp_done = false
 var counter = 0
 
 func _ready():
-	doni.can_move=false
+	doni.stop_move()
 	textbox.connect("go_to_next_line", foo)
 	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
 	goto(0)

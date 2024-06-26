@@ -27,7 +27,12 @@ var curr_jumps = 0 # sudah loncat berapa kali
 var _last_jump_pressed = 0
 var _last_on_ground = 0
 var being_knocked_back = false
-var is_poisoned = false
+var is_poisoned = false :
+	get:
+		return is_poisoned
+	set(value):
+		is_poisoned = value
+		$poison_particle.emitting = value
 
 var chain_velocity := Vector3(0,0,0)
 const CHAIN_PULL = 3
@@ -61,6 +66,8 @@ func _ready():
 	EventDistributor.connect("start_dialogue",stop_move)
 	EventDistributor.connect("end_dialogue",allow_move)
 	animTree.set("parameters/MainState/transition_request", "game")
+	
+	is_poisoned = false
 
 func allow_move():
 	can_move = true
@@ -300,7 +307,7 @@ func movement_from_input(delta):
 				if not is_poisoned:
 					velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
 				else:
-					velocity = velocity.move_toward(Vector3(input_x * SPEED/1.5, velocity.y, velocity.z), acc * delta)
+					velocity = velocity.move_toward(Vector3(input_x * SPEED/2, velocity.y, velocity.z), acc * delta)
 			else:
 				velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 

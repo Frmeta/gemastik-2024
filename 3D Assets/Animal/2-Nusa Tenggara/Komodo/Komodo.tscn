@@ -1219,7 +1219,7 @@ material_override = SubResource("StandardMaterial3D_1b5xv")
 mesh = SubResource("QuadMesh_w53k5")
 
 [node name="hit_box" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0901926, 1.4008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0901926, 0.707799)
 collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box"]
