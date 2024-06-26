@@ -29,6 +29,8 @@ size = Vector3(150, 1, 1)
 
 [node name="level_nt" type="Node3D"]
 script = ExtResource("1_wudb8")
+nama_pulau = "Nusa Tenggara"
+fun_fact = "Nusa Tenggara memiliki kadal terbesar di dunia.. jadi mungkin cobalah untuk hati-hati"
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_y5y2o")]
 

@@ -1,14 +1,15 @@
 extends CharacterBody3D
 
-@onready var sprite =  $MeshInstance3D
 @export var current_state: mas_state
 @export var iteration = 45
-@export var origin: Node3D
+@export var SPEED:float = 5.0
+@export var constant = 5
+
+@onready var sprite =  $MeshInstance3D
 @onready var sprite_mas = $"Mas"
 
-@export var SPEED:float = 5.0
+var origin
 var ANGULAR_SPEED = 0.6
-var constant = 50
 
 var last_move = Vector3.ZERO
 
@@ -20,7 +21,6 @@ func _ready():
 
 func change_state(new_state):
 	current_state=new_state
-	print("current state:"+str(current_state))
 
 func _physics_process(delta):
 	current_state.do_something(delta)

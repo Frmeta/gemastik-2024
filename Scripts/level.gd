@@ -1,14 +1,32 @@
 extends Node3D
 
+class_name Level
+
 @onready var almanac_3d = $Camera3D/Almanac2
 @onready var almanac_ui = $"CanvasLayerLevel/Almanac"
 @onready var successful_scan = $"CanvasLayerLevel/Successful Scan"
+
+@export var nama_pulau:String
+@export var fun_fact:String
 
 var is_almanac_open = false
 var is_animating_almanac = false
 
 func _ready():
+	set_up()
 	
+	await get_tree().create_timer(1).timeout
+	GM.doni.can_move=false
+	EventDistributor.emit_signal("spawn_mas")
+	if nama_pulau.to_lower()=="kalimantan":
+		EventDistributor.emit_signal("start_dialogue","res://dialogue/kalimantan.json")
+	else:
+		EventDistributor.emit_signal("start_dialogue_with_pulau","res://dialogue/start_pulau.json",nama_pulau,fun_fact)
+	await EventDistributor.end_dialogue
+	EventDistributor.emit_signal("despawn_mas")
+	GM.doni.can_move=true
+
+func set_up():
 	almanac_ui.visible = false
 	almanac_3d.visible = false
 	almanac_3d.get_node("AnimationPlayer").connect("animation_finished", _done_animating_almanac)
@@ -16,7 +34,7 @@ func _ready():
 	successful_scan.connect("done_animation", func() -> void:
 		print("done animation")
 		GM.doni.allow_move())
-			
+
 # get mouse position
 func get_mouse_location_on_map():
 	if !has_node("Mouse Position Locator"):

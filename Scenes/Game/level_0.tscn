@@ -27,6 +27,7 @@ size = Vector3(150, 1, 1)
 
 [node name="Level Kalimantan" type="Node3D"]
 script = ExtResource("1_qud7n")
+nama_pulau = "kalimantan"
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_kekwg")]
 
@@ -37,11 +38,11 @@ script = ExtResource("1_qud7n")
 [node name="Camera3D" parent="." instance=ExtResource("5_fr423")]
 
 [node name="Player" parent="." instance=ExtResource("6_4s4dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.617, 0.282072, -0.0102196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1636, -7.20965, -0.0102196)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ociqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.549, 4.28872, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1636, -7.20965, -0.0102196)
 
 [node name="GridMapGround" parent="." instance=ExtResource("8_77wmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0035553, 0.793519, 0)

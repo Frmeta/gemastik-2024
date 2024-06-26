@@ -23,6 +23,7 @@ func _ready():
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.PROLOGUE2)
 	await EventDistributor.end_dialogue
 	prolog_end=true
+	Transition.change_scene("res://Scenes/Game/level_0.tscn")
 
 func foo():
 	counter+=1
@@ -33,9 +34,9 @@ func foo():
 	elif counter==5:
 		goto(3)
 		mas.SPEED=0.2
-		mas.iteration=10
-		mas.ANGULAR_SPEED=10
-		mas.constant=3
+		mas.iteration=20
+		mas.ANGULAR_SPEED=5
+		mas.constant=1
 		EventDistributor.emit_signal("spawn_mas")
 		var target = doni.position.y+1
 		for i in range(10):
@@ -55,10 +56,7 @@ func foo():
 	elif counter==17:
 		mas_shake()
 	print("counter ",counter)
-	
-func _process(delta):
-	if prolog_end:
-		get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
+
 
 func goto(idx):
 	$Beam.visible = idx==3
