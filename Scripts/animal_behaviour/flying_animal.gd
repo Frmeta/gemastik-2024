@@ -155,13 +155,11 @@ func find_destination():
 
 
 func wait_for_seconds(seconds: float):
-	if is_instance_valid(get_tree()):
-		await get_tree().create_timer(seconds).timeout
-	else:
-		return null
+	if !is_inside_tree() or is_instance_valid(get_tree()):
+		queue_free()
+	await get_tree().create_timer(seconds).timeout
 
 func wait_for_next_frame():
-	if is_instance_valid(get_tree()):
-		await get_tree().process_frame
-	else:
-		await wait_for_seconds(1)
+	if !is_inside_tree() or is_instance_valid(get_tree()):
+		queue_free()
+	await get_tree().process_frame

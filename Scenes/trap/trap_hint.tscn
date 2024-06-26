@@ -12,6 +12,21 @@ transparency = 1
 albedo_texture = ExtResource("1_41bfu")
 billboard_mode = 1
 
+[sub_resource type="Animation" id="Animation_h1axb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0.858161, 0.01)]
+}
+
 [sub_resource type="Animation" id="Animation_ad0kc"]
 resource_name = "up_down"
 length = 0.1
@@ -27,21 +42,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.5, 0.858, 0.01), Vector3(-0.5, 1, 0.01)]
-}
-
-[sub_resource type="Animation" id="Animation_h1axb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pointer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.5, 0.858161, 0.01)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axoi6"]
@@ -66,6 +66,21 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_wpg1r"]
 size = Vector2(3, 2)
 
+[sub_resource type="Animation" id="Animation_kdbfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ikvgt"]
 resource_name = "up_down"
 length = 1.5
@@ -81,21 +96,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.6, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kdbfs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yf2av"]
