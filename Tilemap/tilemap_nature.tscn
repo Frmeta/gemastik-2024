@@ -77,7 +77,6 @@ size = Vector3(1.82611, 1.88729, 1.92882)
 resource_name = "Material"
 cull_mode = 2
 albedo_color = Color(0.752941, 0.466667, 0.341176, 1)
-roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0trpx"]
 _surfaces = [{
@@ -193,7 +192,6 @@ shadow_mesh = SubResource("ArrayMesh_se2em")
 [node name="TilemapNature" type="Node3D"]
 
 [node name="Grass Block" type="Node3D" parent="."]
-visible = false
 
 [node name="Grass Block" type="MeshInstance3D" parent="Grass Block"]
 mesh = SubResource("ArrayMesh_ld1x3")
@@ -241,6 +239,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875854, 0.0581398, 0.0110
 shape = SubResource("BoxShape3D_2u874")
 
 [node name="Stone Block" type="Node3D" parent="."]
+visible = false
 
 [node name="Stone Block" type="MeshInstance3D" parent="Stone Block"]
 mesh = SubResource("ArrayMesh_kqy4b")
