@@ -16,32 +16,23 @@ func loop_behaviour():
 		state = State.DIAM
 		await wait_for_seconds(randf() * 100 + 2) or self.become_hostile
 		
-		print("done diam")
-		print(is_hostile)
-		
 		if is_hostile:
 			return
 		
 		state = State.KANAN
 		await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
-		print("done kanan")
-		print(is_hostile)
 		
 		if is_hostile:
 			return
 		
 		state = State.DIAM
 		await wait_for_seconds(randf() * 6 + 5) or self.become_hostile
-		print("done diam2")
-		print(is_hostile)
 		
 		if is_hostile:
 			return
 		
 		state = State.KIRI
 		await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
-		print("done kiri")
-		print(is_hostile)
 		
 		if is_hostile:
 			return
@@ -93,5 +84,5 @@ func _on_hit_box_body_entered(body):
 		body.knocked_back(self.global_position)
 		owner.velocity.x =0
 		$"../AnimationPlayer".play(idle_anim_name)
-		await get_tree().create_timer(1).timeout
-		after_knocking_back=true
+		await get_tree().create_timer(0.5).timeout
+		after_knocking_back=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://l2u5pkctq1b5"]
+[gd_scene load_steps=26 format=3 uid="uid://l2u5pkctq1b5"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wudb8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_y5y2o"]
@@ -20,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bd2ia5b0tcvwu" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_104.res" id="15_rlkex"]
 [ext_resource type="ArrayMesh" uid="uid://esc54hih3ok4" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_089.res" id="16_g06ii"]
 [ext_resource type="ArrayMesh" uid="uid://cgoyxtmdbfm4p" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_179.res" id="16_n247u"]
+[ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="17_rgxvv"]
 [ext_resource type="PackedScene" uid="uid://2o007uf64l1b" path="res://3D Assets/Animal/2-Nusa Tenggara/Landak/Landak.tscn" id="18_dqsyr"]
 [ext_resource type="PackedScene" uid="uid://bt5e5naxiues3" path="res://3D Assets/Animal/2-Nusa Tenggara/Trenggiling/Trenggiling.tscn" id="19_hlf7l"]
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo.tscn" id="21_sir6x"]
@@ -41,7 +42,7 @@ fun_fact = "Nusa Tenggara memiliki kadal terbesar di dunia.. jadi mungkin cobala
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46781, -3.18904, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.397, 28.8879, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -137,6 +138,10 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, -1)
 
+[node name="dialogue_trigger" parent="." instance=ExtResource("17_rgxvv")]
+transform = Transform3D(0.341941, 0, 0.939476, 0, 0.999769, 0, -0.939476, 0, 0.341941, 351.698, 21.3252, -0.0257524)
+file_name = "nusa_tenggara_hostile"
+
 [node name="CanvasLayerLevel" parent="." instance=ExtResource("10_sryrn")]
 
 [node name="DialogueManager" parent="." instance=ExtResource("11_3cl6p")]
@@ -175,8 +180,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
 [node name="Komodo2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 366.127, 21.8016, -1.90735e-06)
+visible = false
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
+can_move = false
 
 [node name="Komodo3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 374.058, 19.2613, 0)
+visible = false
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
+can_move = false

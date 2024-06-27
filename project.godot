@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.917647, 0.890196, 0.956863, 1)
 boot_splash/image="res://assets/frekensam.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/windows_native_icon="res://assets/Frame 37.ico"
 
 [autoload]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c8lyeh72rbeep"]
+[gd_scene load_steps=27 format=3 uid="uid://c8lyeh72rbeep"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
@@ -24,13 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_v45f6"]
 [ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="21_j6yl5"]
 [ext_resource type="PackedScene" uid="uid://dqxx67pcn36de" path="res://Scenes/trap/beartrap.tscn" id="25_42ecr"]
-[ext_resource type="Script" path="res://Scenes/Game/trap_dialog_trigger.gd" id="25_n7ggl"]
+[ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="25_nufhl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q1li0"]
-size = Vector3(1, 23.9547, 1)
 
 [node name="Level Bali" type="Node3D"]
 script = ExtResource("1_8jw7r")
@@ -246,13 +243,5 @@ can_move = false
 transform = Transform3D(0.999994, 0.00336848, 0, -0.00336848, 0.999994, 0, 0, 0, 1, 271.219, 9.61504, 0.781439)
 hewan_trapped = NodePath("../Rusa")
 
-[node name="Area3D" type="Area3D" parent="Node3D/Beartrap"]
-transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -6.26636, 0, -0.0257593)
-collision_layer = 0
-script = ExtResource("25_n7ggl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Beartrap/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00202179, 10.0203, 0)
-shape = SubResource("BoxShape3D_q1li0")
-
-[connection signal="body_entered" from="Node3D/Beartrap/Area3D" to="Node3D/Beartrap/Area3D" method="_on_body_entered"]
+[node name="Area3D" parent="Node3D/Beartrap" instance=ExtResource("25_nufhl")]
+file_name = "bali_perangkap"

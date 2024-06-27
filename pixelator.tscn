@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2djq"]
 shader = ExtResource("1_4q5r7")
-shader_parameter/pixelation = 700.0
+shader_parameter/pixelation = 900.0
 
 [node name="pixelator" type="Sprite2D"]
 material = SubResource("ShaderMaterial_i2djq")
