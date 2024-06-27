@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c8lyeh72rbeep"]
+[gd_scene load_steps=28 format=3 uid="uid://c8lyeh72rbeep"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_wdrf8"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="12_c6jad"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_vo8i8"]
-[ext_resource type="ArrayMesh" uid="uid://b2b3v0ypeipa8" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_199.res" id="14_4r7nt"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_202.res" id="15_pljoh"]
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_186.res" id="16_haoq2"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_175.res" id="17_k3nlh"]
@@ -107,10 +106,10 @@ water = NodePath("../../water2")
 [node name="grapling_for_trees" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
-transform = Transform3D(2, 0, 0, 0, 0.405, 0, 0, 0, 1, 25.0218, 5.38412, 0)
+transform = Transform3D(0.94, 0, 0, 0, 0.405, 0, 0, 0, 1, 24.2036, 1.96758, 1.19209e-07)
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
-transform = Transform3D(2, 0, 0, 0, 0.405, 0, 0, 0, 1, 34.8402, 3.41757, -9.53674e-07)
+transform = Transform3D(0.27, 0, 0, 0, 0.405, 0, 0, 0, 1, 20.8748, 3.19042, 1.19209e-07)
 
 [node name="grapling_for_tree3" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
 transform = Transform3D(2, 0, 0, 0, 0.405, 0, 0, 0, 1, 93.6972, 3.83707, -1.90735e-06)
@@ -129,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201.939, 3.50339, -1.90735e-0
 [node name="checkpoints" type="Node3D" parent="GridMapGround"]
 
 [node name="checkpoint jalbali" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("11_f7x67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5192, -0.746205, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21734, -5.98743, 0)
 wallleft = NodePath("../../wall/invisiblewall jb kiri")
 wallright = NodePath("../../wall/invisiblewall jb kanan")
 syarat_hewan = Array[String](["jalak bali"])
@@ -146,8 +145,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.787, -8.47054, 0)
 [node name="tree" type="Node3D" parent="GridMapGround"]
 
 [node name="Trees(1)Cube199" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-0.379708, -0.0839956, -1.38234, -0.0859281, 1.17057, -0.0645119, 0.947393, 0.0725056, -0.559884, 21.3369, -4.98759, -6.15293)
-mesh = ExtResource("14_4r7nt")
+transform = Transform3D(-0.25223, -0.0737654, -1.44381, -0.0859281, 1.17057, -0.0645119, 0.988995, 0.0828914, -0.373831, 21.3369, -4.98759, -2.4377)
+mesh = ExtResource("17_k3nlh")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube202" type="MeshInstance3D" parent="GridMapGround/tree"]
@@ -227,12 +226,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.74, 6.86791, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 
 [node name="Anjing Kintamani2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.361, -1.51186, 1.38397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.685, -9.29618, 1.38397)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 can_move = false
 
 [node name="Beartrap2" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.049, -1.98456, 1.01185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.373, -9.76888, 1.01185)
 hewan_trapped = NodePath("../Anjing Kintamani2")
 
 [node name="Rusa2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_j6yl5")]
@@ -240,11 +239,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.504, 3.91001, 0)
 mesh = NodePath("../Rusa/Menjangan_Skeleton/Skeleton3D/Menjangan")
 
 [node name="Rusa" parent="Node3D" instance=ExtResource("21_j6yl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5058, -0.717766, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 271.915, 10.9115, 0)
 can_move = false
 
 [node name="Beartrap" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8127, -1.98801, 0.770227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 271.222, 9.6413, 0.770227)
 hewan_trapped = NodePath("../Rusa")
 
 [node name="Area3D" type="Area3D" parent="Node3D/Beartrap"]

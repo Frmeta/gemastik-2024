@@ -1,15 +1,159 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnfy6e77rgmpv"]
+[gd_scene load_steps=13 format=3 uid="uid://bnfy6e77rgmpv"]
 
+[ext_resource type="Script" path="res://Scripts/hyperspace.gd" id="1_ffe7d"]
 [ext_resource type="Shader" path="res://hyperspace.gdshader" id="1_uo1qi"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_ipgul"]
+[ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="3_b0t5q"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="5_igrw1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h81ma"]
 shader = ExtResource("1_uo1qi")
 shader_parameter/enabled = true
 
-[node name="hyperspace" type="Node2D"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xp4nj"]
+sky_top_color = Color(0.235294, 0.145098, 0.45098, 1)
+sky_horizon_color = Color(0.0941176, 0, 0.329412, 1)
+ground_bottom_color = Color(0.0666667, 0, 0.262745, 1)
+ground_horizon_color = Color(0.129412, 0, 0.427451, 1)
+ground_curve = 0.017411
+sun_angle_max = 54.83
+
+[sub_resource type="Sky" id="Sky_tk84j"]
+sky_material = SubResource("ProceduralSkyMaterial_xp4nj")
+
+[sub_resource type="Environment" id="Environment_mrc7j"]
+background_mode = 2
+sky = SubResource("Sky_tk84j")
+sky_rotation = Vector3(1.9635, -0.226893, 0)
+ambient_light_source = 2
+ambient_light_color = Color(0.964706, 0.266667, 0.980392, 1)
+ambient_light_energy = 0.25
+
+[sub_resource type="Animation" id="Animation_ut15o"]
+resource_name = "go"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.349066, 0), Vector3(0, -0.698132, 0), Vector3(0, -2.44346, 0), Vector3(0, -2.79253, 0), Vector3(0, -2.87979, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoniFinal:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoniFinal:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoniFinal:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-50, -0.25, 0, 0.25, 0, 60, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+
+[sub_resource type="Animation" id="Animation_p5bww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoniFinal:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoniFinal:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoniFinal:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb7no"]
+_data = {
+"RESET": SubResource("Animation_p5bww"),
+"go": SubResource("Animation_ut15o")
+}
+
+[node name="hyperspace" type="Node3D"]
+script = ExtResource("1_ffe7d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_h81ma")
 scale = Vector2(7.63912, 3.08196)
 texture = ExtResource("2_ipgul")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.94103, 0, -7.98692)
+
+[node name="DoniFinal" parent="." instance=ExtResource("3_b0t5q")]
+
+[node name="Mas" parent="DoniFinal" instance=ExtResource("5_igrw1")]
+transform = Transform3D(1, 0, 0, 0, 0.714204, -0.699938, 0, 0.699938, 0.714204, -0.730731, -0.220962, 2.01195)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrc7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xb7no")
+}
+autoplay = "go"

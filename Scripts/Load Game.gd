@@ -42,9 +42,10 @@ func load_button_pressed(idx):
 	print("playing as " + str(GM.data_file_number) + ", with explored level: " + str(GM.explored_level))
 	
 	if is_new_game:
-		get_tree().change_scene_to_file("res://Scenes/Game/prolog.tscn")
+		GM.current_level = 0
+		Transition.change_scene("res://Scenes/Game/prolog.tscn")
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
+		Transition.change_scene("res://Scenes/Game/level_select.tscn")
 	
 
 func delete_button_pressed(idx):

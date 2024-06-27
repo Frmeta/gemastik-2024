@@ -23,7 +23,8 @@ func _ready():
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.PROLOGUE2)
 	await EventDistributor.end_dialogue
 	prolog_end=true
-	Transition.change_scene("res://Scenes/Game/level_0.tscn")
+	# Transition.change_scene("res://Scenes/Game/level_0.tscn")
+	Transition.change_scene("res://Scenes/Game/hyperspace.tscn")
 
 func foo():
 	counter+=1

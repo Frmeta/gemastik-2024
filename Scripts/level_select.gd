@@ -18,6 +18,10 @@ func _ready():
 		else:
 			temp.set_color_to_red()
 	reset_pins_animation()
+	
+	# doni animation
+	$DoniFinal/AnimationTree.set("parameters/MainState/transition_request", "story")
+	$DoniFinal/AnimationTree.set("parameters/Story/transition_request", "idle")
 
 func _process(delta):
 	# update mouse_pos
@@ -56,13 +60,7 @@ func _input(event):
 			# level is unlocked
 			GM.current_level = selected_level
 			GM.scanned_animal = []
-			
-			var level_path = "res://Scenes/Game/level_" + str(selected_level) + ".tscn"
-			if FileAccess.file_exists(level_path):
-				#get_tree().change_scene_to_file(level_path)
-				Transition.change_scene(level_path)
-			else:
-				print("level blom siap")
+			Transition.change_scene("res://Scenes/Game/hyperspace.tscn")
 		else:
 			# level is locked
 			pass

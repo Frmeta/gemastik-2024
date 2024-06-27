@@ -2,7 +2,7 @@ extends Area3D
 
 @onready var minus_timer = $minus_timer
 @onready var progress_bar = $SubViewport/ProgressBar
-@export var target_hits:=20
+@export var target_hits:=10
 
 var trap : Trap
 var can_button_mash = false
