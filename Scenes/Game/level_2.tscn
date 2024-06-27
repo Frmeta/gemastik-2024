@@ -180,12 +180,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
 [node name="Komodo2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 366.127, 21.8016, -1.90735e-06)
-visible = false
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
 can_move = false
 
 [node name="Komodo3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 374.058, 19.2613, 0)
-visible = false
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
 can_move = false
