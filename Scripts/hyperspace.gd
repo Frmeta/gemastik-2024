@@ -12,8 +12,10 @@ func _ready():
 	
 	# goto level scene
 	var level_path = "res://Scenes/Game/level_" + str(GM.current_level) + ".tscn"
-	# get_tree().change_scene_to_file(level_path)
-	if FileAccess.file_exists(level_path):
+	if ResourceLoader.exists(level_path):
 		Transition.change_scene(level_path)
 	else:
-		print("level blom siap")
+		print(level_path + " tidak exists filenya")
+		print(FileAccess.file_exists("res://Scenes/Game/level_select.tscn"))
+		Transition.change_scene("res://Scenes/Game/level_select.tscn")
+		

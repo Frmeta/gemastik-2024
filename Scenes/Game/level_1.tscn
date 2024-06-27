@@ -243,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 271.915, 10.9115, 0)
 can_move = false
 
 [node name="Beartrap" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 271.222, 9.6413, 0.770227)
+transform = Transform3D(0.999994, 0.00336848, 0, -0.00336848, 0.999994, 0, 0, 0, 1, 271.219, 9.61504, 0.781439)
 hewan_trapped = NodePath("../Rusa")
 
 [node name="Area3D" type="Area3D" parent="Node3D/Beartrap"]

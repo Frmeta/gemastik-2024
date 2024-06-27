@@ -65,7 +65,7 @@ syarat_hewan = Array[String](["bekantan"])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.533, 8.14409, 0)
 wallleft = NodePath("../../wall/invisiblewall orangutan kiri")
 wallright = NodePath("../../wall/invisiblewall orangutan kanan")
-syarat_hewan = Array[String](["bekantan"])
+syarat_hewan = Array[String](["orang utan"])
 
 [node name="checkpoint2" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.696, 0.479511, 0)
@@ -86,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.6031, 19.2367, -7.62939e-0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.509, 0.729, 0)
 wallleft = NodePath("../../wall/invisiblewall sisa kiri")
 wallright = NodePath("../../wall/invisiblewall sisa kanan")
-syarat_hewan = Array[String](["orang utan", "bunglon"])
+syarat_hewan = Array[String](["bekantan", "bunglon"])
 
 [node name="checkpoint5" parent="GridMapGround/checkpoints" instance=ExtResource("8_buawd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.427, 0.965909, 0)
@@ -156,7 +156,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37536, -4.83502, -0.334306)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0462, 5.43164, -0.972651)
 
 [node name="almanac_sign" parent="GridMapGround" instance=ExtResource("15_uyqrq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.4038, -8.2853, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.4038, -9.02054, 0)
 
 [node name="GridMapVines" parent="." instance=ExtResource("9_k6fmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356293, 0.346562, 0)
@@ -219,16 +219,16 @@ scene_after_win = "level_select"
 [node name="Animals" type="Node3D" parent="."]
 
 [node name="Bekantan" parent="Animals" instance=ExtResource("17_8pc6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5313, 6.29583, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.269, 3.16821, 0)
 
 [node name="Bekantan2" parent="Animals" instance=ExtResource("17_8pc6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7542, -6.56424, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 289.706, 3.07805, 0)
 
 [node name="Bekantan3" parent="Animals" instance=ExtResource("17_8pc6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.105, -5.66764, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 298.057, 3.97465, 0)
 
 [node name="Bekantan4" parent="Animals" instance=ExtResource("17_8pc6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.6415, 1.39699, -0.00628281)
+transform = Transform3D(0.999964, -0.00844729, 0, 0.00844729, 0.999964, 0, 0, 0, 1, 308.151, 8.72063, -0.00628281)
 
 [node name="Kijang" parent="Animals" instance=ExtResource("18_8p6yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.3, 1.249, -3.05176e-05)
@@ -255,16 +255,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 318.933, -1.42959, -1.36424e-
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 321.453, -1.11222, -1.36424e-12)
 
 [node name="Orang Utan" parent="Animals" instance=ExtResource("20_4mqpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.91, -0.642847, -1.36424e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8341, -0.642847, -1.36424e-12)
 
 [node name="Orang Utan2" parent="Animals" instance=ExtResource("20_4mqpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 287.552, -0.642847, -1.36424e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.4761, -0.642847, -1.36424e-12)
 
 [node name="Orang Utan3" parent="Animals" instance=ExtResource("20_4mqpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.71, 0.925388, -1.36424e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6341, 0.925388, -1.36424e-12)
 
 [node name="Orang Utan4" parent="Animals" instance=ExtResource("20_4mqpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 311.655, 0.927525, -1.36424e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.5791, 0.927525, -1.36424e-12)
 
 [node name="Orang Utan5" parent="Animals" instance=ExtResource("20_4mqpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 381.448, -1.70979, -1.36424e-12)

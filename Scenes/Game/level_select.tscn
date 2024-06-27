@@ -120,6 +120,7 @@ shape = SubResource("ConvexPolygonShape3D_ixxex")
 
 [node name="Mouse" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67408, 0, -1.24537)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mouse"]
 shape = SubResource("SphereShape3D_av73h")
