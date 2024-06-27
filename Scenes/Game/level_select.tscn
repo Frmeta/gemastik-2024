@@ -94,7 +94,6 @@ theme_override_font_sizes/font_size = 48
 text = "Kembali ke Menu"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 160
 theme_override_constants/margin_top = 40
@@ -105,7 +104,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("6_w5rr8")
 theme_override_font_sizes/font_size = 32
-text = "KALIMANNN"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

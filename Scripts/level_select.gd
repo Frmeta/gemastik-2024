@@ -73,13 +73,7 @@ func _on_mouse_body_entered(body):
 		selected_level = pin_no
 		
 		# show label
-		var debug = str(pin_no) + " "
-		if GM.explored_level > pin_no:
-			debug += "(cleared)"
-		elif GM.explored_level == pin_no:
-			debug += "(current)"
-		else:
-			debug += "(locked)"
+		var debug = GM.pulau_list_resource.list[pin_no].nama
 			
 		
 		nama_pulau_label.text = debug

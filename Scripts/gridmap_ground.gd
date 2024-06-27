@@ -1,6 +1,6 @@
 extends GridMap
 
-const START_X = -30
+const START_X = -50
 const END_X = 470
 
 const START_Y = -15
@@ -37,7 +37,7 @@ func _ready():
 	var highest2
 	for i in range(smooth_step):
 		highest2 = smooth(highest)
-		fill (highest2, idx, t, highest, true)
+		fill (highest2, idx, t, highest, i > 3)
 		
 		highest = highest2
 		t -= 1
@@ -143,7 +143,7 @@ func fill(highest, idx, z:int, front_highest, place_tree:bool):
 			set_cell_item(Vector3i(x, highest[i], z), top_index, 0)
 			
 			# place tree
-			if place_tree and randi() % 50 == 0 and SPAWN_TREE and i > START_X and i < END_X-2:
+			if place_tree and randi() % 30 == 0 and SPAWN_TREE and i > START_X and i < END_X-2:
 				# mencegah pohon yang terbang
 				if abs(highest[i]-highest[i-1]) <= 1 and abs(highest[i]-highest[i+1]) <= 1:
 					var bum = dummy_tree.instantiate()
