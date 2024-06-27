@@ -111,6 +111,7 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34321, 0)
 
 [node name="sign" type="MeshInstance3D" parent="."]
+visible = false
 cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_ggh3o")
