@@ -14,6 +14,7 @@ script = ExtResource("1_o7tdo")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
+mouse_filter = 1
 texture = ExtResource("2_xas6e")
 region_rect = Rect2(0, 0, 152, 152)
 patch_margin_left = 107
@@ -56,6 +57,7 @@ size_flags_vertical = 0
 
 [node name="nama" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_colors/font_color = Color(0.635294, 0.294118, 0.294118, 1)
 theme_override_fonts/font = ExtResource("4_yhlq6")
 theme_override_font_sizes/font_size = 30
@@ -64,6 +66,7 @@ vertical_alignment = 1
 
 [node name="dialogue" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_dx3r7")
 theme_override_font_sizes/font_size = 30
@@ -71,5 +74,6 @@ text = "dialogue"
 
 [node name="haram" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 0
 text = "                                                                                                                                                                                               "

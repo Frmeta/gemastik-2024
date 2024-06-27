@@ -11,7 +11,7 @@ func set_info(file_number, level_explored:int):
 		$Paper/delete_btn.hide()
 	else:
 		$Paper/Label.text = "load file - " + str(file_number)
-		$Paper/Label2.text = "progress - " + str(roundi((level_explored/3*10))) + "%" 
+		$Paper/Label2.text = "progress - " + str(roundi((level_explored/3.0*100))) + "%" 
 		$Paper/delete_btn.show()
 		
 func _on_load_btn_pressed():

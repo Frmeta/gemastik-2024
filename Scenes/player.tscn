@@ -121,6 +121,7 @@ attenuation_model = 2
 
 [node name="poison_particle" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.445468, 0)
+emitting = false
 amount = 15
 process_material = SubResource("ParticleProcessMaterial_fng4l")
 draw_pass_1 = SubResource("QuadMesh_nx3qb")

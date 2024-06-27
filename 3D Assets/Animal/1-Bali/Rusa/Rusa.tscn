@@ -1274,8 +1274,9 @@ _data = {
 "Menjangan": SubResource("Animation_d6te4")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_pru47"]
-radius = 1.51621
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5j80k"]
+radius = 0.705
+height = 2.671
 
 [node name="Rusa" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 8
@@ -1444,7 +1445,8 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_pru47")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.260833, 0.373459)
+shape = SubResource("CapsuleShape3D_5j80k")
 
 [node name="Node3D" type="Node3D" parent="."]
 script = ExtResource("4_qn4uw")

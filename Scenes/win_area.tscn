@@ -15,6 +15,7 @@ shape = SubResource("SphereShape3D_3pnou")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(5.425, 0, 0, 0, 5.425, 0, 0, 0, 5.425, 0, 0, 0)
+visible = false
 texture = ExtResource("2_u3n35")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

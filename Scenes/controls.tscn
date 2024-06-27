@@ -53,7 +53,6 @@ texture = ExtResource("3_66oie")
 stretch_mode = 2
 
 [node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
-visible = false
 
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
@@ -79,6 +78,7 @@ stretch_mode = 0
 script = ExtResource("6_i8yiw")
 
 [node name="Pause Panel" type="TextureRect" parent="Pause/Pause Button"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
