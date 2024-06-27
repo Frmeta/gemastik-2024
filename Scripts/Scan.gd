@@ -1,6 +1,6 @@
 extends Node3D
 
-var reach = 11.0
+var reach = 21.0
 
 var collider
 
