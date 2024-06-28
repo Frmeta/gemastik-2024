@@ -9,9 +9,11 @@ var target_position
 
 var pins = []
 
+const MAX_LEVEL = 3
+
 func _ready():
 	# init pins
-	for i in range(2):
+	for i in range(MAX_LEVEL):
 		var temp = get_node("Pin" + str(i))
 		pins.append(temp)
 		if i > GM.explored_level:
@@ -108,6 +110,7 @@ func reset_pins_animation():
 		if i==selected_level:
 			pins[i].selected()
 		else:
+			print(str(i) + " is not selected")
 			pins[i].unselected()
 
 func _on_main_menu_button_pressed():

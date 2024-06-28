@@ -57,6 +57,10 @@ func _process(delta):
 		
 		can_tutorial = false
 		visible = false
+		
+		for n in $"../PanelAlmanac/TabContainer/Halaman Detail Pulau".get_children():
+			if n is TextureButton:
+				n.disabled=false
 
 func add_subs(node, file_path, position=null, trigger="space"):
 	nodes.append(node)
