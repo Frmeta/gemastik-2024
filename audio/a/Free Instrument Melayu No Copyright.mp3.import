@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgdhaycrw6kj3"
+path="res://.godot/imported/Free Instrument Melayu No Copyright.mp3-57eea35ac3e2b4a7cacd1ee865edfa32.mp3str"
+
+[deps]
+
+source_file="res://audio/a/Free Instrument Melayu No Copyright.mp3"
+dest_files=["res://.godot/imported/Free Instrument Melayu No Copyright.mp3-57eea35ac3e2b4a7cacd1ee865edfa32.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

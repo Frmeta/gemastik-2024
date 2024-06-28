@@ -15,6 +15,12 @@ var is_animating_almanac = false
 func _ready():
 	set_up()
 	
+	if GM.current_level==1:
+		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright).ogg", -10)
+	elif GM.current_level==0:
+		GM.play_audio_background("res://audio/forest_sound/524995__klankbeeld__forest-summer-roond-008-200619_0186.wav",-10)
+	elif GM.current_level==2:
+		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
