@@ -223,7 +223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.74, 6.86791, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 
 [node name="Anjing Kintamani2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.685, -9.29618, 1.38397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.685, -9.29618, 0.785703)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 can_move = false
 
