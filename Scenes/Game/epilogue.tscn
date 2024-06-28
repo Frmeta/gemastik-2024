@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxjxm47t2fj4i"]
+[gd_scene load_steps=20 format=3 uid="uid://cxjxm47t2fj4i"]
 
 [ext_resource type="Script" path="res://Scenes/Game/epilogue.gd" id="1_5aytu"]
 [ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="2_14574"]
 [ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_piaq6"]
 [ext_resource type="Script" path="res://Scenes/Game/mas_pos_target.gd" id="4_ko0em"]
-[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="5_7y4qt"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="5_7y4qt"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_80pqy"]
-[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_kj1w4"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="7_xh024"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="8_qlye5"]
 [ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="9_k7mp6"]
@@ -20,6 +19,9 @@ ambient_light_color = Color(1, 0.443137, 0.984314, 1)
 ambient_light_energy = 0.67
 ssr_enabled = true
 ssao_enabled = true
+ssil_enabled = true
+ssil_sharpness = 0.5
+sdfgi_use_occlusion = true
 sdfgi_energy = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ollm1"]
@@ -33,7 +35,7 @@ material = SubResource("StandardMaterial3D_ollm1")
 size = Vector2(10.115, 8.765)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fent"]
-size = Vector3(11.4785, 1.11646, 12.6988)
+size = Vector3(11.4785, 0.91614, 12.6988)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv262"]
 transparency = 1
@@ -109,7 +111,7 @@ mesh = SubResource("QuadMesh_qgpo6")
 [node name="Markers" type="Node3D" parent="."]
 
 [node name="Fall Pos" type="Marker3D" parent="Markers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98424, 0.811865, -1.75811)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88424, 0.483108, 0.34189)
 gizmo_extents = 0.1
 
 [node name="end pos" type="Marker3D" parent="Markers"]
@@ -135,17 +137,14 @@ visible = false
 [node name="skeleton_mas" parent="." instance=ExtResource("6_80pqy")]
 transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 3.55932, -0.582437, -0.403077)
 
-[node name="Player" parent="." instance=ExtResource("7_kj1w4")]
-
 [node name="DoniFinal" parent="." instance=ExtResource("7_xh024")]
-visible = false
 
 [node name="floor_body" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93359, 0.509644, -2.06761)
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor_body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.58508, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.68524, 0)
 shape = SubResource("BoxShape3D_8fent")
 
 [node name="Beam" type="MeshInstance3D" parent="."]
@@ -215,7 +214,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_k7mp6")
 theme_override_font_sizes/font_size = 120
-text = "SELESAI"
+text = "TO BE CONTINUED"
 
 [node name="MarginContainer2" type="MarginContainer" parent="End/PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)

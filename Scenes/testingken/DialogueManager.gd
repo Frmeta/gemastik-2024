@@ -8,6 +8,9 @@ func _ready():
 
 func load_dialog(file_path, nama_pulau:String="", fun_fact:String=""): #File path ini dapet dari DialogueEnum
 	textbox.visible=true
+	var almanac_input = InputMap.action_get_events("almanac")
+	InputMap.action_erase_events("almanac")
+	
 	if FileAccess.file_exists(file_path):
 		var dataFile = FileAccess.open(file_path, FileAccess.READ)
 		var parsedFile = JSON.parse_string(dataFile.get_as_text())
@@ -29,6 +32,9 @@ func load_dialog(file_path, nama_pulau:String="", fun_fact:String=""): #File pat
 			print(parsedFile)
 	else:
 		print("file not exists")
+	
+	for event in almanac_input:
+			InputMap.action_add_event("almanac", event)
 
 func fix_length(str : String):
 	var start=0
