@@ -91,7 +91,7 @@ func scan_hewan(hewan_name):
 	scanned_animal.append(hewan_name)
 	EventDistributor.emit_signal("animal_captured")
 
-func play_audio(file_path, pitch=0.0, volume = 0):
+func play_audio(file_path, pitch=1.0, volume = 0):
 	if not audiostream2.playing :
 		audiostream2.volume_db=volume
 		audiostream2.pitch_scale = pitch
@@ -103,8 +103,8 @@ func play_audio(file_path, pitch=0.0, volume = 0):
 		audiostream3.stream = load(file_path)
 		audiostream3.play()
 
-func play_audio_background(file_path):
-	audiostream1.volume_db=0
+func play_audio_background(file_path, volume_db=0):
+	audiostream1.volume_db=volume_db
 	audiostream1.stream= load(file_path)
 	audiostream1.play()
 

@@ -43,8 +43,9 @@ func _process(delta):
 		dialogue_label.visible_ratio=1
 		still_typing = false
 	elif Input.is_action_just_pressed("ui_accept") and not still_typing:
+		if self.visible:
+			GM.play_audio("res://audio/a/button_clickback.ogg", 1,-20)
 		still_typing = false
-		GM.play_audio("res://audio/a/button_clickback.ogg", 1,-20)
 		GM.stop_doni()
 		await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
 		emit_signal("go_to_next_line")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3dd0tostp78k"
+path="res://.godot/imported/Balinese Instrumental ( No Copyright)-2.ogg-58ea289e0dc2482f4a08c15b2b2d8749.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg"
+dest_files=["res://.godot/imported/Balinese Instrumental ( No Copyright)-2.ogg-58ea289e0dc2482f4a08c15b2b2d8749.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
