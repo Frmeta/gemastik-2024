@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://da8h8buq1wyre"]
+[gd_scene load_steps=21 format=3 uid="uid://da8h8buq1wyre"]
 
 [ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_qvhgm"]
 [ext_resource type="Texture2D" uid="uid://c7ubmuol41ihi" path="res://assets/foto tandatanya.png" id="2_shbio"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://duy6b30kdxw6h" path="res://assets/back.png" id="5_1e82x"]
 [ext_resource type="Texture2D" uid="uid://w8tx6iedrwfg" path="res://assets/pulau/Papua.png" id="6_a3o4p"]
 [ext_resource type="FontFile" uid="uid://hyhybg5ya00v" path="res://assets/fonts/IslandMoments-Regular.ttf" id="7_wj6jv"]
+[ext_resource type="Texture2D" uid="uid://cnhr8gj21rw1b" path="res://assets/coming_soon.png" id="9_j5hdj"]
 [ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
 [ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/0-Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
 [ext_resource type="Texture2D" uid="uid://b3hhr5nevmsoj" path="res://assets/pulau/peta_indo_no_x.png" id="12_2x8a0"]
@@ -217,7 +218,6 @@ current_tab = 1
 tabs_visible = false
 
 [node name="Halaman Peta Indo" type="Control" parent="PanelAlmanac/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Peta Indonesia" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
@@ -250,28 +250,78 @@ offset_top = 114.0
 offset_right = 266.0
 offset_bottom = 242.0
 
+[node name="TextureRect" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 253.5
+offset_top = -12.5
+offset_right = 447.5
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.232129
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_j5hdj")
+
 [node name="TextureButton4" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
+visible = false
 layout_mode = 1
 offset_left = 270.0
 offset_top = 4.0
 offset_right = 398.0
 offset_bottom = 132.0
 
+[node name="TextureRect2" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+layout_mode = 0
+offset_left = -167.0
+offset_top = 108.0
+offset_right = 27.0
+offset_bottom = 302.0
+rotation = -0.155334
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_j5hdj")
+
 [node name="TextureButton5" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
+visible = false
 layout_mode = 1
 offset_left = -167.0
 offset_top = 108.0
 offset_right = -39.0
 offset_bottom = 236.0
 
+[node name="TextureRect3" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -16.0
+offset_right = 277.0
+offset_bottom = 178.0
+rotation = 0.0174533
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_j5hdj")
+
 [node name="TextureButton6" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
+visible = false
 layout_mode = 1
 offset_left = 83.0
 offset_top = -16.0
 offset_right = 211.0
 offset_bottom = 112.0
 
+[node name="TextureRect4" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+layout_mode = 0
+offset_left = -282.0
+offset_top = 2.0
+offset_right = -242.0
+offset_bottom = 42.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_j5hdj")
+
 [node name="TextureButton7" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
+visible = false
 layout_mode = 1
 offset_left = -282.0
 offset_top = 2.0
@@ -279,6 +329,7 @@ offset_right = -154.0
 offset_bottom = 130.0
 
 [node name="Halaman Detail Pulau" type="Control" parent="PanelAlmanac/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Peta Pulau" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
