@@ -87,13 +87,17 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("5_er0l6")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button/HBoxContainer"]
+[node name="BackButton" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("6_w5rr8")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 46
 text = "Kembali ke Menu"
+flat = true
+alignment = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2

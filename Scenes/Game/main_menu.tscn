@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=11 format=3 uid="uid://c0wapcou1i45a"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
 [ext_resource type="Texture2D" uid="uid://chxggmbgrrrqq" path="res://assets/Doni’s Adventure.png" id="2_d3a57"]
@@ -7,6 +7,64 @@
 [ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="5_g6wtw"]
 [ext_resource type="Texture2D" uid="uid://b3qiw8iuqi3vi" path="res://assets/ui/back_menu/arrow.png" id="7_geyk0"]
 [ext_resource type="PackedScene" uid="uid://b5ooywqg7faxc" path="res://Scenes/load_button.tscn" id="8_yiq52"]
+
+[sub_resource type="Animation" id="Animation_r221m"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-145, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_wfpvi"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-18, -0.25, 0, 0.25, 0, -145, -0.25, 0, 0.25, 0, -132, -0.25, 0, 0.25, 0, -18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.8, 6.6, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-23, -0.25, 0, 0.25, 0, -33, -0.25, 0, 0.25, 0, -84, -0.25, 0, 0.25, 0, -23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.8, 6.6, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g01pl"]
+_data = {
+"RESET": SubResource("Animation_r221m"),
+"idle": SubResource("Animation_wfpvi")
+}
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -22,11 +80,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -33.0
+offset_right = 5935.0
+offset_bottom = 3687.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.375, 0.375)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_r6jo8")
+
+[node name="BG Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g01pl")
+}
+autoplay = "idle"
 
 [node name="TabContainer" type="TabContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -44,6 +113,7 @@ visible = false
 layout_mode = 2
 
 [node name="BG" type="TextureRect" parent="TabContainer/Title Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,13 +214,17 @@ offset_bottom = 40.0
 layout_mode = 2
 texture = ExtResource("7_geyk0")
 
-[node name="Label" type="Label" parent="TabContainer/Load Game/VBox/Kebali ke menu/HBoxContainer"]
+[node name="BackButton" type="Button" parent="TabContainer/Load Game/VBox/Kebali ke menu/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("5_g6wtw")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 46
 text = "Kembali ke Menu"
+flat = true
+alignment = 0
 
 [node name="cheatbutton" type="Button" parent="TabContainer/Load Game/VBox"]
 visible = false
@@ -245,6 +319,8 @@ Daya Adianto, S.Kom., M.Kom
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
+
+[node name="SplashScreen" type="Node2D" parent="."]
 
 [connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TabContainer/Title Screen/VBoxContainer/MarginContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]

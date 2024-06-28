@@ -28,6 +28,10 @@ func _ready():
 	$DoniFinal/AnimationTree.set("parameters/MainState/transition_request", "story")
 	$DoniFinal/AnimationTree.set("parameters/Story/transition_request", "idle")
 
+	# doni position
+	$DoniFinal.position = pins[min(pins.size()-1, GM.current_level)].position
+	# $DoniFinal.position.y = 0
+
 func _process(delta):
 	
 	if moving_doni:
@@ -74,6 +78,7 @@ func _input(event):
 			# user didn't click level
 			pass
 		elif GM.explored_level >= selected_level:
+			# user click level
 			moving_doni = true
 			$DoniFinal.move()
 			
@@ -117,7 +122,6 @@ func reset_pins_animation():
 		if i==selected_level:
 			pins[i].selected()
 		else:
-			print(str(i) + " is not selected")
 			pins[i].unselected()
 
 func _on_main_menu_button_pressed():

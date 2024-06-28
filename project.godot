@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gemastik2024"
-run/main_scene="res://Scenes/Game/main_menu.tscn"
+run/main_scene="res://Scenes/Game/splash_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.917647, 0.890196, 0.956863, 1)
 boot_splash/image="res://assets/frekensam.png"
@@ -86,3 +86,7 @@ open_trap={
 3d_physics/layer_5="Vines"
 3d_physics/layer_6="movingPlatform"
 3d_physics/layer_7="grapling_tree"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

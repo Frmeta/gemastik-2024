@@ -129,6 +129,8 @@ func find_destination():
 			
 			# ke atas sampai ketemu tempat bertengger
 			# print("hit di " + str(ray.get_collision_point()))
+			if !is_inside_tree(): return
+			
 			ray.global_position = ray.get_collision_point() + Vector3(0, 0.0, 0)
 			ray.target_position = Vector3(0, 0, 0)
 			
@@ -145,7 +147,10 @@ func find_destination():
 				await wait_for_next_frame()
 			
 			# print("atasnya adalah" + str(ray.global_position))
-			return ray.global_position
+			if is_inside_tree():
+				return ray.global_position
+			else:
+				null
 		else:
 			# perpanjang scan_length
 			scan_length += 3
