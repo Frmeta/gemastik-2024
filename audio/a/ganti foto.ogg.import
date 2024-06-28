@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drrnkb5fbtgx2"
+path="res://.godot/imported/ganti foto.ogg-df0f4c70b94fc9e826fbb67ac039b642.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/a/ganti foto.ogg"
+dest_files=["res://.godot/imported/ganti foto.ogg-df0f4c70b94fc9e826fbb67ac039b642.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

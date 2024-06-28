@@ -29,10 +29,14 @@ func _ready():
 	$DoniFinal/AnimationTree.set("parameters/Story/transition_request", "idle")
 
 func _process(delta):
+	
 	if moving_doni:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stream = load("res://audio/footsteps-pixabay.wav")
+			$AudioStreamPlayer.play()
 		$DoniFinal.global_position = lerp($DoniFinal.global_position, target_position,0.01)
 		var dir = Vector3.ZERO
-		var delta_position = $DoniFinal.rotation_degrees-target_position
+		var delta_position = $DoniFinal.global_position-target_position
 		dir.y= rad_to_deg(atan2(-delta_position.x,-delta_position.z))
 		$DoniFinal.rotation_degrees = lerp($DoniFinal.rotation_degrees, dir,0.1)
 		await get_tree().create_timer(0.001).timeout
@@ -72,6 +76,9 @@ func _input(event):
 		elif GM.explored_level >= selected_level:
 			moving_doni = true
 			$DoniFinal.move()
+			
+			#play audio
+			GM.play_audio("res://audio/a/button_click.mp3")
 
 			# level is unlocked
 			GM.current_level = selected_level
@@ -114,4 +121,6 @@ func reset_pins_animation():
 			pins[i].unselected()
 
 func _on_main_menu_button_pressed():
+	#play audio
+	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")

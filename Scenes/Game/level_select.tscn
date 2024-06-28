@@ -165,6 +165,9 @@ transform = Transform3D(0.998511, 0, -0.0545493, 0, 1, 0, 0.0545493, 0, 0.998511
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fciay")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="body_entered" from="Mouse" to="." method="_on_mouse_body_entered"]
 [connection signal="body_exited" from="Mouse" to="." method="_on_mouse_body_exited"]

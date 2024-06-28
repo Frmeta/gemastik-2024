@@ -15,8 +15,10 @@ func set_info(file_number, level_explored:int):
 		$Paper/delete_btn.show()
 		
 func _on_load_btn_pressed():
+	GM.play_audio("res://audio/a/button_click.mp3")
 	emit_signal("load_btn_pressed")
 
 
 func _on_delete_btn_pressed():
+	GM.play_audio("res://audio/a/button_clickback.wav")
 	emit_signal("delete_btn_pressed")

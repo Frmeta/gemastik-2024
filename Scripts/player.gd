@@ -65,6 +65,7 @@ func _ready():
 	GM.last_checkpoint_position = position
 	EventDistributor.connect("start_dialogue",stop_move)
 	EventDistributor.connect("end_dialogue",allow_move)
+	EventDistributor.connect("scan_done",stop_scan_sound)
 	animTree.set("parameters/MainState/transition_request", "game")
 	
 	is_poisoned = false
@@ -89,6 +90,7 @@ func _input(event: InputEvent) -> void:
 					print("need bigger area of wall")
 				var dir = owner.get_mouse_location_on_map() - global_position
 				$Grapling.shoot(dir)
+				GM.play_audio("res://audio/a/grapling hook.mp3")
 			else:
 				if $Grapling.hooked:
 					curr_jumps = 2
@@ -101,8 +103,10 @@ func _input(event: InputEvent) -> void:
 			if event.pressed:
 				$Grapling.release()
 				is_scanning = true
+				$scanning.play()
 			elif event.is_released():
 				is_scanning = false
+				$scanning.stop()
 				
 
 
@@ -342,3 +346,6 @@ func knocked_back(from : Vector3):
 
 func _on_timer_timeout():
 	is_poisoned=false
+
+func stop_scan_sound():
+	$scanning.stop()

@@ -49,6 +49,7 @@ func load_button_pressed(idx):
 	
 
 func delete_button_pressed(idx):
+	GM.play_audio("res://audio/a/button_clickback.wav")
 	print("kamu delete " + str(idx))
 	var data = GM.data
 	data[idx] = {}

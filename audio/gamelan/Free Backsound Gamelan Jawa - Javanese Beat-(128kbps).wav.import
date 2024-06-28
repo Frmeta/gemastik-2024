@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmv5y8xod7foy"
+path="res://.godot/imported/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav-2a39d9b49b4e3d040f7f376d3b187754.sample"
+
+[deps]
+
+source_file="res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav"
+dest_files=["res://.godot/imported/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav-2a39d9b49b4e3d040f7f376d3b187754.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

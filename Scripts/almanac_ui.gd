@@ -17,7 +17,6 @@ func _ready():
 	visible = true
 	
 	# tutorial stuff
-	# if tutorial.can_tutorial:
 	if tutorial.can_tutorial and GM.current_level==0:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
 			if n is TextureButton:
@@ -43,6 +42,7 @@ func _ready():
 	_ke_halaman_1()
 
 func _ke_halaman_2(area_number_yoo):
+	GM.play_audio("res://audio/a/ganti foto.ogg")
 	# area_number dari kalimantan adalah 0
 	tab.current_tab = 1
 	area_number = area_number_yoo
@@ -100,6 +100,9 @@ func refresh():
 	
 
 func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool, btn_idx: int):
+	#play audio
+	GM.play_audio("res://audio/a/ganti foto.ogg")
+	
 	for i in range(hewan_buttons.size()):
 		hewan_buttons[i].get_child(0).set_selection(i==btn_idx)
 			
@@ -120,4 +123,5 @@ func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool, btn_idx: int):
 		$"PanelAlmanac/Hewan Info/deskripsi".text = "???"
 
 func _ke_halaman_1():
+	GM.play_audio("res://audio/a/ganti foto.ogg")
 	tab.current_tab = 0

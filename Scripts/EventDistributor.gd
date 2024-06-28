@@ -16,3 +16,4 @@ signal button_clicked_on_tutorial()
 signal new_checkpoint(instance)
 signal animal_captured()
 
+signal scan_done()

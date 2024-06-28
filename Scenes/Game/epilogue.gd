@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var doniAnimTree = $"Player/DoniFinal/AnimationTree"
-@onready var doni = $Player
+@onready var doniAnimTree = $"DoniFinal/AnimationTree"
+@onready var doni = $DoniFinal
 @onready var mas = $skeleton_mas
 @onready var textbox = $DialogueManager.textbox
 
@@ -16,10 +16,13 @@ var background_lerp_done = false
 var counter = 0
 
 func _ready():
-	doni.stop_move()
 	textbox.connect("go_to_next_line", foo)
 	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
 	goto(0)
+	var target = $DonisRoom.global_position.y
+	for i in range(10):
+		doni.position.y=lerp(doni.position.y,target,0.3)
+		await get_tree().create_timer(0.001).timeout
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.EPILOGUE2)
 	await EventDistributor.end_dialogue
 	epilogue_end=true
