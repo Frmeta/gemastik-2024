@@ -16,6 +16,8 @@ func _ready():
 	pulau_list = GM.pulau_list_resource.list
 	visible = true
 	
+	$"PanelAlmanac/Hewan Info".visible = true
+	
 	# tutorial stuff
 	if tutorial.can_tutorial and GM.current_level==0:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():

@@ -63,7 +63,7 @@ metadata/_editor_floor_ = Vector3(0, 24, 0)
 [node name="water" type="Node3D" parent="GridMapGround"]
 
 [node name="water" parent="GridMapGround/water" instance=ExtResource("9_cugq3")]
-transform = Transform3D(2.366, 0, 0, 0, 7.06774, 0, 0, 0, 3.15427, 90.0347, -9.08949, -14.2842)
+transform = Transform3D(2.366, 0, 0, 0, 7.06774, 0, 0, 0, 3.15427, 90.0347, -9.55085, -14.2842)
 
 [node name="water2" parent="GridMapGround/water" instance=ExtResource("9_cugq3")]
 transform = Transform3D(2.36639, 0, 0, 0, 2.23868, 0, 0, 0, 4.75185, 181.174, 33.7064, -22.7137)
