@@ -45,6 +45,7 @@ func load_button_pressed(idx):
 		GM.current_level = 0
 		Transition.change_scene("res://Scenes/Game/prolog.tscn")
 	else:
+		GM.current_level = 0
 		Transition.change_scene("res://Scenes/Game/level_select.tscn")
 	
 

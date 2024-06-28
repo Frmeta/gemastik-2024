@@ -35,4 +35,3 @@ func _process(delta):
 	else:
 		$Tip.scale_target = 0.5
 		$Tip.visible = false
-	
