@@ -53,6 +53,10 @@ func _input(event):
 	if !is_animating_almanac and event.is_action_pressed("almanac") and is_instance_valid(GM.doni):
 		# GM.doni.can_move = false
 		GM.doni.stop_move()
+		
+		#play audio
+		GM.play_audio("res://audio/a/buka_almanac.ogg")
+		
 		is_almanac_open = !is_almanac_open
 		if is_almanac_open:
 			# opening almanac
@@ -68,6 +72,9 @@ func _input(event):
 			
 		else:
 			# closing almanac
+			
+			#play audio
+			GM.play_audio("res://audio/a/buka_almanac.ogg")
 			
 			# fade out
 			var tween = get_tree().create_tween()

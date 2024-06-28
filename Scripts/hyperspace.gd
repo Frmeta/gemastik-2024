@@ -1,8 +1,8 @@
 extends Node3D
 
-
 func _ready():
-	
+	GM.stop_audio_background()
+	GM.play_audio("res://audio/a/zooming.mp3")
 	# setup player anim
 	$DoniFinal/AnimationTree.set("parameters/MainState/transition_request", "story")
 	$DoniFinal/AnimationTree.set("parameters/Story/transition_request", "flying")

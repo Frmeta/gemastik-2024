@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=22 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://3tnjxtgiv6to" path="res://audio/jump-pixabay.wav" id="7_3gqr0"]
 [ext_resource type="Script" path="res://Scripts/Tip.gd" id="7_vrhxe"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="8_ojoma"]
+[ext_resource type="AudioStream" uid="uid://pkg7m286r3r8" path="res://audio/scan/449672__matrixxx__radar-something-detected-05-sec.wav" id="11_oykeo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
@@ -111,11 +112,18 @@ debug_shape_thickness = 5
 
 [node name="jumping" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_3gqr0")
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="walking" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_0icta")
 attenuation_model = 2
+volume_db = -1.0
+
+[node name="scanning" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_oykeo")
+volume_db = -20.0
+max_db = 1.0
+pitch_scale = 0.9
 
 [node name="Timer" type="Timer" parent="."]
 

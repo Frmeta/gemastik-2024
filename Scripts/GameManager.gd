@@ -1,5 +1,11 @@
 extends Node
 
+@onready var audiostream1 = $background
+@onready var audiostream2 = $AudioStreamPlayer2D2
+@onready var audiostream3 = $AudioStreamPlayer2D3
+@onready var doni_sound = $doni_sounds
+@onready var mas_sound = $mas_sound
+
 var doni: Node3D
 
 var last_checkpoint_position:Vector3
@@ -84,3 +90,45 @@ func restart_all():
 func scan_hewan(hewan_name):
 	scanned_animal.append(hewan_name)
 	EventDistributor.emit_signal("animal_captured")
+
+func play_audio(file_path, pitch=0.0, volume = 0):
+	if not audiostream2.playing :
+		audiostream2.volume_db=volume
+		audiostream2.pitch_scale = pitch
+		audiostream2.stream = load(file_path)
+		audiostream2.play()
+	else :
+		audiostream3.volume_db=volume
+		audiostream3.pitch_scale = pitch
+		audiostream3.stream = load(file_path)
+		audiostream3.play()
+
+func play_audio_background(file_path):
+	audiostream1.volume_db=0
+	audiostream1.stream= load(file_path)
+	audiostream1.play()
+
+func stop_audio_background():
+	var tween = get_tree().create_tween()
+	audiostream1.modulate = Color.WHITE
+	tween.tween_property(audiostream1, "volume_db", 0, 1)
+	tween.tween_callback(func() -> void:
+		audiostream1.visible = false
+		)
+	await get_tree().create_timer(1).timeout
+	audiostream1.stop()
+
+func play_doni_sound(file_path):
+	doni_sound.pitch_scale=2
+	doni_sound.stream= load(file_path)
+	doni_sound.play()
+
+func play_mas_sound(file_path):
+	mas_sound.stream= load(file_path)
+	mas_sound.play()
+
+func stop_doni():
+	doni_sound.stop()
+
+func stop_mas():
+	mas_sound.stop()
