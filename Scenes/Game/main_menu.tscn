@@ -105,7 +105,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="TabContainer"]
@@ -189,6 +189,7 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -247,7 +248,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Credits" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Credits"]
@@ -281,12 +281,25 @@ layout_mode = 2
 texture = ExtResource("7_geyk0")
 
 [node name="Label" type="Label" parent="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_g6wtw")
 theme_override_font_sizes/font_size = 48
 text = "Kembali ke Menu"
+
+[node name="BackButton" type="Button" parent="TabContainer/Credits/MarginContainer/VBox/Kebali ke menu/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 46
+text = "Kembali ke Menu"
+flat = true
+alignment = 0
 
 [node name="Title" type="Label" parent="TabContainer/Credits/MarginContainer/VBox"]
 layout_mode = 2

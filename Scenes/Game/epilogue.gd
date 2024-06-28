@@ -41,6 +41,7 @@ func foo():
 		await get_tree().create_timer(0.5).timeout
 		#goto(1)
 	elif counter==2:
+		# eh apa ini secarik kertas
 		doni.rotation = Vector3(0,deg_to_rad(-50),0)
 	elif counter==4:
 		while(doni.rotation.length()>0.1):
@@ -50,6 +51,7 @@ func foo():
 		doni.rotation = Vector3.ZERO
 		$kertas/MarginContainer.modulate.a=0.0
 	elif counter ==3:
+		# show kertas
 		while($kertas/MarginContainer.modulate.a <0.9):
 			$kertas/MarginContainer.modulate.a = lerp($kertas/MarginContainer.modulate.a, 1.0, 0.1)
 			await get_tree().create_timer(0.001).timeout
