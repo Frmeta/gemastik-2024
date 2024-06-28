@@ -7,6 +7,7 @@ extends Area3D
 var trap : Trap
 var can_button_mash = false
 var hits = 0
+var done = false
 
 func _ready():
 	progress_bar.max_value=target_hits
@@ -20,6 +21,7 @@ func _process(delta):
 				progress_bar.value=target_hits
 				trap.open_trap()
 				can_button_mash=false
+				done=true
 
 func _on_minus_timer_timeout():
 	if can_button_mash:
@@ -34,7 +36,8 @@ func _on_body_entered(body):
 		$"../trap_hint/presign".visible=false
 		$"../trap_hint/sign".visible=true
 		$"../trap_hint/sign/animate".play("up_down")
-		can_button_mash=true
+		if not done:
+			can_button_mash=true
 
 func _on_body_exited(body):
 	if body is Player:

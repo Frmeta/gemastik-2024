@@ -21,7 +21,10 @@ func _ready():
 	if tutorial.can_tutorial and GM.current_level==0:
 		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
 			if n is TextureButton:
-				n.disabled=false
+				n.disabled=true
+		for n in $"PanelAlmanac/TabContainer/Halaman Detail Pulau".get_children():
+			if n is TextureButton:
+				n.disabled=true
 		tutorial.add_subs(self, DialogueEnum.TUTORIAL_AWAL, get_viewport_rect().size/2)
 		tutorial.add_subs(self, DialogueEnum.TUTORIAL_PETA, get_viewport_rect().size/2)
 		tutorial.add_subs($"PanelAlmanac/TabContainer/Halaman Peta Indo/TextureButton1", DialogueEnum.TUTORIAL_TEKANX,null,"click")

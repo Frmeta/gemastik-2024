@@ -61,7 +61,8 @@ func _input(event):
 			is_animating_almanac = true
 			
 			if not almanac_ui.has_done_tutorial:
-				almanac_ui.tutorial.start_tutorial()
+				if GM.current_level==0:
+					almanac_ui.tutorial.start_tutorial()
 				almanac_ui.has_done_tutorial=true
 			
 			

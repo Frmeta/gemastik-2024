@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_ud1dx"]
 [ext_resource type="PackedScene" uid="uid://b33j8g4np1f5n" path="res://Scenes/grap_sign.tscn" id="13_hojpj"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_ltjtm"]
-[ext_resource type="PackedScene" uid="uid://cm3txb00525iv" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
+[ext_resource type="PackedScene" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
 [ext_resource type="PackedScene" uid="uid://bm8p5tfonkexb" path="res://Scenes/scan_sign.tscn" id="14_5lr78"]
 [ext_resource type="PackedScene" uid="uid://r3jjo2bl2jvs" path="res://Scenes/almanac_sign.tscn" id="15_uyqrq"]
 [ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan.tscn" id="17_8pc6h"]
@@ -117,7 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.916, 4.10206, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26897, -0.518324, 0)
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_trees" instance=ExtResource("8_405gp")]
-transform = Transform3D(8.83619, 0, 0, 0, 1, 0, 0, 0, 1, 0.428095, 8.76252, 0)
+transform = Transform3D(8.83619, 0, 0, 0, 1, 0, 0, 0, 1, 1.07484, 9.54588, -0.435468)
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling_for_trees" instance=ExtResource("8_405gp")]
 transform = Transform3D(8.83619, 0, 0, 0, 1, 0, 0, 0, 1, 182.559, 1.56803, 0)
@@ -131,7 +131,7 @@ transform = Transform3D(8.83619, 0, 0, 0, 1, 0, 0, 0, 1, 379.649, 24.0277, 0)
 [node name="tree" type="Node3D" parent="GridMapGround"]
 
 [node name="Trees(1)Cube190" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-0.855721, 0, 0.784151, 0, 1.29378, 0, -0.784151, 0, -0.855721, 5.86577, -4.87573, -7.18625)
+transform = Transform3D(-0.855721, 0, 0.784151, 0, 1.48979, 0, -0.784151, 0, -0.855721, 5.86577, -4.87573, -7.86401)
 mesh = ExtResource("12_tq75k")
 skeleton = NodePath("../../..")
 

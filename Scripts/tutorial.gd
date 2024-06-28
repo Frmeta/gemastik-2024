@@ -26,7 +26,7 @@ func end_tutorial():
 	ongoing=false
 
 func _process(delta):
-	if can_tutorial and ongoing:
+	if can_tutorial and ongoing and GM.current_level==0:
 		ongoing=false
 		for i in range(nodes.size()):
 			var node = nodes[i]
