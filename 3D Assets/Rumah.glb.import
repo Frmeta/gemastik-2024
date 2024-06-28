@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvl710r3hv60q"
-path="res://.godot/imported/Mas.glb-760a8b4364dd7673309c2d6db6e4ddae.scn"
+uid="uid://eiss63xcudyu"
+path="res://.godot/imported/Rumah.glb-291884e4eeb54a8942aa4792d563d15f.scn"
 
 [deps]
 
-source_file="res://3D Assets/mas/Mas.glb"
-dest_files=["res://.godot/imported/Mas.glb-760a8b4364dd7673309c2d6db6e4ddae.scn"]
+source_file="res://3D Assets/Rumah.glb"
+dest_files=["res://.godot/imported/Rumah.glb-291884e4eeb54a8942aa4792d563d15f.scn"]
 
 [params]
 
