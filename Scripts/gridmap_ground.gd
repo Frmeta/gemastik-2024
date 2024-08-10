@@ -15,6 +15,9 @@ const SPAWN_TREE = true
 
 @export var noise:Noise
 
+enum Algo {TERRAIN, CAVE}
+@export var algo : Algo = Algo.TERRAIN
+
 var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -22,25 +25,68 @@ func _ready():
 	var it = input_terrain()
 	var highest = it[0]
 	var idx = it[1]
-	fill_front(highest, idx)
 	
-	var extend_step = 7
-	var smooth_step = 50
 	
-	# fill extend
-	var t = -1
-	for i in range(extend_step):
-		fill(highest, idx, t, highest, false)
-		t -= 1
-	
-	# fill smooth
-	var highest2
-	for i in range(smooth_step):
-		highest2 = smooth(highest)
-		fill (highest2, idx, t, highest, i > 3)
+	if algo == Algo.TERRAIN:
+		# Normal mode
 		
-		highest = highest2
-		t -= 1
+		fill_front(highest, idx)
+		
+		var extend_step = 7
+		var smooth_step = 50
+		
+		# fill extend
+		var t = -1
+		for i in range(extend_step):
+			fill(highest, idx, t, highest, false)
+			t -= 1
+		
+		# fill smooth
+		var highest2
+		for i in range(smooth_step):
+			highest2 = smooth(highest)
+			fill (highest2, idx, t, highest, i > 3)
+			
+			highest = highest2
+			t -= 1
+			
+	elif algo == Algo.CAVE:
+		# Cave Mode
+		var used_cells = get_used_cells()
+		
+		
+		var extend_step = 5
+		var smooth_step = 3
+		
+		# fill extend
+		for t in range(extend_step):
+			for i in range(used_cells.size()):
+				var u = used_cells[i]
+				var j = u.x-START_X
+				assert(j>=0 and j<idx.size()) # tidak boleh ada cell yang diluar batas START_X & END_X
+				set_cell_item(u + Vector3i(0, 0, -t), idx[j])
+		
+		# fill smooth
+		for t in range(smooth_step):
+			for x in range(START_X, END_X):
+				# isi dari bawah sampai highest
+				for y in range(START_Y, highest[x-START_X]):
+					const JANGKAUAN = 2 # (inklusif: jangkauan=1 itu 1 titik saja)
+					var poin = 0
+					for i in range(x-JANGKAUAN+1, x+JANGKAUAN):
+						for j in range(y-JANGKAUAN+1, y+JANGKAUAN):
+							if get_cell_item(Vector3i(i, j, -extend_step-t+1)) != INVALID_CELL_ITEM:
+								poin += 1
+					if poin > 0:
+						set_cell_item(Vector3i(x, y, -extend_step-t), idx[x-START_X])
+		
+		# block everything
+		for t in range(smooth_step):
+			for x in range(START_X, END_X):
+				# isi dari bawah sampai highest
+				for y in range(START_Y, highest[x-START_X]):
+					set_cell_item(Vector3i(x, y, -extend_step-smooth_step), idx[x-START_X])
+		
 	
 	# fill smooth with noise only
 	#for i in range(smooth_step):
@@ -73,39 +119,44 @@ func input_terrain():
 	# fill the 'highest' array
 	var idx_guess = INVALID_CELL_ITEM
 	for x in range(START_X+1, END_X):
-		# guess y
-		var y_guess = highest[highest.size() - 1]
+		# brute force
+		var cari = search_y(x, 0)
+		var y_guess = cari[0]
+		idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		
 		
-		if y_guess < START_Y:
-			
-			# previous tidak ada ground, jadi cari O(n)
-			var cari = search_y(x, 0)
-			y_guess = cari[0]
-			idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
-		
-		elif get_cell_item(Vector3i(x, y_guess, 0)) != INVALID_CELL_ITEM \
-			and get_cell_item(Vector3i(x, y_guess+1, 0)) == INVALID_CELL_ITEM:
-			
-			# tebakan y benar
-			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
-			
-		elif get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
-			
-			# naik
-			while get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
-				y_guess += 1
-			idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
-			
-		else:
-			
-			# turun
-			while y_guess >= START_Y and get_cell_item(Vector3i(x, y_guess, 0)) == INVALID_CELL_ITEM:
-				y_guess -= 1
-				# y=START_Y-1 artinya kosong
-			
-			idx_guess = idx_guess if get_cell_item(Vector3i(x, y_guess, 0))==INVALID_CELL_ITEM \
-						else get_cell_item(Vector3i(x, y_guess, 0))
+		## guess y
+		#var y_guess = highest[highest.size() - 1]
+		#
+		#if y_guess < START_Y:
+			#
+			## previous tidak ada ground, jadi cari O(n)
+			#var cari = search_y(x, 0)
+			#y_guess = cari[0]
+			#idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
+		#
+		#elif get_cell_item(Vector3i(x, y_guess, 0)) != INVALID_CELL_ITEM \
+			#and get_cell_item(Vector3i(x, y_guess+1, 0)) == INVALID_CELL_ITEM:
+			#
+			## tebakan y benar
+			#idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
+			#
+		#elif get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
+			#
+			## naik
+			#while get_cell_item(Vector3i(x, y_guess+1, 0)) != INVALID_CELL_ITEM:
+				#y_guess += 1
+			#idx_guess = get_cell_item(Vector3i(x, y_guess, 0))
+			#
+		#else:
+			#
+			## turun
+			#while y_guess >= START_Y and get_cell_item(Vector3i(x, y_guess, 0)) == INVALID_CELL_ITEM:
+				#y_guess -= 1
+				## y=START_Y-1 artinya kosong
+			#
+			#idx_guess = idx_guess if get_cell_item(Vector3i(x, y_guess, 0))==INVALID_CELL_ITEM \
+						#else get_cell_item(Vector3i(x, y_guess, 0))
 				
 		highest.append(y_guess)
 		# supaya tidak ada grass lagi karena sudah diwakilkan dirt
@@ -227,6 +278,8 @@ func smooth(highest):
 					
 	return highest2
 
+
+# not used tapi sayang dibuang
 func smooth_with_noise_only(highest, z:float, noise_multiplier:float, scale_multiplier:float):
 	var highest2 := []
 	var sudah_ketemu_tanah = false

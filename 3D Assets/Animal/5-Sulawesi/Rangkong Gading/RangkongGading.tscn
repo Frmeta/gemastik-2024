@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://b10tgxrru3ml7"]
+[gd_scene load_steps=25 format=3 uid="uid://b10tgxrru3ml7"]
 
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_6e3xc"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="2_8sjsg"]
+[ext_resource type="Script" path="res://Scripts/animal_behaviour/flying_animal.gd" id="3_j8kac"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ac77"]
 render_priority = 0
@@ -1576,7 +1577,7 @@ bones/12/parent = 11
 bones/12/rest = Transform3D(1, -9.36213e-17, -1.46189e-16, 1.30031e-16, 0.961881, 0.273468, 1.15014e-16, -0.273468, 0.961881, -3.93738e-22, 0.566805, -4.47035e-08)
 bones/12/enabled = true
 bones/12/position = Vector3(-3.93738e-22, 0.566805, -4.47035e-08)
-bones/12/rotation = Quaternion(-0.138056, -6.59321e-17, 5.64536e-17, 0.990424)
+bones/12/rotation = Quaternion(-0.138056, -6.59321e-17, 5.64536e-17, 0.990425)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "T.003"
 bones/13/parent = 12
@@ -1590,7 +1591,7 @@ bones/14/parent = 13
 bones/14/rest = Transform3D(1, 1.58594e-08, 5.28121e-10, -1.58594e-08, 0.997785, 0.066519, 5.28e-10, -0.066519, 0.997785, -8.85861e-14, 0.544704, 3.57628e-07)
 bones/14/enabled = true
 bones/14/position = Vector3(-8.85861e-14, 0.544704, 3.57628e-07)
-bones/14/rotation = Quaternion(-0.033278, 3.02426e-14, -7.93408e-09, 0.999446)
+bones/14/rotation = Quaternion(-0.033278, 3.02138e-14, -7.93408e-09, 0.999446)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "T.005"
 bones/15/parent = 14
@@ -1646,3 +1647,11 @@ libraries = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_djwc1")
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("skeleton_3d")]
+script = ExtResource("3_j8kac")
+fly_anim_name = "CEN_Flying"
+skeleton_3d = NodePath("../RangkongGading_Skeleton/Skeleton3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Node3D"]
+target_position = Vector3(0, -0.1, 0)

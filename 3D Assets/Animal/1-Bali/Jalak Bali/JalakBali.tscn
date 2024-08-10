@@ -1199,8 +1199,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423479, 0)
 shape = SubResource("SphereShape3D_ju4lm")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("skeleton_3d")]
 script = ExtResource("3_xe6ee")
+skeleton_3d = NodePath("../JalakBali_Skeleton/Skeleton3D")
 
 [node name="RayCast3D" type="RayCast3D" parent="Node3D"]
 target_position = Vector3(0, -0.1, 0)
