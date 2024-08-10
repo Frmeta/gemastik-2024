@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciw3lrpja7upa"]
+[gd_scene load_steps=20 format=3 uid="uid://ciw3lrpja7upa"]
 
 [ext_resource type="Script" path="res://Scripts/Animal.gd" id="1_fd3f2"]
 [ext_resource type="Material" uid="uid://bdybsuliq6yh4" path="res://3D Assets/Shader/ScanningNextPass.tres" id="2_hf64c"]
+[ext_resource type="Script" path="res://Scripts/animal_behaviour/flying_animal.gd" id="3_6e76g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xpyc"]
 resource_name = "JB_Feather.001"
@@ -1164,3 +1165,10 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.455027, 0)
 shape = SubResource("SphereShape3D_r43o8")
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("skeleton_3d")]
+script = ExtResource("3_6e76g")
+skeleton_3d = NodePath("../Elang_Skeleton/Skeleton3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Node3D"]
+target_position = Vector3(0, -0.1, 0)

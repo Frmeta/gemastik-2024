@@ -63,4 +63,7 @@ func _process(delta):
 	
 
 func wait_for_seconds(seconds: float):
+	if !is_inside_tree() or !is_instance_valid(get_tree()) or get_tree()==null:
+		queue_free()
+		return
 	await get_tree().create_timer(seconds).timeout

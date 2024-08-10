@@ -9,7 +9,7 @@ var target_position
 
 var pins = []
 
-const MAX_LEVEL = 3
+const MAX_LEVEL = 8
 
 func _ready():
 	# init pins

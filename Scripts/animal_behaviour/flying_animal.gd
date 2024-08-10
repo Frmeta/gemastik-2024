@@ -7,6 +7,7 @@ var MOVE_SPEED = 2
 
 @export var fly_anim_name = "JB_Flying"
 @export var idle_anim_name = "JB_Idle"
+@export var skeleton_3d : Skeleton3D
 
 var state : State
 
@@ -75,21 +76,21 @@ func _process(delta):
 		owner.global_position = target_pos
 		owner.velocity = Vector3.ZERO
 		$"../AnimationPlayer".play(idle_anim_name)
-		$"../JalakBali_Skeleton/Skeleton3D".position.z = 0 # sam moment
-		$"../JalakBali_Skeleton/Skeleton3D".rotation = Vector3.ZERO
+		skeleton_3d.position.z = 0 # sam moment
+		skeleton_3d.rotation = Vector3.ZERO
 		$"../AnimationPlayer".speed_scale = 1
 	else:
 		# terbang menuju target_pos
 		$"../AnimationPlayer".play(fly_anim_name)
-		$"../JalakBali_Skeleton/Skeleton3D".position.z = -1.2 # sam moment
+		skeleton_3d.position.z = -1.2 # sam moment
 		
 		
 		var diff :Vector3 = (target_pos - owner.position)
 		var diff_normalized = diff.normalized()
 		
 		# rotation
-		$"../JalakBali_Skeleton/Skeleton3D".quaternion.x = -diff_normalized.y * 0.5
-		$"../JalakBali_Skeleton/Skeleton3D".quaternion.z = -diff_normalized.x * 0.5
+		skeleton_3d.quaternion.x = -diff_normalized.y * 0.5
+		skeleton_3d.quaternion.z = -diff_normalized.x * 0.5
 		
 		# move smoothly
 		const MAX_FLY_SPEED = 15
