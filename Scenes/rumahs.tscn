@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdm80k3i5k8pd"]
+
+[ext_resource type="PackedScene" uid="uid://dh3uljdjencdb" path="res://3D Assets/Rumah (1).glb" id="1_xnt71"]
+
+[node name="Rumah (1)" instance=ExtResource("1_xnt71")]

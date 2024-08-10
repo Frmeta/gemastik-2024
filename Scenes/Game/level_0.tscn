@@ -237,6 +237,7 @@ event = "despawn_mas"
 
 [node name="Lower Bound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
+visible = false
 mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_ltjtm")]
