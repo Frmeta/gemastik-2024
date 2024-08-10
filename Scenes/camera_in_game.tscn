@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://ggo33txgd2sy"]
+[gd_scene load_steps=5 format=3 uid="uid://ggo33txgd2sy"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_nligd"]
 [ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="2_sgkog"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="3_ssv53"]
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1sfyn"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 30.0
+dof_blur_far_transition = 20.0
+
 [node name="Camera3D" type="Camera3D"]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
+attributes = SubResource("CameraAttributesPractical_1sfyn")
 current = true
 size = 13.612
+far = 80.0
 script = ExtResource("1_nligd")
 
 [node name="pixelator" parent="." instance=ExtResource("2_sgkog")]
+visible = false
 
 [node name="Almanac2" parent="." instance=ExtResource("3_ssv53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)

@@ -78,17 +78,16 @@ stretch_mode = 0
 script = ExtResource("6_i8yiw")
 
 [node name="Pause Panel" type="TextureRect" parent="Pause/Pause Button"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1267.0
-offset_top = 737.0
-offset_right = 2418.0
-offset_bottom = 1326.0
+offset_left = 1727.0
+offset_top = 657.0
+offset_right = 2878.0
+offset_bottom = 1246.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.845, 0.845)

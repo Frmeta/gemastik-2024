@@ -12,10 +12,15 @@ var submerged := false
 var time = 0.1
 var menopang = false
 
+var rotated_deg : Vector3
+var position_z
+
 func _ready():
 	var parent_global_position = water.global_position
 	var water_level = parent_global_position.y + 0.5*water.scale.y+1
 	water_height=water_level
+	rotated_deg = rotation_degrees
+	position_z = position.z
 
 func _physics_process(delta):
 	time-=delta
@@ -29,6 +34,8 @@ func _physics_process(delta):
 			apply_force(Vector3.UP * float_force * gravity * depth)
 	self.rotation.x=0
 	self.rotation.z=0
+	position.z = position_z 
+	rotation_degrees = rotated_deg
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if submerged:

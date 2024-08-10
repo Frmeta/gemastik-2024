@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://ybo58eu5i27c"]
+
+[ext_resource type="Script" path="res://Scripts/thrash.gd" id="1_l3d22"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qo8xy"]
+radius = 0.25
+
+[sub_resource type="BoxMesh" id="BoxMesh_qxs4n"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_igfah"]
+radius = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vi5vu"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4e2b"]
+albedo_color = Color(1, 0.564706, 1, 1)
+billboard_mode = 1
+
+[sub_resource type="Animation" id="Animation_5tye6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ekbsv"]
+resource_name = "up_down"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1.2),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.8, 0), Vector3(0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1iuf"]
+_data = {
+"RESET": SubResource("Animation_5tye6"),
+"up_down": SubResource("Animation_ekbsv")
+}
+
+[node name="thrash" type="StaticBody3D"]
+script = ExtResource("1_l3d22")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qo8xy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qxs4n")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_igfah")
+
+[node name="thrash sign" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_vi5vu")
+surface_material_override/0 = SubResource("StandardMaterial3D_a4e2b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="thrash sign"]
+libraries = {
+"": SubResource("AnimationLibrary_v1iuf")
+}
+speed_scale = 0.3
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

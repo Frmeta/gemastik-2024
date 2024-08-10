@@ -1,8 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://ne6mdr5yo8x1"]
+[gd_scene load_steps=31 format=3 uid="uid://ne6mdr5yo8x1"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qud7n"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_kekwg"]
-[ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_5hx2r"]
+[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_48j1j"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_jnyay"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_fr423"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_4s4dg"]
@@ -18,13 +18,34 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_ud1dx"]
 [ext_resource type="PackedScene" uid="uid://b33j8g4np1f5n" path="res://Scenes/grap_sign.tscn" id="13_hojpj"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_ltjtm"]
-[ext_resource type="PackedScene" uid="uid://cm3txb00525iv" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
+[ext_resource type="PackedScene" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
 [ext_resource type="PackedScene" uid="uid://bm8p5tfonkexb" path="res://Scenes/scan_sign.tscn" id="14_5lr78"]
 [ext_resource type="PackedScene" uid="uid://r3jjo2bl2jvs" path="res://Scenes/almanac_sign.tscn" id="15_uyqrq"]
 [ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan.tscn" id="17_8pc6h"]
 [ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/0-Kalimantan/Kijang/Kijang.tscn" id="18_8p6yu"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="19_iw72a"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="20_4mqpp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r7sy3"]
+load_path = "res://.godot/imported/photo-1513002749550-c59d786b8e6c.jpeg-8834f52b9f02c73ce99fcd364c504b1b.s3tc.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mnega"]
+panorama = SubResource("CompressedTexture2D_r7sy3")
+
+[sub_resource type="Sky" id="Sky_0vmk4"]
+sky_material = SubResource("PanoramaSkyMaterial_mnega")
+
+[sub_resource type="Environment" id="Environment_pno0k"]
+background_mode = 2
+background_energy_multiplier = 1.2
+sky = SubResource("Sky_0vmk4")
+sky_custom_fov = 33.0
+ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.7
+sdfgi_energy = 0.1
+volumetric_fog_emission = Color(0, 0.631373, 0, 1)
+volumetric_fog_detail_spread = 6.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
@@ -35,7 +56,9 @@ nama_pulau = "kalimantan"
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_kekwg")]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("3_5hx2r")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pno0k")
+script = ExtResource("4_48j1j")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_jnyay")]
 
