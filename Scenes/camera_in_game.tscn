@@ -15,7 +15,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28484, 1.15862, 11.27)
 attributes = SubResource("CameraAttributesPractical_1sfyn")
 current = true
 size = 13.612
-far = 80.0
 script = ExtResource("1_nligd")
 
 [node name="pixelator" parent="." instance=ExtResource("2_sgkog")]

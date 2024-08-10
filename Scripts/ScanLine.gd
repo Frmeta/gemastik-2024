@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 @onready var ray : RayCast3D = $"../RayCast3D"
 
-func _process(delta):
+func _process(_delta):
 	# Create line from player to scan tip
 	if $"../Tip".visible:
 		visible = true

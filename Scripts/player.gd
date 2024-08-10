@@ -317,7 +317,7 @@ func movement_from_input(delta):
 			else:
 				velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 
-func _process(delta):
+func _process(_delta):
 	if get_parent().has_node("MultiMeshInstance3D"):
 		var grass = get_parent().get_node("MultiMeshInstance3D")
 		if grass != null :

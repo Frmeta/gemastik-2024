@@ -5,7 +5,7 @@ var hidden = true
 func _ready():
 	EventDistributor.connect("spawn_mas",change_to_spawn)
 
-func do_something(delta):
+func do_something(_delta):
 	pass
 
 func change_to_spawn():
