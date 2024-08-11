@@ -6,7 +6,7 @@ func _ready():
 	EventDistributor.connect("start_dialogue",load_dialog)
 	EventDistributor.connect("start_dialogue_with_pulau",load_dialog)
 
-func load_dialog(file_path, nama_pulau:String="", fun_fact:String=""): #File path ini dapet dari DialogueEnum
+func load_dialog(file_path, nama_pulau:String="", fun_fact:String="", emit_end:bool = true): #File path ini dapet dari DialogueEnum
 	textbox.visible=true
 	var almanac_input = InputMap.action_get_events("almanac")
 	InputMap.action_erase_events("almanac")
@@ -26,7 +26,10 @@ func load_dialog(file_path, nama_pulau:String="", fun_fact:String=""): #File pat
 				await textbox.go_to_next_line
 				print("go to next line")
 			textbox.visible=false
-			EventDistributor.emit_signal("end_dialogue")
+			if emit_end:
+				EventDistributor.emit_signal("end_dialogue")
+			else:
+				EventDistributor.emit_signal("end_tutorial_line")
 		else:
 			print("error")
 			print(parsedFile)
