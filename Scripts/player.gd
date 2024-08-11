@@ -119,6 +119,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta):
 	if being_knocked_back:
 		if is_on_floor():
+			being_knocked_back=false
 			can_move=true
 	# Check vines
 	if climb.get_node("RayCast3D").is_colliding():

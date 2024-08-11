@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bx6kr0habwrrf"]
+[gd_scene load_steps=18 format=3 uid="uid://bx6kr0habwrrf"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wk77a"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_iuh7q"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_pjhcs"]
 [ext_resource type="PackedScene" uid="uid://dy60x7sqkbkua" path="res://3D Assets/Animal/4-Jawa/Badak Jawa/Badak Jawa.tscn" id="14_t8qft"]
 [ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang Jawa/Elang Jawa.tscn" id="15_mhgt6"]
+[ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="16_2p5ol"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
@@ -38,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
 
 [node name="GridMapGround" parent="." instance=ExtResource("8_4svqi")]
 data = {
-"cells": PackedInt32Array(-196613, 0, 0, -262148, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 1, -393212, 0, 1, -327675, 0, 1, -262138, 0, 1, -262137, 0, 4, -262136, 0, 4, -196600, 0, 4, -196599, 0, 4, -262135, 0, 4, -262131, 0, 4, -262130, 0, 4, -262129, 0, 4, -262128, 0, 3, -262127, 0, 3, -262126, 0, 3, -262125, 0, 3, -196588, 0, 3, -196587, 0, 3, -327683, 0, 0, -262119, 0, 3, -262118, 0, 3, -262117, 0, 3, -262116, 0, 3, -262115, 0, 3, -262114, 0, 3, -262113, 0, 3, -262112, 0, 1, -196575, 0, 1, -131039, 0, 1, -65502, 0, 1, 35, 0, 1, 36, 0, 1, 65572, 0, 1, 65573, 0, 1, 65574, 0, 1, 65575, 0, 1, 65576, 0, 1, -131031, 0, 1, -196567, 0, 1, -327639, 0, 1, -393175, 0, 1, -458711, 0, 1, -524247, 0, 1, -589783, 0, 1, -262103, 0, 1, -655310, 0, 1, -589774, 0, 1, -524238, 0, 1, -458702, 0, 1, -393166, 0, 1, 65586, 0, 1, 65577, 0, 1, -65495, 0, 1, 41, 0, 1, 50, 0, 1, -65486, 0, 1, -131022, 0, 1, -196558, 0, 1, -262094, 0, 1, -327630, 0, 1, 65587, 0, 1, 65588, 0, 1, 65589, 0, 1, 65590, 0, 1, 65591, 0, 1, 65592, 0, 1, 65593, 0, 1, 57, 0, 1, 58, 0, 1, -65477, 0, 1, -65476, 0, 1, -131011, 0, 1)
+"cells": PackedInt32Array(-196613, 0, 0, -262148, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 1, -393212, 0, 1, -327675, 0, 1, -262138, 0, 1, -262137, 0, 1, -262136, 0, 1, -196600, 0, 1, -196599, 0, 1, -262135, 0, 1, -262131, 0, 1, -262130, 0, 1, -262129, 0, 1, -262128, 0, 1, -262127, 0, 1, -262126, 0, 1, -262125, 0, 1, -196588, 0, 1, -196587, 0, 1, -327683, 0, 0, -262119, 0, 1, -262118, 0, 1, -262117, 0, 1, -262116, 0, 1, -262115, 0, 1, -262114, 0, 1, -262113, 0, 1, -262112, 0, 1, -196575, 0, 1, -131039, 0, 1, -65502, 0, 1, 35, 0, 1, 36, 0, 1, 65572, 0, 1, 65573, 0, 1, 65574, 0, 1, 65575, 0, 1, 65576, 0, 1, -131031, 0, 1, -196567, 0, 1, -327639, 0, 1, -393175, 0, 1, -458711, 0, 1, -524247, 0, 1, -589783, 0, 1, -262103, 0, 1, -655310, 0, 1, -589774, 0, 1, -524238, 0, 1, -458702, 0, 1, -393166, 0, 1, 65586, 0, 1, 65577, 0, 1, -65495, 0, 1, 41, 0, 1, 50, 0, 1, -65486, 0, 1, -131022, 0, 1, -196558, 0, 1, -262094, 0, 1, -327630, 0, 1, 65587, 0, 1, 65588, 0, 1, 65589, 0, 1, 65590, 0, 1, 65591, 0, 1, 65592, 0, 1, 65593, 0, 1, 57, 0, 1, 58, 0, 1, -65477, 0, 1, -65476, 0, 1, -131011, 0, 1, -393215, 0, 1, -393214, 0, 1, -393213, 0, 1, -327677, 0, 1, -327676, 0, 1, -327674, 0, 1, -196598, 0, 1, -262134, 0, 1, -262133, 0, 1, -262132, 0, 1, -262124, 0, 1, -196586, 0, 1, -262122, 0, 1, -196585, 0, 1, -262121, 0, 1, -196584, 0, 1, -196576, 0, 1, -196574, 0, 1, -262111, 0, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -100,6 +101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9592, 0.100865, -0.301669)
 
 [node name="Elang Jawa" parent="." instance=ExtResource("15_mhgt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6649, 2.54733, -0.301669)
+
+[node name="Burung Merak" parent="." instance=ExtResource("16_2p5ol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16858, -1.90471, -0.301669)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]
