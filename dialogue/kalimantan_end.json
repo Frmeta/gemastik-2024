@@ -1,0 +1,42 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Akhirnya selesai juga...",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Seru kan?",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ya... ok lah.",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ayo cepat bawa aku pulang sekarang",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Masa kamu udahan?",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kamu masih belum melihat keseluruhan keindahan Indonesia!!",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Ayo kita lanjut lagi",
+		"emosi":"5"
+	},
+		{
+		"nama":"Doni",
+		"dialogue":"TIDAKKKK.....",
+		"emosi":"4"
+	},
+]
