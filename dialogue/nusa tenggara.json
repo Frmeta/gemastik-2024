@@ -7,7 +7,7 @@
 	{
 		"nama":"MAS",
 		"dialogue":"Santai saja Doni",
-		"emosi":"0"
+		"emosi":"2"
 	},
 	{
 		"nama":"MAS",
@@ -30,7 +30,7 @@
 		"emosi":"1"
 	},
 	{
-		"nama":"Doni",
+		"nama":"MAS",
 		"dialogue":"Begitu dong semangat!",
 		"emosi":"3"
 	},
