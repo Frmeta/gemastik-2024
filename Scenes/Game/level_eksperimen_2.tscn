@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=65 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_c1454"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_ovhtb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="5_4woee"]
 [ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="6_yhrrv"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_qvwco"]
+[ext_resource type="PackedScene" uid="uid://c7igkv3b8528d" path="res://Scenes/toxicwater.tscn" id="7_wl60l"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_p2uia"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="9_7akpb"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="10_rnh3q"]
@@ -400,6 +401,9 @@ visible = false
 [node name="Almanac2" parent="Camera3D" instance=ExtResource("6_yhrrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
 visible = false
+
+[node name="water" parent="." instance=ExtResource("7_wl60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3396, -0.111118, -1.52588e-05)
 
 [node name="Player" parent="." instance=ExtResource("7_qvwco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4322, 3.31156, -1.52588e-05)

@@ -260,8 +260,11 @@ func _physics_process(delta):
 	
 	# respawn
 	if global_position.y < -15:
-		global_position = GM.last_checkpoint_position
-		velocity = Vector3.ZERO
+		respawn()
+
+func respawn():
+	global_position = GM.last_checkpoint_position
+	velocity = Vector3.ZERO
 
 func movement_from_input(delta):
 	# Climb init

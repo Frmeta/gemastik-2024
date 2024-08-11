@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://djwm4tpw6acyc"]
+[gd_scene load_steps=47 format=3 uid="uid://djwm4tpw6acyc"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2p54o"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_snmsy"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://sq238bgldex5" path="res://3D Assets/Animal/6-Sumatera/Bunga Raflesia/Bunga Raflesia.tscn" id="35_nats8"]
 [ext_resource type="PackedScene" uid="uid://dh2wp603p03k7" path="res://3D Assets/Animal/6-Sumatera/Harimau Sumatera/Harimau sumatera.tscn" id="36_3jrt7"]
 [ext_resource type="PackedScene" uid="uid://dqxx67pcn36de" path="res://Scenes/trap/beartrap.tscn" id="38_apjou"]
+[ext_resource type="PackedScene" uid="uid://c7igkv3b8528d" path="res://Scenes/toxicwater.tscn" id="39_elwsw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7duej"]
 size = Vector3(10, 1, 1)
@@ -559,6 +560,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4657, 2.21933, 0)
 
 [node name="Beartrap" parent="." instance=ExtResource("38_apjou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2, 0)
+
+[node name="water" parent="." instance=ExtResource("39_elwsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -2, 0)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

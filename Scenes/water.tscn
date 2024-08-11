@@ -16,7 +16,7 @@ render_priority = 0
 shader = ExtResource("1_c7d7k")
 shader_parameter/scale = 1.0
 shader_parameter/scale2 = 1.0
-shader_parameter/ColorParameter = Color(4.81307e-07, 0.717543, 0.796215, 1)
+shader_parameter/ColorParameter = Color(0, 0.717647, 0.796078, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_35nvf"]
 size = Vector3(10, 1, 10)
