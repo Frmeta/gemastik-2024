@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="pulau" load_steps=2 format=3 uid="uid://dgp383yxwp3dj"]
+
+[ext_resource type="Script" path="res://Scripts/pulau.gd" id="5_qrjfk"]
+
+[resource]
+script = ExtResource("5_qrjfk")
+nama = "Laut Indonesia"
+hewanss = Array[Resource("res://Scripts/hewans.gd")]([])

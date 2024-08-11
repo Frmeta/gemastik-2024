@@ -2,7 +2,7 @@ extends Node3D
 
 class_name Ground_Animal
 
-enum State {KIRI, KANAN, DIAM}
+enum State {KIRI, KANAN, DIAM, NUL}
 
 var MOVE_SPEED = 2
 
@@ -29,12 +29,17 @@ func _ready():
 	loop_behaviour()
 
 func loop_behaviour():
+	
+	await do_something()
+	
 	state = State.DIAM
 	await wait_for_seconds(randf() * 6 + 2)
 	
 	if can_move:
 		state = State.KANAN
 		await wait_for_seconds(randf() * 6 + 4)
+	
+	await do_something()
 	
 	state = State.DIAM
 	await wait_for_seconds(randf() * 6 + 5)
@@ -45,6 +50,10 @@ func loop_behaviour():
 	
 	if (alive):
 		loop_behaviour()
+
+func do_something():
+	# dioverrite oleh burung_merak.gd
+	pass
 	
 func _process(delta):
 	match state:
