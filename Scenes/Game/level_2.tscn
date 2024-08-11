@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://l2u5pkctq1b5"]
+[gd_scene load_steps=49 format=3 uid="uid://l2u5pkctq1b5"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wudb8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_y5y2o"]
@@ -43,6 +43,122 @@ sdfgi_energy = 0.1
 volumetric_fog_emission = Color(0, 0.631373, 0, 1)
 volumetric_fog_detail_spread = 6.0
 
+[sub_resource type="Curve" id="Curve_ojxas"]
+_data = [Vector2(0.00362319, 1), 0.0, 0.0, 0, 0, Vector2(0.445652, 0.498516), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_n3bpb"]
+curve = SubResource("Curve_ojxas")
+
+[sub_resource type="Curve" id="Curve_0awyl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.681159, 0.701039), 0.0, 0.0, 0, 0, Vector2(1, 0.257418), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d6tdw"]
+curve = SubResource("Curve_0awyl")
+
+[sub_resource type="Curve" id="Curve_vtltu"]
+max_value = 3.0
+_data = [Vector2(0, 2.76855), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cf06d"]
+curve = SubResource("Curve_vtltu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rf6ay"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+angle_curve = SubResource("CurveTexture_d6tdw")
+direction = Vector3(-20, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 15.0
+linear_accel_max = 30.0
+scale_min = 0.05
+scale_max = 0.05
+scale_over_velocity_curve = SubResource("CurveTexture_cf06d")
+alpha_curve = SubResource("CurveTexture_n3bpb")
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 9.355
+
+[sub_resource type="Curve" id="Curve_j2guj"]
+_data = [Vector2(0, 0.35), 0.0, 0.0, 0, 0, Vector2(0.525974, 0.763636), 0.0, 0.0, 0, 0, Vector2(1, 0.307792), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mqdn"]
+albedo_color = Color(0.337255, 0.6, 0.4, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_d4agt"]
+material = SubResource("StandardMaterial3D_6mqdn")
+sections = 2
+curve = SubResource("Curve_j2guj")
+
+[sub_resource type="Curve" id="Curve_ftope"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(0.242754, 360), 0.0, 0.0, 0, 0, Vector2(0.48913, -360), 0.0, 0.0, 0, 0, Vector2(0.73913, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_cl76v"]
+curve = SubResource("Curve_ftope")
+
+[sub_resource type="Curve" id="Curve_eauso"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_w3yrc"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.246377, 1), 0.0, 0.0, 0, 0, Vector2(0.5, -1), 0.0, 0.0, 0, 0, Vector2(0.73913, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_dmie2"]
+curve_x = SubResource("Curve_eauso")
+curve_y = SubResource("Curve_w3yrc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_je5fk"]
+emission_shape_scale = Vector3(1, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-20, 0, 0)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+angular_velocity_min = 0.08
+angular_velocity_max = 0.08
+angular_velocity_curve = SubResource("CurveTexture_cl76v")
+directional_velocity_min = 10.0
+directional_velocity_max = 30.0
+directional_velocity_curve = SubResource("CurveXYZTexture_dmie2")
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_wbhfo"]
+_data = [Vector2(0, 0.0714285), 0.0, 0.0, 0, 0, Vector2(0.49026, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.274026), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ski16"]
+shading_mode = 0
+albedo_color = Color(0.654902, 0.654902, 0.615686, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_0mxkt"]
+material = SubResource("StandardMaterial3D_ski16")
+shape = 0
+size = 10.0
+sections = 2
+section_length = 0.1
+section_segments = 1
+curve = SubResource("Curve_wbhfo")
+
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
 
@@ -61,6 +177,23 @@ speed = 0.001
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_0yn5h")]
 
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8263, 0, -10.6796)
+amount = 10
+randomness = 0.1
+visibility_aabb = AABB(-7.03676, -9.16619, -4, 14.0735, 18.3324, 8)
+process_material = SubResource("ParticleProcessMaterial_rf6ay")
+draw_pass_1 = SubResource("RibbonTrailMesh_d4agt")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8263, 3.55623, -10.6796)
+amount = 2
+lifetime = 3.0
+randomness = 0.1
+visibility_aabb = AABB(-7.03676, -9.47219, -4, 14.0735, 18.9444, 8)
+process_material = SubResource("ParticleProcessMaterial_je5fk")
+draw_pass_1 = SubResource("RibbonTrailMesh_0mxkt")
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47097, 3.61134, -3.8147e-06)
