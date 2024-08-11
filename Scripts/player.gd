@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name Player
 
-@export var air_area := false
+@export var air_speed := 0
 
 @onready var animTree : AnimationTree = $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
@@ -10,7 +10,7 @@ class_name Player
 @onready var leg_target=$leg_target
 @onready var climb := $Climb
 
-var SPEED = 10
+const SPEED = 10
 const SWIM_SPEED = 7
 const JUMP_POWER = 20
 const acc = 300
@@ -73,11 +73,6 @@ func _ready():
 	animTree.set("parameters/MainState/transition_request", "game")
 	
 	is_poisoned = false
-	
-	if air_area:
-		SPEED=7
-	else:
-		SPEED=10
 
 func allow_move():
 	print("allow move")
@@ -224,7 +219,7 @@ func _physics_process(delta):
 				animTree.set("parameters/Platformer/conditions/is_floating", false)
 				animTree.set("parameters/Platformer/conditions/is_not_floating", true)
 				
-				if (abs(velocity.x) < 0.1 and not air_area) or (air_area and pushed_by_air) :
+				if (abs(velocity.x) < 0.1 and air_speed==0) or (air_speed!=0 and pushed_by_air) :
 					animTree.set("parameters/Platformer/conditions/is_running", false)
 					animTree.set("parameters/Platformer/conditions/is_not_running", true)
 					$walkdust.stop_emit()
@@ -328,16 +323,12 @@ func movement_from_input(delta):
 				velocity += Vector3(input_x * SPEED * delta , 0, 0)
 			elif input_x != 0:
 				if not is_poisoned:
-					if (air_area and input_x>0) or not air_area:
-						velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
-					else:
-						if input_x<0:
-							velocity = velocity.move_toward(Vector3(input_x * SPEED-7, velocity.y, velocity.z), acc * delta)
+					velocity = velocity.move_toward(Vector3(input_x * SPEED-air_speed, velocity.y, velocity.z), acc * delta)
 				else:
-					velocity = velocity.move_toward(Vector3(input_x * SPEED/2, velocity.y, velocity.z), acc * delta)
+					velocity = velocity.move_toward(Vector3(input_x * SPEED/2-air_speed, velocity.y, velocity.z), acc * delta)
 				pushed_by_air=false
 			else:
-				if not air_area:
+				if air_speed==0:
 					velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 				else:
 					pushed_by_air=true

@@ -198,7 +198,7 @@ draw_pass_1 = SubResource("RibbonTrailMesh_0mxkt")
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 325.325, 28.901, -3.8147e-06)
 collision_mask = 34
-air_area = true
+air_speed = 3
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.757, 40.9504, 0)
