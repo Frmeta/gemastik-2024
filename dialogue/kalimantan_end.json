@@ -2,27 +2,27 @@
 	{
 		"nama":"Doni",
 		"dialogue":"Akhirnya selesai juga...",
-		"emosi":"4"
+		"emosi":"0"
 	},
 	{
 		"nama":"MAS",
 		"dialogue":"Seru kan?",
-		"emosi":"5"
+		"emosi":"3"
 	},
 	{
 		"nama":"Doni",
 		"dialogue":"Ya... ok lah.",
-		"emosi":"4"
+		"emosi":"2"
 	},
 	{
 		"nama":"Doni",
 		"dialogue":"Ayo cepat bawa aku pulang sekarang",
-		"emosi":"4"
+		"emosi":"1"
 	},
 	{
 		"nama":"MAS",
 		"dialogue":"Masa kamu udahan?",
-		"emosi":"5"
+		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
@@ -32,7 +32,7 @@
 	{
 		"nama":"MAS",
 		"dialogue":"Ayo kita lanjut lagi",
-		"emosi":"5"
+		"emosi":"2"
 	},
 		{
 		"nama":"Doni",

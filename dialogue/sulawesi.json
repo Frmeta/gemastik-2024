@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"Apakah kamu tidak lelah?",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Hmm.. hujannya makin lebat ya... Tidak apa apa sepertinya",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Mari kita teruskan",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Baiklah",
+		"emosi":"5"
+	},
+]

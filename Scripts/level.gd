@@ -31,6 +31,8 @@ func _ready():
 		EventDistributor.emit_signal("start_dialogue",DialogueEnum.KALIMANTAN)
 	else:
 		EventDistributor.emit_signal("start_dialogue_with_pulau",DialogueEnum.START_PULAU,nama_pulau,fun_fact)
+		await EventDistributor.end_dialogue
+		EventDistributor.emit_signal("start_dialogue", DialogueEnum.PREFIX+nama_pulau.to_lower()+".json")
 	await EventDistributor.end_dialogue
 	
 	EventDistributor.emit_signal("despawn_mas")

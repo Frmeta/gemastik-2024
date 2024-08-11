@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"... ... ...",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Tidak dideteksi keluhan dari Doni...",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Sudahlah MAS...",
+		"emosi":"0"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Baiklah",
+		"emosi":"5"
+	},
+]

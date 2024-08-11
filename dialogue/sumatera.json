@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Wah.. kita udah hampir keseluruh pulau di Indonesia ya",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Hujan ini serasa.. tidak kunjung berakhir",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Hati-hati Doni, berdasarkan kalkulasi ku, kita mendekati pusat badainya",
+		"emosi":"4"
+	},
+		{
+		"nama":"Doni",
+		"dialogue":"Baiklah MAS",
+		"emosi":"2"
+	},
+]

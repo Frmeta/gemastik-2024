@@ -1,0 +1,42 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Wah.. dekat rumah ku kah ini?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Sayangnya tidak",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Pulau ini ukurannya 1.316 KM. Peluang aku membawa mu ke ke dekat rumah agak...",
+		"emosi":"0"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"... kecil",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ya sudahlah",
+		"emosi":"3"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Mari lanjut berpetualang",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"!!",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Baiklah",
+		"emosi":"3"
+	},
+]

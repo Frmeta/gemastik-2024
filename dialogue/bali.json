@@ -1,0 +1,32 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Wah Pulau Bali... Sudah lama saya tidak kesini",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Sepertinya ada yang mulai senang",
+		"emosi":"0"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Apaan sih.. Capek tau saya ini",
+		"emosi":"1"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Tenang saja Doni, kamu pasti akan menyesal kalau langsung pulang dari petualangan ini ",
+		"emosi":"3"
+	},
+		{
+		"nama":"MAS",
+		"dialogue":"Lelah mu pasti terbayarkan setelah ini",
+		"emosi":"0"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ya sudah lah...",
+		"emosi":"0"
+	},
+]

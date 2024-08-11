@@ -1,0 +1,37 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Haduh... kapan selesainya ini??",
+		"emosi":"0"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Santai saja Doni",
+		"emosi":"0"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Jika kamu menikmatinya, maka tidak akan lelah",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Setidaknya itu yang disebutkan di internet",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"... ...",
+		"emosi":"2"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Ku hantam bentar lagi",
+		"emosi":"1"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Begitu dong semangat!",
+		"emosi":"3"
+	},
+]

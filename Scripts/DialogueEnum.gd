@@ -19,6 +19,7 @@ const FILES = {
 	KALIMANTAN = "res://dialogue/kalimantan.json",
 	KALIMANTAN_END = "res://dialogue/kalimantan_end.json",
 	START_PULAU = "res://dialogue/start_pulau.json",
+	PREFIX = "res://dialogue/",
 	BALI_PERANGKAP = "res://dialogue/bali_perangkap.json",
 	NT_HOSTILE = "res://dialogue/nusa_tenggara_hostile.json",
 	JAWA_TEBANG = "res://dialogue/jawa_tebang.json",
@@ -52,3 +53,5 @@ const LEVIATHAN1 = FILES.LEVIATHAN1
 const LEVIATHAN2 = FILES.LEVIATHAN2
 const EPILOGUE1 = FILES.EPILOGUE1
 const EPILOGUE2 = FILES.EPILOGUE2
+
+const PREFIX = FILES.PREFIX
