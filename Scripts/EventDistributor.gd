@@ -17,3 +17,4 @@ signal new_checkpoint(instance)
 signal animal_captured()
 
 signal scan_done()
+signal rubbish_collected()

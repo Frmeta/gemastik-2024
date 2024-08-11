@@ -10,6 +10,9 @@ signal some_checkpoint_captured(instance_checkpoint)
 # masing-masing
 @export var wallleft: InvisibleWall
 @export var wallright: InvisibleWall
+@export var rubbish_num :=0
+
+var _rubbish_counter = 0
 
 @export var syarat_hewan: Array[String]
 
@@ -20,6 +23,7 @@ var captured = false
 func _ready():
 	EventDistributor.connect("new_checkpoint", disable_both_wall)
 	EventDistributor.connect("animal_captured", scan_done)
+	EventDistributor.connect("rubbish_collected", scan_done)
 	
 	# syarat nama hewan ubah jadi lower
 	for i in range(syarat_hewan.size()):
@@ -67,9 +71,15 @@ func scan_done():
 			wallright.disable_wall()
 
 func syarat_terpenuhi():
-		# cek apakah semua syarat hewan sudah discan
+	# cek apakah semua syarat hewan sudah discan
 	for hewan in syarat_hewan:
 		if !GM.scanned_animal.has(hewan):
 			print("kamu blum scan " + hewan)
 			return false
 	return true
+
+func rubbish_pickedup():
+	if rubbish_num!=0:
+		_rubbish_counter+=1
+		if rubbish_num==_rubbish_counter and wallright!=null and wallright.is_not_disabled():
+			wallright.disable_wall()
