@@ -17,6 +17,7 @@ var counter = 0
 
 func _ready():
 	textbox.connect("go_to_next_line", foo)
+	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Feeling Cozy ' lofi background music.mp3", -3)
 	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
 	goto(0)
 	var target = $DonisRoom.global_position.y

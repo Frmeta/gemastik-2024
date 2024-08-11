@@ -1,15 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjoh1r15cung6"]
+[gd_scene load_steps=17 format=3 uid="uid://bjoh1r15cung6"]
 
 [ext_resource type="Texture2D" uid="uid://bdxq502j7wkk8" path="res://assets/ui/trap/dialog.png" id="1_41bfu"]
 [ext_resource type="Texture2D" uid="uid://dfbi4v8rhmms4" path="res://assets/ui/trap/pointer.png" id="2_g6h61"]
 [ext_resource type="Texture2D" uid="uid://b8h5vduq88kwg" path="res://assets/ui/trap/predialog.png" id="3_qgd6e"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stc3v"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_ggh3o"]
+material = SubResource("StandardMaterial3D_stc3v")
 size = Vector2(3, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbc8"]
 transparency = 1
-shading_mode = 0
+no_depth_test = true
 albedo_texture = ExtResource("1_41bfu")
 billboard_mode = 1
 
@@ -60,13 +63,14 @@ billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_074eu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_le1hr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fi1of"]
 transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("3_qgd6e")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_wpg1r"]
+material = SubResource("StandardMaterial3D_fi1of")
 size = Vector2(3, 2)
 
 [sub_resource type="Animation" id="Animation_kdbfs"]
@@ -131,7 +135,6 @@ material_override = SubResource("StandardMaterial3D_h8q66")
 mesh = SubResource("QuadMesh_074eu")
 
 [node name="presign" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_le1hr")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_wpg1r")
 

@@ -17,6 +17,7 @@ var counter = 0
 func _ready():
 	textbox.connect("go_to_next_line", foo)
 	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
+	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Taiyaki' cute background music.mp3",-3)
 	goto(0)
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.PROLOGUE1)
 	await EventDistributor.end_dialogue

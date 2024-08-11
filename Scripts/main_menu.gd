@@ -4,8 +4,7 @@ extends Control
 
 
 func _ready():
-	if not GM.get_node("background").playing:
-		GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav")
+	GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav", -3)
 	tab.current_tab = 0
 
 func _on_play_button_pressed():

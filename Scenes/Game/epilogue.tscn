@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3dpr7xdbb7ea" path="res://3D Assets/DoniRoom/DonisRoom.tscn" id="2_14574"]
 [ext_resource type="MeshLibrary" uid="uid://bvlofb202hx7c" path="res://Tilemap/tilemap_donisroom.tres" id="3_piaq6"]
 [ext_resource type="Script" path="res://Scenes/Game/mas_pos_target.gd" id="4_ko0em"]
-[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="5_7y4qt"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="5_7y4qt"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_80pqy"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="7_xh024"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="8_qlye5"]
@@ -214,7 +214,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_k7mp6")
 theme_override_font_sizes/font_size = 120
-text = "TO BE CONTINUED"
+text = "SELESAI"
 
 [node name="MarginContainer2" type="MarginContainer" parent="End/PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -224,6 +224,7 @@ theme_override_constants/margin_right = 450
 
 [node name="Button" type="Button" parent="End/PanelContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("9_k7mp6")
 theme_override_font_sizes/font_size = 50
 text = "Kembali ke Menu Utama"

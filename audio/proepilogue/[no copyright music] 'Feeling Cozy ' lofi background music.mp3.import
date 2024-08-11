@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dntrq72nvo686"
+path="res://.godot/imported/[no copyright music] 'Feeling Cozy ' lofi background music.mp3-d3bea7f3bc72b6be356e1603f0a68e02.mp3str"
+
+[deps]
+
+source_file="res://audio/proepilogue/[no copyright music] 'Feeling Cozy ' lofi background music.mp3"
+dest_files=["res://.godot/imported/[no copyright music] 'Feeling Cozy ' lofi background music.mp3-d3bea7f3bc72b6be356e1603f0a68e02.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
