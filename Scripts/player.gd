@@ -2,13 +2,15 @@ extends CharacterBody3D
 
 class_name Player
 
+@export var air_area := false
+
 @onready var animTree : AnimationTree = $DoniFinal/AnimationTree
 @onready var model3d := $DoniFinal
 @onready var scan := $Scan
 @onready var leg_target=$leg_target
 @onready var climb := $Climb
 
-const SPEED = 10
+var SPEED = 10
 const SWIM_SPEED = 7
 const JUMP_POWER = 20
 const acc = 300
@@ -59,6 +61,8 @@ const climbing_speed = 5.0
 var is_in_water = false
 
 var can_move = true
+var pushed_by_air = false
+var last_dir = 0
 
 func _ready():
 	GM.doni=self
@@ -69,6 +73,11 @@ func _ready():
 	animTree.set("parameters/MainState/transition_request", "game")
 	
 	is_poisoned = false
+	
+	if air_area:
+		SPEED=7
+	else:
+		SPEED=10
 
 func allow_move():
 	print("allow move")
@@ -200,14 +209,22 @@ func _physics_process(delta):
 			elif velocity.x > 0:
 				model3d.get_node("Player").rotation.y = deg_to_rad(40)
 			else:
-				model3d.get_node("Player").rotation.y = deg_to_rad(-40)
-				
+				if not pushed_by_air:
+					model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+				else:
+					if last_dir>0:
+						model3d.get_node("Player").rotation.y = deg_to_rad(40)
+					else:
+						model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+			if not pushed_by_air:
+				last_dir = velocity.x
+			
 			if is_on_floor():
 				# grounded
 				animTree.set("parameters/Platformer/conditions/is_floating", false)
 				animTree.set("parameters/Platformer/conditions/is_not_floating", true)
 				
-				if abs(velocity.x) < 0.1:
+				if (abs(velocity.x) < 0.1 and not air_area) or (air_area and pushed_by_air) :
 					animTree.set("parameters/Platformer/conditions/is_running", false)
 					animTree.set("parameters/Platformer/conditions/is_not_running", true)
 					$walkdust.stop_emit()
@@ -311,11 +328,20 @@ func movement_from_input(delta):
 				velocity += Vector3(input_x * SPEED * delta , 0, 0)
 			elif input_x != 0:
 				if not is_poisoned:
-					velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+					if (air_area and input_x>0) or not air_area:
+						velocity = velocity.move_toward(Vector3(input_x * SPEED, velocity.y, velocity.z), acc * delta)
+					else:
+						if input_x<0:
+							velocity = velocity.move_toward(Vector3(input_x * SPEED-7, velocity.y, velocity.z), acc * delta)
 				else:
 					velocity = velocity.move_toward(Vector3(input_x * SPEED/2, velocity.y, velocity.z), acc * delta)
+				pushed_by_air=false
 			else:
-				velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+				if not air_area:
+					velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
+				else:
+					pushed_by_air=true
+					velocity = velocity.move_toward(Vector3(-2, velocity.y, velocity.z), friction * delta)
 
 func _process(_delta):
 	if get_parent().has_node("MultiMeshInstance3D"):
