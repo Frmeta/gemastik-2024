@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c8lyeh72rbeep"]
+[gd_scene load_steps=51 format=3 uid="uid://c8lyeh72rbeep"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dqxx67pcn36de" path="res://Scenes/trap/beartrap.tscn" id="25_42ecr"]
 [ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="25_nufhl"]
 [ext_resource type="PackedScene" uid="uid://bcu5f1do2cu5o" path="res://Scenes/godray.tscn" id="29_vjvqq"]
+[ext_resource type="PackedScene" uid="uid://vd8uihael7tq" path="res://Scenes/jembatans/jembatan.tscn" id="31_dudab"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h50dl"]
 panorama = ExtResource("3_nwx65")
@@ -624,3 +625,6 @@ skeleton = NodePath("")
 transform = Transform3D(-0.784099, 0, 0.102154, 0, -1, 0, -0.0877981, 0, -0.912299, 185.886, 1.07309, -19.1223)
 mesh = SubResource("ArrayMesh_xeek2")
 skeleton = NodePath("")
+
+[node name="jembatan" parent="." instance=ExtResource("31_dudab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71085, -1.39677, 0)
