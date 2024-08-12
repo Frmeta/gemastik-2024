@@ -47,6 +47,9 @@ func _ready():
 	for i in range(10):
 		nama_hewan = nama_hewan.replace(str(i), "")
 	
+	# no scan effect
+	for i in range(0, mesh.get_surface_override_material_count()):
+		mesh.get_active_material(i).next_pass = null
 	
 func _process(delta):
 	# scanning
@@ -57,7 +60,7 @@ func _process(delta):
 		above_0 = false
 		for i in range(0, mesh.get_surface_override_material_count()):
 			mesh.get_active_material(i).next_pass = null
-			mesh.mesh.surface_get_material(i).next_pass
+			# mesh.mesh.surface_get_material(i).next_pass
 	elif scan_progress > 0 and !above_0:
 		above_0 = true
 		for i in range(0, mesh.get_surface_override_material_count()):

@@ -95,11 +95,14 @@ mesh = SubResource("BoxMesh_i8odg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
 scene_after_win = "level_select"
 
-[node name="Harimau Sumatera" parent="." instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4819, -2.08417, -0.301669)
+[node name="Animals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 
-[node name="Bunga Rafflesia" parent="." instance=ExtResource("15_1e10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73921, -2.08417, -0.301669)
+[node name="Harimau Sumatera" parent="Animals" instance=ExtResource("14_pwod0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8109, 12.9158, -0.301669)
+
+[node name="Bunga Rafflesia" parent="Animals" instance=ExtResource("15_1e10j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5536, 12.9158, -0.301669)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

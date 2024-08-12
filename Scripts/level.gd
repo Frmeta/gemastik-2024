@@ -38,7 +38,7 @@ func _ready():
 	
 	EventDistributor.emit_signal("despawn_mas")
 	
-	GM.doni.allowmove()
+	GM.doni.allow_move()
 	GM.doni.curr_jumps=0
 
 func set_up():
