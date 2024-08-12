@@ -4,7 +4,7 @@ class_name Animal
 
 @export var mesh: MeshInstance3D
 @export var can_move:=true
-@onready var behaviour = $Node3D
+@onready var behaviour
 
 var scan_progress = 0.0 # range dari 0 sampai 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,6 +23,7 @@ func _init():
 	collision_mask = 2
 	
 func _ready():
+	behaviour = get_node("Node3D") if has_node("Node3D") else null
 	set_can_move(can_move)
 	
 	# assert next_pass material
@@ -86,4 +87,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func set_can_move(new_state):
-	behaviour.can_move=new_state
+	if (is_instance_valid(behaviour)):
+		behaviour.can_move=new_state

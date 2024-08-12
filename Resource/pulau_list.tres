@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="pulau_list" load_steps=9 format=3 uid="uid://cl8c4syjo18hu"]
+[gd_resource type="Resource" script_class="pulau_list" load_steps=10 format=3 uid="uid://cl8c4syjo18hu"]
 
 [ext_resource type="Resource" uid="uid://ced3ccmk8mqe1" path="res://Resource/Pulau/0-kalimantan.tres" id="1_oo8iu"]
 [ext_resource type="Resource" uid="uid://v44xmp7objkr" path="res://Resource/Pulau/1-bali.tres" id="2_xsl3m"]
@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://set25lgglty" path="res://Resource/Pulau/4-jawa.tres" id="5_d628y"]
 [ext_resource type="Resource" uid="uid://btg2jkgaj4luj" path="res://Resource/Pulau/5-sulawesi.tres" id="6_uy1fb"]
 [ext_resource type="Resource" uid="uid://dotyuieb0aurl" path="res://Resource/Pulau/6-sumatera.tres" id="7_i3qdk"]
+[ext_resource type="Resource" uid="uid://dgp383yxwp3dj" path="res://Resource/Pulau/7-boss.tres" id="8_pfsmn"]
 [ext_resource type="Script" path="res://Scripts/pulau_list.gd" id="8_pow6o"]
 
 [resource]
 script = ExtResource("8_pow6o")
-list = Array[Resource("res://Scripts/pulau.gd")]([ExtResource("1_oo8iu"), ExtResource("2_xsl3m"), ExtResource("3_isuky"), ExtResource("4_e1upb"), ExtResource("5_d628y"), ExtResource("6_uy1fb"), ExtResource("7_i3qdk")])
+list = Array[Resource("res://Scripts/pulau.gd")]([ExtResource("1_oo8iu"), ExtResource("2_xsl3m"), ExtResource("3_isuky"), ExtResource("4_e1upb"), ExtResource("5_d628y"), ExtResource("6_uy1fb"), ExtResource("7_i3qdk"), ExtResource("8_pfsmn")])
