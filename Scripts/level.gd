@@ -5,6 +5,7 @@ class_name Level
 @onready var almanac_3d = $Camera3D/Almanac2
 @onready var almanac_ui = $"CanvasLayerLevel/Almanac"
 @onready var successful_scan = $"CanvasLayerLevel/Successful Scan"
+@onready var almanac_icon = $"CanvasLayerLevel/Controls Hint/HBoxContainer/almanac"
 
 @export var nama_pulau:String
 @export var fun_fact:String
@@ -67,6 +68,7 @@ func _input(event):
 		
 		is_almanac_open = !is_almanac_open
 		if is_almanac_open:
+			almanac_icon.unotify() # Matiin notif
 			# opening almanac
 			almanac_3d.visible = true
 			almanac_3d.get_node("AnimationPlayer").play("Book_ShowOpen")
@@ -123,6 +125,7 @@ func new_animal(nama_hewan: String):
 		if hewan.nama.to_lower() == nama_hewan:
 			var texture = hewan.foto_kartun
 			successful_scan.appear(texture)
+			almanac_icon.notify( )
 			# doni akan allow_move setelah animasi selesai, menggunakan signal
 			return
 			

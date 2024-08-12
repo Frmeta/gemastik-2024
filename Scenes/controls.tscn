@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://trs0ogdxh7bx"]
+[gd_scene load_steps=17 format=3 uid="uid://trs0ogdxh7bx"]
 
 [ext_resource type="Texture2D" uid="uid://c45mgcs0vfato" path="res://assets/ui/Hint_Almanac.png" id="1_sf0if"]
 [ext_resource type="Texture2D" uid="uid://b6q64chm2w6t8" path="res://assets/ui/Hint_Grappling.png" id="2_6g26b"]
+[ext_resource type="Script" path="res://Scripts/almanac_icon.gd" id="2_logxd"]
 [ext_resource type="Texture2D" uid="uid://b5pudorb8mg12" path="res://assets/ui/Hint_Scanner.png" id="3_66oie"]
 [ext_resource type="Texture2D" uid="uid://b5qacipnqulu" path="res://assets/ui/pause_dark.png" id="4_34xg2"]
 [ext_resource type="Texture2D" uid="uid://csawt563aguxm" path="res://assets/ui/pause_light.png" id="5_2a37w"]
@@ -41,6 +42,10 @@ layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("1_sf0if")
 stretch_mode = 2
+script = ExtResource("2_logxd")
+
+[node name="flip_timer" type="Timer" parent="Controls Hint/HBoxContainer/almanac"]
+wait_time = 0.8
 
 [node name="grappling" type="TextureRect" parent="Controls Hint/HBoxContainer"]
 layout_mode = 2
@@ -147,6 +152,13 @@ texture_hover = ExtResource("14_bn5tf")
 
 [node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_bottom = 418.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_bottom = 418.0
+
+[connection signal="timeout" from="Controls Hint/HBoxContainer/almanac/flip_timer" to="Controls Hint/HBoxContainer/almanac" method="_on_flip_timer_timeout"]
 [connection signal="pressed" from="Pause/Pause Button" to="Pause/Pause Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Pause Button/Pause Panel/LevelSelect Button" to="Pause/Pause Button" method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="Pause/Pause Button/Pause Panel/Continue Button" to="Pause/Pause Button" method="_on_continue_button_pressed"]

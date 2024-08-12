@@ -102,8 +102,6 @@ func _on_mouse_body_entered(body):
 		target_position=body.global_position
 		# show label
 		var debug = GM.pulau_list_resource.list[pin_no].nama
-			
-		
 		nama_pulau_label.text = debug
 		reset_pins_animation()
 
