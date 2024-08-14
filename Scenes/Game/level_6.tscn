@@ -20,6 +20,8 @@ size = Vector3(150, 1, 1)
 
 [node name="Level Kosong" type="Node3D"]
 script = ExtResource("1_wbss8")
+nama_pulau = "Sumatera"
+fun_fact = "Tahukah kamu Pulau Sumatera merupakan awal masuknya Islam ke Indonesia di beberapa catatan sejarah."
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_5anij")]
 

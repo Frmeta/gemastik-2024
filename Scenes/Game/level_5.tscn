@@ -23,6 +23,8 @@ size = Vector3(150, 1, 1)
 
 [node name="Level Kosong" type="Node3D"]
 script = ExtResource("1_881lh")
+nama_pulau = "Sulawesi"
+fun_fact = "Karena letaknya yang berada di wilayah peralihan, Sulawesi memiliki keanekaragaman hayati yang berbeda dari daerah asiatis dan austrliatis."
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_54lg6")]
 

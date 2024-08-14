@@ -22,6 +22,8 @@ size = Vector3(150, 1, 1)
 
 [node name="Level Kosong" type="Node3D"]
 script = ExtResource("1_wk77a")
+nama_pulau = "Jawa"
+fun_fact = "Pulau Jawa terletak di kepulauan Sunda Besar dan merupakan pulau terluas ke-13 di dunia. Selain itu, Pulau Jawa juga menapung 60% penduduk Indonesia"
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_iuh7q")]
 
