@@ -37,8 +37,7 @@ func _process(delta):
 		trauma = max(trauma-decay*delta,0)
 		_shaking()
 	else:
-		offset.x=0
-		offset.y=0
+		offset = Vector3(0, 2.33, 11.3)
 	global_position = expDecay(global_position, player.global_position + offset, decay, delta)
 	
 func expDecay(a, b, decay, dt):

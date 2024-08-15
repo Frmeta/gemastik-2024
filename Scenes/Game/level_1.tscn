@@ -529,14 +529,14 @@ transform = Transform3D(2.22706, -0.810848, 0, 7.53294, 0.239722, 0, 0, 0, 1, 22
 [node name="Animals" type="Node3D" parent="."]
 
 [node name="Jalak Bali" parent="Animals" instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2347, 3.46548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0763, 3.46548, 0)
 
 [node name="Jalak Bali2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0292, 3.46548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.408, 3.46548, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
 [node name="Jalak Bali3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6734, 3.46548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6734, 3.36169, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
 [node name="Jalak Bali4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
