@@ -15,7 +15,6 @@ var is_animating_almanac = false
 
 func _ready():
 	set_up()
-	
 	if GM.current_level==1:
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright).ogg", -10)
 	elif GM.current_level==0:

@@ -12,6 +12,8 @@ signal some_checkpoint_captured(instance_checkpoint)
 @export var wallright: InvisibleWall
 @export var rubbish_num :=0
 
+@export var air_speed :=0
+
 var _rubbish_counter = 0
 
 @export var syarat_hewan: Array[String]
@@ -57,6 +59,8 @@ func _on_body_entered(body):
 			wallleft.enable_wall()
 		if wallright!=null and !syarat_terpenuhi():
 			wallright.enable_wall()
+		
+		EventDistributor.emit_signal("emit_air", air_speed)
 		
 		# FOR DEBUGGING PUPOSES
 		# EventDistributor.emit_signal("animal_captured")

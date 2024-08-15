@@ -71,8 +71,8 @@ func _ready():
 	EventDistributor.connect("start_dialogue",stop_move)
 	EventDistributor.connect("end_dialogue",allow_move)
 	EventDistributor.connect("scan_done",stop_scan_sound)
+	EventDistributor.connect("emit_air", _change_air_speed)
 	animTree.set("parameters/MainState/transition_request", "game")
-	
 	is_poisoned = false
 
 func allow_move():
@@ -338,7 +338,7 @@ func movement_from_input(delta):
 					velocity = velocity.move_toward(Vector3(0, velocity.y, velocity.z), friction * delta)
 				else:
 					pushed_by_air=true
-					velocity = velocity.move_toward(Vector3(-2, velocity.y, velocity.z), friction * delta)
+					velocity = velocity.move_toward(Vector3(-1*air_speed, velocity.y, velocity.z), friction * delta)
 
 func _process(_delta):
 	if get_parent().has_node("MultiMeshInstance3D"):
@@ -375,3 +375,6 @@ func _on_timer_timeout():
 
 func stop_scan_sound():
 	$scanning.stop()
+
+func _change_air_speed(amount):
+	air_speed=amount

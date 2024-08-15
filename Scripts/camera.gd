@@ -21,6 +21,15 @@ func _ready():
 	EventDistributor.connect("player_enter_trap_area", decrease_fov)
 	EventDistributor.connect("player_leave_trap_area", increase_fov)
 	EventDistributor.connect("shake_cam", start_shake)
+	EventDistributor.connect("emit_air", _change_air_emit_position)
+
+func _change_air_emit_position(amount):
+	var air_emitter = get_node("air_emitter")
+	if air_emitter!=null:
+		if amount>=0:
+			air_emitter.position.x = 14
+		else:
+			air_emitter.position.x = -14
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -4,6 +4,7 @@ extends Area3D
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		EventDistributor.emit_signal("emit_air",0)
 		if GM.current_level==0:
 			GM.doni.get_node("../Camera3D/").offset = Vector3(0, 1, 5)
 			EventDistributor.emit_signal("spawn_mas")

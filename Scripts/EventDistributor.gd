@@ -20,3 +20,5 @@ signal animal_captured()
 
 signal scan_done()
 signal rubbish_collected()
+
+signal emit_air(speed)
