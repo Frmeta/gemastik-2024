@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://gnfb8a7fcvx8"]
+[gd_scene load_steps=17 format=3 uid="uid://gnfb8a7fcvx8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wbss8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_5anij"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_xdelr"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_nu0dd"]
 [ext_resource type="PackedScene" uid="uid://dh2wp603p03k7" path="res://3D Assets/Animal/6-Sumatera/Harimau Sumatera/Harimau sumatera.tscn" id="14_pwod0"]
+[ext_resource type="PackedScene" uid="uid://sq238bgldex5" path="res://3D Assets/Animal/6-Sumatera/Bunga Raflesia/Bunga Raflesia.tscn" id="15_1e10j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
@@ -96,8 +97,14 @@ mesh = SubResource("BoxMesh_i8odg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
 scene_after_win = "level_select"
 
-[node name="Harimau Sumatera" parent="." instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4819, -2.08417, -0.301669)
+[node name="Animals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
+
+[node name="Harimau Sumatera" parent="Animals" instance=ExtResource("14_pwod0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8109, 12.9158, -0.301669)
+
+[node name="Bunga Rafflesia" parent="Animals" instance=ExtResource("15_1e10j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5536, 12.9158, -0.301669)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

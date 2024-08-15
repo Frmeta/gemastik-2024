@@ -455,29 +455,30 @@ mesh = SubResource("BoxMesh_i8odg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 434.482, 54.8011, -0.871899)
 scene_after_win = "level_select"
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Animals" type="Node3D" parent="."]
 
-[node name="Landak" parent="Node3D" instance=ExtResource("18_dqsyr")]
+[node name="Landak" parent="Animals" instance=ExtResource("18_dqsyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6806, -8.14938, 0)
 
-[node name="Landak2" parent="Node3D" instance=ExtResource("18_dqsyr")]
+[node name="Landak2" parent="Animals" instance=ExtResource("18_dqsyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9189, -5.41043, 0)
 
-[node name="Landak3" parent="Node3D" instance=ExtResource("18_dqsyr")]
+[node name="Landak3" parent="Animals" instance=ExtResource("18_dqsyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6428, -2.25071, 0)
 
-[node name="Trenggiling" parent="Node3D" instance=ExtResource("19_hlf7l")]
+[node name="Trenggiling" parent="Animals" instance=ExtResource("19_hlf7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4078, 0.741547, 0)
 
-[node name="Trenggiling2" parent="Node3D" instance=ExtResource("19_hlf7l")]
+[node name="Trenggiling2" parent="Animals" instance=ExtResource("19_hlf7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5095, -0.75384, -0.0301914)
 
-[node name="Trenggiling3" parent="Node3D" instance=ExtResource("19_hlf7l")]
+[node name="Trenggiling3" parent="Animals" instance=ExtResource("19_hlf7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.0301914)
 
-[node name="Komodo" parent="Node3D" instance=ExtResource("21_sir6x")]
+[node name="Komodo" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
+<<<<<<< HEAD
 [node name="Komodo2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 382.873, 16.4831, 1.90735e-06)
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
@@ -485,5 +486,14 @@ can_move = false
 
 [node name="Komodo3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 423.87, 19.8258, 0)
+=======
+[node name="Komodo2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 366.127, 21.8016, -1.90735e-06)
+mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
+can_move = false
+
+[node name="Komodo3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("21_sir6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 374.058, 19.2613, 0)
+>>>>>>> 47495a8ee9128ff8490bf34c8265474a0e612871
 mesh = NodePath("../Komodo/Kodomo_Skeleton/Skeleton3D/Komodo_body_001")
 can_move = false

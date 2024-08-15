@@ -232,8 +232,6 @@ expand_mode = 1
 
 [node name="TextureButton1" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
 layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
 script = ExtResource("13_w2a43")
 
 [node name="TextureButton2" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
@@ -251,6 +249,7 @@ offset_right = 266.0
 offset_bottom = 242.0
 
 [node name="TextureRect" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -268,7 +267,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_j5hdj")
 
 [node name="TextureButton4" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
-visible = false
 layout_mode = 1
 offset_left = 270.0
 offset_top = 4.0
@@ -276,6 +274,7 @@ offset_right = 398.0
 offset_bottom = 132.0
 
 [node name="TextureRect2" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+visible = false
 layout_mode = 0
 offset_left = 273.0
 offset_top = 418.0
@@ -286,7 +285,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_j5hdj")
 
 [node name="TextureButton5" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
-visible = false
 layout_mode = 1
 offset_left = -167.0
 offset_top = 108.0
@@ -294,6 +292,7 @@ offset_right = -39.0
 offset_bottom = 236.0
 
 [node name="TextureRect3" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+visible = false
 layout_mode = 0
 offset_left = 523.0
 offset_top = 294.0
@@ -304,7 +303,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_j5hdj")
 
 [node name="TextureButton6" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
-visible = false
 layout_mode = 1
 offset_left = 83.0
 offset_top = -16.0
@@ -312,6 +310,7 @@ offset_right = 211.0
 offset_bottom = 112.0
 
 [node name="TextureRect4" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+visible = false
 layout_mode = 0
 offset_left = 158.0
 offset_top = 312.0
@@ -321,7 +320,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_j5hdj")
 
 [node name="TextureButton7" parent="PanelAlmanac/TabContainer/Halaman Peta Indo" instance=ExtResource("13_85a34")]
-visible = false
 layout_mode = 1
 offset_left = -282.0
 offset_top = 2.0

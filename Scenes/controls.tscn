@@ -59,6 +59,8 @@ stretch_mode = 2
 
 [node name="Almanac" parent="." instance=ExtResource("5_p1ni8")]
 
+[node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]
+
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -149,8 +151,6 @@ grow_vertical = 2
 mouse_filter = 1
 texture_normal = ExtResource("13_uq0yj")
 texture_hover = ExtResource("14_bn5tf")
-
-[node name="Successful Scan" parent="." instance=ExtResource("6_kjvoj")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_bottom = 418.0

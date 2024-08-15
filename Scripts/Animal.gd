@@ -4,7 +4,7 @@ class_name Animal
 
 @export var mesh: MeshInstance3D
 @export var can_move:=true
-@onready var behaviour = $Node3D
+@onready var behaviour
 
 var scan_progress = 0.0 # range dari 0 sampai 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,6 +23,7 @@ func _init():
 	collision_mask = 2
 	
 func _ready():
+	behaviour = get_node("Node3D") if has_node("Node3D") else null
 	set_can_move(can_move)
 	
 	# assert next_pass material
@@ -46,6 +47,9 @@ func _ready():
 	for i in range(10):
 		nama_hewan = nama_hewan.replace(str(i), "")
 	
+	# no scan effect
+	for i in range(0, mesh.get_surface_override_material_count()):
+		mesh.get_active_material(i).next_pass = null
 	
 func _process(delta):
 	# scanning
@@ -56,7 +60,7 @@ func _process(delta):
 		above_0 = false
 		for i in range(0, mesh.get_surface_override_material_count()):
 			mesh.get_active_material(i).next_pass = null
-			mesh.mesh.surface_get_material(i).next_pass
+			# mesh.mesh.surface_get_material(i).next_pass
 	elif scan_progress > 0 and !above_0:
 		above_0 = true
 		for i in range(0, mesh.get_surface_override_material_count()):
@@ -86,4 +90,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func set_can_move(new_state):
-	behaviour.can_move=new_state
+	if (is_instance_valid(behaviour)):
+		behaviour.can_move=new_state

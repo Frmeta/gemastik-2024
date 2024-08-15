@@ -15,11 +15,14 @@ var _counter=0
 var ui_accept
 var almanac_input
 
+func _ready():
+	almanac_input = InputMap.action_get_events("almanac")
+
 func start_tutorial():
 	await get_tree().create_timer(0.6).timeout
 	visible=true
 	ongoing=true
-	almanac_input = InputMap.action_get_events("almanac")
+	
 	InputMap.action_erase_events("almanac")
 
 func end_tutorial():
@@ -65,6 +68,10 @@ func _process(delta):
 			if n is TextureButton:
 				n.disabled=false
 		GM.doni.stop_move()
+
+func _exit_tree():
+	for event in almanac_input:
+		InputMap.action_add_event("almanac", event)
 
 func add_subs(node, file_path, position=null, trigger="space"):
 	nodes.append(node)

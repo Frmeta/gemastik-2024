@@ -90,22 +90,25 @@ text = "despawn"
 script = ExtResource("12_atlty")
 event = "despawn_mas"
 
+[node name="Animals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
+
+[node name="WinArea" parent="Animals" instance=ExtResource("13_pjhcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2682, 22.8922, -0.871899)
+scene_after_win = "level_select"
+
+[node name="Badak Jawa" parent="Animals" instance=ExtResource("14_t8qft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3336, 15.1009, -0.301669)
+
+[node name="Elang Jawa" parent="Animals" instance=ExtResource("15_mhgt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6279, 17.5473, -0.301669)
+
+[node name="Burung Merak" parent="Animals" instance=ExtResource("16_2p5ol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.1242, 13.0953, -0.301669)
+
 [node name="Lower Bound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 mesh = SubResource("BoxMesh_i8odg")
-
-[node name="WinArea" parent="." instance=ExtResource("13_pjhcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
-scene_after_win = "level_select"
-
-[node name="Badak Jawa" parent="." instance=ExtResource("14_t8qft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9592, 0.100865, -0.301669)
-
-[node name="Elang Jawa" parent="." instance=ExtResource("15_mhgt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6649, 2.54733, -0.301669)
-
-[node name="Burung Merak" parent="." instance=ExtResource("16_2p5ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16858, -1.90471, -0.301669)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

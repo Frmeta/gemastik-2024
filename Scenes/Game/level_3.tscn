@@ -149,17 +149,20 @@ mesh = SubResource("BoxMesh_i8odg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 762.142, 26.2734, -0.879162)
 scene_after_win = "level_select"
 
-[node name="Burung Cendrawasih" parent="." instance=ExtResource("14_fqbwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7445, -1.10738, -0.301669)
+[node name="Animals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.142, -5.72657, -0.879162)
 
-[node name="Dingiso" parent="." instance=ExtResource("15_3wcx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.174, -1.17653, -0.30167)
+[node name="Burung Cendrawasih" parent="Animals" instance=ExtResource("14_fqbwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.397, 4.61919, 0.577493)
 
-[node name="Kanguru Pohon Mantel Emas" parent="." instance=ExtResource("16_s6ab2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6928, -1.71474, -0.301669)
+[node name="Dingiso" parent="Animals" instance=ExtResource("15_3wcx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.968, 4.55004, 0.577492)
 
-[node name="Kasuari" parent="." instance=ExtResource("17_migyj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.467, 0.841971, -0.301669)
+[node name="Kanguru Pohon Mantel Emas" parent="Animals" instance=ExtResource("16_s6ab2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.4492, 4.01183, 0.577493)
+
+[node name="Kasuari" parent="Animals" instance=ExtResource("17_migyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.675, 6.56854, 0.577493)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

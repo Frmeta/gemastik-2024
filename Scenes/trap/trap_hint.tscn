@@ -13,6 +13,7 @@ size = Vector2(3, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbc8"]
 transparency = 1
 no_depth_test = true
+shading_mode = 0
 albedo_texture = ExtResource("1_41bfu")
 billboard_mode = 1
 

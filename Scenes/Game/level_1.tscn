@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
 [ext_resource type="Texture2D" uid="uid://bhudu6ikni6vu" path="res://assets/sky/Fading_Sky-Blue_04-512x512.png" id="3_nwx65"]
-[ext_resource type="LightmapGIData" uid="uid://ssfspc4b7a4u" path="res://lightbake/level_1.lmbake" id="4_0u4lb"]
 [ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_ormc7"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_p2it0"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_tr8ay"]
@@ -22,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_186.res" id="16_haoq2"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_175.res" id="17_k3nlh"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="17_xkox3"]
-[ext_resource type="PackedScene" uid="uid://ppywoy75pf55" path="res://rumah_bali.tscn" id="17_ylv5b"]
+[ext_resource type="PackedScene" path="res://rumah_bali.tscn" id="17_ylv5b"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_i5x08"]
 [ext_resource type="Texture2D" uid="uid://dacu0ffeg12r6" path="res://3D Assets/Vines/vine.png" id="20_8jshk"]
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_v45f6"]
@@ -333,10 +332,6 @@ fun_fact = "Pulau Bali memiliki pemandangan alam yang indah sehingga mayoritas p
 environment = SubResource("Environment_xhu2f")
 script = ExtResource("4_ormc7")
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
-transform = Transform3D(-0.948954, 0.314777, -0.0200502, 0.00774765, 0.0868108, 0.996195, 0.31532, 0.945187, -0.0848183, 0, 11.6486, 0)
-light_data = ExtResource("4_0u4lb")
-
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_p2it0")]
 light_bake_mode = 1
 shadow_opacity = 0.82
@@ -487,7 +482,7 @@ transform = Transform3D(2.80418, 0, 1.80212, 0, 3.33332, 0, -1.80212, 0, 2.80418
 transform = Transform3D(3.3248, 0, 0.23821, 0, 3.33332, 0, -0.23821, 0, 3.3248, 277.284, 11.8219, -27.0226)
 
 [node name="Cube_162" type="MeshInstance3D" parent="GridMapGround/rumah"]
-transform = Transform3D(-0.0375337, 0, -0.999295, 0, -1, 0, 0.999295, 0, -0.0375337, 365.828, 11.4978, -11.634)
+transform = Transform3D(-0.0375337, 0, -0.999295, 0, -1, 0, 0.999295, 0, -0.0375337, 391.723, 12.7127, -11.634)
 mesh = SubResource("ArrayMesh_rv47d")
 skeleton = NodePath("")
 
@@ -531,87 +526,87 @@ transform = Transform3D(5.67454, 0.566261, 0, -4.2454, 0.756881, 0, 0, 0, 0.9962
 [node name="grapling_for_tree2" parent="." instance=ExtResource("17_xkox3")]
 transform = Transform3D(2.22706, -0.810848, 0, 7.53294, 0.239722, 0, 0, 0, 1, 223.491, 4.72034, 0)
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Animals" type="Node3D" parent="."]
 
-[node name="Jalak Bali" parent="Node3D" instance=ExtResource("18_i5x08")]
+[node name="Jalak Bali" parent="Animals" instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2347, 3.46548, 0)
 
-[node name="Jalak Bali2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
+[node name="Jalak Bali2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0292, 3.46548, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
-[node name="Jalak Bali3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
+[node name="Jalak Bali3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6734, 3.46548, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
-[node name="Jalak Bali4" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
+[node name="Jalak Bali4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3393, 3.46548, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
-[node name="Jalak Bali5" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
+[node name="Jalak Bali5" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.604, 3.46548, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 
-[node name="Anjing Kintamani" parent="Node3D" instance=ExtResource("20_v45f6")]
+[node name="Anjing Kintamani" parent="Animals" instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.471, -1.39422, 0)
 
-[node name="Anjing Kintamani3" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
+[node name="Anjing Kintamani3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.63, 0.823557, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 
-[node name="Anjing Kintamani4" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
+[node name="Anjing Kintamani4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.74, 6.86791, 0)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 
-[node name="Anjing Kintamani2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
+[node name="Anjing Kintamani2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.685, -9.29618, 0.785703)
 mesh = NodePath("../Anjing Kintamani/Kintamani_Skeleton/Skeleton3D/Kintamani")
 can_move = false
 
-[node name="Beartrap2" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
+[node name="Beartrap2" parent="Animals" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.373, -9.76888, 1.01185)
 hewan_trapped = NodePath("../Anjing Kintamani2")
 
-[node name="Rusa2" parent="Node3D" node_paths=PackedStringArray("mesh") instance=ExtResource("21_j6yl5")]
+[node name="Rusa2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("21_j6yl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.504, 3.91001, 0)
 mesh = NodePath("../Rusa/Menjangan_Skeleton/Skeleton3D/Menjangan")
 
-[node name="Rusa" parent="Node3D" instance=ExtResource("21_j6yl5")]
+[node name="Rusa" parent="Animals" instance=ExtResource("21_j6yl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 271.915, 10.9115, 0)
 can_move = false
 
-[node name="Beartrap" parent="Node3D" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
+[node name="Beartrap" parent="Animals" node_paths=PackedStringArray("hewan_trapped") instance=ExtResource("25_42ecr")]
 transform = Transform3D(0.999994, 0.00336848, 0, -0.00336848, 0.999994, 0, 0, 0, 1, 271.219, 9.61504, 0.781439)
 hewan_trapped = NodePath("../Rusa")
 
-[node name="Area3D" parent="Node3D/Beartrap" instance=ExtResource("25_nufhl")]
+[node name="Area3D" parent="Animals/Beartrap" instance=ExtResource("25_nufhl")]
 file_name = "bali_perangkap"
 
-[node name="godray" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 28.7861, 14.7031, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray2" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray2" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 89.0057, 11.5336, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray3" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray3" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 101.006, 10.5336, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray4" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray4" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 186.977, 16.0802, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray5" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray5" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 293.55, 20.4382, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray6" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray6" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 270.572, 14.8916, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
-[node name="godray7" parent="Node3D" instance=ExtResource("29_vjvqq")]
+[node name="godray7" parent="Animals" instance=ExtResource("29_vjvqq")]
 transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 359.234, 10.2005, -0.12294)
 visibility_aabb = AABB(-22.5562, -24.097, -4, 45.1123, 48.194, 8)
 
