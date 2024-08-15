@@ -29,6 +29,7 @@ var curr_jumps = 0 # sudah loncat berapa kali
 var _last_jump_pressed = 0
 var _last_on_ground = 0
 var being_knocked_back = false
+var is_on_air = false
 var is_poisoned = false :
 	get:
 		return is_poisoned
@@ -214,6 +215,9 @@ func _physics_process(delta):
 				last_dir = velocity.x
 			
 			if is_on_floor():
+				if is_on_air:
+					is_on_air=false
+					$landing_dust.emitting=true
 				# grounded
 				animTree.set("parameters/Platformer/conditions/is_floating", false)
 				animTree.set("parameters/Platformer/conditions/is_not_floating", true)
@@ -233,7 +237,7 @@ func _physics_process(delta):
 				# floating
 				animTree.set("parameters/Platformer/conditions/is_floating", true)
 				animTree.set("parameters/Platformer/conditions/is_not_floating", false)
-				
+				is_on_air = true
 		
 	# Squash & Stretch
 	if dir == Vector2.ZERO:
@@ -352,6 +356,7 @@ func victory_dance():
 	animTree.set("parameters/Story/transition_request", "victory")
 
 func knocked_back(from : Vector3):
+	EventDistributor.emit_signal("shake_cam")
 	being_knocked_back=true
 	var from_right = (from.x-self.global_position.x) > 0
 	print(from_right)

@@ -11,6 +11,7 @@ signal end_tutorial_line()
 
 signal player_enter_trap_area()
 signal player_leave_trap_area()
+signal shake_cam()
 
 signal button_clicked_on_tutorial()
 

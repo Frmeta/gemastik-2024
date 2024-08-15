@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=30 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/Tip.gd" id="7_vrhxe"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="8_ojoma"]
 [ext_resource type="AudioStream" uid="uid://pkg7m286r3r8" path="res://audio/scan/449672__matrixxx__radar-something-detected-05-sec.wav" id="11_oykeo"]
+[ext_resource type="Texture2D" uid="uid://ce0js0e2miqkf" path="res://assets/dust_particle.png" id="12_xqx3e"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0obg1"]
 
@@ -57,6 +58,45 @@ albedo_color = Color(0.65098, 0.109804, 0.109804, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_nx3qb"]
 material = SubResource("StandardMaterial3D_kmmol")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4irr"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("12_xqx3e")
+billboard_mode = 1
+
+[sub_resource type="Curve" id="Curve_ivtdy"]
+_data = [Vector2(0, 0.0356083), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ttp5b"]
+curve = SubResource("Curve_ivtdy")
+
+[sub_resource type="Curve" id="Curve_2t0s3"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.485507, 2.79748), 0.0, 0.0, 0, 0, Vector2(1, 0.309347), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_g2b15"]
+curve = SubResource("Curve_2t0s3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cbg48"]
+particle_flag_disable_z = true
+angle_min = -397.9
+direction = Vector3(0, 1, 0)
+spread = 80.0
+flatness = 0.1
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -10.0
+linear_accel_max = -10.0
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_ttp5b")
+scale_over_velocity_curve = SubResource("CurveTexture_g2b15")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cl5mj"]
+size = Vector2(0.7, 0.7)
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 35
@@ -133,5 +173,17 @@ emitting = false
 amount = 15
 process_material = SubResource("ParticleProcessMaterial_fng4l")
 draw_pass_1 = SubResource("QuadMesh_nx3qb")
+
+[node name="landing_dust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548696, 0)
+material_override = SubResource("StandardMaterial3D_p4irr")
+emitting = false
+amount = 5
+lifetime = 0.3
+one_shot = true
+speed_scale = 1.2
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_cbg48")
+draw_pass_1 = SubResource("QuadMesh_cl5mj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
