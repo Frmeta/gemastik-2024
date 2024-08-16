@@ -49,14 +49,16 @@ func _ready():
 	for i in range(10):
 		nama_hewan = nama_hewan.replace(str(i), "")
 	
-	# no scan effect
-	for i in range(0, mesh.get_surface_override_material_count()):
-		mesh.get_active_material(i).next_pass = null
+	
 	
 func _process(delta):
 	# scanning
 	if above_0:
 		next_pass.set_shader_parameter("Dissolve_Height", scan_progress)
+	else:
+		# no scan effect
+		for i in range(0, mesh.get_surface_override_material_count()):
+			mesh.get_active_material(i).next_pass = null
 	
 	if scan_progress <= 0 and above_0:
 		above_0 = false
