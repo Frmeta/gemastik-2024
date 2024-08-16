@@ -5,7 +5,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_7lyb8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75lc6"]
-size = Vector3(14.757, 1.3374, 0.01)
+size = Vector3(32.687, 19.627, 0.01)
 
 [node name="Mouse Position Locator" type="Node3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)

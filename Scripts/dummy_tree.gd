@@ -1,4 +1,8 @@
 extends MeshInstance3D
 
+@export var is_gundul := false
 func _ready():
-	mesh = GM.tree_meshes.pick_random()
+	if is_gundul:
+		mesh = GM.tree_meshes_gundul.pick_random()
+	else:
+		mesh = GM.tree_meshes_rindang.pick_random()

@@ -28,25 +28,35 @@ var data:
 		write_data(value)
 		
 
-var tree_meshes = []
+var tree_meshes_rindang = []
+var tree_meshes_gundul = []
 
 
 func _ready():
 	
 	# load tree meshes
-	var path = "res://3D Assets/Nature/Trees/meshes/"
+	for paths in os_walk("res://3D Assets/Nature/Trees/rindang/"):
+		tree_meshes_rindang.append(paths)
+	
+	for paths in os_walk("res://3D Assets/Nature/Trees/gundul/"):
+		tree_meshes_gundul.append(paths)
+
+func os_walk(path):
+	# return semua file di path
+	# harus ada slash di akhir path
+	var out = []
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
 			if !dir.current_is_dir():
-				tree_meshes.append(load(path + file_name))
+				out.append(load(path + file_name))
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	else:
 		print("An error occurred when trying to access tree mesh path.")
-	
+	return out
 
 # ketika player menang (win_area.gd)
 func win(target : String):
