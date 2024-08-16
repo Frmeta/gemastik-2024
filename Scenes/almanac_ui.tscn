@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/0-Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
 [ext_resource type="Texture2D" uid="uid://b3hhr5nevmsoj" path="res://assets/pulau/peta_indo_no_x.png" id="12_2x8a0"]
 [ext_resource type="PackedScene" uid="uid://bskp3gtx74q57" path="res://Scenes/x_di_almanac_ui.tscn" id="13_85a34"]
-[ext_resource type="Script" path="res://Scenes/button_for_tutorial.gd" id="13_w2a43"]
+[ext_resource type="Script" path="res://Scripts/button_for_tutorial.gd" id="13_w2a43"]
 [ext_resource type="PackedScene" uid="uid://jwoexpj5w62e" path="res://Scenes/testingken/tutorial.tscn" id="17_5o755"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htvh5"]
