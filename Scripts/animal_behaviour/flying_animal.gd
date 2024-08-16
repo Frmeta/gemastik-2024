@@ -68,8 +68,6 @@ func is_near_player(pos):
 func _process(delta):
 
 	
-	const FLY_SPEED = 4
-	
 	if !is_flying or owner.global_position.distance_to(target_pos) < 0.2:
 		# bertengger
 		is_flying = false
@@ -151,7 +149,7 @@ func find_destination():
 			if is_inside_tree():
 				return ray.global_position
 			else:
-				null
+				return null
 		else:
 			# perpanjang scan_length
 			scan_length += 3

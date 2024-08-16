@@ -84,9 +84,9 @@ func read_data():
 		restart_all()
 	return json.get_data()
 
-func write_data(data):
+func write_data(dataa):
 	var save_game = FileAccess.open(FILE_NAME, FileAccess.WRITE)
-	var json_string = JSON.stringify(data)
+	var json_string = JSON.stringify(dataa)
 	save_game.store_line(json_string)
 	print("harusnya sudah tersave " + json_string)
 	

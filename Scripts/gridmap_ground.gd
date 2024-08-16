@@ -4,7 +4,7 @@ const START_X = -60
 const END_X = 670
 
 const START_Y = -15
-const END_Y = 50
+const END_Y = 80
 
 const GRASS_INDEX = 0
 const DIRT_INDEX = 1
@@ -100,7 +100,7 @@ func _ready():
 	
 	
 	
-func search_y(x, z):
+func search_y(x):
 	for y in range(END_Y, START_Y, -1):
 		if get_cell_item(Vector3i(x, y, 0)) != INVALID_CELL_ITEM:
 			return [y, get_cell_item(Vector3i(x, y, 0))]
@@ -113,7 +113,7 @@ func input_terrain():
 	# get highest ground on START_X
 	var highest := []
 	var idx := []
-	var search = search_y(START_X, 0)
+	var search = search_y(START_X)
 	highest.append(search[0])
 	idx.append(search[1])
 	
@@ -124,7 +124,7 @@ func input_terrain():
 	var idx_guess = INVALID_CELL_ITEM
 	for x in range(START_X+1, END_X):
 		# brute force
-		var cari = search_y(x, 0)
+		var cari = search_y(x)
 		var y_guess = cari[0]
 		idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		
@@ -135,7 +135,7 @@ func input_terrain():
 		#if y_guess < START_Y:
 			#
 			## previous tidak ada ground, jadi cari O(n)
-			#var cari = search_y(x, 0)
+			#var cari = search_y(x)
 			#y_guess = cari[0]
 			#idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		#

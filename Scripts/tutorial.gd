@@ -10,7 +10,8 @@ var ongoing = false
 var velocity = 100
 var can_tutorial = true
 
-var _counter=0
+# var _counter=0
+# ken, _counter ini useless? ~Fredo 16 Agustus 2024
 
 var ui_accept
 var almanac_input
@@ -28,7 +29,7 @@ func start_tutorial():
 func end_tutorial():
 	ongoing=false
 
-func _process(delta):
+func _process(_delta):
 	if can_tutorial and ongoing and GM.current_level==0:
 		ongoing=false
 		for i in range(nodes.size()):

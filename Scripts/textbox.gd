@@ -12,7 +12,7 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 
-func display_line(nama: String, dialogue:String, emosi, nama_pulau:String = "", fun_fact:String = ""):
+func display_line(nama: String, dialogue:String, emosi, _nama_pulau:String = "", _fun_fact:String = ""):
 	still_typing=true
 	name_label.text = nama
 	dialogue_label.visible_ratio=0.0
@@ -33,12 +33,12 @@ func display_line(nama: String, dialogue:String, emosi, nama_pulau:String = "", 
 		emote.texture = _emosi_leviathan[int(emosi)]
 	
 	# Munculin karakter satu per satu
-	for char in dialogue:
+	for charr in dialogue:
 		dialogue_label.visible_ratio+=type_speed
 		await get_tree().create_timer(0.01).timeout
 	still_typing=false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and still_typing:
 		dialogue_label.visible_ratio=1
 		still_typing = false

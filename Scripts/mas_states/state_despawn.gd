@@ -4,7 +4,7 @@ var last_move=Vector3.ZERO
 var runable = true
 var origin:Node3D
 
-func do_something(delta):
+func do_something(_delta):
 	if (mas.global_position-origin.global_position).length()>0.01:
 		mas.global_position = lerp(mas.global_position,origin.global_position,0.1)
 	else:
