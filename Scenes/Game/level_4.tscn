@@ -423,6 +423,22 @@ transform = Transform3D(20.9778, 0, 0, 0, 4.58736, 0, 0, 0, 4.49728, 859.734, 44
 [node name="grapling_for_tree10" parent="GridMapGround/grapling for tree" instance=ExtResource("10_1d47a")]
 transform = Transform3D(20.9778, 0, 0, 0, 4.58736, 0, 0, 0, 4.49728, 874.229, 32.377, 0)
 
+[node name="grapling_for_tree13" parent="GridMapGround/grapling for tree" instance=ExtResource("10_1d47a")]
+transform = Transform3D(27.7566, -1.0451, 0, 7.22488, 4.01508, 0, 0, 0, 4.49728, 1310.63, 4.95345, -0.134644)
+collision_layer = 1
+
+[node name="grapling_for_tree14" parent="GridMapGround/grapling for tree" instance=ExtResource("10_1d47a")]
+transform = Transform3D(28.6544, 0.180175, 0, -1.24557, 4.14495, 0, 0, 0, 4.49728, 1346.28, 7.04427, -0.134644)
+collision_layer = 1
+
+[node name="grapling_for_tree15" parent="GridMapGround/grapling for tree" instance=ExtResource("10_1d47a")]
+transform = Transform3D(22.7422, 0.834935, 0, -5.77199, 3.28973, 0, 0, 0, 3.67906, 1387.41, 6.94808, -0.134766)
+collision_layer = 1
+
+[node name="grapling_for_tree16" parent="GridMapGround/grapling for tree" instance=ExtResource("10_1d47a")]
+transform = Transform3D(26.1621, -2.72055, 0, 28.9226, 2.46088, 0, 0, 0, 5.15301, 1628.15, 10.1385, -0.134766)
+collision_layer = 1
+
 [node name="tree" type="Node3D" parent="GridMapGround"]
 
 [node name="Trees(1)Cube186" type="MeshInstance3D" parent="GridMapGround/tree"]
@@ -476,7 +492,7 @@ mesh = ExtResource("13_wfcc1")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube202" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-0.521674, -3.87522, 0.559138, -2.0445, 1.36075, 1.18479, -1.92914, -0.394197, -1.40685, 1401.51, 3.33424, 5.49504)
+transform = Transform3D(-0.725116, -3.89515, 0.40538, -2.0445, 1.36075, 1.18479, -1.86224, 0.0227549, -1.45861, 1398.76, 3.33424, 0.463302)
 mesh = ExtResource("13_wfcc1")
 skeleton = NodePath("../../..")
 
@@ -547,7 +563,7 @@ autoplay = "move"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1200.43, 9.4835, 0)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platform/movingplatform2"]
-transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, 323.143, -1.69782, -0.038905)
+transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, 323.142, -1.69782, -0.038905)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platform/movingplatform2/Node3D"]

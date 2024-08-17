@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnlmcvoqrf5lq"]
+
+[ext_resource type="Script" path="res://Scripts/WindTrigger.gd" id="1_5uj20"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06imi"]
+size = Vector3(1, 6, 1)
+
+[node name="WindTrigger" type="Area3D"]
+script = ExtResource("1_5uj20")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_06imi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
