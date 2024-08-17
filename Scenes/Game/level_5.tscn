@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsur5ompgywv6"]
+[gd_scene load_steps=20 format=3 uid="uid://bsur5ompgywv6"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_881lh"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_54lg6"]
 [ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_7p1a8"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_vifch"]
+[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_y0wax"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_fpu7u"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_dn0jl"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_f3hnw"]
@@ -29,6 +30,7 @@ fun_fact = "Karena letaknya yang berada di wilayah peralihan, Sulawesi memiliki 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_54lg6")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_7p1a8")]
+script = ExtResource("4_y0wax")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_vifch")]
 

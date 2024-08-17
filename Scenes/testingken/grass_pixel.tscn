@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://8msymdjpscdc"]
+[gd_scene load_steps=7 format=3 uid="uid://8msymdjpscdc"]
 
 [ext_resource type="Shader" path="res://Scenes/testingken/pixel_grass_code.gdshader" id="1_mwhcw"]
 [ext_resource type="Texture2D" uid="uid://dxesjghj8xavo" path="res://assets/testingken/Illustration.png" id="2_2gm7w"]
+[ext_resource type="ArrayMesh" uid="uid://dk02e3whj53qh" path="res://assets/testingken/grass_straw.obj" id="3_3dahm"]
+[ext_resource type="Shader" uid="uid://r430xuiofape" path="res://assets/testingken/grass.tres" id="4_glttx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_krf5o"]
 render_priority = 0
@@ -9,14 +11,15 @@ shader = ExtResource("1_mwhcw")
 shader_parameter/albedo = Vector4(1, 1, 0, 1)
 shader_parameter/texture_albedo = ExtResource("2_2gm7w")
 
-[sub_resource type="QuadMesh" id="QuadMesh_64yoc"]
-size = Vector2(2, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wubo2"]
-transparency = 1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gune"]
+render_priority = 0
+shader = ExtResource("4_glttx")
+shader_parameter/radius = null
+shader_parameter/player_pos = null
+shader_parameter/force = null
 
 [node name="grass_pixel" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05764, 0.469416, -0.19546)
 material_override = SubResource("ShaderMaterial_krf5o")
-mesh = SubResource("QuadMesh_64yoc")
-surface_material_override/0 = SubResource("StandardMaterial3D_wubo2")
+mesh = ExtResource("3_3dahm")
+surface_material_override/0 = SubResource("ShaderMaterial_8gune")

@@ -76,7 +76,6 @@ visibility_aabb = AABB(-10, -29, -2098.05, 20, 29.939, 1.79121)
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.299464)
-visible = false
 material_override = SubResource("ShaderMaterial_8ebyq")
 multimesh = SubResource("MultiMesh_ldrap")
 

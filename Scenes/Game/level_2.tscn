@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://l2u5pkctq1b5"]
+[gd_scene load_steps=34 format=3 uid="uid://l2u5pkctq1b5"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wudb8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_y5y2o"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="11_3khf2"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="12_p6t0s"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_7f4c1"]
+[ext_resource type="PackedScene" uid="uid://dnlmcvoqrf5lq" path="res://Scenes/wind_trigger.tscn" id="14_x7ifv"]
 [ext_resource type="ArrayMesh" uid="uid://bd2ia5b0tcvwu" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_104.res" id="15_rlkex"]
 [ext_resource type="ArrayMesh" uid="uid://esc54hih3ok4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_089.res" id="16_g06ii"]
 [ext_resource type="ArrayMesh" uid="uid://cgoyxtmdbfm4p" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_179.res" id="16_n247u"]
@@ -112,14 +113,18 @@ syarat_hewan = Array[String](["landak", "trenggiling"])
 
 [node name="checkpoint1_5" parent="GridMapGround/checkpoints" instance=ExtResource("11_3khf2")]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 150.975, 31.5925, 9.5389e-07)
-air_speed = 3
+
+[node name="WindTrigger" parent="GridMapGround/checkpoints/checkpoint1_5" instance=ExtResource("14_x7ifv")]
+wind_speed = 3
 
 [node name="checkpoint2" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("11_3khf2")]
 transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 323.281, 19.869, -1.00023)
 wallleft = NodePath("../../wall/invisiblewall2")
 wallright = NodePath("../../wall/invisiblewall3")
-air_speed = 5
 syarat_hewan = Array[String](["komodo"])
+
+[node name="WindTrigger" parent="GridMapGround/checkpoints/checkpoint2" instance=ExtResource("14_x7ifv")]
+wind_speed = -2
 
 [node name="wall" type="Node3D" parent="GridMapGround"]
 
