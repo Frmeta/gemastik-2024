@@ -70,7 +70,7 @@ speed = 0.001
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.826, 0, -10.68)
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 433.622, 41.8965, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59592, -4.50941, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -317,7 +317,7 @@ mesh = ExtResource("18_tuv3c")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube221" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(2.20145, 0, 0, 0, 2.37141, 0, 0, 0, 0.999997, 495.59, 48.6888, -36.2707)
+transform = Transform3D(2.20145, 0, 0, 0, 2.37141, 0, 0, 0, 0.999997, 498.525, 48.6888, -36.2707)
 mesh = ExtResource("18_tuv3c")
 skeleton = NodePath("../../..")
 
