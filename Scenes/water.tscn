@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://3bii3f0bjn6u"]
 
 [ext_resource type="Shader" uid="uid://dhxotis0xiig4" path="res://Scenes/water.tres" id="1_c7d7k"]
-[ext_resource type="Script" path="res://Scenes/water.gd" id="1_m0b0f"]
+[ext_resource type="Script" path="res://Scripts/water.gd" id="1_m0b0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6glc7"]
 size = Vector3(10, 0.853249, 10)

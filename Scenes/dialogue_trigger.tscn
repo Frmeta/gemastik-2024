@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1857qn4nnb1n"]
 
-[ext_resource type="Script" path="res://Scenes/Game/trap_dialog_trigger.gd" id="1_1vguo"]
+[ext_resource type="Script" path="res://Scenes/trap_dialog_trigger.gd" id="1_1vguo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q1li0"]
 size = Vector3(1, 23.9547, 1)

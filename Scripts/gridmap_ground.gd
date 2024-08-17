@@ -1,10 +1,10 @@
 extends GridMap
 
 const START_X = -60
-const END_X = 470
+const END_X = 1000
 
 const START_Y = -15
-const END_Y = 50
+const END_Y = 200
 
 const GRASS_INDEX = 0
 const DIRT_INDEX = 1
@@ -17,8 +17,12 @@ const SPAWN_TREE = true
 
 enum Algo {TERRAIN, CAVE}
 @export var algo : Algo = Algo.TERRAIN
+@export var gundul_from = -100
+@export var gundul_to = -100
 
 var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.tscn")
+var dummy_tree_gundul = preload("res://3D Assets/Nature/Trees/dummy_tree_gundul.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -96,7 +100,7 @@ func _ready():
 	
 	
 	
-func search_y(x, z):
+func search_y(x):
 	for y in range(END_Y, START_Y, -1):
 		if get_cell_item(Vector3i(x, y, 0)) != INVALID_CELL_ITEM:
 			return [y, get_cell_item(Vector3i(x, y, 0))]
@@ -109,7 +113,7 @@ func input_terrain():
 	# get highest ground on START_X
 	var highest := []
 	var idx := []
-	var search = search_y(START_X, 0)
+	var search = search_y(START_X)
 	highest.append(search[0])
 	idx.append(search[1])
 	
@@ -120,7 +124,7 @@ func input_terrain():
 	var idx_guess = INVALID_CELL_ITEM
 	for x in range(START_X+1, END_X):
 		# brute force
-		var cari = search_y(x, 0)
+		var cari = search_y(x)
 		var y_guess = cari[0]
 		idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		
@@ -131,7 +135,7 @@ func input_terrain():
 		#if y_guess < START_Y:
 			#
 			## previous tidak ada ground, jadi cari O(n)
-			#var cari = search_y(x, 0)
+			#var cari = search_y(x)
 			#y_guess = cari[0]
 			#idx_guess = idx_guess if cari[1]==INVALID_CELL_ITEM else cari[1]
 		#
@@ -193,11 +197,17 @@ func fill(highest, idx, z:int, front_highest, place_tree:bool):
 			# place top ground
 			set_cell_item(Vector3i(x, highest[i], z), top_index, 0)
 			
-			# place tree
+			# place tree / pohon
 			if place_tree and randi() % 30 == 0 and SPAWN_TREE and i > START_X and i < END_X-2:
-				# mencegah pohon yang terbang
+				# mencegah pohon yang melayang
 				if abs(highest[i]-highest[i-1]) <= 1 and abs(highest[i]-highest[i+1]) <= 1:
-					var bum = dummy_tree.instantiate()
+					
+					var bum
+					# periksa mau gundul atau rindang
+					if x > gundul_from and x < gundul_to:
+						bum = dummy_tree_gundul.instantiate()
+					else:
+						bum = dummy_tree.instantiate()
 					add_child(bum)
 					bum.position = Vector3i(x, highest[i] + 0.5, z) * 1.3
 					bum.scale = Vector3.ONE * randf_range(1,1.5)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3xdypc0llser"]
+
+[ext_resource type="Script" path="res://Scripts/dummy_tree.gd" id="1_pu3bs"]
+
+[node name="DummyTreeGundul" type="MeshInstance3D"]
+script = ExtResource("1_pu3bs")
+is_gundul = true

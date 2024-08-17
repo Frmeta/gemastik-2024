@@ -39,20 +39,20 @@ func load_dialog(file_path, nama_pulau:String="", fun_fact:String="", emit_end:b
 	for event in almanac_input:
 			InputMap.action_add_event("almanac", event)
 
-func fix_length(str : String):
+func fix_length(strr : String):
 	var start=0
 	var split=false
 	while not split:
-		if (len(str)-start)>50:
-			var break_position = str.findn(" ", start+40)
+		if (len(strr)-start)>50:
+			var break_position = strr.findn(" ", start+40)
 			if break_position-start>50:
 				break_position=start+45
-				str = str.substr(0, break_position)+"-\n"+str.substr(break_position,len(str))
-				print(str)
+				strr = strr.substr(0, break_position)+"-\n"+strr.substr(break_position,len(strr))
+				print(strr)
 				start=break_position+2
 			else:
-				str[break_position] = "\n"
+				strr[break_position] = "\n"
 				start=break_position+1
 		else:
 			split=true
-	return str
+	return strr

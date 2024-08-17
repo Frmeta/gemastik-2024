@@ -55,7 +55,7 @@ func do_something():
 	# dioverrite oleh burung_merak.gd
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	match state:
 		State.DIAM:
 			$"../AnimationPlayer".play(idle_anim_name)

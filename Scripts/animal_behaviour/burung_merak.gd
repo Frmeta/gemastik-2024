@@ -14,7 +14,7 @@ func do_something():
 		$"../AnimationPlayer".play(opening_anim_name if is_mekar else closing_anim_name)
 		await $"../AnimationPlayer".animation_finished
 
-func _process(delta):
+func _process(_delta):
 	match state:
 		State.DIAM:
 			$"../AnimationPlayer".play(idle_mekar_anim_name if is_mekar else idle_anim_name)

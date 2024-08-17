@@ -4,7 +4,7 @@ var last_move=Vector3.ZERO
 var runable = true
 var spin_done = false
 
-func do_something(delta):
+func do_something(_delta):
 	if runable:
 		runable = false
 		var speed = mas.SPEED

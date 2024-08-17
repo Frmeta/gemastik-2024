@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_wdrf8"]
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="12_c6jad"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_vo8i8"]
-[ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_202.res" id="15_pljoh"]
-[ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_186.res" id="16_haoq2"]
-[ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_175.res" id="17_k3nlh"]
+[ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="15_pljoh"]
+[ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_186.res" id="16_haoq2"]
+[ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="17_k3nlh"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="17_xkox3"]
 [ext_resource type="PackedScene" uid="uid://ppywoy75pf55" path="res://rumah_bali.tscn" id="17_ylv5b"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_i5x08"]
@@ -531,21 +531,17 @@ transform = Transform3D(2.22706, -0.810848, 0, 7.53294, 0.239722, 0, 0, 0, 1, 22
 [node name="Jalak Bali" parent="Animals" instance=ExtResource("18_i5x08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0763, 3.46548, 0)
 
-[node name="Jalak Bali2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.408, 3.46548, 0)
-mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+[node name="Jalak Bali2" parent="Animals" instance=ExtResource("18_i5x08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2879, 3.33364, 0)
 
-[node name="Jalak Bali3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6734, 3.36169, 0)
-mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+[node name="Jalak Bali3" parent="Animals" instance=ExtResource("18_i5x08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3801, 0, 0)
 
-[node name="Jalak Bali4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3393, 3.46548, 0)
-mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+[node name="Jalak Bali4" parent="Animals" instance=ExtResource("18_i5x08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4565, 4.1389, 0)
 
-[node name="Jalak Bali5" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("18_i5x08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.604, 3.46548, 0)
-mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+[node name="Jalak Bali5" parent="Animals" instance=ExtResource("18_i5x08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5853, 2.51161, 0)
 
 [node name="Anjing Kintamani" parent="Animals" instance=ExtResource("20_v45f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.471, -1.39422, 0)

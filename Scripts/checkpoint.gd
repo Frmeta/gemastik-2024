@@ -42,7 +42,7 @@ func disable_both_wall(instance):
 			print(self.name)
 			wallright.disable_wall()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	# Hal-hal yang akan dilakukan jika player pertama
 	# kali hit checkpoint
 	if not captured:

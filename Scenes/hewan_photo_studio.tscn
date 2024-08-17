@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bppf5ardh8xpn" path="res://3D Assets/Animal/0-Kalimantan/Kijang/Kijang.tscn" id="4_mj0pc"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="5_8jv70"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="6_nj4hb"]
-[ext_resource type="ArrayMesh" uid="uid://bd2ia5b0tcvwu" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_104.res" id="7_3hcly"]
+[ext_resource type="ArrayMesh" uid="uid://bd2ia5b0tcvwu" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_104.res" id="7_3hcly"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="8_1yfgc"]
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="9_miqky"]
 [ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="10_ju6qh"]

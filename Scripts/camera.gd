@@ -8,7 +8,7 @@ var offset
 var smooth_speed = 5
 var rng = RandomNumberGenerator.new()
 
-var decay = 5
+var decay_movement = 5
 var max_offset = Vector2(2,2) # max shake
 var max_roll = 0.05 #max rotation
 var trauma = 0 #shake strenght
@@ -34,11 +34,11 @@ func _change_air_emit_position(amount):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if trauma:
-		trauma = max(trauma-decay*delta,0)
+		trauma = max(trauma-decay_movement*delta,0)
 		_shaking()
 	else:
 		offset = Vector3(0, 2.33, 11.3)
-	global_position = expDecay(global_position, player.global_position + offset, decay, delta)
+	global_position = expDecay(global_position, player.global_position + offset, decay_movement, delta)
 	
 func expDecay(a, b, decay, dt):
 	return b + (a-b) * exp(-decay*dt)

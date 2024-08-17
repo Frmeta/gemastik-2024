@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="9_u5tc5"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_sut40"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_dwcpd"]
-[ext_resource type="ArrayMesh" uid="uid://cxwsdbpukioay" path="res://3D Assets/Nature/Trees/meshes/Trees (1)_Cube_190.res" id="12_tq75k"]
+[ext_resource type="ArrayMesh" uid="uid://cxwsdbpukioay" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_190.res" id="12_tq75k"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_ud1dx"]
 [ext_resource type="PackedScene" uid="uid://b33j8g4np1f5n" path="res://Scenes/grap_sign.tscn" id="13_hojpj"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_ltjtm"]
