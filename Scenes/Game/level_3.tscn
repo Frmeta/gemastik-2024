@@ -342,7 +342,7 @@ autoplay = "move"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1036.91, 195, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform4"]
-transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.99873, 0, -0.0488482, 23.7826, -20.3026, -1.21003)
+transform = Transform3D(-0.048846, 0, 0.998774, 0, 1.00002, 0, -0.99873, 0, -0.0488482, 23.7826, -20.3026, -1.21003)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform4/Node3D"]
@@ -373,7 +373,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
 curve = SubResource("Curve3D_7neky")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform4/Path3D"]
-transform = Transform3D(0.0482998, 0.623535, -0.780288, 0, 0.781241, 0.624231, 0.998756, -0.0301541, 0.0377347, 0, 0, 0)
+transform = Transform3D(0.0482548, 0.623538, -0.780287, -5.65009e-05, 0.781241, 0.62423, 0.998758, -0.0300819, 0.0377347, 24.2254, -19.3803, -1.17154)
+progress = 31.0446
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform4/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -454,7 +455,7 @@ speed_scale = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1395.65, 168.947, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform6"]
-transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.99873, 0, -0.0488482, -0.442871, -0.926727, -0.038906)
+transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -0.442871, -0.926727, -0.038906)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform6/Node3D"]
@@ -504,7 +505,7 @@ speed_scale = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1439.6, 172.973, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform7"]
-transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.99873, 0, -0.0488482, -0.442261, -0.924591, -0.038906)
+transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -0.442261, -0.924591, -0.038906)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform7/Node3D"]

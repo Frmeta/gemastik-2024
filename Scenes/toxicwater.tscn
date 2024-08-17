@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/toxicwater.gd" id="1_4nafu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6glc7"]
-size = Vector3(10, 0.7, 10)
+size = Vector3(10, 0.820215, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j60qp"]
 size = Vector2(10, 10)
@@ -16,12 +16,12 @@ op_type = 2
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_yxwlf"]
-constant = 1.25
+constant = 2.0
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_b5yi0"]
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_ysmfj"]
-constant = 0.8
+constant = 1.0
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_76kku"]
 operator = 5
@@ -312,7 +312,7 @@ void fragment() {
 
 
 // FloatConstant:12
-	float n_out12p0 = 1.250000;
+	float n_out12p0 = 2.000000;
 
 
 // VectorOp:15
@@ -329,7 +329,7 @@ void fragment() {
 
 
 // FloatConstant:14
-	float n_out14p0 = 0.800000;
+	float n_out14p0 = 1.000000;
 
 
 // FloatConstant:13
@@ -374,11 +374,11 @@ nodes/fragment/2/position = Vector2(200, 140)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_e0ppx")
 nodes/fragment/3/position = Vector2(-80, 280)
 nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_4e08p")
-nodes/fragment/4/position = Vector2(500, 180)
+nodes/fragment/4/position = Vector2(580, 180)
 nodes/fragment/5/node = SubResource("VisualShaderNodeUVFunc_gyjcf")
 nodes/fragment/5/position = Vector2(-260, 300)
 nodes/fragment/6/node = SubResource("VisualShaderNodeInput_chj1o")
-nodes/fragment/6/position = Vector2(-480, 320)
+nodes/fragment/6/position = Vector2(-600, 340)
 nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_nhs0r")
 nodes/fragment/7/position = Vector2(-40, 540)
 nodes/fragment/8/node = SubResource("VisualShaderNodeInput_sgr5j")
@@ -388,13 +388,13 @@ nodes/fragment/9/position = Vector2(-220, 620)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_x8vsr")
 nodes/fragment/10/position = Vector2(180, 500)
 nodes/fragment/12/node = SubResource("VisualShaderNodeFloatConstant_yxwlf")
-nodes/fragment/12/position = Vector2(340, 560)
+nodes/fragment/12/position = Vector2(220, 660)
 nodes/fragment/13/node = SubResource("VisualShaderNodeFloatConstant_b5yi0")
 nodes/fragment/13/position = Vector2(620, 460)
 nodes/fragment/14/node = SubResource("VisualShaderNodeFloatConstant_ysmfj")
 nodes/fragment/14/position = Vector2(580, 320)
 nodes/fragment/15/node = SubResource("VisualShaderNodeVectorOp_76kku")
-nodes/fragment/15/position = Vector2(380, 360)
+nodes/fragment/15/position = Vector2(440, 380)
 nodes/fragment/16/node = SubResource("VisualShaderNodeProximityFade_65t5s")
 nodes/fragment/16/position = Vector2(69.6336, -4.557)
 nodes/fragment/17/node = SubResource("VisualShaderNodeFloatFunc_i0lb7")
@@ -431,7 +431,7 @@ size = Vector3(10, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptwx7"]
 transparency = 1
-albedo_color = Color(0.498039, 0.505882, 0.2, 1)
+albedo_color = Color(0.498039, 0.505882, 0.2, 0.882353)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d42u"]
 transparency = 1
@@ -451,7 +451,7 @@ collision_layer = 0
 script = ExtResource("1_4nafu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.15865, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.0985426, 0)
 shape = SubResource("BoxShape3D_6glc7")
 
 [node name="watershader" type="MeshInstance3D" parent="."]
@@ -461,7 +461,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_d43n7")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 collision_layer = 2
-flip_faces = true
 mesh = SubResource("BoxMesh_35nvf")
 material = SubResource("StandardMaterial3D_ptwx7")
 
