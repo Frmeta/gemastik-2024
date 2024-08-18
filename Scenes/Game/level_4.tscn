@@ -139,7 +139,7 @@ fun_fact = "Pulau Jawa terletak di kepulauan Sunda Besar dan merupakan pulau ter
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29555, -4.98888, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 692.538, 23.4706, -6.48499e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
@@ -494,17 +494,17 @@ mesh = ExtResource("10_srdx0")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube188" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-1.50924, 0, -2.47186, 0, 4.01921, 0, 2.47186, 0, -1.50924, 764.102, 3.45902, -10.2672)
+transform = Transform3D(-1.50924, 0, -2.47186, 0, 4.01921, 0, 2.47186, 0, -1.50924, 764.102, 3.45902, -18.8751)
 mesh = ExtResource("10_srdx0")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube189" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-0.649321, 0, 2.48498, 0, 4.59771, 0, -4.19677, 0, -0.384475, 814.184, 4.19277, -10.2672)
+transform = Transform3D(-0.649321, 0, 2.48498, 0, 4.59771, 0, -4.19677, 0, -0.384475, 814.184, 4.19277, -25.1655)
 mesh = ExtResource("10_srdx0")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube190" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-2.85865, -1.13725, 2.54115, -0.612477, 5.30795, 0.544451, -2.59882, 0, -2.92353, 864.493, 3.13769, -10.2672)
+transform = Transform3D(-2.85865, -1.13725, 2.54115, -0.612477, 5.30795, 0.544451, -2.59882, 0, -2.92353, 864.493, 3.13769, -19.7732)
 mesh = ExtResource("10_srdx0")
 skeleton = NodePath("../../..")
 
@@ -673,7 +673,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_pjhcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.74, 33.3251, -0.871899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.74, 34.5342, -0.871899)
 
 [node name="PerangkapSquare" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.860013, 0, 0.510273, 0, 1, 0, -0.510273, 0, 0.860013, 90.0037, -0.976805, 0)
