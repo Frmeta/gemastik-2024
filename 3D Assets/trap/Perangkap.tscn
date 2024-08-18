@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bid2kwtd271ab"]
+[gd_scene load_steps=12 format=3 uid="uid://bid2kwtd271ab"]
+
+[ext_resource type="Script" path="res://Scripts/perangkap_mesh.gd" id="1_g4nsj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jx0b"]
 resource_name = "Steel"
@@ -67,8 +69,26 @@ bind/1/name = &"Door"
 bind/1/bone = -1
 bind/1/pose = Transform3D(-7.58967e-07, -5.96046e-08, -1, 5.96046e-08, 1, -5.96047e-08, 1, -4.5238e-14, -7.58967e-07, 0.999998, 5.36442e-07, 3.02081)
 
+[sub_resource type="Animation" id="Animation_fw6tu"]
+resource_name = "Open"
+length = 0.416667
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerangkapSquare_Skeleton/Skeleton3D:Door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2.98023e-08, 1.19209e-07, -2.98023e-08, 1, 0.0333333, 1, 2.99956e-08, -0.0159672, -2.99956e-08, 0.999873, 0.0666667, 1, 3.04188e-08, -0.0533813, -3.04188e-08, 0.998574, 0.1, 1, 3.0978e-08, -0.109852, -3.0978e-08, 0.993948, 0.133333, 1, 3.15541e-08, -0.182415, -3.15541e-08, 0.983222, 0.166667, 1, 3.2018e-08, -0.267407, -3.2018e-08, 0.963584, 0.233333, 1, 3.21714e-08, -0.449225, -3.21714e-08, 0.893419, 0.266667, 1, 3.18164e-08, -0.529767, -3.18164e-08, 0.848143, 0.3, 1, 3.12689e-08, -0.597961, -3.12689e-08, 0.801525, 0.333333, 1, 3.06506e-08, -0.651601, -3.06506e-08, 0.758562, 0.366667, 1, 3.01719e-08, -0.684771, -3.01719e-08, 0.728758, 0.4, 1, 7.52408e-08, -0.701439, 6.26834e-10, 0.71273, 0.416667, 1, 1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("PerangkapRec_Skeleton/Skeleton3D:Door")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 2.98023e-08, 3.57628e-07, -2.98023e-08, 1, 0.0333333, 1, 2.99956e-08, -0.015967, -2.99956e-08, 0.999873, 0.0666667, 1, 3.04188e-08, -0.053381, -3.04188e-08, 0.998574, 0.1, 1, 3.0978e-08, -0.109852, -3.0978e-08, 0.993948, 0.133333, 1, 3.15541e-08, -0.182415, -3.15541e-08, 0.983222, 0.166667, 1, 3.2018e-08, -0.267406, -3.2018e-08, 0.963584, 0.233333, 1, 3.21714e-08, -0.449225, -3.21714e-08, 0.893419, 0.266667, 1, 3.18163e-08, -0.529767, -3.18164e-08, 0.848143, 0.3, 1, 3.12688e-08, -0.597961, -3.12689e-08, 0.801525, 0.333333, 1, 3.06506e-08, -0.651601, -3.06506e-08, 0.758562, 0.366667, 1, 3.01719e-08, -0.684771, -3.01719e-08, 0.728759, 0.4, 1, 7.52408e-08, -0.701439, 6.26813e-10, 0.71273, 0.416667, 1, 1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
+
 [sub_resource type="Animation" id="Animation_8w4me"]
-resource_name = "Perangkap_Closing"
+resource_name = "Caught"
 length = 0.416667
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
@@ -86,7 +106,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1.05367e-07, -0.707107, 2.10734e-08, 0.707107, 0.0333333, 1, 1.06051e-07, -0.695726, 2.12101e-08, 0.718307, 0.0666667, 1, 1.07547e-07, -0.668352, 2.15093e-08, 0.743845, 0.1, 1, 1.09524e-07, -0.62515, 2.19047e-08, 0.780505, 0.133333, 1, 1.11561e-07, -0.566255, 2.23121e-08, 0.82423, 0.166667, 1, 1.13201e-07, -0.492271, 2.26401e-08, 0.870442, 0.233333, 1, 1.13743e-07, -0.314092, 2.27486e-08, 0.949393, 0.266667, 1, 1.12488e-07, -0.225125, 2.24975e-08, 0.97433, 0.3, 1, 1.10552e-07, -0.143941, 2.21104e-08, 0.989586, 0.333333, 1, 1.08366e-07, -0.075632, 2.16732e-08, 0.997136, 0.366667, 1, 1.06674e-07, -0.0311036, 2.13347e-08, 0.999516, 0.4, 1, 6.03714e-08, -0.00798358, -9.38433e-09, 0.999968, 0.416667, 1, 2.98023e-08, 3.57628e-07, -2.98023e-08, 1)
 
 [sub_resource type="Animation" id="Animation_jynsl"]
-resource_name = "Perangkap_Off"
+resource_name = "OFF"
 length = 0.0416667
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
@@ -104,7 +124,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 6.06207e-08, -0.707106, 2.18398e-08, 0.707107)
 
 [sub_resource type="Animation" id="Animation_hs8df"]
-resource_name = "Perangkap_On"
+resource_name = "ON"
 length = 0.0416667
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
@@ -121,33 +141,16 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1.125e-15, 3.57628e-07, -6.51351e-16, 1)
 
-[sub_resource type="Animation" id="Animation_fw6tu"]
-resource_name = "Perangkap_Opening"
-length = 0.416667
-tracks/0/type = "rotation_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("PerangkapSquare_Skeleton/Skeleton3D:Door")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 2.98023e-08, 1.19209e-07, -2.98023e-08, 1, 0.0333333, 1, 2.99956e-08, -0.0159672, -2.99956e-08, 0.999873, 0.0666667, 1, 3.04188e-08, -0.0533813, -3.04188e-08, 0.998574, 0.1, 1, 3.0978e-08, -0.109852, -3.0978e-08, 0.993948, 0.133333, 1, 3.15541e-08, -0.182415, -3.15541e-08, 0.983222, 0.166667, 1, 3.2018e-08, -0.267407, -3.2018e-08, 0.963584, 0.233333, 1, 3.21714e-08, -0.449225, -3.21714e-08, 0.893419, 0.266667, 1, 3.18164e-08, -0.529767, -3.18164e-08, 0.848143, 0.3, 1, 3.12689e-08, -0.597961, -3.12689e-08, 0.801525, 0.333333, 1, 3.06506e-08, -0.651601, -3.06506e-08, 0.758562, 0.366667, 1, 3.01719e-08, -0.684771, -3.01719e-08, 0.728758, 0.4, 1, 7.52408e-08, -0.701439, 6.26834e-10, 0.71273, 0.416667, 1, 1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("PerangkapRec_Skeleton/Skeleton3D:Door")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 2.98023e-08, 3.57628e-07, -2.98023e-08, 1, 0.0333333, 1, 2.99956e-08, -0.015967, -2.99956e-08, 0.999873, 0.0666667, 1, 3.04188e-08, -0.053381, -3.04188e-08, 0.998574, 0.1, 1, 3.0978e-08, -0.109852, -3.0978e-08, 0.993948, 0.133333, 1, 3.15541e-08, -0.182415, -3.15541e-08, 0.983222, 0.166667, 1, 3.2018e-08, -0.267406, -3.2018e-08, 0.963584, 0.233333, 1, 3.21714e-08, -0.449225, -3.21714e-08, 0.893419, 0.266667, 1, 3.18163e-08, -0.529767, -3.18164e-08, 0.848143, 0.3, 1, 3.12688e-08, -0.597961, -3.12689e-08, 0.801525, 0.333333, 1, 3.06506e-08, -0.651601, -3.06506e-08, 0.758562, 0.366667, 1, 3.01719e-08, -0.684771, -3.01719e-08, 0.728759, 0.4, 1, 7.52408e-08, -0.701439, 6.26813e-10, 0.71273, 0.416667, 1, 1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kr6it"]
 _data = {
-"Perangkap_Closing": SubResource("Animation_8w4me"),
-"Perangkap_Off": SubResource("Animation_jynsl"),
-"Perangkap_On": SubResource("Animation_hs8df"),
-"Perangkap_Opening": SubResource("Animation_fw6tu")
+"Caught": SubResource("Animation_8w4me"),
+"OFF": SubResource("Animation_jynsl"),
+"ON": SubResource("Animation_hs8df"),
+"Open": SubResource("Animation_fw6tu")
 }
 
 [node name="Perangkap" type="Node3D"]
+script = ExtResource("1_g4nsj")
 
 [node name="PerangkapSquare_Skeleton" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -165,7 +168,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.3027e-15, 2.38419e-07, -1.3027e-15, 1, -2.25001e-15, -2.38419e-07, 2.25001e-15, 1, -1, -2.38419e-07, 1)
 bones/1/enabled = true
 bones/1/position = Vector3(-1, -2.38419e-07, 1)
-bones/1/rotation = Quaternion(1.12501e-15, 1.19209e-07, -6.51351e-16, 1)
+bones/1/rotation = Quaternion(1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="PerangkapSquare" type="MeshInstance3D" parent="PerangkapSquare_Skeleton/Skeleton3D"]
@@ -188,7 +191,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.3027e-15, 7.15256e-07, -1.3027e-15, 1, -2.25001e-15, -7.15256e-07, 2.25001e-15, 1, -1, -2.38419e-07, 1.97919)
 bones/1/enabled = true
 bones/1/position = Vector3(-1, -2.38419e-07, 1.97919)
-bones/1/rotation = Quaternion(1.125e-15, 3.57628e-07, -6.51351e-16, 1)
+bones/1/rotation = Quaternion(1.05367e-07, -0.707107, 2.10734e-08, 0.707107)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="PerangkapRec" type="MeshInstance3D" parent="PerangkapRec_Skeleton/Skeleton3D"]

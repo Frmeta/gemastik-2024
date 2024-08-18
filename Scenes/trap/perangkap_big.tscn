@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d21ntcn2qkqpi"]
+
+[ext_resource type="Script" path="res://Scenes/trap/perangkap.gd" id="1_fw7iw"]
+[ext_resource type="PackedScene" uid="uid://bjoh1r15cung6" path="res://Scenes/trap/trap_hint.tscn" id="2_wpiiq"]
+[ext_resource type="PackedScene" uid="uid://bid2kwtd271ab" path="res://3D Assets/trap/Perangkap.tscn" id="3_m0ic8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyaef"]
+size = Vector3(2.13086, 2.06396, 2.0625)
+
+[node name="perangkap_big" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_fw7iw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996387, 0.00683594)
+shape = SubResource("BoxShape3D_oyaef")
+
+[node name="trap_hint" parent="." instance=ExtResource("2_wpiiq")]
+
+[node name="Perangkap" parent="." instance=ExtResource("3_m0ic8")]

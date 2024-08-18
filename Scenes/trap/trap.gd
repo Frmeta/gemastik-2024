@@ -8,12 +8,14 @@ class_name Trap
 
 func _ready():
 	button_mash.trap=self
+	get_tree().create_timer(3)
 	_play_close_anim()
 
 func _play_open_anim():
 	trap_anim_player.play("Open")
 
 func _play_close_anim():
+	print("play")
 	trap_anim_player.play("Caught")
 
 func _play_ON():

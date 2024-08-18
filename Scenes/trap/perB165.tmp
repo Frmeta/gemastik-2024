@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cucxjr66501u6"]
+
+[ext_resource type="Script" path="res://Scenes/trap/perangkap.gd" id="1_uljwk"]
+[ext_resource type="PackedScene" uid="uid://bjoh1r15cung6" path="res://Scenes/trap/trap_hint.tscn" id="2_s6wm1"]
+[ext_resource type="PackedScene" uid="uid://bid2kwtd271ab" path="res://3D Assets/trap/Perangkap.tscn" id="3_0jpu8"]
+[ext_resource type="PackedScene" uid="uid://dra0eng33cvhi" path="res://Scenes/trap/button_mesh.tscn" id="4_057kb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyaef"]
+size = Vector3(2.13086, 2.06396, 2.0625)
+
+[node name="perangkap" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_uljwk")
+is_big = null
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 7)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996387, 0.00683594)
+shape = SubResource("BoxShape3D_oyaef")
+
+[node name="trap_hint" parent="." instance=ExtResource("2_s6wm1")]
+
+[node name="trap" parent="." instance=ExtResource("3_0jpu8")]
+
+[node name="ButtonMesh" parent="." instance=ExtResource("4_057kb")]
+target_hits = 15
