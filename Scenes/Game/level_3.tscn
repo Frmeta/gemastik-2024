@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=47 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_0yufg"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="10_cyxm1"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_1qavh"]
+[ext_resource type="ArrayMesh" uid="uid://cx3mwei4q1qal" path="res://3D Assets/Nature/Trees/jembatan pohon/JembatanPohon1.tres" id="11_4kj1j"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="11_yreiq"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_4b20f"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="12_oud6k"]
@@ -145,7 +146,7 @@ transform = Transform3D(-0.953776, 0.260749, 0.149405, -0.0577322, -0.646877, 0.
 [node name="Camera3D" parent="." instance=ExtResource("5_4ux8x")]
 
 [node name="Player" parent="." instance=ExtResource("6_5bh87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1137.66, 164.191, 1.52588e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 931.222, 236.876, 1.52588e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_50j3d")]
@@ -180,8 +181,8 @@ mesh = ExtResource("9_5qysq")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube199" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(0.980166, -3.86789, 0.116716, 2.68559, 1.41398, -0.0251559, -0.0244139, 0.253827, 1.91868, 971.142, 212.437, 0.254075)
-mesh = ExtResource("10_cyxm1")
+transform = Transform3D(0.251034, 0.849058, -2.86637, 0, 2.87646, 0.852046, 2.98948, -0.0712975, 0.240696, 955.198, 215.687, 0.254075)
+mesh = ExtResource("11_4kj1j")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube200" type="MeshInstance3D" parent="GridMapGround/tree"]
