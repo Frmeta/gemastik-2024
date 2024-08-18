@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=45 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="9_faw0i"]
 [ext_resource type="PackedScene" uid="uid://bo2id2ctx5psl" path="res://Scenes/gridmap_cave.tscn" id="9_suxpj"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_0yufg"]
-[ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="10_cyxm1"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_1qavh"]
 [ext_resource type="ArrayMesh" uid="uid://cx3mwei4q1qal" path="res://3D Assets/Nature/Trees/jembatan pohon/JembatanPohon1.tres" id="11_4kj1j"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="11_yreiq"]
@@ -182,9 +181,9 @@ transform = Transform3D(0.251034, 0.849058, -2.86637, 0, 2.87646, 0.852046, 2.98
 mesh = ExtResource("11_4kj1j")
 skeleton = NodePath("../../..")
 
-[node name="Trees(1)Cube200" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-0.517624, 4.03449, -0.202632, -2.81172, -0.743577, 0.0336486, -0.00537678, 0.4408, 1.91139, 1609.32, 117.731, 0.684246)
-mesh = ExtResource("10_cyxm1")
+[node name="Trees(1)Cube201" type="MeshInstance3D" parent="GridMapGround/tree"]
+transform = Transform3D(0.20898, 0.57676, -3.44582, -0.487895, 3.42297, 0.543346, 3.45952, 0.4479, 0.284781, 1621.58, 112.204, 0.254077)
+mesh = ExtResource("11_4kj1j")
 skeleton = NodePath("../../..")
 
 [node name="grapling for tree" type="Node3D" parent="GridMapGround"]
@@ -197,7 +196,7 @@ transform = Transform3D(26.5445, 1.12813, 0, -8.41783, 3.55738, 0, 0, 0, 0.99061
 collision_layer = 2
 
 [node name="grapling_for_tree7" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(35.8147, 0.767704, 0, -7.52838, 3.65216, 0, 0, 0, 0.990612, 1625.97, 112.954, 0)
+transform = Transform3D(28.5425, 0.557998, 0, -4.31611, 3.69005, 0, 0, 0, 0.991, 1623.2, 113.933, 0)
 collision_layer = 2
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
