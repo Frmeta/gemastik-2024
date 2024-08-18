@@ -70,7 +70,7 @@ speed = 0.001
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.826, 0, -10.68)
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.254, 25.6237, -3.8147e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 318.461, 24.1489, -3.8147e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
@@ -116,15 +116,17 @@ syarat_hewan = Array[String](["landak", "trenggiling"])
 transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 150.975, 31.5925, 9.5389e-07)
 
 [node name="WindTrigger" parent="GridMapGround/checkpoints/checkpoint1_5" instance=ExtResource("14_x7ifv")]
-wind_speed = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+wind_speed = 2
 
 [node name="checkpoint2" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("11_3khf2")]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 323.281, 19.869, -1.00023)
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 323.281, 19.869, 0.574027)
 wallleft = NodePath("../../wall/invisiblewall2")
 wallright = NodePath("../../wall/invisiblewall3")
 syarat_hewan = Array[String](["komodo"])
 
 [node name="WindTrigger" parent="GridMapGround/checkpoints/checkpoint2" instance=ExtResource("14_x7ifv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25488, 0, 0)
 wind_speed = -2
 
 [node name="wall" type="Node3D" parent="GridMapGround"]
@@ -378,10 +380,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.03019
 [node name="Komodo" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
-[node name="Node3D#Komodo2" parent="." instance=ExtResource("21_sir6x")]
+[node name="Komodo2" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 382.873, 16.4831, 1.90735e-06)
 can_move = false
 
-[node name="Node3D#Komodo3" parent="." instance=ExtResource("21_sir6x")]
+[node name="Komodo3" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 423.87, 19.8258, 0)
 can_move = false

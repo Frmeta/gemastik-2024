@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/WindTrigger.gd" id="1_5uj20"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06imi"]
-size = Vector3(1, 6, 1)
+size = Vector3(1, 36.55, 1)
 
 [node name="WindTrigger" type="Area3D"]
 script = ExtResource("1_5uj20")
