@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dylhh6b4bk8io"]
+
+[ext_resource type="Script" path="res://Scripts/DeathTrigger.gd" id="1_4bu2a"]
+
+[node name="DeathTrigger" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_4bu2a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
