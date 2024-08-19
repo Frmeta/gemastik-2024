@@ -10,9 +10,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var target_y_rot = 0
 var id = randi()
 
+var shoot_delay = 1
+var shoot_timer = 0 # temp timer only
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Bullet.visible = false
 	if singleton == null:
 		singleton = self
 		
@@ -36,14 +40,25 @@ func _process(delta):
 		if caught_timer > 0:
 			caught_timer -= delta
 	
-	
-	
-	if is_seeing_player():
-		GM.doni.faint()
+	# Shooting bullet
+	shoot_timer += delta
+	if is_seeing_player() and shoot_timer > shoot_delay:
+		shoot_timer = 0
 		caught_timer = 2
 		
+		GM.doni.faint()
+		
+		var tween = get_tree().create_tween()
+		$Bullet.visible = true
+		$Bullet.position = Vector3(0, 1, 1.5)
+		tween.tween_property($Bullet, "position", $Bullet.position + Vector3.BACK * 30, 1)
+		tween.tween_callback(func () : 
+			$Bullet.visible = false
+		)
+		
 	if caught_timer > 0:
-		print("caught " + str(Time.get_ticks_msec()))
+		pass
+		# print("caught " + str(Time.get_ticks_msec()))
 	elif noleh_timer > 6:
 		# lihat lihat
 		target_y_rot = deg_to_rad(180 + 90 * sin((Time.get_ticks_msec() + id)/800.0))

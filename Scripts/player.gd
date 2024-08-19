@@ -198,7 +198,10 @@ func _physics_process(delta):
 		PlayerState.ON_LAND:
 			# ON LAND ANIMATION
 			model3d.get_node("Player").position.y = 0
-			animTree.set("parameters/Game/transition_request", "is_on_land")
+			if is_fainting:
+				animTree.set("parameters/Game/transition_request", "faint")
+			else:
+				animTree.set("parameters/Game/transition_request", "is_on_land")
 			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
 			if velocity.x == 0:
 				model3d.get_node("Player").rotation.y = deg_to_rad(0)
@@ -270,14 +273,16 @@ var is_fainting = false
 
 func faint():
 	if !is_fainting:
+		is_fainting = true
 		stop_move()
-	
-		#animTree.set("parameters/Game/transition_request", "faint")
-		#await animTree.animation_finished
+		print("pingsan")
+		animTree.set("parameters/Game/transition_request", "faint")
+		await animTree.animation_finished
 		
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1).timeout
 	
 		allow_move()
+		is_fainting = false
 		respawn()
 
 func respawn():

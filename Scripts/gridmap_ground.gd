@@ -59,8 +59,8 @@ func _ready():
 		var used_cells = get_used_cells()
 		
 		
-		var extend_step = 5
-		var smooth_step = 3
+		var extend_step = 3
+		var smooth_step = 1
 		
 		# fill extend
 		for t in range(extend_step):
