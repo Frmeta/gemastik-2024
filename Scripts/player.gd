@@ -17,6 +17,7 @@ const acc = 300
 const friction = 200
 
 const gravity = 40
+var _RNG = RandomNumberGenerator.new()
 
 const end_jump_early_multiplier = 3
 const jump_buffer = 100 # in millis
@@ -95,7 +96,7 @@ func _input(event: InputEvent) -> void:
 					print("need bigger area of wall")
 				var dir = owner.get_mouse_location_on_map() - global_position
 				$Grapling.shoot(dir)
-				GM.play_audio("res://audio/a/grapling hook.mp3")
+				GM.play_audio("res://audio/a/grapling hook.mp3", _RNG.randf_range(1,1.3))
 			else:
 				if $Grapling.hooked:
 					curr_jumps = 2
@@ -231,6 +232,7 @@ func _physics_process(delta):
 					animTree.set("parameters/Platformer/conditions/is_running", true)
 					animTree.set("parameters/Platformer/conditions/is_not_running", false)
 					if !$walking.playing:
+						$walking.pitch_scale = _RNG.randf_range(1,1.2)
 						$walking.play()
 					$walkdust.emit(dir)
 			else:
@@ -319,6 +321,7 @@ func movement_from_input(delta):
 					_last_on_ground = 0
 					velocity.y = JUMP_POWER
 					if !$jumping.playing:
+						$jumping.pitch_scale = _RNG.randf_range(1,1.3)
 						$jumping.play()
 				
 			# Move right or left
