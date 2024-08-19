@@ -58,7 +58,6 @@ func fly():
 		if find != null:
 			is_flying = true
 			target_pos = find
-			print("berhasil find " + str(find))
 		
 			
 func is_near_player(pos):

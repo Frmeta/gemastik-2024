@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l2qklp88bjro"
-path.s3tc="res://.godot/imported/Cloudy_Sky-Night_02-512x512.png-5e025c1c0d6e0e39d1035d3e27617464.s3tc.ctex"
+uid="uid://h0njmxl128o1"
+path.s3tc="res://.godot/imported/Player_Player_Finale.png-627ba1dd897e3dbcfe5c932a5d82bf02.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "cd986bd2213035173963c40706523b1e"
+}
 
 [deps]
 
-source_file="res://assets/sky/Cloudy_Sky-Night_02-512x512.png"
-dest_files=["res://.godot/imported/Cloudy_Sky-Night_02-512x512.png-5e025c1c0d6e0e39d1035d3e27617464.s3tc.ctex"]
+source_file="res://3D Assets/DoniFinal/revisi baru/Player_Player_Finale.png"
+dest_files=["res://.godot/imported/Player_Player_Finale.png-627ba1dd897e3dbcfe5c932a5d82bf02.s3tc.ctex"]
 
 [params]
 

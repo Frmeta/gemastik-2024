@@ -262,8 +262,22 @@ func _physics_process(delta):
 	if is_on_floor():
 		is_climbing = false
 	
-	# respawn
+	# respawn if dead
 	if global_position.y < -15:
+		respawn()
+
+var is_fainting = false
+
+func faint():
+	if !is_fainting:
+		stop_move()
+	
+		#animTree.set("parameters/Game/transition_request", "faint")
+		#await animTree.animation_finished
+		
+		await get_tree().create_timer(2).timeout
+	
+		allow_move()
 		respawn()
 
 func respawn():
