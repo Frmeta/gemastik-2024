@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=46 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="9_faw0i"]
 [ext_resource type="PackedScene" uid="uid://bo2id2ctx5psl" path="res://Scenes/gridmap_cave.tscn" id="9_suxpj"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_0yufg"]
+[ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="10_i6oe6"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_1qavh"]
 [ext_resource type="ArrayMesh" uid="uid://cx3mwei4q1qal" path="res://3D Assets/Nature/Trees/jembatan pohon/JembatanPohon1.tres" id="11_4kj1j"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="11_yreiq"]
@@ -142,7 +143,7 @@ transform = Transform3D(-0.953776, 0.260749, 0.149405, -0.0577322, -0.646877, 0.
 [node name="Camera3D" parent="." instance=ExtResource("5_4ux8x")]
 
 [node name="Player" parent="." instance=ExtResource("6_5bh87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.589, 4.54252, 1.52588e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3305, 2.19019, 1.52588e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_50j3d")]
@@ -155,6 +156,11 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, -2)
 
 [node name="tree" type="Node3D" parent="GridMapGround"]
+
+[node name="Trees(1)Cube200" type="MeshInstance3D" parent="GridMapGround/tree"]
+transform = Transform3D(-0.940096, -0.110628, -0.575735, -0.0859281, 1.17057, -0.0645119, 0.397431, -0.00859395, -1.37581, 21.3369, -4.98759, -4.27834)
+mesh = ExtResource("10_i6oe6")
+skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube186" type="MeshInstance3D" parent="GridMapGround/tree"]
 transform = Transform3D(0.878846, 0.185398, 0.747622, -0.298339, 1.72298, -3.71421e-09, -1.29008, -0.272151, 0.509305, 117.779, -5.1637, -3.79999)
@@ -187,6 +193,12 @@ mesh = ExtResource("11_4kj1j")
 skeleton = NodePath("../../..")
 
 [node name="grapling for tree" type="Node3D" parent="GridMapGround"]
+
+[node name="grapling_for_tree8" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
+transform = Transform3D(0.94, 0, 0, 0, 0.405, 0, 0, 0, 1, 23.1604, 2.00612, 1.19209e-07)
+
+[node name="grapling_for_tree9" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
+transform = Transform3D(0.27, 0, 0, 0, 0.405, 0, 0, 0, 1, 19.8645, 1.90912, -0.0191306)
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
 transform = Transform3D(5.851, 0, 0, 0, 4.955, 0, 0, 0, 1, 115.379, 4.15789, 0)
@@ -688,19 +700,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1802.14, 101.273, -0.879162)
 scene_after_win = "level_select"
 
 [node name="Animals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.142, -5.72657, -0.879162)
 
 [node name="Burung Cendrawasih" parent="Animals" instance=ExtResource("14_fqbwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.397, 4.61919, 0.577493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0605, 5.57552, 0)
+
+[node name="Burung Cendrawasih2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_fqbwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1084, 6.27404, 0)
+mesh = NodePath("../Burung Cendrawasih/Cendrawasih_Skeleton/Skeleton3D/Cendrawasih")
+
+[node name="Burung Cendrawasih3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_fqbwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7502, 5.79534, 0)
+mesh = NodePath("../Burung Cendrawasih/Cendrawasih_Skeleton/Skeleton3D/Cendrawasih")
+
+[node name="Burung Cendrawasih4" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_fqbwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3246, 3.11168, 0)
+mesh = NodePath("../Burung Cendrawasih/Cendrawasih_Skeleton/Skeleton3D/Cendrawasih")
+
+[node name="Burung Cendrawasih5" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_fqbwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3779, 3.96392, 0)
+mesh = NodePath("../Burung Cendrawasih/Cendrawasih_Skeleton/Skeleton3D/Cendrawasih")
 
 [node name="Dingiso" parent="Animals" instance=ExtResource("15_3wcx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.968, 4.55004, 0.577492)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.174, -1.177, 0)
 
 [node name="Kanguru Pohon Mantel Emas" parent="Animals" instance=ExtResource("16_s6ab2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.4492, 4.01183, 0.577493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6928, -1.71474, 0)
 
 [node name="Kasuari" parent="Animals" instance=ExtResource("17_migyj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.675, 6.56854, 0.577493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.467, 0.84197, 0)
 
 [node name="waterfall" parent="." instance=ExtResource("26_hmavx")]
 transform = Transform3D(15.9337, 0, 0, 0, 0.99966, 0, 0, 0, 0.99966, 826.155, 184.188, 2.85437)

@@ -58,6 +58,7 @@ func fly():
 		if find != null:
 			is_flying = true
 			target_pos = find
+			print("berhasil find " + str(find))
 		
 			
 func is_near_player(pos):
@@ -83,7 +84,7 @@ func _process(delta):
 		skeleton_3d.position.z = -1.2 # sam moment
 		
 		
-		var diff :Vector3 = (target_pos - owner.position)
+		var diff :Vector3 = (target_pos - owner.global_position)
 		var diff_normalized = diff.normalized()
 		
 		# rotation

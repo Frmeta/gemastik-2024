@@ -687,10 +687,10 @@ water = NodePath("../../water2")
 [node name="grapling_for_trees" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
-transform = Transform3D(0.94, 0, 0, 0, 0.405, 0, 0, 0, 1, 24.2036, 1.96758, 1.19209e-07)
+transform = Transform3D(0.94, 0, 0, 0, 0.405, 0, 0, 0, 1, 24.1372, 2.0008, -0.0127238)
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
-transform = Transform3D(0.27, 0, 0, 0, 0.405, 0, 0, 0, 1, 20.8748, 3.19042, 1.19209e-07)
+transform = Transform3D(0.27, 0, 0, 0, 0.405, 0, 0, 0, 1, 20.8084, 3.22364, -0.0127238)
 
 [node name="grapling_for_tree3" parent="GridMapGround/grapling_for_trees" instance=ExtResource("17_xkox3")]
 transform = Transform3D(2, 0, 0, 0, 0.405, 0, 0, 0, 1, 93.6972, 3.83707, -1.90735e-06)

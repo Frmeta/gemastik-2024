@@ -1364,6 +1364,7 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_w0xrb"]
 
 [node name="Burung Cendrawasih" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 8
 script = ExtResource("1_w5hgv")
 mesh = NodePath("Cendrawasih_Skeleton/Skeleton3D/Cendrawasih")
 
@@ -1536,6 +1537,3 @@ script = ExtResource("3_5t6x7")
 fly_anim_name = "CEN_Flying"
 idle_anim_name = "CEN_Idle"
 skeleton_3d = NodePath("../Cendrawasih_Skeleton/Skeleton3D")
-
-[node name="RayCast3D" type="RayCast3D" parent="Node3D"]
-target_position = Vector3(0, -0.1, 0)
