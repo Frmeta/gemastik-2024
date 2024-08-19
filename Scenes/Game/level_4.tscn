@@ -74,7 +74,7 @@ fun_fact = "Pulau Jawa terletak di kepulauan Sunda Besar dan merupakan pulau ter
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2153, 0.964472, -6.67572e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8651, -0.603819, -6.67572e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
@@ -160,24 +160,23 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 layer = 11
 
 [node name="Animals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 
 [node name="Badak Jawa" parent="Animals" instance=ExtResource("14_t8qft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3336, 15.1009, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9592, 0.1009, 0)
 
 [node name="Elang Jawa" parent="Animals" instance=ExtResource("15_mhgt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0623, 15.5763, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2305, 0.576311, -1.90735e-06)
 
 [node name="Elang Jawa2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("15_mhgt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5227, 14.8266, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7701, -0.173378, -1.90735e-06)
 mesh = NodePath("../Elang Jawa/Elang_Skeleton/Skeleton3D/Elang")
 
 [node name="Elang Jawa3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("15_mhgt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8572, 15.5195, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4356, 0.519451, -1.90735e-06)
 mesh = NodePath("../Elang Jawa/Elang_Skeleton/Skeleton3D/Elang")
 
 [node name="Burung Merak" parent="Animals" instance=ExtResource("16_2p5ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.1242, 13.0953, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1686, -1.9047, 0)
 
 [node name="Lower Bound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)

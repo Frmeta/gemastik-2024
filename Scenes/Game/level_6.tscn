@@ -99,16 +99,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
 scene_after_win = "level_select"
 
 [node name="Animals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 
 [node name="Harimau Sumatera" parent="Animals" instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8109, 12.9158, -0.301669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4819, -2.0842, -0.301669)
 
 [node name="Bunga Rafflesia" parent="Animals" instance=ExtResource("15_1e10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5536, 12.9158, -0.301669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7392, -2.0842, -0.301669)
 
 [node name="Tarsius" parent="Animals" instance=ExtResource("16_nenfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8121, 13.3608, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4807, -1.6392, -9.53674e-07)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]
