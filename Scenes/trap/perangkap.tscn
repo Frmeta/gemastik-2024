@@ -14,9 +14,6 @@ collision_mask = 0
 script = ExtResource("1_uljwk")
 is_big = false
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 7)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996387, 0.00683594)
 shape = SubResource("BoxShape3D_oyaef")

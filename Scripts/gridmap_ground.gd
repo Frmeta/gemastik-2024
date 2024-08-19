@@ -206,6 +206,9 @@ func fill(highest, idx, z:int, front_highest, place_tree:bool):
 					# periksa mau gundul atau rindang
 					if x > gundul_from and x < gundul_to:
 						bum = dummy_tree_gundul.instantiate()
+					elif x > gundul_from - 20 and x < gundul_to + 10 and randi() % 2 == 0:
+						# transisi gundul & rindang
+						bum = dummy_tree_gundul.instantiate()
 					else:
 						bum = dummy_tree.instantiate()
 					add_child(bum)

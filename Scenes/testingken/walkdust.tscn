@@ -23,6 +23,7 @@ scale_curve = SubResource("CurveTexture_ie854")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksyy4"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("2_svcax")
 billboard_mode = 1
 
@@ -38,6 +39,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22178, 0)
 emitting = false
 amount = 6
 lifetime = 0.19
