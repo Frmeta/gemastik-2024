@@ -116,7 +116,6 @@ syarat_hewan = Array[String](["landak", "trenggiling"])
 transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 150.975, 31.5925, 9.5389e-07)
 
 [node name="WindTrigger" parent="GridMapGround/checkpoints/checkpoint1_5" instance=ExtResource("14_x7ifv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 wind_speed = 2
 
 [node name="checkpoint2" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("11_3khf2")]

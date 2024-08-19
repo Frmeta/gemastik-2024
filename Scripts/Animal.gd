@@ -30,8 +30,8 @@ func _ready():
 	assert(mesh != null)
 	mesh.mesh = mesh.mesh.duplicate(true)
 	next_pass = mesh.mesh.surface_get_material(0).next_pass
-	print(self.name+" "+str(mesh.mesh.surface_get_material(0)))
-	print(self.name+" "+str(mesh.mesh.surface_get_material(0).next_pass))
+	#print(self.name+" "+str(mesh.mesh.surface_get_material(0)))
+	#print(self.name+" "+str(mesh.mesh.surface_get_material(0).next_pass))
 	assert(next_pass != null)
 	
 	# duplicate the mesh & next_pass

@@ -24,7 +24,7 @@ func _ready():
 	EventDistributor.connect("emit_air", _change_air_emit_position)
 
 func _change_air_emit_position(amount):
-	var air_emitter = get_node("air_emitter")
+	var air_emitter = get_node_or_null("air_emitter")
 	if air_emitter!=null:
 		if amount>=0:
 			air_emitter.position.x = 14
