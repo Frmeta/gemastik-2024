@@ -6,6 +6,7 @@ static var caught_timer = 0
 
 @export var mesh:MeshInstance3D
 
+const bullet_prefab = preload("res://Scenes/bullet.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var target_y_rot = 0
 var id = randi()
@@ -47,14 +48,13 @@ func _process(delta):
 		caught_timer = 2
 		
 		GM.doni.faint()
-		
-		var tween = get_tree().create_tween()
-		$Bullet.visible = true
-		$Bullet.position = Vector3(0, 1, 1.5)
-		tween.tween_property($Bullet, "position", $Bullet.position + Vector3.BACK * 30, 1)
-		tween.tween_callback(func () : 
-			$Bullet.visible = false
-		)
+	
+		# shoot
+		var bulet = bullet_prefab.instantiate()
+		add_child(bulet)
+		bulet.position = Vector3(0, 0.079, 1.5)
+		bulet.reparent(get_parent())
+		bulet.global_basis.z = (GM.doni.global_position - global_position).normalized()
 		
 	if caught_timer > 0:
 		pass
@@ -98,7 +98,11 @@ func is_seeing_player():
 	var diff_to_player = GM.doni.global_position - global_position
 	var spotlight_face_to = global_transform.basis.z
 	var selisih_angle = diff_to_player.angle_to(spotlight_face_to)
+	$RayCast3D.target_position = diff_to_player.normalized() * $SpotLight3D.spot_range
+	
 	
 	return selisih_angle < deg_to_rad($SpotLight3D.spot_angle)/2 \
 		and diff_to_player.length() < $SpotLight3D.spot_range \
-		and !PohonSembunyi.player_is_safe
+		and $RayCast3D.is_colliding() \
+		and $RayCast3D.get_collider() == GM.doni
+		# and !PohonSembunyi.player_is_safe

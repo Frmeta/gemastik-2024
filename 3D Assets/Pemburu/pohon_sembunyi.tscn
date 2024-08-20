@@ -1,16 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdriwyc77avho"]
+[gd_scene load_steps=3 format=3 uid="uid://cdriwyc77avho"]
 
-[ext_resource type="Script" path="res://Scripts/pohon_sembunyi.gd" id="1_74hu4"]
 [ext_resource type="ArrayMesh" uid="uid://rqtbgih1ntio" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_201.res" id="2_1pfam"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uc5da"]
 height = 8.0
-radius = 2.448
+radius = 2.5
 
-[node name="Pohon Sembunyi" type="Area3D"]
+[node name="Pohon Sembunyi" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 451.257, 2.83243, -1.95783)
-collision_layer = 0
-script = ExtResource("1_74hu4")
+collision_layer = 64
+collision_mask = 0
 
 [node name="Pohon 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.105042, 0, 0)
@@ -20,6 +19,3 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.868, 0)
 shape = SubResource("CylinderShape3D_uc5da")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -8158,12 +8158,12 @@ _data = {
 "P_Victory": SubResource("Animation_ol8lm")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv62c"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh83s"]
 shading_mode = 0
 albedo_color = Color(1, 1, 0.596078, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_j5u2a"]
-material = SubResource("StandardMaterial3D_tv62c")
+material = SubResource("StandardMaterial3D_rh83s")
 top_radius = 0.03
 bottom_radius = 0.03
 height = 0.3
@@ -8175,7 +8175,7 @@ script = ExtResource("1_h2o5g")
 mesh = NodePath("Pemburu_Skeleton/Skeleton3D/Pemburu")
 
 [node name="Pemburu_Skeleton" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191122, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191122, -0.919083, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Pemburu_Skeleton"]
 bones/0/name = "mixamorig_Hips"
@@ -8359,7 +8359,6 @@ mesh = SubResource("ArrayMesh_ebqbr")
 skin = SubResource("Skin_ix6px")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.945525, 0)
 shape = SubResource("CapsuleShape3D_u1fp2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -8379,5 +8378,9 @@ spot_attenuation = 0.00164237
 spot_angle = 21.64
 
 [node name="Bullet" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 1.5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.079043, 1.5)
 mesh = SubResource("CylinderMesh_j5u2a")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+top_level = true
+collision_mask = 67

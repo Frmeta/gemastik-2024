@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cwcf5pcyh1y7s"]
+[gd_scene load_steps=33 format=3 uid="uid://cwcf5pcyh1y7s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qjshs"]
 [ext_resource type="PackedScene" uid="uid://g368063crnc3" path="res://Scenes/testingken/walkdust.tscn" id="3_k2m8h"]
@@ -98,6 +98,20 @@ scale_over_velocity_curve = SubResource("CurveTexture_g2b15")
 [sub_resource type="QuadMesh" id="QuadMesh_cl5mj"]
 size = Vector2(0.7, 0.7)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oi2y6"]
+direction = Vector3(0, 1, 0)
+spread = 18.75
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tobx"]
+shading_mode = 0
+albedo_color = Color(0.823529, 0.827451, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lsbnm"]
+material = SubResource("StandardMaterial3D_0tobx")
+size = Vector2(0.08, 0.08)
+
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 35
 script = ExtResource("1_qjshs")
@@ -185,5 +199,14 @@ speed_scale = 1.2
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_cbg48")
 draw_pass_1 = SubResource("QuadMesh_cl5mj")
+
+[node name="shot_particle" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471015, 0.740119)
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_oi2y6")
+draw_pass_1 = SubResource("QuadMesh_lsbnm")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -275,11 +275,12 @@ func faint():
 	if !is_fainting:
 		is_fainting = true
 		stop_move()
-		print("pingsan")
+		
+		$shot_particle.emitting = true
 		animTree.set("parameters/Game/transition_request", "faint")
 		await animTree.animation_finished
 		
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.6).timeout
 	
 		allow_move()
 		is_fainting = false

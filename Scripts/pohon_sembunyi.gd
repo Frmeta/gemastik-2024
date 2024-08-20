@@ -1,4 +1,4 @@
-extends Area3D
+extends StaticBody3D
 
 class_name PohonSembunyi
 static var player_is_safe := false
