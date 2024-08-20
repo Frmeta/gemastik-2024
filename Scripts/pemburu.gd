@@ -11,8 +11,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var target_y_rot = 0
 var id = randi()
 
-var shoot_delay = 1
+var shoot_delay = 3
 var shoot_timer = 0 # temp timer only
+
+var beginning_position
+var target_position
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +28,10 @@ func _ready():
 		for i in range(0, mesh.mesh.get_surface_count()):
 			var mat : StandardMaterial3D = mesh.mesh.surface_get_material(i)
 			mat.diffuse_mode = BaseMaterial3D.DIFFUSE_TOON
+	
+	# init position
+	beginning_position = Vector2(global_position.x, global_position.z)
+	target_position = Vector2(global_position.x, global_position.z)
 	
 func _physics_process(delta):
 	# gravity
@@ -57,16 +64,27 @@ func _process(delta):
 		bulet.global_basis.z = (GM.doni.global_position - global_position).normalized()
 		
 	if caught_timer > 0:
-		pass
+		idle()
 		# print("caught " + str(Time.get_ticks_msec()))
-	elif noleh_timer > 6:
+	elif noleh_timer > 5:
+		move()
 		# lihat lihat
 		target_y_rot = deg_to_rad(180 + 90 * sin((Time.get_ticks_msec() + id)/800.0))
-		#rotation.y = target_y_rot
+		if target_position.distance_squared_to(Vector2(global_position.x, global_position.z)) < 1:
+			# ganti target
+			target_position = beginning_position + Vector2(randf() * 10 - 5, randf() * 10 - 5)
+		else:
+			# bergerak menuju target
+			$RayCast3D.global_position = global_position
+			global_position = global_position.move_toward( \
+				Vector3(target_position.x, global_position.y, target_position.y), 2 * delta \
+			)
 	elif noleh_timer > 4:
+		idle()
 		pass # diam (siap-siap noleh ke doni)
 	else:
 		# noleh ke doni
+		idle()
 		var diff_to_player = GM.doni.global_position - global_position
 		target_y_rot = atan2(diff_to_player.x, diff_to_player.z)
 	
@@ -106,3 +124,9 @@ func is_seeing_player():
 		and $RayCast3D.is_colliding() \
 		and $RayCast3D.get_collider() == GM.doni
 		# and !PohonSembunyi.player_is_safe
+
+func idle():
+	$AnimationTree.set("parameters/IdleToRun/blend_amount", 0)
+
+func move():
+	$AnimationTree.set("parameters/IdleToRun/blend_amount", 0.7)
