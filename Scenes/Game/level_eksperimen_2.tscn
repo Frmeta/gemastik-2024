@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://crrc6aakmruy8"]
+[gd_scene load_steps=66 format=3 uid="uid://crrc6aakmruy8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_c1454"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_ovhtb"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_sjoid"]
 [ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="21_h7bcj"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="22_n0m7m"]
+[ext_resource type="PackedScene" uid="uid://d0aj2ucbpani7" path="res://3D Assets/Pemburu/Pemburu2.tscn" id="25_6wfty"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daqc0"]
 resource_name = "Trunk.004"
@@ -378,6 +379,7 @@ size = Vector3(150, 1, 1)
 
 [node name="Level eksperimen 2" type="Node3D"]
 script = ExtResource("1_c1454")
+level_eksperimen = true
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_ovhtb")]
 
@@ -730,6 +732,9 @@ mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
 [node name="Jalak Bali5" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("22_n0m7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.5517, 8.83826, 0)
 mesh = NodePath("../Jalak Bali/JalakBali_Skeleton/Skeleton3D/JalakBali")
+
+[node name="Pemburu 2" parent="." instance=ExtResource("25_6wfty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.6256, 10.4841, 0)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

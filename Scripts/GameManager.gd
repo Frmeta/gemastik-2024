@@ -139,7 +139,7 @@ func play_doni_sound(file_path):
 	doni_sound.play()
 
 func play_mas_sound(file_path):
-	mas_sound.stream= load(file_path)
+	mas_sound.stream = load(file_path)
 	mas_sound.play()
 
 func stop_doni():

@@ -287,6 +287,7 @@ func faint():
 		respawn()
 
 func respawn():
+	EventDistributor.emit_signal("player_respawn") # untuk reset posisi pemburu2
 	global_position = GM.last_checkpoint_position
 	velocity = Vector3.ZERO
 

@@ -22,3 +22,5 @@ signal scan_done()
 signal rubbish_collected()
 
 signal emit_air(speed)
+
+signal player_respawn() # untuk reset posisi pemburu phase 2 ~fred

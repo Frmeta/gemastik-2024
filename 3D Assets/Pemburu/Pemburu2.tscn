@@ -1,6 +1,6 @@
-[gd_scene load_steps=60 format=3 uid="uid://cdjxq2sfmuhit"]
+[gd_scene load_steps=60 format=3 uid="uid://d0aj2ucbpani7"]
 
-[ext_resource type="Script" path="res://Scripts/pemburu.gd" id="1_h2o5g"]
+[ext_resource type="Script" path="res://Scripts/Pemburu2.gd" id="1_qt6jd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rmm4"]
 resource_name = "P_Pants.002"
@@ -8170,7 +8170,6 @@ filters = ["Pemburu_Skeleton/Skeleton3D:mixamorig_LeftFoot", "Pemburu_Skeleton/S
 animation = &"P_Running"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ckmuv"]
-graph_offset = Vector2(-176.361, -4.73372)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_ba1oj")
 nodes/Idle/position = Vector2(120, 60)
 nodes/IdleToRun/node = SubResource("AnimationNodeBlend2_lkl7t")
@@ -8180,11 +8179,10 @@ nodes/Run/position = Vector2(140, 200)
 nodes/output/position = Vector2(560, 100)
 node_connections = [&"IdleToRun", 0, &"Idle", &"IdleToRun", 1, &"Run", &"output", 0, &"IdleToRun"]
 
-[node name="Pemburu" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
+[node name="Pemburu 2" type="CharacterBody3D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_h2o5g")
-mesh = NodePath("Pemburu_Skeleton/Skeleton3D/Pemburu")
+script = ExtResource("1_qt6jd")
 
 [node name="Pemburu_Skeleton" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191122, -0.919083, 0)
@@ -8300,28 +8298,28 @@ bones/15/parent = 0
 bones/15/rest = Transform3D(-0.99712, -0.0759673, -0.00063882, 0.0759166, -0.996682, 0.0293577, -0.00286695, 0.0292243, 0.99957, 0.1147, -0.0457, -0.0162)
 bones/15/enabled = true
 bones/15/position = Vector3(0.1147, -0.0457, -0.0162)
-bones/15/rotation = Quaternion(0.0790109, 0.416853, 0.901267, -0.0878046)
+bones/15/rotation = Quaternion(0.123247, 0.498428, 0.805867, -0.294885)
 bones/15/scale = Vector3(1.00001, 1, 1)
 bones/16/name = "mixamorig_LeftLeg"
 bones/16/parent = 15
 bones/16/rest = Transform3D(0.751076, -0.167092, 0.638721, 0.0137494, 0.971193, 0.237899, -0.660072, -0.169898, 0.731737, -6.08088e-09, 0.206389, -1.45519e-11)
 bones/16/enabled = true
 bones/16/position = Vector3(-6.08088e-09, 0.206389, -1.45519e-11)
-bones/16/rotation = Quaternion(-0.731108, 0.29307, -0.198465, 0.583269)
+bones/16/rotation = Quaternion(-0.531634, 0.251247, -0.0370154, 0.808004)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "mixamorig_LeftFoot"
 bones/17/parent = 16
 bones/17/rest = Transform3D(0.650104, -0.648869, -0.395391, 0.125194, 0.604714, -0.786541, 0.74946, 0.461833, 0.474362, 1.07102e-08, 0.168701, -1.86265e-09)
 bones/17/enabled = true
 bones/17/position = Vector3(1.07102e-08, 0.168701, -1.86265e-09)
-bones/17/rotation = Quaternion(0.0616477, -0.424554, 0.0631882, 0.901089)
+bones/17/rotation = Quaternion(0.294886, -0.423227, 0.00430002, 0.856681)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "mixamorig_LeftToeBase"
 bones/18/parent = 17
 bones/18/rest = Transform3D(0.869043, -0.343574, -0.35598, -3.18736e-05, 0.719494, -0.694498, 0.494737, 0.60356, 0.625261, -3.39351e-08, 0.342899, -3.14321e-08)
 bones/18/enabled = true
 bones/18/position = Vector3(-3.39351e-08, 0.342899, -3.14321e-08)
-bones/18/rotation = Quaternion(0.379147, -0.247554, 0.0918189, 0.886868)
+bones/18/rotation = Quaternion(0.419911, -0.271037, 0.0824904, 0.862212)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "mixamorig_LeftToe_End"
 bones/19/parent = 18
@@ -8335,28 +8333,28 @@ bones/20/parent = 0
 bones/20/rest = Transform3D(-0.997159, 0.075448, 0.000665675, -0.0753961, -0.996715, 0.0295716, 0.00289463, 0.0294371, 0.999564, -0.1147, -0.0457, -0.0132)
 bones/20/enabled = true
 bones/20/position = Vector3(-0.1147, -0.0457, -0.0132)
-bones/20/rotation = Quaternion(-0.0452493, 0.29476, 0.952391, 0.0634073)
+bones/20/rotation = Quaternion(-0.279675, 0.128077, 0.903199, 0.29935)
 bones/20/scale = Vector3(1.00001, 1, 1)
 bones/21/name = "mixamorig_RightLeg"
 bones/21/parent = 20
 bones/21/rest = Transform3D(0.985695, 0.167966, 0.0139092, -0.168378, 0.985009, 0.0374952, -0.0074028, -0.0393008, 0.9992, -1.24292e-08, 0.206391, 2.23372e-09)
 bones/21/enabled = true
 bones/21/position = Vector3(-1.24292e-08, 0.206391, 2.23372e-09)
-bones/21/rotation = Quaternion(-0.688432, -0.00288833, -0.0677349, 0.722125)
+bones/21/rotation = Quaternion(-0.355985, 0.00617241, -0.223197, 0.907425)
 bones/21/scale = Vector3(1, 1, 1)
 bones/22/name = "mixamorig_RightFoot"
 bones/22/parent = 21
 bones/22/rest = Transform3D(0.98364, 0.176611, 0.035507, -0.109102, 0.740882, -0.662714, -0.143349, 0.647998, 0.74803, -7.567e-10, 0.167085, 6.98492e-10)
 bones/22/enabled = true
 bones/22/position = Vector3(-7.567e-10, 0.167085, 6.98492e-10)
-bones/22/rotation = Quaternion(0.716095, 0.134475, -0.00755757, 0.684885)
+bones/22/rotation = Quaternion(0.362666, 0.245586, 0.308075, 0.844542)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/name = "mixamorig_RightToeBase"
 bones/23/parent = 22
 bones/23/rest = Transform3D(0.909505, 0.302918, 0.284679, 4.59403e-05, 0.684755, -0.728773, -0.415694, 0.662836, 0.622774, -1.95287e-08, 0.324899, -4.5402e-09)
 bones/23/enabled = true
 bones/23/position = Vector3(-1.95287e-08, 0.324899, -4.5402e-09)
-bones/23/rotation = Quaternion(0.421901, 0.209394, -0.0803714, 0.878461)
+bones/23/rotation = Quaternion(0.402493, 0.20739, -0.0797357, 0.888049)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "mixamorig_RightToe_End"
 bones/24/parent = 23
@@ -8382,18 +8380,20 @@ autoplay = "P_IdleShooting"
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ckmuv")
 anim_player = NodePath("../AnimationPlayer")
-parameters/IdleToRun/blend_amount = 0.69
+parameters/IdleToRun/blend_amount = 0.0
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.12899, 1.26087)
+[node name="Checkground" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.88732)
+target_position = Vector3(0, 0, 1)
+collision_mask = 2
+
+[node name="SpotLight3D" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, -0.0118341, 1.07283)
 light_color = Color(1, 1, 0.678431, 1)
 light_energy = 10.0
 light_specular = 1.0
 shadow_enabled = true
 spot_range = 40.0
 spot_attenuation = 0.00164237
-spot_angle = 21.64
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-top_level = true
-collision_mask = 67
