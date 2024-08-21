@@ -16,12 +16,22 @@ var is_animating_almanac = false
 func _ready():
 	set_up()
 	EventDistributor.emit_signal("emit_air",0)
-	if GM.current_level==1:
+	if GM.current_level   == 1: # Bali
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright).ogg", -10)
-	elif GM.current_level==0:
+	elif GM.current_level == 0: # Kalimantan
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg",-10)
-	elif GM.current_level==2:
+	elif GM.current_level == 2: #NTT
 		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
+	elif GM.current_level == 3: # Papua
+		GM.play_audio_background("",-10)
+	elif GM.current_level == 4: # Jawa
+		GM.play_audio_background("",-10)
+	elif GM.current_level == 5: # Sulawesi
+		GM.play_audio_background("",-10)
+	elif GM.current_level == 6: # Sumatera
+		GM.play_audio_background("",-10)
+	elif GM.current_level == 7: # Levi
+		GM.play_audio_background("",-10)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout

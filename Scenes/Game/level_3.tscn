@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=49 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="11_yreiq"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_4b20f"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="12_oud6k"]
+[ext_resource type="PackedScene" uid="uid://b0kfe4ssagx3e" path="res://Scenes/invisiblewall.tscn" id="13_8xn0h"]
 [ext_resource type="MeshLibrary" uid="uid://b8umrxbbu728f" path="res://Tilemap/tilemap_nature14.tres" id="13_b4yt3"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_iy0ll"]
 [ext_resource type="PackedScene" uid="uid://3bii3f0bjn6u" path="res://Scenes/water.tscn" id="14_dpdpk"]
@@ -41,9 +42,9 @@ albedo_color = Color(0.698039, 0.784314, 0.396078, 1)
 material = SubResource("StandardMaterial3D_r1mdm")
 size = Vector3(3, 0.2, 3)
 
-[sub_resource type="Curve3D" id="Curve3D_khc74"]
+[sub_resource type="Curve3D" id="Curve3D_wfe68"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18.537, 0, -1.209),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -18.537, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -86,6 +87,20 @@ _data = {
 "move": SubResource("Animation_t02ik")
 }
 
+[sub_resource type="Curve3D" id="Curve3D_5trqq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18.537, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_khc74"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18.537, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="Curve3D" id="Curve3D_7neky"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, -20, -1.209),
@@ -102,14 +117,14 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_4f0w5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, -5, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -30, 5, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_ll4ys"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, -50, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, -40, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -143,7 +158,7 @@ transform = Transform3D(-0.953776, 0.260749, 0.149405, -0.0577322, -0.646877, 0.
 [node name="Camera3D" parent="." instance=ExtResource("5_4ux8x")]
 
 [node name="Player" parent="." instance=ExtResource("6_5bh87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3305, 2.19019, 1.52588e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42384, 6.43954, 1.90735e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_50j3d")]
@@ -192,6 +207,32 @@ transform = Transform3D(0.20898, 0.57676, -3.44582, -0.487895, 3.42297, 0.543346
 mesh = ExtResource("11_4kj1j")
 skeleton = NodePath("../../..")
 
+[node name="invisible_walls" type="Node3D" parent="GridMapGround"]
+
+[node name="invisiblewall" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7173, 31.4042, 0)
+
+[node name="invisiblewall2" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.282, 7.87708, 0)
+
+[node name="invisiblewall3" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.424, 80.9277, 0)
+
+[node name="invisiblewall4" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 379.027, 61.5432, 0)
+
+[node name="invisiblewall5" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 885.595, 218.592, 0)
+
+[node name="invisiblewall6" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1137.3, 145.825, 0)
+
+[node name="invisiblewall7" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1324.05, 167.809, 0)
+
+[node name="invisiblewall8" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1564.8, 117.163, 0)
+
 [node name="grapling for tree" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree8" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
@@ -212,7 +253,10 @@ transform = Transform3D(28.5425, 0.557998, 0, -4.31611, 3.69005, 0, 0, 0, 0.991,
 collision_layer = 2
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(6.09813, 0, 0, 0, 4.95504, 0, 0, 0, 1, 128.861, 5.23384, 0)
+transform = Transform3D(6.09813, 0, 0, 0, 4.95504, 0, 0, 0, 1, 115.545, 3.12248, 0)
+
+[node name="grapling_for_tree10" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
+transform = Transform3D(5.107, 0, 0, 0, 2.93206, 0, 0, 0, 0.591733, 121.104, 1.37639, 0)
 
 [node name="grapling_for_tree4" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
 transform = Transform3D(11.1889, 0, 0, 0, 4.95504, 0, 0, 0, 1, 165.697, 18.944, 0)
@@ -225,19 +269,65 @@ transform = Transform3D(21.9877, -6.91634, 0, 11.1092, 13.6891, 0, 0, 0, 2.79196
 
 [node name="checkpoint" type="Node3D" parent="GridMapGround"]
 
-[node name="checkpoint" parent="GridMapGround/checkpoint" instance=ExtResource("12_oud6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.944, 13.3939, 0)
-
-[node name="checkpoint2" parent="GridMapGround/checkpoint" instance=ExtResource("12_oud6k")]
+[node name="checkpoint2" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7647, 4.43706, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall")
+
+[node name="WindTrigger" parent="GridMapGround/checkpoint/checkpoint2" instance=ExtResource("17_d7a6u")]
+wind_speed = 1
+
+[node name="checkpoint" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.944, 13.3939, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall2")
+
+[node name="WindTrigger" parent="GridMapGround/checkpoint/checkpoint" instance=ExtResource("17_d7a6u")]
+wind_speed = -2
+
+[node name="checkpoint3" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.275, 80.7884, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall3")
+
+[node name="WindTrigger2" parent="GridMapGround/checkpoint/checkpoint3" instance=ExtResource("17_d7a6u")]
+
+[node name="checkpoint4" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.399, 61.7714, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall4")
+
+[node name="WindTrigger3" parent="GridMapGround/checkpoint/checkpoint4" instance=ExtResource("17_d7a6u")]
+wind_speed = -2
+
+[node name="checkpoint5" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 905.145, 222.624, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall5")
+
+[node name="WindTrigger4" parent="GridMapGround/checkpoint/checkpoint5" instance=ExtResource("17_d7a6u")]
+wind_speed = 1
+
+[node name="checkpoint6" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1143.54, 143.291, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall7")
+
+[node name="WindTrigger5" parent="GridMapGround/checkpoint/checkpoint6" instance=ExtResource("17_d7a6u")]
+
+[node name="checkpoint7" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1333.52, 170.059, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall6")
+
+[node name="WindTrigger5" parent="GridMapGround/checkpoint/checkpoint7" instance=ExtResource("17_d7a6u")]
+
+[node name="checkpoint8" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1603.51, 117.856, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall8")
+
+[node name="WindTrigger5" parent="GridMapGround/checkpoint/checkpoint8" instance=ExtResource("17_d7a6u")]
 
 [node name="platforms" type="Node3D" parent="GridMapGround"]
 
 [node name="movingplatform" type="Node3D" parent="GridMapGround/platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.839, 72.4439, -0.299011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 297.309, 72.7931, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform"]
-transform = Transform3D(-0.0650761, 0, 0.997779, 0, 1, 0, -0.997778, 0, -0.0650762, -0.0122375, 0, -0.0381895)
+transform = Transform3D(-4.3707e-08, 0, -0.999899, 0, 1, 0, 0.999898, 0, -4.37069e-08, 0.00973511, 0, 0.038905)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform/Node3D"]
@@ -260,10 +350,10 @@ mesh = SubResource("BoxMesh_5f60b")
 skeleton = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="GridMapGround/platforms/movingplatform"]
-curve = SubResource("Curve3D_khc74")
+curve = SubResource("Curve3D_wfe68")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform/Path3D"]
-transform = Transform3D(0.0650762, 0, -0.997779, 0, 1, 0, 0.997778, 0, 0.0650763, 0, 0, 0)
+transform = Transform3D(-4.37069e-08, 0, 0.999899, 0, 1, 0, -0.999898, 0, -4.3707e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -275,12 +365,13 @@ libraries = {
 "": SubResource("AnimationLibrary_n210n")
 }
 autoplay = "move"
+speed_scale = 0.5
 
 [node name="movingplatform2" type="Node3D" parent="GridMapGround/platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 313.498, 68.3726, -0.299011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.33, 68.6454, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform2"]
-transform = Transform3D(-0.0650761, 0, 0.997779, 0, 1, 0, -0.997778, 0, -0.0650762, -0.0122375, 0, -0.0381895)
+transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.00973511, 0, -0.038905)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform2/Node3D"]
@@ -303,10 +394,10 @@ mesh = SubResource("BoxMesh_5f60b")
 skeleton = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="GridMapGround/platforms/movingplatform2"]
-curve = SubResource("Curve3D_khc74")
+curve = SubResource("Curve3D_5trqq")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform2/Path3D"]
-transform = Transform3D(0.0650762, 0, -0.997779, 0, 1, 0, 0.997778, 0, 0.0650763, 0, 0, 0)
+transform = Transform3D(-4.37069e-08, 0, -0.999899, 0, 1, 0, 0.999898, 0, -4.3707e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform2/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -318,12 +409,13 @@ libraries = {
 "": SubResource("AnimationLibrary_n210n")
 }
 autoplay = "move"
+speed_scale = 0.5
 
 [node name="movingplatform3" type="Node3D" parent="GridMapGround/platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 670.222, 129.515, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform3"]
-transform = Transform3D(-0.0650761, 0, 0.997779, 0, 1, 0, -0.997778, 0, -0.0650762, -0.445496, -0.928329, -0.0381895)
+transform = Transform3D(1.31121e-07, 0, 0.999899, 0, 1, 0, -0.999898, 0, 1.31121e-07, -0.442932, -0.928329, -0.038905)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform3/Node3D"]
@@ -350,7 +442,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
 curve = SubResource("Curve3D_khc74")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform3/Path3D"]
-transform = Transform3D(0.0650762, 0, -0.997779, 0, 1, 0, 0.997778, 0, 0.0650763, 0, 0, 0)
+transform = Transform3D(-4.37069e-08, 0, -0.999899, 0, 1, 0, 0.999898, 0, -4.3707e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform3/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -476,10 +568,10 @@ autoplay = "move"
 speed_scale = 0.5
 
 [node name="movingplatform6" type="Node3D" parent="GridMapGround/platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1395.65, 168.947, -0.299011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1424.72, 163.251, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform6"]
-transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -0.442871, -0.926727, -0.038906)
+transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -8.19849, 1.3728, 0.038906)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform6/Node3D"]
@@ -506,11 +598,11 @@ mesh = SubResource("BoxMesh_5f60b")
 skeleton = NodePath("../../Path3D/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="GridMapGround/platforms/movingplatform6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.20813, 1.3744, 0)
 curve = SubResource("Curve3D_4f0w5")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform6/Path3D"]
-transform = Transform3D(-1.62908e-07, 0.164402, -0.986363, 0, 0.986415, 0.164394, 0.999923, 2.67846e-08, -1.60699e-07, 0, 0, 0)
+transform = Transform3D(-1.62908e-07, 0.164402, 0.986363, 0, 0.986415, -0.164394, -0.999923, -2.67846e-08, -1.60699e-07, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform6/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -526,10 +618,10 @@ autoplay = "move"
 speed_scale = 0.5
 
 [node name="movingplatform7" type="Node3D" parent="GridMapGround/platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1439.6, 172.973, -0.299011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1423.69, 165.826, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform7"]
-transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -0.442261, -0.924591, -0.038906)
+transform = Transform3D(-0.048846, 0, 0.998775, 0, 1.00002, 0, -0.998729, 0, -0.0488482, -0.442505, -0.925568, -0.038906)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform7/Node3D"]
@@ -560,7 +652,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
 curve = SubResource("Curve3D_ll4ys")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform7/Path3D"]
-transform = Transform3D(-4.3708e-08, 0.384624, -0.923048, 0, 0.923097, 0.384603, 0.999923, 1.68124e-08, -4.03477e-08, 0, 0, 0)
+transform = Transform3D(-1.54079e-07, 0.284095, -0.958768, 2.98e-08, 0.958819, 0.284079, 0.999923, 1.52012e-08, -1.56203e-07, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform7/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -583,26 +675,6 @@ transform = Transform3D(6.55292, 0, 0, 0, 6.55292, 0, 0, 0, 6.55292, 826.023, 17
 [node name="floating_thing" parent="GridMapGround/water/water" node_paths=PackedStringArray("water") instance=ExtResource("15_hqgw8")]
 transform = Transform3D(-0.0024689, 0, -0.152584, 0, 0.152604, 0, 0.152584, 0, -0.0024689, -1.04998, 0.630701, 4.66223)
 water = NodePath("..")
-
-[node name="wind_triggers" type="Node3D" parent="GridMapGround"]
-
-[node name="WindTrigger" parent="GridMapGround/wind_triggers" instance=ExtResource("17_d7a6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.938, 20.7125, 0)
-wind_speed = 2
-
-[node name="WindTrigger2" parent="GridMapGround/wind_triggers" instance=ExtResource("17_d7a6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.275, 80.7884, 0)
-
-[node name="WindTrigger3" parent="GridMapGround/wind_triggers" instance=ExtResource("17_d7a6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.399, 61.7714, 0)
-wind_speed = -2
-
-[node name="WindTrigger4" parent="GridMapGround/wind_triggers" instance=ExtResource("17_d7a6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 905.145, 222.624, 0)
-wind_speed = 1
-
-[node name="WindTrigger5" parent="GridMapGround/wind_triggers" instance=ExtResource("17_d7a6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1143.54, 143.291, 0)
 
 [node name="death_triggers" type="Node3D" parent="GridMapGround"]
 

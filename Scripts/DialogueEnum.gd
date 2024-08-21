@@ -5,6 +5,7 @@ const FILES = {
 	DIALOGUE_TEST ="res://tes.json",
 	
 	OUT_OF_BOUND="res://dialogue/out-of-bound/out-of-bound.json",
+	ADA_SAMPAH = "res://dialogue/out-of-bound/adasampah.json",
 	
 	TUTORIAL_AWAL = "res://dialogue/tutorial/awal.json",
 	TUTORIAL_PETA = "res://dialogue/tutorial/peta.json",
@@ -40,6 +41,7 @@ const TUTORIAL_TEKAN_GAMBAR_KIRI = FILES.TUTORIAL_TEKAN_GAMBAR_KIRI
 const TUTORIAL_DONE = FILES.TUTORIAL_DONE
 
 const OUT_OF_BOUND = FILES.OUT_OF_BOUND
+const ADA_SAMPAH = FILES.ADA_SAMPAH
 
 const PROLOGUE1 = FILES.PROLOGUE1
 const PROLOGUE2 = FILES.PROLOGUE2

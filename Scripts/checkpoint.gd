@@ -25,7 +25,7 @@ var captured = false
 func _ready():
 	EventDistributor.connect("new_checkpoint", disable_both_wall)
 	EventDistributor.connect("animal_captured", scan_done)
-	EventDistributor.connect("rubbish_collected", scan_done)
+	EventDistributor.connect("rubbish_collected", rubbish_pickedup)
 	
 	# syarat nama hewan ubah jadi lower
 	for i in range(syarat_hewan.size()):
@@ -54,16 +54,20 @@ func _on_body_entered(_body):
 		
 		EventDistributor.emit_signal("new_checkpoint", self)
 		
+		await get_tree().create_timer(0.05).timeout # takut gk sinkron
 		# enable wall yang diassign ke checkpoin
 		if wallleft!=null:
 			wallleft.enable_wall()
 		if wallright!=null and !syarat_terpenuhi():
 			wallright.enable_wall()
 		
+		if rubbish_num!=0:
+			EventDistributor.emit_signal("is_rubbishing", true)
+		else:
+			EventDistributor.emit_signal("is_rubbishing", false)
+		
 		EventDistributor.emit_signal("emit_air", air_speed)
 		
-		# FOR DEBUGGING PUPOSES
-		# EventDistributor.emit_signal("animal_captured")
 
 # Checkpoin yang punya dua wall aktif diasumsikan adalah
 # checkpoin yang lagi aktif dan juga berhewan
@@ -80,6 +84,8 @@ func syarat_terpenuhi():
 		if !GM.scanned_animal.has(hewan):
 			print("kamu blum scan " + hewan)
 			return false
+	if rubbish_num != _rubbish_counter:
+		return false
 	return true
 
 func rubbish_pickedup():

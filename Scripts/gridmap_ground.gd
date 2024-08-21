@@ -1,7 +1,7 @@
 extends GridMap
 
 const START_X = -60
-const END_X = 1000
+const END_X = 1500
 
 const START_Y = -15
 const END_Y = 200
@@ -59,8 +59,8 @@ func _ready():
 		var used_cells = get_used_cells()
 		
 		
-		var extend_step = 5
-		var smooth_step = 3
+		var extend_step = 3
+		var smooth_step = 1
 		
 		# fill extend
 		for t in range(extend_step):

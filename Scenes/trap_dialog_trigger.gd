@@ -6,6 +6,7 @@ var done = false
 
 func _on_body_entered(body):
 	if !done:
+		print(file_name)
 		done = true
 		GM.doni.stop_move()
 		EventDistributor.emit_signal("start_dialogue","res://dialogue/"+file_name+".json")
