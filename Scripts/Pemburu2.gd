@@ -68,7 +68,8 @@ func _physics_process(delta):
 			
 			# kejar doni
 			move()
-			$walking.play()
+			if not $walking.playing:
+				$walking.play()
 			if GM.doni.global_position.x > global_position.x:
 				# ke kanan
 				velocity.x = SPEED
@@ -81,7 +82,8 @@ func _physics_process(delta):
 			# Handle jump.
 			if $Checkground.is_colliding() and is_on_floor():
 				velocity.y = JUMP_VELOCITY
-				$jumping.play()
+				if not $jumping.playing:
+					$jumping.play()
 			# Handle senter shake
 			const SHAKE_ANGLE = 20
 			$SpotLight3D.rotation.x = -atan2(GM.doni.global_position.y-global_position.y, abs(GM.doni.global_position.x-global_position.x)) \
