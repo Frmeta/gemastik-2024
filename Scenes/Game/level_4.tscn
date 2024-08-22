@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="16_2p5ol"]
 [ext_resource type="PackedScene" uid="uid://vd8uihael7tq" path="res://Scenes/jembatans/jembatan.tscn" id="17_s361h"]
 [ext_resource type="PackedScene" uid="uid://cdjxq2sfmuhit" path="res://3D Assets/Pemburu/Pemburu.tscn" id="23_duutx"]
-[ext_resource type="PackedScene" path="res://3D Assets/Pemburu/pohon_sembunyi.tscn" id="24_idc28"]
+[ext_resource type="PackedScene" uid="uid://cdriwyc77avho" path="res://3D Assets/Pemburu/pohon_sembunyi.tscn" id="24_idc28"]
 [ext_resource type="ArrayMesh" uid="uid://mvmaqv8a0uqk" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_008.res" id="25_ldhl5"]
 [ext_resource type="ArrayMesh" uid="uid://de2xbymijamv" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_031.res" id="26_bi3hx"]
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_186.res" id="27_5yi23"]
@@ -106,7 +106,7 @@ light_energy = 0.8
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 955.983, 34.3837, -9.72748e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 398.194, 11.0287, 0.000146866)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
@@ -377,9 +377,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 466.183, 4.05808, -16.2515)
 [node name="Pemburu2" parent="Pemburu Phase 1" instance=ExtResource("23_duutx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 484.836, 4.05808, -16.2515)
 
-[node name="Pohon Sembunyi 2" parent="Pemburu Phase 1/Pemburu2" instance=ExtResource("24_idc28")]
-transform = Transform3D(0.0587485, 0, -0.998273, 0, 1, 0, 0.998273, 0, 0.0587485, -21.16, -1.22565, 14.0032)
-
 [node name="Pemburu3" parent="Pemburu Phase 1" node_paths=PackedStringArray("mesh") instance=ExtResource("23_duutx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 510.975, 4.05808, -16.2515)
 mesh = NodePath("../Pemburu2/Pemburu_Skeleton/Skeleton3D/Pemburu")
@@ -387,6 +384,9 @@ mesh = NodePath("../Pemburu2/Pemburu_Skeleton/Skeleton3D/Pemburu")
 [node name="Pemburu4" parent="Pemburu Phase 1" node_paths=PackedStringArray("mesh") instance=ExtResource("23_duutx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 520.465, 4.05808, -16.2515)
 mesh = NodePath("../Pemburu2/Pemburu_Skeleton/Skeleton3D/Pemburu")
+
+[node name="Pohon Sembunyi 2" parent="Pemburu Phase 1" instance=ExtResource("24_idc28")]
+transform = Transform3D(0.0587485, 0, -0.998273, 0, 1, 0, 0.998273, 0, 0.0587485, 463.676, 2.83243, -2.2483)
 
 [node name="Pohon Sembunyi 1" parent="Pemburu Phase 1" instance=ExtResource("24_idc28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 447.372, 2.83243, -1.95783)

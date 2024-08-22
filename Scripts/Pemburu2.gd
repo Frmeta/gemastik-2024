@@ -51,6 +51,7 @@ func _physics_process(delta):
 			add_child(bulet)
 			bulet.position = Vector3(0, 0.079, 1.5)
 			bulet.reparent(get_parent())
+			$shoot.play()
 			
 			var diff = (GM.doni.global_position - global_position).normalized()
 			bulet.global_basis.z = Vector3(diff.x, diff.y, 0)
@@ -67,6 +68,7 @@ func _physics_process(delta):
 			
 			# kejar doni
 			move()
+			$walking.play()
 			if GM.doni.global_position.x > global_position.x:
 				# ke kanan
 				velocity.x = SPEED
@@ -79,7 +81,7 @@ func _physics_process(delta):
 			# Handle jump.
 			if $Checkground.is_colliding() and is_on_floor():
 				velocity.y = JUMP_VELOCITY
-				
+				$jumping.play()
 			# Handle senter shake
 			const SHAKE_ANGLE = 20
 			$SpotLight3D.rotation.x = -atan2(GM.doni.global_position.y-global_position.y, abs(GM.doni.global_position.x-global_position.x)) \

@@ -1,6 +1,9 @@
-[gd_scene load_steps=60 format=3 uid="uid://d0aj2ucbpani7"]
+[gd_scene load_steps=63 format=3 uid="uid://d0aj2ucbpani7"]
 
 [ext_resource type="Script" path="res://Scripts/Pemburu2.gd" id="1_qt6jd"]
+[ext_resource type="AudioStream" uid="uid://dq686ujarv288" path="res://audio/footsteps-pixabay.wav" id="2_aqqq7"]
+[ext_resource type="AudioStream" uid="uid://cbh4qg6upq5dk" path="res://audio/a/grapling hook.mp3" id="3_ob0av"]
+[ext_resource type="AudioStream" uid="uid://3tnjxtgiv6to" path="res://audio/jump-pixabay.wav" id="4_a5u1o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rmm4"]
 resource_name = "P_Pants.002"
@@ -8378,6 +8381,9 @@ libraries = {
 autoplay = "P_IdleShooting"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xln3i")
+}
 tree_root = SubResource("AnimationNodeBlendTree_ckmuv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/IdleToRun/blend_amount = 0.0
@@ -8397,3 +8403,18 @@ light_specular = 1.0
 shadow_enabled = true
 spot_range = 15.0
 spot_attenuation = 0.00164237
+
+[node name="walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_aqqq7")
+volume_db = 10.0
+pitch_scale = 0.7
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ob0av")
+volume_db = 15.0
+pitch_scale = 0.7
+
+[node name="jumping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_a5u1o")
+volume_db = 10.0
+pitch_scale = 0.5

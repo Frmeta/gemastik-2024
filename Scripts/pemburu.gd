@@ -50,6 +50,8 @@ func _process(delta):
 	# Shooting bullet
 	shoot_timer += delta
 	if is_seeing_player() and shoot_timer > shoot_delay:
+		print("is shooting")
+		$shooting.play()
 		shoot_timer = 0
 		caught_timer = 2
 		
@@ -78,6 +80,9 @@ func _process(delta):
 			global_position = global_position.move_toward( \
 				Vector3(target_position.x, global_position.y, target_position.y), 2 * delta \
 			)
+			print(global_position)
+			if not $walking.playing:
+				$walking.play()
 	elif noleh_timer > 4:
 		idle()
 		pass # diam (siap-siap noleh ke doni)
