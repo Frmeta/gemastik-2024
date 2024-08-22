@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c450s3uyuhk17"
+path="res://.godot/imported/walkingondirtpath-35341 (1).ogg-cb61b6daa2e7ecfa1c8489bd31175644.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/walkingondirtpath-35341 (1).ogg"
+dest_files=["res://.godot/imported/walkingondirtpath-35341 (1).ogg-cb61b6daa2e7ecfa1c8489bd31175644.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
