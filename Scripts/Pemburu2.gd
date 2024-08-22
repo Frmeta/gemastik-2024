@@ -45,7 +45,7 @@ func _physics_process(delta):
 	
 	if is_instance_valid(GM.doni):
 		
-		if jarak_ke_doni < 5 and shoot_timer > SHOOT_DELAY:
+		if jarak_ke_doni < 8 and shoot_timer > SHOOT_DELAY:
 			# tembak doni
 			var bulet = bullet_prefab.instantiate()
 			add_child(bulet)
@@ -57,7 +57,7 @@ func _physics_process(delta):
 			GM.doni.faint()
 			shoot_timer = 0
 			
-		if jarak_x_ke_doni < 0.1:
+		if jarak_x_ke_doni < 0.5:
 			# diam
 			idle()
 			velocity.x = 0
