@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Banyak sekali sampah ini...",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Iya benar. Manusia banyak membuang sampah ke alam tanpa memikirkan lebih lanjut akibatnya",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Mari kita bersihkan sampah-sampah ini!",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"AYO MARI!",
+		"emosi":"4"
+	},
+]

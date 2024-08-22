@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcoubnjksjmnh"
+path="res://.godot/imported/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg-9daddb0a6f1c261b0f5c1f00b83702a2.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg"
+dest_files=["res://.godot/imported/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg-9daddb0a6f1c261b0f5c1f00b83702a2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

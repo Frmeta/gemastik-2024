@@ -2,9 +2,13 @@ extends StaticBody3D
 
 class_name InvisibleWall
 
+var _is_rubbishing = false
+
 func _ready():
-	#disable_wall()
-	pass
+	EventDistributor.connect("is_rubbishing", _set_is_rubbishing)
+
+func _set_is_rubbishing(boolean):
+	_is_rubbishing = boolean
 
 func enable_wall():
 	print("enable", self.name)
@@ -25,6 +29,9 @@ func _on_area_3d_body_entered(body: Player):
 	body.can_move=false
 	await get_tree().create_timer(0.05).timeout
 	body.velocity=Vector3.ZERO
-	EventDistributor.emit_signal('start_dialogue',DialogueEnum.OUT_OF_BOUND)
+	if not _is_rubbishing:
+		EventDistributor.emit_signal('start_dialogue',DialogueEnum.OUT_OF_BOUND)
+	else:
+		EventDistributor.emit_signal('start_dialogue',DialogueEnum.ADA_SAMPAH)
 	await EventDistributor.end_dialogue
 	body.can_move=true

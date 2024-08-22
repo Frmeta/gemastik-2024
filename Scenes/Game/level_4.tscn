@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="16_2p5ol"]
 [ext_resource type="PackedScene" uid="uid://vd8uihael7tq" path="res://Scenes/jembatans/jembatan.tscn" id="17_s361h"]
 [ext_resource type="PackedScene" uid="uid://cdjxq2sfmuhit" path="res://3D Assets/Pemburu/Pemburu.tscn" id="23_duutx"]
-[ext_resource type="PackedScene" uid="uid://cdriwyc77avho" path="res://3D Assets/Pemburu/pohon_sembunyi.tscn" id="24_idc28"]
+[ext_resource type="PackedScene" path="res://3D Assets/Pemburu/pohon_sembunyi.tscn" id="24_idc28"]
 [ext_resource type="ArrayMesh" uid="uid://mvmaqv8a0uqk" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_008.res" id="25_ldhl5"]
 [ext_resource type="ArrayMesh" uid="uid://de2xbymijamv" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_031.res" id="26_bi3hx"]
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_186.res" id="27_5yi23"]

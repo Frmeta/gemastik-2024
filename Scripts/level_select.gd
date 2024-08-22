@@ -12,6 +12,17 @@ var pins = []
 const MAX_LEVEL = 8
 
 func _ready():
+	if GM.new_unlocked!=-1:
+		for i in range(1,GM.explored_level):
+			var temp = get_node("paths" + str(i))
+			temp.visible=true
+		_play_animation_new_unlocked()
+		GM.new_unlocked = -1
+	else:
+		for i in range(1,GM.explored_level+1):
+			var temp = get_node("paths" + str(i))
+			temp.visible=true
+	
 	# init pins
 	for i in range(MAX_LEVEL):
 		var temp = get_node("Pin" + str(i))
@@ -126,3 +137,14 @@ func _on_main_menu_button_pressed():
 	#play audio
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
+
+func _play_animation_new_unlocked():
+	var index = GM.new_unlocked
+	var paths = get_node("paths"+str(index)).get_children()
+	for i in range(len(paths)):
+		paths[i].visible = false
+	get_node("paths"+str(index)).visible=true
+
+	for i in range(len(paths)):
+		await get_tree().create_timer(0.4).timeout
+		paths[i].play_animation()

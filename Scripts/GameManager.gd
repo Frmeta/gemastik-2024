@@ -14,6 +14,7 @@ var last_air_speed :=0
 var data_file_number = 0
 
 var explored_level = 2
+var new_unlocked = -1
 var current_level = 0
 
 var scanned_animal := []
@@ -62,6 +63,8 @@ func os_walk(path):
 # ketika player menang (win_area.gd)
 func win(target : String):
 	explored_level = max(explored_level, current_level+1)
+	if current_level+1>explored_level:
+		new_unlocked=current_level+1
 	
 	# overwrite data
 	var data_copy = data
