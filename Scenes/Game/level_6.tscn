@@ -20,7 +20,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
 
-[node name="Level Kosong" type="Node3D"]
+[node name="Level Sumatera" type="Node3D"]
 script = ExtResource("1_wbss8")
 nama_pulau = "Sumatera"
 fun_fact = "Tahukah kamu Pulau Sumatera merupakan awal masuknya Islam ke Indonesia di beberapa catatan sejarah."

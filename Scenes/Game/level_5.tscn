@@ -90,7 +90,7 @@ point_count = 2
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
 
-[node name="Level Kosong" type="Node3D"]
+[node name="Level Sulawesi" type="Node3D"]
 script = ExtResource("1_881lh")
 nama_pulau = "Sulawesi"
 fun_fact = "Karena letaknya yang berada di wilayah peralihan, Sulawesi memiliki keanekaragaman hayati yang berbeda dari daerah asiatis dan austrliatis."

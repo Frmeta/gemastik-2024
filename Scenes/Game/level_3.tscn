@@ -126,7 +126,7 @@ size = Vector3(190.992, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgvx"]
 size = Vector3(117.232, 1, 1)
 
-[node name="Level Kosong" type="Node3D"]
+[node name="Level Papua" type="Node3D"]
 script = ExtResource("1_kmcya")
 nama_pulau = "Papua"
 fun_fact = "Walaupun Papua bukan pulau yang paling padat. Papua merupakan pulau terluas yang ada di Indonesia"
