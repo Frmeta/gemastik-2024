@@ -15,7 +15,7 @@ const SPAWN_TREE = true
 
 @export var noise:Noise
 
-enum Algo {TERRAIN, CAVE}
+enum Algo {TERRAIN, CAVE, ISLAND}
 @export var algo : Algo = Algo.TERRAIN
 @export var gundul_from = -100
 @export var gundul_to = -100
@@ -32,9 +32,9 @@ func _ready():
 	
 	
 	if algo == Algo.TERRAIN:
-		# Normal mode
+		# Normal Terrain
 		
-		fill_front(highest, idx)
+		fill_front(highest, idx, 0)
 		
 		var extend_step = 7
 		var smooth_step = 50
@@ -48,7 +48,7 @@ func _ready():
 		# fill smooth
 		var highest2
 		for i in range(smooth_step):
-			highest2 = smooth(highest)
+			highest2 = smooth(highest, false)
 			fill (highest2, idx, t, highest, i > 3)
 			
 			highest = highest2
@@ -91,13 +91,50 @@ func _ready():
 				for y in range(START_Y, highest[x-START_X]):
 					set_cell_item(Vector3i(x, y, -extend_step-smooth_step), idx[x-START_X])
 		
-	
-	# fill smooth with noise only
-	#for i in range(smooth_step):
-		#highest2 = smooth_with_noise_only(highest, t, 1, 3)
-		#fill (highest2, t, highest)
-		#t -= 1
-	
+	elif algo == Algo.ISLAND:
+		# Generate Islands
+		
+		print("a")
+		
+		const EXTEND_STEP = 1
+		const SMOOTH_STEP = 3
+		
+		# Store highest smooth in list
+		var highest_smooth = [highest]
+		for i in range(SMOOTH_STEP):
+			# length akhirnya SMOOTH_STEP+1
+			print("ye")
+			var highest2 = smooth(highest_smooth[highest_smooth.size()-1], true)
+			print("ey")
+			highest_smooth.append(highest2)
+		
+		print("b")
+		
+		# fill front
+		var z = EXTEND_STEP+SMOOTH_STEP
+		fill_front(highest_smooth[SMOOTH_STEP], idx, z)
+		z -= 1
+		
+		# fill smooth (front side)
+		for i in range(SMOOTH_STEP):
+			fill(highest_smooth[SMOOTH_STEP-i-1], idx, z, highest_smooth[SMOOTH_STEP-i], false)
+			z -= 1
+			
+		print("c")
+		
+		# fill extend
+		fill(highest, idx, z, highest_smooth[1], false)
+		z -= 1
+		while z >= -EXTEND_STEP:
+			fill(highest, idx, z, highest, false)
+			z -= 1
+		
+		# fill smooth (back side)
+		for i in range(SMOOTH_STEP):
+			fill(highest_smooth[i+1], idx, z, highest_smooth[i], false)
+			z -= 1
+			
+		print("d")
 	
 	
 func search_y(x):
@@ -168,18 +205,18 @@ func input_terrain():
 	
 	return [highest, idx]
 
-func fill_front(highest, idx):
+func fill_front(highest, idx, z):
 	var i = 0
 	for x in range(START_X, END_X):
 		var top_index = GRASS_INDEX if idx[i]==DIRT_INDEX else idx[i]
 		var fill_index = idx[i]
 		
 		# place top ground
-		set_cell_item(Vector3i(x, highest[i], 0), top_index, 0)
+		set_cell_item(Vector3i(x, highest[i], z), top_index, 0)
 		
 		# fill jika naik drastis
 		for y in range(START_Y, highest[i]):
-			set_cell_item(Vector3i(x, y, 0), fill_index, 0)
+			set_cell_item(Vector3i(x, y, z), fill_index, 0)
 		i += 1
 
 func fill(highest, idx, z:int, front_highest, place_tree:bool):
@@ -241,7 +278,7 @@ func fill(highest, idx, z:int, front_highest, place_tree:bool):
 		
 		i += 1
 
-func smooth(highest):
+func smooth(highest, is_island):
 	var highest2 := []
 	var sudah_ketemu_tanah = false
 	var i = 0
@@ -263,7 +300,7 @@ func smooth(highest):
 			if randf() < 0.2:
 				bonus += 0.3
 			
-			highest2.append(roundi(pembilang/penyebut + bonus))
+			highest2.append(roundi(pembilang/penyebut + bonus) - (1 if is_island else 0))
 			i += 1
 				
 		else:
@@ -271,8 +308,12 @@ func smooth(highest):
 			var j = i+1
 			while j < END_X and highest[j] < START_Y:
 				j+=1
+			
+			if is_island:
+				highest2.append(START_Y-1)
+				i += 1
 				
-			if j < END_X and sudah_ketemu_tanah:
+			elif j < END_X and sudah_ketemu_tanah:
 				# ada ground di kanan
 				var start_y = highest[i-1]
 				var diff_y = float(highest[j]-highest[i-1])

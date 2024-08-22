@@ -32,12 +32,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dpic7"]
 panorama = ExtResource("4_i81tq")
 
-[sub_resource type="Sky" id="Sky_npnpa"]
+[sub_resource type="Sky" id="Sky_vjh7p"]
 sky_material = SubResource("PanoramaSkyMaterial_dpic7")
 
 [sub_resource type="Environment" id="Environment_nwcqf"]
 background_mode = 2
-sky = SubResource("Sky_npnpa")
+sky = SubResource("Sky_vjh7p")
 sky_custom_fov = 4.4
 ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
 tonemap_mode = 2
@@ -106,7 +106,7 @@ light_energy = 0.8
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 398.194, 11.0287, 0.000146866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 971.811, 37.0376, 0.00015831)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
