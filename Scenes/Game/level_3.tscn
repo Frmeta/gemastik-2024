@@ -151,7 +151,7 @@ transform = Transform3D(-0.953776, 0.260749, 0.149405, -0.0577322, -0.646877, 0.
 [node name="Camera3D" parent="." instance=ExtResource("5_4ux8x")]
 
 [node name="Player" parent="." instance=ExtResource("6_5bh87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42384, 6.43954, 1.90735e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18934, 2.99987, 1.90735e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_50j3d")]
