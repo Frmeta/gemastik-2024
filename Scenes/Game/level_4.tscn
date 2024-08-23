@@ -107,7 +107,7 @@ light_energy = 0.8
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.184, 8.93833, -8.58306e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844391, -3.4974, -8.58306e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
@@ -369,6 +369,7 @@ mesh = NodePath("../Burung Merak/Merak_Skeleton/Skeleton3D/Merak_001")
 
 [node name="Lower Bound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
+visible = false
 mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_pjhcs")]

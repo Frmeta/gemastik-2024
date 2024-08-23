@@ -12,8 +12,6 @@ signal some_checkpoint_captured(instance_checkpoint)
 @export var wallright: InvisibleWall
 @export var rubbish_num :=0
 
-@export var air_speed :=0
-
 var _rubbish_counter = 0
 
 @export var syarat_hewan: Array[String]
@@ -65,8 +63,6 @@ func _on_body_entered(_body):
 			EventDistributor.emit_signal("is_rubbishing", true)
 		else:
 			EventDistributor.emit_signal("is_rubbishing", false)
-		
-		EventDistributor.emit_signal("emit_air", air_speed)
 		
 
 # Checkpoin yang punya dua wall aktif diasumsikan adalah

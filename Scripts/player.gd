@@ -77,9 +77,11 @@ func _ready():
 	is_poisoned = false
 
 func allow_move():
+	print("allow move")
 	can_move = true
 
 func stop_move(_file_path="", _a="", _b="", _c=""):
+	print("stop move")
 	can_move = false
 	$Grapling.release()
 	is_scanning = false
