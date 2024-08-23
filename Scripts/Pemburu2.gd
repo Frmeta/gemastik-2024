@@ -68,7 +68,7 @@ func _physics_process(delta):
 			
 			# kejar doni
 			move()
-			if not $walking.playing:
+			if not $walking.playing and is_on_floor():
 				$walking.play()
 			if GM.doni.global_position.x > global_position.x:
 				# ke kanan

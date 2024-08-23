@@ -3,7 +3,7 @@ extends Camera3D
 @export var is_leviathan := false
 var target_fov = self.fov
 
-@onready var player = $"../Player"
+@onready var target = $"../Player"
 var offset
 var smooth_speed = 5
 var rng = RandomNumberGenerator.new()
@@ -26,6 +26,7 @@ func _ready():
 	EventDistributor.connect("player_leave_trap_area", increase_fov)
 	EventDistributor.connect("shake_cam", start_shake)
 	EventDistributor.connect("emit_air", _change_air_emit_position)
+	EventDistributor.connect("change_target", _change_target)
 
 func _change_air_emit_position(amount):
 	var air_emitter = get_node_or_null("air_emitter")
@@ -41,7 +42,7 @@ func _process(delta):
 		trauma = max(trauma-decay_movement*delta,0)
 		_shaking()
 		
-	global_position = expDecay(global_position, player.global_position + offset + trauma_offset, decay_movement, delta)
+	global_position = expDecay(global_position, target.global_position + offset + trauma_offset, decay_movement, delta)
 	
 	fov = expDecay(fov, target_fov, decay_movement, delta)
 	
@@ -61,3 +62,6 @@ func _shaking():
 
 func start_shake():
 	trauma = 1.5
+
+func _change_target(new_target):
+	target=new_target

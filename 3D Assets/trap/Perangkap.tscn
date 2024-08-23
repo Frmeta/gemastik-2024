@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bid2kwtd271ab"]
+[gd_scene load_steps=15 format=3 uid="uid://bid2kwtd271ab"]
 
 [ext_resource type="Script" path="res://Scripts/perangkap_mesh.gd" id="1_g4nsj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_moelq"]
+size = Vector3(0.287476, 2.12604, 2.16089)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jx0b"]
 resource_name = "Steel"
 cull_mode = 2
-albedo_color = Color(0.589285, 0.589285, 0.589285, 1)
+albedo_color = Color(0.588235, 0.588235, 0.588235, 0)
 metallic = 0.274074
 roughness = 0.5
 
@@ -38,6 +41,12 @@ bind/0/pose = Transform3D(-4.37114e-08, -5.96046e-08, -1, 5.96046e-08, 1, -5.960
 bind/1/name = &"Door"
 bind/1/bone = -1
 bind/1/pose = Transform3D(-2.8213e-07, -5.96046e-08, -1, 5.96046e-08, 1, -5.96047e-08, 1, -1.68163e-14, -2.8213e-07, 1, 2.38419e-07, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ccfku"]
+size = Vector3(4.0205, 2.14429, 0.390991)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvuhg"]
+size = Vector3(4.03754, 0.125122, 2.13092)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jie3b"]
 resource_name = "Perangkap_Cube_348"
@@ -152,8 +161,29 @@ _data = {
 [node name="Perangkap" type="Node3D"]
 script = ExtResource("1_g4nsj")
 
-[node name="PerangkapSquare_Skeleton" type="Node3D" parent="."]
+[node name="PerangkapSquare_Skeleton" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="PerangkapSquare_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89683, 1.00004, 0.00539875)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="door_collision" type="CollisionShape3D" parent="PerangkapSquare_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0866203, 1.00004, 0.00539875)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PerangkapSquare_Skeleton"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.997509, 1.00004, 0.918241)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PerangkapSquare_Skeleton"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.997509, 1.00004, -0.91965)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PerangkapSquare_Skeleton"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.997509, 1.92081, 0.00893879)
+shape = SubResource("BoxShape3D_moelq")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="PerangkapSquare_Skeleton"]
 bones/0/name = "Core"
@@ -175,8 +205,29 @@ bones/1/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_bfi62")
 skin = SubResource("Skin_d2avi")
 
-[node name="PerangkapRec_Skeleton" type="Node3D" parent="."]
+[node name="PerangkapRec_Skeleton" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="PerangkapRec_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00352, 0.985107, 0.843079)
+shape = SubResource("BoxShape3D_ccfku")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PerangkapRec_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87449, 1.00004, 0.00539875)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PerangkapRec_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.997631, 2.00992, 0.00683308)
+shape = SubResource("BoxShape3D_vvuhg")
+
+[node name="door_collision" type="CollisionShape3D" parent="PerangkapRec_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.907124, 1.00004, 0.00539875)
+shape = SubResource("BoxShape3D_moelq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PerangkapRec_Skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00352, 0.985107, -0.853455)
+shape = SubResource("BoxShape3D_ccfku")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="PerangkapRec_Skeleton"]
 bones/0/name = "Core"

@@ -6,6 +6,7 @@ const FILES = {
 	
 	OUT_OF_BOUND="res://dialogue/out-of-bound/out-of-bound.json",
 	ADA_SAMPAH = "res://dialogue/out-of-bound/adasampah.json",
+	KENAPA_GAK_LEPAS = "res://dialogue/kenapa_gk_lepasin.json",
 	
 	TUTORIAL_AWAL = "res://dialogue/tutorial/awal.json",
 	TUTORIAL_PETA = "res://dialogue/tutorial/peta.json",
@@ -42,6 +43,7 @@ const TUTORIAL_DONE = FILES.TUTORIAL_DONE
 
 const OUT_OF_BOUND = FILES.OUT_OF_BOUND
 const ADA_SAMPAH = FILES.ADA_SAMPAH
+const KENAPA_GAK_LEPAS = FILES.KENAPA_GAK_LEPAS
 
 const PROLOGUE1 = FILES.PROLOGUE1
 const PROLOGUE2 = FILES.PROLOGUE2

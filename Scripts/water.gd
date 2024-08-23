@@ -9,10 +9,8 @@ func _ready():
 	$CollisionShape3D.global_position.y -= 0.13 # duct tape: supaya ketika discale tidak rusak
 
 func _on_body_entered(body: Player):
-	#print("in water")
 	body.is_in_water=true
 	body.curr_jumps=1
 
 func _on_body_exited(body: Player):
-	print("exit water")
 	body.is_in_water=false

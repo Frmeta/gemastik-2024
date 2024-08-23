@@ -7,6 +7,9 @@ extends Trap
 func _ready():
 	trap.swap_mesh(is_big)
 	if is_big:
-		$CollisionShape3D.shape.size.x=4.07
+		$CollisionShape3D.disabled=true
 		perangkap.position.x=4
 	super._ready()
+
+func _on_button_mesh_done_mashing():
+	perangkap.open()

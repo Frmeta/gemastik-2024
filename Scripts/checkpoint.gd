@@ -11,8 +11,7 @@ signal some_checkpoint_captured(instance_checkpoint)
 @export var wallleft: InvisibleWall
 @export var wallright: InvisibleWall
 @export var rubbish_num :=0
-
-@export var air_speed :=0
+@export var num_of_traps :=0
 
 var _rubbish_counter = 0
 
@@ -26,6 +25,7 @@ func _ready():
 	EventDistributor.connect("new_checkpoint", disable_both_wall)
 	EventDistributor.connect("animal_captured", scan_done)
 	EventDistributor.connect("rubbish_collected", rubbish_pickedup)
+	EventDistributor.connect("trap_opened", trap_opened)
 	
 	# syarat nama hewan ubah jadi lower
 	for i in range(syarat_hewan.size()):
@@ -36,17 +36,14 @@ func _ready():
 func disable_both_wall(instance):
 	if instance!=self:
 		if wallleft!=null:
-			print(self.name)
 			wallleft.disable_wall()
 		if wallright!=null:
-			print(self.name)
 			wallright.disable_wall()
 
 func _on_body_entered(_body):
 	# Hal-hal yang akan dilakukan jika player pertama
 	# kali hit checkpoint
 	if not captured:
-		print_debug("checkpoint hit")
 		captured=true # Gak bisa dihit lagi
 		animation_tree.set("parameters/conditions/captured", true) # animasi
 		
@@ -65,8 +62,10 @@ func _on_body_entered(_body):
 			EventDistributor.emit_signal("is_rubbishing", true)
 		else:
 			EventDistributor.emit_signal("is_rubbishing", false)
-		
-		EventDistributor.emit_signal("emit_air", air_speed)
+		if num_of_traps!=0:
+			EventDistributor.emit_signal("is_trapping", true)
+		else:
+			EventDistributor.emit_signal("is_trapping", false)
 		
 
 # Checkpoin yang punya dua wall aktif diasumsikan adalah
@@ -78,14 +77,26 @@ func scan_done():
 		if syarat_terpenuhi():
 			wallright.disable_wall()
 
+func trap_opened():
+	if wallright!=null and wallright.is_not_disabled():
+		print("trap dibuka")
+		if syarat_terpenuhi():
+			wallright.disable_wall()
+
 func syarat_terpenuhi():
 	# cek apakah semua syarat hewan sudah discan
 	for hewan in syarat_hewan:
 		if !GM.scanned_animal.has(hewan):
 			print("kamu blum scan " + hewan)
 			return false
+	print("syarat hewan lewat", self)
 	if rubbish_num != _rubbish_counter:
 		return false
+	print("syarat sampah lewat", self)
+	print(num_of_traps, self)
+	if num_of_traps!=0:
+		return false
+	print("syarat perangkap lewat", self)
 	return true
 
 func rubbish_pickedup():
@@ -93,3 +104,10 @@ func rubbish_pickedup():
 		_rubbish_counter+=1
 		if rubbish_num==_rubbish_counter and wallright!=null and wallright.is_not_disabled():
 			wallright.disable_wall()
+
+func decrease_trap():
+	print("num of trap dikurangin")
+	num_of_traps-=1
+	if num_of_traps==0:
+		print("istrapping false emitted")
+		EventDistributor.emit_signal("is_trapping",false)

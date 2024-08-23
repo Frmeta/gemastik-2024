@@ -35,7 +35,6 @@ func _start_splash_screen() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
 	else:
 		splash_screen = _splash_screens.pop_front()
-		print(splash_screen.modulate.a)
 		var modulate0 = splash_screen.modulate
 		modulate0.a = 0
 		var modulate1 = splash_screen.modulate

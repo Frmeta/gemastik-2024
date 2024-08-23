@@ -23,7 +23,6 @@ func _ready():
 
 func _on_area_3d_body_entered(body):
 	if body is Player and can_fall:
-		print(body)
 		can_fall=false
 		$Jembatanbody/AnimationPlayer.speed_scale=shake_speed_scale
 		$Jembatanbody/AnimationPlayer.play("shake")
@@ -36,7 +35,6 @@ func _on_area_3d_body_entered(body):
 
 func _on_timer_timeout():
 	$Jembatanbody/Timer.stop()
-	print("time out")
 	visible=true
 	$Jembatanbody/AnimationPlayer.play_backwards("fall")
 	await $Jembatanbody/AnimationPlayer.animation_finished

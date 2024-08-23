@@ -1,0 +1,37 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Sedih sekali pemandangan ini",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Iya, banyak terjadi pemburuan dan penebangan ilegal di Indonesia",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Apa yang bisa kita lakukan MAS?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kamu hanya sendiri dan masih anak kecil. Tapi nanti ketika kamu sudah besar, jadilah dewasa yang bertanggung jawab dan tidak hanya memikirkan diri sendiri",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Jadilah dewasa yang memikirkan orang lain dan juga alam mu",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Karena pada akhirnya, kamu tidak bisa hidup tanpa mereka",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Baik Mas! Akan saya ingat!!",
+		"emosi":"4"
+	},
+]
