@@ -278,14 +278,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08141, 0.176147, 0)
 wind_speed = -1
 
 [node name="checkpoint3" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.275, 80.7884, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 265.579, 82.1682, 0)
 wallleft = NodePath("../../invisible_walls/invisiblewall3")
 
 [node name="WindTrigger2" parent="GridMapGround/checkpoint/checkpoint3" instance=ExtResource("17_d7a6u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27779, -0.325867, 0)
 
 [node name="checkpoint4" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.399, 61.7714, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 557.056, 71.4572, 0)
 wallleft = NodePath("../../invisible_walls/invisiblewall4")
 
 [node name="WindTrigger3" parent="GridMapGround/checkpoint/checkpoint4" instance=ExtResource("17_d7a6u")]
@@ -293,7 +293,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71219, 0.156433, 0)
 wind_speed = -2
 
 [node name="checkpoint5" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 905.145, 222.624, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 905.145, 222.592, 0)
 wallleft = NodePath("../../invisible_walls/invisiblewall5")
 
 [node name="WindTrigger4" parent="GridMapGround/checkpoint/checkpoint5" instance=ExtResource("17_d7a6u")]
