@@ -46,7 +46,7 @@ func _process(_delta):
 		if self.visible:
 			GM.play_audio("res://audio/a/button_clickback.ogg", 1,-20)
 		still_typing = false
-		GM.stop_doni()
+		#GM.stop_doni()
 		await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
 		emit_signal("go_to_next_line")
 

@@ -18,21 +18,21 @@ var is_animating_almanac = false
 func _ready():
 	set_up()
 	EventDistributor.emit_signal("emit_air",0)
-	if GM.current_level   == 1: # Bali
+	if nama_pulau.to_lower()   == "bali": # Bali
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright).ogg", -10)
-	elif GM.current_level == 0: # Kalimantan
+	elif nama_pulau.to_lower() == "kalimantan": # Kalimantan
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg",-10)
-	elif GM.current_level == 2: #NTT
+	elif nama_pulau.to_lower() == "nusa tenggara": #NTT
 		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
-	elif GM.current_level == 3: # Papua
+	elif nama_pulau.to_lower() == "papua": # Papua
 		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",10)
-	elif GM.current_level == 4: # Jawa
+	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-10)
-	elif GM.current_level == 5: # Sulawesi
+	elif nama_pulau.to_lower() == "sulawesi": # Sulawesi
 		GM.play_audio_background("res://audio/Donkgedank - ANGLAYANG (Relaxing, Cinematic Nusantara) Royalty Free.ogg",10)
-	elif GM.current_level == 6: # Sumatera
+	elif nama_pulau.to_lower() == "sumatera": # Sumatera
 		GM.play_audio_background("res://audio/Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara).ogg",10)
-	elif GM.current_level == 7: # Levi
+	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3",-10)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2

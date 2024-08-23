@@ -1,12 +1,22 @@
 [
 	{
 		"nama":"Doni",
-		"dialogue":"MAS, kenapa ada beberapa hewan yang menyerangku?",
+		"dialogue":"MAS, hewan tersebut keliatannya berbahaya",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"[SCANNING] menurut analisisku mereka kehilangan rumah karena ulah manusia buang sampah. Mereka tidak ada pilihan lain selain menyerangmu.",
+		"dialogue":"[SCANNING]... ",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Hati hati Doni. Hewan tersebut adalah komodo yang merupakan karnivora.",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Selain itu, menurut analisisku mereka kehilangan habitatnya karena penebangan hutan sehingga mereka dalam kondisi yang tidak ramah",
 		"emosi":"4"
 	},
 	{

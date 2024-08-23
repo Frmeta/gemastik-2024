@@ -1,0 +1,22 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"HATI HATI!",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kenapa MAS?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Orang-orang di depan itu pemburu ilegal, mereka tidak akan ragu ragu menembak mu untuk menyembunyikan aksi mereka",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"B-Baik Mas.. saya akan diam diam",
+		"emosi":"4"
+	},
+]

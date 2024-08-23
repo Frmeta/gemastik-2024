@@ -1,10 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://bsur5ompgywv6"]
+[gd_scene load_steps=42 format=3 uid="uid://bsur5ompgywv6"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_881lh"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_54lg6"]
 [ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_7p1a8"]
-[ext_resource type="Texture2D" uid="uid://se5i0xmj3rad" path="res://assets/sky/Cloudy_Sky-Night_03-512x512.png" id="4_6qtb5"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_vifch"]
+[ext_resource type="Environment" uid="uid://b1inhr6otis16" path="res://world_env/level_5.tres" id="4_xwwic"]
 [ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_y0wax"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_fpu7u"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_dn0jl"]
@@ -31,34 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://bo2id2ctx5psl" path="res://Scenes/gridmap_cave.tscn" id="18_2kbx2"]
 [ext_resource type="PackedScene" uid="uid://ybo58eu5i27c" path="res://Scenes/thrash.tscn" id="18_nw7ch"]
 [ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="21_6sqke"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qco8q"]
-panorama = ExtResource("4_6qtb5")
-
-[sub_resource type="Sky" id="Sky_qleuq"]
-sky_material = SubResource("PanoramaSkyMaterial_qco8q")
-radiance_size = 2
-
-[sub_resource type="Environment" id="Environment_j8uew"]
-background_mode = 2
-background_energy_multiplier = 2.0
-sky = SubResource("Sky_qleuq")
-sky_custom_fov = 2.0
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.0
-tonemap_mode = 2
-tonemap_exposure = 0.7
-sdfgi_energy = 0.1
-fog_density = 0.006
-fog_sky_affect = 0.311
-fog_height = 0.1
-fog_height_density = 1.0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
-volumetric_fog_albedo = Color(0.588235, 0.588235, 0.588235, 1)
-volumetric_fog_emission = Color(0.572549, 0.745098, 0.729412, 1)
-volumetric_fog_temporal_reprojection_enabled = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_csijy"]
 emission_shape_scale = Vector3(250, 0, 20)
@@ -143,7 +115,7 @@ fun_fact = "Karena letaknya yang berada di wilayah peralihan, Sulawesi memiliki 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_54lg6")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_7p1a8")]
-environment = SubResource("Environment_j8uew")
+environment = ExtResource("4_xwwic")
 script = ExtResource("4_y0wax")
 speed = 0.001
 
@@ -658,9 +630,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1111.04, 14.3822, 0)
 
 [node name="checkpoints" type="Node3D" parent="GridMapGround"]
 
-[node name="dialogue_trigger" parent="GridMapGround/checkpoints" instance=ExtResource("21_6sqke")]
+[node name="dialogue_trigger" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("move_cam_to") instance=ExtResource("21_6sqke")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6302, -0.912, 0.643862)
 file_name = "ada_sampah_start"
+move_cam_to = NodePath("../../thrash/Node3D")
 
 [node name="checkpoint" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("16_xcqj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.189, -1.32553, 0)
@@ -748,6 +721,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.413, -0.68383, 0)
 
 [node name="thrash17" parent="GridMapGround/thrash" instance=ExtResource("18_nw7ch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.413, -0.68383, 0)
+
+[node name="Node3D" type="Node3D" parent="GridMapGround/thrash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.1536, -0.650146, -0.00012207)
 
 [node name="GridMapVines" parent="." instance=ExtResource("9_xhbxg")]
 data = {

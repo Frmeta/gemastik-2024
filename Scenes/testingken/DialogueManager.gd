@@ -4,6 +4,7 @@ extends CanvasLayer
 
 func _ready():
 	EventDistributor.connect("start_dialogue",load_dialog)
+	EventDistributor.connect("start_dialogue_not_stop",load_dialog)
 	EventDistributor.connect("start_dialogue_with_pulau",load_dialog)
 
 func load_dialog(file_path, nama_pulau:String="", fun_fact:String="", emit_end:bool = true): #File path ini dapet dari DialogueEnum
