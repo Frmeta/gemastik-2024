@@ -22,7 +22,9 @@ signal animal_captured()
 
 signal scan_done()
 signal rubbish_collected()
+signal trap_opened()
 signal is_rubbishing(boolean)
+signal is_trapping(boolean)
 
 signal emit_air(speed)
 

@@ -25,7 +25,6 @@ func load_dialog(file_path, nama_pulau:String="", fun_fact:String="", emit_end:b
 				line["dialogue"] = fix_length(line["dialogue"])
 				textbox.display_line(line["nama"], line["dialogue"], line["emosi"])
 				await textbox.go_to_next_line
-				print("go to next line")
 			textbox.visible=false
 			if emit_end:
 				EventDistributor.emit_signal("end_dialogue")
@@ -49,7 +48,6 @@ func fix_length(strr : String):
 			if break_position-start>50:
 				break_position=start+45
 				strr = strr.substr(0, break_position)+"-\n"+strr.substr(break_position,len(strr))
-				print(strr)
 				start=break_position+2
 			else:
 				strr[break_position] = "\n"

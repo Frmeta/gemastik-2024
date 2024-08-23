@@ -4,6 +4,8 @@ extends Area3D
 @onready var progress_bar = $SubViewport/ProgressBar
 @export var target_hits:=10
 
+signal done_mashing()
+
 var trap : Trap
 var can_button_mash = false
 var hits = 0
@@ -22,6 +24,7 @@ func _process(delta):
 				trap.open_trap()
 				can_button_mash=false
 				done=true
+				emit_signal("done_mashing")
 
 func _on_minus_timer_timeout():
 	if can_button_mash:
