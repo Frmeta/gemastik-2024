@@ -107,7 +107,7 @@ light_energy = 0.8
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 612.455, 3.86045, 0.00015831)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.184, 8.93833, -8.58306e-05)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
@@ -279,6 +279,14 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 710.272,
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 431.043, 3.67065, -0.0260034)
 file_name = "ketemu_pemburu"
 move_cam_to = NodePath("../../../Pemburu Phase 1/Node3D")
+
+[node name="dialogue_trigger2" parent="GridMapGround/dialogue_triggers" node_paths=PackedStringArray("move_cam_to") instance=ExtResource("18_4kc4b")]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 405.429, 1.64236, -0.0256372)
+file_name = "hutan_gundul"
+move_cam_to = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="GridMapGround/dialogue_triggers/dialogue_trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56294, 5.72119, 2.3887)
 
 [node name="GridMapCave" parent="." instance=ExtResource("8_xfovd")]
 data = {
