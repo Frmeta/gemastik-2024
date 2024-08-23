@@ -6,6 +6,7 @@ extends Area3D
 func _ready():
 	water_shader.get_surface_override_material(0).set_shader_parameter("scale",self.scale.y)
 	water_shader.get_surface_override_material(0).set_shader_parameter("scale2",self.scale2)
+	$CollisionShape3D.global_position.y -= 0.13 # duct tape: supaya ketika discale tidak rusak
 
 func _on_body_entered(body: Player):
 	#print("in water")

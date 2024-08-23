@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/water.gd" id="1_m0b0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6glc7"]
-size = Vector3(10, 0.853249, 10)
+size = Vector3(10, 0.977611, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j60qp"]
 size = Vector2(10, 10)
@@ -43,7 +43,7 @@ collision_layer = 0
 script = ExtResource("1_m0b0f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0733757, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0111946, 0)
 shape = SubResource("BoxShape3D_6glc7")
 
 [node name="watershader" type="MeshInstance3D" parent="."]
