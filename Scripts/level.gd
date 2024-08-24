@@ -38,19 +38,19 @@ func _ready():
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
 	
-	#if !level_eksperimen:
-	#
-		#EventDistributor.emit_signal("spawn_mas")
-		#
-		#if nama_pulau.to_lower()=="kalimantan":
-			#EventDistributor.emit_signal("start_dialogue",DialogueEnum.KALIMANTAN)
-		#else:
-			#EventDistributor.emit_signal("start_dialogue_with_pulau",DialogueEnum.START_PULAU,nama_pulau,fun_fact)
-			#await EventDistributor.end_dialogue
-			#EventDistributor.emit_signal("start_dialogue", DialogueEnum.PREFIX+nama_pulau.to_lower()+".json")
-		#await EventDistributor.end_dialogue
-		#
-		#EventDistributor.emit_signal("despawn_mas")
+	if !level_eksperimen:
+	
+		EventDistributor.emit_signal("spawn_mas")
+		
+		if nama_pulau.to_lower()=="kalimantan":
+			EventDistributor.emit_signal("start_dialogue",DialogueEnum.KALIMANTAN)
+		else:
+			EventDistributor.emit_signal("start_dialogue_with_pulau",DialogueEnum.START_PULAU,nama_pulau,fun_fact)
+			await EventDistributor.end_dialogue
+			EventDistributor.emit_signal("start_dialogue", DialogueEnum.PREFIX+nama_pulau.to_lower()+".json")
+		await EventDistributor.end_dialogue
+		
+		EventDistributor.emit_signal("despawn_mas")
 	
 	GM.doni.allow_move()
 	GM.doni.curr_jumps=0

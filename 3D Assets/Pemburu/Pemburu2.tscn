@@ -8401,7 +8401,7 @@ light_color = Color(1, 1, 0.678431, 1)
 light_energy = 10.0
 light_specular = 1.0
 shadow_enabled = true
-spot_range = 15.0
+spot_range = 20.0
 spot_attenuation = 0.00164237
 
 [node name="walking" type="AudioStreamPlayer" parent="."]
