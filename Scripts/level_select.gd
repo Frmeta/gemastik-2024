@@ -13,6 +13,7 @@ const MAX_LEVEL = 8
 
 func _ready():
 	if GM.new_unlocked!=-1:
+		print("play new_unlocked", GM.new_unlocked)
 		for i in range(1,GM.explored_level):
 			var temp = get_node("paths" + str(i))
 			temp.visible=true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
-[ext_resource type="Texture2D" uid="uid://bhudu6ikni6vu" path="res://assets/sky/Fading_Sky-Blue_04-512x512.png" id="3_nwx65"]
+[ext_resource type="Texture2D" uid="uid://dbk575y75l6hv" path="res://assets/sky/Fading_Sky-Blue_03-512x512.png" id="3_0ice2"]
 [ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_ormc7"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_p2it0"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_tr8ay"]
@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bcu5f1do2cu5o" path="res://Scenes/godray.tscn" id="29_vjvqq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h50dl"]
-panorama = ExtResource("3_nwx65")
+panorama = ExtResource("3_0ice2")
 
 [sub_resource type="Sky" id="Sky_bhpg4"]
 sky_material = SubResource("PanoramaSkyMaterial_h50dl")
@@ -628,7 +628,7 @@ directional_shadow_split_1 = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275.14, 12.3902, -7.62939e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76553, -0.260557, -7.62939e-06)
 collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]

@@ -63,8 +63,9 @@ func os_walk(path):
 # ketika player menang (win_area.gd)
 func win(target : String):
 	explored_level = max(explored_level, current_level+1)
-	if current_level+1>explored_level:
+	if current_level+1==explored_level:
 		new_unlocked=current_level+1
+		print("setting new_unlocked", new_unlocked)
 	
 	# overwrite data
 	var data_copy = data
