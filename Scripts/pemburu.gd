@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var target_y_rot = 0
 var id = randi()
 
-var shoot_delay = 3
+var shoot_delay = 4
 var shoot_timer = 0 # temp timer only
 
 var beginning_position

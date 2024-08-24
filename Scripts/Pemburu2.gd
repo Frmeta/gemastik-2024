@@ -4,8 +4,8 @@ extends CharacterBody3D
 const SPEED = 10
 const JUMP_VELOCITY = 20
 
-const SHOOT_DELAY = 2
-var shoot_timer = 0
+const SHOOT_DELAY = 4
+var shoot_timer = 4
 
 var gravity = 40
 var beginning_position
@@ -62,7 +62,9 @@ func _physics_process(delta):
 			# diam
 			idle()
 			velocity.x = 0
-			
+		elif jarak_ke_doni > 30:
+			# kalau jauh dari doni, jangan bunyi loncat2
+			is_triggered = false
 		elif jarak_ke_doni < 12 or is_triggered:
 			is_triggered = true
 			

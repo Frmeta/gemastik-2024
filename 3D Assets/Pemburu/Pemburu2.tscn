@@ -8381,9 +8381,6 @@ libraries = {
 autoplay = "P_IdleShooting"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_xln3i")
-}
 tree_root = SubResource("AnimationNodeBlendTree_ckmuv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/IdleToRun/blend_amount = 0.0
@@ -8411,7 +8408,7 @@ pitch_scale = 0.7
 
 [node name="shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ob0av")
-volume_db = 15.0
+volume_db = -5.0
 pitch_scale = 0.7
 
 [node name="jumping" type="AudioStreamPlayer" parent="."]

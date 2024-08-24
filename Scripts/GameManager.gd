@@ -13,7 +13,7 @@ var last_air_speed :=0
 
 var data_file_number = 0
 
-var explored_level = 2
+var explored_level = 6
 var new_unlocked = -1
 var current_level = 0
 

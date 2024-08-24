@@ -327,9 +327,8 @@ wallleft = NodePath("../../invisible_walls/invisiblewall kasuarikiri")
 wallright = NodePath("../../invisible_walls/invisiblewall kasuari kanan")
 syarat_hewan = Array[String](["kasuari"])
 
-[node name="checkpoint13" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft") instance=ExtResource("12_oud6k")]
+[node name="checkpoint13" parent="GridMapGround/checkpoint" instance=ExtResource("12_oud6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1333.52, 170.059, 0)
-wallleft = NodePath("")
 
 [node name="platforms" type="Node3D" parent="GridMapGround"]
 
