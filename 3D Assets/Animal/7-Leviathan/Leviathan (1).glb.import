@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://elpjmj8qtt4l"
-path="res://.godot/imported/Leviathan.glb-51ba73fbd7f669e145b1aa76c86f24d1.scn"
+uid="uid://cb3d1a7qv6r5c"
+path="res://.godot/imported/Leviathan (1).glb-1d085e701841124c1fe4ed059cb1dc44.scn"
 
 [deps]
 
-source_file="res://3D Assets/Animal/7-Leviathan/Leviathan.glb"
-dest_files=["res://.godot/imported/Leviathan.glb-51ba73fbd7f669e145b1aa76c86f24d1.scn"]
+source_file="res://3D Assets/Animal/7-Leviathan/Leviathan (1).glb"
+dest_files=["res://.godot/imported/Leviathan (1).glb-1d085e701841124c1fe4ed059cb1dc44.scn"]
 
 [params]
 
