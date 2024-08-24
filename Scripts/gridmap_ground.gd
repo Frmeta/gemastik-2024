@@ -94,7 +94,6 @@ func _ready():
 	elif algo == Algo.ISLAND:
 		# Generate Islands
 		
-		print("a")
 		
 		const EXTEND_STEP = 1
 		const SMOOTH_STEP = 3
@@ -103,12 +102,9 @@ func _ready():
 		var highest_smooth = [highest]
 		for i in range(SMOOTH_STEP):
 			# length akhirnya SMOOTH_STEP+1
-			print("ye")
 			var highest2 = smooth(highest_smooth[highest_smooth.size()-1], true)
-			print("ey")
 			highest_smooth.append(highest2)
 		
-		print("b")
 		
 		# fill front
 		var z = EXTEND_STEP+SMOOTH_STEP
@@ -120,7 +116,6 @@ func _ready():
 			fill(highest_smooth[SMOOTH_STEP-i-1], idx, z, highest_smooth[SMOOTH_STEP-i], false)
 			z -= 1
 			
-		print("c")
 		
 		# fill extend
 		fill(highest, idx, z, highest_smooth[1], false)
@@ -133,8 +128,6 @@ func _ready():
 		for i in range(SMOOTH_STEP):
 			fill(highest_smooth[i+1], idx, z, highest_smooth[i], false)
 			z -= 1
-			
-		print("d")
 	
 	
 func search_y(x):
