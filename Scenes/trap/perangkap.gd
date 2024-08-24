@@ -12,4 +12,5 @@ func _ready():
 	super._ready()
 
 func _on_button_mesh_done_mashing():
+	GM.play_audio("res://audio/door-open-and-close-with-a-creak-102380.ogg", 10)
 	perangkap.open()

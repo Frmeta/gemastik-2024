@@ -1,0 +1,17 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"[LOADING...]",
+		"emosi":"4"
+	},
+		{
+		"nama":"MAS",
+		"dialogue":"Kerja bagus MAS",
+		"emosi":"5"
+	},
+		{
+		"nama":"MAS",
+		"dialogue":"Jika kamu ketemu sampah-sampah lagi, jangan lupa untuk diambil",
+		"emosi":"2"
+	},
+]
