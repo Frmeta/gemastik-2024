@@ -24,6 +24,7 @@ fog_density = 0.006
 fog_sky_affect = 0.311
 fog_height = 0.1
 fog_height_density = 1.0
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.02
 volumetric_fog_albedo = Color(0.588235, 0.588235, 0.588235, 1)
 volumetric_fog_emission = Color(0.572549, 0.745098, 0.729412, 1)
