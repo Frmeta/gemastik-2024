@@ -3,7 +3,7 @@ extends GridMap
 const START_X = -60
 const END_X = 1500
 
-const START_Y = -15
+const START_Y = -30
 const END_Y = 200
 
 const GRASS_INDEX = 0
@@ -95,7 +95,7 @@ func _ready():
 		# Generate Islands
 		
 		
-		const EXTEND_STEP = 1
+		const EXTEND_STEP = 2
 		const SMOOTH_STEP = 3
 		
 		# Store highest smooth in list
@@ -293,7 +293,8 @@ func smooth(highest, is_island):
 			if randf() < 0.2:
 				bonus += 0.3
 			
-			highest2.append(roundi(pembilang/penyebut + bonus) - (1 if is_island else 0))
+			var u = roundi(pembilang/penyebut + bonus) - (1 if is_island else 0)
+			highest2.append(min(u, highest[i]))
 			i += 1
 				
 		else:

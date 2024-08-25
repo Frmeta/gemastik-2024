@@ -629,7 +629,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56733, -1.91681, 7.6294e-06)
-collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.751393, -0.464771, 0)

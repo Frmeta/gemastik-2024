@@ -34,7 +34,6 @@ fun_fact = "Tahukah kamu Pulau Sumatera merupakan awal masuknya Islam ke Indones
 [node name="Camera3D" parent="." instance=ExtResource("5_w5mph")]
 
 [node name="Player" parent="." instance=ExtResource("6_7t4t5")]
-collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_dttx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)

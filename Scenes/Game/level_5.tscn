@@ -150,7 +150,6 @@ process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="Player" parent="." instance=ExtResource("6_dn0jl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27474, -0.58667, 7.62939e-06)
-collision_mask = 34
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_f3hnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)

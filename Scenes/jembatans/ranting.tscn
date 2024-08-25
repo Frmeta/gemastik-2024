@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://nnts0uqqxpv1"]
+
+[ext_resource type="Script" path="res://Scripts/ranting.gd" id="1_fye62"]
+[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="2_6qh5a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ybes"]
+size = Vector3(1, 0.524, 2.015)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ap4g"]
+size = Vector3(1, 0.272, 1.634)
+
+[sub_resource type="Animation" id="Animation_0orj4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6reol"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.61539, -14.6059, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.08734, -0.966912, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4viop"]
+resource_name = "shake"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.171391, 0.137093, 0), Vector3(-0.248502, 0.148518, 0), Vector3(0.131383, 0, 0), Vector3(-0.231367, 0.159941, 0), Vector3(0, -0.0342712, 0), Vector3(-0.22084, -0.0228475, 0), Vector3(0.142265, -0.106455, 0), Vector3(0, 0.114014, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.174533, 0), Vector3(0, -0.174533, 0), Vector3(0, 0.122173, 0), Vector3(0, -0.174533, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jhxaq"]
+_data = {
+"RESET": SubResource("Animation_0orj4"),
+"fall": SubResource("Animation_6reol"),
+"shake": SubResource("Animation_4viop")
+}
+
+[node name="jembatan" type="Node3D"]
+script = ExtResource("1_fye62")
+
+[node name="Jembatanbody" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="base1" type="MeshInstance3D" parent="Jembatanbody"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.963382, 0, 8.74228e-08, 0, -1, 2.38419e-07, -0.300034, -3.79977)
+mesh = ExtResource("2_6qh5a")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jembatanbody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0038265, -0.264893, -0.0381622)
+shape = SubResource("BoxShape3D_1ybes")
+
+[node name="Area3D" type="Area3D" parent="Jembatanbody"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jembatanbody/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0236734, 0.122544, 0.04647)
+shape = SubResource("BoxShape3D_2ap4g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Jembatanbody"]
+libraries = {
+"": SubResource("AnimationLibrary_jhxaq")
+}
+speed_scale = 1.2
+
+[node name="Timer" type="Timer" parent="Jembatanbody"]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Jembatanbody/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Jembatanbody/Timer" to="." method="_on_timer_timeout"]

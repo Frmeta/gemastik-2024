@@ -113,7 +113,7 @@ material = SubResource("StandardMaterial3D_0tobx")
 size = Vector2(0.08, 0.08)
 
 [node name="Player" type="CharacterBody3D"]
-collision_mask = 35
+collision_mask = 162
 script = ExtResource("1_qjshs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
