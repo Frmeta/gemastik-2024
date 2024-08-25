@@ -114,7 +114,7 @@ event = "despawn_mas"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.561, 7.89217, -0.871899)
 
 [node name="Leviathan" parent="." instance=ExtResource("16_2f71d")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.8187, 32.7141, -53.2719)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.8187, 32.7141, -26.0227)
 
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

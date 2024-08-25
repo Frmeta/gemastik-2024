@@ -2,41 +2,68 @@ extends Node3D
 
 const SPEED = 5
 
-@onready var skeleton: Skeleton3D = $Leviathan_Skeleton_001/Skeleton3D
+@onready var skeleton: Skeleton3D = $Leviathan2/Leviathan_Skeleton_001/Skeleton3D
 
-var head_position : Vector3
+var target_position : Vector3
+var prev_target_position : Vector3
+
+@onready var vis : Node3D = $vis
+var vises : Array[Node3D]= []
+
+const BODY_COUNT = 32
+
+const bone36_offset = Vector3(-0, 0.442682, -5.962368)
+const bone37_offset = Vector3(0, -0.810197, -6.247114)
 
 func _ready():
-	# cek
-	#print(skeleton.get_bone_pose_position(1) + skeleton.get_bone_pose_position(0))
-	#print(" harusnya sama dengan ")
-	#print(skeleton.get_bone_global_pose(1).origin)
-	#print(skeleton.get_bone_global_pose(1).basis)
-	pass
+	
+	for i in range(BODY_COUNT):
+		var wow = vis.duplicate()
+		add_child(wow)
+		vises.append(wow)
+		# wow.visible = true
+	
+	
 
-func _process(delta):
+func _physics_process(delta):
 	# circling the head
+	prev_target_position = target_position
+	
+	const MOVEMENT_TYPE = 1
+	
 	const CIRCLE_FREQUENCY = 0.2
-	const CIRCLE_RADIUS = 12
+	const CIRCLE_RADIUS = 34
 	var teta = Time.get_ticks_msec()/1000.0*CIRCLE_FREQUENCY*2*PI
-	head_position = CIRCLE_RADIUS*Vector3(sin(teta), sin(PI+teta), cos(teta))
 	
-	var diff = (head_position-skeleton.get_bone_pose_position(0)-Vector3(0, 0.009, -5.569)).normalized()
-	print(diff)
-	var quat
-	quat = Quaternion(Vector3.DOWN, diff)
-	#quat = Quaternion(Vector3.BACK, Vector3.BACK)
-	#quat = Quaternion(diff, 0)
-	# print(quat)
-	# skeleton.set_bone_pose_rotation(0, quat)
+	if MOVEMENT_TYPE==1:
+		target_position = CIRCLE_RADIUS*Vector3(sin(teta), sin(PI/2+teta), cos(teta))
+	elif MOVEMENT_TYPE==2:
+		target_position = Vector3.ZERO if !Input.is_key_pressed(KEY_Q) else Vector3.RIGHT * 8
+	elif MOVEMENT_TYPE==3:
+		target_position = CIRCLE_RADIUS*Vector3(0, sin(teta), cos(teta))
+		
+	# vis
+	vises[0].position = target_position
+	for i in range(0, BODY_COUNT-1):
+		var diff_normalized = (vises[i+1].position - vises[i].position).normalized()
+		vises[i+1].position = diff_normalized * (6.8-i/10.0) + vises[i].position
+		vises[i].quaternion = Quaternion(Vector3.UP, diff_normalized)
 	
-
-	# Set the bone's pose
-	skeleton.set_bone_pose_rotation(0, get_look_at_quaternion(diff))
-	
-	skeleton.set_bone_pose_position(0, head_position+Vector3(0, 0.009, -5.569))
-	skeleton.set_bone_pose_position(36, head_position+Vector3(0, 0.442, -5.563))
-	skeleton.set_bone_pose_position(37, head_position+Vector3(0, -0.811, -6.248))
+	# bone
+	skeleton.set_bone_pose_position(0, target_position)
+	skeleton.set_bone_pose_position(36, target_position + bone36_offset)
+	skeleton.set_bone_pose_position(37, target_position + bone37_offset)
+	for i in range(0, BODY_COUNT-1):
+		var rot
+		if i == 0:
+			rot = vises[i].quaternion
+		else:
+			#rot = Quaternion(vises[i-1].basis.y, vises[i].basis.y).normalized()
+			rot = vises[i-1].basis.inverse()*vises[i].basis
+			rot = Quaternion(rot)
+		skeleton.set_bone_pose_rotation(i, rot)
+		skeleton.set_bone_pose_position(i+1, Vector3.UP * (6.8-i/10.0))
+		
 	
 	
 func get_look_at_quaternion(target_position: Vector3) -> Quaternion:
