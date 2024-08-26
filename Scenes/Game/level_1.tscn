@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_186.res" id="16_haoq2"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="17_k3nlh"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="17_xkox3"]
-[ext_resource type="PackedScene" path="res://rumah_bali.tscn" id="17_ylv5b"]
+[ext_resource type="PackedScene" uid="uid://ppywoy75pf55" path="res://rumah_bali.tscn" id="17_ylv5b"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_i5x08"]
 [ext_resource type="Texture2D" uid="uid://dacu0ffeg12r6" path="res://3D Assets/Vines/vine.png" id="20_8jshk"]
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_v45f6"]
