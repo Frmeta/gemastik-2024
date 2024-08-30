@@ -382,7 +382,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.03019
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
 [node name="Komodo2" parent="Animals" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 382.873, 16.4831, 1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23151, -1.18114, 1.90735e-06)
 
 [node name="Komodo3" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 423.87, 19.8258, 0)

@@ -527,7 +527,7 @@ scene_after_win = "level_select"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4819, -2.0842, -0.301669)
 
 [node name="Harimau Sumatera2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 870.255, 16.5783, -0.301669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87178, -5.11231, -0.301669)
 mesh = NodePath("../Harimau Sumatera/Harimau_Skeleton/Skeleton3D/Harimau_001")
 can_move = false
 
