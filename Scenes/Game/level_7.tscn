@@ -17,9 +17,9 @@
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="12_7elh3"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_a2ix2"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_20ufl"]
-[ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
+[ext_resource type="PackedScene" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
-[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r77s2"]
 panorama = ExtResource("4_oyo28")
@@ -77,6 +77,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="water2" parent="GridMapGround" instance=ExtResource("10_idkyk")]
 transform = Transform3D(80, 0, 0, 0, 73.688, 0, 0, 0, 40, 340, -16.0987, -188.3)
+is_raging = true
 
 [node name="jembatans" type="Node3D" parent="GridMapGround"]
 

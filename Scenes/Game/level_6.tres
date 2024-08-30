@@ -1,0 +1,26 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://d1yg443d886ct"]
+
+[ext_resource type="Texture2D" uid="uid://l2qklp88bjro" path="res://assets/sky/Cloudy_Sky-Night_02-512x512.png" id="1_4j6we"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ug0tf"]
+panorama = ExtResource("1_4j6we")
+
+[sub_resource type="Sky" id="Sky_wxch4"]
+sky_material = SubResource("PanoramaSkyMaterial_ug0tf")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 1.2
+sky = SubResource("Sky_wxch4")
+sky_custom_fov = 4.4
+ambient_light_color = Color(0.141176, 0.266667, 0.286275, 1)
+ambient_light_energy = 2.0
+tonemap_mode = 2
+tonemap_exposure = 0.7
+sdfgi_energy = 0.1
+fog_enabled = true
+fog_density = 0.0001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_emission = Color(0.0588235, 0.0627451, 0.12549, 1)
+volumetric_fog_detail_spread = 6.0

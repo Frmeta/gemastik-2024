@@ -1,0 +1,1383 @@
+------air_emitter.gd------
+extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	EventDistributor.connect("emit_air",_emit)
+
+func _emit(amount):
+	if amount==0:
+		$GPUParticles3D.emitting=false
+		$GPUParticles3D2.emitting=false
+	else:
+		$GPUParticles3D.emitting=true
+		$GPUParticles3D2.emitting=true
+		if amount>0:
+			$GPUParticles3D.process_material.direction = Vector3(-20,0,0)
+			$GPUParticles3D2.process_material.direction = Vector3(-20,0,0)
+		else:
+			$GPUParticles3D.process_material.direction = Vector3(20,0,0)
+			$GPUParticles3D2.process_material.direction = Vector3(20,0,0)
+
+-----almanac_icon.gd-----
+extends TextureRect
+
+@onready var time_to_flip = $flip_timer
+
+var notifying := false
+
+func notify():
+	notifying = true
+	texture = load("res://assets/almanac2-notif.png")
+	time_to_flip.start()
+
+func unotify():
+	print("unotifying")
+	texture = load("res://assets/ui/Hint_Almanac.png")
+	notifying = false
+	flip_h = false
+
+func _on_flip_timer_timeout():
+	if notifying:
+		flip_h=not flip_h
+		time_to_flip.start()
+
+-------almanac_ui.gd-------
+extends Control
+
+
+@onready var tab = $PanelAlmanac/TabContainer
+@onready var tutorial = $tutorial
+
+@export var foto_tanda_tanya: Texture2D
+
+@export var has_done_tutorial = false
+
+var area_number = 0
+var pulau_list
+var hewan_buttons := []
+
+func _ready():
+	pulau_list = GM.pulau_list_resource.list
+	visible = true
+	
+	$"PanelAlmanac/Hewan Info".visible = true
+	
+	# tutorial stuff
+	if tutorial.can_tutorial and GM.current_level==0:
+		for n in $"PanelAlmanac/TabContainer/Halaman Peta Indo".get_children():
+			if n is TextureButton:
+				n.disabled=true
+
+-----------Animal.gd-----------
+extends CharacterBody3D
+
+class_name Animal
+
+@export var mesh: MeshInstance3D
+@export var can_move:=true
+@onready var behaviour
+
+var scan_progress = 0.0 # range dari 0 sampai 1
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var next_pass
+
+var above_0 = false
+var prev_scan_progress = 0
+
+var is_affected_by_gravity = true
+# disable oleh flying_animal.gd apabila hewan melayang
+
+var nama_hewan
+
+func _init():
+	collision_layer = 8
+	collision_mask = 2
+	
+func _ready():
+
+-----------bullet.gd-----------
+extends Node3D
+
+
+func _ready():
+	$GPUParticles3D.emitting = true
+	var tween = get_tree().create_tween()
+	tween.tween_property($Bullet, "position", $Bullet.position + Vector3.BACK * 30, 0.2)
+	tween.tween_callback(func () : 
+		queue_free()
+	)
+
+
+
+button_for_tutorial.gd
+extends TextureButton
+
+func _on_pressed():
+	print(self)
+	EventDistributor.emit_signal("button_clicked_on_tutorial")
+
+-----------camera.gd-----------
+extends Camera3D
+
+@export var is_leviathan := false
+var target_fov = self.fov
+
+@onready var target = $"../Player"
+var offset
+var smooth_speed = 5
+var rng = RandomNumberGenerator.new()
+
+var decay_movement = 5
+var max_offset = Vector2(2,2) # max shake
+var max_roll = 0.05 #max rotation
+var trauma = 0 #shake strenght
+var trauma_power = 2 #  trauma exponent
+var trauma_offset = Vector3(0,0,0)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#offset = transform.origin - player.transform.origin
+	if is_leviathan:
+		offset = Vector3(0, 3, 20)
+	else:
+		offset = Vector3(0, 2.33, 11.3)
+	EventDistributor.connect("player_enter_trap_area", decrease_fov)
+
+-------checkpoint.gd-------
+# ASUMSI : 
+# Checkpoin tidak berhewan -> 2 wall, 1 wall(yg kanan) disabled
+# Checkpoin berhewan -> 2 wall, 2 wall enabled
+
+extends Area3D
+
+signal some_checkpoint_captured(instance_checkpoint)
+
+# Wall dan checkpoin bersifat terpisah. Wall di level diassign ke checkpoin
+# masing-masing
+@export var wallleft: InvisibleWall
+@export var wallright: InvisibleWall
+@export var rubbish_num :=0
+@export var num_of_traps :=0
+
+var _rubbish_counter = 0
+
+@export var syarat_hewan: Array[String]
+
+@onready var animation_tree := $Checkpoint3D/AnimationTree
+
+var captured = false
+
+func _ready():
+	EventDistributor.connect("new_checkpoint", disable_both_wall)
+
+-----DeathTrigger.gd-----
+extends Area3D
+
+func _on_body_entered(body : Player):
+	body.respawn()
+
+-----DialogueEnum.gd-----
+extends Node
+
+# Ini pura pura jadi enum
+const FILES = {
+	DIALOGUE_TEST ="res://tes.json",
+	
+	OUT_OF_BOUND="res://dialogue/out-of-bound/out-of-bound.json",
+	ADA_SAMPAH = "res://dialogue/out-of-bound/adasampah.json",
+	KENAPA_GAK_LEPAS = "res://dialogue/kenapa_gk_lepasin.json",
+	
+	TUTORIAL_AWAL = "res://dialogue/tutorial/awal.json",
+	TUTORIAL_PETA = "res://dialogue/tutorial/peta.json",
+	TUTORIAL_TEKANX = "res://dialogue/tutorial/tekanx.json",
+	TUTORIAL_LIHAT_GAMBAR_KIRI = "res://dialogue/tutorial/lihat_gambar_kiri.json",
+	TUTORIAL_TEKAN_GAMBAR_KIRI = "res://dialogue/tutorial/tekan_gambar_kiri.json",
+	TUTORIAL_DONE = "res://dialogue/tutorial/tutorial_done.json",
+	
+	
+	PROLOGUE1 = "res://dialogue/prolog1.json",
+	PROLOGUE2 = "res://dialogue/prolog.json",
+	KALIMANTAN = "res://dialogue/kalimantan.json",
+	KALIMANTAN_END = "res://dialogue/kalimantan_end.json",
+	START_PULAU = "res://dialogue/start_pulau.json",
+	PREFIX = "res://dialogue/",
+	BALI_PERANGKAP = "res://dialogue/bali_perangkap.json",
+
+--------DoniFinal.gd--------
+extends Node3D
+@onready var animTree = $AnimationTree
+func _ready():
+	idle()
+
+func move():
+	animTree.set("parameters/MainState/transition_request", "game")
+	animTree.set("parameters/Game/transition_request", "is_on_land")
+	animTree.set("parameters/Platformer/conditions/is_floating", false)
+	animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+	animTree.set("parameters/Platformer/conditions/is_running", true)
+	animTree.set("parameters/Platformer/conditions/is_not_running", false)
+
+func idle():
+	animTree.set("parameters/MainState/transition_request", "game")
+	animTree.set("parameters/Game/transition_request", "is_on_land")
+	animTree.set("parameters/Platformer/conditions/is_floating", false)
+	animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+	animTree.set("parameters/Platformer/conditions/is_running", false)
+	animTree.set("parameters/Platformer/conditions/is_not_running", true)
+
+-------dummy_tree.gd-------
+extends MeshInstance3D
+
+@export var is_gundul := false
+func _ready():
+	if is_gundul:
+		mesh = GM.tree_meshes_gundul.pick_random()
+	else:
+		mesh = GM.tree_meshes_rindang.pick_random()
+
+---------epilogue.gd---------
+extends Node3D
+
+@onready var doniAnimTree = $"DoniFinal/AnimationTree"
+@onready var doni = $DoniFinal
+@onready var mas = $skeleton_mas
+@onready var textbox = $DialogueManager.textbox
+
+@export var doniMarkers: Array[Marker3D]
+@export var doniAnims: Array[String]
+@export var masMarkers: Array[Marker3D]
+
+var epilogue_end=false
+var speed_done=false
+var background_lerp_done = false
+
+var counter = 0
+
+func _ready():
+	textbox.connect("go_to_next_line", foo)
+	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Feeling Cozy ' lofi background music.mp3", -3)
+	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
+	goto(0)
+	var target = $DonisRoom.global_position.y
+	for i in range(10):
+		doni.position.y=lerp(doni.position.y,target,0.3)
+
+-EventDistributor.gd-
+extends Node
+
+signal spawn_mas()
+signal despawn_mas()
+
+# File path usahain pake DialogueEnum biar Maintainable
+signal start_dialogue(file_path)
+signal start_dialogue_with_pulau(file_path, nama_pulau, fun_fact)
+signal start_dialogue_not_stop(file_path)
+signal end_dialogue()
+signal end_tutorial_line()
+
+signal player_enter_trap_area()
+signal player_leave_trap_area()
+signal shake_cam()
+signal change_target(new_target)
+
+signal button_clicked_on_tutorial()
+
+signal new_checkpoint(instance)
+signal animal_captured()
+
+signal scan_done()
+signal rubbish_collected()
+signal trap_opened()
+
+--foto_hewan_kiri.gd--
+extends Control
+
+var _target_rotation_degrees = 0
+var _target_scale = Vector2.ONE
+
+func set_selection(toggle):
+	if toggle:
+		_target_rotation_degrees = 10
+		_target_scale = Vector2.ONE*1.2
+	else:
+		_target_rotation_degrees = 0
+		_target_scale = Vector2.ONE
+		
+func _process(delta):
+	const ROT_SPEED = 90
+	const SCALE_SPEED = 2
+	get_parent_control().rotation_degrees = move_toward(get_parent_control().rotation_degrees, _target_rotation_degrees, ROT_SPEED*delta)
+	get_parent_control().scale = get_parent_control().scale.move_toward(_target_scale, SCALE_SPEED*delta)
+
+------GameManager.gd------
+extends Node
+
+@onready var audiostream1 = $background
+@onready var audiostream2 = $AudioStreamPlayer2D2
+@onready var audiostream3 = $AudioStreamPlayer2D3
+@onready var doni_sound = $doni_sounds
+@onready var mas_sound = $mas_sound
+
+var doni: Node3D
+
+var last_checkpoint_position:Vector3
+var last_air_speed :=0
+
+var data_file_number = 0
+
+var explored_level = 0
+var new_unlocked = -1
+var current_level = 0
+
+var scanned_animal := []
+
+@export var pulau_list_resource : pulau_list
+
+const FILE_NAME = "user://donisavegame.json"
+
+
+---------Grapling.gd---------
+"""
+This script controls the chain.
+"""
+extends Node3D
+
+@onready var links = $Links	
+var direction := Vector3(0,0,0)
+var tip := Vector3(0,0,0)		# The global position the tip
+
+const SPEED = 100	# The speed with which the chain moves
+const MAX_DISTANCE = 40
+
+var flying = false	# Whether the chain is moving through the air
+var hooked = false	# Whether the chain has connected to a wall
+
+var current_rope_length
+
+# shoot() shoots the chain in a given direction
+func shoot(dir: Vector3) -> void:
+	dir.z = 0
+	direction = dir.normalized()
+	# print(direction)
+	flying = true
+	tip = self.global_position
+
+
+---gridmap_ground.gd---
+extends GridMap
+
+const START_X = -60
+const END_X = 1500
+
+const START_Y = -15
+const END_Y = 200
+
+const GRASS_INDEX = 0
+const DIRT_INDEX = 1
+const SAND_INDEX = 3
+const STONE_INDEX = 4
+
+const SPAWN_TREE = true
+
+@export var noise:Noise
+
+enum Algo {TERRAIN, CAVE, ISLAND}
+@export var algo : Algo = Algo.TERRAIN
+@export var gundul_from = -100
+@export var gundul_to = -100
+
+var dummy_tree: PackedScene = preload("res://3D Assets/Nature/Trees/dummy_tree.tscn")
+var dummy_tree_gundul = preload("res://3D Assets/Nature/Trees/dummy_tree_gundul.tscn")
+
+
+-----------hewans.gd-----------
+extends Resource
+class_name hewans
+
+@export var foto_kartun: Texture2D
+@export var foto_asli: Texture2D
+
+@export var nama := ""
+@export var latin := ""
+@export var status := ""
+@export var habitat := ""
+@export var entry := ""
+
+
+
+-------hyperspace.gd-------
+extends Node3D
+
+func _ready():
+	GM.stop_audio_background()
+	GM.play_audio("res://audio/a/zooming.mp3")
+	# setup player anim
+	$DoniFinal/AnimationTree.set("parameters/MainState/transition_request", "story")
+	$DoniFinal/AnimationTree.set("parameters/Story/transition_request", "flying")
+
+	# wait for animation finished
+	await get_tree().create_timer(3).timeout
+	
+	# goto level scene
+	var level_path = "res://Scenes/Game/level_" + str(GM.current_level) + ".tscn"
+	if ResourceLoader.exists(level_path):
+		Transition.change_scene(level_path)
+	else:
+		print(level_path + " tidak exists filenya")
+		print(FileAccess.file_exists("res://Scenes/Game/level_select.tscn"))
+		Transition.change_scene("res://Scenes/Game/level_select.tscn")
+		
+
+----invisiblewall.gd----
+extends StaticBody3D
+
+class_name InvisibleWall
+
+var _is_rubbishing = false
+var _is_trapping = false
+
+func _ready():
+	EventDistributor.connect("is_rubbishing", _set_is_rubbishing)
+	EventDistributor.connect("is_trapping", _set_is_trapping)
+
+func _set_is_rubbishing(boolean):
+	_is_rubbishing = boolean
+
+func _set_is_trapping(boolean):
+	_is_trapping = boolean
+
+func enable_wall():
+	print("enable", self.name)
+	$CollisionShape3D.set_deferred("disabled",false)
+	$Area3D/CollisionShape3D.set_deferred("disabled",false)
+	#$CollisionShape3D.disabled=false
+
+func disable_wall():
+	print("disable", self.name)
+
+---------jembatan.gd---------
+extends Node3D
+
+@export var can_fall:=true
+@export var shake_speed_scale :=1.2
+@export var fall_speed_scale :=1.2
+@export_range(0, 4) var tipe_pager=0
+@export_range(1, 3) var tipe_jembatan=1
+@export var is_pangkal:=false
+
+func _ready():
+	$Jembatanbody.get_node("base1").visible=false
+	if tipe_pager!=0:
+		$Jembatanbody.get_node("belakang"+str(tipe_pager)).visible=true
+		$Jembatanbody.get_node("depan"+str(tipe_pager)).visible=true
+	if is_pangkal:
+		for i in range(1,4):
+			$Jembatanbody.get_node("base"+str(i)).visible = false
+		$Jembatanbody.get_node("pangkal"+str(tipe_jembatan)).visible=true
+	else:
+		for i in range(1,4):
+			$Jembatanbody.get_node("pangkal"+str(i)).visible = false
+		$Jembatanbody.get_node("base"+str(tipe_jembatan)).visible=true
+
+func _on_area_3d_body_entered(body):
+	if body is Player and can_fall:
+
+-----Komodo_State.gd-----
+extends Ground_Animal
+
+var is_hostile = false 
+var is_looping = false
+var after_knocking_back = false
+
+signal become_hostile
+
+func _ready():
+	loop_behaviour()
+
+func loop_behaviour():
+	if not is_hostile:
+		if is_hostile:
+			return
+		state = State.DIAM
+		await wait_for_seconds(randf() * 100 + 2) or self.become_hostile
+		
+		if is_hostile:
+			return
+		
+		state = State.KANAN
+		await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
+		
+		if is_hostile:
+
+------------level.gd------------
+extends Node3D
+
+class_name Level
+
+@onready var almanac_3d = $Camera3D/Almanac2
+@onready var almanac_ui = $"CanvasLayerLevel/Almanac"
+@onready var successful_scan = $"CanvasLayerLevel/Successful Scan"
+@onready var almanac_icon = $"CanvasLayerLevel/Controls Hint/HBoxContainer/almanac"
+
+@export var nama_pulau:String
+@export var fun_fact:String
+
+var is_almanac_open = false
+var is_animating_almanac = false
+
+@export var level_eksperimen := false
+
+func _ready():
+	set_up()
+	EventDistributor.emit_signal("emit_air",0)
+	if nama_pulau.to_lower()   == "bali": # Bali
+		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright).ogg", -10)
+	elif nama_pulau.to_lower() == "kalimantan": # Kalimantan
+		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg",-10)
+	elif nama_pulau.to_lower() == "nusa tenggara": #NTT
+
+-LevelSelectMouse.gd-
+extends Area3D
+
+-----level_select.gd-----
+extends CharacterBody3D
+
+@onready var nama_pulau_label = $CanvasLayer/VBoxContainer/MarginContainer2/namapulau
+
+var selected_level = null
+
+var moving_doni = false
+var target_position
+
+var pins = []
+
+const MAX_LEVEL = 8
+
+func _ready():
+	if GM.new_unlocked!=-1:
+		print("play new_unlocked", GM.new_unlocked)
+		for i in range(1,GM.explored_level):
+			var temp = get_node("paths" + str(i))
+			temp.visible=true
+		_play_animation_new_unlocked()
+		GM.new_unlocked = -1
+	else:
+		for i in range(1,GM.explored_level+1):
+			var temp = get_node("paths" + str(i))
+			temp.visible=true
+
+--------Load Game.gd--------
+extends MarginContainer
+
+const FILE_NAME = "user://donisavegame.json"
+
+const BTN_COUNT = 4
+var btns := []
+
+func _ready():
+	# connect button signal (load_data & delete_data)
+	for i in range(0, BTN_COUNT):
+		var btn = get_node("VBox/Button" + str(i))
+		btn.connect("load_btn_pressed", load_button_pressed.bind(i))
+		btn.connect("delete_btn_pressed", delete_button_pressed.bind(i))
+		btns.append(btn)
+	refresh()
+
+# refresh text di level
+func refresh():
+	print("refresh")
+	var data = GM.data
+	for i in range(0, BTN_COUNT):
+		btns[i].set_info(i, -1 if !data[i].has("level") else data[i]["level"])
+
+# dipanggil ketika user menekan data yang ingin di load
+func load_button_pressed(idx):
+
+------load_button.gd------
+extends MarginContainer
+
+signal load_btn_pressed
+signal delete_btn_pressed
+
+
+func set_info(file_number, level_explored:int):
+	if level_explored==-1:
+		$Paper/Label.text = "new game"
+		$Paper/Label2.text = ""
+		$Paper/delete_btn.hide()
+	else:
+		$Paper/Label.text = "load file - " + str(file_number)
+		$Paper/Label2.text = "progress - " + str(roundi((level_explored/8.0*100))) + "%" 
+		$Paper/delete_btn.show()
+		
+func _on_load_btn_pressed():
+	GM.play_audio("res://audio/a/button_click.mp3")
+	emit_signal("load_btn_pressed")
+
+
+func _on_delete_btn_pressed():
+	GM.play_audio("res://audio/a/button_clickback.wav")
+	emit_signal("delete_btn_pressed")
+
+--------main_menu.gd--------
+extends Control
+
+@onready var tab := $TabContainer
+
+
+func _ready():
+	if not GM.audiostream1.playing or not "Free Backsound Gamelan Jawa" in GM.audiostream1.stream.resource_path :
+		GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav", -3)
+	tab.current_tab = 0
+
+func _on_play_button_pressed():
+	GM.play_audio("res://audio/a/button_click.mp3")
+	tab.current_tab = 1
+
+func _on_kebali_ke_menu_pressed():
+	GM.play_audio("res://audio/a/button_clickback.ogg")
+	tab.current_tab = 0
+
+func _on_credits_button_pressed():
+	GM.play_audio("res://audio/a/button_click.mp3")
+	tab.current_tab = 2
+
+-------------path.gd-------------
+extends MeshInstance3D
+
+func play_animation():
+	var rng = RandomNumberGenerator.new()
+	visible = true 
+	$GPUParticles3D.emitting=true
+	GM.play_audio("res://audio/walkingondirtpath-35341 (1).ogg", rng.randf_range(0.9,1.3),5)
+	pass
+
+------------Pause.gd------------
+extends TextureButton
+
+@onready var pause_panel = $"Pause Panel"
+
+func _ready():
+	visible = true
+	pause_panel.visible = false
+
+
+
+func _input(event):
+	if event.is_action_pressed("esc"):
+		if get_tree().paused:
+			_on_continue_button_pressed()
+		else:
+			_on_pressed()
+			
+
+func _on_pressed():
+	GM.play_audio("res://audio/a/button_clickback.ogg")
+	get_tree().paused = true
+	
+	disabled = true
+	pause_panel.visible = true
+
+
+----------pemburu.gd----------
+extends CharacterBody3D
+
+static var singleton = null
+static var noleh_timer = 0
+static var caught_timer = 0
+
+@export var mesh:MeshInstance3D
+
+const bullet_prefab = preload("res://Scenes/bullet.tscn")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var target_y_rot = 0
+var id = randi()
+
+var shoot_delay = 3
+var shoot_timer = 0 # temp timer only
+
+var beginning_position
+var target_position
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if singleton == null:
+		singleton = self
+		
+
+---------Pemburu2.gd---------
+extends CharacterBody3D
+
+
+const SPEED = 10
+const JUMP_VELOCITY = 20
+
+const SHOOT_DELAY = 2
+var shoot_timer = 0
+
+var gravity = 40
+var beginning_position
+var is_triggered = false
+
+@export var is_enabled = true
+
+const bullet_prefab = preload("res://Scenes/bullet.tscn")
+
+func _ready():
+	beginning_position = global_position
+	var beginning_is_enabled = is_enabled
+	EventDistributor.connect("player_respawn", func():
+		global_position = beginning_position
+		is_triggered = false
+		is_enabled = beginning_is_enabled
+	)
+
+---perangkap_mesh.gd---
+extends Node3D
+
+func swap_mesh(is_big):
+	if is_big:
+		$PerangkapRec_Skeleton.visible=true
+		$PerangkapSquare_Skeleton.visible = false
+		for i in range(1,5):
+			var collision = get_node("PerangkapSquare_Skeleton/CollisionShape3D"+str(i))
+			collision.disabled = true
+		$PerangkapSquare_Skeleton/door_collision.disabled=true
+	else:
+		$PerangkapRec_Skeleton.visible=false
+		$PerangkapSquare_Skeleton.visible = true
+		for i in range(1,5):
+			var collision = get_node("PerangkapRec_Skeleton/CollisionShape3D"+str(i))
+			collision.disabled = true
+		$PerangkapRec_Skeleton/door_collision.disabled=true
+
+func open():
+	$PerangkapSquare_Skeleton/door_collision.set_deferred("disabled", true)
+	$PerangkapRec_Skeleton/door_collision.set_deferred("disabled", true)
+
+--------------pin.gd--------------
+extends StaticBody3D
+
+@onready var animTree : AnimationTree = $"AnimationTree"
+
+var _is_selected = false
+var mat : Material
+
+func _ready():
+	var mesh : Mesh = $Pin2/Pin.mesh.duplicate()
+	mat = mesh.surface_get_material(0).duplicate()
+	mesh.surface_set_material(0, mat)
+	$Pin2/Pin.mesh = mesh
+
+
+# change color
+func set_color_to_red():
+	mat.albedo_color = "c01f0b"
+
+func set_color_to_yellow():
+	mat.albedo_color = "c0ff0b"
+
+
+func selected():
+	animTree.set("parameters/conditions/selected", true)
+	animTree.set("parameters/conditions/not_selected", false)
+
+-----------player.gd-----------
+extends CharacterBody3D
+
+class_name Player
+
+@export var air_speed := 0
+
+@onready var animTree : AnimationTree = $DoniFinal/AnimationTree
+@onready var model3d := $DoniFinal
+@onready var scan := $Scan
+@onready var leg_target=$leg_target
+@onready var climb := $Climb
+
+const SPEED = 10
+const SWIM_SPEED = 7
+const JUMP_POWER = 20
+const acc = 300
+const friction = 200
+
+const gravity = 40
+var _RNG = RandomNumberGenerator.new()
+
+const end_jump_early_multiplier = 3
+const jump_buffer = 100 # in millis
+const coyote_treshold = 200 # in millis
+const fall_clamp = 20 # max fall speed
+
+---pohon_sembunyi.gd---
+extends StaticBody3D
+
+class_name PohonSembunyi
+static var player_is_safe := false
+ 
+
+
+func _on_body_entered(body):
+	player_is_safe = true
+
+
+func _on_body_exited(body):
+	player_is_safe = false
+
+-----------prolog.gd-----------
+extends Node3D
+
+@onready var doniAnimTree = $"DoniFinal/AnimationTree"
+@onready var doni = $DoniFinal
+@onready var mas = $skeleton_mas
+@onready var textbox = $DialogueManager.textbox
+
+@export var doniMarkers: Array[Marker3D]
+@export var doniAnims: Array[String]
+@export var masMarkers: Array[Marker3D]
+
+var prolog_end=false
+var speed_done=false
+
+var counter = 0
+
+func _ready():
+	textbox.connect("go_to_next_line", foo)
+	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
+	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Taiyaki' cute background music.mp3",-3)
+	goto(0)
+	EventDistributor.emit_signal("start_dialogue", DialogueEnum.PROLOGUE1)
+	await EventDistributor.end_dialogue
+	EventDistributor.emit_signal("start_dialogue", DialogueEnum.PROLOGUE2)
+	await EventDistributor.end_dialogue
+
+------------pulau.gd------------
+extends Resource
+
+class_name pulau
+
+@export var nama := "Nama pulau"
+@export var gambar : Texture2D
+@export var hewanss : Array[hewans] = []
+
+
+-------pulau_list.gd-------
+extends Resource
+class_name pulau_list
+
+@export var list : Array[pulau] = []
+
+--------RayCaster.gd--------
+extends CharacterBody3D
+
+func get_mouse_location_on_map():
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ray_length = 2000
+	var from = $"../../Camera3D".project_ray_origin(mouse_pos)
+	var to = from + $"../../Camera3D".project_ray_normal(mouse_pos) * ray_length
+	var space = get_world_3d().direct_space_state
+	
+	var ray_query := PhysicsRayQueryParameters3D.new()
+	ray_query.collision_mask = collision_mask
+	#var query = PhysicsRayQueryParameters2D.create(global_position, target_position,
+		#collision_mask, [self])
+	ray_query.from = from
+	ray_query.to = to
+	ray_query.collide_with_areas = true
+	var raycast_result = space.intersect_ray(ray_query)
+	
+	if not raycast_result.is_empty():
+		var pos = raycast_result.position
+		return Vector3(pos.x, pos.y, pos.z)
+	else:
+		return null
+
+-------------Scan.gd-------------
+extends Node3D
+
+var reach = 21.0
+
+var collider
+
+func _process(delta):
+	
+	if owner.is_scanning:
+		if owner.owner.get_mouse_location_on_map() == null:
+			print("need bigger area of wall")
+			
+		var dir = owner.owner.get_mouse_location_on_map() - global_position
+		dir.z = 0
+		if dir.length() > reach:
+			dir = dir.normalized() * reach
+		$RayCast3D.target_position = dir
+		
+		if $RayCast3D.is_colliding():
+			# hitting something
+			$Tip.visible = true
+			$Tip.scale_target = 1
+			
+			collider = $RayCast3D.get_collider()
+			$Tip.global_position = collider.global_position
+
+---------ScanLine.gd---------
+extends MeshInstance3D
+
+@onready var ray : RayCast3D = $"../RayCast3D"
+
+func _process(_delta):
+	# Create line from player to scan tip
+	if $"../Tip".visible:
+		visible = true
+		# var diff = $"../Tip".global_position - get_parent().global_position
+		var diff = ray.get_collision_point()-get_parent().global_position if ray.is_colliding() else ray.target_position
+		
+		position =  diff/2
+		scale.y = diff.length()/2
+		
+		var angle = atan2(diff.y, diff.x) + deg_to_rad(90)
+		rotation.z = angle
+		
+	else:
+		visible = false
+
+-----skeleton_mas.gd-----
+extends CharacterBody3D
+
+@export var current_state: mas_state
+@export var iteration = 45
+@export var SPEED:float = 5.0
+@export var constant = 5
+
+@onready var sprite =  $MeshInstance3D
+@onready var sprite_mas = $"Mas"
+
+var origin
+var ANGULAR_SPEED = 0.6
+
+var last_move = Vector3.ZERO
+
+func _ready():
+	scale=Vector3(0.0001,0.0001,0.0001)
+	change_rotation(Vector3(10,10,10))
+	origin = GM.doni.get_leg_target()
+	$States/despawn.origin = origin
+
+func change_state(new_state):
+	current_state=new_state
+
+func _physics_process(delta):
+
+----splash_screen.gd----
+extends Node2D
+
+@onready var cl = $CanvasLayer
+
+@export var _initial_delay: float = 1
+
+var _splash_screens = []
+
+@onready var _splash_screen_container = $CanvasLayer
+
+var splash_screen
+
+func _ready() -> void:
+
+	set_process_input(false)
+
+	for splash_screen in _splash_screen_container.get_children():
+		splash_screen.modulate.a = 0
+		_splash_screens.push_back(splash_screen)
+
+	await get_tree().create_timer(_initial_delay).timeout
+
+	_start_splash_screen()
+
+	set_process_input(true)
+
+--successful_scan.gd--
+extends TextureButton
+
+signal done_animation
+
+func _ready():
+	$AnimationPlayer.connect("animation_finished", func (_anim_name) -> void:
+		done_animation.emit())
+
+func appear(texture: Texture2D):
+	EventDistributor.emit_signal("scan_done")
+	GM.play_audio("res://audio/a/game-bonus-144751 (1).ogg")
+	$Panel/Panel1/MarginContainer/Panel2/TextureRect.texture = texture
+	$AnimationPlayer.play("show")
+
+----------textbox.gd----------
+extends MarginContainer
+
+@onready var name_label = $HBoxContainer/MarginContainer/VBoxContainer/nama
+@onready var dialogue_label =  $HBoxContainer/MarginContainer/VBoxContainer/dialogue
+@onready var emote = $HBoxContainer/MarginContainer2/CenterContainer/emote
+
+var still_typing=false
+
+signal go_to_next_line()
+var rng: RandomNumberGenerator
+func _ready():
+	rng = RandomNumberGenerator.new()
+	rng.randomize()
+
+func display_line(nama: String, dialogue:String, emosi, _nama_pulau:String = "", _fun_fact:String = ""):
+	still_typing=true
+	name_label.text = nama
+	dialogue_label.visible_ratio=0.0
+	dialogue_label.text=dialogue
+		
+	var type_speed = 1.2 / dialogue.length()
+	var num = rng.randi_range(1,4)
+	# Atur sprite emosi
+	if (nama.to_lower()=="doni"):
+		GM.play_doni_sound("res://audio/a/dialogos"+str(num)+".ogg")
+
+-----------thrash.gd-----------
+extends StaticBody3D
+
+var can_pickup
+@onready var anim_player = $AnimationPlayer
+
+func _ready():
+	var rng = RandomNumberGenerator.new()
+	var trash = "trash"+str(rng.randi_range(1,5))
+	rotation_degrees = Vector3(0,rng.randi()%365,0)
+	get_node(trash).visible=true
+
+func _process(delta):
+	if can_pickup:
+		if Input.is_action_just_pressed("ui_accept"):
+			EventDistributor.emit_signal("rubbish_collected")
+			$"thrash sign".visible = false
+			GM.play_audio("res://audio/marimba-win-a-3-209674.ogg")
+			anim_player.play("picked")
+			await anim_player.animation_finished
+			queue_free()
+
+func _on_area_3d_body_entered(body):
+	if body is Player:
+		can_pickup=true
+
+
+--------------Tip.gd--------------
+extends Node3D
+
+var scale_target = 1
+
+const SCALE_SPEED = 5
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	scale = scale.move_toward(Vector3.ONE * scale_target, SCALE_SPEED*delta)
+
+-------toxicwater.gd-------
+extends Area3D
+
+@onready var water_shader = $watershader
+@export var scale2:=1.0
+
+func _ready():
+	water_shader.get_surface_override_material(0).set_shader_parameter("scale",self.scale.y)
+	water_shader.get_surface_override_material(0).set_shader_parameter("scale2",self.scale2)
+
+func _on_body_entered(body):
+	if body is Player:
+		body.stop_move()
+		await get_tree().create_timer(0.2).timeout
+		body.respawn()
+		body.allow_move()
+
+-------transition.gd-------
+extends CanvasLayer
+
+func change_scene(file_path: String):
+	self.visible=true
+	$AnimationPlayer.play("fade_to_black")
+	
+	await $AnimationPlayer.animation_finished
+	
+	get_tree().change_scene_to_file(file_path)
+	await get_tree().create_timer(0.5).timeout
+	$AnimationPlayer.play_backwards("fade_to_black")
+	
+	await $AnimationPlayer.animation_finished
+	await get_tree().create_timer(0.1).timeout
+	
+	self.visible=false
+
+---------tutorial.gd---------
+extends CanvasLayer
+
+@onready var pointer = $pointer_wrapper
+
+var node_pos = []
+var nodes = []
+var node_trigger=[]
+var node_file=[]
+var ongoing = false
+var velocity = 100
+var can_tutorial = true
+
+# var _counter=0
+# ken, _counter ini useless? ~Fredo 16 Agustus 2024
+
+var ui_accept
+var almanac_input
+
+func _ready():
+	almanac_input = InputMap.action_get_events("almanac")
+
+func start_tutorial():
+	await get_tree().create_timer(0.6).timeout
+	visible=true
+	ongoing=true
+
+------------water.gd------------
+extends Area3D
+
+@onready var water_shader = $watershader
+@export var scale2:=1.0
+
+func _ready():
+	water_shader.get_surface_override_material(0).set_shader_parameter("scale",self.scale.y)
+	water_shader.get_surface_override_material(0).set_shader_parameter("scale2",self.scale2)
+	$CollisionShape3D.global_position.y -= 0.13 # duct tape: supaya ketika discale tidak rusak
+
+func _on_body_entered(body: Player):
+	body.is_in_water=true
+	body.curr_jumps=1
+
+func _on_body_exited(body: Player):
+	body.is_in_water=false
+
+------WindTrigger.gd------
+extends Area3D
+
+@export var wind_speed := 0
+
+func _on_body_entered(body):
+	EventDistributor.emit_signal("emit_air", wind_speed)
+
+---------win_area.gd---------
+extends Area3D
+
+@export var scene_after_win: String
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		EventDistributor.emit_signal("emit_air",0)
+		if GM.current_level==0:
+			# GM.doni.get_node("../Camera3D/").offset = Vector3(0, 1, 5)
+			EventDistributor.emit_signal("spawn_mas")
+			EventDistributor.emit_signal("start_dialogue", DialogueEnum.KALIMANTAN_END)
+			await EventDistributor.end_dialogue
+		print("yey player menang")
+		GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav")
+		# animasi doni victory dulu
+		GM.doni.stop_move()
+		GM.doni.get_node("../Camera3D/").offset = Vector3(0, 1, 5)
+		await get_tree().create_timer(0.3).timeout
+		GM.doni.victory_dance()
+		await get_tree().create_timer(2).timeout
+		$"../CanvasLayerLevel".visible=false
+		GM.win(scene_after_win)
+		
+
+-worldenvironment.gd-
+extends WorldEnvironment
+
+@export var speed :=0.005
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	var worldenv = get_environment()
+	worldenv.sky_rotation.y+=speed
+
+-----burung_merak.gd-----
+extends Ground_Animal
+
+var walk_mekar_anim_name = "M_OWalk"
+var idle_mekar_anim_name = "M_OIdle"
+var opening_anim_name = "M_Opening"
+var closing_anim_name = "M_Closing"
+
+var is_mekar := false
+
+func do_something():
+	if randi() % 2 == 0:
+		state = State.NUL
+		is_mekar = !is_mekar
+		$"../AnimationPlayer".play(opening_anim_name if is_mekar else closing_anim_name)
+		await $"../AnimationPlayer".animation_finished
+
+func _process(_delta):
+	match state:
+		State.DIAM:
+			$"../AnimationPlayer".play(idle_mekar_anim_name if is_mekar else idle_anim_name)
+			owner.rotation.y = 0
+			owner.velocity.x = 0
+			pass
+		State.KANAN:
+			$"../AnimationPlayer".play(walk_mekar_anim_name if is_mekar else walk_anim_name)
+
+----flying_animal.gd----
+extends Node3D
+
+
+enum State {DIAM, TERBANG}
+
+var MOVE_SPEED = 2
+
+@export var fly_anim_name = "JB_Flying"
+@export var idle_anim_name = "JB_Idle"
+@export var skeleton_3d : Skeleton3D
+
+var state : State
+
+var ray : RayCast3D
+var target_pos
+var is_flying = false
+
+var can_move = true
+
+func _ready():
+	
+	# Make sure anim_name is valid
+	assert($"../AnimationPlayer".has_animation(fly_anim_name))
+	assert($"../AnimationPlayer".has_animation(idle_anim_name))
+	
+
+----ground_animal.gd----
+extends Node3D
+
+class_name Ground_Animal
+
+enum State {KIRI, KANAN, DIAM, NUL}
+
+var MOVE_SPEED = 2
+
+@export var walk_anim_name = "O_Walk"
+@export var idle_anim_name = "O_Idle"
+
+var state : State
+var can_move = true
+
+var alive := true # jadi false pas player menang
+
+func _ready():
+	
+	assert($"../AnimationPlayer".has_animation(walk_anim_name))
+	assert($"../AnimationPlayer".has_animation(idle_anim_name))
+	
+	if randi() % 2 == 0:
+		state = State.DIAM
+		await wait_for_seconds(randf() * 6 + 5)
+		if can_move:
+
+abstract_mas_state.gd
+extends Node
+
+class_name mas_state
+
+signal change_state(next_state)
+
+@export var mas:CharacterBody3D 
+@export var next_state:mas_state
+
+func do_something(_delta):
+	pass
+
+----state_despawn.gd----
+extends mas_state
+
+var last_move=Vector3.ZERO
+var runable = true
+var origin:Node3D
+
+func do_something(_delta):
+	if (mas.global_position-origin.global_position).length()>0.01:
+		mas.global_position = lerp(mas.global_position,origin.global_position,0.1)
+	else:
+		mas.global_position=origin.global_position
+		emit_signal("change_state",next_state)
+		runable=true
+	mas.scale = lerp(mas.scale,Vector3(0.0001,0.0001,0.0001),0.05)
+
+-------state_hide.gd-------
+extends mas_state
+
+var hidden = true
+
+func _ready():
+	EventDistributor.connect("spawn_mas",change_to_spawn)
+
+func do_something(_delta):
+	pass
+
+func change_to_spawn():
+	mas.scale=Vector3(0.0001,0.0001,0.0001)
+	mas.global_position=mas.origin.global_position
+	emit_signal("change_state",next_state)
+
+-------state_idle.gd-------
+extends mas_state
+
+@export var frequency : float =3.0
+@export var amplitude : float = 1
+var time=0
+var after_change = true
+
+func _ready():
+	EventDistributor.connect("despawn_mas", dialogue_done)
+
+func do_something(delta):
+	time+=delta
+	var movement = sin(time*frequency)*amplitude
+	mas.position.y+= movement*delta
+	
+	# Atur arah liat
+	var dir = Vector3.ZERO
+	var delta_position = GM.doni.global_position-mas.global_position
+	#if delta_position.x>0:
+		#delta_position.x-=delta_position.x/2
+	#else:
+		#delta_position.x+=delta_position.x/2
+	delta_position.z=2
+	var temp = (delta_position.x**2+delta_position.z**2)**0.5
+	dir.x = rad_to_deg(atan2(-delta_position.y*0.4,temp))
+
+------state_spawn.gd------
+extends mas_state
+
+var last_move=Vector3.ZERO
+var runable = true
+var spin_done = false
+
+func do_something(_delta):
+	if runable:
+		runable = false
+		var speed = mas.SPEED
+		var last_move = Vector2.ZERO
+		for t in range (mas.iteration):
+			await get_tree().create_timer(0.002).timeout
+			mas.velocity.z = speed*sin(mas.ANGULAR_SPEED*t) + mas.ANGULAR_SPEED*(speed*t+mas.constant)*cos(mas.ANGULAR_SPEED*t)
+			mas.velocity.x = speed*cos(mas.ANGULAR_SPEED*t) - mas.ANGULAR_SPEED*(speed*t+mas.constant)*sin(mas.ANGULAR_SPEED*t)
+			mas.velocity.y = mas.SPEED*2
+			mas.move_and_slide()
+			mas.velocity=lerp(mas.velocity,Vector3.ZERO,0.4)
+			mas.scale = lerp(mas.scale,Vector3(1.5,1.5,1.5),0.1)
+			
+			var dir = mas.velocity
+			var temp = (dir.x**2+dir.z**2)**0.5
+			dir.x = rad_to_deg(atan2(-mas.velocity.y, temp))
+			dir.y= rad_to_deg(atan2(mas.velocity.x,mas.velocity.z))
+			dir.z=0
+
