@@ -1,0 +1,42 @@
+[
+	{
+		"nama":"MAS",
+		"dialogue":"Gimana perasaanmu Doni?",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Melihat keistimewaan yang ada di Indonesia!",
+		"emosi":"3"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Saya senang MAS, pengalaman ini sangat seru",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Gitu dong... Nah sekarang untuk membawa mu balik ke rumah",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Baik MAS!!",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[LOADING...]",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Terdeteksi anomali...",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"DONI HATI-HATI!",
+		"emosi":"4"
+	},
+]

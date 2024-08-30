@@ -15,7 +15,7 @@ var can_move = true
 var alive := true # jadi false pas player menang
 
 func _ready():
-	
+	print("ready"+get_parent().name)
 	assert($"../AnimationPlayer".has_animation(walk_anim_name))
 	assert($"../AnimationPlayer".has_animation(idle_anim_name))
 	

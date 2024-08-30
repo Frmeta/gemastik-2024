@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtm6a5rdgh4c7"]
+[gd_scene load_steps=34 format=3 uid="uid://dtm6a5rdgh4c7"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_gufl0"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_sermd"]
@@ -18,10 +18,12 @@
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="12_7elh3"]
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_a2ix2"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_20ufl"]
-[ext_resource type="PackedScene" uid="uid://cnjd1wnsqfrv8" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
-[ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
+[ext_resource type="PackedScene" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
+[ext_resource type="PackedScene" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
-[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="Script" path="res://Scripts/lighting.gd" id="23_37g3s"]
+[ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="24_02nv0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r77s2"]
 panorama = ExtResource("4_oyo28")
@@ -55,8 +57,22 @@ size = Vector3(1.007, 30, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p23b2"]
 size = Vector3(1.007, 30, 20)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ip7e7"]
+emission_shape_scale = Vector3(500, 100, 20)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 2)
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -2, 0)
+attractor_interaction_enabled = false
+collision_mode = 2
+
 [node name="Level Leviathan" type="Node3D"]
 script = ExtResource("1_gufl0")
+nama_pulau = "leviathan"
 level_eksperimen = true
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_sermd")]
@@ -70,7 +86,7 @@ environment = SubResource("Environment_5tvlx")
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.155, 52.2123, -3.05176e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88939, 54.7095, -3.05176e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -85,6 +101,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="water2" parent="GridMapGround" instance=ExtResource("10_idkyk")]
 transform = Transform3D(80, 0, 0, 0, 73.688, 0, 0, 0, 40, 340, -16.0987, -188.3)
+scale2 = 100.0
 is_raging = true
 
 [node name="jembatans" type="Node3D" parent="GridMapGround"]
@@ -475,5 +492,26 @@ can_fall = false
 [node name="ranting10" parent="Tree Climibing" instance=ExtResource("19_gjfhm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.822, 33.638, 0)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.5279, 104.987, 0)
+light_color = Color(0.776471, 0.831373, 0.466667, 1)
+light_energy = 100.0
+shadow_enabled = true
+omni_range = 0.0
+script = ExtResource("23_37g3s")
+
+[node name="Timer" type="Timer" parent="OmniLight3D"]
+wait_time = 7.0
+autostart = true
+
+[node name="rain_box" parent="." instance=ExtResource("24_02nv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.27, 114.922, 0)
+amount = 400
+lifetime = 3.0
+visibility_aabb = AABB(-386.13, -43.4237, -3.3606, 772.261, 66.8475, 6.7212)
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_ip7e7")
+
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]
+[connection signal="timeout" from="OmniLight3D/Timer" to="OmniLight3D" method="_on_timer_timeout"]

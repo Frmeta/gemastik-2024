@@ -434,7 +434,7 @@ tipe_pager = 1
 transform = Transform3D(7.6386, 0, 0, 0, 4.13093, 0, 0, 0, 20.223, 382.366, 12.703, 0)
 
 [node name="grapling_for_tree3" parent="GridMapGround/grapling for tree" instance=ExtResource("11_cvo7p")]
-transform = Transform3D(14.6911, 0, 0, 0, 4.29627, 0, 0, 0, 38.8944, 630.891, 28.312, 0)
+transform = Transform3D(14.6911, 0, 0, 0, 4.29627, 0, 0, 0, 38.8944, 630.891, 32.5131, 0)
 
 [node name="grapling_for_tree11" parent="GridMapGround/grapling for tree" instance=ExtResource("11_cvo7p")]
 transform = Transform3D(14.6911, 0, 0, 0, 4.29627, 0, 0, 0, 38.8944, 681.229, 69.4916, 0)
@@ -494,7 +494,7 @@ mesh = ExtResource("12_0b65y")
 skeleton = NodePath("../../..")
 
 [node name="Trees(1)Cube187" type="MeshInstance3D" parent="GridMapGround/tree"]
-transform = Transform3D(-1.50924, 0, -2.47186, 0, 4.01921, 0, 2.47186, 0, -1.50924, 626.962, 3.3207, -10.2672)
+transform = Transform3D(-1.50924, 0, -2.47186, 0, 4.01921, 0, 2.47186, 0, -1.50924, 626.962, 6.68166, -10.2672)
 mesh = ExtResource("12_0b65y")
 skeleton = NodePath("../../..")
 

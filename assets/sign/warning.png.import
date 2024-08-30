@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duid2onyoqlkw"
-path.s3tc="res://.godot/imported/Mas_Robot.png-4db332c3fdf5ce2f2f969e6fea798437.s3tc.ctex"
+uid="uid://5yld1ucrd5ah"
+path.s3tc="res://.godot/imported/warning.png-9840bdce0fb922b39ba6f884fd8503dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://3D Assets/mas/Mas_Robot.png"
-dest_files=["res://.godot/imported/Mas_Robot.png-4db332c3fdf5ce2f2f969e6fea798437.s3tc.ctex"]
+source_file="res://assets/sign/warning.png"
+dest_files=["res://.godot/imported/warning.png-9840bdce0fb922b39ba6f884fd8503dd.s3tc.ctex"]
 
 [params]
 

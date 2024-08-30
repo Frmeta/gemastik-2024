@@ -7,32 +7,37 @@ var after_knocking_back = false
 signal become_hostile
 
 func _ready():
+	can_move = get_parent().can_move
+	state = State.DIAM
 	loop_behaviour()
 
 func loop_behaviour():
-	if not is_hostile:
-		if is_hostile:
-			return
-		state = State.DIAM
-		await wait_for_seconds(randf() * 100 + 2) or self.become_hostile
-		
 		if is_hostile:
 			return
 		
-		state = State.KANAN
-		await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
+		if can_move and not is_hostile:
+			state = State.DIAM
+			await wait_for_seconds(randf() * 10 + 2) or self.become_hostile
 		
 		if is_hostile:
 			return
 		
-		state = State.DIAM
-		await wait_for_seconds(randf() * 6 + 5) or self.become_hostile
+		if can_move and not is_hostile:
+			state = State.KANAN
+			await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
 		
 		if is_hostile:
 			return
 		
-		state = State.KIRI
-		await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
+		if can_move and not is_hostile:
+			state = State.DIAM
+			await wait_for_seconds(randf() * 6 + 5) or self.become_hostile
+		
+		if is_hostile:
+			return
+		if can_move and not is_hostile:
+			state = State.KIRI
+			await wait_for_seconds(randf() * 6 + 4) or self.become_hostile
 		
 		if is_hostile:
 			return
@@ -69,9 +74,12 @@ func _process(delta):
 				$"../AnimationPlayer".play(walk_anim_name)
 
 func _on_trigger_hostile_body_entered(body: Player):
-	is_hostile = true
-	self.emit_signal("become_hostile")
-	state=-1
+	if can_move:
+		is_hostile = true
+		self.emit_signal("become_hostile")
+		$"../marah".visible=true
+		$"../trigger_hostile/marah_animator".play("marah")
+		state=-1
 
 func _on_trigger_hostile_body_exited(body: Player):
 	is_hostile=false

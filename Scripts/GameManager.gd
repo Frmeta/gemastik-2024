@@ -152,3 +152,7 @@ func stop_doni():
 
 func stop_mas():
 	mas_sound.stop()
+
+func play_rain(volume_db=0):
+	$rain.volume_db=volume_db
+	$rain.play()

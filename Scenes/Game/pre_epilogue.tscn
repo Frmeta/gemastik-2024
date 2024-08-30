@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://djwlbbkikqsd3"]
+[gd_scene load_steps=19 format=3 uid="uid://esy7beftxm1r"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qxr4p"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_lisxa"]
