@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cnjd1wnsqfrv8" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
 [ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
-[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r77s2"]
 panorama = ExtResource("4_oyo28")
@@ -164,7 +164,6 @@ transform = Transform3D(4.7684, 1.50411, 0, -1.50411, 4.7684, 0, 0, 0, 5, 121.96
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -176,7 +175,6 @@ transform = Transform3D(4.7684, 1.50411, 0, -1.50411, 4.7684, 0, 0, 0, 5, 255.07
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -188,7 +186,6 @@ transform = Transform3D(4.57747, -2.01166, 0, 2.01166, 4.57747, 0, 0, 0, 5, 316.
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -226,7 +223,6 @@ transform = Transform3D(4.7684, 1.50411, 0, -1.50411, 4.7684, 0, 0, 0, 5, 144.54
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -238,7 +234,6 @@ transform = Transform3D(13.4441, -3.90588, 0, 3.90588, 13.4441, 0, 0, 0, 14, 172
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -250,7 +245,6 @@ transform = Transform3D(13.4441, -3.90588, 0, 3.90588, 13.4441, 0, 0, 0, 14, 274
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -262,7 +256,6 @@ transform = Transform3D(4.99603, 0.199088, 0, -0.199088, 4.99603, 0, 0, 0, 5, 18
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -274,7 +267,6 @@ transform = Transform3D(14.7675, 2.6305, 0, -2.6305, 14.7675, 0, 0, 0, 15, 229.0
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
@@ -286,7 +278,6 @@ transform = Transform3D(9.99701, -0.244322, 0, 0.244322, 9.99701, 0, 0, 0, 10, 2
 collision_layer = 2
 
 [node name="Tree" type="MeshInstance3D" parent="GridMapGround/TreesBlocking/Tree 10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_4l577")
 skeleton = NodePath("../../../../..")
 
