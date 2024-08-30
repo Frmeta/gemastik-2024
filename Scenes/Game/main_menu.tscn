@@ -89,6 +89,21 @@ sdfgi_energy = 0.1
 volumetric_fog_emission = Color(0, 0.631373, 0, 1)
 volumetric_fog_detail_spread = 6.0
 
+[sub_resource type="Animation" id="Animation_bmrty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D2/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.340339, 0.555015, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_b5ber"]
 resource_name = "camera_shake"
 length = 0.7
@@ -104,21 +119,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.340339, 0.555015, 0), Vector3(-0.349066, 0.523599, 0.0174533), Vector3(-0.349066, 0.548033, 0.00349066)]
-}
-
-[sub_resource type="Animation" id="Animation_bmrty"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D2/Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.340339, 0.555015, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vk80x"]
@@ -158,8 +158,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -145.0
 offset_top = -33.0
-offset_right = 78335.0
-offset_bottom = 40887.0
+offset_right = 80255.0
+offset_bottom = 41817.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
@@ -423,7 +423,7 @@ autoplay = "camera_shake"
 speed_scale = 0.2
 
 [node name="Camera3D" parent="Node3D2" instance=ExtResource("2_7lqll")]
-transform = Transform3D(0.849893, -0.175901, 0.49673, 0, 0.942641, 0.333807, -0.526956, -0.2837, 0.801144, 20.4862, 16.4862, 24.4862)
+transform = Transform3D(0.849893, -0.175901, 0.496731, 0, 0.942641, 0.333807, -0.526956, -0.2837, 0.801144, 20.4862, 16.4862, 24.4862)
 
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]

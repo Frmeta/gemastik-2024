@@ -277,15 +277,26 @@ var is_fainting = false
 func faint():
 	if !is_fainting:
 		is_fainting = true
-		stop_move()
+		if playerState != PlayerState.SWIMMING:
+			stop_move()
+			
+			$shot_particle.emitting = true
+				
+			animTree.set("parameters/Game/transition_request", "faint")
+			await animTree.animation_finished
+			
+			await get_tree().create_timer(0.6).timeout
 		
-		$shot_particle.emitting = true
-		animTree.set("parameters/Game/transition_request", "faint")
-		await animTree.animation_finished
-		
-		await get_tree().create_timer(0.6).timeout
-	
-		allow_move()
+			allow_move()
+		else:
+			stop_move()
+			visible = false
+			velocity = Vector3.ONE
+			await get_tree().create_timer(0.6).timeout
+			
+			visible = true
+			allow_move()
+			
 		is_fainting = false
 		respawn()
 

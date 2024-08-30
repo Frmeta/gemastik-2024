@@ -14,7 +14,7 @@ subdivide_depth = 20
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d43n7"]
 render_priority = 0
 shader = ExtResource("1_c7d7k")
-shader_parameter/scale = 1.0
+shader_parameter/scale = 2.0
 shader_parameter/scale2 = 1.0
 shader_parameter/ColorParameter = Color(0, 0.717647, 0.796078, 1)
 

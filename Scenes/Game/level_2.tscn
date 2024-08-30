@@ -65,12 +65,13 @@ speed = 0.001
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_0yn5h")]
 
 [node name="Camera3D" parent="." instance=ExtResource("5_riifd")]
+current = false
 
 [node name="air_emitter2" parent="Camera3D" instance=ExtResource("7_7rpcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.826, 0, -10.68)
 
 [node name="Player" parent="." instance=ExtResource("6_vtpnt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8182, 0.641556, 1.14441e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 381.818, 26.6416, 1.14441e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_uu1bu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.757, 40.9504, 0)
@@ -381,9 +382,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4101, -0.0741925, -0.03019
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 361.866, 22.5971, 0)
 
 [node name="Komodo2" parent="Animals" instance=ExtResource("21_sir6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 382.873, 16.4831, 1.90735e-06)
-can_move = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23151, -1.18114, 1.90735e-06)
 
 [node name="Komodo3" parent="Animals" instance=ExtResource("21_sir6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 423.87, 19.8258, 0)
-can_move = false

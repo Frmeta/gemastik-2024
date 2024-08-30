@@ -33,6 +33,8 @@ func open_trap():
 	hint.visible=false
 	if hewan_trapped != null:
 		hewan_trapped.set_can_move(true)
+		if "harimau" in hewan_trapped.name.to_lower():
+			hewan_trapped.release()
 	EventDistributor.emit_signal("trap_opened")
 
 func close_trap():

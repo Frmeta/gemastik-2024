@@ -72,7 +72,7 @@ light_energy = 0.4
 [node name="Camera3D" parent="." instance=ExtResource("5_w5mph")]
 
 [node name="Player" parent="." instance=ExtResource("6_7t4t5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.997894, -5.24621, 0.000610352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 833.056, 35.1079, 0.000610352)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_dttx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -478,7 +478,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
 mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_nu0dd")]
-transform = Transform3D(0.165912, 0, 0, 0, 0.165912, 0, 0, 0, 0.165912, 1313.39, 30.2893, -0.871899)
+transform = Transform3D(0.125374, 0, 0, 0, 0.125374, 0, 0, 0, 0.125374, 1313.39, 30.248, -0.871899)
 scene_after_win = "level_select"
 
 [node name="Animals" type="Node3D" parent="."]
@@ -487,7 +487,7 @@ scene_after_win = "level_select"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4819, -2.0842, -0.301669)
 
 [node name="Harimau Sumatera2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 870.255, 16.5783, -0.301669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87178, -5.11231, -0.301669)
 mesh = NodePath("../Harimau Sumatera/Harimau_Skeleton/Skeleton3D/Harimau_001")
 can_move = false
 

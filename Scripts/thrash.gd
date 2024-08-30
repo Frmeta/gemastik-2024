@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if can_pickup:
 		if Input.is_action_just_pressed("ui_accept"):
+			can_pickup=false
 			EventDistributor.emit_signal("rubbish_collected")
 			$"thrash sign".visible = false
 			GM.play_audio("res://audio/marimba-win-a-3-209674.ogg")

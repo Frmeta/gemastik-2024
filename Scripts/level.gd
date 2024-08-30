@@ -29,10 +29,13 @@ func _ready():
 	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-10)
 	elif nama_pulau.to_lower() == "sulawesi": # Sulawesi
+		GM.play_rain(-10)
 		GM.play_audio_background("res://audio/Donkgedank - ANGLAYANG (Relaxing, Cinematic Nusantara) Royalty Free.ogg",10)
 	elif nama_pulau.to_lower() == "sumatera": # Sumatera
+		GM.play_rain(-10)
 		GM.play_audio_background("res://audio/Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara).ogg",10)
 	elif nama_pulau.to_lower() == "leviathan": # Levi
+		GM.play_rain(-10)
 		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 10)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2

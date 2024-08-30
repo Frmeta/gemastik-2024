@@ -25,7 +25,6 @@ func _init():
 func _ready():
 	behaviour = get_node("Node3D") if has_node("Node3D") else null
 	set_can_move(can_move)
-	
 	# assert next_pass material
 	assert(mesh != null)
 	mesh.mesh = mesh.mesh.duplicate(true)
@@ -94,5 +93,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func set_can_move(new_state):
+	print(self.name+"in set can move")
 	if (is_instance_valid(behaviour)):
+		print("set false")
 		behaviour.can_move=new_state
+
+func release():
+	$Node3D.loop_behaviour()
+	

@@ -628,7 +628,7 @@ directional_shadow_split_1 = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56733, -1.91681, 7.6294e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6672, -2.25562, 7.6294e-06)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.751393, -0.464771, 0)
