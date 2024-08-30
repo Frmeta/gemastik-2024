@@ -77,7 +77,6 @@ texture = ExtResource("3_alr0d")
 expand_mode = 4
 
 [node name="Hewan Info" type="Control" parent="PanelAlmanac"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,17 +115,17 @@ expand_mode = 1
 
 [node name="Nama hewan" type="Label" parent="PanelAlmanac/Hewan Info"]
 layout_mode = 0
-offset_left = 371.2
-offset_top = 143.2
-offset_right = 678.17
-offset_bottom = 177.2
+offset_left = 347.2
+offset_top = 144.0
+offset_right = 716.2
+offset_bottom = 178.0
 pivot_offset = Vector2(156, 18.4)
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_68roq")
-theme_override_font_sizes/font_size = 28
-text = "Orang Utan"
+theme_override_font_sizes/font_size = 26
+text = "Kangguru Pohon Mantel Emas"
 horizontal_alignment = 1
 
 [node name="Nama latin" type="Label" parent="PanelAlmanac/Hewan Info"]
@@ -215,9 +214,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+current_tab = 1
 tabs_visible = false
 
 [node name="Halaman Peta Indo" type="Control" parent="PanelAlmanac/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Peta Indonesia" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
@@ -327,7 +328,6 @@ offset_right = -154.0
 offset_bottom = 130.0
 
 [node name="Halaman Detail Pulau" type="Control" parent="PanelAlmanac/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Peta Pulau" type="TextureRect" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]

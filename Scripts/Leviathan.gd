@@ -111,11 +111,11 @@ func _physics_process(delta):
 		const FREQUENCY = 0.2
 		const Y_RANGE = 10
 		const X_RANGE = 10
-		const SPEED = 6
+		const SPEED = 7
 		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		# target_position = Vector3(player_x, player_y-HEIGHT + HEIGHT*sin(teta), -DEPTH*cos(teta))
 		var diff_to_player = target_position.distance_to(GM.doni.global_position)
-		target_position = target_position.move_toward(GM.doni.global_position, (SPEED*2 if diff_to_player > 25 else SPEED)*delta*(sin(teta)/2+1))
+		target_position = target_position.move_toward(GM.doni.global_position, (SPEED*2 if diff_to_player > 25 else SPEED)*delta*(sin(teta)*0.7+1))
 		
 		if GM.levi_phase != 2:
 			phase = LeviPhase.NONE

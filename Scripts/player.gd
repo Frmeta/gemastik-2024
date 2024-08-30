@@ -144,11 +144,12 @@ func _physics_process(delta):
 	# Grapling Hook physics
 	if $Grapling.hooked:
 		var grapling_tip_local_pos = to_local($Grapling.tip)
-		var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
-		velocity += grapling_tip_local_pos.normalized() * -vel;
-		#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
-			#position = $Grapling.tip
-		velocity += (grapling_tip_local_pos).normalized() * CHAIN_PULL
+		if grapling_tip_local_pos.length() > 0.3:
+			var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
+			velocity += grapling_tip_local_pos.normalized() * -vel;
+			#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
+				#position = $Grapling.tip
+			velocity += (grapling_tip_local_pos).normalized() * CHAIN_PULL
 	
 	# Clamped fall speed
 	if velocity.y < -fall_clamp:

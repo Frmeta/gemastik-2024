@@ -21,8 +21,9 @@ func _ready():
 		GM.new_unlocked = -1
 	else:
 		for i in range(1,GM.explored_level+1):
-			var temp = get_node("paths" + str(i))
-			temp.visible=true
+			var temp = get_node_or_null("paths" + str(i))
+			if temp != null:
+				temp.visible=true
 	
 	# init pins
 	for i in range(MAX_LEVEL):

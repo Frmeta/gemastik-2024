@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtm6a5rdgh4c7"]
+[gd_scene load_steps=30 format=3 uid="uid://dtm6a5rdgh4c7"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_gufl0"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_sermd"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="11_j2ttk"]
 [ext_resource type="ArrayMesh" uid="uid://ct7wmgykdg7tf" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_210.res" id="12_4l577"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="12_7elh3"]
-[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_a2ix2"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_20ufl"]
 [ext_resource type="PackedScene" uid="uid://cnjd1wnsqfrv8" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
 [ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
@@ -57,6 +56,7 @@ size = Vector3(1.007, 30, 20)
 
 [node name="Level Leviathan" type="Node3D"]
 script = ExtResource("1_gufl0")
+nama_pulau = "leviathan"
 level_eksperimen = true
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_sermd")]
@@ -70,7 +70,7 @@ environment = SubResource("Environment_5tvlx")
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.155, 52.2123, -3.05176e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94513, 71.8364, -1.52588e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -337,44 +337,6 @@ data = {
 [node name="DialogueManager" parent="." instance=ExtResource("11_j2ttk")]
 layer = 11
 
-[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -201.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
-offset_left = 21.0
-offset_top = 113.0
-offset_right = 80.0
-offset_bottom = 144.0
-focus_mode = 0
-text = "spawn"
-script = ExtResource("12_a2ix2")
-event = "spawn_mas"
-
-[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
-offset_left = 21.0
-offset_top = 153.0
-offset_right = 99.0
-offset_bottom = 184.0
-focus_mode = 0
-text = "despawn"
-script = ExtResource("12_a2ix2")
-event = "despawn_mas"
-
 [node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 567.435, 121.301, -0.871899)
 scene_after_win = "pre_epilogue"
@@ -474,6 +436,3 @@ can_fall = false
 
 [node name="ranting10" parent="Tree Climibing" instance=ExtResource("19_gjfhm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.822, 33.638, 0)
-
-[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]
