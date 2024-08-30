@@ -436,6 +436,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1079.01, 49.1877, 0)
 visibility_aabb = AABB(-108.859, -28.9842, -3.3606, 217.717, 37.9685, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_l7sii")
 
+[node name="rain_box9" parent="GridMapGround" instance=ExtResource("23_3puiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1275.77, 49.1877, 0)
+visibility_aabb = AABB(-108.859, -28.9842, -3.3606, 217.717, 37.9685, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_l7sii")
+
+[node name="rain_box10" parent="GridMapGround" instance=ExtResource("23_3puiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1414.68, 49.1877, 0)
+visibility_aabb = AABB(-108.859, -28.9842, -3.3606, 217.717, 37.9685, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_l7sii")
+
 [node name="rain_box4" parent="GridMapGround" instance=ExtResource("23_3puiu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 547.189, 17.9719, 0)
 visibility_aabb = AABB(-41.8831, -28.9842, -3.3606, 83.7662, 37.9685, 6.7212)

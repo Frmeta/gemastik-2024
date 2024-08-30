@@ -137,7 +137,7 @@ func reset_pins_animation():
 func _on_main_menu_button_pressed():
 	#play audio
 	GM.play_audio("res://audio/a/button_clickback.ogg")
-	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
+	Transition.change_scene("res://Scenes/Game/main_menu.tscn")
 
 func _play_animation_new_unlocked():
 	var index = GM.new_unlocked

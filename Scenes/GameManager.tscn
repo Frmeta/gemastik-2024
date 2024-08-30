@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bw6v3np21mej3" path="res://audio/a/little-robot-sound1.ogg" id="3_r0j2k"]
 
 [node name="GameManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_el516")
 pulau_list_resource = ExtResource("2_qros2")
 
