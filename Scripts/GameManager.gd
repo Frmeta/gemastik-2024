@@ -22,6 +22,7 @@ var scanned_animal := []
 @export var pulau_list_resource : pulau_list
 
 const FILE_NAME = "user://donisavegame.json"
+var levi_phase := 0
 
 var data:
 	get:

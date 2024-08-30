@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnjd1wnsqfrv8"]
+
+[ext_resource type="Script" path="res://Scripts/LeviArea.gd" id="1_05m7x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ecdl"]
+size = Vector3(30, 30, 5)
+
+[node name="Levi Area" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_05m7x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7ecdl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

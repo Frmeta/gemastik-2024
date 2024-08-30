@@ -95,7 +95,7 @@ func _ready():
 		# Generate Islands
 		
 		
-		const EXTEND_STEP = 2
+		const EXTEND_STEP = 3
 		const SMOOTH_STEP = 3
 		
 		# Store highest smooth in list

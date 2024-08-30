@@ -98,7 +98,7 @@ _data = {
 "shake": SubResource("Animation_4viop")
 }
 
-[node name="jembatan" type="Node3D"]
+[node name="Ranting" type="Node3D"]
 script = ExtResource("1_fye62")
 
 [node name="Jembatanbody" type="StaticBody3D" parent="."]

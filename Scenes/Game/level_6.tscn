@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_7t4t5"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_dttx8"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="8_0eynm"]
-[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="9_7qae8"]
+[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="9_7qae8"]
 [ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="9_vthyd"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_0c27q"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="10_e1a4g"]
