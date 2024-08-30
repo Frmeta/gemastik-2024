@@ -1,0 +1,127 @@
+[gd_scene load_steps=19 format=3 uid="uid://djwlbbkikqsd3"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_qxr4p"]
+[ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_lisxa"]
+[ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_eoc6t"]
+[ext_resource type="Texture2D" uid="uid://csu6lmsg6rxkx" path="res://assets/sky/Cloudy_Sky-Night_01-512x512.png" id="4_63vu1"]
+[ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="5_2utrr"]
+[ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_0hvco"]
+[ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="6_n22mb"]
+[ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="7_axpj4"]
+[ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="9_uj1o0"]
+[ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="10_oywma"]
+[ext_resource type="PackedScene" uid="uid://3bii3f0bjn6u" path="res://Scenes/water.tscn" id="10_rcesq"]
+[ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_seu4f"]
+[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="17_u6tkt"]
+[ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="18_ktyvt"]
+[ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="20_8sm7p"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r77s2"]
+panorama = ExtResource("4_63vu1")
+
+[sub_resource type="Sky" id="Sky_2bns5"]
+sky_material = SubResource("PanoramaSkyMaterial_r77s2")
+
+[sub_resource type="Environment" id="Environment_5tvlx"]
+background_mode = 2
+sky = SubResource("Sky_2bns5")
+sky_custom_fov = 4.4
+ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.7
+sdfgi_energy = 0.1
+volumetric_fog_emission = Color(0, 0.631373, 0, 1)
+volumetric_fog_detail_spread = 6.0
+
+[node name="Pre Epilogue" type="Node3D"]
+script = ExtResource("1_qxr4p")
+level_eksperimen = true
+
+[node name="Mouse Position Locator" parent="." instance=ExtResource("2_lisxa")]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("3_eoc6t")]
+environment = SubResource("Environment_5tvlx")
+
+[node name="DirectionalLight3D" parent="." instance=ExtResource("5_2utrr")]
+
+[node name="Camera3D" parent="." instance=ExtResource("6_n22mb")]
+is_leviathan = true
+
+[node name="Player" parent="." instance=ExtResource("7_axpj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 559.463, 60.0029, -3.24249e-05)
+
+[node name="skeleton_mas" parent="." instance=ExtResource("6_0hvco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
+
+[node name="GridMapGround" parent="." instance=ExtResource("9_uj1o0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+data = {
+"cells": PackedInt32Array(1311132, 0, 1, 1376668, 0, 1, 1180061, 0, 1, 1245597, 0, 1, 1311133, 0, 1, 1114526, 0, 1, 1180062, 0, 1, 852383, 0, 1, 917919, 0, 1, 983455, 0, 1, 1048991, 0, 1, 1114527, 0, 1, 1180063, 0, 1, 786848, 0, 1, 852384, 0, 1, 721313, 0, 1, 786849, 0, 1, 721314, 0, 1, 721315, 0, 1, 721316, 0, 1, 721317, 0, 1, 786854, 0, 1, 852390, 0, 1, 917927, 0, 1, 983464, 0, 1, 1049000, 0, 1, 1114536, 0, 1, 1180073, 0, 1, 1245609, 0, 1, 1245610, 0, 1, 1311146, 0, 1, 1311147, 0, 1, 1376683, 0, 1, 1442219, 0, 1, 1376684, 0, 1, 1376685, 0, 1, 1376686, 0, 1, 1376687, 0, 1, 1376688, 0, 1, 1376689, 0, 1, 1376690, 0, 1, 1442226, 0, 1, 1442227, 0, 1, 1311156, 0, 1, 1376692, 0, 1, 1442228, 0, 1, 1114549, 0, 1, 1180085, 0, 1, 1245621, 0, 1, 1311157, 0, 1, 983478, 0, 1, 1049014, 0, 1, 1114550, 0, 1, 917943, 0, 1, 983479, 0, 1, 786872, 0, 1, 852408, 0, 1, 786873, 0, 1, 655802, 0, 1, 721338, 0, 1, 590267, 0, 1, 524732, 0, 1)
+}
+algo = 2
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="water2" parent="GridMapGround" instance=ExtResource("10_rcesq")]
+transform = Transform3D(80, 0, 0, 0, 73.688, 0, 0, 0, 40, 340, -16.0987, -188.3)
+
+[node name="CanvasLayerLevel" parent="." instance=ExtResource("15_seu4f")]
+
+[node name="DialogueManager" parent="." instance=ExtResource("10_oywma")]
+layer = 11
+
+[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 144.0
+focus_mode = 0
+text = "spawn"
+script = ExtResource("17_u6tkt")
+event = "spawn_mas"
+
+[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
+offset_left = 21.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 184.0
+focus_mode = 0
+text = "despawn"
+script = ExtResource("17_u6tkt")
+event = "despawn_mas"
+
+[node name="WinArea" parent="." instance=ExtResource("18_ktyvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 567.435, 121.301, -0.871899)
+
+[node name="Tree Climibing" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+
+[node name="BigTree 2" type="MeshInstance3D" parent="Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 30, 0, 0, 0, 1, 566.661, 24.5789, -2.93379)
+mesh = ExtResource("20_8sm7p")
+skeleton = NodePath("../..")
+
+[node name="BigTree 5" type="MeshInstance3D" parent="Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 557.307, 23.7316, -2.93379)
+mesh = ExtResource("20_8sm7p")
+skeleton = NodePath("../..")
+
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

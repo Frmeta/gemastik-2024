@@ -645,6 +645,12 @@ move_cam_to = NodePath("../../thrash/Node3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235.32, 0.246823, 0.643862)
 file_name = "sampah_done"
 
+[node name="checkpoint_awal" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("16_xcqj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15088, -6.2423, 0)
+wallleft = NodePath("../../invisible_walls/invisiblewall anoakiri")
+wallright = NodePath("../../invisible_walls/invisiblewall anoakanan")
+syarat_hewan = Array[String](["anoa", "burung maleo"])
+
 [node name="checkpoint" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("16_xcqj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.189, -1.32553, 0)
 wallleft = NodePath("../../invisible_walls/invisiblewall sampahkiri")
