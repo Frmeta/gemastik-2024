@@ -65,7 +65,7 @@ func _physics_process(delta):
 			# follow player
 			phase = LeviPhase.FOLLOW
 			msec_start_phase = float(Time.get_ticks_msec())
-			target_position = Vector3(100, 30, -20)
+			#target_position = Vector3(100, 30, -20)
 			
 		elif GM.levi_phase == 3:
 			# jump
