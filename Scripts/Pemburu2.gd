@@ -28,7 +28,12 @@ func enable(a=""):
 	is_enabled = true
 	is_triggered = true
 	visible = true
-	
+
+func disable(a=""):
+	is_enabled = false
+	is_triggered = false
+	visible = false
+
 func _physics_process(delta):
 	if !is_enabled:
 		visible = false
