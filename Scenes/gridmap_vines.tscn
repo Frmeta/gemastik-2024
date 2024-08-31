@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c33fd4gskyv57"]
 
-[ext_resource type="MeshLibrary" uid="uid://cpyfb8ro58gfl" path="res://Tilemap/tilemap_nature15.tres" id="1_wf00s"]
+[ext_resource type="MeshLibrary" uid="uid://bkxn8ya66buo2" path="res://Tilemap/tilemap_nature_final.tres" id="1_q5g2w"]
 
 [node name="GridMapVines" type="GridMap"]
-mesh_library = ExtResource("1_wf00s")
+mesh_library = ExtResource("1_q5g2w")
 cell_size = Vector3(1.3, 1.3, 1.3)
 collision_layer = 16
 collision_mask = 0

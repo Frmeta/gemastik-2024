@@ -92,7 +92,6 @@ func _physics_process(delta):
 		if tmp3 == 0:
 			x = player_x
 		elif tmp3 == 1:
-			print("dari kanan")
 			x = player_x + cos(teta) * X_RANGE
 		else:
 			x = player_x - cos(teta) * X_RANGE
@@ -123,7 +122,6 @@ func _physics_process(delta):
 				phase = LeviPhase.SIN_DONE
 			else:
 				phase = LeviPhase.NONE
-			print("sin done")
 			
 		open_lerp = 0
 		
