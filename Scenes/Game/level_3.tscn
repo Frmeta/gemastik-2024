@@ -1269,7 +1269,7 @@ mesh = SubResource("ArrayMesh_db26d")
 skeleton = NodePath("")
 
 [node name="cart_iron_gold2" type="MeshInstance3D" parent="GridMapCave"]
-transform = Transform3D(0.437976, 0.0468434, 0, 0, 0, -0.512702, -0.266534, 0.0769742, 0, 1152.96, 144.588, -7.76449)
+transform = Transform3D(0.437976, 0.0468434, 0, 0, 0, -0.512702, -0.266534, 0.0769742, 0, 1152.96, 144.51, -7.76449)
 mesh = SubResource("ArrayMesh_db26d")
 skeleton = NodePath("")
 
@@ -1309,31 +1309,31 @@ mesh = SubResource("ArrayMesh_ijarc")
 skeleton = NodePath("")
 
 [node name="crate" type="MeshInstance3D" parent="GridMapCave"]
-transform = Transform3D(0.841718, 0, -0.539917, 0, 1, 0, 0.539917, 0, 0.841718, 1265.56, 153.528, -1.94019)
+transform = Transform3D(0.841718, 0, -0.539917, 0, 1, 0, 0.539917, 0, 0.841718, 1265.56, 153.293, -1.94019)
 mesh = SubResource("ArrayMesh_b0vi8")
 skeleton = NodePath("")
 
 [node name="crate2" type="MeshInstance3D" parent="GridMapCave"]
-transform = Transform3D(0.886406, 0, 0.462909, 0, 1, 0, -0.462909, 0, 0.886406, 1269.92, 153.528, -2.11829)
+transform = Transform3D(0.886406, 0, 0.462909, 0, 1, 0, -0.462909, 0, 0.886406, 1269.92, 153.293, -2.11829)
 mesh = SubResource("ArrayMesh_b0vi8")
 skeleton = NodePath("")
 
 [node name="crate3" type="MeshInstance3D" parent="GridMapCave"]
-transform = Transform3D(-0.159054, 0, -0.98727, 0, 1, 0, 0.98727, 0, -0.159054, 1265.92, 155.496, -1.24451)
+transform = Transform3D(-0.159054, 0, -0.98727, 0, 1, 0, 0.98727, 0, -0.159054, 1265.92, 155.261, -1.24451)
 mesh = SubResource("ArrayMesh_b0vi8")
 skeleton = NodePath("")
 
 [node name="minerals" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1216.23, 126.795, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1216.23, 128.069, 0)
 
 [node name="minerals2" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(0.124762, 0, -0.992187, 0, 1, 0, 0.992187, 0, 0.124762, 1217.05, 126.702, 0)
+transform = Transform3D(0.124762, 0, -0.992187, 0, 1, 0, 0.992187, 0, 0.124762, 1217.05, 128.02, 0)
 
 [node name="minerals3" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(-0.323587, 0, -0.946198, 0, 1, 0, 0.946198, 0, -0.323587, 1217.05, 126.702, -1.59607)
+transform = Transform3D(-0.323587, 0, -0.946198, 0, 1, 0, 0.946198, 0, -0.323587, 1216.2, 129.401, -0.152181)
 
 [node name="minerals4" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(-0.323587, 0, -0.946198, 0, 1, 0, 0.946198, 0, -0.323587, 1216.28, 126.966, -1.59607)
+transform = Transform3D(-0.323587, 0, -0.946198, 0, 1, 0, 0.946198, 0, -0.323587, 1219.87, 127.652, -3.33172)
 
 [node name="minerals17" parent="GridMapCave" instance=ExtResource("22_kvfih")]
 transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.698751, 1216.28, 126.966, -1.59607)
@@ -1342,7 +1342,7 @@ transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.69
 transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.698751, 1235.42, 125.859, -0.208984)
 
 [node name="minerals19" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(1.86509, 0, -1.0883, 0, 2.15939, 0, 1.0883, 0, 1.86509, 1215.46, 157.087, 0.757568)
+transform = Transform3D(1.86509, 0, -1.0883, 0, 2.15939, 0, 1.0883, 0, 1.86509, 1210.61, 157.557, 0.0290838)
 
 [node name="minerals20" parent="GridMapCave" instance=ExtResource("22_kvfih")]
 transform = Transform3D(1.86509, 0, -1.0883, 0, 2.15939, 0, 1.0883, 0, 1.86509, 1251.78, 140.105, 0.757568)
@@ -1360,7 +1360,7 @@ transform = Transform3D(2.91089, 0, -1.69854, 0, 3.37021, 0, 1.69854, 0, 2.91089
 transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.698751, 1190.74, 149.658, -0.650757)
 
 [node name="minerals22" parent="GridMapCave" instance=ExtResource("22_kvfih")]
-transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.698751, 1184.71, 168.202, 0.606567)
+transform = Transform3D(-0.698751, 0, -2.04321, 0, 2.15939, 0, 2.04321, 0, -0.698751, 1184.71, 168.958, 0.00801098)
 
 [node name="minerals5" parent="GridMapCave" instance=ExtResource("22_kvfih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1226.08, 135.994, 1.0614)
