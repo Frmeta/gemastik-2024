@@ -1,6 +1,6 @@
 extends GridMap
 
-const START_X = -60
+const START_X = -80
 const END_X = 2000
 
 const START_Y = -30

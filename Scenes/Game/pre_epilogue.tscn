@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="10_oywma"]
 [ext_resource type="PackedScene" uid="uid://3bii3f0bjn6u" path="res://Scenes/water.tscn" id="10_rcesq"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_seu4f"]
-[ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="17_u6tkt"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="18_ktyvt"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="20_8sm7p"]
 
@@ -69,44 +68,6 @@ transform = Transform3D(80, 0, 0, 0, 73.688, 0, 0, 0, 40, 340, -16.0987, -188.3)
 [node name="DialogueManager" parent="." instance=ExtResource("10_oywma")]
 layer = 11
 
-[node name="CanvasLayerSamSpawn" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayerSamSpawn"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -201.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayerSamSpawn/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="ButtonSpawn" type="Button" parent="CanvasLayerSamSpawn"]
-offset_left = 21.0
-offset_top = 113.0
-offset_right = 80.0
-offset_bottom = 144.0
-focus_mode = 0
-text = "spawn"
-script = ExtResource("17_u6tkt")
-event = "spawn_mas"
-
-[node name="ButtonDespawn" type="Button" parent="CanvasLayerSamSpawn"]
-offset_left = 21.0
-offset_top = 153.0
-offset_right = 99.0
-offset_bottom = 184.0
-focus_mode = 0
-text = "despawn"
-script = ExtResource("17_u6tkt")
-event = "despawn_mas"
-
 [node name="WinArea" parent="." instance=ExtResource("18_ktyvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 567.435, 121.301, -0.871899)
 
@@ -122,6 +83,3 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 557.307, 23.7316, -2.93379)
 mesh = ExtResource("20_8sm7p")
 skeleton = NodePath("../..")
-
-[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonSpawn" to="CanvasLayerSamSpawn/ButtonSpawn" method="_on_button_up"]
-[connection signal="button_up" from="CanvasLayerSamSpawn/ButtonDespawn" to="CanvasLayerSamSpawn/ButtonDespawn" method="_on_button_up"]

@@ -36,7 +36,7 @@ func _ready():
 		GM.play_audio_background("res://audio/Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara).ogg",10)
 	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.play_rain(-10)
-		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3",-10)
+		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 10)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout

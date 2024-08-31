@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo2id2ctx5psl"]
 
-[ext_resource type="MeshLibrary" uid="uid://cpyfb8ro58gfl" path="res://Tilemap/tilemap_nature15.tres" id="1_88wot"]
+[ext_resource type="MeshLibrary" uid="uid://bkxn8ya66buo2" path="res://Tilemap/tilemap_nature_final.tres" id="1_wop88"]
 [ext_resource type="Script" path="res://Scripts/gridmap_ground.gd" id="2_cfs8c"]
 
 [node name="GridMapCave" type="GridMap"]
-mesh_library = ExtResource("1_88wot")
+mesh_library = ExtResource("1_wop88")
 cell_size = Vector3(1.3, 1.3, 1.3)
 collision_layer = 2
 collision_mask = 0

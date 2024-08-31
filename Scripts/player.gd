@@ -83,6 +83,7 @@ func allow_move():
 func stop_move(_file_path="", _a="", _b="", _c=""):
 	#print("stop move")
 	can_move = false
+	velocity = Vector3.ZERO # kalo swim/climb suka ngerusak ini
 	$Grapling.release()
 	is_scanning = false
 
@@ -144,11 +145,12 @@ func _physics_process(delta):
 	# Grapling Hook physics
 	if $Grapling.hooked:
 		var grapling_tip_local_pos = to_local($Grapling.tip)
-		var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
-		velocity += grapling_tip_local_pos.normalized() * -vel;
-		#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
-			#position = $Grapling.tip
-		velocity += (grapling_tip_local_pos).normalized() * CHAIN_PULL
+		if grapling_tip_local_pos.length() > 0.3:
+			var vel = grapling_tip_local_pos.dot(velocity)/grapling_tip_local_pos.length()
+			velocity += grapling_tip_local_pos.normalized() * -vel;
+			#if grapling_tip_local_pos.length() > $Grapling.current_rope_length:
+				#position = $Grapling.tip
+			velocity += (grapling_tip_local_pos).normalized() * CHAIN_PULL
 	
 	# Clamped fall speed
 	if velocity.y < -fall_clamp:
@@ -156,95 +158,97 @@ func _physics_process(delta):
 	
 	# ANIMATION
 	var dir = abs(Vector2(velocity.x, velocity.y))
-	match playerState:
-		PlayerState.CLIMBING:
-			# CLIMBING ANIMATION
-			model3d.get_node("Player").position.y = -0.5 # sam moment
-			animTree.set("parameters/Game/transition_request", "is_climbing")
-			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
-			model3d.get_node("Player").rotation.y = deg_to_rad(180)
-			
-			
-			animTree.set("parameters/ClimbDir/blend_position", Vector2(velocity.x, velocity.y) / climbing_speed)
-			if velocity==Vector3.ZERO:
-				animTree.set("parameters/ClimbingSpeed/scale", 0)
-			else:
-				animTree.set("parameters/ClimbingSpeed/scale", 3)
-			$walkdust.stop_emit()
-			
-		PlayerState.SWIMMING:
-			# SWIMMING ANIMATION
-			model3d.get_node("Player").position.y = 0
-			animTree.set("parameters/Game/transition_request", "is_swimming")
-			
-			var curr_blend_pos = animTree.get("parameters/SwimState/blend_position")
-			const blend_pos_speed = 3
-			if velocity == Vector3.ZERO:
-				animTree.set("parameters/SwimState/blend_position", min(0, curr_blend_pos - blend_pos_speed*delta))
-				model3d.get_node("Player").rotation.x = deg_to_rad(0)
-				model3d.get_node("Player").rotation.y = deg_to_rad(0)
-			else:
-				animTree.set("parameters/SwimState/blend_position", max(1, curr_blend_pos + blend_pos_speed*delta))
-				var swim_dir_x = 0 if velocity.x == 0 else 1 if velocity.x > 0 else -1
-				var swim_dir_y = 0 if velocity.y == 0 else 1 if velocity.y > 0 else -1
+	
+	if is_fainting:
+		animTree.set("parameters/Game/transition_request", "faint")
+		$walkdust.stop_emit()
+	else:
+		match playerState:
+			PlayerState.CLIMBING:
+				# CLIMBING ANIMATION
+				model3d.get_node("Player").position.y = -0.5 # sam moment
+				animTree.set("parameters/Game/transition_request", "is_climbing")
+				model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
+				model3d.get_node("Player").rotation.y = deg_to_rad(180)
 				
-				var target_rot_y = swim_dir_x * deg_to_rad(40)
-				var target_rot_x = -swim_dir_y * deg_to_rad(40)
-				const rot_speed = deg_to_rad(180)
-				model3d.get_node("Player").rotation.y = \
-					move_toward(model3d.get_node("Player").rotation.y, target_rot_y, rot_speed*delta)
-				model3d.get_node("Player").rotation.x = \
-					move_toward(model3d.get_node("Player").rotation.x, target_rot_x, rot_speed*delta)
-			$walkdust.stop_emit()
-			
-		PlayerState.ON_LAND:
-			# ON LAND ANIMATION
-			model3d.get_node("Player").position.y = 0
-			if is_fainting:
-				animTree.set("parameters/Game/transition_request", "faint")
-			else:
+				
+				animTree.set("parameters/ClimbDir/blend_position", Vector2(velocity.x, velocity.y) / climbing_speed)
+				if velocity==Vector3.ZERO:
+					animTree.set("parameters/ClimbingSpeed/scale", 0)
+				else:
+					animTree.set("parameters/ClimbingSpeed/scale", 3)
+				$walkdust.stop_emit()
+				
+			PlayerState.SWIMMING:
+				# SWIMMING ANIMATION
+				model3d.get_node("Player").position.y = 0
+				animTree.set("parameters/Game/transition_request", "is_swimming")
+				
+				var curr_blend_pos = animTree.get("parameters/SwimState/blend_position")
+				const blend_pos_speed = 3
+				if velocity == Vector3.ZERO:
+					animTree.set("parameters/SwimState/blend_position", min(0, curr_blend_pos - blend_pos_speed*delta))
+					model3d.get_node("Player").rotation.x = deg_to_rad(0)
+					model3d.get_node("Player").rotation.y = deg_to_rad(0)
+				else:
+					animTree.set("parameters/SwimState/blend_position", max(1, curr_blend_pos + blend_pos_speed*delta))
+					var swim_dir_x = 0 if velocity.x == 0 else 1 if velocity.x > 0 else -1
+					var swim_dir_y = 0 if velocity.y == 0 else 1 if velocity.y > 0 else -1
+					
+					var target_rot_y = swim_dir_x * deg_to_rad(40)
+					var target_rot_x = -swim_dir_y * deg_to_rad(40)
+					const rot_speed = deg_to_rad(180)
+					model3d.get_node("Player").rotation.y = \
+						move_toward(model3d.get_node("Player").rotation.y, target_rot_y, rot_speed*delta)
+					model3d.get_node("Player").rotation.x = \
+						move_toward(model3d.get_node("Player").rotation.x, target_rot_x, rot_speed*delta)
+				$walkdust.stop_emit()
+				
+			PlayerState.ON_LAND:
+				# ON LAND ANIMATION
+				model3d.get_node("Player").position.y = 0
 				animTree.set("parameters/Game/transition_request", "is_on_land")
-			model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
-			if velocity.x == 0:
-				model3d.get_node("Player").rotation.y = deg_to_rad(0)
-			elif velocity.x > 0:
-				model3d.get_node("Player").rotation.y = deg_to_rad(40)
-			else:
-				if not pushed_by_air:
-					model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+				model3d.get_node("Player").rotation.x = deg_to_rad(0) # selain swimming harus nol
+				if velocity.x == 0:
+					model3d.get_node("Player").rotation.y = deg_to_rad(0)
+				elif velocity.x > 0:
+					model3d.get_node("Player").rotation.y = deg_to_rad(40)
 				else:
-					if last_dir>0:
-						model3d.get_node("Player").rotation.y = deg_to_rad(40)
-					else:
+					if not pushed_by_air:
 						model3d.get_node("Player").rotation.y = deg_to_rad(-40)
-			if not pushed_by_air:
-				last_dir = velocity.x
-			
-			if is_on_floor():
-				if is_on_air:
-					is_on_air=false
-					$landing_dust.emitting=true
-				# grounded
-				animTree.set("parameters/Platformer/conditions/is_floating", false)
-				animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+					else:
+						if last_dir>0:
+							model3d.get_node("Player").rotation.y = deg_to_rad(40)
+						else:
+							model3d.get_node("Player").rotation.y = deg_to_rad(-40)
+				if not pushed_by_air:
+					last_dir = velocity.x
 				
-				if (abs(velocity.x) < 0.1 and air_speed==0) or (air_speed!=0 and pushed_by_air) :
-					animTree.set("parameters/Platformer/conditions/is_running", false)
-					animTree.set("parameters/Platformer/conditions/is_not_running", true)
-					$walkdust.stop_emit()
-					pass
+				if is_on_floor():
+					if is_on_air:
+						is_on_air=false
+						$landing_dust.emitting=true
+					# grounded
+					animTree.set("parameters/Platformer/conditions/is_floating", false)
+					animTree.set("parameters/Platformer/conditions/is_not_floating", true)
+					
+					if (abs(velocity.x) < 0.1 and air_speed==0) or (air_speed!=0 and pushed_by_air) :
+						animTree.set("parameters/Platformer/conditions/is_running", false)
+						animTree.set("parameters/Platformer/conditions/is_not_running", true)
+						$walkdust.stop_emit()
+						pass
+					else:
+						animTree.set("parameters/Platformer/conditions/is_running", true)
+						animTree.set("parameters/Platformer/conditions/is_not_running", false)
+						if !$walking.playing:
+							$walking.pitch_scale = _RNG.randf_range(1,1.2)
+							$walking.play()
+						$walkdust.emit(dir)
 				else:
-					animTree.set("parameters/Platformer/conditions/is_running", true)
-					animTree.set("parameters/Platformer/conditions/is_not_running", false)
-					if !$walking.playing:
-						$walking.pitch_scale = _RNG.randf_range(1,1.2)
-						$walking.play()
-					$walkdust.emit(dir)
-			else:
-				# floating
-				animTree.set("parameters/Platformer/conditions/is_floating", true)
-				animTree.set("parameters/Platformer/conditions/is_not_floating", false)
-				is_on_air = true
+					# floating
+					animTree.set("parameters/Platformer/conditions/is_floating", true)
+					animTree.set("parameters/Platformer/conditions/is_not_floating", false)
+					is_on_air = true
 		
 	# Squash & Stretch
 	if dir == Vector2.ZERO:
@@ -274,17 +278,31 @@ func _physics_process(delta):
 var is_fainting = false
 
 func faint():
+	# ditembak hunter atau kena serangan leviathan
 	if !is_fainting:
 		is_fainting = true
 		stop_move()
-		
+			
 		$shot_particle.emitting = true
+			
 		animTree.set("parameters/Game/transition_request", "faint")
 		await animTree.animation_finished
 		
 		await get_tree().create_timer(0.6).timeout
 	
 		allow_move()
+		#if playerState == PlayerState.ON_LAND:
+			#
+			#
+		#elif playerState == PlayerState.SWIMMING:
+			#stop_move()
+			#visible = false
+			#velocity = Vector3.ONE
+			#await get_tree().create_timer(0.6).timeout
+			#
+			#visible = true
+			#allow_move()
+			
 		is_fainting = false
 		respawn()
 

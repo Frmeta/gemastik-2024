@@ -50,7 +50,7 @@ func _physics_process(delta):
 	
 	if is_instance_valid(GM.doni):
 		
-		if jarak_ke_doni < 8 and shoot_timer > SHOOT_DELAY:
+		if is_seeing_player() and shoot_timer > SHOOT_DELAY :
 			# tembak doni
 			var bulet = bullet_prefab.instantiate()
 			add_child(bulet)
@@ -107,3 +107,11 @@ func idle():
 
 func move():
 	$AnimationTree.set("parameters/IdleToRun/blend_amount", 0.7)
+
+func is_seeing_player():
+	var diff_to_player = GM.doni.global_position - global_position
+	diff_to_player.z = 0
+	$RayCast3D.global_position = global_position
+	$RayCast3D.target_position = diff_to_player.normalized() * 8
+	return $RayCast3D.is_colliding() \
+		and $RayCast3D.get_collider() == GM.doni

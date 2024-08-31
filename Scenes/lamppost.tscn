@@ -131,12 +131,12 @@ shadow_mesh = SubResource("ArrayMesh_8sfag")
 [node name="lamppost" type="Node3D"]
 
 [node name="pole_lantern" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
 mesh = SubResource("ArrayMesh_etgom")
 skeleton = NodePath("")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="pole_lantern"]
-transform = Transform3D(10.1538, 0, 0, 0, 10.1538, 0, 0, 0, 10.1538, 13.7365, 23.6181, 0)
-light_color = Color(0.952941, 0.286275, 0, 1)
-light_energy = 10.0
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4605, 2.04804, 0)
+light_color = Color(0.952941, 0.905882, 0, 1)
+light_energy = 3.0
 light_bake_mode = 1

@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="8_p2uia"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="9_7akpb"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="10_rnh3q"]
-[ext_resource type="MeshLibrary" uid="uid://b8umrxbbu728f" path="res://Tilemap/tilemap_nature14.tres" id="11_f5hl2"]
 [ext_resource type="PackedScene" uid="uid://dnnyrin4ywf5e" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo.tscn" id="11_wyjhh"]
 [ext_resource type="PackedScene" uid="uid://c45i8q7gc43fi" path="res://3D Assets/Animal/0-Kalimantan/Orang Utan/OrangUtan.tscn" id="12_0dpn0"]
+[ext_resource type="MeshLibrary" uid="uid://bkxn8ya66buo2" path="res://Tilemap/tilemap_nature_final.tres" id="13_5fhpe"]
 [ext_resource type="PackedScene" uid="uid://der5op54h8p2n" path="res://3D Assets/Animal/0-Kalimantan/Bunglon/Bunglon.tscn" id="13_52ld5"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="14_f2hn6"]
 [ext_resource type="PackedScene" uid="uid://d2mccmwo4b8e3" path="res://Scenes/testingken/DialogueManager.tscn" id="15_ue0yg"]
@@ -637,7 +637,7 @@ multimesh = SubResource("MultiMesh_osvp8")
 [node name="Komodo" parent="GridMapGround" instance=ExtResource("11_wyjhh")]
 
 [node name="GridMapVines" type="GridMap" parent="."]
-mesh_library = ExtResource("11_f5hl2")
+mesh_library = ExtResource("13_5fhpe")
 cell_size = Vector3(1.3, 1.3, 1.3)
 collision_layer = 16
 collision_mask = 0

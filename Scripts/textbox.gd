@@ -35,7 +35,8 @@ func display_line(nama: String, dialogue:String, emosi, _nama_pulau:String = "",
 	# Munculin karakter satu per satu
 	for charr in dialogue:
 		dialogue_label.visible_ratio+=type_speed
-		await get_tree().create_timer(0.01).timeout
+		if get_tree() != null:
+			await get_tree().create_timer(0.01).timeout
 	still_typing=false
 
 func _process(_delta):

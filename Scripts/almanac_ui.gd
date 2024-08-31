@@ -118,11 +118,11 @@ func _lihat_info_hewan(hewan: hewans, has_been_scanned: bool, btn_idx: int):
 		$"PanelAlmanac/Hewan Info/deskripsi".text = hewan.entry
 	else:
 		$"PanelAlmanac/Hewan Info/Foto Asli/TextureRect".texture = null
-		$"PanelAlmanac/Hewan Info/Nama hewan".text = "???"
-		$"PanelAlmanac/Hewan Info/Nama latin".text = "???"
-		$"PanelAlmanac/Hewan Info/habitat2".text = "???"
-		$"PanelAlmanac/Hewan Info/status2".text = "???"
-		$"PanelAlmanac/Hewan Info/deskripsi".text = "???"
+		$"PanelAlmanac/Hewan Info/Nama hewan".text = "[Spesies belum di-scan]"
+		$"PanelAlmanac/Hewan Info/Nama latin".text = "?"
+		$"PanelAlmanac/Hewan Info/habitat2".text = "?"
+		$"PanelAlmanac/Hewan Info/status2".text = "?"
+		$"PanelAlmanac/Hewan Info/deskripsi".text = "?"
 
 func _ke_halaman_1():
 	GM.play_audio("res://audio/a/ganti foto.ogg")
