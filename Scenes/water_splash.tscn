@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/water_splash.gd" id="1_68xwh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w71vv"]
-albedo_color = Color(0.803922, 0.882353, 0.945098, 1)
+transparency = 1
+albedo_color = Color(0.803922, 0.882353, 0.945098, 0.478431)
 
 [sub_resource type="Curve" id="Curve_adto5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.504762, 0.753477), 0.0, 0.0, 0, 0, Vector2(1, 0.178255), 0.0, 0.0, 0, 0]
@@ -13,20 +14,24 @@ point_count = 3
 curve = SubResource("Curve_adto5")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r83im"]
-direction = Vector3(0, 1, 0.5)
-spread = 60.0
-initial_velocity_min = 10.0
-initial_velocity_max = 20.0
-scale_min = 3.0
+direction = Vector3(0, 20, 1)
+spread = 30.0
+initial_velocity_min = 5.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -30, 0)
+scale_min = 0.3
 scale_max = 3.0
 scale_curve = SubResource("CurveTexture_togcg")
 
 [sub_resource type="SphereMesh" id="SphereMesh_3mdi3"]
+radius = 0.2
+height = 0.4
 
 [node name="water_splash" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_w71vv")
 emitting = false
-amount = 20
+amount = 100
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.19

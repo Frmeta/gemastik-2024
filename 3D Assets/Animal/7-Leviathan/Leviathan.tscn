@@ -1,7 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr4qcudr5qljb"]
+[gd_scene load_steps=16 format=3 uid="uid://dr4qcudr5qljb"]
 
 [ext_resource type="Script" path="res://Scripts/Leviathan.gd" id="1_d0ctj"]
 [ext_resource type="PackedScene" uid="uid://7duto7ugp3rq" path="res://3D Assets/Animal/7-Leviathan/Leviathan.glb" id="2_ck1vu"]
+[ext_resource type="PackedScene" uid="uid://c3gmtn8aoyij1" path="res://Scenes/water_splash.tscn" id="3_etgfq"]
+[ext_resource type="AudioStream" uid="uid://bxa1y3vemdu8t" path="res://audio/levi/big-monster-shout-104325.mp3" id="4_vgc8w"]
+[ext_resource type="AudioStream" uid="uid://behitgu2m3jxe" path="res://audio/levi/monster-growl-6311.mp3" id="5_stknf"]
+[ext_resource type="AudioStream" uid="uid://bn8lw2mi1f3u3" path="res://audio/levi/low-monster-roar-97413.mp3" id="6_iid4e"]
+[ext_resource type="AudioStream" uid="uid://bbir34h6garik" path="res://audio/levi/monster-bite-44538.mp3" id="7_0kk32"]
+[ext_resource type="AudioStream" uid="uid://cdxbeusbn14yp" path="res://audio/levi/jump/monster-roar-6985.mp3" id="8_jgfq5"]
+[ext_resource type="AudioStream" uid="uid://bhjj76ydvxtcu" path="res://audio/levi/jump/dragon-roar-high-intensity-36564.mp3" id="9_lqjy4"]
+[ext_resource type="AudioStream" uid="uid://cygsqjr24dcc4" path="res://audio/levi/jump/dragon-breathe-ire-6216.mp3" id="10_5rh7a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55t6g"]
 resource_name = "Material"
@@ -110,6 +118,35 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vis"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_njom5")
+
+[node name="water_splash" parent="." instance=ExtResource("3_etgfq")]
+
+[node name="Idle1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vgc8w")
+
+[node name="Idle2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_stknf")
+volume_db = -5.0
+
+[node name="Idle3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_iid4e")
+volume_db = -10.0
+
+[node name="Bite" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0kk32")
+volume_db = 10.0
+
+[node name="Jump1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_jgfq5")
+volume_db = 15.0
+
+[node name="Jump2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_lqjy4")
+volume_db = 15.0
+
+[node name="Jump3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_5rh7a")
+volume_db = 15.0
 
 [connection signal="body_entered" from="vis" to="." method="hit_doni"]
 

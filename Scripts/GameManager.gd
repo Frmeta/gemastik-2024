@@ -22,6 +22,7 @@ var scanned_animal := []
 @export var pulau_list_resource : pulau_list
 
 const FILE_NAME = "user://donisavegame.json"
+const WATER_Y = 60 # koordinat y in global batas air
 var levi_phase := 0
 
 var data:

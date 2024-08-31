@@ -97,6 +97,7 @@ func _ready():
 		
 		const EXTEND_STEP = 3
 		const SMOOTH_STEP = 3
+		const OCEAN_STEP = 180
 		
 		# Store highest smooth in list
 		var highest_smooth = [highest]
@@ -107,28 +108,40 @@ func _ready():
 		
 		
 		# fill front
-		var z = EXTEND_STEP+SMOOTH_STEP
-		fill_front(highest_smooth[SMOOTH_STEP], idx, z)
-		z -= 1
+		var zz = EXTEND_STEP+SMOOTH_STEP
+		fill_front(highest_smooth[SMOOTH_STEP], idx, zz)
+		zz -= 1
 		
 		# fill smooth (front side)
 		for i in range(SMOOTH_STEP):
-			fill(highest_smooth[SMOOTH_STEP-i-1], idx, z, highest_smooth[SMOOTH_STEP-i], false)
-			z -= 1
+			fill(highest_smooth[SMOOTH_STEP-i-1], idx, zz, highest_smooth[SMOOTH_STEP-i], false)
+			zz -= 1
 			
 		
 		# fill extend
-		fill(highest, idx, z, highest_smooth[1], false)
-		z -= 1
-		while z >= -EXTEND_STEP:
-			fill(highest, idx, z, highest, false)
-			z -= 1
+		fill(highest, idx, zz, highest_smooth[1], false)
+		zz -= 1
+		while zz >= -EXTEND_STEP:
+			fill(highest, idx, zz, highest, false)
+			zz -= 1
 		
 		# fill smooth (back side)
 		for i in range(SMOOTH_STEP):
-			fill(highest_smooth[i+1], idx, z, highest_smooth[i], false)
-			z -= 1
-	
+			fill(highest_smooth[i+1], idx, zz, highest_smooth[i], false)
+			zz -= 1
+		
+		# fill bottom of the ocean
+		fill_bottom_of_ocean(zz, zz-OCEAN_STEP)
+			
+		const FLOATINGS_COUNT = 500
+		for i in range(FLOATINGS_COUNT):
+			
+			var bum = dummy_tree_gundul.instantiate()
+			add_child(bum)
+			bum.global_position = Vector3i(randi_range(START_X, END_X) * 1.3, GM.WATER_Y, randi_range(zz-10, zz-OCEAN_STEP) * 1.3)
+			bum.scale = Vector3.ONE * randf_range(1, 3)
+			bum.rotation.x = PI/2 - randf()*PI/5
+			bum.rotation.z = randf() * 2 * PI
 	
 func search_y(x):
 	for y in range(END_Y, START_Y, -1):
@@ -211,6 +224,21 @@ func fill_front(highest, idx, z):
 		for y in range(START_Y, highest[i]):
 			set_cell_item(Vector3i(x, y, z), fill_index, 0)
 		i += 1
+
+func fill_bottom_of_ocean(start_z, end_z):
+	const NOISE_MULTIPLIER = 0.3
+	const HEIGHT_MULTIPLIER = 15
+	var prev_highest
+	for z in range(start_z, end_z, -1):
+		var highest_ocean = []
+		var idx_ocean = []
+		for x in range(START_X, END_X):
+			var y = START_Y + + 20 + HEIGHT_MULTIPLIER + roundi(noise.get_noise_2d(x*NOISE_MULTIPLIER, z*NOISE_MULTIPLIER)*HEIGHT_MULTIPLIER)
+			highest_ocean.append(y)
+			idx_ocean.append(STONE_INDEX)
+		fill(highest_ocean, idx_ocean, z, prev_highest if prev_highest != null else highest_ocean, false)
+		prev_highest = highest_ocean
+			
 
 func fill(highest, idx, z:int, front_highest, place_tree:bool):
 	# idx adalah array of integer, idx jenis block
