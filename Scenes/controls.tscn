@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://trs0ogdxh7bx"]
+[gd_scene load_steps=22 format=3 uid="uid://trs0ogdxh7bx"]
 
 [ext_resource type="Texture2D" uid="uid://c45mgcs0vfato" path="res://assets/ui/Hint_Almanac.png" id="1_sf0if"]
 [ext_resource type="Texture2D" uid="uid://b6q64chm2w6t8" path="res://assets/ui/Hint_Grappling.png" id="2_6g26b"]
@@ -16,8 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://dmoy7l5h5ua88" path="res://assets/ui/continue_light.png" id="12_uimag"]
 [ext_resource type="Texture2D" uid="uid://bpa7fvn8l4lha" path="res://assets/ui/restart_dark.png" id="13_uq0yj"]
 [ext_resource type="Texture2D" uid="uid://dgjtwpguwhkgm" path="res://assets/ui/restart_light.png" id="14_bn5tf"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="17_4mtgg"]
+[ext_resource type="Texture2D" uid="uid://g17crpcshd3v" path="res://assets/ui/pause2/Group 79.png" id="18_arrda"]
+[ext_resource type="Texture2D" uid="uid://c4ubu0t0hkqec" path="res://assets/ui/pause2/Group 80.png" id="19_vtf0g"]
+[ext_resource type="Texture2D" uid="uid://bm0yd6bxgu8qm" path="res://assets/ui/pause2/Group 59.png" id="20_8ffrb"]
+[ext_resource type="Texture2D" uid="uid://bkpv1b1saahsq" path="res://assets/ui/pause2/Group 77.png" id="21_1ex10"]
 
 [node name="CanvasLayerLevel" type="CanvasLayer"]
+layer = -2
 
 [node name="Controls Hint" type="MarginContainer" parent="."]
 anchors_preset = 2
@@ -63,6 +69,7 @@ stretch_mode = 2
 
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,7 +89,6 @@ mouse_filter = 1
 texture_normal = ExtResource("4_34xg2")
 texture_hover = ExtResource("5_2a37w")
 stretch_mode = 0
-script = ExtResource("6_i8yiw")
 
 [node name="Pause Panel" type="TextureRect" parent="Pause/Pause Button"]
 layout_mode = 1
@@ -152,6 +158,138 @@ mouse_filter = 1
 texture_normal = ExtResource("13_uq0yj")
 texture_hover = ExtResource("14_bn5tf")
 
+[node name="Pause2" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Pause2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.690196)
+
+[node name="Pause Button" type="TextureButton" parent="Pause2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 287.0
+offset_bottom = 288.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+texture_normal = ExtResource("4_34xg2")
+texture_hover = ExtResource("5_2a37w")
+stretch_mode = 0
+script = ExtResource("6_i8yiw")
+
+[node name="Pause Panel" type="TextureRect" parent="Pause2/Pause Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1727.0
+offset_top = 657.0
+offset_right = 2878.0
+offset_bottom = 1420.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.845, 0.845)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Pause2/Pause Button/Pause Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.5
+offset_top = -612.5
+offset_right = 461.5
+offset_bottom = -118.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("17_4mtgg")
+theme_override_font_sizes/font_size = 300
+text = "Paused"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause2/Pause Button/Pause Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.5
+offset_top = -224.5
+offset_right = 418.5
+offset_bottom = 225.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Continue Button" type="TextureButton" parent="Pause2/Pause Button/Pause Panel/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("18_arrda")
+texture_hover = ExtResource("19_vtf0g")
+stretch_mode = 4
+
+[node name="Restart Button" type="TextureButton" parent="Pause2/Pause Button/Pause Panel/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("20_8ffrb")
+texture_hover = ExtResource("21_1ex10")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause2/Pause Button/Pause Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -729.5
+offset_top = -171.0
+offset_right = 730.5
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LevelSelect Button" type="Button" parent="Pause2/Pause Button/Pause Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("17_4mtgg")
+theme_override_font_sizes/font_size = 150
+text = "Kembali Ke Peta"
+flat = true
+
+[node name="Keluar Button" type="Button" parent="Pause2/Pause Button/Pause Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("17_4mtgg")
+theme_override_font_sizes/font_size = 150
+text = "Keluar dari Permainan"
+flat = true
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_bottom = 418.0
 
@@ -163,3 +301,8 @@ offset_bottom = 418.0
 [connection signal="pressed" from="Pause/Pause Button/Pause Panel/LevelSelect Button" to="Pause/Pause Button" method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="Pause/Pause Button/Pause Panel/Continue Button" to="Pause/Pause Button" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Pause/Pause Button/Pause Panel/Restart Button" to="Pause/Pause Button" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Pause2/Pause Button" to="Pause2/Pause Button" method="_on_pressed"]
+[connection signal="pressed" from="Pause2/Pause Button/Pause Panel/HBoxContainer/Continue Button" to="Pause2/Pause Button" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Pause2/Pause Button/Pause Panel/HBoxContainer/Restart Button" to="Pause2/Pause Button" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Pause2/Pause Button/Pause Panel/VBoxContainer/LevelSelect Button" to="Pause2/Pause Button" method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="Pause2/Pause Button/Pause Panel/VBoxContainer/Keluar Button" to="Pause2/Pause Button" method="_on_keluar_button_pressed"]

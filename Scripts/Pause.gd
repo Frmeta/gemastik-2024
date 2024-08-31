@@ -17,6 +17,8 @@ func _input(event):
 			
 
 func _on_pressed():
+	if get_node_or_null("../ColorRect")!=null:
+		$"../ColorRect".visible=true
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().paused = true
 	
@@ -24,6 +26,8 @@ func _on_pressed():
 	pause_panel.visible = true
 
 func _on_continue_button_pressed():
+	if get_node_or_null("../ColorRect")!=null:
+		$"../ColorRect".visible=false
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().paused = false
 	
@@ -35,11 +39,13 @@ func _on_level_select_button_pressed():
 	GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav")
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/Game/level_select.tscn")
-
+	Transition.change_scene("res://Scenes/Game/level_select.tscn")
 
 func _on_restart_button_pressed():
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	get_tree().paused = false
 	GM.scanned_animal = []
 	get_tree().reload_current_scene()
+
+func _on_keluar_button_pressed():
+	get_tree().quit()

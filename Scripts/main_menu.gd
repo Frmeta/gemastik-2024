@@ -30,26 +30,29 @@ func _ready():
 	tab.current_tab = 0
 
 func _on_play_button_pressed():
-	anim_player_camera.speed_scale=0.7
+	anim_player_camera.speed_scale=0.6
 	anim_player_camera.play("move_to_rusa")
 	GM.play_audio("res://audio/a/button_click.mp3")
 	tab.visible=false
 	await anim_player_camera.animation_finished
 	tab.visible=true
 	tab.current_tab = 1
-	anim_player_camera.speed_scale=0.1
+	anim_player_camera.speed_scale=0.2
 
 func _on_kebali_ke_menu_pressed():
 	GM.play_audio("res://audio/a/button_clickback.ogg")
 	if tab.current_tab==1:
 		tab.visible=false
-		anim_player_camera.speed_scale=0.7
+		anim_player_camera.speed_scale=0.6
 		anim_player_camera.play_backwards("move_to_rusa")
 		await anim_player_camera.animation_finished
 		tab.visible=true
 	tab.current_tab = 0
-	anim_player_camera.speed_scale=0.1
+	anim_player_camera.speed_scale=0.2
 
 func _on_credits_button_pressed():
 	GM.play_audio("res://audio/a/button_click.mp3")
 	tab.current_tab = 2
+
+func _on_keluar_button_pressed():
+	get_tree().quit()
