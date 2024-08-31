@@ -100,4 +100,3 @@ func set_can_move(new_state):
 
 func release():
 	$Node3D.loop_behaviour()
-	

@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://c0wapcou1i45a"]
+[gd_scene load_steps=45 format=3 uid="uid://c0wapcou1i45a"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nl1jw"]
-[ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="2_7lqll"]
 [ext_resource type="Texture2D" uid="uid://chxggmbgrrrqq" path="res://assets/Doni’s Adventure.png" id="2_d3a57"]
 [ext_resource type="Texture2D" uid="uid://dk4sgsvecpe27" path="res://assets/TV - 12.png" id="2_r6jo8"]
 [ext_resource type="Script" path="res://Scripts/Load Game.gd" id="3_rj21a"]
@@ -13,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b5ooywqg7faxc" path="res://Scenes/load_button.tscn" id="8_yiq52"]
 [ext_resource type="Texture2D" uid="uid://dlmalx7w8tb7m" path="res://assets/sky/Wispy_Sky-Sunset_02-512x512.png" id="11_egccc"]
 [ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="11_pap36"]
+[ext_resource type="Script" path="res://Scripts/air_emitter.gd" id="14_cobqc"]
+[ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="14_eo23n"]
 
 [sub_resource type="Animation" id="Animation_r221m"]
 length = 0.001
@@ -86,7 +87,8 @@ ambient_light_color = Color(0.486275, 0.721569, 0.752941, 1)
 tonemap_mode = 2
 tonemap_exposure = 0.7
 sdfgi_energy = 0.1
-volumetric_fog_emission = Color(0, 0.631373, 0, 1)
+volumetric_fog_density = 0.01
+volumetric_fog_emission = Color(0.309804, 0.580392, 0.6, 1)
 volumetric_fog_detail_spread = 6.0
 
 [sub_resource type="Animation" id="Animation_bmrty"]
@@ -102,6 +104,58 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-0.340339, 0.555015, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pvrrk"]
+resource_name = "move_to_rusa"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.68317, -8.96399, -25.0697)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.20026, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_b5ber"]
@@ -124,8 +178,137 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vk80x"]
 _data = {
 "RESET": SubResource("Animation_bmrty"),
-"camera_shake": SubResource("Animation_b5ber")
+"camera_shake": SubResource("Animation_b5ber"),
+"move_to_rusa": SubResource("Animation_pvrrk")
 }
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lgine"]
+emission_shape_scale = Vector3(100, 100, 100)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 2)
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+attractor_interaction_enabled = false
+collision_mode = 2
+
+[sub_resource type="Curve" id="Curve_ojxas"]
+_data = [Vector2(0.00362319, 1), 0.0, 0.0, 0, 0, Vector2(0.445652, 0.498516), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_n3bpb"]
+curve = SubResource("Curve_ojxas")
+
+[sub_resource type="Curve" id="Curve_0awyl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.681159, 0.701039), 0.0, 0.0, 0, 0, Vector2(1, 0.257418), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d6tdw"]
+curve = SubResource("Curve_0awyl")
+
+[sub_resource type="Curve" id="Curve_vtltu"]
+max_value = 3.0
+_data = [Vector2(0, 2.76855), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cf06d"]
+curve = SubResource("Curve_vtltu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rf6ay"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+angle_curve = SubResource("CurveTexture_d6tdw")
+direction = Vector3(-20, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 15.0
+linear_accel_max = 30.0
+scale_min = 0.05
+scale_max = 0.05
+scale_over_velocity_curve = SubResource("CurveTexture_cf06d")
+alpha_curve = SubResource("CurveTexture_n3bpb")
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 9.355
+
+[sub_resource type="Curve" id="Curve_j2guj"]
+_data = [Vector2(0, 0.35), 0.0, 0.0, 0, 0, Vector2(0.525974, 0.763636), 0.0, 0.0, 0, 0, Vector2(1, 0.307792), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mqdn"]
+albedo_color = Color(0.337255, 0.6, 0.4, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_d4agt"]
+material = SubResource("StandardMaterial3D_6mqdn")
+sections = 2
+curve = SubResource("Curve_j2guj")
+
+[sub_resource type="Curve" id="Curve_ftope"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(0.242754, 360), 0.0, 0.0, 0, 0, Vector2(0.48913, -360), 0.0, 0.0, 0, 0, Vector2(0.73913, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_cl76v"]
+curve = SubResource("Curve_ftope")
+
+[sub_resource type="Curve" id="Curve_eauso"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_w3yrc"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.246377, 1), 0.0, 0.0, 0, 0, Vector2(0.5, -1), 0.0, 0.0, 0, 0, Vector2(0.73913, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_dmie2"]
+curve_x = SubResource("Curve_eauso")
+curve_y = SubResource("Curve_w3yrc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_je5fk"]
+emission_shape_scale = Vector3(1, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-20, 0, 0)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+angular_velocity_min = 0.08
+angular_velocity_max = 0.08
+angular_velocity_curve = SubResource("CurveTexture_cl76v")
+directional_velocity_min = 10.0
+directional_velocity_max = 30.0
+directional_velocity_curve = SubResource("CurveXYZTexture_dmie2")
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_wbhfo"]
+_data = [Vector2(0, 0.0714285), 0.0, 0.0, 0, 0, Vector2(0.49026, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.274026), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ski16"]
+shading_mode = 0
+albedo_color = Color(0.654902, 0.654902, 0.615686, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_0mxkt"]
+material = SubResource("StandardMaterial3D_ski16")
+shape = 0
+size = 10.0
+sections = 2
+section_length = 0.1
+section_segments = 1
+curve = SubResource("Curve_wbhfo")
 
 [node name="Main Menu" type="Node3D"]
 script = ExtResource("1_nl1jw")
@@ -136,10 +319,10 @@ script = ExtResource("1_nl1jw")
 transform = Transform3D(16.941, 0, 0, 0, 1, 0, 0, 0, 15.2339, 0, -1.1765, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(0.849893, -0.175901, 0.496731, 0, 0.942641, 0.333807, -0.526956, -0.2837, 0.801144, 30.1447, 12.3962, 7.70137)
+transform = Transform3D(-0.214279, -0.0408759, -0.975917, -0.187381, 0.982286, 0, 0.958631, 0.182868, -0.218143, -2.18611, 5.41134, 3.5638)
 
 [node name="Rusa" parent="Node3D" instance=ExtResource("3_yfjco")]
-transform = Transform3D(1, -7.45058e-08, 1.19209e-07, 2.98023e-08, 0.999999, -2.23517e-07, 0, -5.96046e-08, 0.999999, -22.1637, 6.30967, -17.8179)
+transform = Transform3D(1, -7.45058e-08, 1.19209e-07, 2.98023e-08, 0.999999, -2.23517e-07, 0, -5.96046e-08, 0.999999, 0, 0, 0)
 can_move = false
 
 [node name="GridMapGround" parent="." instance=ExtResource("8_v41dp")]
@@ -236,6 +419,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/Play"]
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
@@ -255,6 +439,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer3"]
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
@@ -293,6 +478,7 @@ texture = ExtResource("7_geyk0")
 
 [node name="BackButton" type="Button" parent="CanvasLayer/TabContainer/Load Game/VBox/Kebali ke menu/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -413,17 +599,54 @@ clip_text = true
 environment = SubResource("Environment_gxn8d")
 
 [node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D2"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_vk80x")
 }
-autoplay = "camera_shake"
-speed_scale = 0.2
+speed_scale = 0.1
 
-[node name="Camera3D" parent="Node3D2" instance=ExtResource("2_7lqll")]
-transform = Transform3D(0.849893, -0.175901, 0.496731, 0, 0.942641, 0.333807, -0.526956, -0.2837, 0.801144, 20.4862, 16.4862, 24.4862)
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Node3D2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vk80x")
+}
+speed_scale = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="Node3D2"]
+process_mode = 3
+transform = Transform3D(0.849893, -0.175901, 0.496731, 0, 0.942642, 0.333807, -0.526956, -0.2837, 0.801144, 22.7051, 16.4862, 21.8184)
+current = true
+size = 13.612
+
+[node name="rain_box" parent="." instance=ExtResource("14_eo23n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6445, 20.9722, -3.47302)
+amount = 200
+visibility_aabb = AABB(-49.4587, -24.9693, -30.4417, 98.9174, 29.9386, 60.8835)
+process_material = SubResource("ParticleProcessMaterial_lgine")
+
+[node name="air_emitter" type="Node3D" parent="."]
+transform = Transform3D(0.999978, 0, -0.00663206, 0, 1, 0, 0.00663206, 0, 0.999978, 42.1575, 6.37189, -4.82828)
+script = ExtResource("14_cobqc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="air_emitter"]
+amount = 10
+lifetime = 3.0
+randomness = 0.1
+visibility_aabb = AABB(-7.03676, -9.16619, -4, 14.0735, 18.3324, 8)
+process_material = SubResource("ParticleProcessMaterial_rf6ay")
+draw_pass_1 = SubResource("RibbonTrailMesh_d4agt")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="air_emitter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55623, 0)
+amount = 2
+lifetime = 3.0
+randomness = 0.1
+visibility_aabb = AABB(-7.03676, -9.47219, -4, 14.0735, 18.9444, 8)
+process_material = SubResource("ParticleProcessMaterial_je5fk")
+draw_pass_1 = SubResource("RibbonTrailMesh_0mxkt")
 
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]

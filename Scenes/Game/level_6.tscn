@@ -505,7 +505,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 457.39, 13.2644, -18.5521)
 mesh = NodePath("../Pemburu/Pemburu_Skeleton/Skeleton3D/Pemburu")
 
 [node name="Pemburu3" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("23_x70dt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 491.331, 20.1158, -18.5521)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 488.728, 19.7439, -18.5521)
 mesh = NodePath("../Pemburu/Pemburu_Skeleton/Skeleton3D/Pemburu")
 
 [connection signal="body_entered" from="GridMapGround/Area3D" to="GridMapGround/Pemburu 2" method="disable"]

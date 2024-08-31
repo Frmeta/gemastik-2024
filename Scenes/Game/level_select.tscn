@@ -90,6 +90,7 @@ texture = ExtResource("5_er0l6")
 
 [node name="BackButton" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/Main Menu Button/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
