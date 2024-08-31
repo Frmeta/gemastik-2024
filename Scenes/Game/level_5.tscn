@@ -147,7 +147,7 @@ process_material = SubResource("ParticleProcessMaterial_csijy")
 [node name="Camera3D" parent="." instance=ExtResource("5_fpu7u")]
 
 [node name="Player" parent="." instance=ExtResource("6_dn0jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 573.608, 19.5092, 7.62939e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00497437, 0.564775, 1.52588e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_f3hnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -839,14 +839,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1109.32, 24.7942, -0.301679)
 mesh = NodePath("../Babirusa/BabiRusa_Skeleton/Skeleton3D/BabiRusa")
 
 [node name="Rangkong Gading" parent="Animals" instance=ExtResource("17_mfuyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8227, 1.84392, -0.301668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4477, -2.9013, -0.301668)
 
 [node name="Rangkong Gading2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("17_mfuyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2467, 2.36542, -0.301668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8717, -2.98559, -0.301668)
 mesh = NodePath("../Rangkong Gading/RangkongGading_Skeleton/Skeleton3D/RangkongGading")
 
 [node name="Rangkong Gading3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("17_mfuyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3087, 3.89752, -0.301668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9337, -1.48353, -0.301668)
 mesh = NodePath("../Rangkong Gading/RangkongGading_Skeleton/Skeleton3D/RangkongGading")
 
 [node name="Burung Maleo" parent="Animals" instance=ExtResource("16_gox01")]

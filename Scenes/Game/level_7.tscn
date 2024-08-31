@@ -611,7 +611,10 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 557.163, 35.6877, 0)
 
 [node name="ranting2" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.854414, 0, 0.519594, 0, 1, 0, -0.519594, 0, 0.854414, 541.268, 42.4426, 0)
+transform = Transform3D(0.854414, 0, 0.519594, 0, 1, 0, -0.519594, 0, 0.854414, 541.268, 36.1882, 0)
+
+[node name="ranting24" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.88956, 0, -0.456819, 0, 1, 0, 0.456819, 0, 0.88956, 537.708, 41.0539, 0)
 
 [node name="ranting3" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
 transform = Transform3D(0.957471, 0, 0.28853, 0, 1, 0, -0.28853, 0, 0.957471, 525.05, 42.6152, 0)
@@ -799,10 +802,10 @@ wait_time = 7.0
 autostart = true
 
 [node name="rain_box" parent="." instance=ExtResource("24_02nv0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 522.998, 97.8624, 57.0489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 522.998, 114.307, 0)
 amount = 500
 lifetime = 3.0
-visibility_aabb = AABB(-386.13, -79.6801, -3.3606, 772.261, 139.36, 6.7212)
+visibility_aabb = AABB(-386.13, -33.6181, -3.3606, 772.261, 47.2363, 6.7212)
 trail_lifetime = 0.6
 process_material = SubResource("ParticleProcessMaterial_ip7e7")
 

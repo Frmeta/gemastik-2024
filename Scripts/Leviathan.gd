@@ -33,7 +33,7 @@ var msec_start_phase
 var player_x
 var player_y
 var tmp # save Vector3 last levi pos
-var tmp2 # save Vector2 dir
+var tmp2 # save Vector3 dir follow_eat
 var tmp3 # save int arah jump
 var tmp4 # save boolean for is_splash
 var my_timer = 2
@@ -91,11 +91,11 @@ func _physics_process(delta):
 			# follow player
 			phase = LeviPhase.FOLLOW
 			msec_start_phase = float(Time.get_ticks_msec())
-			target_position.z = -20
+			target_position.z = -100
 			
 		elif GM.levi_phase == 3:
 			# jump
-			const RANDOM_RANGE = 5
+			const RANDOM_RANGE = 8
 			phase = LeviPhase.JUMP
 			msec_start_phase = float(Time.get_ticks_msec())
 			player_x = GM.doni.global_position.x + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
@@ -132,7 +132,7 @@ func _physics_process(delta):
 			#$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
 			#$water_splash.splash()
 			
-		if teta > PI:
+		if teta > PI*3/2:
 			phase = LeviPhase.NONE
 			
 		open_lerp = clamp(sin(teta)*3, 0, 1)
@@ -193,7 +193,7 @@ func _physics_process(delta):
 				msec_start_phase = Time.get_ticks_msec()
 				tmp = target_position
 				tmp2 = GM.doni.global_position - global_position
-				tmp2.z = 0
+				#tmp2.z = 0
 				tmp2 = tmp2.normalized()
 				phase = LeviPhase.FOLLOW_EAT
 				$Bite.play()
