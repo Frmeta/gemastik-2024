@@ -3,6 +3,9 @@ extends Node3D
 
 @onready var skeleton: Skeleton3D = $Leviathan2/Leviathan_Skeleton_001/Skeleton3D
 @onready var vis : Node3D = $vis
+var jump_sfx
+const JUMP_SFX_COUNT = 3
+
 const BODY_COUNT = 32
 var vises : Array[Node3D]= []
 var vises_jaw : Array[Node3D]= []
@@ -12,13 +15,13 @@ var target_position : Vector3
 # Constants for mouth movement
 const bone36_offset = Vector3(0, -1.224, 0.604)
 const bone37_offset = Vector3(0, -0.602, 0.604) 
-const bone36_rot = Quaternion(-0.346, 0, 0, 0.938)
-const bone37_rot = Quaternion(0.037, 0, 0, 0.999)
+@onready var bone36_rot = Quaternion(-0.346, 0, 0, 0.938).normalized()
+@onready var bone37_rot = Quaternion(0.037, 0, 0, 0.999).normalized()
 
 const bone36_open_offset = Vector3(0, -1.224, -2.788)
 const bone37_open_offset = Vector3(0, -1.391, 1.079)
-const bone36_open_rot = Quaternion(0.568, 0, 0, 0.822)
-const bone37_open_rot = Quaternion(-0.138, 0, 0, 0.99)
+@onready var bone36_open_rot = Quaternion(0.568, 0, 0, 0.822).normalized()
+@onready var bone37_open_rot = Quaternion(-0.138, 0, 0, 0.99).normalized()
 
 # mouth open lerp (range 0 to 1)
 var open_lerp = 0
@@ -30,8 +33,10 @@ var msec_start_phase
 var player_x
 var player_y
 var tmp # save Vector3 last levi pos
-var tmp2 # save Vector2 dir
-var tmp3 # save idk bebas
+var tmp2 # save Vector3 dir follow_eat
+var tmp3 # save int arah jump
+var tmp4 # save boolean for is_splash
+var my_timer = 2
 
 
 func _ready():
@@ -55,31 +60,49 @@ func _ready():
 	wow.quaternion = bone37_rot
 	wow.scale = Vector3.ONE/2
 	vises_jaw.append(wow)
+	
+	jump_sfx = []
+	for i in range(JUMP_SFX_COUNT):
+		jump_sfx.append(get_node("Jump" + str(i+1)))
+		self.remove_child(jump_sfx[i])
+		vises[0].add_child(jump_sfx[i])
 
 
 func _physics_process(delta):
+	my_timer -= delta
+	if my_timer < 0 and (phase == LeviPhase.SIN or phase == LeviPhase.FOLLOW):
+		my_timer = randf() * 8
+		if randi() % 3 == 0:
+			$Idle1.play()
+		elif randi() % 2 == 0:
+			$Idle2.play()
+		else:
+			$Idle3.play()
+	
+	
 	if phase == LeviPhase.NONE:
 		if GM.levi_phase == 1:
 			# sin
 			phase = LeviPhase.SIN
 			msec_start_phase = float(Time.get_ticks_msec())
 			player_x = GM.doni.global_position.x
-			
+				
 		elif GM.levi_phase == 2:
 			# follow player
 			phase = LeviPhase.FOLLOW
 			msec_start_phase = float(Time.get_ticks_msec())
-			target_position.z = -20
+			target_position.z = -100
 			
 		elif GM.levi_phase == 3:
 			# jump
-			const RANDOM_RANGE = 5
+			const RANDOM_RANGE = 8
 			phase = LeviPhase.JUMP
 			msec_start_phase = float(Time.get_ticks_msec())
 			player_x = GM.doni.global_position.x + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
 			player_y = GM.doni.global_position.y + 2 + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
 			tmp3 = randi() % 3
-	
+			tmp4 = false
+			
 	elif phase == LeviPhase.JUMP:
 		const FREQUENCY = 0.1
 		const HEIGHT = 150
@@ -96,7 +119,20 @@ func _physics_process(delta):
 		else:
 			x = player_x - cos(teta) * X_RANGE
 		target_position = Vector3(x, player_y-HEIGHT + HEIGHT*sin(teta), -DEPTH*cos(teta))
-		if teta > PI:
+		
+		if !tmp4 and target_position.y > GM.WATER_Y:
+			tmp4 = true
+			jump_sfx[randi() % JUMP_SFX_COUNT].play()
+			$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
+			$water_splash.splash()
+			
+		if tmp4 and target_position.y < GM.WATER_Y:
+			tmp4 = false
+			#jump_sfx[randi() % JUMP_SFX_COUNT].play()
+			#$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
+			#$water_splash.splash()
+			
+		if teta > PI*3/2:
 			phase = LeviPhase.NONE
 			
 		open_lerp = clamp(sin(teta)*3, 0, 1)
@@ -106,14 +142,13 @@ func _physics_process(delta):
 		const HEIGHT = 20
 		const DEPTH = 30
 		const X_RANGE = 100
-		const WATER_Y = 50
 		
 		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
 		if teta < 2*PI:
 				target_position = Vector3(\
 				player_x - cos(teta) * X_RANGE, \
-				WATER_Y+HEIGHT*sin((teta)*2)-HEIGHT*0.6, \
+				GM.WATER_Y + HEIGHT*sin((teta)*2) - HEIGHT*0.7, \
 				-DEPTH)
 		else:
 			if GM.levi_phase != 1:
@@ -154,14 +189,15 @@ func _physics_process(delta):
 				) * delta * (sin(teta)*0.5+1)
 			)
 			
-			if diff_to_player < 4:
+			if diff_to_player < 5:
 				msec_start_phase = Time.get_ticks_msec()
 				tmp = target_position
 				tmp2 = GM.doni.global_position - global_position
-				tmp2.z = 0
+				#tmp2.z = 0
 				tmp2 = tmp2.normalized()
 				phase = LeviPhase.FOLLOW_EAT
-			
+				$Bite.play()
+				
 		else:
 			msec_start_phase = Time.get_ticks_msec()
 			tmp = target_position
@@ -171,9 +207,8 @@ func _physics_process(delta):
 	elif phase == LeviPhase.FOLLOW_EAT:
 		# sin 0 sampai PI/2
 		
-		const FREQUENCY = 0.5
-		const RANGE = 8
-		const SPEED = 7
+		const FREQUENCY = 0.3
+		const RANGE = 16
 		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
 		if teta < PI/2:
@@ -181,10 +216,11 @@ func _physics_process(delta):
 		elif teta > PI:
 			phase = LeviPhase.NONE
 		open_lerp = (sin(teta*2)+1)/2
+		
 	elif phase == LeviPhase.FOLLOW_DONE:
-		const FREQUENCY = 0.08
-		const Y_RANGE = 10
-		const X_RANGE = 200
+		const FREQUENCY = 0.03
+		const Y_RANGE = 30
+		const X_RANGE = 150
 		const SPEED = 7
 		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		var diff_to_player = target_position.distance_to(GM.doni.global_position)
@@ -221,12 +257,14 @@ func move():
 	vises_jaw[0].quaternion = lerp(bone36_rot, bone36_open_rot, open_lerp)
 	vises_jaw[1].quaternion = lerp(bone37_rot, bone37_open_rot, open_lerp)
 	
+	# bones
+	
 	# head
 	skeleton.set_bone_pose_position(0, vises[0].position)
 	
 	# jaw
-	skeleton.set_bone_pose_position(36, vises[0].position + vises_jaw[0].position)
-	skeleton.set_bone_pose_position(37, vises[0].position + vises_jaw[1].position)
+	skeleton.set_bone_pose_position(36, (vises[0].transform*vises_jaw[0].transform).origin)
+	skeleton.set_bone_pose_position(37, (vises[0].transform*vises_jaw[1].transform).origin)
 	skeleton.set_bone_pose_rotation(36, (vises_jaw[0].transform.inverse()*vises[0].transform).basis.get_rotation_quaternion())
 	skeleton.set_bone_pose_rotation(37, (vises_jaw[1].transform.inverse()*vises[0].transform).basis.get_rotation_quaternion())
 	
@@ -243,4 +281,4 @@ func move():
 
 func hit_doni(body):
 	# dipanggil dari area3d
-	GM.doni.faint()
+	GM.doni.gone_to_void()

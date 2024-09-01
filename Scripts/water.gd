@@ -14,7 +14,7 @@ func _ready():
 		water_shader.get_surface_override_material(0).set_shader_parameter("scale2",70)
 		water_shader.get_surface_override_material(0).set_shader_parameter("ColorParameter",Color("3e6989"))
 		$CSGMesh3D.material.albedo_color =Color("3e6989")
-	$CollisionShape3D.global_position.y -= 1 # duct tape: supaya ketika discale tidak rusak
+	$CollisionShape3D.global_position.y -= 0 # duct tape: supaya ketika discale tidak rusak
 
 func _on_body_entered(body: Player):
 	body.is_in_water=true

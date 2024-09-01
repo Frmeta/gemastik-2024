@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang Jawa/Elang Jawa.tscn" id="15_mhgt6"]
 [ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="16_2p5ol"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="16_cypp0"]
-[ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="17_au0cr"]
+[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="17_au0cr"]
 [ext_resource type="PackedScene" uid="uid://vd8uihael7tq" path="res://Scenes/jembatans/jembatan.tscn" id="17_s361h"]
 [ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="18_4kc4b"]
 [ext_resource type="PackedScene" uid="uid://cucxjr66501u6" path="res://Scenes/trap/perangkap.tscn" id="19_f3awk"]
@@ -466,7 +466,7 @@ scene_after_win = "level_select"
 [node name="Pemburu Phase 1" type="Node3D" parent="."]
 
 [node name="Pemburu" parent="Pemburu Phase 1" instance=ExtResource("23_duutx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 466.183, 4.05808, -16.2515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 471.061, 4.05808, -16.2515)
 
 [node name="Pemburu2" parent="Pemburu Phase 1" instance=ExtResource("23_duutx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 484.836, 4.05808, -16.2515)
@@ -521,7 +521,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646484, 6.22955, 0)
 shape = SubResource("BoxShape3D_0ugeg")
 
 [node name="Pemburu 2" parent="Pemburu Phase 2" instance=ExtResource("28_eenen")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 592.386, 3.12868, -0.00182152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 588.076, 5.00751, -0.00182152)
 is_enabled = false
 
 [node name="Pemburu 3" parent="Pemburu Phase 2" instance=ExtResource("28_eenen")]

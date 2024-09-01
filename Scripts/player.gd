@@ -277,31 +277,35 @@ func _physics_process(delta):
 
 var is_fainting = false
 
-func faint():
-	# ditembak hunter atau kena serangan leviathan
+func gone_to_void():
 	if !is_fainting:
 		is_fainting = true
 		stop_move()
+		
+		visible = false
+		await get_tree().create_timer(1.5).timeout
+		visible = true
 			
+	
+		allow_move()
+			
+		is_fainting = false
+		respawn()
+	
+func faint():
+	# ditembak hunter
+	if !is_fainting:
+		is_fainting = true
+		stop_move()
+		
 		$shot_particle.emitting = true
-			
+				
 		animTree.set("parameters/Game/transition_request", "faint")
 		await animTree.animation_finished
 		
 		await get_tree().create_timer(0.6).timeout
 	
 		allow_move()
-		#if playerState == PlayerState.ON_LAND:
-			#
-			#
-		#elif playerState == PlayerState.SWIMMING:
-			#stop_move()
-			#visible = false
-			#velocity = Vector3.ONE
-			#await get_tree().create_timer(0.6).timeout
-			#
-			#visible = true
-			#allow_move()
 			
 		is_fainting = false
 		respawn()
