@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct34738y81lpy"]
+[gd_scene load_steps=6 format=3 uid="uid://ct34738y81lpy"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_el516"]
 [ext_resource type="Resource" uid="uid://cl8c4syjo18hu" path="res://Resource/pulau_list.tres" id="2_qros2"]
 [ext_resource type="AudioStream" uid="uid://bw6v3np21mej3" path="res://audio/a/little-robot-sound1.ogg" id="3_r0j2k"]
 [ext_resource type="AudioStream" uid="uid://dsuicu7knmrtv" path="res://audio/rain-sound-188158.ogg" id="4_l5kdr"]
+[ext_resource type="AudioStream" uid="uid://23xlh3n2m1dq" path="res://audio/notification-5-158190.ogg" id="5_voc5u"]
 
 [node name="GameManager" type="Node"]
 process_mode = 3
@@ -26,3 +27,8 @@ volume_db = 5.0
 
 [node name="rain" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_l5kdr")
+
+[node name="almanac" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_voc5u")
+volume_db = -5.0
+pitch_scale = 0.8

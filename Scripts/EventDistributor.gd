@@ -7,6 +7,7 @@ signal despawn_mas()
 signal start_dialogue(file_path)
 signal start_dialogue_with_pulau(file_path, nama_pulau, fun_fact)
 signal start_dialogue_not_stop(file_path)
+signal start_dialogue_not_stop_timed(file_path, nama_pulau, fun_fact, emit_end, time_based)
 signal end_dialogue()
 signal end_tutorial_line()
 

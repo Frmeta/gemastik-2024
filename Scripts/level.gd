@@ -37,6 +37,9 @@ func _ready():
 	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.play_rain(-10)
 		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 10)
+	elif nama_pulau.to_lower()=="preepilogue":
+		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg", -10)
+		EventDistributor.emit_signal("start_dialogue_not_stop_timed", "res://dialogue/preepilogue.json","", "",  true,true)
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
@@ -48,15 +51,20 @@ func _ready():
 		if nama_pulau.to_lower()=="kalimantan":
 			EventDistributor.emit_signal("start_dialogue",DialogueEnum.KALIMANTAN)
 		else:
-			EventDistributor.emit_signal("start_dialogue_with_pulau",DialogueEnum.START_PULAU,nama_pulau,fun_fact)
+			if nama_pulau!="preepilogue":
+				EventDistributor.emit_signal("start_dialogue_with_pulau",DialogueEnum.START_PULAU,nama_pulau,fun_fact)
+				await EventDistributor.end_dialogue
+				EventDistributor.emit_signal("start_dialogue", DialogueEnum.PREFIX+nama_pulau.to_lower()+".json")
+		if nama_pulau!="preepilogue":
 			await EventDistributor.end_dialogue
-			EventDistributor.emit_signal("start_dialogue", DialogueEnum.PREFIX+nama_pulau.to_lower()+".json")
-		await EventDistributor.end_dialogue
-		
-		EventDistributor.emit_signal("despawn_mas")
+			EventDistributor.emit_signal("despawn_mas")
 	
 	GM.doni.allow_move()
 	GM.doni.curr_jumps=0
+	if nama_pulau=="preepilogue":
+		await EventDistributor.end_dialogue 
+		GM.current_level=10
+		Transition.change_scene("res://Scenes/Game/hyperspace.tscn")
 
 func set_up():
 	almanac_ui.visible = false

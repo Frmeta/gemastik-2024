@@ -17,7 +17,7 @@ var counter = 0
 
 func _ready():
 	textbox.connect("go_to_next_line", foo)
-	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Feeling Cozy ' lofi background music.mp3", -3)
+	GM.play_audio_background("res://audio/proepilogue/[no copyright music] 'Feeling Cozy ' lofi background music.mp3", 3)
 	$skeleton_mas/Mas/AnimationPlayer.play("Mas_Idle")
 	goto(0)
 	var target = $DonisRoom.global_position.y
@@ -26,6 +26,8 @@ func _ready():
 		await get_tree().create_timer(0.001).timeout
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.EPILOGUE2)
 	await EventDistributor.end_dialogue
+	epilogue_end=true
+	epilogue_end=true
 	epilogue_end=true
 	
 
@@ -80,4 +82,4 @@ func goto(idx):
 	mas.rotation = masMarkers[idx].global_rotation
 
 func _on_button_button_up():
-	get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
+	Transition.change_scene("res://Scenes/Game/main_menu.tscn")

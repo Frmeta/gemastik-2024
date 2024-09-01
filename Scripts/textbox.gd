@@ -8,16 +8,20 @@ var still_typing=false
 
 signal go_to_next_line()
 var rng: RandomNumberGenerator
+var _time_based=false
+var _newline = false
 func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 
-func display_line(nama: String, dialogue:String, emosi, _nama_pulau:String = "", _fun_fact:String = ""):
+func display_line(nama: String, dialogue:String, emosi,timer_based=false):
+	_time_based=timer_based
+	_newline = true
 	still_typing=true
 	name_label.text = nama
 	dialogue_label.visible_ratio=0.0
 	dialogue_label.text=dialogue
-		
+	
 	var type_speed = 1.2 / dialogue.length()
 	var num = rng.randi_range(1,4)
 	# Atur sprite emosi
@@ -38,6 +42,9 @@ func display_line(nama: String, dialogue:String, emosi, _nama_pulau:String = "",
 		if get_tree() != null:
 			await get_tree().create_timer(0.01).timeout
 	still_typing=false
+	if _time_based:
+		_newline = false
+		$"../Timer".start()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and still_typing:
@@ -47,9 +54,14 @@ func _process(_delta):
 		if self.visible:
 			GM.play_audio("res://audio/a/button_clickback.ogg", 1,-20)
 		still_typing = false
-		#GM.stop_doni()
 		await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
+		
 		emit_signal("go_to_next_line")
+
+func _on_timer_timeout():
+	if _time_based and not _newline:
+		emit_signal("go_to_next_line")
+
 
 var _emosi_mas = {
 	2: load("res://assets/emosi/mas/mas2.png"),
@@ -70,3 +82,5 @@ var _emosi_doni = {
 var _emosi_leviathan = {
 	0: load("res://icon.svg")
 }
+
+

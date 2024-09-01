@@ -47,12 +47,23 @@ func _on_kebali_ke_menu_pressed():
 		anim_player_camera.play_backwards("move_to_rusa")
 		await anim_player_camera.animation_finished
 		tab.visible=true
+	elif tab.current_tab==2:
+		tab.visible=false
+		anim_player_camera.speed_scale=0.8
+		anim_player_camera.play_backwards("credits")
+		await anim_player_camera.animation_finished
+		tab.visible=true
 	tab.current_tab = 0
 	anim_player_camera.speed_scale=0.2
 
 func _on_credits_button_pressed():
+	tab.visible=false
+	anim_player_camera.speed_scale=0.8
 	GM.play_audio("res://audio/a/button_click.mp3")
+	anim_player_camera.play("credits")
+	await anim_player_camera.animation_finished
 	tab.current_tab = 2
+	tab.visible=true
 
 func _on_keluar_button_pressed():
 	get_tree().quit()

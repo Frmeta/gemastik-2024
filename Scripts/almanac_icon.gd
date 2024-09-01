@@ -5,12 +5,13 @@ extends TextureRect
 var notifying := false
 
 func notify():
+	GM.play_almanac()
 	notifying = true
 	texture = load("res://assets/almanac2-notif.png")
 	time_to_flip.start()
 
 func unotify():
-	print("unotifying")
+	GM.stop_almanac()
 	texture = load("res://assets/ui/Hint_Almanac.png")
 	notifying = false
 	flip_h = false

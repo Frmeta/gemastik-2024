@@ -1,42 +1,62 @@
 [
 	{
 		"nama":"MAS",
-		"dialogue":"Gimana perasaanmu Doni?",
-		"emosi":"2"
+		"dialogue":"Akhirnya...",
+		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Melihat keistimewaan yang ada di Indonesia!",
-		"emosi":"3"
+		"dialogue":"Selamat juga...",
+		"emosi":"4"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Saya senang MAS, pengalaman ini sangat seru",
-		"emosi":"5"
+		"dialogue":"MAS, apakah kamu baik-baik saja?!",
+		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Gitu dong... Nah sekarang untuk membawa mu balik ke rumah",
-		"emosi":"5"
+		"dialogue":"Baik Doni",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Terima kasih untuk tidak meninggalkan ku",
+		"emosi":"4"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Baik MAS!!",
+		"dialogue":"Ya haruslah",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"[LOADING...]",
+		"dialogue":"Baik sekali kamu...",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kalo aku tinggalin nanti aku gak bisa balik ke rumahku",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Terdeteksi anomali...",
+		"dialogue":"HAHAHAHA benar juga",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"HAHAHA",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"DONI HATI-HATI!",
+		"dialogue":"Baiklah mari kita pulangkan kamu",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Basik MAS!",
 		"emosi":"4"
 	},
 ]
