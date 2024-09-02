@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://c4rrec8magp2"]
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://c4rrec8magp2"]
 
 [ext_resource type="Texture2D" uid="uid://csx76rdn0vtui" path="res://Resource/Hewan/5-Sulawesi/babi_rusa.png" id="1_r7ma7"]
 [ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_y1npl"]
+[ext_resource type="Texture2D" uid="uid://bq1gken1kgxxb" path="res://Resource/Hewan/5-Sulawesi/babi_rusa_kartun.png" id="2_tbu15"]
 
 [resource]
 script = ExtResource("1_y1npl")
-foto_kartun = ExtResource("1_r7ma7")
+foto_kartun = ExtResource("2_tbu15")
 foto_asli = ExtResource("1_r7ma7")
 nama = "Babirusa"
 latin = "Babyrousa celebensis"

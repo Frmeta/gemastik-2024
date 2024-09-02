@@ -159,7 +159,7 @@ func play_rain(volume_db=0):
 	$rain.play()
 
 func play_almanac():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.4).timeout
 	if not $almanac.playing:
 		$almanac.play()
 	
