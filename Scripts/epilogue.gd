@@ -27,7 +27,7 @@ func _ready():
 	EventDistributor.emit_signal("start_dialogue", DialogueEnum.EPILOGUE2)
 	await EventDistributor.end_dialogue
 	epilogue_end=true
-	epilogue_end=true
+	epilogue_end=true 
 	epilogue_end=true
 	
 

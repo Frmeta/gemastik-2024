@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://hyperspace.gdshader" id="1_uo1qi"]
 [ext_resource type="Texture2D" uid="uid://cobrhsehfn3w7" path="res://icon.svg" id="2_ipgul"]
 [ext_resource type="PackedScene" uid="uid://citr26g7md7tc" path="res://3D Assets/DoniFinal/DoniFinal.tscn" id="3_b0t5q"]
-[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/mas/Mas.glb" id="5_igrw1"]
+[ext_resource type="PackedScene" uid="uid://cvl710r3hv60q" path="res://3D Assets/Mas/Mas.glb" id="5_igrw1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h81ma"]
 shader = ExtResource("1_uo1qi")

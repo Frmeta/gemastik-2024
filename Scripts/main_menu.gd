@@ -49,7 +49,7 @@ func _on_kebali_ke_menu_pressed():
 		tab.visible=true
 	elif tab.current_tab==2:
 		tab.visible=false
-		anim_player_camera.speed_scale=0.8
+		anim_player_camera.speed_scale=1
 		anim_player_camera.play_backwards("credits")
 		await anim_player_camera.animation_finished
 		tab.visible=true
@@ -58,7 +58,7 @@ func _on_kebali_ke_menu_pressed():
 
 func _on_credits_button_pressed():
 	tab.visible=false
-	anim_player_camera.speed_scale=0.8
+	anim_player_camera.speed_scale=1
 	GM.play_audio("res://audio/a/button_click.mp3")
 	anim_player_camera.play("credits")
 	await anim_player_camera.animation_finished

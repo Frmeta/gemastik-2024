@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsu33apu0fwf7"]
+[gd_scene load_steps=6 format=3 uid="uid://1qtg60k3eols"]
 
 [ext_resource type="Script" path="res://Scripts/splash_screen.gd" id="1_1fdjx"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="2_glbnc"]
 [ext_resource type="Texture2D" uid="uid://c856bvd02weye" path="res://assets/splashscreen/logo gemastik.png" id="2_y4j1r"]
 [ext_resource type="Texture2D" uid="uid://dx781444ajnv5" path="res://assets/splashscreen/logo ui.png" id="3_3b5sm"]
+[ext_resource type="Texture2D" uid="uid://qdrsx8c8pue6" path="res://assets/splashscreen/Frame 49.png" id="3_6uttr"]
 
 [node name="Splash Screen" type="Node2D"]
-position = Vector2(-54, -21)
+position = Vector2(-2, -3)
 script = ExtResource("1_1fdjx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -39,3 +41,27 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.765, 1.765)
 texture = ExtResource("3_3b5sm")
+
+[node name="MarginContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_glbnc")
+theme_override_font_sizes/font_size = 64
+text = "Permainan memerlukan
+ MOUSE dan KEYBOARD"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_6uttr")
+stretch_mode = 5
