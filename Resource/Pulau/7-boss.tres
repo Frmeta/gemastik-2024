@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("5_qrjfk")
-nama = "Laut Indonesia"
+nama = "Laut Jawa"
 hewanss = Array[Resource("res://Scripts/hewans.gd")]([])

@@ -17,14 +17,14 @@
 [ext_resource type="ArrayMesh" uid="uid://ct7wmgykdg7tf" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_210.res" id="12_4l577"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="12_7elh3"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_20ufl"]
-[ext_resource type="PackedScene" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
+[ext_resource type="PackedScene" uid="uid://cnjd1wnsqfrv8" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
 [ext_resource type="ArrayMesh" uid="uid://b31iqxm8ehlfc" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_211.res" id="14_writc"]
 [ext_resource type="ArrayMesh" uid="uid://pst4gsphyute" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_216.res" id="15_trsgx"]
 [ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
-[ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="16_ntc43"]
+[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="16_ntc43"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="19_5kaoy"]
-[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
 [ext_resource type="Script" path="res://Scripts/lighting.gd" id="23_37g3s"]
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="24_02nv0"]
 
@@ -90,11 +90,11 @@ environment = SubResource("Environment_5tvlx")
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_534t3")]
 
 [node name="Camera3D" parent="." instance=ExtResource("5_6lbe3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.591, 103.074, 11.27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.029, 88.8409, 11.27)
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.024, 72.3937, -6.10352e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.763, 73.5093, -5.91279e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -546,7 +546,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 12.8796, 29.6306, 0)
 area_idx = 1
 
 [node name="Levi Phase 2" parent="GridMapGround/LeviPhases" instance=ExtResource("13_o0kv6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.313, 1.16136, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 219.672, -3.88738, 1.52588e-05)
 area_idx = 2
 
 [node name="Levi Phase 3" parent="GridMapGround/LeviPhases" instance=ExtResource("13_o0kv6")]
@@ -554,7 +554,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.152, 24.7115, -3.8147e-06
 area_idx = 3
 
 [node name="Levi Phase 4" parent="GridMapGround/LeviPhases" instance=ExtResource("13_o0kv6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 453.167, 36.5487, 1.64424)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 506.985, 49.5541, 1.64424)
 area_idx = 3
 
 [node name="Checkpoints" type="Node3D" parent="GridMapGround"]
@@ -771,9 +771,10 @@ transform = Transform3D(-0.488617, -0.462079, 0.194257, 0.494307, -0.489191, 0.0
 mesh = ExtResource("16_ntc43")
 skeleton = NodePath("")
 
-[node name="WinArea" parent="GridMapGround" instance=ExtResource("13_20ufl")]
+[node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 865.935, 181.908, -0.871899)
 scene_after_win = "pre_epilogue"
+skip_dialog = true
 
 [node name="GridMapVines" parent="." instance=ExtResource("9_10fag")]
 data = {

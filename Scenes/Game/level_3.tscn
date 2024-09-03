@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=71 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -153,6 +153,9 @@ size = Vector3(190.992, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgvx"]
 size = Vector3(117.232, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1ji1"]
+size = Vector3(196.012, 27.553, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoy2n"]
 resource_name = "CobbleDirt.017"
@@ -737,6 +740,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1253.03, 155.713, 0)
 [node name="invisiblewall kasuari kanan" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1300.27, 157.228, 0)
 
+[node name="invisiblewall kasuari kanan2" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1179.69, 190.146, -3.05176e-05)
+
+[node name="invisiblewall kasuari kanan3" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1272.69, 165.146, -3.05176e-05)
+
 [node name="grapling for tree" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree cen1" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
@@ -746,20 +755,20 @@ transform = Transform3D(0.94, 0, 0, 0, 0.405, 0, 0, 0, 1, 23.1604, 2.00612, 1.19
 transform = Transform3D(0.27, 0, 0, 0, 0.405, 0, 0, 0, 1, 19.8645, 1.90912, -0.0191306)
 
 [node name="grapling_for_tree1" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(8.146, 0, 0, 0, 3.73, 0, 0, 0, 1, 115.601, 6.4334, 4.76837e-07)
+transform = Transform3D(5.90296, 0, 0, 0, 1.18707, 0, 0, 0, 1.00041, 115.601, 6.4334, 4.76837e-07)
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(4.60625, 1.32236, 0, -1.86105, 3.27296, 0, 0, 0, 1, 120.438, 2.67938, 4.76837e-07)
+transform = Transform3D(3.99322, 1.25126, 0, -1.61337, 3.09697, 0, 0, 0, 1, 120.438, 2.67938, 4.76837e-07)
 
 [node name="grapling_for_tree4" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(11.1889, 0, 0, 0, 4.95504, 0, 0, 0, 1, 163.545, 16.5353, 0)
+transform = Transform3D(11.1889, 0, 0, 0, 4.95504, 0, 0, 0, 1, 163.545, 16.9513, 0)
 
 [node name="grapling_for_tree3" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
 transform = Transform3D(26.5445, 1.12813, 0, -8.41783, 3.55738, 0, 0, 0, 0.990612, 956.729, 216.05, 0)
 collision_layer = 2
 
 [node name="grapling_for_tree5" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
-transform = Transform3D(11.1889, 0, 0, 0, 4.95504, 0, 0, 0, 1, 171.555, 22.2037, 0)
+transform = Transform3D(4.18999, 0, 0, 0, 2.28588, 0, 0, 0, 0.995964, 169.687, 11.5961, 0)
 
 [node name="grapling_for_tree6" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
 transform = Transform3D(21.9877, -6.91634, 0, 11.1092, 13.6891, 0, 0, 0, 2.79196, 837.856, 210.778, -0.00012207)
@@ -1256,6 +1265,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1259.76, 162.433, 1.56611)
 
 [node name="mineral_walls21" parent="GridMapGround" instance=ExtResource("21_kixfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1254.43, 167.415, 1.56599)
+
+[node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1171.05, 193.884, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]
+shape = SubResource("BoxShape3D_p1ji1")
 
 [node name="GridMapCave" parent="." instance=ExtResource("9_suxpj")]
 data = {

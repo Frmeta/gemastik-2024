@@ -1,15 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr4qcudr5qljb"]
+[gd_scene load_steps=16 format=3 uid="uid://dyfpaxv3slpeq"]
 
-[ext_resource type="Script" path="res://Scripts/Leviathan.gd" id="1_d0ctj"]
-[ext_resource type="PackedScene" uid="uid://7duto7ugp3rq" path="res://3D Assets/Animal/7-Leviathan/Leviathan.glb" id="2_ck1vu"]
-[ext_resource type="PackedScene" uid="uid://c3gmtn8aoyij1" path="res://Scenes/water_splash.tscn" id="3_etgfq"]
-[ext_resource type="AudioStream" uid="uid://bxa1y3vemdu8t" path="res://audio/levi/big-monster-shout-104325.mp3" id="4_vgc8w"]
-[ext_resource type="AudioStream" uid="uid://behitgu2m3jxe" path="res://audio/levi/monster-growl-6311.mp3" id="5_stknf"]
-[ext_resource type="AudioStream" uid="uid://bn8lw2mi1f3u3" path="res://audio/levi/low-monster-roar-97413.mp3" id="6_iid4e"]
-[ext_resource type="AudioStream" uid="uid://bbir34h6garik" path="res://audio/levi/monster-bite-44538.mp3" id="7_0kk32"]
-[ext_resource type="AudioStream" uid="uid://cdxbeusbn14yp" path="res://audio/levi/jump/monster-roar-6985.mp3" id="8_jgfq5"]
-[ext_resource type="AudioStream" uid="uid://bhjj76ydvxtcu" path="res://audio/levi/jump/dragon-roar-high-intensity-36564.mp3" id="9_lqjy4"]
-[ext_resource type="AudioStream" uid="uid://cygsqjr24dcc4" path="res://audio/levi/jump/dragon-breathe-ire-6216.mp3" id="10_5rh7a"]
+[ext_resource type="Script" path="res://Scripts/Leviathan_Sumatera.gd" id="1_xi50w"]
+[ext_resource type="PackedScene" uid="uid://7duto7ugp3rq" path="res://3D Assets/Animal/7-Leviathan/Leviathan.glb" id="2_t0fcm"]
+[ext_resource type="PackedScene" uid="uid://c3gmtn8aoyij1" path="res://Scenes/water_splash.tscn" id="3_wktpx"]
+[ext_resource type="AudioStream" uid="uid://bxa1y3vemdu8t" path="res://audio/levi/big-monster-shout-104325.mp3" id="4_e3wge"]
+[ext_resource type="AudioStream" uid="uid://behitgu2m3jxe" path="res://audio/levi/monster-growl-6311.mp3" id="5_nq1kd"]
+[ext_resource type="AudioStream" uid="uid://bn8lw2mi1f3u3" path="res://audio/levi/low-monster-roar-97413.mp3" id="6_vs41t"]
+[ext_resource type="AudioStream" uid="uid://bbir34h6garik" path="res://audio/levi/monster-bite-44538.mp3" id="7_5u8ll"]
+[ext_resource type="AudioStream" uid="uid://cdxbeusbn14yp" path="res://audio/levi/jump/monster-roar-6985.mp3" id="8_hf5df"]
+[ext_resource type="AudioStream" uid="uid://bhjj76ydvxtcu" path="res://audio/levi/jump/dragon-roar-high-intensity-36564.mp3" id="9_a5ytr"]
+[ext_resource type="AudioStream" uid="uid://cygsqjr24dcc4" path="res://audio/levi/jump/dragon-breathe-ire-6216.mp3" id="10_g865y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55t6g"]
 resource_name = "Material"
@@ -84,10 +84,10 @@ shadow_mesh = SubResource("ArrayMesh_in72i")
 [sub_resource type="SphereShape3D" id="SphereShape3D_njom5"]
 radius = 1.41379
 
-[node name="Leviathan" type="Node3D"]
-script = ExtResource("1_d0ctj")
+[node name="Leviathan_Sumatera" type="Node3D"]
+script = ExtResource("1_xi50w")
 
-[node name="Leviathan2" parent="." instance=ExtResource("2_ck1vu")]
+[node name="Leviathan2" parent="." instance=ExtResource("2_t0fcm")]
 
 [node name="Skeleton3D" parent="Leviathan2/Leviathan_Skeleton_001" index="0"]
 bones/0/position = Vector3(0.000474975, 0.000474975, 0.000474975)
@@ -107,7 +107,6 @@ bones/37/scale = Vector3(1, 1, 1)
 
 [node name="vis" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.7087)
-visible = false
 collision_layer = 0
 
 [node name="mesh" type="MeshInstance3D" parent="vis"]
@@ -119,33 +118,33 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_njom5")
 
-[node name="water_splash" parent="." instance=ExtResource("3_etgfq")]
+[node name="water_splash" parent="." instance=ExtResource("3_wktpx")]
 
 [node name="Idle1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_vgc8w")
+stream = ExtResource("4_e3wge")
 volume_db = -5.0
 
 [node name="Idle2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_stknf")
+stream = ExtResource("5_nq1kd")
 volume_db = -5.0
 
 [node name="Idle3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_iid4e")
+stream = ExtResource("6_vs41t")
 volume_db = -10.0
 
 [node name="Bite" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_0kk32")
+stream = ExtResource("7_5u8ll")
 
 [node name="Jump1" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_jgfq5")
+stream = ExtResource("8_hf5df")
 volume_db = 22.0
 
 [node name="Jump2" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_lqjy4")
+stream = ExtResource("9_a5ytr")
 volume_db = 25.0
 
 [node name="Jump3" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("10_5rh7a")
+stream = ExtResource("10_g865y")
 volume_db = 22.0
 
 [connection signal="body_entered" from="vis" to="." method="hit_doni"]

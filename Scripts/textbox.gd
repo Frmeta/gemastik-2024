@@ -39,7 +39,7 @@ func display_line(nama: String, dialogue:String, emosi,timer_based=false):
 	# Munculin karakter satu per satu
 	for charr in dialogue:
 		dialogue_label.visible_ratio+=type_speed
-		if get_tree() != null:
+		if is_inside_tree() && get_tree() != null:
 			await get_tree().create_timer(0.01).timeout
 	still_typing=false
 	if _time_based:
@@ -54,7 +54,8 @@ func _process(_delta):
 		if self.visible:
 			GM.play_audio("res://audio/a/button_clickback.ogg", 1,-20)
 		still_typing = false
-		await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
+		if is_inside_tree() && get_tree() != null:
+			await get_tree().create_timer(0.0001).timeout #UNTUK MENJAMIN CONCURENCY AMAN, FUCK U
 		
 		emit_signal("go_to_next_line")
 
