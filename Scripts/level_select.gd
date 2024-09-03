@@ -101,7 +101,11 @@ func _input(event):
 			# level is unlocked
 			GM.current_level = selected_level
 			GM.scanned_animal = []
-			Transition.change_scene("res://Scenes/Game/hyperspace.tscn")
+			if selected_level == 7:
+				# skip hyperspace karena mas diculik
+				Transition.change_scene("res://Scenes/Game/level_7.tscn")
+			else:
+				Transition.change_scene("res://Scenes/Game/hyperspace.tscn")
 		else:
 			# level is locked
 			pass

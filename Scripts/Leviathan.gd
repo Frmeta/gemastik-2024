@@ -29,17 +29,19 @@ var open_lerp = 0
 # leviathan phase
 enum LeviPhase {NONE, SIN, SIN_DONE, FOLLOW, FOLLOW_EAT, FOLLOW_DONE, JUMP, DEBUG}
 var phase : LeviPhase = LeviPhase.NONE
-var msec_start_phase
+var msec_start_phase = 0
+var msec_timer = 0
 var player_x
 var player_y
 var tmp # save Vector3 last levi pos
 var tmp2 # save Vector3 dir follow_eat
 var tmp3 # save int arah jump
 var tmp4 # save boolean for is_splash
-var my_timer = 2
+var my_timer = 2 # idle sound timer
 
 
 func _ready():
+	
 	# instantiate cubes for animation reference
 	for i in range(BODY_COUNT):
 		var wow = vis.duplicate()
@@ -67,11 +69,14 @@ func _ready():
 		self.remove_child(jump_sfx[i])
 		vises[0].add_child(jump_sfx[i])
 
+func _process(delta):
+	msec_timer += int(delta * 1000)
 
 func _physics_process(delta):
+	
 	my_timer -= delta
 	if my_timer < 0 and (phase == LeviPhase.SIN or phase == LeviPhase.FOLLOW):
-		my_timer = randf() * 8
+		my_timer = randf() * 10
 		if randi() % 3 == 0:
 			$Idle1.play()
 		elif randi() % 2 == 0:
@@ -84,20 +89,20 @@ func _physics_process(delta):
 		if GM.levi_phase == 1:
 			# sin
 			phase = LeviPhase.SIN
-			msec_start_phase = float(Time.get_ticks_msec())
+			msec_start_phase = float(msec_timer)
 			player_x = GM.doni.global_position.x
 				
 		elif GM.levi_phase == 2:
 			# follow player
 			phase = LeviPhase.FOLLOW
-			msec_start_phase = float(Time.get_ticks_msec())
+			msec_start_phase = float(msec_timer)
 			target_position.z = -100
 			
 		elif GM.levi_phase == 3:
 			# jump
-			const RANDOM_RANGE = 8
+			const RANDOM_RANGE = 3
 			phase = LeviPhase.JUMP
-			msec_start_phase = float(Time.get_ticks_msec())
+			msec_start_phase = float(msec_timer)
 			player_x = GM.doni.global_position.x + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
 			player_y = GM.doni.global_position.y + 2 + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
 			tmp3 = randi() % 3
@@ -108,7 +113,7 @@ func _physics_process(delta):
 		const HEIGHT = 150
 		const DEPTH = 100
 		const X_RANGE = 50
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
 		player_x = move_toward(player_x, GM.doni.position.x, 3*delta)
 		var x
@@ -143,7 +148,7 @@ func _physics_process(delta):
 		const DEPTH = 30
 		const X_RANGE = 100
 		
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
 		if teta < 2*PI:
 				target_position = Vector3(\
@@ -152,7 +157,7 @@ func _physics_process(delta):
 				-DEPTH)
 		else:
 			if GM.levi_phase != 1:
-				msec_start_phase = Time.get_ticks_msec()
+				msec_start_phase = msec_timer
 				tmp = target_position
 				phase = LeviPhase.SIN_DONE
 			else:
@@ -164,7 +169,7 @@ func _physics_process(delta):
 		const FREQUENCY = 0.2
 		const Y_RANGE = 10
 		const X_RANGE = 80
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		var diff_to_player = target_position.distance_to(GM.doni.global_position)
 		target_position = tmp + Vector3(-sin(teta)*X_RANGE, -sin(teta)*Y_RANGE,0)
 		if teta > PI/2:
@@ -177,7 +182,7 @@ func _physics_process(delta):
 		const Y_RANGE = 10
 		const X_RANGE = 10
 		const SPEED = 6.5
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		var diff_to_player = target_position.distance_to(GM.doni.global_position)
 		
 		if GM.levi_phase == 2:
@@ -190,16 +195,16 @@ func _physics_process(delta):
 			)
 			
 			if diff_to_player < 5:
-				msec_start_phase = Time.get_ticks_msec()
+				msec_start_phase = msec_timer
 				tmp = target_position
-				tmp2 = GM.doni.global_position - global_position
+				tmp2 = GM.doni.global_position - target_position
 				#tmp2.z = 0
 				tmp2 = tmp2.normalized()
 				phase = LeviPhase.FOLLOW_EAT
 				$Bite.play()
 				
 		else:
-			msec_start_phase = Time.get_ticks_msec()
+			msec_start_phase = msec_timer
 			tmp = target_position
 			phase = LeviPhase.FOLLOW_DONE
 		open_lerp = 1-clamp(diff_to_player/2 - 10, 0, 1)
@@ -209,7 +214,7 @@ func _physics_process(delta):
 		
 		const FREQUENCY = 0.3
 		const RANGE = 16
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
 		if teta < PI/2:
 			target_position = tmp + tmp2 * sin(teta) * RANGE
@@ -222,7 +227,7 @@ func _physics_process(delta):
 		const Y_RANGE = 30
 		const X_RANGE = 150
 		const SPEED = 7
-		var teta = (Time.get_ticks_msec()-msec_start_phase)/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		var diff_to_player = target_position.distance_to(GM.doni.global_position)
 		target_position = tmp + Vector3(-sin(teta)*X_RANGE, sin(teta)*Y_RANGE,0)
 		if teta > PI/2:
@@ -234,13 +239,13 @@ func _physics_process(delta):
 		const RANGE = 20
 		const DEPTH = 30
 		
-		var teta = (Time.get_ticks_msec())/1000.0*FREQUENCY*2*PI
+		var teta = (msec_timer)/1000.0*FREQUENCY*2*PI
 		target_position = Vector3(\
 			sin(teta) * RANGE + 15,
 			cos(teta) * RANGE + 60,
 			sin(teta) * RANGE - DEPTH
 		)
-		open_lerp = (sin(Time.get_ticks_msec()/50.0)+1)/2
+		open_lerp = (sin(msec_timer/50.0)+1)/2
 	move()
 
 func move():

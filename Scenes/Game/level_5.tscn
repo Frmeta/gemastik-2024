@@ -147,7 +147,7 @@ process_material = SubResource("ParticleProcessMaterial_csijy")
 [node name="Camera3D" parent="." instance=ExtResource("5_fpu7u")]
 
 [node name="Player" parent="." instance=ExtResource("6_dn0jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00497437, 0.564775, 1.52588e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76101, -4.12861, 1.52588e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_f3hnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
