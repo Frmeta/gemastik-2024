@@ -426,3 +426,6 @@ func stop_scan_sound():
 
 func _change_air_speed(amount):
 	air_speed=amount
+
+func emit_sweat():
+	$sweat.emitting=true
