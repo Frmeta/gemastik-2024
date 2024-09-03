@@ -2,6 +2,7 @@ extends Area3D
 
 @export var scene_after_win: String
 @export var skip_dialog := false
+@export var aneh_sendiri := false
 
 func _on_body_entered(body):
 	if body.name == "Player":
@@ -26,7 +27,7 @@ func _on_body_entered(body):
 				GM.doni.stop_move()
 				
 				# leviathan makan mas
-				$"../Leviathan_Sumatera".eat_mas()
+				$"../../../../Leviathan_Sumatera".eat_mas()
 				await get_tree().create_timer(5).timeout
 				
 				EventDistributor.emit_signal("start_dialogue", DialogueEnum.LEVIATHAN2)
@@ -40,6 +41,9 @@ func _on_body_entered(body):
 			GM.doni.victory_dance()
 			
 			await get_tree().create_timer(2).timeout
-		$"../CanvasLayerLevel".visible=false
+		if aneh_sendiri:
+			$"../../../../CanvasLayerLevel".visible=false
+		else:
+			$"../CanvasLayerLevel".visible=false
 		GM.win(scene_after_win)
 		
