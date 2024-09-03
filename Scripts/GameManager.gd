@@ -64,6 +64,7 @@ func os_walk(path):
 
 # ketika player menang (win_area.gd)
 func win(target : String):
+	stop_almanac()
 	explored_level = max(explored_level, current_level+1)
 	if current_level+1==explored_level:
 		new_unlocked=current_level+1
@@ -159,7 +160,7 @@ func play_rain(volume_db=0):
 	$rain.play()
 
 func play_almanac():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.4).timeout
 	if not $almanac.playing:
 		$almanac.play()
 	

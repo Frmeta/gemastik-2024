@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://cg7myulyqgnjh"]
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://cg7myulyqgnjh"]
 
 [ext_resource type="Script" path="res://Scripts/hewans.gd" id="1_pfa85"]
 [ext_resource type="Texture2D" uid="uid://dkex5bfe8uf5s" path="res://Resource/Hewan/3-Papua/kasuari.png" id="1_ydgjn"]
+[ext_resource type="Texture2D" uid="uid://gbvxaurxku6k" path="res://Resource/Hewan/3-Papua/cenderawasi_kartun.png" id="2_b6cr6"]
 
 [resource]
 script = ExtResource("1_pfa85")
-foto_kartun = ExtResource("1_ydgjn")
+foto_kartun = ExtResource("2_b6cr6")
 foto_asli = ExtResource("1_ydgjn")
 nama = "Kasuari"
 latin = "Casuarius casuarius"

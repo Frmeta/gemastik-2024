@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="hewans" load_steps=3 format=3 uid="uid://c83hpla3rn64"]
+[gd_resource type="Resource" script_class="hewans" load_steps=4 format=3 uid="uid://c83hpla3rn64"]
 
 [ext_resource type="Texture2D" uid="uid://q3nrpuacobd6" path="res://Resource/Hewan/5-Sulawesi/burung_maleo.png" id="1_gkmim"]
 [ext_resource type="Script" path="res://Scripts/hewans.gd" id="2_2lsfd"]
+[ext_resource type="Texture2D" uid="uid://dglaj163eexjf" path="res://Resource/Hewan/5-Sulawesi/maleo_kartun.png" id="2_45ro7"]
 
 [resource]
 script = ExtResource("2_2lsfd")
-foto_kartun = ExtResource("1_gkmim")
+foto_kartun = ExtResource("2_45ro7")
 foto_asli = ExtResource("1_gkmim")
 nama = "Burung Maleo"
 latin = "Macrocephalon maleo"
