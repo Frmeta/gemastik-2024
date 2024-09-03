@@ -44,7 +44,7 @@ func _ready():
 	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.current_level = 7
 		GM.play_rain(-10)
-		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 10)
+		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 5)
 	elif nama_pulau.to_lower()=="preepilogue":
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg", -10)
 		EventDistributor.emit_signal("start_dialogue_not_stop_timed", "res://dialogue/preepilogue.json","", "",  true,true)

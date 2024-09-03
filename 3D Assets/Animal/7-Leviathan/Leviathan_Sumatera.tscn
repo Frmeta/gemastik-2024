@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyfpaxv3slpeq"]
+[gd_scene load_steps=17 format=3 uid="uid://dyfpaxv3slpeq"]
 
 [ext_resource type="Script" path="res://Scripts/Leviathan_Sumatera.gd" id="1_xi50w"]
 [ext_resource type="PackedScene" uid="uid://7duto7ugp3rq" path="res://3D Assets/Animal/7-Leviathan/Leviathan.glb" id="2_t0fcm"]
+[ext_resource type="Script" path="res://Scripts/Levi_ProceduralAnim.gd" id="3_8rt1s"]
 [ext_resource type="PackedScene" uid="uid://c3gmtn8aoyij1" path="res://Scenes/water_splash.tscn" id="3_wktpx"]
 [ext_resource type="AudioStream" uid="uid://bxa1y3vemdu8t" path="res://audio/levi/big-monster-shout-104325.mp3" id="4_e3wge"]
 [ext_resource type="AudioStream" uid="uid://behitgu2m3jxe" path="res://audio/levi/monster-growl-6311.mp3" id="5_nq1kd"]
@@ -88,6 +89,7 @@ radius = 1.41379
 script = ExtResource("1_xi50w")
 
 [node name="Leviathan2" parent="." instance=ExtResource("2_t0fcm")]
+script = ExtResource("3_8rt1s")
 
 [node name="Skeleton3D" parent="Leviathan2/Leviathan_Skeleton_001" index="0"]
 bones/0/position = Vector3(0.000474975, 0.000474975, 0.000474975)
@@ -107,7 +109,9 @@ bones/37/scale = Vector3(1, 1, 1)
 
 [node name="vis" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.7087)
+visible = false
 collision_layer = 0
+collision_mask = 5
 
 [node name="mesh" type="MeshInstance3D" parent="vis"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
