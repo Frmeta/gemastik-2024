@@ -31,14 +31,15 @@ func eat_mas():
 	# leviathan mulai loncat
 	phase = LeviPhase.JUMP_UP
 	msec_start_phase = msec_timer
-	player_x = GM.doni.global_position.x + 4
+	player_x = GM.doni.global_position.x + 4.5
 	player_y = GM.doni.global_position.y
+	jump_sfx[1].play()
+	tmp4 = false
 
 func _physics_process(delta):
 	
 	if phase == LeviPhase.NONE:
 		visible = false
-		tmp4 = false
 			
 	elif phase == LeviPhase.JUMP_FRONT:
 		visible = true
@@ -55,8 +56,7 @@ func _physics_process(delta):
 		
 		if !tmp4 and target_position.y > 28:
 			tmp4 = true
-			jump_sfx[randi() % JUMP_SFX_COUNT].play()
-			$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
+			$water_splash.global_position = Vector3(target_position.x, 28, target_position.z)
 			$water_splash.splash()
 			
 		if teta > PI:
@@ -76,12 +76,12 @@ func _physics_process(delta):
 		
 		var teta = (msec_timer-msec_start_phase)/1000.0*FREQUENCY*2*PI
 		
-		target_position = Vector3(player_x + X_RANGE*sin(teta), player_y - 50 + HEIGHT - HEIGHT*cos(teta/PI_COUNT), -5)
+		target_position = Vector3(player_x + X_RANGE*sin(teta), player_y - 50 + HEIGHT - HEIGHT*cos(teta/PI_COUNT), -1)
 		
 		if !tmp4 and target_position.y > 28:
 			tmp4 = true
-			jump_sfx[randi() % JUMP_SFX_COUNT].play()
-			$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
+			print("splash")
+			$water_splash.global_position = Vector3(target_position.x, 28, target_position.z)
 			$water_splash.splash()
 			
 		if teta > PI * PI_COUNT:
@@ -95,6 +95,6 @@ func _physics_process(delta):
 
 func hit_doni(body):
 	# makan mas
-	if body.name == "skeleton_mas":
+	if body.name == "skeleton_mas" and visible:
 		body.visible = false
 	#GM.doni.gone_to_void()

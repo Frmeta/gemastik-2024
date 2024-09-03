@@ -36,9 +36,10 @@ func _on_body_entered(body):
 			GM.play_audio_background("res://audio/gamelan/Free Backsound Gamelan Jawa - Javanese Beat-(128kbps).wav")
 			
 			# animasi doni victory dulu
-			GM.doni.get_node("../Camera3D/").offset = Vector3(0, 1, 5)
-			await get_tree().create_timer(0.3).timeout
-			GM.doni.victory_dance()
+			if GM.current_level!=6:
+				GM.doni.get_node("../Camera3D/").offset = Vector3(0, 1, 5)
+				await get_tree().create_timer(0.3).timeout
+				GM.doni.victory_dance()
 			
 			await get_tree().create_timer(2).timeout
 		if aneh_sendiri:

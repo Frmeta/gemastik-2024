@@ -16,47 +16,99 @@
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Baik Doni",
-		"emosi":"4"
+		"dialogue":"Baik Doni..",
+		"emosi":"5"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Terima kasih untuk tidak meninggalkan ku",
+		"dialogue":"Terima kasih untuk tidak meninggalkanku, kamu manusia yang baik",
 		"emosi":"4"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Ya haruslah",
-		"emosi":"4"
-	},
-	{
-		"nama":"MAS",
-		"dialogue":"Baik sekali kamu...",
-		"emosi":"4"
+		"dialogue":"Tidak apa-apa. Itu kan gunanya teman",
+		"emosi":"5"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Kalo aku tinggalin nanti aku gak bisa balik ke rumahku",
-		"emosi":"4"
+		"dialogue":"Kalo aku tinggalin nanti aku tidak bisa balik ke rumahku",
+		"emosi":"3"
 	},
 	{
 		"nama":"MAS",
 		"dialogue":"HAHAHAHA benar juga",
-		"emosi":"4"
+		"emosi":"5"
 	},
 	{
 		"nama":"Doni",
 		"dialogue":"HAHAHA",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Eh MAS, aku mau tanya deh. Kenapa ya bisa ada hewan sejahat itu?",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[SCANNING...]",
 		"emosi":"4"
 	},
 	{
 		"nama":"MAS",
-		"dialogue":"Baiklah mari kita pulangkan kamu",
+		"dialogue":"Makhluk itu adalah spesies yang muncul karena mutasi akibat limbah pabrik kimia",
+		"emosi":"2"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Makhluk ini pun menyerang manusia karena merekalah yang bertanggung jawab atas pencemaran tersebut.",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Jadi sebenarnya ini salah kita juga sebagai manusia yang kurang peduli dengan lingkungan alam",
+		"emosi":"4"
+	},{
+		"nama":"Doni",
+		"dialogue":"Kamu benar MAS. Alam adalah rumah kita. Kita harus jaga baik-baik agar tidak rusak",
+		"emosi":"2"
+	},{
+		"nama":"MAS",
+		"dialogue":"Berdasarkan analisisku, kamu sudah tidak stres lagi",
+		"emosi":"4"
+	},{
+		"nama":"MAS",
+		"dialogue":"Karena itu petualangan kita selesai disini",
+		"emosi":"5"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Wah tidak terasa.. Terima kasih MAS sudah memberikanku pengalaman luar biasa ini",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Doni. Apakah kamu siap pulang bertemu dengan keluargamu lagi?",
 		"emosi":"4"
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Basik MAS!",
-		"emosi":"4"
+		"dialogue":"Ya! Aku siap",
+		"emosi":"5"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kalau begitu aku akan menteleportasimu dalam 3..",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"2..",
+		"emosi":"3"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"1..",
+		"emosi":"3"
 	},
 ]

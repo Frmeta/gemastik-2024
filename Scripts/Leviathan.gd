@@ -65,6 +65,7 @@ func _physics_process(delta):
 			player_y = GM.doni.global_position.y + 2 + randf_range(-RANDOM_RANGE, RANDOM_RANGE)
 			tmp3 = randi() % 3
 			tmp4 = false
+			jump_sfx[randi() % JUMP_SFX_COUNT].play()
 			
 	elif phase == LeviPhase.JUMP:
 		const FREQUENCY = 0.1
@@ -85,7 +86,6 @@ func _physics_process(delta):
 		
 		if !tmp4 and target_position.y > GM.WATER_Y:
 			tmp4 = true
-			jump_sfx[randi() % JUMP_SFX_COUNT].play()
 			$water_splash.global_position = Vector3(target_position.x, GM.WATER_Y, target_position.z)
 			$water_splash.splash()
 			
