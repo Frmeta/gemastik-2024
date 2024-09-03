@@ -90,11 +90,11 @@ environment = SubResource("Environment_5tvlx")
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_534t3")]
 
 [node name="Camera3D" parent="." instance=ExtResource("5_6lbe3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.591, 103.074, 11.27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.029, 88.8409, 11.27)
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 867.448, 174.352, -5.91279e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.763, 73.5093, -5.91279e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)

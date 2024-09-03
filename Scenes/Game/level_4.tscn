@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bx6kr0habwrrf"]
+[gd_scene load_steps=41 format=3 uid="uid://bx6kr0habwrrf"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wk77a"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_iuh7q"]
@@ -57,6 +57,9 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0.643137, 0.643137, 0.643137, 1)
 volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dun0v"]
+size = Vector3(2, 30, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
 size = Vector3(150, 1, 1)
@@ -324,6 +327,15 @@ checkpoin = NodePath("../../checkpoints/checkpoint3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.3271, -0.681661, 0.622437)
 hewan_trapped = NodePath("../../../Animals/Badak Jawa3")
 checkpoin = NodePath("../../checkpoints/checkpoint1")
+
+[node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 249.462, 19.1898, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 388.137, 16.0609, -0.0185013)
+shape = SubResource("BoxShape3D_dun0v")
 
 [node name="GridMapCave" parent="." instance=ExtResource("8_xfovd")]
 data = {

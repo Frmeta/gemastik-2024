@@ -64,7 +64,7 @@ speed = 0.001
 [node name="Camera3D" parent="." instance=ExtResource("5_fr423")]
 
 [node name="Player" parent="." instance=ExtResource("6_4s4dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.211, 7.26187, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.4249, 5.84684, 0)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ociqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1636, -7.20965, -0.0102196)

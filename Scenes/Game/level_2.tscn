@@ -143,13 +143,13 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 367.929,
 [node name="grapling_for_tree" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_yxq4g")]
-transform = Transform3D(8.98674, 0, 0, 0, 1, 0, 0, 0, 1, 98.8089, 5.16881, 0)
+transform = Transform3D(8.98674, 0, 0, 0, 1, 0, 0, 0, 1, 98.8089, 6.19659, 0)
 
 [node name="grapling_for_tree4" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_yxq4g")]
-transform = Transform3D(4.83583, 0.452083, 0, -3.61819, 0.604225, 0, 0, 0, 0.999999, 95.4697, 5.84273, 0)
+transform = Transform3D(5.90699, 0.157256, 0, -1.25859, 0.738063, 0, 0, 0, 0.999999, 94.9652, 6.49827, 0)
 
 [node name="grapling_for_tree2" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_yxq4g")]
-transform = Transform3D(7.07656, 0.085692, 0, -1.83566, 0.330347, 0, 0, 0, 0.999999, 193.855, 46.0589, 0)
+transform = Transform3D(2.74031, 0.0331439, 0, -0.710835, 0.127771, 0, 0, 0, 0.387, 193.033, 46.6802, 0)
 
 [node name="grapling_for_tree3" parent="GridMapGround/grapling_for_tree" instance=ExtResource("10_yxq4g")]
 transform = Transform3D(10.7192, 0, 0, 0, 1, 0, 0, 0, 1, 292.568, 5.82806, 0)
