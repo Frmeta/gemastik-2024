@@ -238,6 +238,7 @@ transform = Transform3D(0.996121, 0, -0.0879906, 0, 1, 0, 0.0879906, 0, 0.996121
 
 [node name="paths4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05177, -0.05, 3.02973)
+visible = false
 
 [node name="path" parent="paths4" instance=ExtResource("6_b3fdd")]
 transform = Transform3D(0.965559, 0, 0.260184, 0, 1, 0, -0.260184, 0, 0.965559, 5.10789, 0.0626225, -1.80251)
