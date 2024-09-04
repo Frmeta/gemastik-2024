@@ -21,6 +21,5 @@ sdfgi_energy = 0.1
 fog_enabled = true
 fog_density = 0.0001
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
 volumetric_fog_emission = Color(0.0588235, 0.0627451, 0.12549, 1)
 volumetric_fog_detail_spread = 6.0

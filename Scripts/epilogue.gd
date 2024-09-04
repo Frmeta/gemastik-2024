@@ -56,19 +56,22 @@ func foo():
 	elif counter ==3:
 		# show kertas
 		while($kertas/MarginContainer.modulate.a <0.9):
+			if counter==4:
+				break
 			$kertas/MarginContainer.modulate.a = lerp($kertas/MarginContainer.modulate.a, 1.0, 0.1)
 			await get_tree().create_timer(0.001).timeout
-		$kertas/MarginContainer.modulate.a=1.0
+		if counter==3:
+			$kertas/MarginContainer.modulate.a=1.0
 
 func _process(delta):
 	if epilogue_end:
 		$End/PanelContainer.modulate.a = lerp($End/PanelContainer.modulate.a, 1.0,0.1)
 		$End/ColorRect.modulate.a= lerp($End/ColorRect.modulate.a, 0.5,0.1)
-		if (abs($End/PanelContainer.modulate.a-1.0)<0.01):
+		if (abs($End/PanelContainer.modulate.a-1.0)<0.03):
 			$End/PanelContainer.modulate.a=1.0
 			background_lerp_done=true
 		if background_lerp_done:
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			$End/PanelContainer/VBoxContainer/MarginContainer2.modulate.a= lerp($End/PanelContainer/VBoxContainer/MarginContainer2.modulate.a, 1.0,0.2)
 
 func goto(idx):

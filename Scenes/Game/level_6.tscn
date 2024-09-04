@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://gnfb8a7fcvx8"]
+[gd_scene load_steps=42 format=3 uid="uid://gnfb8a7fcvx8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wbss8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_5anij"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_7t4t5"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_dttx8"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="8_0eynm"]
-[ext_resource type="PackedScene" uid="uid://nnts0uqqxpv1" path="res://Scenes/jembatans/ranting.tscn" id="9_7qae8"]
+[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="9_7qae8"]
 [ext_resource type="PackedScene" uid="uid://c33fd4gskyv57" path="res://Scenes/gridmap_vines.tscn" id="9_vthyd"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="10_0c27q"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="10_e1a4g"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dylhh6b4bk8io" path="res://Scenes/death_trigger.tscn" id="24_4rsu7"]
 [ext_resource type="PackedScene" uid="uid://cj7mw5whsxxuw" path="res://Scenes/lamppost.tscn" id="27_ada46"]
 [ext_resource type="PackedScene" uid="uid://dyfpaxv3slpeq" path="res://3D Assets/Animal/7-Leviathan/Leviathan_Sumatera.tscn" id="34_wvsxt"]
+[ext_resource type="ArrayMesh" uid="uid://d3lugnjvcbe6q" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_181.res" id="36_t3jt4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emsah"]
 size = Vector3(1, 18.6307, 1)
@@ -72,12 +73,13 @@ fun_fact = "Tahukah kamu Pulau Sumatera merupakan awal masuknya Islam ke Indones
 environment = ExtResource("3_qabbb")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_1yjlg")]
+transform = Transform3D(-0.423943, 0.905342, -0.0250566, -0.459012, -0.190927, 0.867672, 0.780756, 0.379345, 0.496505, 0.110062, 11.6486, 11.7723)
 light_energy = 0.4
 
 [node name="Camera3D" parent="." instance=ExtResource("5_w5mph")]
 
 [node name="Player" parent="." instance=ExtResource("6_7t4t5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.479, 8.17184, 0.000606537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 856.493, 35.3119, 0.000606537)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_dttx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -206,7 +208,7 @@ transform = Transform3D(7.7446, 0, 0, 0, 4.97435, 0, 0, 0, 2.82696, 771.217, 12.
 transform = Transform3D(6.40289, 0, 0, 0, 12.857, 0, 0, 0, 3.62954, 1125.73, 19.8402, -16.7954)
 
 [node name="water7" parent="GridMapGround/water" instance=ExtResource("11_qmjxx")]
-transform = Transform3D(26.964, 0, 0, 0, 45, 0, 0, 0, 8, 1374.92, 5.373, -38.409)
+transform = Transform3D(26.964, 0, 0, 0, 45, 0, 0, 0, 8, 1374.92, 5.89461, -38.409)
 
 [node name="floating_thing" parent="GridMapGround/water" node_paths=PackedStringArray("water") instance=ExtResource("13_8rolb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 754.069, 14.7014, 0)
@@ -317,8 +319,8 @@ tipe_jembatan = 2
 is_pangkal = true
 
 [node name="Beartrap" parent="GridMapGround" node_paths=PackedStringArray("hewan_trapped", "checkpoin") instance=ExtResource("17_ld4j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 869.951, 15.9639, 0)
-hewan_trapped = NodePath("../../Animals/Harimau Sumatera2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 869.951, 16.0587, -0.33374)
+hewan_trapped = NodePath("../../Animals/Harimau Sumatera3")
 checkpoin = NodePath("../checkpoints/checkpoint4")
 
 [node name="grapling for trees" type="Node3D" parent="GridMapGround"]
@@ -583,14 +585,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.076, -8.58, 0)
 mesh = NodePath("../Harimau Sumatera/Harimau_Skeleton/Skeleton3D/Harimau_001")
 
 [node name="Harimau Sumatera3" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("14_pwod0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 869.884, 16.7006, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 870.239, 16.701, 0.5)
 mesh = NodePath("../Harimau Sumatera/Harimau_Skeleton/Skeleton3D/Harimau_001")
+can_move = false
 
 [node name="Bunga Rafflesia" parent="Animals" instance=ExtResource("15_1e10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1068.63, 59.171, 0)
+transform = Transform3D(0.977072, 0.207059, 0.0495766, 0, 0.232851, -0.972512, -0.212911, 0.950214, 0.227512, 1068.85, 59.9432, -0.0982666)
 
 [node name="Bunga Rafflesia2" parent="Animals" node_paths=PackedStringArray("mesh") instance=ExtResource("15_1e10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1080.13, 59.171, 0)
+transform = Transform3D(1, 0, 0, 0, 0.887067, -0.46164, 0, 0.46164, 0.887067, 1080.13, 59.4766, -0.21521)
 mesh = NodePath("../Bunga Rafflesia/Rafflesia")
 
 [node name="Leviathan_Sumatera" parent="." instance=ExtResource("34_wvsxt")]
@@ -606,6 +609,14 @@ mesh = NodePath("../Pemburu/Pemburu_Skeleton/Skeleton3D/Pemburu")
 [node name="Pemburu3" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("23_x70dt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 488.728, 19.7439, -18.5521)
 mesh = NodePath("../Pemburu/Pemburu_Skeleton/Skeleton3D/Pemburu")
+
+[node name="Trees(1)Cube181" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1080.07, 58.9174, -0.806879)
+mesh = ExtResource("36_t3jt4")
+
+[node name="Trees(1)Cube202" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.941776, 0, -0.336241, 0, 1, 0, 0.336241, 0, 0.941776, 1068.62, 59.2292, -1.02332)
+mesh = ExtResource("10_e1a4g")
 
 [connection signal="body_entered" from="GridMapGround/Pemburu/Area3D" to="GridMapGround/Pemburu/Pemburu 3" method="disable"]
 [connection signal="body_entered" from="GridMapGround/Pemburu/Area3D" to="GridMapGround/Pemburu/Pemburu 4" method="disable"]

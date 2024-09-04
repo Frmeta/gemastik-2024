@@ -2,13 +2,18 @@ extends Node2D
 
 @onready var cl = $CanvasLayer
 
-@export var _initial_delay: float = 1
+@export var _initial_delay: float = 2
+@export var boolean:= false
 
 var _splash_screens = []
 
 @onready var _splash_screen_container = $CanvasLayer
 
 var splash_screen
+
+signal splash_screen_done
+
+var done = false
 
 func _ready() -> void:
 
@@ -32,7 +37,12 @@ func _input(_event: InputEvent) -> void:
 
 func _start_splash_screen() -> void:
 	if _splash_screens.size() == 0:
-		get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
+		emit_signal("splash_screen_done")
+		done=true
+		if boolean:
+			pass
+		else:
+			get_tree().change_scene_to_file("res://Scenes/Game/main_menu.tscn")
 	else:
 		splash_screen = _splash_screens.pop_front()
 		var modulate0 = splash_screen.modulate
@@ -48,6 +58,7 @@ func _start_splash_screen() -> void:
 
 
 func _skip() -> void:
-	splash_screen.queue_free()
+	if not done:
+		splash_screen.queue_free()
 	# _splash_screen_container.get_child(0).queue_free()
 	#_start_splash_screen()

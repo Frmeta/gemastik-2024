@@ -19,6 +19,7 @@ func _process(delta):
 		if Input.is_action_just_released("open_trap") and hits<target_hits:
 			hits+=1
 			progress_bar.value=lerp(progress_bar.value,hits/1.0,0.5)
+			EventDistributor.emit_signal("shake_cam",1)
 			if hits==target_hits:
 				progress_bar.value=target_hits
 				trap.open_trap()

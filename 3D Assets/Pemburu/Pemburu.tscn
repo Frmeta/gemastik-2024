@@ -8382,6 +8382,9 @@ libraries = {
 autoplay = "P_IdleShooting"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xln3i")
+}
 tree_root = SubResource("AnimationNodeBlendTree_ckmuv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/IdleToRun/blend_amount = 0.69
