@@ -420,6 +420,7 @@ func knocked_back(from : Vector3):
 
 func _on_timer_timeout():
 	is_poisoned=false
+	allow_move()
 
 func stop_scan_sound():
 	$scanning.stop()
