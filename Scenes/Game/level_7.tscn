@@ -506,7 +506,7 @@ shape = SubResource("BoxShape3D_ltycg")
 
 [node name="InvisBarrier2" type="StaticBody3D" parent="GridMapGround/Invis Barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 585.977, 81.3471, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/Invis Barrier/InvisBarrier2"]
@@ -514,7 +514,7 @@ shape = SubResource("BoxShape3D_p23b2")
 
 [node name="InvisBarrier3" type="StaticBody3D" parent="GridMapGround/Invis Barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.115, 48.4677, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/Invis Barrier/InvisBarrier3"]
