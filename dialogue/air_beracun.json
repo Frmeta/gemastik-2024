@@ -1,0 +1,32 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"MAS, kenapa air ini...",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"warnanya aneh?",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[SCANNING...]",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Sepertinya air ini beracun Doni karena terpolusi",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Sebaiknya kamu berhati-hati jangan sampai masuk ke air tersebut",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Baik MAS!",
+		"emosi":"4"
+	},
+]
