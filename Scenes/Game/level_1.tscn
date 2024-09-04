@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c8lyeh72rbeep"]
+[gd_scene load_steps=51 format=3 uid="uid://c8lyeh72rbeep"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_8jw7r"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_o6xct"]
@@ -168,9 +168,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w5wdv")
-
-[sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
-size = Vector3(150, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gqcb2"]
 _surfaces = [{
@@ -706,10 +703,6 @@ data = {
 
 [node name="DialogueManager" parent="." instance=ExtResource("11_wdrf8")]
 layer = 11
-
-[node name="Lower Bound" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
-mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_vo8i8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 396.066, 15.4697, -0.871899)

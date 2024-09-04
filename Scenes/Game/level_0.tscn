@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ne6mdr5yo8x1"]
+[gd_scene load_steps=30 format=3 uid="uid://ne6mdr5yo8x1"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qud7n"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_kekwg"]
@@ -44,9 +44,6 @@ tonemap_exposure = 0.7
 sdfgi_energy = 0.1
 volumetric_fog_emission = Color(0, 0.631373, 0, 1)
 volumetric_fog_detail_spread = 6.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
-size = Vector3(150, 1, 1)
 
 [node name="Level Kalimantan" type="Node3D"]
 script = ExtResource("1_qud7n")
@@ -235,11 +232,6 @@ focus_mode = 0
 text = "despawn"
 script = ExtResource("12_ud1dx")
 event = "despawn_mas"
-
-[node name="Lower Bound" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
-visible = false
-mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_ltjtm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 411.371, 23.6123, -0.871899)

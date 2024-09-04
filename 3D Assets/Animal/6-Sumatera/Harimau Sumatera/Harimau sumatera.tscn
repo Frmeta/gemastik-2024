@@ -1435,6 +1435,7 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_r6ftv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_grdgg"]
+radius = 0.7
 
 [node name="Harimau Sumatera" type="CharacterBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_t54qn")
@@ -1655,7 +1656,7 @@ mesh = SubResource("QuadMesh_r6ftv")
 [node name="hit_box" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.781442, 1.52736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0.431454, 1.16055)
 shape = SubResource("SphereShape3D_grdgg")
 
 [connection signal="body_entered" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_entered"]
