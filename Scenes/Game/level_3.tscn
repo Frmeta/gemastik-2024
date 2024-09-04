@@ -1261,7 +1261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1254.43, 167.415, 1.56599)
 
 [node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1171.05, 193.884, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]
