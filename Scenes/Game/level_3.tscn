@@ -739,12 +739,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1253.03, 155.713, 0)
 [node name="invisiblewall kasuari kanan" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1300.27, 157.228, 0)
 
-[node name="invisiblewall kasuari kanan2" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1179.69, 190.146, -3.05176e-05)
-
-[node name="invisiblewall kasuari kanan3" parent="GridMapGround/invisible_walls" instance=ExtResource("13_8xn0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1272.69, 165.146, -3.05176e-05)
-
 [node name="grapling for tree" type="Node3D" parent="GridMapGround"]
 
 [node name="grapling_for_tree cen1" parent="GridMapGround/grapling for tree" instance=ExtResource("11_yreiq")]
@@ -1267,7 +1261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1254.43, 167.415, 1.56599)
 
 [node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1171.05, 193.884, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]

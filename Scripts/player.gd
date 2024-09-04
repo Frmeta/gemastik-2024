@@ -404,7 +404,7 @@ func victory_dance():
 	animTree.set("parameters/Story/transition_request", "victory")
 
 func knocked_back(from : Vector3):
-	EventDistributor.emit_signal("shake_cam")
+	EventDistributor.emit_signal("shake_cam", 1.5)
 	being_knocked_back=true
 	var from_right = (from.x-self.global_position.x) > 0
 	print(from_right)
@@ -420,6 +420,7 @@ func knocked_back(from : Vector3):
 
 func _on_timer_timeout():
 	is_poisoned=false
+	allow_move()
 
 func stop_scan_sound():
 	$scanning.stop()

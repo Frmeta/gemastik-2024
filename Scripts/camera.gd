@@ -60,8 +60,8 @@ func _shaking():
 	trauma_offset.x=max_offset.x*amount*rng.randf_range(-1,1)
 	trauma_offset.y=max_offset.y*amount*rng.randf_range(-1,1)
 
-func start_shake():
-	trauma = 1.5
+func start_shake(new_traume):
+	trauma = new_traume
 
 func _change_target(new_target):
 	target=new_target

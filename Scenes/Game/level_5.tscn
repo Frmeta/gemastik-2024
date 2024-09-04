@@ -792,7 +792,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.1536, -0.650146, -0.000122
 
 [node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 459.732, 83.2708, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]
@@ -800,7 +800,7 @@ shape = SubResource("BoxShape3D_7eeo5")
 
 [node name="InvisBarrier2" type="StaticBody3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 674.697, 58.4253, 1.52588e-05)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier2"]

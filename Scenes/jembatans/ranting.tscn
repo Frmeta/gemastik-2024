@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://nnts0uqqxpv1"]
+[gd_scene load_steps=9 format=3 uid="uid://cwexymi6ik5v0"]
 
 [ext_resource type="Script" path="res://Scripts/ranting.gd" id="1_fye62"]
-[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="2_6qh5a"]
+[ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="2_6qh5a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ybes"]
 size = Vector3(1, 0.524, 2.015)
