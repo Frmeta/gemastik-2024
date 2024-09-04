@@ -775,7 +775,7 @@ mesh = ExtResource("16_ntc43")
 skeleton = NodePath("")
 
 [node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 865.935, 181.908, -0.871899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 867.602, 181.908, -0.871899)
 scene_after_win = "pre_epilogue"
 skip_dialog = true
 

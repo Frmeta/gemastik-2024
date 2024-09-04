@@ -456,6 +456,9 @@ transform = Transform3D(0.985471, 0, 0.169848, 0, 1, 0, -0.169848, 0, 0.985471, 
 [node name="path10" parent="paths7" instance=ExtResource("6_b3fdd")]
 transform = Transform3D(0.932898, 0, 0.360143, 0, 1, 0, -0.360143, 0, 0.932898, 1.76984, 0.0629981, 7.18853)
 
+[node name="paths8" type="Node3D" parent="."]
+transform = Transform3D(0.342693, 0, 0.939448, 0, 1, 0, -0.939448, 0, 0.342693, -7.13593, -0.05, 1.60684)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.894962, 0.100833, -0.434599, 0.196281, 0.785796, 0.586514, 0.400646, -0.610211, 0.683466, 0, 7.20701, 0)
 light_energy = 2.0
