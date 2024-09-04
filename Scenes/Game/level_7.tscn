@@ -25,7 +25,7 @@
 [ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="16_ntc43"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="19_5kaoy"]
-[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
+[ext_resource type="PackedScene" uid="uid://cwexymi6ik5v0" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
 [ext_resource type="Script" path="res://Scripts/lighting.gd" id="23_37g3s"]
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="24_02nv0"]
 
@@ -518,7 +518,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.283, 43.7736, 0)
 
 [node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround/Invis Barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 249.462, 19.1898, 0)
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/Invis Barrier/InvisBarrier"]
