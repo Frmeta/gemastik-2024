@@ -18,11 +18,11 @@
 [ext_resource type="ArrayMesh" uid="uid://ct7wmgykdg7tf" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_210.res" id="12_4l577"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="12_7elh3"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_20ufl"]
-[ext_resource type="PackedScene" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
+[ext_resource type="PackedScene" uid="uid://cnjd1wnsqfrv8" path="res://Scenes/levi_area.tscn" id="13_o0kv6"]
 [ext_resource type="ArrayMesh" uid="uid://b31iqxm8ehlfc" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_211.res" id="14_writc"]
 [ext_resource type="ArrayMesh" uid="uid://pst4gsphyute" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_216.res" id="15_trsgx"]
 [ext_resource type="PackedScene" uid="uid://dr4qcudr5qljb" path="res://3D Assets/Animal/7-Leviathan/Leviathan.tscn" id="16_2f71d"]
-[ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="16_ntc43"]
+[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="16_ntc43"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="18_0cfpt"]
 [ext_resource type="PackedScene" uid="uid://xio4di0uvbuo" path="res://Scenes/checkpoint.tscn" id="19_5kaoy"]
 [ext_resource type="PackedScene" uid="uid://cwexymi6ik5v0" path="res://Scenes/jembatans/ranting.tscn" id="19_gjfhm"]
@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.029, 88.8409, 11.27)
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.39, 76.9806, -5.91279e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.415, 87.059, -5.91279e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -492,6 +492,145 @@ skeleton = NodePath("../../../../..")
 transform = Transform3D(1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_vslq4")
 
+[node name="Tree Climibing" type="Node3D" parent="GridMapGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.283, 43.7736, 0)
+
+[node name="BigTree 1" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 493.331, 25.7188, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 2" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 1, 566.661, 24.5789, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 3" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 1, 539.41, 20.6392, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 4" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 28, 0, 0, 0, 1, 523.586, 21.9814, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 5" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 557.307, 23.7316, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 6" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 16, 0, 0, 0, 1, 498.789, 25.3684, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="BigTree 7" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(1, 0, 0, 0, 17, 0, 0, 0, 1, 509.454, 11.1361, -2.93379)
+mesh = ExtResource("18_0cfpt")
+skeleton = NodePath("../../..")
+
+[node name="ranting" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 557.163, 35.6877, 0)
+
+[node name="ranting5" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 523.333, 54.2483, 0)
+
+[node name="ranting2" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.854414, 0, 0.519594, 0, 1, 0, -0.519594, 0, 0.854414, 541.268, 36.1882, 0)
+
+[node name="ranting24" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.88956, 0, -0.456819, 0, 1, 0, 0.456819, 0, 0.88956, 537.708, 41.0539, 0)
+
+[node name="ranting3" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.957471, 0, 0.28853, 0, 1, 0, -0.28853, 0, 0.957471, 525.05, 42.6152, 0)
+
+[node name="ranting12" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.957471, 0, 0.28853, 0, 1, 0, -0.28853, 0, 0.957471, 510.599, 44.7458, 0)
+
+[node name="ranting11" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.846249, 0, -0.532788, 0, 1, 0, 0.532788, 0, 0.846249, 521.155, 45.7829, 0)
+
+[node name="ranting15" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.553043, 0, -0.833153, 0, 1, 0, 0.833153, 0, 0.553043, 553.599, 42.6449, 0)
+
+[node name="ranting4" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.876147, 0, 0.482044, 0, 1, 0, -0.482044, 0, 0.876147, 500.798, 47.228, 0)
+
+[node name="ranting7" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.780856, 0, -0.624711, 0, 1, 0, 0.624711, 0, 0.780856, 521.707, 61.9382, 0)
+
+[node name="ranting8" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.968652, 0, 0.24842, 0, 1, 0, -0.24842, 0, 0.968652, 524.44, 68.6625, 0)
+can_fall = false
+
+[node name="ranting9" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(0.830489, 0, -0.557035, 0, 1, 0, 0.557035, 0, 0.830489, 521.603, 75.7846, 0)
+can_fall = false
+
+[node name="ranting10" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.822, 33.638, 0)
+
+[node name="fake ranting1" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 492.862, 36.7903, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting2" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 523.491, 50.7123, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting3" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 556.617, 37.1352, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting4" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 565.805, 46.7169, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting6" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.558743, 0, -0.42167, 0.149387, 0.654599, 0.197949, 0.394321, -0.247992, 0.522504, 523.05, 54.6875, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting9" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 499.127, 52.486, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting10" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 509.183, 41.3159, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting11" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 539.571, 37.2663, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting14" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 539.094, 52.1514, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting15" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 523.514, 61.268, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting16" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 509.155, 33.7422, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
+[node name="fake ranting17" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
+transform = Transform3D(-0.492417, -0.471885, 0.157637, 0.494307, -0.489191, 0.0797017, 0.0564347, 0.167382, 0.677346, 498.312, 40.5317, -2.75882)
+mesh = ExtResource("16_ntc43")
+skeleton = NodePath("")
+
 [node name="Invis Barrier" type="Node3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.283, 43.7736, 0)
 
@@ -551,210 +690,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 359.665, 22.7787, -3.8147e-06
 [node name="checkpoint3" parent="GridMapGround/Checkpoints" instance=ExtResource("19_5kaoy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 489.6, 30.1714, -3.8147e-06)
 
-[node name="Tree Climibing" type="Node3D" parent="GridMapGround"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.283, 43.7736, 0)
-
-[node name="BigTree 1" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 1, 493.331, 25.7188, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 2" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 50, 0, 0, 0, 1, 566.661, 24.5789, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 3" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 25, 0, 0, 0, 1, 539.41, 20.6392, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 4" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 28, 0, 0, 0, 1, 523.586, 21.9814, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 5" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 557.307, 23.7316, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 6" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 23, 0, 0, 0, 1, 498.789, 25.3684, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="BigTree 7" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(1, 0, 0, 0, 23, 0, 0, 0, 1, 509.454, 11.1361, -2.93379)
-mesh = ExtResource("18_0cfpt")
-skeleton = NodePath("../../..")
-
-[node name="ranting" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 557.163, 35.6877, 0)
-
-[node name="ranting2" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.854414, 0, 0.519594, 0, 1, 0, -0.519594, 0, 0.854414, 541.268, 36.1882, 0)
-
-[node name="ranting24" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.88956, 0, -0.456819, 0, 1, 0, 0.456819, 0, 0.88956, 537.708, 41.0539, 0)
-
-[node name="ranting3" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.957471, 0, 0.28853, 0, 1, 0, -0.28853, 0, 0.957471, 525.05, 42.6152, 0)
-
-[node name="ranting12" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.957471, 0, 0.28853, 0, 1, 0, -0.28853, 0, 0.957471, 510.599, 44.7458, 0)
-
-[node name="ranting11" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.846249, 0, -0.532788, 0, 1, 0, 0.532788, 0, 0.846249, 521.155, 45.7829, 0)
-
-[node name="ranting15" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.553043, 0, -0.833153, 0, 1, 0, 0.833153, 0, 0.553043, 553.599, 42.6449, 0)
-
-[node name="ranting4" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.876147, 0, 0.482044, 0, 1, 0, -0.482044, 0, 0.876147, 500.798, 47.228, 0)
-
-[node name="ranting5" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 493.261, 52.2056, 0)
-
-[node name="ranting6" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.849598, 0, 0.52743, 0, 1, 0, -0.52743, 0, 0.849598, 500.304, 66.1077, 0)
-
-[node name="ranting16" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.979715, 0, 0.200394, 0, 1, 0, -0.200394, 0, 0.979715, 510.244, 60.4614, 0)
-
-[node name="ranting7" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.780856, 0, -0.624711, 0, 1, 0, 0.624711, 0, 0.780856, 521.707, 67.2039, 0)
-
-[node name="ranting17" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.780856, 0, -0.624711, 0, 1, 0, 0.624711, 0, 0.780856, 491.058, 61.3629, 0)
-
-[node name="ranting8" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 539.692, 70.5617, 0)
-
-[node name="ranting9" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.831935, 0, 0.554873, 0, 1, 0, -0.554873, 0, 0.831935, 568.389, 68.6622, 0)
-
-[node name="ranting18" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.607778, 0, -0.794107, 0, 1, 0, 0.794107, 0, 0.607778, 563.423, 61.5807, 0)
-
-[node name="ranting13" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.79981, 0, -0.600253, 0, 1, 0, 0.600253, 0, 0.79981, 564.012, 76.2491, 0)
-
-[node name="ranting14" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.964239, 0, 0.265034, 0, 1, 0, -0.265034, 0, 0.964239, 567.767, 85.6027, 0)
-
-[node name="ranting10" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.822, 33.638, 0)
-
-[node name="ranting19" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.816984, 0, -0.576661, -0.210682, 0.930871, -0.298483, 0.536797, 0.365348, 0.760507, 564.35, 94.386, 0)
-
-[node name="ranting20" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.964239, 0, 0.265034, 0, 1, 0, -0.265034, 0, 0.964239, 567.767, 103.058, 0)
-
-[node name="ranting21" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.785458, 0, 0.618915, -0.0767132, 0.992289, 0.0973558, -0.614143, -0.123948, 0.779401, 569.299, 111.958, 0)
-
-[node name="ranting22" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.883161, 0.112944, -0.45527, -0.0767132, 0.992289, 0.0973558, 0.462755, -0.0510556, 0.885015, 564.782, 118.153, 0)
-can_fall = false
-
-[node name="ranting23" parent="GridMapGround/Tree Climibing" instance=ExtResource("19_gjfhm")]
-transform = Transform3D(0.996851, 0.0782968, -0.0125449, -0.0791551, 0.991963, -0.0987151, 0.00471495, 0.0993973, 0.995037, 566.704, 126.72, 0.000486374)
-can_fall = false
-
-[node name="fake ranting1" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 492.862, 36.7903, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting2" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 523.491, 50.7123, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting3" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 556.617, 37.1352, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting4" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.878133, 0, 0.478417, 0, 1, 0, -0.478417, 0, 0.878133, 565.805, 46.7169, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting5" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.558743, 0, -0.42167, 0.149387, 0.654599, 0.197949, 0.394321, -0.247992, 0.522504, 539.514, 60.5181, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting6" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.558743, 0, -0.42167, 0.149387, 0.654599, 0.197949, 0.394321, -0.247992, 0.522504, 523.05, 54.6875, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting7" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.558743, 0, -0.42167, 0.149387, 0.654599, 0.197949, 0.394321, -0.247992, 0.522504, 498.719, 71.5461, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting8" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.558743, 0, -0.42167, 0.149387, 0.654599, 0.197949, 0.394321, -0.247992, 0.522504, 493.305, 48.3974, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting9" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 499.127, 52.486, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting10" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 509.183, 41.3159, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting11" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 539.571, 37.2663, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting12" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 566.777, 56.917, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting13" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(0.682964, -0.132354, -0.0777325, 0.116206, 0.677452, -0.132495, 0.10028, 0.116366, 0.682937, 567.051, 79.1109, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting14" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 539.094, 52.1514, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting15" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 523.514, 61.268, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting16" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(-0.447722, -0.392421, 0.368171, 0.494307, -0.489191, 0.0797017, 0.212613, 0.310963, 0.589998, 509.155, 33.7422, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting17" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(-0.492417, -0.471885, 0.157637, 0.494307, -0.489191, 0.0797017, 0.0564347, 0.167382, 0.677346, 498.312, 40.5317, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
-[node name="fake ranting18" type="MeshInstance3D" parent="GridMapGround/Tree Climibing"]
-transform = Transform3D(-0.488617, -0.462079, 0.194257, 0.494307, -0.489191, 0.0797017, 0.0831435, 0.192809, 0.667766, 509.411, 52.2754, -2.75882)
-mesh = ExtResource("16_ntc43")
-skeleton = NodePath("")
-
 [node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 867.602, 181.908, -0.871899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 821.997, 133.7, -0.871899)
 scene_after_win = "pre_epilogue"
 skip_dialog = true
 
