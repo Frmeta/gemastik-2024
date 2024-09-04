@@ -33,6 +33,7 @@ shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.878431)
 
 window/size/viewport_width=1920
 window/size/viewport_height=930
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [filesystem]
@@ -89,6 +90,7 @@ open_trap={
 3d_physics/layer_6="movingPlatform"
 3d_physics/layer_7="grapling_tree"
 3d_physics/layer_8="Barrier"
+3d_physics/layer_9="NutupPemburu"
 
 [rendering]
 
