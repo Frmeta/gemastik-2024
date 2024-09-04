@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bx6kr0habwrrf"]
+[gd_scene load_steps=42 format=3 uid="uid://bx6kr0habwrrf"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wk77a"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_iuh7q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csu6lmsg6rxkx" path="res://assets/sky/Cloudy_Sky-Night_01-512x512.png" id="4_i81tq"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_y6caf"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_ace5s"]
+[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="5_c44ie"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_rwbrp"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_voyyk"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="8_4svqi"]
@@ -76,6 +77,8 @@ fun_fact = "Pulau Jawa terletak di kepulauan Sunda Besar dan merupakan pulau ter
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_gb41t")]
 environment = SubResource("Environment_nwcqf")
+script = ExtResource("5_c44ie")
+speed = 0.002
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_y6caf")]
 light_color = Color(0.545098, 0.556863, 1, 1)

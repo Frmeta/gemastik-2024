@@ -90,7 +90,7 @@ open_trap={
 3d_physics/layer_6="movingPlatform"
 3d_physics/layer_7="grapling_tree"
 3d_physics/layer_8="Barrier"
-3d_physics/layer_9="NutupPemburu"
+3d_physics/layer_9="pohonsembuyni"
 
 [rendering]
 

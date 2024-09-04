@@ -663,7 +663,6 @@ transform = Transform3D(99.0917, 0, 0, 0, 99.0917, 0, 0, 0, 99.0917, 0, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m3mmm")
 script = ExtResource("4_c0gw5")
-speed = 0.001
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_q8y5d")]
 transform = Transform3D(-0.953776, 0.260749, 0.149405, -0.0577322, -0.646877, 0.760406, 0.294922, 0.716631, 0.632029, 0, 11.6486, 0)

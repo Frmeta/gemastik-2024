@@ -8398,7 +8398,7 @@ spot_angle = 21.64
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 top_level = true
-collision_mask = 35
+collision_mask = 259
 
 [node name="shooting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_oavxt")
