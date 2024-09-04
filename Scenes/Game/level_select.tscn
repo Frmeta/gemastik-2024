@@ -222,23 +222,22 @@ transform = Transform3D(-0.798278, 0, -0.602289, 0, 1, 0, 0.602289, 0, -0.798278
 transform = Transform3D(-0.542427, 0, -0.840103, 0, 1, 0, 0.840103, 0, -0.542427, 1.82385, 0.0626223, -0.248593)
 
 [node name="MeshInstance3D13" parent="paths3" instance=ExtResource("6_b3fdd")]
-transform = Transform3D(0.113428, 0, -0.993546, 0, 1, 0, 0.993546, 0, 0.113428, 2.59763, 0.196496, 0.10468)
+transform = Transform3D(0.113428, 0, -0.993546, 0, 1, 0, 0.993546, 0, 0.113428, 2.598, 0.063, 0.105)
 
 [node name="MeshInstance3D14" parent="paths3" instance=ExtResource("6_b3fdd")]
-transform = Transform3D(0.512133, 0, -0.858906, 0, 1, 0, 0.858906, 0, 0.512133, 3.32136, 0.196496, -0.264292)
+transform = Transform3D(0.512133, 0, -0.858906, 0, 1, 0, 0.858906, 0, 0.512133, 3.321, 0.063, -0.264)
 
 [node name="MeshInstance3D15" parent="paths3" instance=ExtResource("6_b3fdd")]
-transform = Transform3D(0.812999, 0, -0.582265, 0, 1, 0, 0.582265, 0, 0.812999, 3.86117, 0.196496, -0.777987)
+transform = Transform3D(0.812999, 0, -0.582265, 0, 1, 0, 0.582265, 0, 0.812999, 3.861, 0.063, -0.778)
 
 [node name="MeshInstance3D16" parent="paths3" instance=ExtResource("6_b3fdd")]
-transform = Transform3D(0.899481, 0, -0.436959, 0, 1, 0, 0.436959, 0, 0.899481, 4.22527, 0.196497, -1.36889)
+transform = Transform3D(0.899481, 0, -0.436959, 0, 1, 0, 0.436959, 0, 0.899481, 4.225, 0.063, -1.369)
 
 [node name="MeshInstance3D17" parent="paths3" instance=ExtResource("6_b3fdd")]
-transform = Transform3D(0.996121, 0, -0.0879906, 0, 1, 0, 0.0879906, 0, 0.996121, 4.48997, 0.196497, -2.05745)
+transform = Transform3D(0.996121, 0, -0.0879906, 0, 1, 0, 0.0879906, 0, 0.996121, 4.49, 0.063, -2.057)
 
 [node name="paths4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05177, -0.05, 3.02973)
-visible = false
 
 [node name="path" parent="paths4" instance=ExtResource("6_b3fdd")]
 transform = Transform3D(0.965559, 0, 0.260184, 0, 1, 0, -0.260184, 0, 0.965559, 5.10789, 0.0626225, -1.80251)
