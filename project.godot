@@ -35,6 +35,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=930
 window/size/mode=3
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/Frame 51.png"
 
 [filesystem]
 

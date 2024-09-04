@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.029, 88.8409, 11.27)
 is_leviathan = true
 
 [node name="Player" parent="." instance=ExtResource("6_j2obf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.763, 73.5093, -5.91279e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 303.39, 76.9806, -5.91279e-05)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_mxagt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
@@ -754,7 +754,7 @@ mesh = ExtResource("16_ntc43")
 skeleton = NodePath("")
 
 [node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 865.935, 181.908, -0.871899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 867.781, 176.989, -0.871899)
 scene_after_win = "pre_epilogue"
 skip_dialog = true
 

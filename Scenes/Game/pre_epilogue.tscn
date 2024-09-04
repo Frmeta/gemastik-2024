@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://esy7beftxm1r"]
+[gd_scene load_steps=23 format=3 uid="uid://esy7beftxm1r"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qxr4p"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_lisxa"]
 [ext_resource type="Texture2D" uid="uid://diltlx5i54owb" path="res://assets/sky/Fading_Sky-Night_01-512x512.png" id="3_llytw"]
-[ext_resource type="Script" path="res://Scripts/WorldEnvironment.gd" id="4_36ony"]
+[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_vffic"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="5_2utrr"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_0hvco"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="6_n22mb"]
@@ -14,12 +14,8 @@
 [ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="13_soq1w"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_seu4f"]
 [ext_resource type="Script" path="res://Scripts/splash_screen.gd" id="17_rb781"]
-[ext_resource type="Texture2D" uid="uid://c856bvd02weye" path="res://assets/splashscreen/logo gemastik.png" id="18_3gv3e"]
-[ext_resource type="Texture2D" uid="uid://dx781444ajnv5" path="res://assets/splashscreen/logo ui.png" id="19_p6b8j"]
-[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="20_7e2ix"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="20_8sm7p"]
-[ext_resource type="Texture2D" uid="uid://qdrsx8c8pue6" path="res://assets/splashscreen/Frame 49.png" id="21_bqtn1"]
-[ext_resource type="PackedScene" path="res://Scenes/jembatans/ranting.tscn" id="21_gcg2f"]
+[ext_resource type="PackedScene" uid="uid://cwexymi6ik5v0" path="res://Scenes/jembatans/ranting.tscn" id="21_gcg2f"]
 [ext_resource type="PackedScene" uid="uid://bcu5f1do2cu5o" path="res://Scenes/godray.tscn" id="23_ccygc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o8i1a"]
@@ -54,8 +50,7 @@ nama_pulau = "preepilogue"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oeahp")
-script = ExtResource("4_36ony")
-speed = 0.001
+script = ExtResource("4_vffic")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("5_2utrr")]
 
@@ -443,59 +438,5 @@ script = ExtResource("17_rb781")
 boolean = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Splash Screen"]
-
-[node name="TextureRect" type="TextureRect" parent="Splash Screen/CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -201.0
-offset_top = -176.0
-offset_right = 28.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.765, 1.765)
-texture = ExtResource("18_3gv3e")
-
-[node name="TextureRect2" type="TextureRect" parent="Splash Screen/CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -201.0
-offset_top = -183.0
-offset_right = 28.0
-offset_bottom = 51.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.765, 1.765)
-texture = ExtResource("19_p6b8j")
-
-[node name="MarginContainer" type="CenterContainer" parent="Splash Screen/CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Splash Screen/CanvasLayer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Splash Screen/CanvasLayer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("20_7e2ix")
-theme_override_font_sizes/font_size = 64
-text = "Permainan memerlukan
- MOUSE dan KEYBOARD"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Splash Screen/CanvasLayer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("21_bqtn1")
-stretch_mode = 5
 
 [connection signal="splash_screen_done" from="Splash Screen" to="." method="_on_splash_screen_splash_screen_done"]
