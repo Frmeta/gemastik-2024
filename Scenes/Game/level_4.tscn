@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ciw3lrpja7upa" path="res://3D Assets/Animal/4-Jawa/Elang Jawa/Elang Jawa.tscn" id="15_mhgt6"]
 [ext_resource type="PackedScene" uid="uid://cp8rsimp3ewas" path="res://3D Assets/Animal/4-Jawa/Burung Merak/Burung Merak.tscn" id="16_2p5ol"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="16_cypp0"]
-[ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="17_au0cr"]
+[ext_resource type="ArrayMesh" uid="uid://bcbkimcqmlci1" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="17_au0cr"]
 [ext_resource type="PackedScene" uid="uid://vd8uihael7tq" path="res://Scenes/jembatans/jembatan.tscn" id="17_s361h"]
 [ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="18_4kc4b"]
 [ext_resource type="PackedScene" uid="uid://cucxjr66501u6" path="res://Scenes/trap/perangkap.tscn" id="19_f3awk"]
@@ -87,7 +87,7 @@ light_energy = 0.8
 [node name="Camera3D" parent="." instance=ExtResource("5_ace5s")]
 
 [node name="Player" parent="." instance=ExtResource("6_rwbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.935974, 0.120741, 0.000263214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 428.199, 18.5379, 0.000263214)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_voyyk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93708, 0.158113, 0)
