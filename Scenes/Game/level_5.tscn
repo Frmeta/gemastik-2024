@@ -632,7 +632,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 694.308, 6.42599, 0.921631)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1084.43, 30.4794, 0.921631)
 
 [node name="invisiblewall babikanan" parent="GridMapGround/invisible_walls" instance=ExtResource("16_tixbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1123.67, 14.4061, 0.92163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1123.67, 18.7088, 0.92163)
 
 [node name="checkpoints" type="Node3D" parent="GridMapGround"]
 

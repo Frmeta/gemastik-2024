@@ -8,7 +8,7 @@ var done = false
 func _on_body_entered(body):
 	if !done:
 		done = true
-		if file_name!="dikejar_pemburu" and file_name!="post_pemburu":
+		if file_name!="dikejar_pemburu":
 			GM.doni.stop_move()
 			EventDistributor.emit_signal("start_dialogue","res://dialogue/"+file_name+".json")
 		else:
