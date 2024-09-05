@@ -1,0 +1,37 @@
+[
+	{
+		"nama":"Doni",
+		"dialogue":"Seram sekali tadi MAS",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Iya",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Saya jadi kasihan ke hewan-hewan yang diburu",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Kenapa itu Doni?",
+		"emosi":"4"
+	},
+	{
+		"nama":"Doni",
+		"dialogue":"Kasihan saja mereka dikejar-kejar dan diburu seperti tadi",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"[LOADING...]",
+		"emosi":"4"
+	},
+	{
+		"nama":"MAS",
+		"dialogue":"Baiklah Doni..",
+		"emosi":"4"
+	},
+]
