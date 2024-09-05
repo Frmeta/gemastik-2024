@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jlh7bikjq1qh" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/Komodo_Komodo_body_color.png" id="1_pa4vn"]
 [ext_resource type="AnimationLibrary" uid="uid://dlg033o6fgy6" path="res://3D Assets/Animal/2-Nusa Tenggara/Komodo/anim/komodo_lib.res" id="2_ig78a"]
 [ext_resource type="Shader" uid="uid://c1ids26jk8t4t" path="res://3D Assets/Shader/ScanningShader.tres" id="3_q3xep"]
-[ext_resource type="Script" path="res://Scripts/Komodo_State.gd" id="5_o2pb5"]
+[ext_resource type="Script" path="res://Scripts/komodostate.gd" id="5_cjfiy"]
 [ext_resource type="Texture2D" uid="uid://c3kqi2m4dmsn" path="res://assets/ui/marah.png" id="6_3743c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jg1if"]
@@ -1195,7 +1195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027194, -0.040985, 0)
 shape = SubResource("SphereShape3D_wnwsm")
 
 [node name="Node3D" type="Node3D" parent="."]
-script = ExtResource("5_o2pb5")
+script = ExtResource("5_cjfiy")
 walk_anim_name = "Ko_walk"
 idle_anim_name = "Ko_Idle1"
 

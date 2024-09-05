@@ -29,10 +29,10 @@ func _ready():
 		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
 	elif nama_pulau.to_lower() == "papua": # Papua
 		GM.current_level = 3
-		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",10)
+		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",12)
 	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.current_level = 4
-		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-10)
+		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-9)
 	elif nama_pulau.to_lower() == "sulawesi": # Sulawesi
 		GM.current_level = 5
 		GM.play_rain(-10)
@@ -53,6 +53,8 @@ func _ready():
 	GM.doni.stop_move()
 	GM.doni.curr_jumps=2
 	await get_tree().create_timer(1).timeout
+	
+	almanac_icon.unotify()
 	
 	if !level_eksperimen:
 	

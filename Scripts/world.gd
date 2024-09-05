@@ -1,6 +1,6 @@
 extends WorldEnvironment
 
-@export var speed :=0.005
+@export var speed :=0.002
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

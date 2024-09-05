@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_y5y2o"]
 [ext_resource type="Texture2D" uid="uid://dlmalx7w8tb7m" path="res://assets/sky/Wispy_Sky-Sunset_02-512x512.png" id="3_h63dq"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_0yn5h"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_a0cjn"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="4_a0cjn"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_riifd"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_vtpnt"]
 [ext_resource type="PackedScene" uid="uid://cbh7oddye752w" path="res://Scenes/air_emitter.tscn" id="7_7rpcl"]
@@ -57,7 +57,6 @@ fun_fact = "Nusa Tenggara memiliki kadal terbesar di dunia.. jadi mungkin cobala
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0rtld")
 script = ExtResource("4_a0cjn")
-speed = 0.001
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_0yn5h")]
 

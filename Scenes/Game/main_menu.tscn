@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ooywqg7faxc" path="res://Scenes/load_button.tscn" id="8_yiq52"]
 [ext_resource type="Texture2D" uid="uid://dlmalx7w8tb7m" path="res://assets/sky/Wispy_Sky-Sunset_02-512x512.png" id="11_egccc"]
 [ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="11_pap36"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="13_hwd8f"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="13_hwd8f"]
 [ext_resource type="Script" path="res://Scripts/air_emitter.gd" id="14_cobqc"]
 [ext_resource type="PackedScene" uid="uid://bugaye07cuosh" path="res://Scenes/testingken/rain_box.tscn" id="14_eo23n"]
 

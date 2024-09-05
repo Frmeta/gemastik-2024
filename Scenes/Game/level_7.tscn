@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_534t3"]
 [ext_resource type="Environment" uid="uid://b8shn7b4hr7pq" path="res://Scenes/Game/level_7.tres" id="4_wiljb"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_6lbe3"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="5_k5hqb"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="5_k5hqb"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_j2obf"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_mxagt"]
 [ext_resource type="PackedScene" uid="uid://duyvocby7woox" path="res://Scenes/gridmap_ground.tscn" id="8_nq1am"]
@@ -67,7 +67,6 @@ level_eksperimen = true
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_ehhf6")]
 environment = ExtResource("4_wiljb")
 script = ExtResource("5_k5hqb")
-speed = 0.001
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_534t3")]
 

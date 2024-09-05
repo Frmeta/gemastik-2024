@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
 [ext_resource type="Texture2D" uid="uid://dbk575y75l6hv" path="res://assets/sky/Fading_Sky-Blue_03-512x512.png" id="3_ph3c1"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_c0gw5"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="4_c0gw5"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_q8y5d"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_4ux8x"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_5bh87"]
@@ -44,7 +44,6 @@ sky_material = SubResource("PanoramaSkyMaterial_p50ua")
 [sub_resource type="Environment" id="Environment_m3mmm"]
 background_mode = 2
 sky = SubResource("Sky_rfx0b")
-sky_custom_fov = 40.0
 ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
 tonemap_mode = 2
 tonemap_exposure = 0.7
@@ -116,7 +115,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_7neky"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, -20, -1.209),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, -20, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -155,7 +154,7 @@ size = Vector3(190.992, 1, 1)
 size = Vector3(117.232, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p1ji1"]
-size = Vector3(196.012, 27.553, 20)
+size = Vector3(1.67951, 27.553, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoy2n"]
 resource_name = "CobbleDirt.017"
@@ -796,7 +795,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08141, 0.176147, 0)
 wind_speed = -1
 
 [node name="checkpoint9" parent="GridMapGround/checkpoint" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("12_oud6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.736, 62.787, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.836, 61.4777, -1.90735e-06)
 wallleft = NodePath("../../invisible_walls/invisiblewall dingisokiri")
 wallright = NodePath("../../invisible_walls/invisiblewall dingisokanan")
 syarat_hewan = Array[String](["dingiso"])
@@ -941,7 +940,7 @@ speed_scale = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1036.91, 195, -0.299011)
 
 [node name="Node3D" type="CharacterBody3D" parent="GridMapGround/platforms/movingplatform4"]
-transform = Transform3D(-0.048846, 0, 0.998774, 0, 1.00002, 0, -0.998729, 0, -0.0488481, -0.442749, -0.922256, -0.0384935)
+transform = Transform3D(-0.048846, 0, 0.998774, 0, 1.00002, 0, -0.998729, 0, -0.0488481, -0.440796, -0.922256, -0.038906)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/platforms/movingplatform4/Node3D"]
@@ -972,7 +971,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
 curve = SubResource("Curve3D_7neky")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform4/Path3D"]
-transform = Transform3D(0.0482998, 0.623535, -0.780287, 0, 0.781241, 0.62423, 0.998756, -0.0301541, 0.0377346, 0, 0, 0)
+transform = Transform3D(-4.3708e-08, 0.624708, -0.780843, 0, 0.780885, 0.624675, 0.999923, 2.73069e-08, -3.41317e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform4/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)
@@ -1097,7 +1096,7 @@ libraries = {
 "": SubResource("AnimationLibrary_n210n")
 }
 autoplay = "move"
-speed_scale = 0.5
+speed_scale = 0.3
 
 [node name="movingplatform7" type="Node3D" parent="GridMapGround/platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1423.69, 165.826, -0.299011)
@@ -1265,6 +1264,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/InvisBarrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55994, 10.2344, 0)
 shape = SubResource("BoxShape3D_p1ji1")
 
 [node name="GridMapCave" parent="." instance=ExtResource("9_suxpj")]

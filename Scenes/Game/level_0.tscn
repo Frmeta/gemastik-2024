@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qud7n"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_kekwg"]
 [ext_resource type="Texture2D" uid="uid://bhudu6ikni6vu" path="res://assets/sky/Fading_Sky-Blue_04-512x512.png" id="3_1vrpj"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_48j1j"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="4_48j1j"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_jnyay"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_fr423"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_4s4dg"]
@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://Scenes/testingken/button_end_idle.gd" id="12_ud1dx"]
 [ext_resource type="PackedScene" uid="uid://b33j8g4np1f5n" path="res://Scenes/grap_sign.tscn" id="13_hojpj"]
 [ext_resource type="PackedScene" uid="uid://v0millvid8ha" path="res://Scenes/win_area.tscn" id="13_ltjtm"]
-[ext_resource type="PackedScene" uid="uid://cm3txb00525iv" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
+[ext_resource type="PackedScene" path="res://Scenes/awsd_sign.tscn" id="13_taksy"]
 [ext_resource type="PackedScene" uid="uid://bm8p5tfonkexb" path="res://Scenes/scan_sign.tscn" id="14_5lr78"]
 [ext_resource type="PackedScene" uid="uid://r3jjo2bl2jvs" path="res://Scenes/almanac_sign.tscn" id="15_uyqrq"]
 [ext_resource type="PackedScene" uid="uid://dnd5jxtkjn50s" path="res://3D Assets/Animal/0-Kalimantan/Bekantan/Bekantan.tscn" id="17_8pc6h"]
@@ -54,7 +54,7 @@ nama_pulau = "kalimantan"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pno0k")
 script = ExtResource("4_48j1j")
-speed = 0.001
+speed = 0.002
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_jnyay")]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qxr4p"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_lisxa"]
 [ext_resource type="Texture2D" uid="uid://diltlx5i54owb" path="res://assets/sky/Fading_Sky-Night_01-512x512.png" id="3_llytw"]
-[ext_resource type="Script" path="res://Scripts/worldenvironment.gd" id="4_vffic"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="4_vffic"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="5_2utrr"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="6_0hvco"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="6_n22mb"]

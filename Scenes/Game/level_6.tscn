@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://gnfb8a7fcvx8"]
+[gd_scene load_steps=44 format=3 uid="uid://gnfb8a7fcvx8"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wbss8"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_5anij"]
 [ext_resource type="Environment" uid="uid://d1yg443d886ct" path="res://Scenes/Game/level_6.tres" id="3_qabbb"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_1yjlg"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="4_ll8al"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_w5mph"]
 [ext_resource type="PackedScene" uid="uid://cwcf5pcyh1y7s" path="res://Scenes/player.tscn" id="6_7t4t5"]
 [ext_resource type="PackedScene" uid="uid://bws1nq6eecdhi" path="res://Scenes/testingken/skeleton_mas.tscn" id="7_dttx8"]
@@ -74,6 +75,7 @@ fun_fact = "Tahukah kamu Pulau Sumatera merupakan awal masuknya Islam ke Indones
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_qabbb")
+script = ExtResource("4_ll8al")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_1yjlg")]
 transform = Transform3D(-0.423943, 0.905342, -0.0250566, -0.459012, -0.190927, 0.867672, 0.780756, 0.379345, 0.496505, 0.110062, 11.6486, 11.7723)
