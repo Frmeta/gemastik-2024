@@ -83,9 +83,9 @@ func set_up():
 	almanac_3d.visible = false
 	almanac_3d.get_node("AnimationPlayer").connect("animation_finished", _done_animating_almanac)
 	
-	successful_scan.connect("done_animation", func() -> void:
-		print("done animation")
-		GM.doni.allow_move())
+	#successful_scan.connect("done_animation", func() -> void:
+		#print("done animation")
+		#GM.doni.allow_move())
 
 # get mouse position
 func get_mouse_location_on_map():
@@ -119,6 +119,7 @@ func _input(event):
 			
 		else:
 			# closing almanac
+			is_animating_almanac = true
 			
 			#play audio
 			GM.play_audio("res://audio/a/buka_almanac.ogg")
@@ -130,7 +131,7 @@ func _input(event):
 			tween.tween_callback(func() -> void:
 				almanac_ui.visible = false
 				almanac_3d.get_node("AnimationPlayer").play("Book_ShowClose")
-				is_animating_almanac = true
+				
 				)
 			
 # when almanac animation finished
@@ -155,7 +156,7 @@ func _done_animating_almanac(_useless):
 		
 # new_animal
 func new_animal(nama_hewan: String):
-	GM.doni.stop_move()
+	#GM.doni.stop_move()
 	var island : pulau = GM.pulau_list_resource.list[GM.current_level]
 	
 	for hewan in island.hewanss:
@@ -167,4 +168,4 @@ func new_animal(nama_hewan: String):
 			return
 			
 	print("oh no hewan " + nama_hewan + " tidak ada di pulau itu seharusnya")
-	GM.doni.allow_move()
+	#GM.doni.allow_move()

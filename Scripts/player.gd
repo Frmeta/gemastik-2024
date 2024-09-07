@@ -86,6 +86,7 @@ func stop_move(_file_path="", _a="", _b="", _c=""):
 	velocity = Vector3.ZERO # kalo swim/climb suka ngerusak ini
 	$Grapling.release()
 	is_scanning = false
+	$scanning.stop()
 
 func _input(event: InputEvent) -> void:
 	
