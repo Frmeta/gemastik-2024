@@ -55,6 +55,7 @@ fun_fact = "Pulau Jawa terletak di kepulauan Sunda Besar dan merupakan pulau ter
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_gb41t")]
 environment = ExtResource("4_vaiih")
 script = ExtResource("5_c44ie")
+speed = 0.001
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_y6caf")]
 light_color = Color(0.545098, 0.556863, 1, 1)

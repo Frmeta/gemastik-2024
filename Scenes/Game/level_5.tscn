@@ -1,8 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://bsur5ompgywv6"]
+[gd_scene load_steps=45 format=3 uid="uid://bsur5ompgywv6"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_881lh"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_54lg6"]
-[ext_resource type="PackedScene" uid="uid://b165itie6x0bq" path="res://Scenes/world_environment.tscn" id="3_7p1a8"]
+[ext_resource type="Texture2D" uid="uid://se5i0xmj3rad" path="res://assets/sky/Cloudy_Sky-Night_03-512x512.png" id="3_x07fm"]
 [ext_resource type="PackedScene" uid="uid://dvgrpoyd6j4ok" path="res://Scenes/directional_light_3d_in_game.tscn" id="4_vifch"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="4_y0wax"]
 [ext_resource type="PackedScene" uid="uid://ggo33txgd2sy" path="res://Scenes/camera_in_game.tscn" id="5_fpu7u"]
@@ -31,8 +31,25 @@
 [ext_resource type="PackedScene" uid="uid://ybo58eu5i27c" path="res://Scenes/thrash.tscn" id="18_nw7ch"]
 [ext_resource type="PackedScene" uid="uid://d1857qn4nnb1n" path="res://Scenes/dialogue_trigger.tscn" id="21_6sqke"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h0d7u"]
+panorama = ExtResource("3_x07fm")
+
+[sub_resource type="Sky" id="Sky_r3l3l"]
+sky_material = SubResource("PanoramaSkyMaterial_h0d7u")
+
+[sub_resource type="Environment" id="Environment_rrp46"]
+background_mode = 2
+sky = SubResource("Sky_r3l3l")
+sky_custom_fov = 4.4
+ambient_light_color = Color(0.305882, 0.513726, 0.541176, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.7
+sdfgi_energy = 0.1
+volumetric_fog_emission = Color(0, 0.631373, 0, 1)
+volumetric_fog_detail_spread = 6.0
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_csijy"]
-emission_shape_scale = Vector3(250, 0, 20)
+emission_shape_scale = Vector3(100, 20, 20)
 emission_shape = 3
 emission_box_extents = Vector3(1, 0, 2)
 angle_max = 49.0
@@ -116,34 +133,62 @@ fun_fact = "Karena letaknya yang berada di wilayah peralihan, Sulawesi memiliki 
 
 [node name="Mouse Position Locator" parent="." instance=ExtResource("2_54lg6")]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("3_7p1a8")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rrp46")
 script = ExtResource("4_y0wax")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("4_vifch")]
 transform = Transform3D(-0.948977, 0.314516, 0.0228485, -0.00882896, -0.0989266, 0.995056, 0.315221, 0.944083, 0.0966559, 495.076, 35.0757, 0)
 
 [node name="rain_box" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.765, 28.6586, -1.23945)
-amount = 300
-visibility_aabb = AABB(-248.454, -24.9693, -3.3606, 496.908, 29.9386, 6.7212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.765, 32.6632, -1.23945)
+visibility_aabb = AABB(-90, -27.5035, -3.3606, 180, 35.0069, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box5" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.585, 31.844, -1.23945)
+visibility_aabb = AABB(-90, -27.5035, -3.3606, 180, 35.0069, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box6" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.888, 31.844, -1.23945)
+visibility_aabb = AABB(-58.6648, -27.5035, -3.3606, 117.33, 35.0069, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box2" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 675.166, 45.7457, -1.23945)
-amount = 400
-visibility_aabb = AABB(-131.96, -49.73, -3.3606, 263.92, 79.4601, 6.7212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 655.761, 63.7652, -1.23945)
+amount = 100
+visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box7" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 794.501, 57.926, -1.23945)
+amount = 100
+visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box8" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 915.794, 59.8212, -1.23945)
+amount = 100
+visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box3" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1004.74, 57.8574, -1.23945)
-amount = 400
-visibility_aabb = AABB(-211.086, -49.73, -3.3606, 422.172, 79.4601, 6.7212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1071.85, 55.94, -1.23945)
+amount = 200
+visibility_aabb = AABB(-99.123, -49.73, -3.3606, 198.246, 79.4601, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box9" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1228.65, 50.4809, -1.23945)
+amount = 200
+visibility_aabb = AABB(-99.123, -49.73, -3.3606, 198.246, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box4" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1420.48, 40.5637, -1.23945)
-amount = 400
-visibility_aabb = AABB(-211.086, -49.73, -3.3606, 422.172, 79.4601, 6.7212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1412.29, 50.8992, -1.23945)
+amount = 300
+visibility_aabb = AABB(-119.524, -49.73, -3.3606, 239.047, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="Camera3D" parent="." instance=ExtResource("5_fpu7u")]
@@ -452,7 +497,7 @@ transform = Transform3D(20.2184, 0, 0, 0, 2.23383, 0, 0, 0, 4.49728, 768.245, 28
 transform = Transform3D(15.6809, 0, 0, 0, 1.7325, 0, 0, 0, 3.48798, 805.323, 38.7496, 0)
 
 [node name="grapling_for_tree7" parent="GridMapGround/grapling for tree" instance=ExtResource("11_cvo7p")]
-transform = Transform3D(14.3657, 0, 0, 0, 3.44378, 0, 0, 0, 5.31485, 819.599, 29.02, 0)
+transform = Transform3D(14.3657, 0, 0, 0, 4.45777, 0, 0, 0, 5.31485, 820.501, 27.0452, 0)
 
 [node name="grapling_for_tree17" parent="GridMapGround/grapling for tree" instance=ExtResource("11_cvo7p")]
 transform = Transform3D(13.1254, 0, 0, 0, 3.44378, 0, 0, 0, 5.31485, 851.811, 30.2862, 0)
@@ -680,7 +725,7 @@ rubbish_num = 27
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 572.456, 10.8952, 5.72205e-06)
 
 [node name="checkpoint rangkong" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("16_xcqj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 666.844, 26.383, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 671.884, 25.1489, -9.53674e-07)
 wallleft = NodePath("../../invisible_walls/invisiblewall rangkongkiri")
 wallright = NodePath("../../invisible_walls/invisiblewall rangkongkanan")
 syarat_hewan = Array[String](["burung maleo"])
@@ -818,7 +863,7 @@ transform = Transform3D(2, 0, 0, 0, 0.405, 0, 0, 0, 1, 93.6972, 3.83707, -1.9073
 
 [node name="GridMapVines" parent="." instance=ExtResource("9_xhbxg")]
 data = {
-"cells": PackedInt32Array(786639, 65535, 2, 721103, 65535, 2, 721102, 65535, 2, 655566, 65535, 2, 590029, 65535, 2, 193, 65535, 2, 65730, 65535, 2, 65731, 65535, 2, 131268, 65535, 2, 131269, 65535, 2, 196805, 65535, 2, 196806, 65535, 2, 393418, 65535, 2, 327881, 65535, 2, 393417, 65535, 2, 458953, 65535, 2, 458954, 65535, 2, 524490, 65535, 2, 721124, 65535, 2, 786661, 65535, 2, 786662, 65535, 2, 786663, 65535, 2, 786664, 65535, 2, 721128, 65535, 2, 458989, 65535, 2, 458993, 65535, 2, 458994, 65535, 2, 458995, 65535, 2, 393461, 65535, 2, 393462, 65535, 2, 393463, 65535, 2, 327927, 65535, 2, 458988, 65535, 2, 458987, 65535, 2, 655902, 65535, 2, 655903, 65535, 2, 655904, 65535, 2, 655905, 65535, 2, 655906, 65535, 2, 655908, 65535, 2, 655909, 65535, 2, 721445, 65535, 2, 721446, 65535, 2, 721449, 65535, 2, 721450, 65535, 2, 655915, 65535, 2, 655916, 65535, 2, 655917, 65535, 2, 786995, 65535, 2, 786996, 65535, 2, 786997, 65535, 2, 786998, 65535, 2, 786999, 65535, 2, 721463, 65535, 2, 655929, 65535, 2, 655930, 65535, 2, 721467, 65535, 2, 2032391, 65535, 2, 2097928, 65535, 2, 2097929, 65535, 2, 2097930, 65535, 2, 2097931, 65535, 2, 2097932, 65535, 2, 2097933, 65535, 2, 2163470, 65535, 2, 2163471, 65535, 2, 2163472, 65535, 2, 2229008, 65535, 2, 2229009, 65535, 2, 2229007, 65535, 2, 2229006, 65535, 2, 2294542, 65535, 2, 2294543, 65535, 2, 2294544, 65535, 2, 2294545, 65535, 2, 2294546, 65535, 2, 2294547, 65535, 2, 2294548, 65535, 2, 2229024, 65535, 2, 2163488, 65535, 2, 2097952, 65535, 2, 2097953, 65535, 2, 2097954, 65535, 2, 2032418, 65535, 2, 2032419, 65535, 2, 2032420, 65535, 2, 1966885, 65535, 2, 1966886, 65535, 2, 1966887, 65535, 2, 1966888, 65535, 2, 1901353, 65535, 2, 1835817, 65535, 2, 1770281, 65535, 2, 1770282, 65535, 2)
+"cells": PackedInt32Array(786639, 65535, 2, 721103, 65535, 2, 721102, 65535, 2, 655566, 65535, 2, 590029, 65535, 2, 193, 65535, 2, 65730, 65535, 2, 65731, 65535, 2, 131268, 65535, 2, 131269, 65535, 2, 196805, 65535, 2, 196806, 65535, 2, 393418, 65535, 2, 327881, 65535, 2, 393417, 65535, 2, 458953, 65535, 2, 458954, 65535, 2, 524490, 65535, 2, 721124, 65535, 2, 786661, 65535, 2, 786662, 65535, 2, 786663, 65535, 2, 786664, 65535, 2, 721128, 65535, 2, 458989, 65535, 2, 458993, 65535, 2, 458994, 65535, 2, 458995, 65535, 2, 393461, 65535, 2, 393462, 65535, 2, 393463, 65535, 2, 327927, 65535, 2, 458988, 65535, 2, 458987, 65535, 2, 655902, 65535, 2, 655903, 65535, 2, 655904, 65535, 2, 655905, 65535, 2, 655906, 65535, 2, 655908, 65535, 2, 655909, 65535, 2, 721445, 65535, 2, 721446, 65535, 2, 721449, 65535, 2, 721450, 65535, 2, 655915, 65535, 2, 655916, 65535, 2, 655917, 65535, 2, 786995, 65535, 2, 786996, 65535, 2, 786997, 65535, 2, 786998, 65535, 2, 786999, 65535, 2, 721463, 65535, 2, 655929, 65535, 2, 655930, 65535, 2, 2032391, 65535, 2, 2097928, 65535, 2, 2097929, 65535, 2, 2097930, 65535, 2, 2097931, 65535, 2, 2097932, 65535, 2, 2097933, 65535, 2, 2163470, 65535, 2, 2163471, 65535, 2, 2163472, 65535, 2, 2229008, 65535, 2, 2229009, 65535, 2, 2229007, 65535, 2, 2229006, 65535, 2, 2294542, 65535, 2, 2294543, 65535, 2, 2294544, 65535, 2, 2294545, 65535, 2, 2294546, 65535, 2, 2294547, 65535, 2, 2294548, 65535, 2, 2229024, 65535, 2, 2163488, 65535, 2, 2097952, 65535, 2, 2097953, 65535, 2, 2097954, 65535, 2, 2032418, 65535, 2, 2032419, 65535, 2, 2032420, 65535, 2, 1966885, 65535, 2, 1966886, 65535, 2, 1966887, 65535, 2, 1966888, 65535, 2, 1901353, 65535, 2, 1835817, 65535, 2, 1770281, 65535, 2, 1770282, 65535, 2, 721126, 65535, 2, 655591, 65535, 2, 655592, 65535, 2, 590056, 65535, 2, 590057, 65535, 2, 524521, 65535, 2, 458985, 65535, 2, 458986, 65535, 2, 393451, 65535, 2, 393452, 65535, 2, 327918, 65535, 2, 721127, 65535, 2, 393458, 65535, 2, 393459, 65535, 2, 393460, 65535, 2)
 }
 
 [node name="GridMapCave" parent="." instance=ExtResource("18_2kbx2")]

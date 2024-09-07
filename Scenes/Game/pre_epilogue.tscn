@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://esy7beftxm1r"]
+[gd_scene load_steps=32 format=3 uid="uid://esy7beftxm1r"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_qxr4p"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_lisxa"]
@@ -14,9 +14,18 @@
 [ext_resource type="ArrayMesh" path="res://3D Assets/Nature/Trees/Trees (1)_Cube_183.res" id="13_soq1w"]
 [ext_resource type="PackedScene" uid="uid://trs0ogdxh7bx" path="res://Scenes/controls.tscn" id="15_seu4f"]
 [ext_resource type="Script" path="res://Scripts/splash_screen.gd" id="17_rb781"]
+[ext_resource type="Texture2D" uid="uid://cg3eqbexinfjs" path="res://assets/preepilogues/untitled21.png" id="18_oco2f"]
+[ext_resource type="Texture2D" uid="uid://dywqqppgd73jg" path="res://assets/preepilogues/untitled22.png" id="19_ivg1q"]
 [ext_resource type="ArrayMesh" uid="uid://dym74aoq4r21a" path="res://3D Assets/Nature/Trees/gundul/Trees (1)_Cube_202.res" id="20_8sm7p"]
+[ext_resource type="Texture2D" uid="uid://yysghmmuhpiv" path="res://assets/preepilogues/untitled25.png" id="20_545f1"]
 [ext_resource type="PackedScene" uid="uid://cwexymi6ik5v0" path="res://Scenes/jembatans/ranting.tscn" id="21_gcg2f"]
+[ext_resource type="Texture2D" uid="uid://belgoowvknne1" path="res://assets/preepilogues/untitled26.png" id="21_w23sx"]
+[ext_resource type="Texture2D" uid="uid://drcrkyk8ib4om" path="res://assets/preepilogues/untitled27.png" id="22_hrpw0"]
 [ext_resource type="PackedScene" uid="uid://bcu5f1do2cu5o" path="res://Scenes/godray.tscn" id="23_ccygc"]
+[ext_resource type="Texture2D" uid="uid://cahi4i6fe81a" path="res://assets/preepilogues/untitled33.png" id="23_l5ujs"]
+[ext_resource type="Texture2D" uid="uid://y2p26xbsyluo" path="res://assets/preepilogues/untitled35.png" id="24_qasg2"]
+[ext_resource type="Texture2D" uid="uid://byebsb0cf7coa" path="res://assets/preepilogues/untitled36.png" id="25_fx48t"]
+[ext_resource type="Texture2D" uid="uid://dgeuilqhk4ga4" path="res://assets/preepilogues/untitled39.png" id="26_ht3b0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o8i1a"]
 panorama = ExtResource("3_llytw")
@@ -435,8 +444,93 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.822, 33.638, 0)
 [node name="Splash Screen" type="Node2D" parent="."]
 position = Vector2(-2, -3)
 script = ExtResource("17_rb781")
+_initial_delay = 1.0
+_animate_delay = 0.2
+_onscreen_duration = 2.0
 boolean = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Splash Screen"]
+
+[node name="TextureRect" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_oco2f")
+
+[node name="TextureRect2" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_ivg1q")
+
+[node name="TextureRect3" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_545f1")
+
+[node name="TextureRect4" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_w23sx")
+
+[node name="TextureRect5" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_hrpw0")
+
+[node name="TextureRect6" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_l5ujs")
+
+[node name="TextureRect7" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_qasg2")
+
+[node name="TextureRect8" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_fx48t")
+
+[node name="TextureRect9" type="TextureRect" parent="Splash Screen/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_ht3b0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
 
 [connection signal="splash_screen_done" from="Splash Screen" to="." method="_on_splash_screen_splash_screen_done"]

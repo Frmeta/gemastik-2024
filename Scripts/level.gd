@@ -29,18 +29,18 @@ func _ready():
 		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
 	elif nama_pulau.to_lower() == "papua": # Papua
 		GM.current_level = 3
-		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",12)
+		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",5)
 	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.current_level = 4
 		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-9)
 	elif nama_pulau.to_lower() == "sulawesi": # Sulawesi
 		GM.current_level = 5
 		GM.play_rain(-10)
-		GM.play_audio_background("res://audio/Donkgedank - ANGLAYANG (Relaxing, Cinematic Nusantara) Royalty Free.ogg",10)
+		GM.play_audio_background("res://audio/Donkgedank - ANGLAYANG (Relaxing, Cinematic Nusantara) Royalty Free.ogg",7)
 	elif nama_pulau.to_lower() == "sumatera": # Sumatera
 		GM.play_rain(-10)
 		GM.current_level = 6
-		GM.play_audio_background("res://audio/Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara).ogg",10)
+		GM.play_audio_background("res://audio/Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara).ogg",5)
 	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.current_level = 7
 		GM.play_rain(-10)
