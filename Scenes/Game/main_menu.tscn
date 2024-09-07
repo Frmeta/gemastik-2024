@@ -483,8 +483,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -145.0
 offset_top = -33.0
-offset_right = 97535.0
-offset_bottom = 50187.0
+offset_right = 99455.0
+offset_bottom = 51117.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
@@ -712,6 +712,7 @@ text = "Kembali ke Menu"
 
 [node name="BackButton" type="Button" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox/Kebali ke menu/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

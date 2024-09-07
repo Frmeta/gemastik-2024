@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://da8h8buq1wyre"]
+[gd_scene load_steps=22 format=3 uid="uid://da8h8buq1wyre"]
 
 [ext_resource type="Script" path="res://Scripts/almanac_ui.gd" id="1_qvhgm"]
 [ext_resource type="Texture2D" uid="uid://c7ubmuol41ihi" path="res://assets/foto tandatanya.png" id="2_shbio"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cnhr8gj21rw1b" path="res://assets/coming_soon.png" id="9_j5hdj"]
 [ext_resource type="PackedScene" uid="uid://g4wbfrf4kt6t" path="res://Scenes/foto_hewan_kiri.tscn" id="10_c5gyd"]
 [ext_resource type="Texture2D" uid="uid://csu4kqm52fh2e" path="res://Resource/Hewan/0-Kalimantan/orang_utan_kalimantan.png" id="10_iw7ri"]
+[ext_resource type="FontFile" uid="uid://c8yl8jpbeap82" path="res://assets/fonts/Itim-Regular.ttf" id="10_q0llu"]
 [ext_resource type="Texture2D" uid="uid://b3hhr5nevmsoj" path="res://assets/pulau/peta_indo_no_x.png" id="12_2x8a0"]
 [ext_resource type="PackedScene" uid="uid://bskp3gtx74q57" path="res://Scenes/x_di_almanac_ui.tscn" id="13_85a34"]
 [ext_resource type="Script" path="res://Scripts/button_for_tutorial.gd" id="13_w2a43"]
@@ -327,6 +328,21 @@ offset_top = 2.0
 offset_right = -154.0
 offset_bottom = 130.0
 
+[node name="Label" type="Label" parent="PanelAlmanac/TabContainer/Halaman Peta Indo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 269.0
+offset_top = -660.0
+offset_right = 610.0
+offset_bottom = -626.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_q0llu")
+theme_override_font_sizes/font_size = 28
+text = "Tekan E untuk tutup Katalog"
+
 [node name="Halaman Detail Pulau" type="Control" parent="PanelAlmanac/TabContainer"]
 layout_mode = 2
 
@@ -404,6 +420,21 @@ offset_left = -145.0
 offset_top = -131.0
 offset_right = -25.0
 offset_bottom = -11.0
+
+[node name="Label" type="Label" parent="PanelAlmanac/TabContainer/Halaman Detail Pulau"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 269.0
+offset_top = -660.0
+offset_right = 610.0
+offset_bottom = -626.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_q0llu")
+theme_override_font_sizes/font_size = 28
+text = "Tekan E untuk tutup Katalog"
 
 [node name="tutorial" parent="." instance=ExtResource("17_5o755")]
 

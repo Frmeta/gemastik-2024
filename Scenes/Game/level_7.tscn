@@ -690,7 +690,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 359.665, 22.7787, -3.8147e-06
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 489.6, 30.1714, -3.8147e-06)
 
 [node name="WinArea" parent="." instance=ExtResource("13_20ufl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 821.997, 133.7, -0.871899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 823.158, 127, -0.871899)
 scene_after_win = "pre_epilogue"
 skip_dialog = true
 

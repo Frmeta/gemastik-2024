@@ -3,6 +3,8 @@ extends Node2D
 @onready var cl = $CanvasLayer
 
 @export var _initial_delay: float = 2
+@export var _animate_delay: float = 0.5
+@export var _onscreen_duration: float = 0.5
 @export var boolean:= false
 
 var _splash_screens = []
@@ -39,6 +41,9 @@ func _start_splash_screen() -> void:
 	if _splash_screens.size() == 0:
 		emit_signal("splash_screen_done")
 		done=true
+		var white = get_node_or_null("../MarginContainer/ColorRect")
+		if white!=null:
+			$"../MarginContainer/ColorRect".visible=false
 		if boolean:
 			pass
 		else:
@@ -51,14 +56,12 @@ func _start_splash_screen() -> void:
 		modulate1.a = 1
 		
 		var tween = get_tree().create_tween()
-		tween.tween_property(splash_screen, "modulate", modulate1, 0.5)
-		tween.tween_property(splash_screen, "modulate", modulate1, 0.5)
-		tween.tween_property(splash_screen, "modulate", modulate0, 0.5)
+		tween.tween_property(splash_screen, "modulate", modulate1, _animate_delay)
+		tween.tween_property(splash_screen, "modulate", modulate1, _onscreen_duration)
+		tween.tween_property(splash_screen, "modulate", modulate0, _animate_delay)
 		tween.tween_callback(_start_splash_screen)
 
 
 func _skip() -> void:
 	if not done:
 		splash_screen.queue_free()
-	# _splash_screen_container.get_child(0).queue_free()
-	#_start_splash_screen()
