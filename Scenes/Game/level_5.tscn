@@ -652,7 +652,7 @@ speed_scale = 0.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2929, 18.024, 0)
 
 [node name="invisiblewall anoakanan" parent="GridMapGround/invisible_walls" instance=ExtResource("16_tixbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7291, -4.00889, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4791, 2.17136, -9.53674e-07)
 
 [node name="invisiblewall sampahkiri" parent="GridMapGround/invisible_walls" instance=ExtResource("16_tixbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.2109, 2.86477, 0)

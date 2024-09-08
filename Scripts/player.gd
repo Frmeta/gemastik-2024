@@ -39,7 +39,7 @@ var is_poisoned = false :
 		$poison_particle.emitting = value
 
 var chain_velocity := Vector3(0,0,0)
-const CHAIN_PULL = 3
+const CHAIN_PULL = 5 # Awalnya 3 tapi katanya lama naik
 
 # Player State
 enum PlayerState {ON_LAND, CLIMBING, SWIMMING}

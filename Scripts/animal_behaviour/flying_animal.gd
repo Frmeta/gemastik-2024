@@ -16,8 +16,12 @@ var target_pos
 var is_flying = false
 
 var can_move = true
+var start_pos_x
+const RANGE_X = 8 # berapa block diperbolehkan terbang dari start_pos_x
 
 func _ready():
+	
+	start_pos_x = owner.global_position.x
 	
 	# Make sure anim_name is valid
 	assert($"../AnimationPlayer".has_animation(fly_anim_name))
@@ -112,18 +116,24 @@ func find_destination():
 	while scan_length < 30:
 		
 		var theta = randf() * 2 * PI - PI
-		var max_theta = theta + 2 * PI
 		
-		ray.position = Vector3(cos(theta), sin(theta), 0)*scan_start + Vector3.UP * 3
+		ray.position = Vector3.UP * 2 + Vector3(cos(theta), sin(theta), 0)*scan_start
 		ray.target_position = Vector3(cos(theta), sin(theta), 0) * scan_length
 		
-		while !ray.is_colliding() and theta<max_theta:
-			theta += PI/20
-			ray.position = Vector3(cos(theta), sin(theta), 0)*scan_start
+		var is_theta_increment = (randi() % 2 == 0)
+		var max_theta = theta + PI * (2 if is_theta_increment else -2)
+			
+		while (!ray.is_colliding() or abs(ray.get_collision_point().x - start_pos_x) > RANGE_X) \
+			and ( \
+				(theta<max_theta and is_theta_increment) \
+				or (theta>max_theta and !is_theta_increment) \
+			):
+			theta += (PI if is_theta_increment else -PI)/100
+			ray.position = Vector3.UP * 2 + Vector3(cos(theta), sin(theta), 0)*scan_start
 			ray.target_position = Vector3(cos(theta), sin(theta), 0) * scan_length
 			await wait_for_next_frame()
 			
-		if ray.is_colliding(): #and !is_near_player(ray.get_collision_point()):
+		if ray.is_colliding() and abs(ray.get_collision_point().x - start_pos_x) < RANGE_X: #and !is_near_player(ray.get_collision_point()):
 			# yey ketemu target
 			
 			# ke atas sampai ketemu tempat bertengger
