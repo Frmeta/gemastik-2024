@@ -30,5 +30,4 @@ stream = ExtResource("4_l5kdr")
 
 [node name="almanac" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_voc5u")
-volume_db = -7.0
 pitch_scale = 0.8

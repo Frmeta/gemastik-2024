@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl6scg38r8q52"]
+
+[ext_resource type="PackedScene" uid="uid://d0awmfd7akltc" path="res://3D Assets/Almanac/Katalog.glb" id="1_xtxu5"]
+
+[node name="Katalog" instance=ExtResource("1_xtxu5")]
