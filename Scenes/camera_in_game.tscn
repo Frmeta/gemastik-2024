@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ggo33txgd2sy"]
+[gd_scene load_steps=5 format=3 uid="uid://ggo33txgd2sy"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_nligd"]
 [ext_resource type="PackedScene" uid="uid://bbd5rbh1ba1wu" path="res://pixelator.tscn" id="2_sgkog"]
-[ext_resource type="PackedScene" uid="uid://mtyncvkm77w7" path="res://3D Assets/Almanac/Almanac.tscn" id="3_ssv53"]
 [ext_resource type="PackedScene" uid="uid://cbh7oddye752w" path="res://Scenes/air_emitter.tscn" id="4_urr2c"]
 [ext_resource type="PackedScene" uid="uid://cl6scg38r8q52" path="res://3D Assets/Almanac/katalog.tscn" id="5_2khk7"]
 
@@ -16,11 +15,8 @@ script = ExtResource("1_nligd")
 [node name="pixelator" parent="." instance=ExtResource("2_sgkog")]
 visible = false
 
-[node name="Almanac_old" parent="." instance=ExtResource("3_ssv53")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
-visible = false
-
 [node name="air_emitter" parent="." instance=ExtResource("4_urr2c")]
 
 [node name="Almanac2" parent="." instance=ExtResource("5_2khk7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65342, 0.0260849, -4.54)
+visible = false
