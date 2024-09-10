@@ -19,4 +19,24 @@
 		"dialogue":"Baiklah",
 		"emosi":"5"
 	},
+	{
+		"nama": "Doni",
+		"dialogue": "Ah, Mas, setiap kali lihat pohon melulu.",
+		"emosi": "2"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Jangan begitu, Doni. Pohon itu penting banget buat kita, lho.",
+		"emosi": "4"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Pohon itu seperti paru-paru bumi, Doni. Dia menyerap karbon dioksida yang kita buang dan menghasilkan oksigen yang kita hirup.",
+		"emosi": 4
+  	},
+	{
+		"nama": "Doni",
+		"dialogue": "Baiklah..",
+		"emosi": "2"
+	},
 ]

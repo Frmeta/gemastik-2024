@@ -10,6 +10,11 @@
 		"emosi":"4"
 	},
 	{
+		"nama": "MAS",
+		"dialogue": "Semakin banyak pohon yang ditebang, semakin banyak karbon dioksida yang ada di udara. Itulah yang menyebabkan pemanasan global dan perubahan iklim.",
+		"emosi": "3"
+	},
+	{
 		"nama":"Doni",
 		"dialogue":"Apa yang bisa kita lakukan MAS?",
 		"emosi":"4"

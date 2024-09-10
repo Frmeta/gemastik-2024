@@ -6,17 +6,58 @@
 	},
 	{
 		"nama":"Doni",
-		"dialogue":"Hmm.. hujannya makin lebat ya... Tidak apa apa sepertinya",
+		"dialogue":"Tidak apa apa sepertinya",
 		"emosi":"2"
 	},
 	{
+		"nama": "Doni",
+		"dialogue": "Hmm.. hujannya makin lebat ya... Tapi kok rasanya panas banget ya?",
+		"emosi": "3"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Itu salah satu dampak perubahan iklim, Doni. Bumi kita sedang mengalami pemanasan global.",
+		"emosi": "3"
+	},
+	{
+		"nama": "Doni",
+		"dialogue": "Apa itu pemanasan global, Mas?",
+		"emosi": "2"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Itu adalah peningkatan suhu rata-rata Bumi. Hal ini terjadi karena banyaknya gas rumah kaca, seperti karbon dioksida, yang terakumulasi di atmosfer.",
+		"emosi": "2"
+	},
+	{
+		"nama": "Doni",
+		"dialogue": "Terus, kenapa hujannya jadi nggak teratur gini?",
+		"emosi": "0"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Perubahan iklim juga mempengaruhi pola cuaca, bisa terjadi banjir atau kekeringan.",
+		"emosi": "3"
+	},
+	{
+		"nama": "Doni",
+		"dialogue": "Apa yang bisa kita lakukan untuk mengatasi masalah ini, Mas?",
+		"emosi": "3"
+	},
+	{
+		"nama": "MAS",
+		"dialogue": "Banyak hal yang bisa kita lakukan, Doni. Kita bisa mulai dari hal kecil, seperti menghemat listrik, mengurangi penggunaan plastik, dan menanam pohon.",
+		"emosi": "4"
+	},
+	{
 		"nama":"Doni",
-		"dialogue":"Mari kita teruskan",
-		"emosi":"5"
+		"dialogue": "Oke MAS. Mari kita teruskan petualangan kita",
+		"emosi": "5"
 	},
 	{
 		"nama":"MAS",
 		"dialogue":"Baiklah",
 		"emosi":"5"
-	},
+	}
+	
 ]
