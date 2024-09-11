@@ -30,6 +30,7 @@ func _ready():
 	elif nama_pulau.to_lower() == "papua": # Papua
 		GM.current_level = 3
 		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",5)
+		GM.play_audio_background("res://audio/RILEKSASI - Instrumen Musik PAPUA #2 __ No Copyright.mp3", 5)
 	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.current_level = 4
 		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-9)
