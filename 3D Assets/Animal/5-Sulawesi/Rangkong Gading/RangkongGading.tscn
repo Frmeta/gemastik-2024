@@ -1655,3 +1655,5 @@ skeleton_3d = NodePath("../RangkongGading_Skeleton/Skeleton3D")
 
 [node name="RayCast3D" type="RayCast3D" parent="Node3D"]
 target_position = Vector3(0, -0.1, 0)
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

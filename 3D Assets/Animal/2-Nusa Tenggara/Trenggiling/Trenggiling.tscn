@@ -2616,3 +2616,5 @@ shape = SubResource("CapsuleShape3D_ayecy")
 script = ExtResource("4_c0v3j")
 walk_anim_name = "Trenggiling_Walk"
 idle_anim_name = "Trenggiling_Idle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

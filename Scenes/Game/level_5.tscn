@@ -153,39 +153,51 @@ visibility_aabb = AABB(-58.6648, -27.5035, -3.3606, 117.33, 35.0069, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box2" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 655.761, 63.7652, -1.23945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 655.761, 51.0375, -1.23945)
 amount = 100
-visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
+visibility_aabb = AABB(-56.8916, -49.73, -3.3606, 113.783, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box7" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 794.501, 57.926, -1.23945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 771.221, 57.926, -1.23945)
 amount = 100
-visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
+visibility_aabb = AABB(-52.3936, -49.73, -3.3606, 104.787, 79.4601, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box10" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 877.86, 57.926, -1.23945)
+amount = 100
+visibility_aabb = AABB(-52.3936, -49.73, -3.3606, 104.787, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box8" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 915.794, 59.8212, -1.23945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 973.313, 59.8212, -1.23945)
 amount = 100
-visibility_aabb = AABB(-63.8729, -49.73, -3.3606, 127.746, 79.4601, 6.7212)
+visibility_aabb = AABB(-48.7828, -49.73, -3.3606, 97.5657, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box3" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1071.85, 55.94, -1.23945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1081.08, 55.94, -1.23945)
 amount = 200
-visibility_aabb = AABB(-99.123, -49.73, -3.3606, 198.246, 79.4601, 6.7212)
+visibility_aabb = AABB(-68.9269, -49.73, -3.3606, 137.854, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box9" parent="." instance=ExtResource("7_osdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1228.65, 50.4809, -1.23945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1193.5, 50.4809, -1.23945)
 amount = 200
-visibility_aabb = AABB(-99.123, -49.73, -3.3606, 198.246, 79.4601, 6.7212)
+visibility_aabb = AABB(-61.8754, -49.73, -3.3606, 123.751, 79.4601, 6.7212)
+process_material = SubResource("ParticleProcessMaterial_csijy")
+
+[node name="rain_box11" parent="." instance=ExtResource("7_osdq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1294.77, 50.4809, -1.23945)
+amount = 200
+visibility_aabb = AABB(-61.8754, -49.73, -3.3606, 123.751, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="rain_box4" parent="." instance=ExtResource("7_osdq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1412.29, 50.8992, -1.23945)
 amount = 300
-visibility_aabb = AABB(-119.524, -49.73, -3.3606, 239.047, 79.4601, 6.7212)
+visibility_aabb = AABB(-76.0728, -49.73, -3.3606, 152.145, 79.4601, 6.7212)
 process_material = SubResource("ParticleProcessMaterial_csijy")
 
 [node name="Camera3D" parent="." instance=ExtResource("5_fpu7u")]

@@ -2926,3 +2926,5 @@ shape = SubResource("CapsuleShape3D_rb51n")
 script = ExtResource("3_eaqj4")
 walk_anim_name = "K_Walk"
 idle_anim_name = "K_Idle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

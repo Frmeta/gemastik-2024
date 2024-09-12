@@ -4018,3 +4018,5 @@ shape = SubResource("SphereShape3D_dvc2a")
 [node name="Node3D" type="Node3D" parent="."]
 script = ExtResource("4_3va61")
 idle_anim_name = "O_Sit"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

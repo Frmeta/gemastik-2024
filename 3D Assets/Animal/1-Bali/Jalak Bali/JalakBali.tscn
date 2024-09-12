@@ -1202,3 +1202,5 @@ shape = SubResource("SphereShape3D_ju4lm")
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("skeleton_3d")]
 script = ExtResource("3_xe6ee")
 skeleton_3d = NodePath("../JalakBali_Skeleton/Skeleton3D")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

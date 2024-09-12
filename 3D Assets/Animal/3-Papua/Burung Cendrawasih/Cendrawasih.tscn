@@ -1537,3 +1537,5 @@ script = ExtResource("3_5t6x7")
 fly_anim_name = "CEN_Flying"
 idle_anim_name = "CEN_Idle"
 skeleton_3d = NodePath("../Cendrawasih_Skeleton/Skeleton3D")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

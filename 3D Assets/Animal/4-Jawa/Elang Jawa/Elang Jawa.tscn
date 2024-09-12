@@ -1170,3 +1170,5 @@ shape = SubResource("SphereShape3D_r43o8")
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("skeleton_3d")]
 script = ExtResource("3_6e76g")
 skeleton_3d = NodePath("../Elang_Skeleton/Skeleton3D")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
