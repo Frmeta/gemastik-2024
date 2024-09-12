@@ -145,7 +145,7 @@ volume_db = 22.0
 
 [node name="Jump2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_a5ytr")
-volume_db = 25.0
+volume_db = 15.0
 
 [node name="Jump3" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_g865y")
