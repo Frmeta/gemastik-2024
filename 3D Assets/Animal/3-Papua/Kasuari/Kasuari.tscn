@@ -1410,3 +1410,5 @@ shape = SubResource("SphereShape3D_88bej")
 script = ExtResource("3_qsg48")
 walk_anim_name = "M_CWalk"
 idle_anim_name = "M_CIdle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

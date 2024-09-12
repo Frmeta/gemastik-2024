@@ -4586,3 +4586,5 @@ idle_anim_name = "Ko_Idle2"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291171, 0.609828, 0)
 shape = SubResource("SphereShape3D_t5ihy")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

@@ -1659,6 +1659,8 @@ mesh = SubResource("QuadMesh_r6ftv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0.431454, 1.16055)
 shape = SubResource("SphereShape3D_grdgg")
 
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+
 [connection signal="body_entered" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_entered"]
 [connection signal="body_exited" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_exited"]
 [connection signal="body_entered" from="hit_box" to="Node3D" method="_on_hit_box_body_entered"]

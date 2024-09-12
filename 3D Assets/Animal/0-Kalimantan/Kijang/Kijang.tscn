@@ -1117,3 +1117,5 @@ shape = SubResource("SphereShape3D_rter2")
 script = ExtResource("2_l08wd")
 walk_anim_name = "K_Walk"
 idle_anim_name = "K_Idle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

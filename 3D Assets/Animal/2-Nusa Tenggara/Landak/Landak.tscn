@@ -3816,3 +3816,5 @@ shape = SubResource("SphereShape3D_njbt8")
 script = ExtResource("3_tlxss")
 walk_anim_name = "L_Owalk"
 idle_anim_name = "Badak_Idle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]

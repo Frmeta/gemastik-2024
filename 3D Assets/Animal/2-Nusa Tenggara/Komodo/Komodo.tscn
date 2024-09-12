@@ -1225,6 +1225,8 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box"]
 shape = SubResource("SphereShape3D_cx8dt")
 
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+
 [connection signal="body_entered" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_entered"]
 [connection signal="body_exited" from="trigger_hostile" to="Node3D" method="_on_trigger_hostile_body_exited"]
 [connection signal="body_entered" from="hit_box" to="Node3D" method="_on_hit_box_body_entered"]

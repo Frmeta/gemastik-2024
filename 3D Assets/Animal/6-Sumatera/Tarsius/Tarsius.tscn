@@ -3375,3 +3375,5 @@ shape = SubResource("SphereShape3D_dumek")
 script = ExtResource("3_txshh")
 walk_anim_name = "Tar_Jump"
 idle_anim_name = "Tar_TenggerIdle"
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
