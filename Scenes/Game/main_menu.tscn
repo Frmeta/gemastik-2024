@@ -733,24 +733,47 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox"]
+custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox/ScrollContainer"]
+custom_minimum_size = Vector2(1200, 650)
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_g6wtw")
 theme_override_font_sizes/font_size = 37
-text = "Fredo Melvern Tanzil
-(programmer & story writer)
+text = "PROGRAMMER & STORY WRITER
+Fredo Melvern Tanzil
 
+PROGRAMMER & ARTIST
 Kenichi Komala
-(programmer & artist)
 
+3D ARTIST
 Samuel Taniel Mulyadi
-(3D artist)
 
+DOSEN PEMBIMBING
 Daya Adianto, S.Kom., M.Kom
-(dosen pembimbing)"
+
+AUDIO
+pixabay.com
+freesound.org
+https://youtu.be/WeNctnXJgB8?si=8A2nzwR_UUazSdrW
+https://youtu.be/qwdgoUzSkFg?si=0dJsQaocZv2CN1vN
+https://youtu.be/kAZc306kFHc?si=3c55JxctwM-3uEWh
+https://youtu.be/AqXBUQSsyjE?si=wzXMsWP_DOpcUndt
+https://www.youtube.com/watch?v=RB5UtRZBihc
+https://www.youtube.com/watch?v=XcdcQVQiMbg
+
+PLAYTESTER
+Sefriano Edsel Jieftara Djie"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
