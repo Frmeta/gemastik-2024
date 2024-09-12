@@ -66,4 +66,6 @@ func _on_credits_button_pressed():
 	tab.visible=true
 
 func _on_keluar_button_pressed():
+	Transition.kill_game()
+	await Transition.transition_done
 	get_tree().quit()

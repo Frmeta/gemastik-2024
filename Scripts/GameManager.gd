@@ -166,3 +166,8 @@ func play_almanac():
 	
 func stop_almanac():
 	$almanac.stop()
+
+func kill_audio_background():
+	if audiostream1.playing:
+		var tween = get_tree().create_tween()
+		tween.tween_property(audiostream1, "volume_db", -10, 1)

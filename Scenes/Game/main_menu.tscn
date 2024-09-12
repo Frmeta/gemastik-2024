@@ -483,8 +483,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -145.0
 offset_top = -33.0
-offset_right = 99455.0
-offset_bottom = 51117.0
+offset_right = 103295.0
+offset_bottom = 52977.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
@@ -506,7 +506,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 2
+current_tab = 1
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="CanvasLayer/TabContainer"]
@@ -609,7 +609,6 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="CanvasLayer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -669,6 +668,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Credits" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Credits"]

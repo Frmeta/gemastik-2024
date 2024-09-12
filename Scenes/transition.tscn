@@ -39,6 +39,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 layer = 10
 visible = false
 script = ExtResource("1_ty6bj")

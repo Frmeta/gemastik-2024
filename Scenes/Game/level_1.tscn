@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5twa7hiadtuj" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_186.res" id="16_haoq2"]
 [ext_resource type="ArrayMesh" uid="uid://joq41j53uyo4" path="res://3D Assets/Nature/Trees/rindang/Trees (1)_Cube_175.res" id="17_k3nlh"]
 [ext_resource type="PackedScene" uid="uid://dnrlqcvf0uw5r" path="res://Scenes/grapling_for_tree.tscn" id="17_xkox3"]
-[ext_resource type="PackedScene" path="res://rumah_bali.tscn" id="17_ylv5b"]
+[ext_resource type="PackedScene" uid="uid://ppywoy75pf55" path="res://rumah_bali.tscn" id="17_ylv5b"]
 [ext_resource type="PackedScene" uid="uid://cafcdq2ua1r8d" path="res://3D Assets/Animal/1-Bali/Jalak Bali/JalakBali.tscn" id="18_i5x08"]
 [ext_resource type="PackedScene" uid="uid://bk6gvo7bgxn0h" path="res://3D Assets/Animal/1-Bali/Anjing Kintamani/anjing_kintamani.tscn" id="20_v45f6"]
 [ext_resource type="PackedScene" uid="uid://ymr3484lfwl4" path="res://3D Assets/Animal/1-Bali/Rusa/Rusa.tscn" id="21_j6yl5"]
@@ -530,7 +530,7 @@ directional_shadow_split_1 = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61429, 1.81753, 11.27)
 
 [node name="Player" parent="." instance=ExtResource("6_ixra3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120094, 3.91726, 7.6294e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0475761, 3.91726, 7.6294e-06)
 
 [node name="skeleton_mas" parent="." instance=ExtResource("7_ro8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.751393, -0.464771, 0)

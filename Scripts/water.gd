@@ -1,5 +1,7 @@
 extends Area3D
 
+var rng = RandomNumberGenerator.new()
+
 @onready var water_shader = $watershader
 @export var scale2:=1.0
 @export var is_raging:=false
@@ -17,8 +19,10 @@ func _ready():
 	$CollisionShape3D.global_position.y -= 0 # duct tape: supaya ketika discale tidak rusak
 
 func _on_body_entered(body: Player):
+	GM.play_audio("res://audio/water-splash-5860-"+str(rng.randi_range(1,3))+".ogg",1,5)
 	body.is_in_water=true
 	body.curr_jumps=1
 
 func _on_body_exited(body: Player):
+	GM.play_audio("res://audio/water-splash-5860-"+str(rng.randi_range(1,3))+".ogg",1,5)
 	body.is_in_water=false

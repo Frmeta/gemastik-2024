@@ -50,4 +50,6 @@ func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
 
 func _on_keluar_button_pressed():
+	Transition.kill_game()
+	await Transition.transition_done
 	get_tree().quit()

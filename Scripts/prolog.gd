@@ -40,6 +40,7 @@ func foo():
 		mas.ANGULAR_SPEED=5
 		mas.constant=1
 		EventDistributor.emit_signal("spawn_mas")
+		GM.play_audio("res://audio/beam-8-43831.mp3", 2, 10)
 		var target = doni.position.y+1
 		for i in range(10):
 			doni.position.y=lerp(doni.position.y,target,0.3)

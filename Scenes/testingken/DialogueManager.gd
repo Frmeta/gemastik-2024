@@ -24,6 +24,7 @@ func load_dialog(file_path, nama_pulau:String="", fun_fact:String="", emit_end:b
 					line["dialogue"] = line["dialogue"].replace("{fun fact}", fun_fact)
 		
 				line["dialogue"] = fix_length(line["dialogue"])
+				print(line['nama'])
 				textbox.display_line(line["nama"], line["dialogue"], line["emosi"], time_based)
 				await textbox.go_to_next_line
 			textbox.visible=false

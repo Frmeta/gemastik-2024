@@ -29,7 +29,7 @@ func display_line(nama: String, dialogue:String, emosi,timer_based=false):
 		GM.play_doni_sound("res://audio/a/dialogos"+str(num)+".ogg")
 		nama = nama.to_lower().capitalize()
 		emote.texture = _emosi_doni[int(emosi)]
-	elif (nama.to_lower()=="mas"):
+	elif (nama.to_lower()=="mas" or nama.to_lower()=="???"):
 		nama = nama.to_upper()
 		GM.play_mas_sound("res://audio/a/little-robot-sound"+str(num)+".ogg")
 		emote.texture = _emosi_mas[int(emosi)]
