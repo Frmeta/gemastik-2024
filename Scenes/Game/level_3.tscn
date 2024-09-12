@@ -972,7 +972,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433228, -0.928329, 0)
 curve = SubResource("Curve3D_7neky")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GridMapGround/platforms/movingplatform4/Path3D"]
-transform = Transform3D(-4.3708e-08, 0.624708, -0.780843, 0, 0.780885, 0.624675, 0.999923, 2.73068e-08, -3.41317e-08, 0, 0, 0)
+transform = Transform3D(-4.3708e-08, 0.624708, -0.780843, 0, 0.780885, 0.624675, 0.999923, 2.73069e-08, -3.41317e-08, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="GridMapGround/platforms/movingplatform4/Path3D/PathFollow3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.038909, 0, 0.00972743)

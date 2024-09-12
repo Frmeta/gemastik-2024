@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bsur5ompgywv6"]
+[gd_scene load_steps=44 format=3 uid="uid://bsur5ompgywv6"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_881lh"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_54lg6"]
@@ -122,9 +122,6 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eeo5"]
 size = Vector3(196.012, 27.553, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_i8odg"]
-size = Vector3(150, 1, 1)
 
 [node name="Level Sulawesi" type="Node3D"]
 script = ExtResource("1_881lh")
@@ -876,10 +873,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="DialogueManager" parent="." instance=ExtResource("11_6f7at")]
 layer = 11
-
-[node name="Lower Bound" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2928, -15, 0)
-mesh = SubResource("BoxMesh_i8odg")
 
 [node name="WinArea" parent="." instance=ExtResource("13_evmii")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1497.24, 27.173, -0.883286)
