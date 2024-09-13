@@ -46,7 +46,7 @@ func foo():
 			doni.position.y=lerp(doni.position.y,target,0.3)
 			await get_tree().create_timer(0.001).timeout
 		for i in range(10):
-			doni.position.y=lerp(doni.position.y,target-1,0.3)
+			doni.position.y=lerp(doni.position.y,target-1,0.3
 			await get_tree().create_timer(0.00001).timeout
 		await get_tree().create_timer(0.5).timeout
 		goto(4)

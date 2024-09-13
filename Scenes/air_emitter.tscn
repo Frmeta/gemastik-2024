@@ -47,6 +47,7 @@ _data = [Vector2(0, 0.35), 0.0, 0.0, 0, 0, Vector2(0.525974, 0.763636), 0.0, 0.0
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mqdn"]
+shading_mode = 0
 albedo_color = Color(0.337255, 0.6, 0.4, 1)
 billboard_mode = 3
 particles_anim_h_frames = 1
@@ -125,6 +126,8 @@ script = ExtResource("1_lrtwx")
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 10
 randomness = 0.1
+interpolate = false
+fract_delta = false
 visibility_aabb = AABB(-7.03676, -9.16619, -4, 14.0735, 18.3324, 8)
 process_material = SubResource("ParticleProcessMaterial_rf6ay")
 draw_pass_1 = SubResource("RibbonTrailMesh_d4agt")
@@ -134,6 +137,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55623, 0)
 amount = 2
 lifetime = 3.0
 randomness = 0.1
+interpolate = false
+fract_delta = false
 visibility_aabb = AABB(-7.03676, -9.47219, -4, 14.0735, 18.9444, 8)
 process_material = SubResource("ParticleProcessMaterial_je5fk")
 draw_pass_1 = SubResource("RibbonTrailMesh_0mxkt")
