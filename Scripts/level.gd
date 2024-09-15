@@ -29,8 +29,8 @@ func _ready():
 		GM.play_audio_background("res://audio/a/Free Instrument Melayu No Copyright.mp3",-10)
 	elif nama_pulau.to_lower() == "papua": # Papua
 		GM.current_level = 3
-		GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",5)
-		GM.play_audio_background("res://audio/RILEKSASI - Instrumen Musik PAPUA #2 __ No Copyright.mp3", 5)
+		#GM.play_audio_background("res://audio/Donkgedank - SUMAPALA (Backsound Nusantara) Upbeat Cinematic.ogg",5)
+		GM.play_audio_background("res://audio/RILEKSASI - Instrumen Musik PAPUA #2 __ No Copyright.mp3", -5)
 	elif nama_pulau.to_lower() == "jawa": # Jawa
 		GM.current_level = 4
 		GM.play_audio_background("res://audio/MUSYXZ - Papua (Royalty Free Music).mp3",-9)
@@ -45,7 +45,7 @@ func _ready():
 	elif nama_pulau.to_lower() == "leviathan": # Levi
 		GM.current_level = 7
 		GM.play_rain(-10)
-		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 10)
+		GM.play_audio_background("res://audio/Epicness Cinematic Dramatic Trailer (Creative Commons).mp3", 0)
 	elif nama_pulau.to_lower()=="preepilogue":
 		GM.play_audio_background("res://audio/a/Balinese Instrumental ( No Copyright)-2.ogg", -10)
 		GM.doni.stop_move()

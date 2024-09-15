@@ -483,8 +483,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -145.0
 offset_top = -33.0
-offset_right = 105215.0
-offset_bottom = 53907.0
+offset_right = 114815.0
+offset_bottom = 58557.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
@@ -506,11 +506,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 tabs_visible = false
 
 [node name="Title Screen" type="Control" parent="CanvasLayer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="BG" type="TextureRect" parent="CanvasLayer/TabContainer/Title Screen"]
@@ -558,6 +556,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/Play"]
 layout_mode = 2
+size_flags_horizontal = 0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -578,6 +577,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer3"]
 layout_mode = 2
+size_flags_horizontal = 0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -598,6 +598,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="KeluarButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer4"]
 layout_mode = 2
+size_flags_horizontal = 0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -609,6 +610,7 @@ flat = true
 alignment = 0
 
 [node name="Load Game" type="MarginContainer" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
@@ -773,7 +775,9 @@ https://www.youtube.com/watch?v=RB5UtRZBihc
 https://www.youtube.com/watch?v=XcdcQVQiMbg
 
 PLAYTESTER
-Sefriano Edsel Jieftara Djie"
+Sekolah Dasar SDS Antonius
+Sefriano Edsel Jieftara Djie
+Clarence Grady"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true

@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var iteration = 45
 @export var SPEED:float = 5.0
 @export var constant = 5
+@export var is_prologin = false
 
 @onready var sprite =  $MeshInstance3D
 @onready var sprite_mas = $"Mas"

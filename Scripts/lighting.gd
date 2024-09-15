@@ -15,5 +15,5 @@ func _on_timer_timeout():
 	omni_range = 4096
 	await get_tree().create_timer(0.1).timeout
 	omni_range = 0
-	GM.play_audio("res://audio/lightning-storm-6077.ogg",1, 20)
+	GM.play_audio("res://audio/lightning-storm-6077.ogg",1, 10)
 	$Timer.start()

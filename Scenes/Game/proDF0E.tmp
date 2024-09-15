@@ -77,11 +77,9 @@ material = SubResource("StandardMaterial3D_djj3d")
 radius = 0.2
 height = 0.4
 
-[node name="Prolog" type="Node3D" node_paths=PackedStringArray("doniMarkers", "masMarkers")]
+[node name="Prolog" type="Node3D"]
 script = ExtResource("1_i5hlg")
-doniMarkers = [NodePath("Markers/Sit Pos"), NodePath("Markers/Stand Pos"), NodePath("Markers/Sad Pos"), NodePath("Markers/Stand Pos2"), NodePath("Markers/Stand Pos2")]
 doniAnims = Array[String](["sit", "idle", "lose", "idle", "idle"])
-masMarkers = [NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos"), NodePath("Markers/Mas Pos")]
 
 [node name="DonisRoom" parent="." instance=ExtResource("1_bf7rv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0372486, -1.60144, -1.91971)
@@ -131,14 +129,6 @@ mesh = SubResource("QuadMesh_0cenu")
 
 [node name="Markers" type="Node3D" parent="."]
 
-[node name="Mas Pos" type="Marker3D" parent="Markers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.873, -1.202, 0)
-gizmo_extents = 0.1
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Markers/Mas Pos"]
-transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0, 0)
-script = ExtResource("4_eurtn")
-
 [node name="Sit Pos" type="Marker3D" parent="Markers"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.44084, -0.897301, -1.86485)
 
@@ -158,10 +148,16 @@ gizmo_extents = 0.1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2691, -1.6, -0.403077)
 gizmo_extents = 0.1
 
+[node name="Mas Pos" type="Marker3D" parent="Markers"]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, 3.64541, -1.20227, -0.403077)
+gizmo_extents = 0.1
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Markers/Mas Pos"]
+transform = Transform3D(0.34202, 0, 0.939692, 0, 1, 0, -0.939692, 0, 0.34202, 0, 0, 0)
+script = ExtResource("4_eurtn")
+
 [node name="skeleton_mas" parent="." instance=ExtResource("5_vhj7j")]
 transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 3.55932, -0.582437, -0.403077)
-iteration = 10
-is_prologin = true
 
 [node name="DoniFinal" parent="." instance=ExtResource("2_1srln")]
 
