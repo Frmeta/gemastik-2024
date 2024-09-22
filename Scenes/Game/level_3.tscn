@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://3po8n35xp4gr"]
+[gd_scene load_steps=70 format=3 uid="uid://3po8n35xp4gr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_kmcya"]
 [ext_resource type="PackedScene" uid="uid://bgkd63i5h8obl" path="res://Scenes/mouse_position_locator.tscn" id="2_jes05"]
@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://dnlmcvoqrf5lq" path="res://Scenes/wind_trigger.tscn" id="17_d7a6u"]
 [ext_resource type="PackedScene" uid="uid://d1xcahstqcf7l" path="res://3D Assets/Animal/3-Papua/Kasuari/Kasuari.tscn" id="17_migyj"]
 [ext_resource type="PackedScene" uid="uid://dylhh6b4bk8io" path="res://Scenes/death_trigger.tscn" id="18_uc36d"]
-[ext_resource type="PackedScene" uid="uid://cw7de0a2syf7c" path="res://Scenes/mineral_walls.tscn" id="21_kixfr"]
 [ext_resource type="PackedScene" uid="uid://cxmmcj52tqnko" path="res://Scenes/minerals.tscn" id="22_kvfih"]
 [ext_resource type="PackedScene" uid="uid://c0kwfpf6jqhos" path="res://Scenes/testingken/waterfall.tscn" id="26_hmavx"]
 [ext_resource type="PackedScene" uid="uid://bd4wkhwf7ybei" path="res://Scenes/warn_sign.tscn" id="32_hxbvb"]
@@ -1195,69 +1194,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1714.21, 53.6843, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/death_triggers/DeathTrigger5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.887, -2.04727, 0)
 shape = SubResource("BoxShape3D_wjgvx")
-
-[node name="mineral_walls" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1204.4, 155.003, 1.58821)
-
-[node name="mineral_walls2" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1215.1, 155.393, 1.58808)
-
-[node name="mineral_walls3" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1195.37, 149.812, 1.58381)
-
-[node name="mineral_walls4" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1196.37, 163.486, 1.58772)
-
-[node name="mineral_walls5" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1183.03, 155.191, 1.58759)
-
-[node name="mineral_walls6" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1171.05, 163.39, 1.58759)
-
-[node name="mineral_walls7" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1164.52, 157.331, 1.58759)
-
-[node name="mineral_walls8" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1165.2, 167.87, 1.58772)
-
-[node name="mineral_walls9" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1174.77, 167.555, 1.58772)
-
-[node name="mineral_walls10" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1187.32, 162.932, 1.58772)
-
-[node name="mineral_walls11" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1182.99, 167.63, 1.58796)
-
-[node name="mineral_walls12" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1208.34, 150.813, 1.58821)
-
-[node name="mineral_walls13" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1194.62, 139.062, 1.58808)
-
-[node name="mineral_walls14" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1213.39, 132.166, 1.58808)
-
-[node name="mineral_walls15" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1211.2, 136.46, 1.58796)
-
-[node name="mineral_walls16" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1224.15, 141.696, 1.58796)
-
-[node name="mineral_walls17" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1245.19, 144.752, 1.58808)
-
-[node name="mineral_walls18" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1238.72, 158.608, 1.58796)
-
-[node name="mineral_walls19" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1235.57, 157.642, 1.58808)
-
-[node name="mineral_walls20" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1258.98, 163.928, 1.58808)
-
-[node name="mineral_walls21" parent="GridMapGround" instance=ExtResource("21_kixfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1254.43, 167.415, 1.58796)
 
 [node name="InvisBarrier" type="StaticBody3D" parent="GridMapGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1171.05, 193.884, 0)

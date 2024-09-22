@@ -362,9 +362,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1046.99, 46.7458, 0)
 [node name="invisiblewall rafflesiakanan" parent="GridMapGround/invisiblewalls" instance=ExtResource("18_xt46f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1091.44, 58.4159, 0)
 
-[node name="invisiblewall6" parent="GridMapGround/invisiblewalls" instance=ExtResource("18_xt46f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1323.72, 16.426, 0)
-
 [node name="checkpoints" type="Node3D" parent="GridMapGround"]
 
 [node name="checkpoint tarsius" parent="GridMapGround/checkpoints" node_paths=PackedStringArray("wallleft", "wallright") instance=ExtResource("19_mfuvb")]
@@ -467,7 +464,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridMapGround/Invis Barrier/InvisBarrier"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03415, 13.4992, -0.0185013)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03418, 13.4992, -0.0185013)
 shape = SubResource("BoxShape3D_l2jwg")
 
 [node name="Rain box" type="Node3D" parent="GridMapGround"]
