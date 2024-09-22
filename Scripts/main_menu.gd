@@ -69,3 +69,7 @@ func _on_keluar_button_pressed():
 	Transition.kill_game()
 	await Transition.transition_done
 	get_tree().quit()
+
+
+func _on_bug_button_pressed():
+	OS.shell_open("https://forms.gle/cZBp1Pr6kRvce9e78")

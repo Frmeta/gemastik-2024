@@ -483,8 +483,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -145.0
 offset_top = -33.0
-offset_right = 114815.0
-offset_bottom = 58557.0
+offset_right = 116735.0
+offset_bottom = 59487.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
@@ -539,10 +539,10 @@ texture = ExtResource("2_d3a57")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Title Screen"]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 308.0
-offset_right = 1006.0
-offset_bottom = 935.0
+offset_left = 133.0
+offset_top = 360.0
+offset_right = 996.0
+offset_bottom = 987.0
 theme_override_constants/separation = -20
 alignment = 1
 
@@ -596,7 +596,28 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="KeluarButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer4"]
+[node name="BugButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("5_g6wtw")
+theme_override_font_sizes/font_size = 72
+text = "Lapor Masalah"
+flat = true
+alignment = 0
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer"]
+custom_minimum_size = Vector2(183.49, 88.165)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="KeluarButton" type="Button" parent="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer5"]
 layout_mode = 2
 size_flags_horizontal = 0
 focus_mode = 0
@@ -846,7 +867,8 @@ sky_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer4/KeluarButton" to="." method="_on_keluar_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer4/BugButton" to="." method="_on_bug_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Title Screen/VBoxContainer/MarginContainer5/KeluarButton" to="." method="_on_keluar_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Load Game/VBox/Kebali ke menu" to="." method="_on_kebali_ke_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Load Game/VBox/cheatbutton" to="CanvasLayer/TabContainer/Load Game" method="_on_cheatbutton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Credits/MarginContainer/VBox/Kebali ke menu" to="." method="_on_kebali_ke_menu_pressed"]
