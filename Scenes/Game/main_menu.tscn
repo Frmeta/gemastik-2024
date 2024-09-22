@@ -757,7 +757,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox"]
-custom_minimum_size = Vector2(0, 600)
+custom_minimum_size = Vector2(1600, 600)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -765,7 +765,7 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="Label2" type="Label" parent="CanvasLayer/TabContainer/Credits/MarginContainer/VBox/ScrollContainer"]
-custom_minimum_size = Vector2(1200, 650)
+custom_minimum_size = Vector2(1600, 650)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -788,12 +788,12 @@ Daya Adianto, S.Kom., M.Kom
 AUDIO
 pixabay.com
 freesound.org
-https://youtu.be/WeNctnXJgB8?si=8A2nzwR_UUazSdrW
-https://youtu.be/qwdgoUzSkFg?si=0dJsQaocZv2CN1vN
-https://youtu.be/kAZc306kFHc?si=3c55JxctwM-3uEWh
-https://youtu.be/AqXBUQSsyjE?si=wzXMsWP_DOpcUndt
-https://www.youtube.com/watch?v=RB5UtRZBihc
-https://www.youtube.com/watch?v=XcdcQVQiMbg
+INGIN TENANG - RILEKSASI - Instrumen Musik PAPUA #2 || No Copyright - 
+MUSYXZ - Papua (Royalty Free Music)
+Donkgedank - ANGLAYANG (Relaxing, Cinematic Nusantara) Royalty Free
+Donkgedank - Vibes Of Sriwijaya (Epic Cinematic Backsound Nusantara)
+Epicness Cinematic Dramatic Trailer - Cinematic Dramatic Background Music (Creative Commons)
+Framelens Audio Visual - Free Backsound Gamelan Jawa - Javanese Beat
 
 PLAYTESTER
 Sekolah Dasar SDS Antonius
