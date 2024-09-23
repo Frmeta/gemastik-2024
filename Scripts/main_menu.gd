@@ -74,3 +74,4 @@ func _on_keluar_button_pressed():
 func _on_bug_button_pressed():
 	#OS.shell_open("https://forms.gle/cZBp1Pr6kRvce9e78")
 	OS.shell_open("https://forms.gle/CKRZhWTkf4VSoKvZ6")
+

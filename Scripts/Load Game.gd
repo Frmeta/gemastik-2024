@@ -67,3 +67,9 @@ func _on_cheatbutton_pressed():
 	GM.data = data
 	
 	load_button_pressed(0)
+
+
+func _process(delta):
+	if Input.is_key_pressed(KEY_0) && Input.is_key_pressed(KEY_1):
+		GM.cheat()
+		refresh()

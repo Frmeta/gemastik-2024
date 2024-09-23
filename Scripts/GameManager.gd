@@ -79,6 +79,13 @@ func win(target : String):
 	
 	Transition.change_scene("res://Scenes/Game/"+target+".tscn")
 	
+func cheat():
+	# make game file 100% in slot 4
+	var data_copy = data
+	data_copy[3]["level"] = 7
+	data = data_copy
+	print("cheatcode")
+	
 func read_data():
 	if not FileAccess.file_exists(FILE_NAME):
 		restart_all()
